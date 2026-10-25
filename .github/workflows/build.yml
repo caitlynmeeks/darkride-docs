@@ -1,0 +1,22 @@
+# The check on every push and pull request: the site builds exactly as darkride.ai/docs is built (metaverse's
+# deploy-docs.sh runs the same two commands). VitePress fails the build on a link to a page that doesn't exist.
+name: Build
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - run: npm ci
+      - run: npx vitepress build
