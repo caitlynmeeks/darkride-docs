@@ -1,0 +1,73 @@
+/* The website's look (metaverse/frontend/src/styles.scss, the $dr- colours) on VitePress's default theme. */
+
+/* the website's own fonts, from darkride.ai (the docs' own host there; a local preview uses the fallbacks) */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Roboto'), local('Roboto-Regular'), url('https://darkride.ai/assets/fonts/roboto-v20-latin-regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url('https://darkride.ai/assets/fonts/roboto-v20-latin-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url('https://darkride.ai/assets/fonts/roboto-v20-latin-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Roboto Mono'), local('RobotoMono-Regular'), url('https://darkride.ai/assets/fonts/roboto-mono-v12-latin-regular.woff2') format('woff2');
+}
+
+:root,
+.dark {
+  --vp-font-family-base: 'Roboto', 'Helvetica Neue', sans-serif;
+  --vp-font-family-mono: 'Roboto Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* the page, the header and footer, cards: $dr-bg, $dr-bg-darker, $dr-surface */
+  --vp-c-bg: #1c2136;
+  --vp-c-bg-alt: #171b2d;
+  --vp-c-bg-elv: #242a44;
+  --vp-c-bg-soft: #20263d;
+  --vp-nav-bg-color: #171b2d;
+  --vp-sidebar-bg-color: #171b2d;
+  --vp-code-block-bg: #171b2d;
+  --vp-c-divider: #333a5a;
+  --vp-c-border: #333a5a;
+  --vp-c-gutter: #171b2d;
+  --vp-c-default-soft: #333a5a;
+
+  --vp-c-text-1: #f4f6f8;
+  --vp-c-text-2: #9aa1bd;
+  --vp-c-text-3: #6f7695;
+
+  /* the website's cyan for links and buttons; dark text on cyan, as the website's buttons have */
+  --vp-c-brand-1: #33bfff;
+  --vp-c-brand-2: #00afff;
+  --vp-c-brand-3: #00afff;
+  --vp-c-brand-soft: rgba(0, 175, 255, 0.14);
+  --vp-button-brand-text: #091023;
+  --vp-button-brand-hover-text: #091023;
+  --vp-button-brand-active-text: #091023;
+}
+
+/* the wide logo carries the name; "docs" sits beside it in the header */
+.VPNavBarTitle .logo {
+  height: 30px;
+}
+.VPNavBarTitle .title {
+  gap: 10px;
+  font-weight: 500;
+  color: var(--vp-c-text-2);
+}
