@@ -119,10 +119,17 @@ Everything in your world needs to be online. The easy place for it is **My Files
    or rename the file.
 3. In Darkride's Build Mode, paste the link where the model, picture or sound goes.
 
-![My Files: a file's right-click menu, with Copy stable link](./images/files-copy-link.png)
+<!-- PICTURE files-copy-link.png: a NEW picture after metaverse's #15 deploy (Copy stable link > https://, no tea://
+buttons, "Private" with its lock and line); the old one showed tea:// and "Private (Darkride only)". Put back as:
+![My Files: a file's right-click menu, with Copy stable link](./images/files-copy-link.png) -->
 
-To keep a file from being downloaded on the web, tick **Private (Darkride only)** in the same menu. Then only people
-in the Darkride app can load it.
+To keep a file off the web, tick **Private** in the same menu. A private file has no web link. People signed in to
+Darkride see it where you use it (your avatar, your worlds); it can't be opened in a web browser.
+
+- Put a private file in a world by its stable link. Its older `tea://` address, or its link under **Copy URL to
+  clipboard**, loads it only for you.
+- Keep a private model and its textures together in a folder of their own.
+- Visitors need Darkride 1.1 or newer to see private files.
 
 ## 5. Bring in a world from High Fidelity
 
