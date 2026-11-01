@@ -42,6 +42,9 @@ What doesn't work yet in Darkride 1.1.2, and what to do instead. Found something
   error. Give each its own address (add `?a=1`, `?b=1`), or require the file in one place.
 - **A Track with more than about 100 points never reaches the server or other people.** It vanishes for them, with no
   warning. Keep tracks under 100 points.
+- **A script that moves your avatar by setting `MyAvatar.position` can be undone by the next physics step**, leaving
+  the avatar where it was. Check the position a frame later and set it again. The built-in teleports (`/tp`, Hop,
+  bookmarks) aren't affected.
 
 ## The radio
 
