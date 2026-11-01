@@ -55,7 +55,7 @@ match.
 ### Linux
 
 ```sh
-tar xzf darkride-server-linux-x64-1.1.2-beta.tar.gz
+tar xzf darkride-server-linux-x64-1.1.2.1-beta.tar.gz
 nohup ./server.AppDir/domain-server > domain-server.log 2>&1 &
 nohup ./server.AppDir/assignment-client -n 6 --max 6 --min-listen-port 40110 -a 127.0.0.1 --server-port 40102 > assignment-client.log 2>&1 &
 ```
@@ -68,7 +68,7 @@ you log out, and their messages go to the two `.log` files.
 
 ### Windows
 
-1. Unzip `Darkride-1.1.2-beta-windows.zip`. The server is in its `server` folder.
+1. Unzip `Darkride-1.1.2.1-beta-windows.zip`. The server is in its `server` folder.
 2. In that folder, start `domain-server.exe`.
 3. Then start the assignment clients from a Command Prompt in the same folder:
 
@@ -151,8 +151,8 @@ setting turns it off. To put a script in the world's assets, use **Edit** > **As
 
 ## Update to a new version
 
-Update your server with each Darkride version. If you run your own world server, update it to 1.1.2 for its safety
-fixes. 1.1.2 apps work with 1.1.1 servers and the other way round. When a version can't join older servers, its
+Update your server with each Darkride version. If you run your own world server, update it to 1.1.2.1 for its safety
+fixes. 1.1.2.1 works with every 1.1 world and server. When a version can't join older servers, its
 release notes say so.
 
 Before you update to 1.1.2, move any scripts on your own computer or home network
@@ -160,6 +160,9 @@ Before you update to 1.1.2, move any scripts on your own computer or home networ
 address. A 1.1.2 server loads your world without them, and the first save after any change forgets their old
 addresses. Your backup from step 2 still has them if you need them.
 Your world keeps its id, its token, its Explore listing and its link, so don't make a new world.
+
+**Bans by hardware ID from before 1.1.2.1 won't match.** Each world now sees a different computer ID for the same
+person, so bans you made by hardware ID before 1.1.2.1 won't match; ban by account instead.
 
 **What visitors can build changed in 1.1.2.** Visitors who may only make temporary items (**Rez temporary**) can't
 give an item a script, can't make Web items or zones, and can change or delete only temporary items. An edit your
