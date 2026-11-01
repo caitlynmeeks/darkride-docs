@@ -59,6 +59,22 @@ While you're in your world, the top of **Explore** has a section, **You're in** 
 <!-- PICTURE instance-bar.png: the "You're in" section with Edit mode on, Save the World, Copy Link and Close This Instance… -->
 <!-- PICTURE saved.png: "Saved as version N, M entities." just after Save the World -->
 
+### Build mode keys
+
+| Key | What it does |
+| --- | --- |
+| **Q** | View: look around without changing anything |
+| **W** | Move |
+| **E** | Rotate |
+| **R** | Scale |
+| **T** | Terrain |
+| **F** | Frame the selection: the view turns and zooms to it |
+| **Shift+F** | Go to the selection |
+| **Shift+Cmd+F** (Shift+Ctrl+F on Windows) | Bring the selection to you |
+| **[** and **]** | Shrink and grow the terrain brush |
+
+The toolbar's buttons show the same keys when you point at them.
+
 Come back, change things and save as often as you like.
 
 - **An instance keeps the version it started with.** One that was already open when you saved shows as "An older
