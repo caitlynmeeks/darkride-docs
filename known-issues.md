@@ -58,6 +58,9 @@ What doesn't work yet in Darkride 1.1.2, and what to do instead. Found something
 - **In VR, keep the tablet closed while you ride.** On a vehicle it can vanish or float away. We're fixing it.
 - **Things attached to the avatar's sensor joint (`parentJointIndex` 65534) are misplaced while the avatar rides a
   vehicle,** for the rider and for everyone watching. They're right again once the avatar steps off. We're fixing it.
+- **Step off the monorail before you go to another world.** If you Hop, teleport or use a bookmark while standing in
+  the monorail car, you may arrive unable to walk (your avatar walks in place). Restart Darkride to fix it. We're
+  fixing it.
 
 ## The radio
 
