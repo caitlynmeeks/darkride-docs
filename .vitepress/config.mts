@@ -29,6 +29,13 @@ export default defineConfig({
       '/scripting/api/': apiSidebar,
       '/': [
         {
+          text: 'Worlds',
+          items: [
+            { text: 'Put up a world', link: '/worlds/put-up-a-world' },
+            { text: 'Run your own world server', link: '/worlds/your-own-server' },
+          ],
+        },
+        {
           text: 'Bots',
           items: [{ text: 'Making bots for Darkride', link: '/bots/guide' }],
         },
