@@ -46,6 +46,7 @@ export default defineConfig({
         {
           text: 'Releases',
           items: [
+            { text: "What's new in 1.1.2.1", link: '/releases/1.1.2.1/' },
             { text: "What's new in 1.1.2", link: '/releases/1.1.2/' },
             { text: 'Known issues', link: '/known-issues' },
           ],
