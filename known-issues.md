@@ -20,6 +20,13 @@ What doesn't work yet in Darkride 1.1.2, and what to do instead. Found something
   your graphics maker's latest driver. Darkride needs a graphics card whose driver offers OpenGL 4.1: roughly any
   NVIDIA or AMD card from 2010 on, or Intel HD 4400 (2013) or newer.
 
+## Graphics
+
+- **Ambient occlusion has no effect on Macs and on Intel graphics.** With **Renderer** set to **Deferred**
+  (**Settings** > **Rendering**), turning on **Ambient occlusion** changes nothing on Macs and on Intel graphics;
+  NVIDIA isn't affected. Fixed in 1.1.3; there's no way around it in 1.1.2.
+  ([#53](https://github.com/caitlynmeeks/darkride-interface/issues/53))
+
 ## Arriving in a world
 
 - **A world with a very large terrain can pause the app for a minute or two** while your computer is busy with other
