@@ -24,6 +24,9 @@ Each page says which kinds of script can use it.
 | **Server entity scripts** | On the world's server, attached to an entity; everyone sees what they do. |
 | **Assignment client scripts** | On the world's server, on their own, such as a bot (an agent). |
 
+Since 1.1.2, a world's own scripts (client entity scripts) can use only the parts of the API a world needs; your own
+Interface scripts can use everything. The pages don't show this yet.
+
 ## Most used
 
 | Namespace | What it's for |
