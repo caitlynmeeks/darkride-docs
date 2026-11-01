@@ -105,8 +105,8 @@ The settings page says **Connected: your world can be listed in Places and visit
 **Vehicles?** If your world has vehicles (trains on tracks, cars, airships), open **Vehicle physics** on the
 settings page, tick **Run vehicle physics on the server**, and save; your world server restarts by itself. The
 server then moves them, so every visitor sees each vehicle in the same place. Without vehicles, leave it off: it
-costs nothing. If you tick it, also restart your assignment clients with `-n 7 --max 7` and open UDP 40116; untick
-it, and go back to `-n 6 --max 6`.
+costs nothing. If you tick it, open UDP 40116 too, then restart your assignment clients with `-n 7 --max 7`;
+untick it, and go back to `-n 6 --max 6`.
 
 ## 4. Let visitors in
 
