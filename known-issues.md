@@ -34,7 +34,8 @@ What doesn't work yet in Darkride 1.1.2, and what to do instead. Found something
 
 ## Scripts and building
 
-- **Scripts on your own computer or home network don't load** in 1.1.2 apps, or on Darkride's servers. See
+- **Scripts on your own computer or home network don't load** in 1.1.2 apps, or on any 1.1.2 world server,
+  Darkride's included. See
   [What's new in 1.1.2](/releases/1.1.2#scripts) for where scripts can live.
 - **`location = "hifi://…"` (or `Window.location = …`) does nothing** in the default script engine. Use
   `location.handleLookupString("hifi://…")`, which works in both engines.
