@@ -13,7 +13,7 @@ FOR reviewers (docs, 2026-11-01; remove this block before publishing):
 - New since security's read: what doesn't apply to a self-hosted world (instances, versions, the website's Instances
   settings and Bans); Explore lists it only when open to anyone or anyone signed in and on the visitor's version;
   friends-only = share the World link (metaverse 13:1x); the vehicle physics line (physics's wording, 13:0x); file names 1.1.2; the token dialog's older networking notes.
-- Waiting for security's public wording before adding 1.1.2's visitor rules to the update section.
+- security 13:0x: both pages OK; 1.1.2's visitor rules in the update section are its public wording, word for word.
 -->
 
 # Run your own world server
@@ -171,6 +171,11 @@ Before you update to 1.1.2, move any scripts on your own computer or home networ
 address. A 1.1.2 server loads your world without them, and the first save after any change forgets their old
 addresses. Your backup from step 2 still has them if you need them.
 Your world keeps its id, its token, its Explore listing and its link, so don't make a new world.
+
+**What visitors can build changed in 1.1.2.** Visitors who may only make temporary items (**Rez temporary**) can't
+give an item a script, can't make Web items or zones, and can change or delete only temporary items. An edit your
+server refuses goes back to how it was. To let someone build with scripts, give them the right to make permanent
+items under **Access and permissions**.
 
 1. **Stop the server**: the assignment clients first, then the domain server.
 2. **Back it up**: copy the server's whole data folder (see [Where your world is kept](#where-your-world-is-kept)).
