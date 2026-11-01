@@ -43,7 +43,7 @@ old one stops working.
 ```sh
 sudo ufw allow 22/tcp
 sudo ufw allow 40102/udp
-sudo ufw allow 40110:40116/udp
+sudo ufw allow 40110:40115/udp
 sudo ufw enable
 ```
 
@@ -57,13 +57,13 @@ match.
 ```sh
 tar xzf darkride-server-linux-x64-1.1.2-beta.tar.gz
 nohup ./server.AppDir/domain-server > domain-server.log 2>&1 &
-nohup ./server.AppDir/assignment-client -n 7 --max 7 --min-listen-port 40110 -a 127.0.0.1 --server-port 40102 > assignment-client.log 2>&1 &
+nohup ./server.AppDir/assignment-client -n 6 --max 6 --min-listen-port 40110 -a 127.0.0.1 --server-port 40102 > assignment-client.log 2>&1 &
 ```
 
 The first command unpacks the server into `server.AppDir`. The second starts the **domain server**, which lets
-visitors in and holds the world's settings. The third starts the **assignment clients**, the seven servers that run
-the world itself (sound, avatars, messages, objects, scripts, physics and files). `--max 7` keeps them to seven, on ports
-40110 to 40116. `nohup` keeps them running after
+visitors in and holds the world's settings. The third starts the **assignment clients**, the six servers that run
+the world itself (sound, avatars, messages, objects, scripts and files). `--max 6` keeps them to six, on ports
+40110 to 40115. `nohup` keeps them running after
 you log out, and their messages go to the two `.log` files.
 
 ### Windows
@@ -73,7 +73,7 @@ you log out, and their messages go to the two `.log` files.
 3. Then start the assignment clients from a Command Prompt in the same folder:
 
    ```bat
-   assignment-client.exe -n 7 --max 7 --min-listen-port 40110 -a 127.0.0.1 --server-port 40102
+   assignment-client.exe -n 6 --max 6 --min-listen-port 40110 -a 127.0.0.1 --server-port 40102
    ```
 
 If Windows SmartScreen stops either program, click **More info**, then **Run anyway**. When Windows Defender
@@ -81,7 +81,7 @@ Firewall asks whether to allow each program, click **Allow** for **Private netwo
 Otherwise visitors can't reach the server, even with your router's ports open.
 
 On a rented Windows server, don't click **Allow**. Open only the UDP ports from step 4 in Windows Defender Firewall
-(an inbound rule for UDP 40102 and 40110 to 40116), so the settings page stays reachable only from the server itself.
+(an inbound rule for UDP 40102 and 40110 to 40115), so the settings page stays reachable only from the server itself.
 
 ## 3. Connect it to your world
 
@@ -105,7 +105,8 @@ The settings page says **Connected: your world can be listed in Places and visit
 **Vehicles?** If your world has vehicles (trains on tracks, cars, airships), open **Vehicle physics** on the
 settings page, tick **Run vehicle physics on the server**, and save; your world server restarts by itself. The
 server then moves them, so every visitor sees each vehicle in the same place. Without vehicles, leave it off: it
-costs nothing.
+costs nothing. If you tick it, also restart your assignment clients with `-n 7 --max 7` and open UDP 40116; untick
+it, and go back to `-n 6 --max 6`.
 
 ## 4. Let visitors in
 
@@ -115,7 +116,7 @@ computer:
 | Port | What uses it |
 | --- | --- |
 | UDP 40102 | the domain server: where visitors arrive |
-| UDP 40110 to 40116 | the seven assignment clients |
+| UDP 40110 to 40115 | the six assignment clients (also UDP 40116 if you turn on vehicle physics) |
 
 Don't open TCP ports **40100** or **40101** (the settings page). You set its password in step 3, and you open it
 from the server itself or [over an SSH tunnel](#_3-connect-it-to-your-world).
@@ -215,8 +216,8 @@ Inside it:
   **Connected**. If you generated a new token since, paste the new one.
 - **The card never says Offline, and people can't get in when your server is down.** Step 1.3 was missed: set
   **Instances** to **Nobody (off)**.
-- **People can't connect, or arrive to an empty world.** One or more UDP ports aren't open. Check all eight: 40102
-  and 40110 to 40116.
+- **People can't connect, or arrive to an empty world.** One or more UDP ports aren't open. Check all seven: 40102
+  and 40110 to 40115 (and 40116 if vehicle physics is on).
 - **A script doesn't load.** Check its address: see
   [Where to put your world's scripts](#where-to-put-your-world-s-scripts). The server leaves out a script it won't
   load and writes one line about it ("loaded without its script") in `assignment-client.log` (on Windows, in the
