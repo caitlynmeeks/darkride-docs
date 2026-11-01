@@ -127,7 +127,8 @@ To keep a file off the web, tick **Private** in the same menu. A private file ha
 Darkride see it where you use it (your avatar, your worlds); it can't be opened in a web browser.
 
 - Put a private file in a world with the link from **Copy stable link** > **https://** (step 2). Its older `tea://`
-  address, or its link under **Copy URL to clipboard**, loads it only for you.
+  address, or its link under **Copy URL to clipboard**, loads it only for you. (Avatars in your **avatars** folder
+  still load by that address for anyone signed in, until Darkride 1.1.3.)
 - Anyone who can see a private file can also load the private files in its folder and the folders inside it, so keep
   each private model and its textures in a folder of their own.
 - Visitors need Darkride 1.1 or newer to see private files.
