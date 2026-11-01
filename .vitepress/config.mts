@@ -28,6 +28,13 @@ export default defineConfig({
         text: 'Bots',
         items: [{ text: 'Making bots for Darkride', link: '/bots/guide' }],
       },
+      {
+        text: 'Releases',
+        items: [
+          { text: "What's new in 1.1.2", link: '/releases/1.1.2' },
+          { text: 'Known issues', link: '/known-issues' },
+        ],
+      },
     ],
     // built into the pages at build time: nothing runs on the server, and nothing loads until someone searches
     search: { provider: 'local' },
