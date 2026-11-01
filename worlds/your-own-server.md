@@ -5,23 +5,16 @@ draft: true
 ---
 
 <!--
-FOR reviewers (docs, 2026-10-31; remove this block before publishing):
-- Facts from the 1.1.1 server (its settings page files are the same as main's 610de37dcc) and metaverse's answers
-  of 10-31. WALKED THROUGH by docs 10-31 00:4x-00:5x on main's Mac servers + metaverse's stand-in website, docs'
-  ports 55100-55109: a world from Empty is "hosted" until Instances = off, then self-hosted; the sign-in locks the
-  page (401 until signed in); token + World ID connect it (online, 0 people); 7 children on 7 fixed ports. Found:
-  without --max 7 the monitor keeps a spare on the next port up and, after a restart, real jobs end up there
-  (55110/55111); with --max 7 all 7 stay in range across a restart. Not tried by hand: World content backups.
-- Windows data folder checked by release (PRODUCTION build). Security APPROVED the page (10-31) with the password first in step 3, the
-  firewall before step 2's start, and the SSH tunnel in step 3; re-read needed only if those lines change.
-- docs 10-31 18:4x: "Where to put your world's scripts" added on Caity's word (via pm): 1.1.2 apps and servers don't
-  load scripts from the local machine or home network. Its first paragraph is security's wording word for word (via
-  release 10-31); the examples and Asset Browser line are docs'. Applies once 1.1.2 ships. Update section: "update it
-  to 1.1.2 for its safety fixes" (security's wording) and "1.1.2 apps work with 1.1.1 servers and the other way
-  round": proven both ways on the final candidate test-112n 4973b15958 (qa 21:06-21:16, via release: arriving,
-  moving, chat, making and editing entities, audio). When 1.1.2 ships, the commands' file names change to 1.1.2.
-- metaverse plans one choice on the world's page ("Runs on: Darkride / My own server"); when it ships, step 1.2
-  becomes that choice.
+FOR reviewers (docs, 2026-11-01; remove this block before publishing):
+- Reworked for today's instances and 1.1.2 (Caity 12:4x via pm), from the website at 3ab3b21 and the server at
+  1.1.2 (02429ffa29); facts: team/docs/checks/instancing-facts-2026-11-01.md. Kept from 10-31 (security APPROVED then;
+  walked through on docs' sandbox): password first, the firewall before the start, the SSH tunnel, --max 7 (servers
+  11-01: the password-first page and the spare-port fix aren't in the next server release, so both steps stay).
+- New since security's read: what doesn't apply to a self-hosted world (instances, versions, the website's Instances
+  settings and Bans); Explore lists it only when open to anyone or anyone signed in and on the visitor's version;
+  friends-only = share the World link (metaverse 13:1x); the vehicle physics line (physics to check: "turn it on if
+  your world has vehicles", servers 13:1x); file names 1.1.2; the token dialog's older networking notes.
+- Waiting for security's public wording before adding 1.1.2's visitor rules to the update section.
 -->
 
 # Run your own world server
@@ -30,7 +23,9 @@ Most worlds don't need a server of their own: [Put up a world](/worlds/put-up-a-
 servers, with nothing to install. Run your own when you want your world always open, on a machine you control, or
 with your own changes to the server.
 
-Your server runs the world. darkride.ai lists it in Explore, so people can find it and come in.
+Your server runs the world and keeps it: what [Put up a world](/worlds/put-up-a-world) says about instances,
+versions and **Save the World** doesn't apply. darkride.ai lists your world in Explore when it lets in anyone, or
+anyone signed in, so people can find it and come in.
 
 ## What you need
 
@@ -45,9 +40,10 @@ Your server runs the world. darkride.ai lists it in Explore, so people can find 
 2. Click **Create new world**, give it a **Name**, choose **Empty** under **Start with**, and click **Create world**.
    (Your own server holds what's in the world, so the starting point doesn't matter.)
 3. On the world's card, click **Edit details**, open **Instances**, set **Who can start and join instances** to
-   **Nobody (off)**, and click **Save world**. This tells darkride.ai that your server runs the world, not ours.
+   **Nobody (off)**, and click **Save settings**. This tells darkride.ai that your server runs the world, not ours.
 4. On the world's card, click **Generate new access token**. You'll see a **World ID** and an **Access token**. Keep
-   this page open; you'll paste the token in step 3.
+   this page open; you'll paste the token in step 3. (The dialog also has older notes about networking settings;
+   you can skip them.)
 
 Keep the token private: anyone who has it can run a server as your world. If it gets out, generate a new one; the
 old one stops working.
@@ -72,7 +68,7 @@ match.
 ### Linux
 
 ```sh
-tar xzf darkride-server-linux-x64-1.1.1-beta.tar.gz
+tar xzf darkride-server-linux-x64-1.1.2-beta.tar.gz
 nohup ./server.AppDir/domain-server > domain-server.log 2>&1 &
 nohup ./server.AppDir/assignment-client -n 7 --max 7 --min-listen-port 40110 -a 127.0.0.1 --server-port 40102 > assignment-client.log 2>&1 &
 ```
@@ -85,7 +81,7 @@ you log out, and their messages go to the two `.log` files.
 
 ### Windows
 
-1. Unzip `Darkride-1.1.1-beta-windows.zip`. The server is in its `server` folder.
+1. Unzip `Darkride-1.1.2-beta-windows.zip`. The server is in its `server` folder.
 2. In that folder, start `domain-server.exe`.
 3. Then start the assignment clients from a Command Prompt in the same folder:
 
@@ -119,6 +115,9 @@ On a rented Windows server, don't click **Allow**. Open only the UDP ports from 
 
 The settings page says **Connected: your world can be listed in Places and visitors can find it**.
 
+**Vehicles?** The physics assignment client runs only if you turn it on: if your world has vehicles, open
+**Vehicle physics** on the settings page, tick **Run vehicle physics on the server**, and save.
+
 ## 4. Let visitors in
 
 **Open the ports.** On your router, or your rented server's firewall, open these **UDP** ports to the server's
@@ -134,10 +133,15 @@ from the server itself or [over an SSH tunnel](#_3-connect-it-to-your-world).
 
 **Choose who can come in.** On the settings page, open **Access and permissions**. Under **Everyone, by kind of
 visitor**, tick **Come in** for the visitors you want. We suggest **anyone signed in to Darkride**, as Darkride's own
-worlds do. You can also let in anyone, or only your friends.
+worlds do. You can also let in anyone, or only your friends. A world open only to your friends isn't listed in
+Explore: send them its link (on the world's card, **World link**).
 
 Under **Connection**, leave **How visitors reach this server** on **My address only**. That's the default. Darkride
 has no ICE server any more, so visitors connect straight to your address.
+
+**Use this page, not darkride.ai, for who comes in.** The **Instances** settings and **Bans** on darkride.ai are for
+worlds on Darkride's servers; they don't reach yours. Who can come in, and who's kept out, is set here, under
+**Access and permissions**.
 
 ## 5. Check it works
 
@@ -223,7 +227,7 @@ Inside it:
   [Where to put your world's scripts](#where-to-put-your-world-s-scripts). The server leaves out a script it won't
   load and writes one line about it ("loaded without its script") in `assignment-client.log` (on Windows, in the
   assignment clients' Command Prompt window).
-- **Your world is missing from Explore, or greyed out.** Your server is on a version your app can't join. Update the
-  server.
+- **Your world is missing from Explore.** Explore lists it only when your server lets in anyone or anyone signed in
+  (step 4), and only for apps on the same version as your server. Check who can come in, and update the server.
 - **Something else?** Ask on our Discord, or open an issue at
   [github.com/caitlynmeeks/darkride-interface](https://github.com/caitlynmeeks/darkride-interface/issues).
