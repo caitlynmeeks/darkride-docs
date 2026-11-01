@@ -23,8 +23,8 @@ What doesn't work yet in Darkride 1.1.2, and what to do instead. Found something
 ## Graphics
 
 - **Ambient occlusion has no effect on Macs and on Intel graphics.** With **Renderer** set to **Deferred**
-  (**Settings** > **Rendering**), turning on **Ambient occlusion** changes nothing on Macs and on Intel graphics;
-  NVIDIA isn't affected. Fixed in 1.1.3; there's no way around it in 1.1.2.
+  (**Settings** > **Rendering**), turning on **Ambient occlusion** changes nothing. Fixed in 1.1.3; there's no way
+  around it in 1.1.2.
   ([#53](https://github.com/caitlynmeeks/darkride-interface/issues/53))
 
 ## Arriving in a world
