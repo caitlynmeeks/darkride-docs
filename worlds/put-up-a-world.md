@@ -77,7 +77,8 @@ The toolbar's buttons show the same keys when you point at them.
 
 ### The Entities list's icons
 
-Each row in the **Entities** list has four icons. Point at one to see what it does.
+Each row in the **Entities** list has an eye, an arrow and a padlock, and curly braces `{ }` where there are scripts.
+Point at one to see what it does.
 
 | Icon | What it does | For |
 | --- | --- | --- |
@@ -87,7 +88,7 @@ Each row in the **Entities** list has four icons. Point at one to see what it do
 | Braces `{ }` | Turns its scripts off: they stop running (a door stops opening) and stay attached, until you turn them on again | Everyone |
 
 Click an icon to change the row and everything under it. **Alt-click** (Option-click on a Mac) changes that row
-alone.
+alone. Locking takes the world's **Lock / Unlock** right, which its owner can give; without it, the padlock is dimmed.
 
 Come back, change things and save as often as you like.
 
