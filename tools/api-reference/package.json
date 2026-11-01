@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "description": "Builds the scripting API reference pages (scripting/api/) from the reference notes in Darkride's engine code",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "jsdoc": "4.0.4",
+    "parse5": "7.2.1"
+  }
+}

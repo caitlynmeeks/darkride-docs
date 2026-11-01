@@ -1,0 +1,514 @@
+[
+  {
+    "text": "Scripting API",
+    "items": [
+      {
+        "text": "Overview",
+        "link": "/scripting/api/"
+      },
+      {
+        "text": "Global types and functions",
+        "link": "/scripting/api/globals"
+      }
+    ]
+  },
+  {
+    "text": "Most used",
+    "items": [
+      {
+        "text": "Entities",
+        "link": "/scripting/api/Entities"
+      },
+      {
+        "text": "MyAvatar",
+        "link": "/scripting/api/MyAvatar"
+      },
+      {
+        "text": "AvatarList",
+        "link": "/scripting/api/AvatarList"
+      },
+      {
+        "text": "Script",
+        "link": "/scripting/api/Script"
+      },
+      {
+        "text": "Vec3",
+        "link": "/scripting/api/Vec3"
+      },
+      {
+        "text": "Quat",
+        "link": "/scripting/api/Quat"
+      },
+      {
+        "text": "Messages",
+        "link": "/scripting/api/Messages"
+      },
+      {
+        "text": "Audio",
+        "link": "/scripting/api/Audio"
+      },
+      {
+        "text": "SoundCache",
+        "link": "/scripting/api/SoundCache"
+      },
+      {
+        "text": "Camera",
+        "link": "/scripting/api/Camera"
+      },
+      {
+        "text": "Controller",
+        "link": "/scripting/api/Controller"
+      },
+      {
+        "text": "Window",
+        "link": "/scripting/api/Window"
+      },
+      {
+        "text": "Overlays",
+        "link": "/scripting/api/Overlays"
+      },
+      {
+        "text": "Uuid",
+        "link": "/scripting/api/Uuid"
+      }
+    ]
+  },
+  {
+    "text": "A to Z",
+    "collapsed": false,
+    "items": [
+      {
+        "text": "About",
+        "link": "/scripting/api/About"
+      },
+      {
+        "text": "Account",
+        "link": "/scripting/api/Account"
+      },
+      {
+        "text": "AccountServices",
+        "link": "/scripting/api/AccountServices"
+      },
+      {
+        "text": "AddressManager",
+        "link": "/scripting/api/AddressManager"
+      },
+      {
+        "text": "Agent",
+        "link": "/scripting/api/Agent"
+      },
+      {
+        "text": "AnimationCache",
+        "link": "/scripting/api/AnimationCache"
+      },
+      {
+        "text": "AnimationFrameObject",
+        "link": "/scripting/api/AnimationFrameObject"
+      },
+      {
+        "text": "AnimationObject",
+        "link": "/scripting/api/AnimationObject"
+      },
+      {
+        "text": "Assets",
+        "link": "/scripting/api/Assets"
+      },
+      {
+        "text": "Audio",
+        "link": "/scripting/api/Audio"
+      },
+      {
+        "text": "AudioEffectOptions",
+        "link": "/scripting/api/AudioEffectOptions"
+      },
+      {
+        "text": "AudioInjector",
+        "link": "/scripting/api/AudioInjector"
+      },
+      {
+        "text": "AudioStats",
+        "link": "/scripting/api/AudioStats"
+      },
+      {
+        "text": "AudioStats.AudioStreamStats",
+        "link": "/scripting/api/AudioStats-AudioStreamStats"
+      },
+      {
+        "text": "Avatar",
+        "link": "/scripting/api/Avatar"
+      },
+      {
+        "text": "AvatarBookmarks",
+        "link": "/scripting/api/AvatarBookmarks"
+      },
+      {
+        "text": "AvatarInputs",
+        "link": "/scripting/api/AvatarInputs"
+      },
+      {
+        "text": "AvatarList",
+        "link": "/scripting/api/AvatarList"
+      },
+      {
+        "text": "AvatarManager",
+        "link": "/scripting/api/AvatarManager"
+      },
+      {
+        "text": "Camera",
+        "link": "/scripting/api/Camera"
+      },
+      {
+        "text": "Chat",
+        "link": "/scripting/api/Chat"
+      },
+      {
+        "text": "ChatCommand",
+        "link": "/scripting/api/ChatCommand"
+      },
+      {
+        "text": "Clipboard",
+        "link": "/scripting/api/Clipboard"
+      },
+      {
+        "text": "console",
+        "link": "/scripting/api/console"
+      },
+      {
+        "text": "Controller",
+        "link": "/scripting/api/Controller"
+      },
+      {
+        "text": "DebugDraw",
+        "link": "/scripting/api/DebugDraw"
+      },
+      {
+        "text": "Desktop",
+        "link": "/scripting/api/Desktop"
+      },
+      {
+        "text": "DialogsManager",
+        "link": "/scripting/api/DialogsManager"
+      },
+      {
+        "text": "DiskCache",
+        "link": "/scripting/api/DiskCache"
+      },
+      {
+        "text": "DriveKeys",
+        "link": "/scripting/api/DriveKeys"
+      },
+      {
+        "text": "Entities",
+        "link": "/scripting/api/Entities"
+      },
+      {
+        "text": "EntityScriptServerLog",
+        "link": "/scripting/api/EntityScriptServerLog"
+      },
+      {
+        "text": "EntityViewer",
+        "link": "/scripting/api/EntityViewer"
+      },
+      {
+        "text": "File",
+        "link": "/scripting/api/File"
+      },
+      {
+        "text": "Friends",
+        "link": "/scripting/api/Friends"
+      },
+      {
+        "text": "GlobalServices",
+        "link": "/scripting/api/GlobalServices"
+      },
+      {
+        "text": "Graphics",
+        "link": "/scripting/api/Graphics"
+      },
+      {
+        "text": "GraphicsMesh",
+        "link": "/scripting/api/GraphicsMesh"
+      },
+      {
+        "text": "GraphicsMeshPart",
+        "link": "/scripting/api/GraphicsMeshPart"
+      },
+      {
+        "text": "GraphicsModel",
+        "link": "/scripting/api/GraphicsModel"
+      },
+      {
+        "text": "HMD",
+        "link": "/scripting/api/HMD"
+      },
+      {
+        "text": "InteractiveWindow",
+        "link": "/scripting/api/InteractiveWindow"
+      },
+      {
+        "text": "Keyboard",
+        "link": "/scripting/api/Keyboard"
+      },
+      {
+        "text": "LaserPointers",
+        "link": "/scripting/api/LaserPointers"
+      },
+      {
+        "text": "location",
+        "link": "/scripting/api/location"
+      },
+      {
+        "text": "LocationBookmarks",
+        "link": "/scripting/api/LocationBookmarks"
+      },
+      {
+        "text": "LODManager",
+        "link": "/scripting/api/LODManager"
+      },
+      {
+        "text": "MappingObject",
+        "link": "/scripting/api/MappingObject"
+      },
+      {
+        "text": "Mat4",
+        "link": "/scripting/api/Mat4"
+      },
+      {
+        "text": "MaterialCache",
+        "link": "/scripting/api/MaterialCache"
+      },
+      {
+        "text": "Menu",
+        "link": "/scripting/api/Menu"
+      },
+      {
+        "text": "MeshProxy",
+        "link": "/scripting/api/MeshProxy"
+      },
+      {
+        "text": "Messages",
+        "link": "/scripting/api/Messages"
+      },
+      {
+        "text": "Midi",
+        "link": "/scripting/api/Midi"
+      },
+      {
+        "text": "Model",
+        "link": "/scripting/api/Model"
+      },
+      {
+        "text": "ModelCache",
+        "link": "/scripting/api/ModelCache"
+      },
+      {
+        "text": "MyAvatar",
+        "link": "/scripting/api/MyAvatar"
+      },
+      {
+        "text": "OffscreenFlags",
+        "link": "/scripting/api/OffscreenFlags"
+      },
+      {
+        "text": "Overlays",
+        "link": "/scripting/api/Overlays"
+      },
+      {
+        "text": "OverlayWebWindow",
+        "link": "/scripting/api/OverlayWebWindow"
+      },
+      {
+        "text": "OverlayWindow",
+        "link": "/scripting/api/OverlayWindow"
+      },
+      {
+        "text": "Panels",
+        "link": "/scripting/api/Panels"
+      },
+      {
+        "text": "Paths",
+        "link": "/scripting/api/Paths"
+      },
+      {
+        "text": "Performance",
+        "link": "/scripting/api/Performance"
+      },
+      {
+        "text": "Picks",
+        "link": "/scripting/api/Picks"
+      },
+      {
+        "text": "PickType",
+        "link": "/scripting/api/PickType"
+      },
+      {
+        "text": "PlatformInfo",
+        "link": "/scripting/api/PlatformInfo"
+      },
+      {
+        "text": "Pointers",
+        "link": "/scripting/api/Pointers"
+      },
+      {
+        "text": "Quat",
+        "link": "/scripting/api/Quat"
+      },
+      {
+        "text": "Rates",
+        "link": "/scripting/api/Rates"
+      },
+      {
+        "text": "RayPick",
+        "link": "/scripting/api/RayPick"
+      },
+      {
+        "text": "Recording",
+        "link": "/scripting/api/Recording"
+      },
+      {
+        "text": "Render",
+        "link": "/scripting/api/Render"
+      },
+      {
+        "text": "Resource",
+        "link": "/scripting/api/Resource"
+      },
+      {
+        "text": "ResourceObject",
+        "link": "/scripting/api/ResourceObject"
+      },
+      {
+        "text": "ResourceRequestObserver",
+        "link": "/scripting/api/ResourceRequestObserver"
+      },
+      {
+        "text": "Resources",
+        "link": "/scripting/api/Resources"
+      },
+      {
+        "text": "Reticle",
+        "link": "/scripting/api/Reticle"
+      },
+      {
+        "text": "RouteObject",
+        "link": "/scripting/api/RouteObject"
+      },
+      {
+        "text": "Scene",
+        "link": "/scripting/api/Scene"
+      },
+      {
+        "text": "Script",
+        "link": "/scripting/api/Script"
+      },
+      {
+        "text": "ScriptAvatar",
+        "link": "/scripting/api/ScriptAvatar"
+      },
+      {
+        "text": "ScriptDiscoveryService",
+        "link": "/scripting/api/ScriptDiscoveryService"
+      },
+      {
+        "text": "ScriptsModel",
+        "link": "/scripting/api/ScriptsModel"
+      },
+      {
+        "text": "ScriptsModelFilter",
+        "link": "/scripting/api/ScriptsModelFilter"
+      },
+      {
+        "text": "Selection",
+        "link": "/scripting/api/Selection"
+      },
+      {
+        "text": "Settings",
+        "link": "/scripting/api/Settings"
+      },
+      {
+        "text": "Snapshot",
+        "link": "/scripting/api/Snapshot"
+      },
+      {
+        "text": "SoundCache",
+        "link": "/scripting/api/SoundCache"
+      },
+      {
+        "text": "SoundObject",
+        "link": "/scripting/api/SoundObject"
+      },
+      {
+        "text": "Stats",
+        "link": "/scripting/api/Stats"
+      },
+      {
+        "text": "Tablet",
+        "link": "/scripting/api/Tablet"
+      },
+      {
+        "text": "TabletButtonProxy",
+        "link": "/scripting/api/TabletButtonProxy"
+      },
+      {
+        "text": "tabletInterface",
+        "link": "/scripting/api/tabletInterface"
+      },
+      {
+        "text": "TabletProxy",
+        "link": "/scripting/api/TabletProxy"
+      },
+      {
+        "text": "Test",
+        "link": "/scripting/api/Test"
+      },
+      {
+        "text": "TextToSpeech",
+        "link": "/scripting/api/TextToSpeech"
+      },
+      {
+        "text": "TextureCache",
+        "link": "/scripting/api/TextureCache"
+      },
+      {
+        "text": "ToolbarProxy",
+        "link": "/scripting/api/ToolbarProxy"
+      },
+      {
+        "text": "Toolbars",
+        "link": "/scripting/api/Toolbars"
+      },
+      {
+        "text": "Users",
+        "link": "/scripting/api/Users"
+      },
+      {
+        "text": "Uuid",
+        "link": "/scripting/api/Uuid"
+      },
+      {
+        "text": "Vec3",
+        "link": "/scripting/api/Vec3"
+      },
+      {
+        "text": "WebSocket",
+        "link": "/scripting/api/WebSocket"
+      },
+      {
+        "text": "WebSocketServer",
+        "link": "/scripting/api/WebSocketServer"
+      },
+      {
+        "text": "Window",
+        "link": "/scripting/api/Window"
+      },
+      {
+        "text": "Workload",
+        "link": "/scripting/api/Workload"
+      },
+      {
+        "text": "XMLHttpRequest",
+        "link": "/scripting/api/XMLHttpRequest"
+      }
+    ]
+  }
+]

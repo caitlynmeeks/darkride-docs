@@ -37,6 +37,9 @@ npm run build     # the same build the check runs
   ```
 
 - The sidebar's order is in `.vitepress/config.mts`, so moving a page is one edit in one place.
+- The scripting API reference (`scripting/api/`) is built from the notes in Darkride's engine code by
+  [tools/api-reference](tools/api-reference/README.md); don't edit those pages by hand. A wrong fact in one is fixed
+  in the engine's note.
 
 ## Licence
 
