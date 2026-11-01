@@ -46,6 +46,9 @@ What doesn't work yet in Darkride 1.1.2, and what to do instead. Found something
 - **A script that moves your avatar by setting `MyAvatar.position` can be undone by the next physics step**, leaving
   the avatar where it was. Check the position a frame later and set it again. The built-in teleports (`/tp`, Hop,
   bookmarks) aren't affected.
+- **Zone culling doesn't hide anything yet.** A zone's **Zone Culling** set to **Cull Outside** draws everything
+  outside the zone as before. It's being fixed in 1.1.3. For a big world today, bake impostor cards for big things
+  far away (**Build > Bake Impostor**) and set things that never move to **Priority: Static**.
 
 ## The radio
 
