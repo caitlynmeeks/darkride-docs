@@ -1,20 +1,8 @@
 ---
 title: Run your own world server
 description: Run a Darkride world on your own computer or a rented server, keep it updated, and back it up.
-draft: true
 ---
 
-<!--
-FOR reviewers (docs, 2026-11-01; remove this block before publishing):
-- Reworked for today's instances and 1.1.2 (Caity 12:4x via pm), from the website at 3ab3b21 and the server at
-  1.1.2 (02429ffa29); facts: team/docs/checks/instancing-facts-2026-11-01.md. Kept from 10-31 (security APPROVED then;
-  walked through on docs' sandbox): password first, the firewall before the start, the SSH tunnel, --max 7 (servers
-  11-01: the password-first page and the spare-port fix aren't in the next server release, so both steps stay).
-- New since security's read: what doesn't apply to a self-hosted world (instances, versions, the website's Instances
-  settings and Bans); Explore lists it only when open to anyone or anyone signed in and on the visitor's version;
-  friends-only = share the World link (metaverse 13:1x); the vehicle physics line (physics's wording, 13:0x); file names 1.1.2; the token dialog's older networking notes.
-- security 13:0x: both pages OK; 1.1.2's visitor rules in the update section are its public wording, word for word.
--->
 
 # Run your own world server
 

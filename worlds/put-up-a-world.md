@@ -3,17 +3,6 @@ title: Put up a world
 description: Make a world on darkride.ai, build and save it in Darkride, bring in an old High Fidelity world, and invite your friends. It runs on Darkride's servers, with nothing to install or keep running.
 ---
 
-<!--
-FOR reviewers (docs, 2026-11-01; remove this block before publishing):
-- Rewritten for today's instances (Caity 12:4x via pm: "should reflect our new instancing system and be current"),
-  from the website at 3ab3b21 (live) and the app at 1.1.2 (02429ffa29). Facts with file:line:
-  team/docs/checks/instancing-facts-2026-11-01.md. metaverse answered 13:1x (limits = code defaults; no lasting link;
-  Editors' Explore fix coming; leave restoring versions out); servers 13:1x (describe today: Empty worlds and the
-  Asset Browser, Nobody (off), server scripts in admins' worlds only).
-- All checked 13:1x-13:2x: metaverse (website/Explore OK; burst placement live, first boot 63 s; the 12-hour limit live),
-  servers (no wrong server facts), security (OK).
-- The five app pictures are still to come (marked PICTURE).
--->
 
 # Put up a world
 
