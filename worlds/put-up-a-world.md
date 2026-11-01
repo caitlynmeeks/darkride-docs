@@ -10,7 +10,8 @@ FOR reviewers (docs, 2026-11-01; remove this block before publishing):
   team/docs/checks/instancing-facts-2026-11-01.md. metaverse answered 13:1x (limits = code defaults; no lasting link;
   Editors' Explore fix coming; leave restoring versions out); servers 13:1x (describe today: Empty worlds and the
   Asset Browser, Nobody (off), server scripts in admins' worlds only).
-- Still to confirm with metaverse: the live placement (burst) and boot time; the 12-hour server limit.
+- All checked 13:1x-13:2x: metaverse (website/Explore OK; burst placement live, first boot 63 s; the 12-hour limit live),
+  servers (no wrong server facts), security (OK).
 - The five app pictures are still to come (marked PICTURE).
 -->
 
