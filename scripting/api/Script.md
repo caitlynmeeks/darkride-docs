@@ -13,14 +13,14 @@ description: "The Script API provides facilities for working with scripts."
 
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>context</code></td><td>string</td><td><p>The context that the script is running in: </p>
-<ul> <li><code>"client"</code>: An Interface or avatar script.</li>
+<ul> <li><code>"client"</code>: A client or avatar script.</li>
  <li><code>"entity_client"</code>: A client entity script.</li>
  <li><code>"entity_server"</code>: A server entity script.</li>
  <li><code>"agent"</code>: An assignment client script.</li>
  </ul>
  <em>Read-only.</em><p></p></td></tr>
 <tr><td><code>type</code></td><td>string</td><td><p>The type of script that is running: </p>
-<ul> <li><code>"client"</code>: An Interface script.</li>
+<ul> <li><code>"client"</code>: A client script.</li>
  <li><code>"entity_client"</code>: A client entity script.</li>
  <li><code>"avatar"</code>: An avatar script.</li>
  <li><code>"entity_server"</code>: A server entity script.</li>
@@ -76,7 +76,7 @@ Script.addEventHandler(entityID, "mousePressOnEntity", reportMousePress);
 Script.beginProfileRange(label)
 ```
 
-<div class="api-text" v-pre><p>Starts timing a section of code in order to send usage data about it to High Fidelity. Shouldn't be used outside of the standard scripts.</p></div>
+<div class="api-text" v-pre><p>Starts timing a section of code for the app's performance traces. Shouldn't be used outside of the standard scripts.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>label</code></td><td>string</td><td><p>A name that identifies the section of code.</p></td></tr>
 </tbody></table></div>
@@ -182,7 +182,7 @@ Script.dumpApi(path)
 Script.endProfileRange(label)
 ```
 
-<div class="api-text" v-pre><p>Finishes timing a section of code in order to send usage data about it to High Fidelity. Shouldn't be used outside of the standard scripts.</p></div>
+<div class="api-text" v-pre><p>Finishes timing a section of code for the app's performance traces. Shouldn't be used outside of the standard scripts.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>label</code></td><td>string</td><td><p>A name that identifies the section of code.</p></td></tr>
 </tbody></table></div>
@@ -197,9 +197,9 @@ Script.endProfileRange(label)
 Script.getContext()
 ```
 
-<div class="api-text" v-pre><p>Gets the context that the script is running in: Interface/avatar, client entity, server entity, or assignment client.</p></div>
+<div class="api-text" v-pre><p>Gets the context that the script is running in: Darkride/avatar, client entity, server entity, or assignment client.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>The context that the script is running in: </p>
-<ul> <li><code>"client"</code>: An Interface or avatar script.</li>
+<ul> <li><code>"client"</code>: A client or avatar script.</li>
  <li><code>"entity_client"</code>: A client entity script.</li>
  <li><code>"entity_server"</code>: A server entity script.</li>
  <li><code>"agent"</code>: An assignment client script.</li>
@@ -280,8 +280,8 @@ Script.isAgentScript()
 Script.isClientScript()
 ```
 
-<div class="api-text" v-pre><p>Checks whether the script is running as an Interface or avatar script.</p></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the script is running as an Interface or avatar script, <code>false</code> if it isn't.</p></div>
+<div class="api-text" v-pre><p>Checks whether the script is running as a client or avatar script.</p></div>
+<div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the script is running as a client or avatar script, <code>false</code> if it isn't.</p></div>
 
 </div>
 
@@ -348,8 +348,8 @@ Script.isEntityServerScript()
 Script.load(filename)
 ```
 
-<div class="api-text" v-pre><p>Starts running another script in Interface, if it isn't already running. The script is not automatically loaded next time Interface starts. </p>
-<p class="availableIn"><strong>Supported Script Types:</strong> Interface Scripts • Avatar Scripts</p>
+<div class="api-text" v-pre><p>Starts running another script in Darkride, if it isn't already running. The script is not automatically loaded next time Darkride starts. </p>
+<p class="availableIn"><strong>Supported Script Types:</strong> client scripts • Avatar Scripts</p>
  <p>See also, <a href="ScriptDiscoveryService#loadScript"><code>ScriptDiscoveryService.loadScript</code></a>.</p>
 <p></p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
@@ -430,7 +430,7 @@ Script.requestGarbageCollection()
 Script.require(module)
 ```
 
-<div class="api-text" v-pre><p>Provides access to methods or objects provided in an external JavaScript or JSON file. See https://legacydocs.tivolicloud.com/script/js-tips.html for further details.</p></div>
+<div class="api-text" v-pre><p>Provides access to methods or objects provided in an external JavaScript or JSON file. </p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>module</code></td><td>string</td><td><p>The module to use. May be a JavaScript file, a JSON file, or the name of a system module such as <code>"appUi"</code> (i.e., the "appUi.js" system module JavaScript file).</p></td></tr>
 </tbody></table></div>

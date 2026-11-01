@@ -7,18 +7,18 @@ description: "The Reticle API provides access to the mouse cursor."
 
 <div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
-<div class="api-text" v-pre><p>The <code>Reticle</code> API provides access to the mouse cursor. The cursor may be an arrow or a reticle circle, depending on Interface settings. The mouse cursor is visible in HMD mode if controllers aren't being used.</p></div>
+<div class="api-text" v-pre><p>The <code>Reticle</code> API provides access to the mouse cursor. The cursor may be an arrow or a reticle circle, depending on Darkride settings. The mouse cursor is visible in HMD mode if controllers aren't being used.</p></div>
 
 ## Properties {#properties}
 
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>enabled</code></td><td>boolean</td><td><code>false</code></td><td><p><code>true</code> if the reticle circle is enabled, <code>false</code> if it's disabled.</p></td></tr>
-<tr><td><code>allowMouseCapture</code></td><td>boolean</td><td><code>true</code></td><td><p><code>true</code> if the mouse cursor will be captured when in HMD mode and the Interface window content (excluding menus) has focus, <code>false</code> if the mouse cursor will not be captured.</p></td></tr>
+<tr><td><code>allowMouseCapture</code></td><td>boolean</td><td><code>true</code></td><td><p><code>true</code> if the mouse cursor will be captured when in HMD mode and the Darkride window content (excluding menus) has focus, <code>false</code> if the mouse cursor will not be captured.</p></td></tr>
 <tr><td><code>depth</code></td><td>number</td><td></td><td><p>The depth (distance) that the reticle is displayed at relative to the HMD view, in HMD mode.</p></td></tr>
 <tr><td><code>maximumPosition</code></td><td><a href="globals#Vec2">Vec2</a></td><td></td><td><p>The maximum reticle coordinates on the display device in desktop mode or the HUD surface in HMD mode. (The minimum reticle coordinates on the desktop display device or HUD surface are <code>0</code>, <code>0</code>.) <em>Read-only.</em></p></td></tr>
-<tr><td><code>mouseCaptured</code></td><td>boolean</td><td></td><td><p><code>true</code> if the mouse cursor is captured, displaying only in Interface and not on the rest of the desktop. The mouse cursor may be captured when in HMD mode and the Interface window content (excluding menu items) has focus, if capturing is enabled (<code>allowMouseCapture</code> is <code>true</code>). <em>Read-only.</em></p></td></tr>
-<tr><td><code>pointingAtSystemOverlay</code></td><td>boolean</td><td></td><td><p><code>true</code> if the mouse cursor is pointing at UI in the Interface window in desktop mode or on the HUD surface in HMD mode, <code>false</code> if it isn't. <em>Read-only.</em></p></td></tr>
-<tr><td><code>position</code></td><td><a href="globals#Vec2">Vec2</a></td><td></td><td><p>The position of the cursor. This is the position relative to the Interface window in desktop mode, and the HUD surface in HMD mode. </p>
+<tr><td><code>mouseCaptured</code></td><td>boolean</td><td></td><td><p><code>true</code> if the mouse cursor is captured, displaying only in Darkride and not on the rest of the desktop. The mouse cursor may be captured when in HMD mode and the Darkride window content (excluding menu items) has focus, if capturing is enabled (<code>allowMouseCapture</code> is <code>true</code>). <em>Read-only.</em></p></td></tr>
+<tr><td><code>pointingAtSystemOverlay</code></td><td>boolean</td><td></td><td><p><code>true</code> if the mouse cursor is pointing at UI in the Darkride window in desktop mode or on the HUD surface in HMD mode, <code>false</code> if it isn't. <em>Read-only.</em></p></td></tr>
+<tr><td><code>position</code></td><td><a href="globals#Vec2">Vec2</a></td><td></td><td><p>The position of the cursor. This is the position relative to the Darkride window in desktop mode, and the HUD surface in HMD mode. </p>
 <p><strong>Note:</strong> The position values may be negative.</p>
 <p></p></td></tr>
 <tr><td><code>scale</code></td><td>number</td><td><code>1</code></td><td><p>The scale of the reticle circle in desktop mode, and the arrow and reticle circle in HMD mode. (Does not affect the size of the arrow in desktop mode.)</p></td></tr>
@@ -35,8 +35,8 @@ description: "The Reticle API provides access to the mouse cursor."
 Reticle.getAllowMouseCapture()
 ```
 
-<div class="api-text" v-pre><p>Gets whether the mouse cursor will be captured when in HMD mode and the Interface window content (excluding menu items) has focus. When captured, the mouse cursor displays only in Interface, not on the rest of the desktop.</p></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the mouse cursor will be captured when in HMD mode and the Interface window content has focus, <code>false</code> if the mouse cursor will not be captured.</p></div>
+<div class="api-text" v-pre><p>Gets whether the mouse cursor will be captured when in HMD mode and the Darkride window content (excluding menu items) has focus. When captured, the mouse cursor displays only in Darkride, not on the rest of the desktop.</p></div>
+<div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the mouse cursor will be captured when in HMD mode and the Darkride window content has focus, <code>false</code> if the mouse cursor will not be captured.</p></div>
 
 </div>
 
@@ -87,7 +87,7 @@ Reticle.getMaximumPosition()
 Reticle.getPosition()
 ```
 
-<div class="api-text" v-pre><p>Gets the position of the cursor. This is the position relative to the Interface window in desktop mode, and the HUD surface in HMD mode. </p>
+<div class="api-text" v-pre><p>Gets the position of the cursor. This is the position relative to the Darkride window in desktop mode, and the HUD surface in HMD mode. </p>
 <p><strong>Note:</strong> The position values may be negative.</p>
 <p></p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="globals#Vec2">Vec2</a> <p>The position of the cursor.</p></div>
@@ -128,8 +128,8 @@ Reticle.getVisible()
 Reticle.isMouseCaptured()
 ```
 
-<div class="api-text" v-pre><p>Checks whether the mouse cursor is captured, displaying only in Interface and not on the rest of the desktop. The mouse cursor is captured when in HMD mode and the Interface window content (excluding menu items) has focus, if capturing is enabled (<code>allowMouseCapture</code> property value is <code>true</code>).</p></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the mouse cursor is captured, displaying only in Interface and not on the desktop.</p></div>
+<div class="api-text" v-pre><p>Checks whether the mouse cursor is captured, displaying only in Darkride and not on the rest of the desktop. The mouse cursor is captured when in HMD mode and the Darkride window content (excluding menu items) has focus, if capturing is enabled (<code>allowMouseCapture</code> property value is <code>true</code>).</p></div>
+<div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the mouse cursor is captured, displaying only in Darkride and not on the desktop.</p></div>
 
 </div>
 
@@ -141,8 +141,8 @@ Reticle.isMouseCaptured()
 Reticle.isPointingAtSystemOverlay()
 ```
 
-<div class="api-text" v-pre><p>Gets whether the mouse cursor is pointing at UI in the Interface window in desktop mode or on the HUD surface in HMD mode.</p></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the mouse cursor is pointing at UI in the Interface window in desktop mode or on the HUD surface in HMD mode, <code>false</code> if it isn't.</p></div>
+<div class="api-text" v-pre><p>Gets whether the mouse cursor is pointing at UI in the Darkride window in desktop mode or on the HUD surface in HMD mode.</p></div>
+<div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the mouse cursor is pointing at UI in the Darkride window in desktop mode or on the HUD surface in HMD mode, <code>false</code> if it isn't.</p></div>
 
 </div>
 
@@ -154,9 +154,9 @@ Reticle.isPointingAtSystemOverlay()
 Reticle.setAllowMouseCapture(allowMouseCaptured)
 ```
 
-<div class="api-text" v-pre><p>Sets whether the mouse cursor will be captured when in HMD mode and the Interface window content (excluding menu items) has focus. When captured, the mouse cursor displays only in Interface, not on the rest of desktop.</p></div>
+<div class="api-text" v-pre><p>Sets whether the mouse cursor will be captured when in HMD mode and the Darkride window content (excluding menu items) has focus. When captured, the mouse cursor displays only in Darkride, not on the rest of desktop.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>allowMouseCaptured</code></td><td>boolean</td><td><p><code>true</code> if the mouse cursor will be captured when in HMD mode and the Interface window content has focus, <code>false</code> if the mouse cursor will not be captured.</p></td></tr>
+<tr><td><code>allowMouseCaptured</code></td><td>boolean</td><td><p><code>true</code> if the mouse cursor will be captured when in HMD mode and the Darkride window content has focus, <code>false</code> if the mouse cursor will not be captured.</p></td></tr>
 </tbody></table></div>
 
 </div>
@@ -199,7 +199,7 @@ Reticle.setEnabled(enabled)
 Reticle.setPosition(position)
 ```
 
-<div class="api-text" v-pre><p>Sets the position of the cursor. This is the position relative to the Interface window in desktop mode, and the HUD surface in HMD mode. </p>
+<div class="api-text" v-pre><p>Sets the position of the cursor. This is the position relative to the Darkride window in desktop mode, and the HUD surface in HMD mode. </p>
 <p><strong>Note:</strong> The position values may be negative.</p>
 <p></p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>

@@ -296,7 +296,7 @@ The types used by [Entities](./Entities).
  <table> <thead> <tr><th>Value</th><th>Description</th></tr>
  </thead>
  <tbody> <tr><td><code>"domain"</code></td><td>Domain entities are stored on the world, are visible to everyone, and are sent to everyone by the entity server.</td></tr>
- <tr><td><code>"avatar"</code></td><td>Avatar entities are stored on an Interface client, are visible to everyone, and are sent to everyone by the avatar mixer. They follow the client to each world visited, displaying at the same world coordinates unless parented to the client's avatar.</td></tr>
+ <tr><td><code>"avatar"</code></td><td>Avatar entities are stored on a Darkride client, are visible to everyone, and are sent to everyone by the avatar mixer. They follow the client to each world visited, displaying at the same world coordinates unless parented to the client's avatar.</td></tr>
  <tr><td><code>"local"</code></td><td>Local entities are ephemeral — they aren't stored anywhere — and are visible only to the client. They follow the client to each world visited, displaying at the same world coordinates unless parented to the client's avatar. Additionally, local entities are always collisionless.</td></tr>
  </tbody>
  </table></div>
@@ -672,7 +672,7 @@ var entity = Entities.addEntity({
     type: "Model",
     position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(MyAvatar.orientation, { x: 0, y: 0.75, z: -2 })),
     rotation: MyAvatar.orientation,
-    modelURL: "http://content.highfidelity.com/seefo/production/puck-attach/vive_tracker_puck.obj",
+    modelURL: "https://example.com/models/vive_tracker_puck.obj",
     dimensions: { x: 0.0945, y: 0.0921, z: 0.0423 },
     lifetime: 300  // Delete after 5 minutes.
 });
@@ -1215,7 +1215,7 @@ var zone = Entities.addEntity({
 <tr><td><code>texCoordTransform1</code></td><td><a href="Mat4">Mat4</a> | string</td><td></td><td><p>The transform to use for <code>occlusionMap</code> and <code>lightMap</code>. Set to <code>"fallthrough"</code> to fall through to the material below. <code>"hifi_pbr"</code> model only.</p></td></tr>
 <tr><td><code>lightmapParams</code></td><td>Array&lt;number&gt; | string</td><td></td><td><p>The light map's <code>[offset, scale]</code>: light = offset + scale * the map's value. <code>"fallthrough"</code> takes the material below's.</p></td></tr>
 <tr><td><code>lightMapDirection</code></td><td>string</td><td></td><td><p>The URL of the light map's direction map: Unity's directional lightmap, the dominant light direction and its share, which lets normal maps shape the baked light.</p></td></tr>
-<tr><td><code>lightmapMode</code></td><td>string</td><td></td><td><p>What the light map holds: <code>"indirect"</code> (the default: Unity's Baked Indirect, the baked light replacing the ambient light while the sun and the local lights run as usual) or <code>"full"</code> (the whole diffuse lighting, as High Fidelity's bakes). See LIGHTMAPS.md. Set to <code>"fallthrough"</code> to fall through to the material below. <code>"hifi_pbr"</code> model only. </p>
+<tr><td><code>lightmapMode</code></td><td>string</td><td></td><td><p>What the light map holds: <code>"indirect"</code> (the default: Unity's Baked Indirect, the baked light replacing the ambient light while the sun and the local lights run as usual) or <code>"full"</code> (the whole diffuse lighting, as older baked worlds have). Set to <code>"fallthrough"</code> to fall through to the material below. <code>"hifi_pbr"</code> model only. </p>
 <p><em>Currently not used.</em></p>
 <p></p></td></tr>
 <tr><td><code>materialParams</code></td><td>string</td><td></td><td><p>Parameters for controlling the material projection and repetition. Set to <code>"fallthrough"</code> to fall through to the material below. <code>"hifi_pbr"</code> model only. </p>
@@ -1601,3 +1601,7 @@ Still there for older scripts; new scripts should not use these.
 </tbody></table></div>
 
 </div>
+
+::: tip Names from the engine's history
+Names and addresses with `hifi` or `tivoli` in them, such as `hifi_pbr`, a `hifi://` address or an example file's address, come from the engine's history and still work. Type them as they are.
+:::

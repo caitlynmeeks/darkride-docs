@@ -24,7 +24,7 @@ EntityScriptServerLog.receivedNewLogLines(logLines)
 <tr><td><code>logLines</code></td><td>string</td><td><p>The server log lines written by server entity scripts. If there are multiple lines they are separated by <code>"\n"</code>s.</p></td></tr>
 </tbody></table></div>
 
-<div class="api-example" v-pre><strong>Example:</strong> <p>Echo server entity script program log output to Interface's program log.</p></div>
+<div class="api-example" v-pre><strong>Example:</strong> <p>Echo server entity script program log output to Darkride's program log.</p></div>
 
 ```js
 EntityScriptServerLog.receivedNewLogLines.connect(function (logLines) {

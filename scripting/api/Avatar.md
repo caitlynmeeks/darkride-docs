@@ -8,7 +8,7 @@ description: "The Avatar API is used to manipulate scriptable avatars on the wor
 <div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: agents.</div>
 
 <div class="api-text" v-pre><p>The <code>Avatar</code> API is used to manipulate scriptable avatars on the world. This API is a subset of the <a href="MyAvatar"><code>MyAvatar</code></a> API. To enable this API, set <a href="Agent">Agent.isAvatar</a> to <code>true</code>.</p>
- <p>For Interface, client entity, and avatar scripts, see <a href="MyAvatar"><code>MyAvatar</code></a>.</p></div>
+ <p>For Darkride, client entity, and avatar scripts, see <a href="MyAvatar"><code>MyAvatar</code></a>.</p></div>
 
 <div class="api-example" v-pre><strong>Example:</strong> <p>Create a scriptable avatar.</p></div>
 
@@ -25,7 +25,7 @@ description: "The Avatar API is used to manipulate scriptable avatars on the wor
 <tr><td><code>position</code></td><td><a href="Vec3">Vec3</a></td><td></td><td><p>The position of the avatar.</p></td></tr>
 <tr><td><code>scale</code></td><td>number</td><td><code>1.0</code></td><td><p>The scale of the avatar. The value can be set to anything between <code>0.005</code> and <code>1000.0</code>. When the scale value is fetched, it may temporarily be further limited by the world's settings.</p></td></tr>
 <tr><td><code>density</code></td><td>number</td><td></td><td><p>The density of the avatar in kg/m<sup>3</sup>. The density is used to work out its mass in the application of physics. <em>Read-only.</em></p></td></tr>
-<tr><td><code>handPosition</code></td><td><a href="Vec3">Vec3</a></td><td></td><td><p>A user-defined hand position, in world coordinates. The position moves with the avatar but is otherwise not used or changed by Interface.</p></td></tr>
+<tr><td><code>handPosition</code></td><td><a href="Vec3">Vec3</a></td><td></td><td><p>A user-defined hand position, in world coordinates. The position moves with the avatar but is otherwise not used or changed by Darkride.</p></td></tr>
 <tr><td><code>bodyYaw</code></td><td>number</td><td></td><td><p>The left or right rotation about an axis running from the head to the feet of the avatar. Yaw is sometimes called "heading".</p></td></tr>
 <tr><td><code>bodyPitch</code></td><td>number</td><td></td><td><p>The rotation about an axis running from shoulder to shoulder of the avatar. Pitch is sometimes called "elevation".</p></td></tr>
 <tr><td><code>bodyRoll</code></td><td>number</td><td></td><td><p>The rotation about an axis running from the chest to the back of the avatar. Roll is sometimes called "bank".</p></td></tr>
@@ -39,7 +39,7 @@ description: "The Avatar API is used to manipulate scriptable avatars on the wor
 <tr><td><code>audioLoudness</code></td><td>number</td><td></td><td><p>The instantaneous loudness of the audio input that the avatar is injecting into the world.</p></td></tr>
 <tr><td><code>audioAverageLoudness</code></td><td>number</td><td></td><td><p>The rolling average loudness of the audio input that the avatar is injecting into the world.</p></td></tr>
 <tr><td><code>displayName</code></td><td>string</td><td></td><td><p>The avatar's display name.</p></td></tr>
-<tr><td><code>sessionDisplayName</code></td><td>string</td><td></td><td><p><code>displayName's</code> sanitized and default version defined by the avatar mixer rather than Interface clients. The result is unique among all avatars present in the world at the time.</p></td></tr>
+<tr><td><code>sessionDisplayName</code></td><td>string</td><td></td><td><p><code>displayName's</code> sanitized and default version defined by the avatar mixer rather than Darkride apps. The result is unique among all avatars present in the world at the time.</p></td></tr>
 <tr><td><code>lookAtSnappingEnabled</code></td><td>boolean</td><td><code>true</code></td><td><p><code>true</code> if the avatar's eyes snap to look at another avatar's eyes when the other avatar is in the line of sight and also has <code>lookAtSnappingEnabled == true</code>.</p></td></tr>
 <tr><td><code>gazeStyle</code></td><td>string</td><td><code>&quot;calm&quot;</code></td><td><p>How the avatar's eyes behave, for everyone to see: <code>"calm"</code>, <code>"excited"</code>, <code>"shy"</code>, <code>"sleepy"</code> or <code>"intent"</code>. A style sets how often and how far the eyes dart, where they rest and how much they meet other people's eyes, what the head does with them, and how the lids blink.</p></td></tr>
 <tr><td><code>skeletonModelURL</code></td><td>string</td><td></td><td><p>The avatar's FST file.</p></td></tr>
@@ -1636,3 +1636,7 @@ Avatar.updateAvatarEntity(entityID, entityData)
 </tbody></table></div>
 
 </div>
+
+::: tip Names from the engine's history
+Names and addresses with `hifi` or `tivoli` in them, such as `hifi_pbr`, a `hifi://` address or an example file's address, come from the engine's history and still work. Type them as they are.
+:::

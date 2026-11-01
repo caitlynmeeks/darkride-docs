@@ -15,7 +15,7 @@ description: "Information about an avatar."
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>position</code></td><td><a href="Vec3">Vec3</a></td><td><p>The avatar's position.</p></td></tr>
 <tr><td><code>scale</code></td><td>number</td><td><p>The target scale of the avatar without any restrictions on permissible values imposed by the world.</p></td></tr>
-<tr><td><code>handPosition</code></td><td><a href="Vec3">Vec3</a></td><td><p>A user-defined hand position, in world coordinates. The position moves with the avatar but is otherwise not used or changed by Interface.</p></td></tr>
+<tr><td><code>handPosition</code></td><td><a href="Vec3">Vec3</a></td><td><p>A user-defined hand position, in world coordinates. The position moves with the avatar but is otherwise not used or changed by Darkride.</p></td></tr>
 <tr><td><code>bodyPitch</code></td><td>number</td><td><p>The pitch of the avatar's body, in degrees.</p></td></tr>
 <tr><td><code>bodyYaw</code></td><td>number</td><td><p>The yaw of the avatar's body, in degrees.</p></td></tr>
 <tr><td><code>bodyRoll</code></td><td>number</td><td><p>The roll of the avatar's body, in degrees.</p></td></tr>

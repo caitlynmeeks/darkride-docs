@@ -8,7 +8,7 @@ description: "Provides a bi-directional, event-driven communication session betw
 <div class="api-kind" v-pre><strong>Class.</strong> Can be used in: client scripts, entity scripts, avatar scripts, server entity scripts, agents.</div>
 
 <div class="api-text" v-pre><p>Provides a bi-directional, event-driven communication session between the script and another WebSocket connection. It is a near-complete implementation of the WebSocket API described in the Mozilla docs: <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSocket" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/WebSocket</a>.</p>
- <p>Create using <code>new WebSocket(...)</code> in Interface, client entity, avatar, and server entity scripts, or the <a href="WebSocketServer"><code>WebSocketServer</code></a> class in server entity and assignment client scripts. </p>
+ <p>Create using <code>new WebSocket(...)</code> in Darkride, client entity, avatar, and server entity scripts, or the <a href="WebSocketServer"><code>WebSocketServer</code></a> class in server entity and assignment client scripts. </p>
 <p><strong>Note:</strong> Does not support secure, <code>wss:</code> protocol.</p>
  <p>On a person's client, a script that came over the network (a world's script) may connect to public hosts only: not to services on that computer or on its network. A refused connection fails as an unreachable one does (onerror, then onclose with code 1006), with the reason in the script's log. A script loaded from the computer itself, or any script of a world served from that computer or its network, keeps every address.</p></div>
 

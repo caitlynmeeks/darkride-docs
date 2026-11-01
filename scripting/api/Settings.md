@@ -1,13 +1,13 @@
 ---
 title: "Settings"
-description: "The Settings API provides a facility to store and retrieve values that persist between Interface runs."
+description: "The Settings API provides a facility to store and retrieve values that persist between Darkride runs."
 ---
 
 # Settings
 
 <div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
-<div class="api-text" v-pre><p>The <code>Settings</code> API provides a facility to store and retrieve values that persist between Interface runs.</p></div>
+<div class="api-text" v-pre><p>The <code>Settings</code> API provides a facility to store and retrieve values that persist between Darkride runs.</p></div>
 
 ## Functions {#functions}
 

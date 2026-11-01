@@ -212,7 +212,7 @@ HMD.isHMDAvailable(name?)
 
 <div class="api-text" v-pre><p>Checks whether there is an HMD available.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>name</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>The name of the HMD to check for, e.g., <code>"Oculus Rift"</code>. The name is the same as may be displayed in Interface's "Display" menu. If no name is specified, then any HMD matches.</p></td></tr>
+<tr><td><code>name</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>The name of the HMD to check for, e.g., <code>"Oculus Rift"</code>. The name is the same as may be displayed in Darkride's "Display" menu. If no name is specified, then any HMD matches.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if an HMD of the specified <code>name</code> is available, otherwise <code>false</code>.</p></div>
 
@@ -490,7 +490,7 @@ HMD.displayModeChanged.connect(function (isHMDMode) {
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when Interface's display mode changes and when the user puts on or takes off their HMD.</p></div>
+<div class="api-text" v-pre><p>Triggered when Darkride's display mode changes and when the user puts on or takes off their HMD.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>isHMDMode</code></td><td>boolean</td><td><p><code>true</code> if the display mode is HMD, otherwise <code>false</code>. This is the same value as provided by <code>HMD.active</code>.</p></td></tr>
 </tbody></table></div>

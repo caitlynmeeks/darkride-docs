@@ -18,6 +18,9 @@ JavaScript (ES5), so a script meant to run on both should stick to ES5. A world 
 - IDs (UUIDs) are strings.
 - There's no debugger: use `print` and `console`.
 - Each call into a script (an update, a timer, a signal) is stopped after 5 seconds of its own running time.
+- Some names still carry the engine's earlier names: the `hifi://` address, `hifi_pbr` materials, the system
+  tablet's `com.highfidelity.interface.tablet.system`, `TIVOLI_` settings. They're technical names the code needs;
+  type them as they are.
 - What doesn't work yet: [Known issues](/known-issues).
 
 ## The kinds of script
@@ -61,7 +64,7 @@ needs; your own client scripts can use everything. The pages don't show this yet
 
 | Namespace or class | What it's for |
 | --- | --- |
-| [About](./About) | The About API provides information about the version of Interface that is currently running. |
+| [About](./About) | The About API provides information about the version of Darkride that is currently running. |
 | [Account](./Account) | The Account API provides functions that give information on user connectivity, visibility, and asset download progress. |
 | [AccountServices](./AccountServices) | The AccountServices API provides functions that give information on user connectivity, visibility, and asset download progress. |
 | [AddressManager](./AddressManager) | The AddressManager API provides facilities related to your current location in the metaverse. |
@@ -87,7 +90,7 @@ needs; your own client scripts can use everything. The pages don't show this yet
 | [console](./console) | The console API provides program logging facilities. |
 | [Controller](./Controller) | The Controller API provides facilities to interact with computer and controller hardware. |
 | [DebugDraw](./DebugDraw) | The DebugDraw API renders debug markers and lines. |
-| [Desktop](./Desktop) | The Desktop API provides the dimensions of the computer screen, sets the opacity of the HUD surface, and enables QML and HTML windows to be shown inside or outside of Interface. |
+| [Desktop](./Desktop) | The Desktop API provides the dimensions of the computer screen, sets the opacity of the HUD surface, and enables QML and HTML windows to be shown inside or outside of Darkride. |
 | [DialogsManager](./DialogsManager) | The DialogsMamnager API provides facilities to work with some key dialogs. |
 | [DiskCache](./DiskCache) | The DiskCache API lets you manage your cache. |
 | [DriveKeys](./DriveKeys) | The DriveKeys API provides constant numeric values that represent different logical keys that drive your avatar and camera. |
@@ -102,12 +105,12 @@ needs; your own client scripts can use everything. The pages don't show this yet
 | [GraphicsMeshPart](./GraphicsMeshPart) | A handle to in-memory mesh part data in a GraphicsModel. |
 | [GraphicsModel](./GraphicsModel) | A handle to in-memory model data such as may be used in displaying avatars, 3D entities, or 3D overlays in the rendered scene. |
 | [HMD](./HMD) | The HMD API provides access to the HMD used in VR display mode. |
-| [InteractiveWindow](./InteractiveWindow) | An InteractiveWindow can display either inside Interface or in its own window separate from the Interface window. |
+| [InteractiveWindow](./InteractiveWindow) | An InteractiveWindow can display either inside Darkride or in its own window separate from the Darkride window. |
 | [Keyboard](./Keyboard) | The Keyboard API provides facilities to use an in-world, virtual keyboard. |
 | [LaserPointers](./LaserPointers) | The LaserPointers API is a subset of the Pointers API. |
 | [location](./location) | The location API provides facilities related to your current location in the metaverse. |
 | [LocationBookmarks](./LocationBookmarks) | The LocationBookmarks API provides facilities for working with location bookmarks. |
-| [LODManager](./LODManager) | The LODManager API manages the Level of Detail displayed in Interface. |
+| [LODManager](./LODManager) | The LODManager API manages the Level of Detail displayed in Darkride. |
 | [MappingObject](./MappingObject) | A Controller mapping object that can contain a set of routes that map: Controller.Standard outputs to Controller.Actions actions or script functions. |
 | [Mat4](./Mat4) | The Mat4 API provides facilities for generating and using 4 x 4 matrices. |
 | [MaterialCache](./MaterialCache) | The MaterialCache API manages material cache resources. |
@@ -119,8 +122,8 @@ needs; your own client scripts can use everything. The pages don't show this yet
 | [MyAvatar](./MyAvatar) | Your avatar is your in-world representation of you. |
 | [OffscreenFlags](./OffscreenFlags) | The OffscreenFlags API enables gamepad joystick navigation of UI. |
 | [Overlays](./Overlays) | The Overlays API provides facilities to create and interact with overlays. |
-| [OverlayWebWindow](./OverlayWebWindow) | A OverlayWebWindow displays an HTML window inside Interface. |
-| [OverlayWindow](./OverlayWindow) | A OverlayWindow displays a QML window inside Interface. |
+| [OverlayWebWindow](./OverlayWebWindow) | A OverlayWebWindow displays an HTML window inside Darkride. |
+| [OverlayWindow](./OverlayWindow) | A OverlayWindow displays a QML window inside Darkride. |
 | [Panels](./Panels) | The window's panels, by name: Darkride's QML panels and chat. |
 | [Paths](./Paths) | The Paths API provides absolute paths to the scripts and resources directories. |
 | [Performance](./Performance) | The Performance API provides control and information on graphics performance settings. |
@@ -142,15 +145,15 @@ needs; your own client scripts can use everything. The pages don't show this yet
 | [Scene](./Scene) | The Scene API provides some control over what is rendered. |
 | [Script](./Script) | The Script API provides facilities for working with scripts. |
 | [ScriptAvatar](./ScriptAvatar) | Information about an avatar. |
-| [ScriptDiscoveryService](./ScriptDiscoveryService) | The ScriptDiscoveryService API provides facilities to work with Interface scripts. |
-| [ScriptsModel](./ScriptsModel) | Information on the scripts that are in the default scripts directory of the Interface installation. |
-| [ScriptsModelFilter](./ScriptsModelFilter) | Sorted and filtered information on the scripts that are in the default scripts directory of the Interface installation. |
+| [ScriptDiscoveryService](./ScriptDiscoveryService) | The ScriptDiscoveryService API provides facilities to work with client scripts. |
+| [ScriptsModel](./ScriptsModel) | Information on the scripts that are in the default scripts directory of the Darkride installation. |
+| [ScriptsModelFilter](./ScriptsModelFilter) | Sorted and filtered information on the scripts that are in the default scripts directory of the Darkride installation. |
 | [Selection](./Selection) | The Selection API provides a means of grouping together and highlighting avatars and entities in named lists. |
-| [Settings](./Settings) | The Settings API provides a facility to store and retrieve values that persist between Interface runs. |
+| [Settings](./Settings) | The Settings API provides a facility to store and retrieve values that persist between Darkride runs. |
 | [Snapshot](./Snapshot) | The Snapshot API provides access to the path that snapshots are saved to. |
 | [SoundCache](./SoundCache) | The SoundCache API manages sound cache resources. |
 | [SoundObject](./SoundObject) | An audio resource, created by SoundCache.getSound, to be played back using Audio.playSound. |
-| [Stats](./Stats) | The Stats API provides statistics on Interface and world operation, per the statistics overlay. |
+| [Stats](./Stats) | The Stats API provides statistics on Darkride and world operation, per the statistics overlay. |
 | [Tablet](./Tablet) | The Tablet API provides the facilities to work with the system or other tablet. |
 | [TabletButtonProxy](./TabletButtonProxy) | A tablet button. |
 | [tabletInterface](./tabletInterface) | The tabletInterface API provides the facilities to work with the system or other tablet. |

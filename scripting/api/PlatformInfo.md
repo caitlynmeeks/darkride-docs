@@ -236,7 +236,7 @@ PlatformInfo.getPlatformTierNames()
 PlatformInfo.getTierProfiled()
 ```
 
-<div class="api-text" v-pre><p>Gets the platform tier of the computer, profiled at Interface start-up.</p></div>
+<div class="api-text" v-pre><p>Gets the platform tier of the computer, profiled at Darkride start-up.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="#PlatformTier">PlatformInfo.PlatformTier</a> <p>The platform tier of the computer.</p></div>
 
 <div class="api-example" v-pre><strong>Example:</strong> <p>Report the platform tier of the computer.</p></div>
@@ -309,8 +309,8 @@ PlatformInfo.isRenderMethodDeferredCapable()
 PlatformInfo.isStandalone()
 ```
 
-<div class="api-text" v-pre><p>Checks whether Interface is running on a stand-alone HMD device (CPU incorporated into the HMD display).</p></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if Interface is running on a stand-alone HMD device, <code>false</code> if it isn't.</p></div>
+<div class="api-text" v-pre><p>Checks whether Darkride is running on a stand-alone HMD device (CPU incorporated into the HMD display).</p></div>
+<div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if Darkride is running on a stand-alone HMD device, <code>false</code> if it isn't.</p></div>
 
 </div>
 
@@ -326,7 +326,7 @@ PlatformInfo.isStandalone()
 <tr><td><code>OSversion</code></td><td>string</td><td><p>The operating system version.</p></td></tr>
 <tr><td><code>vendor</code></td><td>string</td><td><p>The computer vendor.</p></td></tr>
 <tr><td><code>model</code></td><td>string</td><td><p>The computer model.</p></td></tr>
-<tr><td><code>profileTier</code></td><td><a href="#PlatformTier">PlatformInfo.PlatformTier</a></td><td><p>The platform tier of the computer, profiled at Interface start-up.</p></td></tr>
+<tr><td><code>profileTier</code></td><td><a href="#PlatformTier">PlatformInfo.PlatformTier</a></td><td><p>The platform tier of the computer, profiled at Darkride start-up.</p></td></tr>
 </tbody></table></div>
 
 </div>

@@ -1,13 +1,13 @@
 ---
 title: "LODManager"
-description: "The LODManager API manages the Level of Detail displayed in Interface."
+description: "The LODManager API manages the Level of Detail displayed in Darkride."
 ---
 
 # LODManager
 
 <div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
-<div class="api-text" v-pre><p>The <code>LODManager</code> API manages the Level of Detail displayed in Interface. If the LOD is being automatically adjusted, the LOD is decreased if the measured frame rate is lower than the target FPS, and increased if the measured frame rate is greater than the target FPS.</p></div>
+<div class="api-text" v-pre><p>The <code>LODManager</code> API manages the Level of Detail displayed in Darkride. If the LOD is being automatically adjusted, the LOD is decreased if the measured frame rate is lower than the target FPS, and increased if the measured frame rate is greater than the target FPS.</p></div>
 
 ## Properties {#properties}
 

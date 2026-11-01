@@ -9,7 +9,7 @@ description: "The Assets API provides facilities for interacting with the world'
 
 <div class="api-text" v-pre><p>The <code>Assets</code> API provides facilities for interacting with the world's asset server and the client cache. </p>
 <p>Assets are stored in the asset server in files with SHA256 names. These files are mapped to user-friendly URLs of the format: <code>atp:/path/filename</code>. The assets may optionally be baked, in which case a request for the original unbaked version of the asset is automatically redirected to the baked version. The asset data may optionally be stored as compressed.</p>
- <p>The client cache can be accessed directly, using <code>"atp:"</code> or <code>"cache:"</code> URLs. Interface, avatar, and assignment client scripts can write to the cache. All script types can read from the cache.</p>
+ <p>The client cache can be accessed directly, using <code>"atp:"</code> or <code>"cache:"</code> URLs. Darkride, avatar, and assignment client scripts can write to the cache. All script types can read from the cache.</p>
 <p></p></div>
 
 ## Functions {#functions}
@@ -26,7 +26,7 @@ Assets.canWriteCacheValue(url)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>url</code></td><td>string</td><td><p><em>Not used.</em></p></td></tr>
 </tbody></table></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the script is an Interface, avatar, or assignment client script, <code>false</code> if the script is a client entity or server entity script.</p></div>
+<div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the script is a Darkride, avatar, or assignment client script, <code>false</code> if the script is a client entity or server entity script.</p></div>
 
 <div class="api-example" v-pre><strong>Example:</strong> <p>Report whether the script can write to the cache.</p></div>
 
@@ -535,7 +535,7 @@ Assets.saveToCache(options, scopeOrCallback, callback?)
 ```
 
 <div class="api-text" v-pre><p>Saves asset data to the cache directly, without downloading it from a URL. </p>
-<p>Note: Can only be used in Interface, avatar, and assignment client scripts.</p>
+<p>Note: Can only be used in Darkride, avatar, and assignment client scripts.</p>
 <p></p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>options</code></td><td><a href="#SaveToCacheOptions">Assets.SaveToCacheOptions</a></td><td><p>The data to save to the cache and cache options.</p></td></tr>
@@ -578,7 +578,7 @@ Assets.saveToCache(url, data, headers, scopeOrCallback, callback?)
 ```
 
 <div class="api-text" v-pre><p>Saves asset data to the cache directly, without downloading it from a URL. </p>
-<p>Note: Can only be used in Interface, avatar, and assignment client scripts.</p>
+<p>Note: Can only be used in Darkride, avatar, and assignment client scripts.</p>
 <p></p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>url</code></td><td>string</td><td><p>The URL to associate with the cache item. Must start with <code>"atp:"</code> or <code>"cache:"</code>.</p></td></tr>

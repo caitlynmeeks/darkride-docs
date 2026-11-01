@@ -1357,3 +1357,7 @@ Test.worldChat()
 <div class="api-returns" v-pre><strong>Returns:</strong> object <p><code>{items, unread, chatOpen, focus, focusText}</code></p></div>
 
 </div>
+
+::: tip Names from the engine's history
+Names and addresses with `hifi` or `tivoli` in them, such as `hifi_pbr`, a `hifi://` address or an example file's address, come from the engine's history and still work. Type them as they are.
+:::

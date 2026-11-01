@@ -7,8 +7,8 @@ description: "The AvatarManager API provides information about avatars within th
 
 <div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
-<div class="api-text" v-pre><p>The <code>AvatarManager</code> API provides information about avatars within the current world. The avatars available are those that Interface has displayed and therefore knows about.</p>
- <p><strong>Warning:</strong> This API is also provided to Interface, client entity, and avatar scripts as the synonym, "<code>AvatarList</code>". For assignment client scripts, see the separate <a href="AvatarList"><code>AvatarList</code></a> API.</p></div>
+<div class="api-text" v-pre><p>The <code>AvatarManager</code> API provides information about avatars within the current world. The avatars available are those that Darkride has displayed and therefore knows about.</p>
+ <p><strong>Warning:</strong> This API is also provided to Darkride, client entity, and avatar scripts as the synonym, "<code>AvatarList</code>". For assignment client scripts, see the separate <a href="AvatarList"><code>AvatarList</code></a> API.</p></div>
 
 ## Functions {#functions}
 

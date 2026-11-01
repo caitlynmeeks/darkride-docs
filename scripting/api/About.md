@@ -1,15 +1,15 @@
 ---
 title: "About"
-description: "The About API provides information about the version of Interface that is currently running."
+description: "The About API provides information about the version of Darkride that is currently running."
 ---
 
 # About
 
 <div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
-<div class="api-text" v-pre><p>The <code>About</code> API provides information about the version of Interface that is currently running. It also has the functionality to open a web page in an Interface browser window.</p></div>
+<div class="api-text" v-pre><p>The <code>About</code> API provides information about the version of Darkride that is currently running. It also has the functionality to open a web page in a Darkride browser window.</p></div>
 
-<div class="api-example" v-pre><strong>Example:</strong> <p>Report build information for the version of Interface currently running.</p></div>
+<div class="api-example" v-pre><strong>Example:</strong> <p>Report build information for the version of Darkride currently running.</p></div>
 
 ```js
 print("Darkride build date: " + About.buildDate);  // Returns the build date of the version of Interface currently running on your machine.

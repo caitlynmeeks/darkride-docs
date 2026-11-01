@@ -1,14 +1,14 @@
 ---
 title: "OverlayWindow"
-description: "A OverlayWindow displays a QML window inside Interface."
+description: "A OverlayWindow displays a QML window inside Darkride."
 ---
 
 # OverlayWindow
 
 <div class="api-kind" v-pre><strong>Class.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
-<div class="api-text" v-pre><p>A <code>OverlayWindow</code> displays a QML window inside Interface.</p>
- <p>The QML can optionally include a <code>WebView</code> control that embeds an HTML-based windows. (The <code>WebView</code> control is defined by a "WebView.qml" file included in the Interface install.) Alternatively, an <a href="OverlayWebWindow"><code>OverlayWebWindow</code></a> can be used for HTML-based windows.</p>
+<div class="api-text" v-pre><p>A <code>OverlayWindow</code> displays a QML window inside Darkride.</p>
+ <p>The QML can optionally include a <code>WebView</code> control that embeds an HTML-based windows. (The <code>WebView</code> control is defined by a "WebView.qml" file included in the Darkride install.) Alternatively, an <a href="OverlayWebWindow"><code>OverlayWebWindow</code></a> can be used for HTML-based windows.</p>
  <p>Create using <code>new OverlayWindow(...)</code>.</p></div>
 
 ```js

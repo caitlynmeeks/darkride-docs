@@ -2,7 +2,8 @@
 // are the engine's /**jsdoc comments; JSDoc reads them into data, and this script writes one page per namespace or
 // class, a page of global types and functions, an overview and the reference's sidebar.
 //
-//   node build.mjs --engine <a folder holding the engine's source> --version 1.1.2 --commit 02429ffa29 [--draft]
+//   node build.mjs --engine <a folder holding the engine's source> --version 1.1.2 --commit 02429ffa29 \
+//     [--tag v1.1.2-beta] [--draft]
 //
 // Nothing here runs when the site builds: the pages are written once per release and committed.
 import { execFileSync } from 'node:child_process'
@@ -55,17 +56,44 @@ const deadHosts = [
 ]
 
 // old names in the notes, changed on the pages; each counted in the report. The notes themselves are scripting's to
-// change in the engine, so this list should shrink release by release.
+// change in the engine, so this list should shrink release by release. Names the code itself needs (hifi_pbr, the
+// hifi:// address, the system tablet's id, TIVOLI_ settings) stay, with a note on the page (Caity, 11-01).
+const engineRepo = 'https://github.com/caitlynmeeks/darkride-interface'
+const engineRef = args.tag || args.commit
 const fixes = [
-  [/The High Fidelity camera/g, "Darkride's camera"],
-  [/High Fidelity uses a/g, 'Darkride uses a'],
-  [/Tivoli Interface/g, 'Darkride'],
-  [/a High Fidelity datagram packet/g, 'a network packet'],
+  [/The\s+High\s+Fidelity\s+camera/g, "Darkride's camera"],
+  [/High\s+Fidelity\s+uses\s+a/g, 'Darkride uses a'],
+  [/Tivoli\s+Interface/g, 'Darkride'],
+  [/a\s+High\s+Fidelity\s+datagram\s+packet/g, 'a network packet'],
   [/"https:\/\/metaverse\.highfidelity\.com"|"https:\/\/tivolicloud\.com"/g, '"https://vr.darkride.ai"'],
-  [/Display the High Fidelity home page/g, "Display Darkride's home page"],
+  [/Display\s+the\s+High\s+Fidelity\s+home\s+page/g, "Display Darkride's home page"],
   [/"https:\/\/(www\.)?highfidelity\.com\/"/g, '"https://darkride.ai/"'],
   [/"Tivoli (build date|version): "/g, '"Darkride $1: "'],
+  // profile ranges feed the app's own performance traces (ScriptEngine::beginProfileRange); nothing is sent anywhere
+  [/in\s+order\s+to\s+send\s+usage\s+data\s+about\s+it\s+to\s+High\s+Fidelity/g, "for the app's performance traces"],
+  [/produced\s+by\s+High\s+Fidelity\s+signing/g, 'produced by the old marketplace signing'],
+  [/as\s+High\s+Fidelity's\s+bakes\)\.\s+See\s+LIGHTMAPS\.md\./g, 'as older baked worlds have).'],
+  [/See\s+(\{@link\s+)?https:\/\/legacydocs\.tivolicloud\.com\/[^\s}]+\}?\s+for\s+further\s+details\.\s*/g, ''],
+  // 1.1.2 names a snapshot snap-<date>_<time>-<six random letters and digits>.jpg (Snapshot.cpp)
+  [/"tivoli-snap-by-&lt;user\s+name&gt;-on-YYYY-MM-DD_HH-MM-SS"/g,
+    '"snap-YYYY-MM-DD_HH-MM-SS-&lt;six random letters and digits&gt;.jpg"'],
+  // the controller and keyboard files the notes point to are in Darkride's own engine repository
+  [/https:\/\/github\.com\/highfidelity\/hifi\/(blob|tree)\/master\//g, `${engineRepo}/$1/${engineRef}/`],
+  [/https:\/\/github\.com\/highfidelity\/hifi\/\.\.\.\//g, `${engineRepo}/.../`],
+  // examples: names a script chooses freely, and addresses that moved or no longer answer
+  [/com\.highfidelity\.controllers\.example\./g, 'com.example.controllers.'],
+  [/com\.highfidelity\.example\./g, 'com.example.'],
+  [/"https:\/\/tivolicloud\.com\/api\/domains\/stats"/g, '"https://vr.darkride.ai/api/domains/stats"'],
+  [/"https:\/\/files\.tivolicloud\.com\/maki\/sounds\/huggies\.wav"/g, '"https://example.com/sounds/huggies.wav"'],
+  [/"http:\/\/content\.highfidelity\.com\/seefo\/production\/puck-attach\/vive_tracker_puck\.obj"/g,
+    '"https://example.com/models/vive_tracker_puck.obj"'],
 ]
+
+// on a page that still shows such a name after the fixes
+const historyNote = '\n::: tip Names from the engine\'s history\nNames and addresses with `hifi` or `tivoli` in them, ' +
+  'such as `hifi_pbr`, a `hifi://` address or an example file\'s address, come from the engine\'s history and still ' +
+  'work. Type them as they are.\n:::\n'
+const historyName = /hifi|tivoli|highfidelity/i
 
 // "domain" is "world" in Darkride's words: changed in the notes' prose, never in names, quoted values, code, or where
 // it means the "domain" kind of entity (scripting, 11-01)
@@ -78,7 +106,7 @@ const splitAt = 170 * 1024
 const splitTypesAt = 60 * 1024
 
 const newReport = () => ({ fixes: new Map(), unresolved: new Map(), deadLinks: new Map(), orphans: new Map(),
-  worlds: 0, duplicates: 0 })
+  worlds: 0, interfaceWord: 0, duplicates: 0 })
 let report = newReport()
 const bump = (map, key) => map.set(key, (map.get(key) || 0) + 1)
 
@@ -259,10 +287,30 @@ const applyFixes = (s) => {
   return s
 }
 
-const prose = (s) => s.replace(domainWord, (_, d, end = '') => {
-  report.worlds++
-  return (d === 'D' ? 'W' : 'w') + 'orld' + end
-})
+// "Interface", High Fidelity's name for the app, is "Darkride" in prose; as a kind of script it's a client script, the
+// overview's name (Caity, 11-01: the product's old names out of the pages)
+const interfaceWords = [
+  [/\b([Aa])n\s+Interface\s+(script|or)\b/g, (_, a, w) => `${a} client ${w}`],
+  [/\bInterface\s+[Ss]cript(s?)\b/g, (_, s) => `client script${s}`],
+  [/\bInterface\s+(and|or)\s+(avatar|client|server)\b/g, (_, c, w) => `client ${c} ${w}`],
+  [/\bInterface\s+clients\b/g, () => 'Darkride apps'],
+  [/\bInterface\b/g, () => 'Darkride'],
+  [/\b([Aa])n\s+Darkride\b/g, (_, a) => `${a} Darkride`],
+]
+
+const prose = (s) => {
+  s = s.replace(domainWord, (_, d, end = '') => {
+    report.worlds++
+    return (d === 'D' ? 'W' : 'w') + 'orld' + end
+  })
+  for (const [pattern, to] of interfaceWords) {
+    s = s.replace(pattern, (...m) => {
+      if (pattern.source !== '\\b([Aa])n\\s+Darkride\\b') report.interfaceWord++
+      return to(...m)
+    })
+  }
+  return s
+}
 
 const blockStart = /^\s*<(p|ul|ol|table|pre|div|h\d|blockquote|dl)[\s>]/i
 const blockEnd = /<\/(p|li|tr|thead|tbody|table|ul|ol|pre|div|h\d|blockquote|dl|dt|dd)>(?!$)/g
@@ -494,6 +542,9 @@ JavaScript (ES5), so a script meant to run on both should stick to ES5. A world 
 - IDs (UUIDs) are strings.
 - There's no debugger: use \`print\` and \`console\`.
 - Each call into a script (an update, a timer, a signal) is stopped after 5 seconds of its own running time.
+- Some names still carry the engine's earlier names: the \`hifi://\` address, \`hifi_pbr\` materials, the system
+  tablet's \`com.highfidelity.interface.tablet.system\`, \`TIVOLI_\` settings. They're technical names the code needs;
+  type them as they are.
 - What doesn't work yet: [Known issues](/known-issues).
 
 ## The kinds of script
@@ -547,9 +598,10 @@ report = { ...newReport(), duplicates, orphans }
 fs.rmSync(outDir, { recursive: true, force: true })
 fs.mkdirSync(outDir, { recursive: true })
 fs.cpSync(path.join(here, 'images'), path.join(outDir, 'images'), { recursive: true })
+const withNote = (md) => (historyName.test(md) ? md + historyNote : md)
 for (const page of pages.values()) {
-  fs.writeFileSync(path.join(outDir, page.file + '.md'), renderPage(page))
-  if (page.split) fs.writeFileSync(path.join(outDir, page.typesPage.file + '.md'), renderTypesPage(page))
+  fs.writeFileSync(path.join(outDir, page.file + '.md'), withNote(renderPage(page)))
+  if (page.split) fs.writeFileSync(path.join(outDir, page.typesPage.file + '.md'), withNote(renderTypesPage(page)))
 }
 fs.writeFileSync(path.join(outDir, 'index.md'), renderOverview(pageList))
 
@@ -574,7 +626,7 @@ const lines = [
     `${doclets.filter(isSignal).length} signals, ${count('typedef')} types; ${report.duplicates} repeated notes kept once.`,
   `Left out as not in this version: ${notAvailable.join(', ')}. Types on a page of their own: ` +
     `${pageList.filter((p) => p.split).map((p) => p.title).join(', ') || 'none'}. "domain" read as "world" in prose: ` +
-    `${report.worlds} times.`,
+    `${report.worlds} times; "Interface" as Darkride or a client script: ${report.interfaceWord} times.`,
   '',
   '## Old names changed on the pages (to fix in the engine notes)', '',
   ...[...report.fixes].map(([k, v]) => `- ${v} x \`${k}\``),

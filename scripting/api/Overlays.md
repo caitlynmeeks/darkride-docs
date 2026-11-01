@@ -93,7 +93,7 @@ Overlays.editOverlay(id, properties)
 <tr><td><code>id</code></td><td><a href="Uuid">Uuid</a></td><td><p>The ID of the overlay (or entity) to edit.</p></td></tr>
 <tr><td><code>properties</code></td><td><a href="#OverlayProperties">Overlays.OverlayProperties</a></td><td><p>The properties changes to make.</p></td></tr>
 </tbody></table></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>false</code> if Interface is exiting. Otherwise, if a 2D overlay then <code>true</code> always, and if a 3D overlay then <code>true</code> if the overlay was found and edited, otherwise <code>false</code>.</p></div>
+<div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>false</code> if Darkride is exiting. Otherwise, if a 2D overlay then <code>true</code> always, and if a 3D overlay then <code>true</code> if the overlay was found and edited, otherwise <code>false</code>.</p></div>
 
 <div class="api-example" v-pre><strong>Example:</strong> <p>Add an overlay in front of your avatar then change its color.</p></div>
 
@@ -125,7 +125,7 @@ Overlays.editOverlays(propertiesById)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>propertiesById</code></td><td>object&lt;<a href="Uuid">Uuid</a>, <a href="#OverlayProperties">Overlays.OverlayProperties</a>&gt;</td><td><p>An object with overlay (or entity) IDs as keys and <a href="#OverlayProperties">OverlayProperties</a> edits to make as values.</p></td></tr>
 </tbody></table></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>false</code> if Interface is exiting, otherwise <code>true</code>.</p></div>
+<div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>false</code> if Darkride is exiting, otherwise <code>true</code>.</p></div>
 
 <div class="api-example" v-pre><strong>Example:</strong> <p>Create two overlays in front of your avatar then change their colors.</p></div>
 
@@ -282,9 +282,9 @@ Overlays.getOverlayObject(overlayID)
 ```
 
 <div class="api-text" v-pre><p>Gets an overlay's (or entity's) script object. In particular, this is useful for accessing a <code><a href="#OverlayProperties-Web3D">"web3d"</a></code> overlay's <code>EventBridge</code> script object to exchange messages with the web page script. </p>
-<p>To send a message from an Interface script to a <code>"web3d"</code> overlay over its event bridge:</p>
+<p>To send a message from a client script to a <code>"web3d"</code> overlay over its event bridge:</p>
  <pre class="prettyprint"><code>var overlayObject = Overlays.getOverlayObject(overlayID);&#10;overlayObject.emitScriptEvent(message);</code></pre>
- <p>To receive a message from a <code>"web3d"</code> overlay over its event bridge in an Interface script:</p>
+ <p>To receive a message from a <code>"web3d"</code> overlay over its event bridge in a client script:</p>
  <pre class="prettyprint"><code>var overlayObject = Overlays.getOverlayObject(overlayID);&#10;overlayObject.webEventReceived.connect(function(message) {&#10;    ...&#10;};</code></pre>
 <p></p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
@@ -489,8 +489,8 @@ print("Overlay alpha: " + alpha);
 Overlays.height()
 ```
 
-<div class="api-text" v-pre><p>Gets the height of the Interface window or HUD surface.</p></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> number <p>The height, in pixels, of the Interface window if in desktop mode or the HUD surface if in HMD mode.</p></div>
+<div class="api-text" v-pre><p>Gets the height of the Darkride window or HUD surface.</p></div>
+<div class="api-returns" v-pre><strong>Returns:</strong> number <p>The height, in pixels, of the Darkride window if in desktop mode or the HUD surface if in HMD mode.</p></div>
 
 </div>
 
@@ -728,8 +728,8 @@ Script.setTimeout(function() {
 Overlays.width()
 ```
 
-<div class="api-text" v-pre><p>Gets the width of the Interface window or HUD surface.</p></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> number <p>The width, in pixels, of the Interface window if in desktop mode or the HUD surface if in HMD mode.</p></div>
+<div class="api-text" v-pre><p>Gets the width of the Darkride window or HUD surface.</p></div>
+<div class="api-returns" v-pre><strong>Returns:</strong> number <p>The width, in pixels, of the Darkride window if in desktop mode or the HUD surface if in HMD mode.</p></div>
 
 </div>
 

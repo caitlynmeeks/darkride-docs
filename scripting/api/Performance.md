@@ -184,10 +184,10 @@ Performance.settingsChanged.connect(function () {
 <div class="api-text" v-pre><p>Target FPS (formerly Refresh Rate) profile.</p>
  <table> <thead> <tr> <th>Value</th> <th>Name</th> <th>Description</th> </tr>
 </thead>
- <tbody> <tr> <td><code>0</code></td> <td>ECO</td> <td>20 FPS target rate, reduced when Interface doesn't have focus or is minimized</td> </tr>
- <tr> <td><code>1</code></td> <td>INTERACTIVE</td> <td>30 FPS target rate, reduced when Interface doesn't have focus or is minimized</td> </tr>
- <tr> <td><code>2</code></td> <td>REALTIME</td> <td>60 FPS target rate, reduced when Interface doesn't have focus or is minimized</td> </tr>
- <tr> <td><code>3</code></td> <td>DISPLAY_BASED</td> <td>Targets the refresh rate of your screen, reduced when Interface doesn't have focus or is minimized</td> </tr>
+ <tbody> <tr> <td><code>0</code></td> <td>ECO</td> <td>20 FPS target rate, reduced when Darkride doesn't have focus or is minimized</td> </tr>
+ <tr> <td><code>1</code></td> <td>INTERACTIVE</td> <td>30 FPS target rate, reduced when Darkride doesn't have focus or is minimized</td> </tr>
+ <tr> <td><code>2</code></td> <td>REALTIME</td> <td>60 FPS target rate, reduced when Darkride doesn't have focus or is minimized</td> </tr>
+ <tr> <td><code>3</code></td> <td>DISPLAY_BASED</td> <td>Targets the refresh rate of your screen, reduced when Darkride doesn't have focus or is minimized</td> </tr>
  </tbody>
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>

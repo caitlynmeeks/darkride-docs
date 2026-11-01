@@ -148,7 +148,7 @@ Chat.messageReceived.connect(function (data, senderID) {
  <li><code>{message: "is thinking", me: true}</code></li>
  </ul>
 <p></p></td></tr>
-<tr><td><code>senderID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The UUID of the sender: the user's session UUID if sent by an Interface or client entity script, the UUID of the entity script server if sent by a server entity script, or the UUID of the assignment client instance if sent by an assignment client script.</p></td></tr>
+<tr><td><code>senderID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The UUID of the sender: the user's session UUID if sent by a client or client entity script, the UUID of the entity script server if sent by a server entity script, or the UUID of the assignment client instance if sent by an assignment client script.</p></td></tr>
 </tbody></table></div>
 
 <div class="api-example" v-pre><strong>Example</strong> </div>
@@ -188,7 +188,7 @@ Chat.messageSent.connect(function (message) {
 <div class="api-example" v-pre><strong>Example</strong> </div>
 
 ```js
-var huggiesSound = SoundCache.getSound("https://files.tivolicloud.com/maki/sounds/huggies.wav");
+var huggiesSound = SoundCache.getSound("https://example.com/sounds/huggies.wav");
 Chat.messageSent.connect(function (message) {
     if (message.toLowerCase().indexOf("huggies") > -1 && huggiesSound.downloaded) {
         Audio.playSound(huggiesSound, {

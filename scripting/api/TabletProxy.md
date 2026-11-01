@@ -79,7 +79,7 @@ emitScriptEvent(message)
 
 <div class="api-text" v-pre><p>Sends a message to the current web page. To receive the message, the web page's script must connect to the <code>EventBridge</code> that is automatically provided to the script: </p>
 <pre class="prettyprint"><code>EventBridge.scriptEventReceived.connect(function(message) {&#10;    ...&#10;});</code></pre>
- <p><strong>Warning:</strong> The <code>EventBridge</code> object is not necessarily set up immediately ready for the web page's script to use. A simple workaround that normally works is to add a delay before calling <code>EventBridge.scriptEventReceived.connect(...)</code>. A better solution is to periodically call <code>EventBridge.scriptEventReceived.connect(...)</code> and then <code>EventBridge.emitWebEvent(...)</code> to send a message to the Interface script, and have that send a message back using <code>emitScriptEvent(...)</code>; when the return message is received, the <code>EventBridge</code> is ready for use.</p>
+ <p><strong>Warning:</strong> The <code>EventBridge</code> object is not necessarily set up immediately ready for the web page's script to use. A simple workaround that normally works is to add a delay before calling <code>EventBridge.scriptEventReceived.connect(...)</code>. A better solution is to periodically call <code>EventBridge.scriptEventReceived.connect(...)</code> and then <code>EventBridge.emitWebEvent(...)</code> to send a message to the client script, and have that send a message back using <code>emitScriptEvent(...)</code>; when the return message is received, the <code>EventBridge</code> is ready for use.</p>
 <p></p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>message</code></td><td>string | object</td><td><p>The message to send to the web page.</p></td></tr>
@@ -575,3 +575,7 @@ returnToPreviousAppImpl()
 
 
 </div>
+
+::: tip Names from the engine's history
+Names and addresses with `hifi` or `tivoli` in them, such as `hifi_pbr`, a `hifi://` address or an example file's address, come from the engine's history and still work. Type them as they are.
+:::

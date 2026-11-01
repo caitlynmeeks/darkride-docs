@@ -16,7 +16,7 @@ description: "Your avatar is your in-world representation of you."
 <tr><td><code>position</code></td><td><a href="Vec3">Vec3</a></td><td></td><td><p>The position of the avatar.</p></td></tr>
 <tr><td><code>scale</code></td><td>number</td><td><code>1.0</code></td><td><p>The scale of the avatar. The value can be set to anything between <code>0.005</code> and <code>1000.0</code>. When the scale value is fetched, it may temporarily be further limited by the world's settings.</p></td></tr>
 <tr><td><code>density</code></td><td>number</td><td></td><td><p>The density of the avatar in kg/m<sup>3</sup>. The density is used to work out its mass in the application of physics. <em>Read-only.</em></p></td></tr>
-<tr><td><code>handPosition</code></td><td><a href="Vec3">Vec3</a></td><td></td><td><p>A user-defined hand position, in world coordinates. The position moves with the avatar but is otherwise not used or changed by Interface.</p></td></tr>
+<tr><td><code>handPosition</code></td><td><a href="Vec3">Vec3</a></td><td></td><td><p>A user-defined hand position, in world coordinates. The position moves with the avatar but is otherwise not used or changed by Darkride.</p></td></tr>
 <tr><td><code>bodyYaw</code></td><td>number</td><td></td><td><p>The left or right rotation about an axis running from the head to the feet of the avatar. Yaw is sometimes called "heading".</p></td></tr>
 <tr><td><code>bodyPitch</code></td><td>number</td><td></td><td><p>The rotation about an axis running from shoulder to shoulder of the avatar. Pitch is sometimes called "elevation".</p></td></tr>
 <tr><td><code>bodyRoll</code></td><td>number</td><td></td><td><p>The rotation about an axis running from the chest to the back of the avatar. Roll is sometimes called "bank".</p></td></tr>
@@ -30,7 +30,7 @@ description: "Your avatar is your in-world representation of you."
 <tr><td><code>audioLoudness</code></td><td>number</td><td></td><td><p>The instantaneous loudness of the audio input that the avatar is injecting into the world.</p></td></tr>
 <tr><td><code>audioAverageLoudness</code></td><td>number</td><td></td><td><p>The rolling average loudness of the audio input that the avatar is injecting into the world.</p></td></tr>
 <tr><td><code>displayName</code></td><td>string</td><td></td><td><p>The avatar's display name.</p></td></tr>
-<tr><td><code>sessionDisplayName</code></td><td>string</td><td></td><td><p><code>displayName's</code> sanitized and default version defined by the avatar mixer rather than Interface clients. The result is unique among all avatars present in the world at the time.</p></td></tr>
+<tr><td><code>sessionDisplayName</code></td><td>string</td><td></td><td><p><code>displayName's</code> sanitized and default version defined by the avatar mixer rather than Darkride apps. The result is unique among all avatars present in the world at the time.</p></td></tr>
 <tr><td><code>lookAtSnappingEnabled</code></td><td>boolean</td><td><code>true</code></td><td><p><code>true</code> if the avatar's eyes snap to look at another avatar's eyes when the other avatar is in the line of sight and also has <code>lookAtSnappingEnabled == true</code>.</p></td></tr>
 <tr><td><code>gazeStyle</code></td><td>string</td><td><code>&quot;calm&quot;</code></td><td><p>How the avatar's eyes behave, for everyone to see: <code>"calm"</code>, <code>"excited"</code>, <code>"shy"</code>, <code>"sleepy"</code> or <code>"intent"</code>. A style sets how often and how far the eyes dart, where they rest and how much they meet other people's eyes, what the head does with them, and how the lids blink.</p></td></tr>
 <tr><td><code>skeletonModelURL</code></td><td>string</td><td></td><td><p>The avatar's FST file.</p></td></tr>
@@ -53,7 +53,7 @@ description: "Your avatar is your in-world representation of you."
 <tr><td><code>skeletonOffset</code></td><td><a href="Vec3">Vec3</a></td><td></td><td><p>Can be used to apply a translation offset between the avatar's position and the registration point of the 3D model.</p></td></tr>
 <tr><td><code>qmlPosition</code></td><td><a href="Vec3">Vec3</a></td><td></td><td><p>A synonym for <code>position</code> for use by QML.</p></td></tr>
 <tr><td><code>feetPosition</code></td><td><a href="Vec3">Vec3</a></td><td></td><td><p>The position of the avatar's feet.</p></td></tr>
-<tr><td><code>shouldRenderLocally</code></td><td>boolean</td><td><code>true</code></td><td><p>If <code>true</code> then your avatar is rendered for you in Interface, otherwise it is not rendered for you (but it is still rendered for other users).</p></td></tr>
+<tr><td><code>shouldRenderLocally</code></td><td>boolean</td><td><code>true</code></td><td><p>If <code>true</code> then your avatar is rendered for you in Darkride, otherwise it is not rendered for you (but it is still rendered for other users).</p></td></tr>
 <tr><td><code>motorVelocity</code></td><td><a href="Vec3">Vec3</a></td><td><code>Vec3.ZERO</code></td><td><p>The target velocity of your avatar to be achieved by a scripted motor.</p></td></tr>
 <tr><td><code>motorTimescale</code></td><td>number</td><td><code>1000000</code></td><td><p>The timescale for the scripted motor to achieve the target <code>motorVelocity</code> avatar velocity. Smaller values result in higher acceleration.</p></td></tr>
 <tr><td><code>motorReferenceFrame</code></td><td>string</td><td><code>&quot;camera&quot;</code></td><td><p>Reference frame of the <code>motorVelocity</code>. Must be one of the following: <code>"camera"</code>, <code>"avatar"</code>, and <code>"world"</code>.</p></td></tr>
@@ -91,9 +91,9 @@ description: "Your avatar is your in-world representation of you."
 <tr><td><code>characterControllerEnabled</code></td><td>boolean</td><td></td><td><p>Synonym of <code>collisionsEnabled</code>. </p>
 <p class="important">Deprecated: This property is deprecated and will be removed. Use <code>collisionsEnabled</code> instead.</p>
 <p></p></td></tr>
-<tr><td><code>useAdvancedMovementControls</code></td><td>boolean</td><td></td><td><p>Returns and sets the value of the Interface setting, Settings &gt; Controls &gt; Walking. Note: Setting the value has no effect unless Interface is restarted.</p></td></tr>
-<tr><td><code>showPlayArea</code></td><td>boolean</td><td></td><td><p>Returns and sets the value of the Interface setting, Settings &gt; Controls &gt; Show room boundaries while teleporting. </p>
-<p><strong>Note:</strong> Setting the value has no effect unless Interface is restarted.</p>
+<tr><td><code>useAdvancedMovementControls</code></td><td>boolean</td><td></td><td><p>Returns and sets the value of the Darkride setting, Settings &gt; Controls &gt; Walking. Note: Setting the value has no effect unless Darkride is restarted.</p></td></tr>
+<tr><td><code>showPlayArea</code></td><td>boolean</td><td></td><td><p>Returns and sets the value of the Darkride setting, Settings &gt; Controls &gt; Show room boundaries while teleporting. </p>
+<p><strong>Note:</strong> Setting the value has no effect unless Darkride is restarted.</p>
 <p></p></td></tr>
 <tr><td><code>yawSpeed</code></td><td>number</td><td><code>75</code></td><td><p>The mouse X sensitivity value in Settings &gt; General. <em>Read-only.</em></p></td></tr>
 <tr><td><code>pitchSpeed</code></td><td>number</td><td><code>50</code></td><td><p>The mouse Y sensitivity value in Settings &gt; General. <em>Read-only.</em></p></td></tr>
@@ -113,7 +113,7 @@ description: "Your avatar is your in-world representation of you."
 <tr><td><code>userRecenterModel</code></td><td><a href="#SitStandModelType">MyAvatar.SitStandModelType</a></td><td></td><td><p>Controls avatar leaning and recentering behavior.</p></td></tr>
 <tr><td><code>isInSittingState</code></td><td>number</td><td></td><td><p><code>true</code> if the user wearing the HMD is determined to be sitting (avatar leaning is disabled, recentering is enabled), <code>false</code> if the user wearing the HMD is determined to be standing (avatar leaning is enabled, and avatar recenters if it leans too far). If <code>userRecenterModel == 2</code> (i.e., "auto") the property value automatically updates as the user sits or stands, unless <code>isSitStandStateLocked == true</code>. Setting the property value overrides the current sitting / standing state, which is updated when the user next sits or stands unless <code>isSitStandStateLocked == true</code>.</p></td></tr>
 <tr><td><code>isSitStandStateLocked</code></td><td>boolean</td><td></td><td><p><code>true</code> to lock the avatar sitting/standing state, i.e., use this to disable automatically changing state.</p></td></tr>
-<tr><td><code>allowTeleporting</code></td><td>boolean</td><td></td><td><p><code>true</code> if teleporting is enabled in the Interface settings, <code>false</code> if it isn't. <em>Read-only.</em></p></td></tr>
+<tr><td><code>allowTeleporting</code></td><td>boolean</td><td></td><td><p><code>true</code> if teleporting is enabled in the Darkride settings, <code>false</code> if it isn't. <em>Read-only.</em></p></td></tr>
 <tr><td><code>localPosition</code></td><td><a href="Vec3">Vec3</a></td><td></td><td></td></tr>
 <tr><td><code>localRotation</code></td><td><a href="Quat">Quat</a></td><td></td><td></td></tr>
 <tr><td><code>localVelocity</code></td><td><a href="Vec3">Vec3</a></td><td></td><td></td></tr>
@@ -4918,7 +4918,7 @@ MyAvatar.wentAway.connect(function () {
  </thead>
  <tbody> <tr><td><code>0</code></td><td>ForceSit</td><td>Assumes the user is seated in the real world. Disables avatar leaning regardless of what the avatar is doing in the virtual world (i.e., avatar always recenters).</td></tr>
  <tr><td><code>1</code></td><td>ForceStand</td><td>Assumes the user is standing in the real world. Enables avatar leaning regardless of what the avatar is doing in the virtual world (i.e., avatar leans, then if leans too far it recenters).</td></tr>
- <tr><td><code>2</code></td><td>Auto</td><td>Interface detects when the user is standing or seated in the real world. Avatar leaning is disabled when the user is sitting (i.e., avatar always recenters), and avatar leaning is enabled when the user is standing (i.e., avatar leans, then if leans too far it recenters).</td></tr>
+ <tr><td><code>2</code></td><td>Auto</td><td>Darkride detects when the user is standing or seated in the real world. Avatar leaning is disabled when the user is sitting (i.e., avatar always recenters), and avatar leaning is enabled when the user is standing (i.e., avatar leans, then if leans too far it recenters).</td></tr>
  <tr><td><code>3</code></td><td>DisableHMDLean</td><td><p>Both avatar leaning and recentering are disabled regardless of what the user is doing in the real world and no matter what their avatar is doing in the virtual world. Enables the avatar to sit on the floor when the user sits on the floor.</p>
  <p><strong>Note:</strong> Experimental.</p>
 </td></tr>
@@ -5593,3 +5593,7 @@ MyAvatar.transformChanged.connect(function () {
 
 
 </div>
+
+::: tip Names from the engine's history
+Names and addresses with `hifi` or `tivoli` in them, such as `hifi_pbr`, a `hifi://` address or an example file's address, come from the engine's history and still work. Type them as they are.
+:::

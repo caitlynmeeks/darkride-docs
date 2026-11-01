@@ -92,7 +92,7 @@ Keyboard.enableRightMallet()
 Keyboard.loadKeyboardFile(path)
 ```
 
-<div class="api-text" v-pre><p>Loads a JSON file that defines the virtual keyboard's layout. The default JSON file used is <a href="https://github.com/highfidelity/hifi/blob/master/interface/resources/config/keyboard.json" target="_blank" rel="noopener">https://github.com/highfidelity/hifi/.../keyboard.json</a>.</p></div>
+<div class="api-text" v-pre><p>Loads a JSON file that defines the virtual keyboard's layout. The default JSON file used is <a href="https://github.com/caitlynmeeks/darkride-interface/blob/v1.1.2-beta/interface/resources/config/keyboard.json" target="_blank" rel="noopener">https://github.com/caitlynmeeks/darkride-interface/.../keyboard.json</a>.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>path</code></td><td>string</td><td><p>The keyboard JSON file.</p></td></tr>
 </tbody></table></div>

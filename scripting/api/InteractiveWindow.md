@@ -1,13 +1,13 @@
 ---
 title: "InteractiveWindow"
-description: "An InteractiveWindow can display either inside Interface or in its own window separate from the Interface window."
+description: "An InteractiveWindow can display either inside Darkride or in its own window separate from the Darkride window."
 ---
 
 # InteractiveWindow
 
 <div class="api-kind" v-pre><strong>Class.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
-<div class="api-text" v-pre><p>An <code>InteractiveWindow</code> can display either inside Interface or in its own window separate from the Interface window. The window content is defined by a QML file, which can optionally include a <code>WebView</code> control that embeds an HTML web page. (The <code>WebView</code> control is defined by a "WebView.qml" file included in the Interface install.)</p>
+<div class="api-text" v-pre><p>An <code>InteractiveWindow</code> can display either inside Darkride or in its own window separate from the Darkride window. The window content is defined by a QML file, which can optionally include a <code>WebView</code> control that embeds an HTML web page. (The <code>WebView</code> control is defined by a "WebView.qml" file included in the Darkride install.)</p>
  <p>Create using <a href="Desktop#createWindow"><code>Desktop.createWindow</code></a>.</p></div>
 
 ## Properties {#properties}
@@ -19,7 +19,7 @@ description: "An InteractiveWindow can display either inside Interface or in its
 <tr><td><code>relativePosition</code></td><td><a href="globals#Vec2">Vec2</a></td><td><p>The position of the window, relative to the <code>relativePositionAnchor</code>, in pixels. Excludes the window frame.</p></td></tr>
 <tr><td><code>size</code></td><td><a href="globals#Vec2">Vec2</a></td><td><p>The size of the window, in pixels.</p></td></tr>
 <tr><td><code>visible</code></td><td>boolean</td><td><p><code>true</code> if the window is visible, <code>false</code> if it isn't.</p></td></tr>
-<tr><td><code>presentationMode</code></td><td><a href="#PresentationMode">InteractiveWindow.PresentationMode</a></td><td><p>The presentation mode of the window: <code>Desktop.PresentationMode.VIRTUAL</code> to display the window inside Interface, <code>.NATIVE</code> to display it as its own separate window.</p></td></tr>
+<tr><td><code>presentationMode</code></td><td><a href="#PresentationMode">InteractiveWindow.PresentationMode</a></td><td><p>The presentation mode of the window: <code>Desktop.PresentationMode.VIRTUAL</code> to display the window inside Darkride, <code>.NATIVE</code> to display it as its own separate window.</p></td></tr>
 </tbody></table></div>
 
 ## Methods {#functions}
@@ -275,10 +275,10 @@ InteractiveWindow.webEventReceived.connect(function (message) {
 <div class="api-text" v-pre><p>A docking location of an <code>InteractiveWindow</code>.</p>
  <table> <thead> <tr><th>Value</th><th>Name</th><th>Description</th></tr>
  </thead>
- <tbody> <tr><td><code>0</code></td><td>TOP</td><td>Dock to the top edge of the Interface window.</td></tr>
- <tr><td><code>1</code></td><td>BOTTOM</td><td>Dock to the bottom edge of the Interface window.</td></tr>
- <tr><td><code>2</code></td><td>LEFT</td><td>Dock to the left edge of the Interface window.</td></tr>
- <tr><td><code>3</code></td><td>RIGHT</td><td>Dock to the right edge of the Interface window.</td></tr>
+ <tbody> <tr><td><code>0</code></td><td>TOP</td><td>Dock to the top edge of the Darkride window.</td></tr>
+ <tr><td><code>1</code></td><td>BOTTOM</td><td>Dock to the bottom edge of the Darkride window.</td></tr>
+ <tr><td><code>2</code></td><td>LEFT</td><td>Dock to the left edge of the Darkride window.</td></tr>
+ <tr><td><code>3</code></td><td>RIGHT</td><td>Dock to the right edge of the Darkride window.</td></tr>
  </tbody>
 <tbody> </tbody>
 </table></div>
@@ -292,10 +292,10 @@ InteractiveWindow.webEventReceived.connect(function (message) {
 
 <div class="api-text" v-pre><p>The possible docking locations of an <code>InteractiveWindow</code>.</p></div>
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>TOP</code></td><td><a href="#DockArea">InteractiveWindow.DockArea</a></td><td><p>Dock to the top edge of the Interface window.</p></td></tr>
-<tr><td><code>BOTTOM</code></td><td><a href="#DockArea">InteractiveWindow.DockArea</a></td><td><p>Dock to the bottom edge of the Interface window.</p></td></tr>
-<tr><td><code>LEFT</code></td><td><a href="#DockArea">InteractiveWindow.DockArea</a></td><td><p>Dock to the left edge of the Interface window.</p></td></tr>
-<tr><td><code>RIGHT</code></td><td><a href="#DockArea">InteractiveWindow.DockArea</a></td><td><p>Dock to the right edge of the Interface window.</p></td></tr>
+<tr><td><code>TOP</code></td><td><a href="#DockArea">InteractiveWindow.DockArea</a></td><td><p>Dock to the top edge of the Darkride window.</p></td></tr>
+<tr><td><code>BOTTOM</code></td><td><a href="#DockArea">InteractiveWindow.DockArea</a></td><td><p>Dock to the bottom edge of the Darkride window.</p></td></tr>
+<tr><td><code>LEFT</code></td><td><a href="#DockArea">InteractiveWindow.DockArea</a></td><td><p>Dock to the left edge of the Darkride window.</p></td></tr>
+<tr><td><code>RIGHT</code></td><td><a href="#DockArea">InteractiveWindow.DockArea</a></td><td><p>Dock to the right edge of the Darkride window.</p></td></tr>
 </tbody></table></div>
 
 </div>
@@ -343,8 +343,8 @@ InteractiveWindow.webEventReceived.connect(function (message) {
 <div class="api-text" v-pre><p>A display mode for an <code>InteractiveWindow</code>.</p>
  <table> <thead> <tr><th>Value</th><th>Name</th><th>Description</th></tr>
  </thead>
- <tbody> <tr><td><code>0</code></td><td>VIRTUAL</td><td>The window is displayed inside Interface: in the desktop window in desktop mode or on the HUD surface in HMD mode.</td></tr>
- <tr><td><code>1</code></td><td>NATIVE</td><td>The window is displayed separately from the Interface window, as its own separate window.</td></tr>
+ <tbody> <tr><td><code>0</code></td><td>VIRTUAL</td><td>The window is displayed inside Darkride: in the desktop window in desktop mode or on the HUD surface in HMD mode.</td></tr>
+ <tr><td><code>1</code></td><td>NATIVE</td><td>The window is displayed separately from the Darkride window, as its own separate window.</td></tr>
  </tbody>
 <tbody> </tbody>
 </table></div>
@@ -358,8 +358,8 @@ InteractiveWindow.webEventReceived.connect(function (message) {
 
 <div class="api-text" v-pre><p>The possible display modes for an <code>InteractiveWindow</code>.</p></div>
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>VIRTUAL</code></td><td><a href="#PresentationMode">InteractiveWindow.PresentationMode</a></td><td><p>The window is displayed inside Interface: in the desktop window in desktop mode or on the HUD surface in HMD mode.</p></td></tr>
-<tr><td><code>NATIVE</code></td><td><a href="#PresentationMode">InteractiveWindow.PresentationMode</a></td><td><p>The window is displayed separately from the Interface window, as its own separate window.</p></td></tr>
+<tr><td><code>VIRTUAL</code></td><td><a href="#PresentationMode">InteractiveWindow.PresentationMode</a></td><td><p>The window is displayed inside Darkride: in the desktop window in desktop mode or on the HUD surface in HMD mode.</p></td></tr>
+<tr><td><code>NATIVE</code></td><td><a href="#PresentationMode">InteractiveWindow.PresentationMode</a></td><td><p>The window is displayed separately from the Darkride window, as its own separate window.</p></td></tr>
 </tbody></table></div>
 
 </div>
@@ -370,7 +370,7 @@ InteractiveWindow.webEventReceived.connect(function (message) {
 
 <div class="api-text" v-pre><p>Configures how a <code>NATIVE</code> window is displayed.</p></div>
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>dockArea</code></td><td><a href="#DockArea">InteractiveWindow.DockArea</a></td><td><p>The edge of the Interface window to dock to.</p></td></tr>
+<tr><td><code>dockArea</code></td><td><a href="#DockArea">InteractiveWindow.DockArea</a></td><td><p>The edge of the Darkride window to dock to.</p></td></tr>
 </tbody></table></div>
 
 </div>
@@ -382,11 +382,11 @@ InteractiveWindow.webEventReceived.connect(function (message) {
 <div class="api-text" v-pre><p>The anchor for a relative position of an <code>InteractiveWindow</code>.</p>
  <table> <thead> <tr><th>Value</th><th>Name</th><th>Description</th></tr>
  </thead>
- <tbody> <tr><td><code>0</code></td><td>NO_ANCHOR</td><td>Position is not relative to any part of the Interface window.</td></tr>
- <tr><td><code>1</code></td><td>TOP_LEFT</td><td>Position is offset from the top left of the Interface window.</td></tr>
- <tr><td><code>2</code></td><td>TOP_RIGHT</td><td>Position is offset from the top right of the Interface window.</td></tr>
- <tr><td><code>3</code></td><td>BOTTOM_RIGHT</td><td>Position offset from the bottom right of the Interface window.</td></tr>
- <tr><td><code>4</code></td><td>BOTTOM_LEFT</td><td>Position is offset from the bottom left of the Interface window.</td></tr>
+ <tbody> <tr><td><code>0</code></td><td>NO_ANCHOR</td><td>Position is not relative to any part of the Darkride window.</td></tr>
+ <tr><td><code>1</code></td><td>TOP_LEFT</td><td>Position is offset from the top left of the Darkride window.</td></tr>
+ <tr><td><code>2</code></td><td>TOP_RIGHT</td><td>Position is offset from the top right of the Darkride window.</td></tr>
+ <tr><td><code>3</code></td><td>BOTTOM_RIGHT</td><td>Position offset from the bottom right of the Darkride window.</td></tr>
+ <tr><td><code>4</code></td><td>BOTTOM_LEFT</td><td>Position is offset from the bottom left of the Darkride window.</td></tr>
  </tbody>
 <tbody> </tbody>
 </table></div>
@@ -398,13 +398,13 @@ InteractiveWindow.webEventReceived.connect(function (message) {
 
 ### RelativePositionAnchors {#RelativePositionAnchors}
 
-<div class="api-text" v-pre><p>The possible relative position anchors of an <code>InteractiveWindow</code> relative to the Interface window.</p></div>
+<div class="api-text" v-pre><p>The possible relative position anchors of an <code>InteractiveWindow</code> relative to the Darkride window.</p></div>
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>NO_ANCHOR</code></td><td><a href="#RelativePositionAnchor">InteractiveWindow.RelativePositionAnchor</a></td><td><p>Position is not relative to any part of the Interface window.</p></td></tr>
-<tr><td><code>TOP_LEFT</code></td><td><a href="#RelativePositionAnchor">InteractiveWindow.RelativePositionAnchor</a></td><td><p>Position is offset from the top left of the Interface window.</p></td></tr>
-<tr><td><code>TOP_RIGHT</code></td><td><a href="#RelativePositionAnchor">InteractiveWindow.RelativePositionAnchor</a></td><td><p>Position is offset from the top right of the Interface window.</p></td></tr>
-<tr><td><code>BOTTOM_RIGHT</code></td><td><a href="#RelativePositionAnchor">InteractiveWindow.RelativePositionAnchor</a></td><td><p>Position offset from the bottom right of the Interface window.</p></td></tr>
-<tr><td><code>BOTTOM_LEFT</code></td><td><a href="#RelativePositionAnchor">InteractiveWindow.RelativePositionAnchor</a></td><td><p>Position is offset from the bottom left of the Interface window.</p></td></tr>
+<tr><td><code>NO_ANCHOR</code></td><td><a href="#RelativePositionAnchor">InteractiveWindow.RelativePositionAnchor</a></td><td><p>Position is not relative to any part of the Darkride window.</p></td></tr>
+<tr><td><code>TOP_LEFT</code></td><td><a href="#RelativePositionAnchor">InteractiveWindow.RelativePositionAnchor</a></td><td><p>Position is offset from the top left of the Darkride window.</p></td></tr>
+<tr><td><code>TOP_RIGHT</code></td><td><a href="#RelativePositionAnchor">InteractiveWindow.RelativePositionAnchor</a></td><td><p>Position is offset from the top right of the Darkride window.</p></td></tr>
+<tr><td><code>BOTTOM_RIGHT</code></td><td><a href="#RelativePositionAnchor">InteractiveWindow.RelativePositionAnchor</a></td><td><p>Position offset from the bottom right of the Darkride window.</p></td></tr>
+<tr><td><code>BOTTOM_LEFT</code></td><td><a href="#RelativePositionAnchor">InteractiveWindow.RelativePositionAnchor</a></td><td><p>Position is offset from the bottom left of the Darkride window.</p></td></tr>
 </tbody></table></div>
 
 </div>
@@ -419,8 +419,8 @@ InteractiveWindow.webEventReceived.connect(function (message) {
 <tr><td><code>position</code> <em>optional</em></td><td><a href="globals#Vec2">Vec2</a></td><td></td><td><p>The initial position of the window, in pixels.</p></td></tr>
 <tr><td><code>size</code> <em>optional</em></td><td><a href="globals#Vec2">Vec2</a></td><td></td><td><p>The initial size of the window, in pixels</p></td></tr>
 <tr><td><code>visible</code> <em>optional</em></td><td>boolean</td><td><code>true</code></td><td><p><code>true</code> to make the window visible when created, <code>false</code> to make it invisible.</p></td></tr>
-<tr><td><code>presentationMode</code> <em>optional</em></td><td><a href="#PresentationMode">InteractiveWindow.PresentationMode</a></td><td><code>Desktop.PresentationMode.VIRTUAL</code></td><td><p><code>Desktop.PresentationMode.VIRTUAL</code> to display the window inside Interface, <code>.NATIVE</code> to display it as its own separate window.</p></td></tr>
-<tr><td><code>presentationWindowInfo</code> <em>optional</em></td><td><a href="#PresentationWindowInfo">InteractiveWindow.PresentationWindowInfo</a></td><td></td><td><p>Controls how a <code>NATIVE</code> window is displayed. If used, the window is docked to the specified edge of the Interface window, otherwise the window is displayed as its own separate window.</p></td></tr>
+<tr><td><code>presentationMode</code> <em>optional</em></td><td><a href="#PresentationMode">InteractiveWindow.PresentationMode</a></td><td><code>Desktop.PresentationMode.VIRTUAL</code></td><td><p><code>Desktop.PresentationMode.VIRTUAL</code> to display the window inside Darkride, <code>.NATIVE</code> to display it as its own separate window.</p></td></tr>
+<tr><td><code>presentationWindowInfo</code> <em>optional</em></td><td><a href="#PresentationWindowInfo">InteractiveWindow.PresentationWindowInfo</a></td><td></td><td><p>Controls how a <code>NATIVE</code> window is displayed. If used, the window is docked to the specified edge of the Darkride window, otherwise the window is displayed as its own separate window.</p></td></tr>
 <tr><td><code>additionalFlags</code> <em>optional</em></td><td><a href="#Flags">InteractiveWindow.Flags</a></td><td><code>0</code></td><td><p>Customizes window behavior.</p></td></tr>
 <tr><td><code>overrideFlags</code> <em>optional</em></td><td><a href="#OverrideFlags">InteractiveWindow.OverrideFlags</a></td><td><code>0</code></td><td><p>Customizes window controls.</p></td></tr>
 <tr><td><code>relativePositionAnchor</code> <em>optional</em></td><td><a href="#RelativePositionAnchor">InteractiveWindow.RelativePositionAnchor</a></td><td></td><td><p>he anchor for the <code>relativePosition</code>, if used.</p></td></tr>

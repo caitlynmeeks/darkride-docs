@@ -34,7 +34,7 @@ var modelEntityID = Entities.addEntity({
     type: "Model",
     position: Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(Camera.orientation, { x: -0.5, y: 0, z: -3 })),
     rotation: MyAvatar.orientation,
-    modelURL: "http://content.highfidelity.com/seefo/production/puck-attach/vive_tracker_puck.obj",
+    modelURL: "https://example.com/models/vive_tracker_puck.obj",
     dimensions: { x: 0.945, y: 0.921, z: 0.423 },
     lifetime: 300  // Delete after 5 minutes.
 });
@@ -356,3 +356,7 @@ Graphics.updateModel(id, model)
 <div class="api-type" v-pre><strong>Type:</strong> string</div>
 
 </div>
+
+::: tip Names from the engine's history
+Names and addresses with `hifi` or `tivoli` in them, such as `hifi_pbr`, a `hifi://` address or an example file's address, come from the engine's history and still work. Type them as they are.
+:::

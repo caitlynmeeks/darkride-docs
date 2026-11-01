@@ -1,13 +1,13 @@
 ---
 title: "ScriptsModel"
-description: "Information on the scripts that are in the default scripts directory of the Interface installation."
+description: "Information on the scripts that are in the default scripts directory of the Darkride installation."
 ---
 
 # ScriptsModel
 
 <div class="api-kind" v-pre><strong>Class.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
-<div class="api-text" v-pre><p>Information on the scripts that are in the default scripts directory of the Interface installation. This is provided as a property of <a href="ScriptDiscoveryService"><code>ScriptDiscoveryService</code></a>.</p>
+<div class="api-text" v-pre><p>Information on the scripts that are in the default scripts directory of the Darkride installation. This is provided as a property of <a href="ScriptDiscoveryService"><code>ScriptDiscoveryService</code></a>.</p>
  <p>The information provided reflects the subdirectory structure. Methods and signals are per QT's <a href="http://doc.qt.io/qt-5/qabstractitemmodel.html" target="_blank" rel="noopener">QAbstractItemModel</a> class, with the following details:</p>
  <ul> <li>A single column of data: <code>columnCount(index)</code> returns <code>1</code>. </li>
  <li>Data is provided for the following roles: <table> <thead> <tr><th>Role</th><th>Value</th><th>Description</th></tr>

@@ -8,7 +8,7 @@ description: "The Entities API provides facilities to create and interact with e
 <div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts, server entity scripts, agents.</div>
 
 <div class="api-text" v-pre><p>The <code>Entities</code> API provides facilities to create and interact with entities. Entities are 2D or 3D objects displayed in-world. Depending on their <a href="Entities-types#EntityHostType">EntityHostType</a>, they may persist in the world as "domain" entities, travel to different worlds with a user as "avatar" entities, or be visible only to an individual user as "local" entities (a.k.a. "overlays").</p>
- <p>Note: For Interface, avatar, and client entity scripts, the entities available to scripts are those that Interface has displayed and so knows about. For assignment client scripts, the entities available are those that are "seen" by the <a href="EntityViewer"><code>EntityViewer</code></a>. For entity server scripts, all entities are available.</p>
+ <p>Note: For Darkride, avatar, and client entity scripts, the entities available to scripts are those that Darkride has displayed and so knows about. For assignment client scripts, the entities available are those that are "seen" by the <a href="EntityViewer"><code>EntityViewer</code></a>. For entity server scripts, all entities are available.</p>
  <h3>Entity Types and Properties</h3>
  <p>For a list of the entity types that you can use, see <a href="Entities-types#EntityType">Entity Types</a>.</p>
  <p>For the properties of the different entity types, see <a href="Entities-types#EntityProperties">Entity Properties</a>. Some properties are universal to all entity types, and some are specific to particular entity types.</p>
@@ -231,14 +231,14 @@ Script.setTimeout(function () {
 Entities.callEntityMethod(entityID, method, parameters?)
 ```
 
-<div class="api-text" v-pre><p>Calls a method in a client entity script from an Interface, avatar, or client entity script, or calls a method in a server entity script from a server entity script. The entity script method must be exposed as a property in the target entity script. Additionally, if calling a server entity script, the server entity script must include the method's name in an exposed property called <code>remotelyCallable</code> that is an array of method names that can be called.</p></div>
+<div class="api-text" v-pre><p>Calls a method in a client entity script from a Darkride, avatar, or client entity script, or calls a method in a server entity script from a server entity script. The entity script method must be exposed as a property in the target entity script. Additionally, if calling a server entity script, the server entity script must include the method's name in an exposed property called <code>remotelyCallable</code> that is an array of method names that can be called.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>entityID</code></td><td><a href="Uuid">Uuid</a></td><td></td><td><p>The ID of the entity to call the method in.</p></td></tr>
 <tr><td><code>method</code></td><td>string</td><td></td><td><p>The name of the method to call. The method is called with the entity ID as the first parameter and the <code>parameters</code> value as the second parameter.</p></td></tr>
 <tr><td><code>parameters</code> <em>optional</em></td><td>Array&lt;string&gt;</td><td><code>[]</code></td><td><p>The additional parameters to call the specified method with.</p></td></tr>
 </tbody></table></div>
 
-<div class="api-example" v-pre><strong>Example:</strong> <p>Call a method in a client entity script from an Interface script.</p></div>
+<div class="api-example" v-pre><strong>Example:</strong> <p>Call a method in a client entity script from a client script.</p></div>
 
 ```js
 // Client entity script.
@@ -273,14 +273,14 @@ Script.setTimeout(function () {
 Entities.callEntityServerMethod(entityID, method, parameters?)
 ```
 
-<div class="api-text" v-pre><p>Calls a method in a server entity script from an Interface, avatar, or client entity script. The server entity script method must be exposed as a property in the target server entity script. Additionally, the server entity script must include the method's name in an exposed property called <code>remotelyCallable</code> that is an array of method names that can be called.</p></div>
+<div class="api-text" v-pre><p>Calls a method in a server entity script from a Darkride, avatar, or client entity script. The server entity script method must be exposed as a property in the target server entity script. Additionally, the server entity script must include the method's name in an exposed property called <code>remotelyCallable</code> that is an array of method names that can be called.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>entityID</code></td><td><a href="Uuid">Uuid</a></td><td></td><td><p>The ID of the entity to call the method in.</p></td></tr>
 <tr><td><code>method</code></td><td>string</td><td></td><td><p>The name of the method to call. The method is called with the entity ID as the first parameter and the <code>parameters</code> value as the second parameter.</p></td></tr>
 <tr><td><code>parameters</code> <em>optional</em></td><td>Array&lt;string&gt;</td><td><code>[]</code></td><td><p>The additional parameters to call the specified method with.</p></td></tr>
 </tbody></table></div>
 
-<div class="api-example" v-pre><strong>Example:</strong> <p>Call a method in a server entity script from an Interface script.</p></div>
+<div class="api-example" v-pre><strong>Example:</strong> <p>Call a method in a server entity script from a client script.</p></div>
 
 ```js
 // Server entity script.
@@ -487,7 +487,7 @@ Script.setTimeout(function () {
 Entities.dumpTree()
 ```
 
-<div class="api-text" v-pre><p>Dumps debug information about all entities in Interface's local in-memory tree of entities it knows about to the program log.</p></div>
+<div class="api-text" v-pre><p>Dumps debug information about all entities in Darkride's local in-memory tree of entities it knows about to the program log.</p></div>
 
 </div>
 
@@ -1029,9 +1029,9 @@ Entities.getEntityObject(id)
 ```
 
 <div class="api-text" v-pre><p>Gets an entity's script object. In particular, this is useful for accessing a <a href="Entities-types#EntityProperties-Web">Web</a> entity's HTML <code>EventBridge</code> script object to exchange messages with the web page script. </p>
-<p>To send a message from an Interface script to a Web entity over its event bridge:</p>
+<p>To send a message from a client script to a Web entity over its event bridge:</p>
  <pre class="prettyprint"><code>var entityObject = Entities.getEntityObject(entityID);&#10;entityObject.emitScriptEvent(message);</code></pre>
- <p>To receive a message from a Web entity over its event bridge in an Interface script:</p>
+ <p>To receive a message from a Web entity over its event bridge in a client script:</p>
  <pre class="prettyprint"><code>var entityObject = Entities.getentityObject(entityID);&#10;entityObject.webEventReceived.connect(function(message) {&#10;    ...&#10;};</code></pre>
  <p>Alternatively, you can use <a href="#emitScriptEvent"><code>Entities.emitScriptEvent</code></a> and <a href="#webEventReceived"><code>Entities.webEventReceived</code></a> to exchange messages with a Web entity over its event bridge.</p>
 <p></p></div>
@@ -2233,7 +2233,7 @@ Entities.setKeyboardFocusEntity(id)
 Entities.setLightsArePickable(value)
 ```
 
-<div class="api-text" v-pre><p>Sets whether or not ray picks intersect the bounding box of <a href="Entities-types#EntityProperties-Light">Light</a> entities. By default, Light entities are not intersected. The setting lasts for the Interface session. Ray picks are performed using <a href="#findRayIntersection">findRayIntersection</a>, or the <a href="Picks"><code>Picks</code></a> API.</p></div>
+<div class="api-text" v-pre><p>Sets whether or not ray picks intersect the bounding box of <a href="Entities-types#EntityProperties-Light">Light</a> entities. By default, Light entities are not intersected. The setting lasts for the Darkride session. Ray picks are performed using <a href="#findRayIntersection">findRayIntersection</a>, or the <a href="Picks"><code>Picks</code></a> API.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>value</code></td><td>boolean</td><td><p><code>true</code> to make ray picks intersect the bounding box of <a href="Entities-types#EntityProperties-Light">Light</a> entities, otherwise <code>false</code>.</p></td></tr>
 </tbody></table></div>
@@ -2422,7 +2422,7 @@ Entities.setVehicleControls(entityID, controls)
 Entities.setZonesArePickable(value)
 ```
 
-<div class="api-text" v-pre><p>Sets whether or not ray picks intersect the bounding box of <a href="Entities-types#EntityProperties-Zone">Zone</a> entities. By default, Zone entities are not intersected. The setting lasts for the Interface session. Ray picks are performed using <a href="#findRayIntersection">findRayIntersection</a>, or the <a href="Picks"><code>Picks</code></a> API.</p></div>
+<div class="api-text" v-pre><p>Sets whether or not ray picks intersect the bounding box of <a href="Entities-types#EntityProperties-Zone">Zone</a> entities. By default, Zone entities are not intersected. The setting lasts for the Darkride session. Ray picks are performed using <a href="#findRayIntersection">findRayIntersection</a>, or the <a href="Picks"><code>Picks</code></a> API.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>value</code></td><td>boolean</td><td><p><code>true</code> to make ray picks intersect the bounding box of <a href="Entities-types#EntityProperties-Zone">Zone</a> entities, otherwise <code>false</code>.</p></td></tr>
 </tbody></table></div>
@@ -2618,7 +2618,7 @@ Entities.addingEntity.connect(function (entityID) {
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when an entity is added to Interface's local in-memory tree of entities it knows about. This may occur when entities are loaded upon visiting a world, when the user rotates their view so that more entities become visible, and when any type of entity is created (e.g., by <a href="#addEntity">addEntity</a>).</p></div>
+<div class="api-text" v-pre><p>Triggered when an entity is added to Darkride's local in-memory tree of entities it knows about. This may occur when entities are loaded upon visiting a world, when the user rotates their view so that more entities become visible, and when any type of entity is created (e.g., by <a href="#addEntity">addEntity</a>).</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>entityID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The ID of the entity added.</p></td></tr>
 </tbody></table></div>
@@ -2643,7 +2643,7 @@ Entities.addingWearable.connect(function (entityID) {
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when a "wearable" entity is added to Interface's local in-memory tree of entities it knows about, for example when adding a "wearable" to your avatar.</p></div>
+<div class="api-text" v-pre><p>Triggered when a "wearable" entity is added to Darkride's local in-memory tree of entities it knows about, for example when adding a "wearable" to your avatar.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>entityID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The ID of the "wearable" entity added.</p></td></tr>
 </tbody></table></div>
@@ -2762,7 +2762,7 @@ Entities.clearingEntities.connect(function () {
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when you disconnect from a world, at which time Interface's local in-memory tree of entities that it knows about is cleared.</p></div>
+<div class="api-text" v-pre><p>Triggered when you disconnect from a world, at which time Darkride's local in-memory tree of entities that it knows about is cleared.</p></div>
 
 <div class="api-example" v-pre><strong>Example:</strong> <p>Report when Interfaces's entity tree is cleared.</p></div>
 
@@ -3474,7 +3474,7 @@ Entities.verifyStaticCertificateProperties(entityID)
 <div class="api-text" v-pre><p>From the old marketplace; does nothing in Darkride.</p></div>
 :::
 
-<div class="api-text" v-pre><p>Verifies the entity's proof of provenance, i.e., that the entity's <code>certificateID</code> property was produced by High Fidelity signing the entity's static certificate JSON.</p></div>
+<div class="api-text" v-pre><p>Verifies the entity's proof of provenance, i.e., that the entity's <code>certificateID</code> property was produced by the old marketplace signing the entity's static certificate JSON.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>entityID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The ID of the entity to verify.</p></td></tr>
 </tbody></table></div>
@@ -3523,3 +3523,7 @@ Entities.canRezTmpCertifiedChanged.connect(function (canRezTmpCertified) {
 </tbody></table></div>
 
 </div>
+
+::: tip Names from the engine's history
+Names and addresses with `hifi` or `tivoli` in them, such as `hifi_pbr`, a `hifi://` address or an example file's address, come from the engine's history and still work. Type them as they are.
+:::

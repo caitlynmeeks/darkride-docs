@@ -1,13 +1,13 @@
 ---
 title: "OverlayWebWindow"
-description: "A OverlayWebWindow displays an HTML window inside Interface."
+description: "A OverlayWebWindow displays an HTML window inside Darkride."
 ---
 
 # OverlayWebWindow
 
 <div class="api-kind" v-pre><strong>Class.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
-<div class="api-text" v-pre><p>A <code>OverlayWebWindow</code> displays an HTML window inside Interface.</p>
+<div class="api-text" v-pre><p>A <code>OverlayWebWindow</code> displays an HTML window inside Darkride.</p>
  <p>Create using <code>new OverlayWebWindow(...)</code>.</p></div>
 
 ```js

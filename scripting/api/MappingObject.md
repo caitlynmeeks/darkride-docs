@@ -109,7 +109,7 @@ makeAxis(source1, source2)
 <div class="api-example" v-pre><strong>Example:</strong> <p>Make the Oculus Touch triggers move your avatar up and down.</p></div>
 
 ```js
-var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
+var MAPPING_NAME = "com.example.controllers.newMapping";
 var mapping = Controller.newMapping(MAPPING_NAME);
 mapping
     .makeAxis(Controller.Hardware.OculusTouch.LT, Controller.Hardware.OculusTouch.RT)

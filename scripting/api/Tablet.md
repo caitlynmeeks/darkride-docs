@@ -96,3 +96,7 @@ Tablet.tabletNotification.connect(function () {
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
 
 </div>
+
+::: tip Names from the engine's history
+Names and addresses with `hifi` or `tivoli` in them, such as `hifi_pbr`, a `hifi://` address or an example file's address, come from the engine's history and still work. Type them as they are.
+:::

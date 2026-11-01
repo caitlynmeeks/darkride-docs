@@ -77,7 +77,7 @@ request(options, callback)
 
 ```js
 request({
-    uri: "https://tivolicloud.com/api/domains/stats",
+    uri: "https://vr.darkride.ai/api/domains/stats",
     method: "GET",
     json: true,
     body: {},
@@ -569,8 +569,8 @@ Controller.keyPressEvent.connect(function (event) {
 
 <div class="api-text" v-pre><p>A controller mouse movement or button event.</p></div>
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>x</code></td><td>number</td><td><p>Integer x-coordinate of the event on the Interface window or HMD HUD.</p></td></tr>
-<tr><td><code>y</code></td><td>number</td><td><p>Integer y-coordinate of the event on the Interface window or HMD HUD.</p></td></tr>
+<tr><td><code>x</code></td><td>number</td><td><p>Integer x-coordinate of the event on the Darkride window or HMD HUD.</p></td></tr>
+<tr><td><code>y</code></td><td>number</td><td><p>Integer y-coordinate of the event on the Darkride window or HMD HUD.</p></td></tr>
 <tr><td><code>button</code></td><td>string</td><td><p><code>"LEFT"</code>, <code>"MIDDLE"</code>, or <code>"RIGHT"</code> if a button press or release caused the event, otherwise <code>"NONE"</code>.</p></td></tr>
 <tr><td><code>isLeftButton</code></td><td>boolean</td><td><p><code>true</code> if the left button was pressed when the event was generated, otherwise <code>false</code>.</p></td></tr>
 <tr><td><code>isMiddleButton</code></td><td>boolean</td><td><p><code>true</code> if the middle button was pressed when the event was generated, otherwise <code>false</code>.</p></td></tr>
@@ -757,10 +757,10 @@ Controller.mouseMoveEvent.connect(function (event) {
 <div class="api-text" v-pre><p>Refresh rate profile.</p>
  <table> <thead> <tr> <th>Value</th> <th>Description</th> </tr>
  </thead>
- <tbody> <tr> <td><code>"Eco"</code></td> <td>20 FPS target rate, reduced when Interface doesn't have focus or is minimized</td> </tr>
- <tr> <td><code>"Interactive"</code></td> <td>30 FPS target rate, reduced when Interface doesn't have focus or is minimized</td> </tr>
- <tr> <td><code>"Realtime"</code></td> <td>60 FPS target rate, reduced when Interface doesn't have focus or is minimized</td> </tr>
- <tr> <td><code>"Display-based"</code></td> <td>Targets the refresh rate of your screen, reduced when Interface doesn't have focus or is minimized</td> </tr>
+ <tbody> <tr> <td><code>"Eco"</code></td> <td>20 FPS target rate, reduced when Darkride doesn't have focus or is minimized</td> </tr>
+ <tr> <td><code>"Interactive"</code></td> <td>30 FPS target rate, reduced when Darkride doesn't have focus or is minimized</td> </tr>
+ <tr> <td><code>"Realtime"</code></td> <td>60 FPS target rate, reduced when Darkride doesn't have focus or is minimized</td> </tr>
+ <tr> <td><code>"Display-based"</code></td> <td>Targets the refresh rate of your screen, reduced when Darkride doesn't have focus or is minimized</td> </tr>
  </tbody>
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> string</div>
@@ -771,15 +771,15 @@ Controller.mouseMoveEvent.connect(function (event) {
 
 ### RefreshRateRegime {#RefreshRateRegime}
 
-<div class="api-text" v-pre><p>Interface states that affect the refresh rate.</p>
+<div class="api-text" v-pre><p>Darkride states that affect the refresh rate.</p>
  <table> <thead> <tr><th>Value</th><th>Name</th><th>Description</th> </tr>
 </thead>
- <tbody> <tr><td><code>0</code></td><td>FOCUS_ACTIVE</td><td>Interface has focus and the user is active or is in VR.</td></tr>
- <tr><td><code>1</code></td><td>FOCUS_INACTIVE</td><td>Interface has focus and the user is inactive.</td></tr>
- <tr><td><code>2</code></td><td>UNFOCUS</td><td>Interface doesn't have focus.</td></tr>
- <tr><td><code>3</code></td><td>MINIMIZED</td><td>Interface is minimized.</td></tr>
- <tr><td><code>4</code></td><td>STARTUP</td><td>Interface is starting up.</td></tr>
- <tr><td><code>5</code></td><td>SHUTDOWN</td><td>Interface is shutting down.</td></tr>
+ <tbody> <tr><td><code>0</code></td><td>FOCUS_ACTIVE</td><td>Darkride has focus and the user is active or is in VR.</td></tr>
+ <tr><td><code>1</code></td><td>FOCUS_INACTIVE</td><td>Darkride has focus and the user is inactive.</td></tr>
+ <tr><td><code>2</code></td><td>UNFOCUS</td><td>Darkride doesn't have focus.</td></tr>
+ <tr><td><code>3</code></td><td>MINIMIZED</td><td>Darkride is minimized.</td></tr>
+ <tr><td><code>4</code></td><td>STARTUP</td><td>Darkride is starting up.</td></tr>
+ <tr><td><code>5</code></td><td>SHUTDOWN</td><td>Darkride is shutting down.</td></tr>
  </tbody>
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
@@ -790,15 +790,15 @@ Controller.mouseMoveEvent.connect(function (event) {
 
 ### RefreshRateRegimeName {#RefreshRateRegimeName}
 
-<div class="api-text" v-pre><p>Interface states that affect the refresh rate.</p>
+<div class="api-text" v-pre><p>Darkride states that affect the refresh rate.</p>
  <table> <thead> <tr><th>Value</th><th>Description</th></tr>
  </thead>
- <tbody> <tr><td><code>"FocusActive"</code></td><td>Interface has focus and the user is active or is in VR.</td></tr>
- <tr><td><code>"FocusInactive"</code></td><td>Interface has focus and the user is inactive.</td></tr>
- <tr><td><code>"Unfocus"</code></td><td>Interface doesn't have focus.</td></tr>
- <tr><td><code>"Minimized"</code></td><td>Interface is minimized.</td></tr>
- <tr><td><code>"StartUp"</code></td><td>Interface is starting up.</td></tr>
- <tr><td><code>"ShutDown"</code></td><td>Interface is shutting down.</td></tr>
+ <tbody> <tr><td><code>"FocusActive"</code></td><td>Darkride has focus and the user is active or is in VR.</td></tr>
+ <tr><td><code>"FocusInactive"</code></td><td>Darkride has focus and the user is inactive.</td></tr>
+ <tr><td><code>"Unfocus"</code></td><td>Darkride doesn't have focus.</td></tr>
+ <tr><td><code>"Minimized"</code></td><td>Darkride is minimized.</td></tr>
+ <tr><td><code>"StartUp"</code></td><td>Darkride is starting up.</td></tr>
+ <tr><td><code>"ShutDown"</code></td><td>Darkride is shutting down.</td></tr>
  </tbody>
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> string</div>
@@ -1140,8 +1140,8 @@ color.v = 0.8;                                                                 /
 
 <div class="api-text" v-pre><p>A mouse wheel event.</p></div>
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>x</code></td><td>number</td><td><p>Integer x-coordinate of the event on the Interface window or HMD HUD.</p></td></tr>
-<tr><td><code>y</code></td><td>number</td><td><p>Integer y-coordinate of the event on the Interface window or HMD HUD.</p></td></tr>
+<tr><td><code>x</code></td><td>number</td><td><p>Integer x-coordinate of the event on the Darkride window or HMD HUD.</p></td></tr>
+<tr><td><code>y</code></td><td>number</td><td><p>Integer y-coordinate of the event on the Darkride window or HMD HUD.</p></td></tr>
 <tr><td><code>delta</code></td><td>number</td><td><p>Integer number indicating the direction and speed to scroll: positive numbers to scroll up, and negative numers to scroll down.</p></td></tr>
 <tr><td><code>orientation</code></td><td>string</td><td><p>The orientation of the wheel: <code>"VERTICAL"</code> for a typical mouse; <code>"HORIZONTAL"</code> for a "horizontal" wheel.</p></td></tr>
 <tr><td><code>isLeftButton</code></td><td>boolean</td><td><p><code>true</code> if the left button was pressed when the event was generated, otherwise <code>false</code>.</p></td></tr>

@@ -8,7 +8,7 @@ description: "The AvatarList API provides information about avatars within the c
 <div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: agents, server entity scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>AvatarList</code> API provides information about avatars within the current world.</p>
- <p><strong>Warning:</strong> An API named "<code>AvatarList</code>" is also provided for Interface, client entity, and avatar scripts, however, it is a synonym for the <a href="AvatarManager"><code>AvatarManager</code></a> API.</p></div>
+ <p><strong>Warning:</strong> An API named "<code>AvatarList</code>" is also provided for Darkride, client entity, and avatar scripts, however, it is a synonym for the <a href="AvatarManager"><code>AvatarManager</code></a> API.</p></div>
 
 ## Functions {#functions}
 

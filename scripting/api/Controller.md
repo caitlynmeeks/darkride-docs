@@ -129,12 +129,12 @@ description: "The Controller API provides facilities to interact with computer a
 ## Properties {#properties}
 
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>Actions</code></td><td><a href="#Actions">Controller.Actions</a></td><td><p>Predefined actions on Interface and the user's avatar. These can be used as end points in a <a href="RouteObject"><code>RouteObject</code></a> mapping. A synonym for <code>Controller.Hardware.Actions</code>. <em>Read-only.</em> </p>
-<p>Default mappings are provided from the <code>Controller.Hardware.Keyboard</code> and <code>Controller.Standard</code> to actions in <a href="https://github.com/highfidelity/hifi/blob/master/interface/resources/controllers/keyboardMouse.json" target="_blank" rel="noopener"> keyboardMouse.json</a> and <a href="https://github.com/highfidelity/hifi/blob/master/interface/resources/controllers/standard.json" target="_blank" rel="noopener"> standard.json</a>, respectively.</p>
+<tr><td><code>Actions</code></td><td><a href="#Actions">Controller.Actions</a></td><td><p>Predefined actions on Darkride and the user's avatar. These can be used as end points in a <a href="RouteObject"><code>RouteObject</code></a> mapping. A synonym for <code>Controller.Hardware.Actions</code>. <em>Read-only.</em> </p>
+<p>Default mappings are provided from the <code>Controller.Hardware.Keyboard</code> and <code>Controller.Standard</code> to actions in <a href="https://github.com/caitlynmeeks/darkride-interface/blob/v1.1.2-beta/interface/resources/controllers/keyboardMouse.json" target="_blank" rel="noopener"> keyboardMouse.json</a> and <a href="https://github.com/caitlynmeeks/darkride-interface/blob/v1.1.2-beta/interface/resources/controllers/standard.json" target="_blank" rel="noopener"> standard.json</a>, respectively.</p>
 <p></p></td></tr>
-<tr><td><code>Hardware</code></td><td><a href="#Hardware">Controller.Hardware</a></td><td><p>Standard and hardware-specific controller and computer outputs, plus predefined actions on Interface and the user's avatar. The outputs can be mapped to <code>Actions</code> or functions in a <a href="RouteObject"><code>RouteObject</code></a> mapping. Additionally, hardware-specific controller outputs can be mapped to <code>Controller.Standard</code> controller outputs. <em>Read-only.</em></p></td></tr>
+<tr><td><code>Hardware</code></td><td><a href="#Hardware">Controller.Hardware</a></td><td><p>Standard and hardware-specific controller and computer outputs, plus predefined actions on Darkride and the user's avatar. The outputs can be mapped to <code>Actions</code> or functions in a <a href="RouteObject"><code>RouteObject</code></a> mapping. Additionally, hardware-specific controller outputs can be mapped to <code>Controller.Standard</code> controller outputs. <em>Read-only.</em></p></td></tr>
 <tr><td><code>Standard</code></td><td><a href="#Standard">Controller.Standard</a></td><td><p>Standard controller outputs that can be mapped to <code>Actions</code> or functions in a <a href="RouteObject"><code>RouteObject</code></a> mapping. <em>Read-only.</em> </p>
-<p>Each hardware device has a mapping from its outputs to <code>Controller.Standard</code> items, specified in a JSON file. For example, <a href="https://github.com/highfidelity/hifi/blob/master/interface/resources/controllers/leapmotion.json" target="_blank" rel="noopener"> leapmotion.json</a> and <a href="https://github.com/highfidelity/hifi/blob/master/interface/resources/controllers/vive.json" target="_blank" rel="noopener">vive.json</a>.</p>
+<p>Each hardware device has a mapping from its outputs to <code>Controller.Standard</code> items, specified in a JSON file. For example, <a href="https://github.com/caitlynmeeks/darkride-interface/blob/v1.1.2-beta/interface/resources/controllers/leapmotion.json" target="_blank" rel="noopener"> leapmotion.json</a> and <a href="https://github.com/caitlynmeeks/darkride-interface/blob/v1.1.2-beta/interface/resources/controllers/vive.json" target="_blank" rel="noopener">vive.json</a>.</p>
 <p></p></td></tr>
 </tbody></table></div>
 
@@ -200,7 +200,7 @@ Script.setTimeout(function () {
 Controller.captureKeyEvents(event)
 ```
 
-<div class="api-text" v-pre><p>Disables default Interface actions for a particular key event.</p></div>
+<div class="api-text" v-pre><p>Disables default Darkride actions for a particular key event.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>event</code></td><td><a href="globals#KeyEvent">KeyEvent</a></td><td><p>Details of the key event to be captured. The <code>key</code> property must be specified. The <code>text</code> property is ignored. The other properties default to <code>false</code>.</p></td></tr>
 </tbody></table></div>
@@ -235,7 +235,7 @@ Controller.captureMouseEvents()
 <div class="api-example" v-pre><strong>Example:</strong> <p>Disable Controller.Hardware.Keyboard mouse events for a short period.</p></div>
 
 ```js
-var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
+var MAPPING_NAME = "com.example.controllers.newMapping";
 var mapping = Controller.newMapping(MAPPING_NAME);
 mapping.from(Controller.Hardware.Keyboard.MouseX).to(function (x) {
     print("Mouse x = " + x);
@@ -535,7 +535,7 @@ Controller.getPoseValue(source)
 Controller.getRecommendedHUDRect()
 ```
 
-<div class="api-text" v-pre><p>Gets the recommended area to position UI on the HUD surface if in HMD mode or Interface's window interior if in desktop mode.</p></div>
+<div class="api-text" v-pre><p>Gets the recommended area to position UI on the HUD surface if in HMD mode or Darkride's window interior if in desktop mode.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="globals#Rect">Rect</a> <p>The recommended area in which to position UI.</p></div>
 
 </div>
@@ -610,8 +610,8 @@ if (Controller.Hardware.Vive) {
 Controller.getViewportDimensions()
 ```
 
-<div class="api-text" v-pre><p>Gets the dimensions of the Interface window's interior if in desktop mode or the HUD surface if in HMD mode.</p></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> <a href="globals#Vec2">Vec2</a> <p>The dimensions of the Interface window interior if in desktop mode or HUD surface if in HMD mode.</p></div>
+<div class="api-text" v-pre><p>Gets the dimensions of the Darkride window's interior if in desktop mode or the HUD surface if in HMD mode.</p></div>
+<div class="api-returns" v-pre><strong>Returns:</strong> <a href="globals#Vec2">Vec2</a> <p>The dimensions of the Darkride window interior if in desktop mode or HUD surface if in HMD mode.</p></div>
 
 </div>
 
@@ -664,7 +664,7 @@ Controller.newMapping(mappingName?)
 <div class="api-example" v-pre><strong>Example:</strong> <p>Create a simple mapping that makes the right trigger move your avatar up.</p></div>
 
 ```js
-var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
+var MAPPING_NAME = "com.example.controllers.newMapping";
 var mapping = Controller.newMapping(MAPPING_NAME);
 
 mapping.from(Controller.Standard.RT).to(Controller.Actions.TranslateY);
@@ -695,7 +695,7 @@ Controller.parseMapping(jsonString)
 
 ```js
 var mappingJSON = {
-    "name": "com.highfidelity.controllers.example.jsonMapping",
+    "name": "com.example.controllers.jsonMapping",
     "channels": [
         { "from": "Standard.RT", "to": "Actions.TranslateY" }
     ]
@@ -743,7 +743,7 @@ Controller.releaseEntityClickEvents()
 Controller.releaseKeyEvents(event)
 ```
 
-<div class="api-text" v-pre><p>Re-enables default Interface actions for a particular key event that has been disabled using <a href="#captureKeyEvents">captureKeyEvents</a>.</p></div>
+<div class="api-text" v-pre><p>Re-enables default Darkride actions for a particular key event that has been disabled using <a href="#captureKeyEvents">captureKeyEvents</a>.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>event</code></td><td><a href="globals#KeyEvent">KeyEvent</a></td><td><p>Details of the key event to release from capture. The <code>key</code> property must be specified. The <code>text</code> property is ignored. The other properties default to <code>false</code>.</p></td></tr>
 </tbody></table></div>
@@ -1252,7 +1252,7 @@ Controller.touchBeginEvent.connect(function (event) {
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when a touch event starts in the Interface window on a touch-enabled display or device.</p></div>
+<div class="api-text" v-pre><p>Triggered when a touch event starts in the Darkride window on a touch-enabled display or device.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>event</code></td><td><a href="globals#TouchEvent">TouchEvent</a></td><td><p>Details of the touch begin.</p></td></tr>
 </tbody></table></div>
@@ -1277,7 +1277,7 @@ Controller.touchEndEvent.connect(function (event) {
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when a touch event ends in the Interface window on a touch-enabled display or device.</p></div>
+<div class="api-text" v-pre><p>Triggered when a touch event ends in the Darkride window on a touch-enabled display or device.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>event</code></td><td><a href="globals#TouchEvent">TouchEvent</a></td><td><p>Details of the touch end.</p></td></tr>
 </tbody></table></div>
@@ -1294,7 +1294,7 @@ Controller.touchUpdateEvent.connect(function (event) {
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when a touch event update occurs in the Interface window on a touch-enabled display or device.</p></div>
+<div class="api-text" v-pre><p>Triggered when a touch event update occurs in the Darkride window on a touch-enabled display or device.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>event</code></td><td><a href="globals#TouchEvent">TouchEvent</a></td><td><p>Details of the touch update.</p></td></tr>
 </tbody></table></div>
@@ -1332,7 +1332,7 @@ Controller.wheelEvent.connect(function (event) {
 
 ### Actions {#Actions}
 
-<div class="api-text" v-pre><p>The <code>Controller.Actions</code> object has properties representing predefined actions on the user's avatar and Interface. The property values are integer IDs, uniquely identifying each action. <em>Read-only.</em></p>
+<div class="api-text" v-pre><p>The <code>Controller.Actions</code> object has properties representing predefined actions on the user's avatar and Darkride. The property values are integer IDs, uniquely identifying each action. <em>Read-only.</em></p>
  <p>These actions can be used as end points in the routes of a <a href="MappingObject"><code>MappingObject</code></a>. The data item routed to each action is either a number or a <a href="globals#Pose"><code>Pose</code></a>.</p>
  <p> </p>
 <p></p>
@@ -1516,13 +1516,13 @@ Controller.wheelEvent.connect(function (event) {
 
 ### Hardware {#Hardware}
 
-<div class="api-text" v-pre><p>The <code>Controller.Hardware</code> object has properties representing standard and hardware-specific controller and computer outputs, plus predefined actions on Interface and the user's avatar. <em>Read-only.</em></p>
+<div class="api-text" v-pre><p>The <code>Controller.Hardware</code> object has properties representing standard and hardware-specific controller and computer outputs, plus predefined actions on Darkride and the user's avatar. <em>Read-only.</em></p>
  <p>The outputs can be mapped to actions or functions in a <a href="RouteObject"><code>RouteObject</code></a> mapping. Additionally, hardware-specific controller outputs can be mapped to standard controller outputs. </p>
-<p>Controllers typically implement a subset of the <a href="#Standard"><code>Controller.Standard</code></a> controls, plus they may implement some extras. Some common controllers are included in the table. You can see the outputs provided by these and others by viewing their <a href="#MappingJSON">MappingJSON</a> files at <a href="https://github.com/highfidelity/hifi/tree/master/interface/resources/controllers" target="_blank" rel="noopener"> https://github.com/highfidelity/hifi/tree/master/interface/resources/controllers</a>.</p>
+<p>Controllers typically implement a subset of the <a href="#Standard"><code>Controller.Standard</code></a> controls, plus they may implement some extras. Some common controllers are included in the table. You can see the outputs provided by these and others by viewing their <a href="#MappingJSON">MappingJSON</a> files at <a href="https://github.com/caitlynmeeks/darkride-interface/tree/v1.1.2-beta/interface/resources/controllers" target="_blank" rel="noopener"> https://github.com/caitlynmeeks/darkride-interface/tree/v1.1.2-beta/interface/resources/controllers</a>.</p>
  <table> <thead> <tr><th>Property</th><th>Type</th><th>Description</th></tr>
  </thead>
  <tbody> <tr><td><code>Controller.Hardware.Actions</code></td><td>object</td><td>Synonym for <a href="#Actions"><code>Controller.Actions</code></a>.</td></tr>
- <tr><td><code>Controller.Hardware.Application</code></td><td>object</td><td>Interface state outputs. See <a href="#Hardware-Application"><code>Controller.Hardware-Application</code></a>.</td></tr>
+ <tr><td><code>Controller.Hardware.Application</code></td><td>object</td><td>Darkride state outputs. See <a href="#Hardware-Application"><code>Controller.Hardware-Application</code></a>.</td></tr>
  <tr><td><code>Controller.Hardware.Keyboard</code></td><td>object</td><td>Keyboard, mouse, and touch pad outputs. See <a href="#Hardware-Keyboard"><code>Controller.Hardware-Keyboard</code></a>.</td></tr>
  <tr><td><code>Controller.Hardware.OculusTouch</code></td><td>object</td><td>Oculus Rift HMD outputs. See <a href="#Hardware-OculusTouch"><code>Controller.Hardware-OculusTouch</code></a>.</td></tr>
  <tr><td><code>Controller.Hardware.Vive</code></td><td>object</td><td>Vive HMD outputs. See <a href="#Hardware-Vive"><code>Controller.Hardware-Vive</code></a>.</td></tr>
@@ -1550,7 +1550,7 @@ printProperties("Controller.Hardware", Controller.Hardware);
 
 ### Hardware-Application {#Hardware-Application}
 
-<div class="api-text" v-pre><p>The <code>Controller.Hardware.Application</code> object has properties representing Interface's state. The property values are integer IDs, uniquely identifying each output. <em>Read-only.</em></p>
+<div class="api-text" v-pre><p>The <code>Controller.Hardware.Application</code> object has properties representing Darkride's state. The property values are integer IDs, uniquely identifying each output. <em>Read-only.</em></p>
  <p>These states can be mapped to actions or functions or <code>Controller.Standard</code> items in a <a href="RouteObject"><code>RouteObject</code></a> mapping (e.g., using the <a href="RouteObject#when"><code>RouteObject#when</code></a> method). Each data value is either <code>1.0</code> for "true" or <code>0.0</code> for "false".</p>
  <table> <thead> <tr><th>Property</th><th>Type</th><th>Data</th><th>Description</th></tr>
  </thead>
@@ -1787,7 +1787,7 @@ printProperties("Controller.Hardware", Controller.Hardware);
 
 ### MappingJSON {#MappingJSON}
 
-<div class="api-text" v-pre><p>A <a href="MappingObject"><code>MappingObject</code></a> can be specified in JSON format. A simple example is provided below. Full examples — the default mappings provided in Interface — can be found at <a href="https://github.com/highfidelity/hifi/tree/master/interface/resources/controllers" target="_blank" rel="noopener"> https://github.com/highfidelity/hifi/tree/master/interface/resources/controllers</a>.</p></div>
+<div class="api-text" v-pre><p>A <a href="MappingObject"><code>MappingObject</code></a> can be specified in JSON format. A simple example is provided below. Full examples — the default mappings provided in Darkride — can be found at <a href="https://github.com/caitlynmeeks/darkride-interface/tree/v1.1.2-beta/interface/resources/controllers" target="_blank" rel="noopener"> https://github.com/caitlynmeeks/darkride-interface/tree/v1.1.2-beta/interface/resources/controllers</a>.</p></div>
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>name</code></td><td>string</td><td><p>The name of the mapping.</p></td></tr>
 <tr><td><code>channels</code></td><td>Array&lt;<a href="#MappingJSONRoute">Controller.MappingJSONRoute</a>&gt;</td><td><p>An array of routes.</p></td></tr>
@@ -1797,7 +1797,7 @@ printProperties("Controller.Hardware", Controller.Hardware);
 
 ```js
 {
-    "name": "com.highfidelity.controllers.example.jsonMapping",
+    "name": "com.example.controllers.jsonMapping",
     "channels": [
         { 
             "from": "Standard.RT", 
@@ -1876,7 +1876,7 @@ printProperties("Controller.Hardware", Controller.Hardware);
 
 <div class="api-text" v-pre><p>The <code>Controller.Standard</code> object has properties representing standard controller outputs. Those for physical controllers are based on the XBox controller, with aliases for PlayStation. The property values are integer IDs, uniquely identifying each output. <em>Read-only.</em></p>
  <p>These outputs can be mapped to actions or functions in a <a href="RouteObject"><code>RouteObject</code></a> mapping. The data value provided by each control is either a number or a <a href="globals#Pose"><code>Pose</code></a>. Numbers are typically normalized to <code>0.0</code> or <code>1.0</code> for button states, the range <code>0.0</code> – <code>1.0</code> for unidirectional scales, and the range <code>-1.0</code> – <code>1.0</code> for bidirectional scales.</p>
- <p>Each hardware device has a mapping from its outputs to a subset of <code>Controller.Standard</code> items, specified in a JSON file. For example, <a href="https://github.com/highfidelity/hifi/blob/master/interface/resources/controllers/vive.json" target="_blank" rel="noopener">vive.json</a> and <a href="https://github.com/highfidelity/hifi/blob/master/interface/resources/controllers/leapmotion.json" target="_blank" rel="noopener"> leapmotion.json</a>.</p>
+ <p>Each hardware device has a mapping from its outputs to a subset of <code>Controller.Standard</code> items, specified in a JSON file. For example, <a href="https://github.com/caitlynmeeks/darkride-interface/blob/v1.1.2-beta/interface/resources/controllers/vive.json" target="_blank" rel="noopener">vive.json</a> and <a href="https://github.com/caitlynmeeks/darkride-interface/blob/v1.1.2-beta/interface/resources/controllers/leapmotion.json" target="_blank" rel="noopener"> leapmotion.json</a>.</p>
  <p> </p>
 <p></p>
 <p> </p>
@@ -2051,7 +2051,7 @@ Controller.captureJoystick(joystickID)
 <div class="api-text" v-pre><p>This function is deprecated and will be removed. It no longer has any effect.</p></div>
 :::
 
-<div class="api-text" v-pre><p>Disables default Interface actions for a joystick.</p></div>
+<div class="api-text" v-pre><p>Disables default Darkride actions for a joystick.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>joystickID</code></td><td>number</td><td><p>The integer ID of the joystick.</p></td></tr>
 </tbody></table></div>
@@ -2107,7 +2107,7 @@ Controller.releaseJoystick(joystickID)
 <div class="api-text" v-pre><p>This function is deprecated and will be removed. It no longer has any effect.</p></div>
 :::
 
-<div class="api-text" v-pre><p>Re-enables default Interface actions for a joystick that has been disabled using <a href="#captureJoystick">captureJoystick</a>.</p></div>
+<div class="api-text" v-pre><p>Re-enables default Darkride actions for a joystick that has been disabled using <a href="#captureJoystick">captureJoystick</a>.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>joystickID</code></td><td>number</td><td><p>The integer ID of the joystick.</p></td></tr>
 </tbody></table></div>

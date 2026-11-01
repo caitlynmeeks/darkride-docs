@@ -29,8 +29,8 @@ Messages.sendData(channel, data, localOnly?)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>channel</code></td><td>string</td><td></td><td><p>The channel to send the data on.</p></td></tr>
 <tr><td><code>data</code></td><td>object</td><td></td><td><p>The data to send. The data is handled as a byte stream, for example, as may be provided via a JavaScript <code>Int8Array</code> object.</p></td></tr>
-<tr><td><code>localOnly</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p>If <code>false</code> then the message is sent to all Interface, client entity, server entity, and assignment client scripts in the world. </p>
-<p>If <code>true</code> then: if sent from an Interface or client entity script it is received by all Interface and client entity scripts; if sent from a server entity script it is received by all entity server scripts; and if sent from an assignment client script it is received only by that same assignment client script.</p>
+<tr><td><code>localOnly</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p>If <code>false</code> then the message is sent to all Darkride, client entity, server entity, and assignment client scripts in the world. </p>
+<p>If <code>true</code> then: if sent from a client or client entity script it is received by all client and client entity scripts; if sent from a server entity script it is received by all entity server scripts; and if sent from an assignment client script it is received only by that same assignment client script.</p>
 <p></p></td></tr>
 </tbody></table></div>
 
@@ -38,7 +38,7 @@ Messages.sendData(channel, data, localOnly?)
 
 ```js
 // Receiving script.
-var channelName = "com.highfidelity.example.messages-example";
+var channelName = "com.example.messages-example";
 
 function onDataReceived(channel, data, sender, localOnly) {
     var int8data = new Int8Array(data);
@@ -66,7 +66,7 @@ Script.scriptEnding.connect(function () {
 
 
 // Sending script.
-var channelName = "com.highfidelity.example.messages-example";
+var channelName = "com.example.messages-example";
 var int8data = new Int8Array([1, 1, 2, 3, 5, 8, 13]);
 Messages.sendData(channelName, int8data.buffer);
 ```
@@ -101,8 +101,8 @@ Messages.sendMessage(channel, message, localOnly?)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>channel</code></td><td>string</td><td></td><td><p>The channel to send the message on.</p></td></tr>
 <tr><td><code>message</code></td><td>string</td><td></td><td><p>The message to send.</p></td></tr>
-<tr><td><code>localOnly</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p>If <code>false</code> then the message is sent to all Interface, client entity, server entity, and assignment client scripts in the world. </p>
-<p>If <code>true</code> then: if sent from an Interface or client entity script it is received by all Interface and client entity scripts; if sent from a server entity script it is received by all entity server scripts; and if sent from an assignment client script it is received only by that same assignment client script.</p>
+<tr><td><code>localOnly</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p>If <code>false</code> then the message is sent to all Darkride, client entity, server entity, and assignment client scripts in the world. </p>
+<p>If <code>true</code> then: if sent from a client or client entity script it is received by all client and client entity scripts; if sent from a server entity script it is received by all entity server scripts; and if sent from an assignment client script it is received only by that same assignment client script.</p>
 <p></p></td></tr>
 </tbody></table></div>
 
@@ -110,7 +110,7 @@ Messages.sendMessage(channel, message, localOnly?)
 
 ```js
 // Receiving script.
-var channelName = "com.highfidelity.example.messages-example";
+var channelName = "com.example.messages-example";
 
 function onMessageReceived(channel, message, sender, localOnly) {
     print("Message received:");
@@ -130,7 +130,7 @@ Script.scriptEnding.connect(function () {
 
 
 // Sending script.
-var channelName = "com.highfidelity.example.messages-example";
+var channelName = "com.example.messages-example";
 var message = "Hello";
 Messages.sendMessage(channelName, message);
 ```
@@ -145,7 +145,7 @@ Messages.sendMessage(channelName, message);
 Messages.subscribe(channel)
 ```
 
-<div class="api-text" v-pre><p>Subscribes the scripting environment — Interface, the entity script server, or assignment client instance — to receive messages on a specific channel. This means, for example, that if there are two Interface scripts that subscribe to different channels, both scripts will receive messages on both channels.</p></div>
+<div class="api-text" v-pre><p>Subscribes the scripting environment — Darkride, the entity script server, or assignment client instance — to receive messages on a specific channel. This means, for example, that if there are two client scripts that subscribe to different channels, both scripts will receive messages on both channels.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>channel</code></td><td>string</td><td><p>The channel to subscribe to.</p></td></tr>
 </tbody></table></div>
@@ -185,7 +185,7 @@ Messages.dataReceived.connect(function (channel, data, senderID, localOnly, from
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>channel</code></td><td>string</td><td><p>The channel that the message was sent on. This can be used to filter out messages not relevant to your script.</p></td></tr>
 <tr><td><code>data</code></td><td>object</td><td><p>The data received. The data is handled as a byte stream, for example, as may be used by a JavaScript <code>Int8Array</code> object.</p></td></tr>
-<tr><td><code>senderID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The UUID of the sender: the user's session UUID if sent by an Interface or client entity script, the UUID of the entity script server if sent by a server entity script, or the UUID of the assignment client instance if sent by an assignment client script.</p></td></tr>
+<tr><td><code>senderID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The UUID of the sender: the user's session UUID if sent by a client or client entity script, the UUID of the entity script server if sent by a server entity script, or the UUID of the assignment client instance if sent by an assignment client script.</p></td></tr>
 <tr><td><code>localOnly</code></td><td>boolean</td><td><p><code>true</code> if the message was sent with <code>localOnly == true</code>.</p></td></tr>
 <tr><td><code>fromOwnScripts</code></td><td>boolean</td><td><p><code>true</code> only for a local message sent by the user's own scripts on this computer (the app's and the ones the user installed); <code>false</code> for one sent by a world's entity scripts on this computer and for every message from the network. A script that acts for the user on a message checks it.</p></td></tr>
 </tbody></table></div>
@@ -206,7 +206,7 @@ Messages.messageReceived.connect(function (channel, message, senderID, localOnly
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>channel</code></td><td>string</td><td><p>The channel that the message was sent on. This can be used to filter out messages not relevant to your script.</p></td></tr>
 <tr><td><code>message</code></td><td>string</td><td><p>The message received.</p></td></tr>
-<tr><td><code>senderID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The UUID of the sender: the user's session UUID if sent by an Interface or client entity script, the UUID of the entity script server if sent by a server entity script, or the UUID of the assignment client instance if sent by an assignment client script.</p></td></tr>
+<tr><td><code>senderID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The UUID of the sender: the user's session UUID if sent by a client or client entity script, the UUID of the entity script server if sent by a server entity script, or the UUID of the assignment client instance if sent by an assignment client script.</p></td></tr>
 <tr><td><code>localOnly</code></td><td>boolean</td><td><p><code>true</code> if the message was sent with <code>localOnly == true</code>.</p></td></tr>
 <tr><td><code>fromOwnScripts</code></td><td>boolean</td><td><p><code>true</code> only for a local message sent by the user's own scripts on this computer (the app's and the ones the user installed); <code>false</code> for one sent by a world's entity scripts on this computer and for every message from the network. A script that acts for the user on a message checks it.</p></td></tr>
 </tbody></table></div>

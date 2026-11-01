@@ -32,7 +32,7 @@ clamp(min, max)
 <div class="api-example" v-pre><strong>Example:</strong> <p>Clamp right trigger values to between 0.3 and 0.7.</p></div>
 
 ```js
-var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
+var MAPPING_NAME = "com.example.controllers.newMapping";
 var mapping = Controller.newMapping(MAPPING_NAME);
 mapping.from(Controller.Standard.RT).clamp(0.3, 0.7).to(function (value) {
     print("Value: " + value);
@@ -60,7 +60,7 @@ constrainToInteger()
 <div class="api-example" v-pre><strong>Example:</strong> <p>Round the right joystick forward/back values to <code>-1</code>, <code>0</code>, or <code>1</code>.</p></div>
 
 ```js
-var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
+var MAPPING_NAME = "com.example.controllers.newMapping";
 var mapping = Controller.newMapping(MAPPING_NAME);
 mapping.from(Controller.Standard.RY).constrainToInteger().to(function (value) {
     print("Value: " + value);  // -1, 0, or 1
@@ -88,7 +88,7 @@ constrainToPositiveInteger()
 <div class="api-example" v-pre><strong>Example:</strong> <p>Round the right joystick forward/back values to <code>0</code> or <code>1</code>.</p></div>
 
 ```js
-var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
+var MAPPING_NAME = "com.example.controllers.newMapping";
 var mapping = Controller.newMapping(MAPPING_NAME);
 mapping.from(Controller.Standard.RY).constrainToPositiveInteger().to(function (value) {
     print("Value: " + value);  // 0, or 1
@@ -119,7 +119,7 @@ deadZone(min)
 <div class="api-example" v-pre><strong>Example:</strong> <p>Apply a dead-zone to the right joystick forward/back values.</p></div>
 
 ```js
-var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
+var MAPPING_NAME = "com.example.controllers.newMapping";
 var mapping = Controller.newMapping(MAPPING_NAME);
 mapping.from(Controller.Standard.RY).deadZone(0.2).to(function (value) {
     print("Value: " + value);  // 0.0 - 1.0 values once outside the dead-zone.
@@ -150,7 +150,7 @@ debug(enable?)
 <div class="api-example" v-pre><strong>Example:</strong> <p>Write debug information to the program log for a right trigger mapping.</p></div>
 
 ```js
-var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
+var MAPPING_NAME = "com.example.controllers.newMapping";
 var mapping = Controller.newMapping(MAPPING_NAME);
 
 mapping.from(Controller.Standard.RT).debug().to(function (value) {
@@ -209,7 +209,7 @@ hysteresis(min, max)
 <div class="api-example" v-pre><strong>Example:</strong> <p>Round the right joystick forward/back values to 0 or 1 with hysteresis.</p></div>
 
 ```js
-var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
+var MAPPING_NAME = "com.example.controllers.newMapping";
 var mapping = Controller.newMapping(MAPPING_NAME);
 mapping.from(Controller.Standard.RY).peek().to(function (value) {
     print("Raw value: " + value);  // 0.0 - 1.0.
@@ -240,7 +240,7 @@ invert()
 <div class="api-example" v-pre><strong>Example:</strong> <p>Invert the value of the right joystick forward/back values.</p></div>
 
 ```js
-var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
+var MAPPING_NAME = "com.example.controllers.newMapping";
 var mapping = Controller.newMapping(MAPPING_NAME);
 mapping.from(Controller.Standard.LY).to(function (value) {
     print("L value: " + value);  // -1.0 to 1.0 values, forward to back.
@@ -271,7 +271,7 @@ logicalNot()
 <div class="api-example" v-pre><strong>Example:</strong> <p>Logical NOT of LSTouch value.</p></div>
 
 ```js
-var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
+var MAPPING_NAME = "com.example.controllers.newMapping";
 var mapping = Controller.newMapping(MAPPING_NAME);
 
 mapping.from(Controller.Standard.RSTouch).peek().to(function (value) {
@@ -355,7 +355,7 @@ pulse(interval)
 <div class="api-example" v-pre><strong>Example:</strong> <p>Send right trigger values every half second.</p></div>
 
 ```js
-var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
+var MAPPING_NAME = "com.example.controllers.newMapping";
 var mapping = Controller.newMapping(MAPPING_NAME);
 mapping.from(Controller.Standard.RT).pulse(0.5).to(function (value) {
     print("Value: " + value);
@@ -402,7 +402,7 @@ scale(multiplier)
 <div class="api-example" v-pre><strong>Example:</strong> <p>Scale the value of the right joystick forward/back values by 10.</p></div>
 
 ```js
-var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
+var MAPPING_NAME = "com.example.controllers.newMapping";
 var mapping = Controller.newMapping(MAPPING_NAME);
 mapping.from(Controller.Standard.LY).to(function (value) {
     print("L value: " + value);  // -1.0 to 1.0 values.
@@ -435,7 +435,7 @@ to(destination)
 <div class="api-example" v-pre><strong>Example:</strong> <p>Make the right trigger move your avatar up.</p></div>
 
 ```js
-var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
+var MAPPING_NAME = "com.example.controllers.newMapping";
 var mapping = Controller.newMapping(MAPPING_NAME);
 
 mapping.from(Controller.Standard.RT).to(Controller.Actions.TranslateY);
@@ -453,7 +453,7 @@ function onRightTrigger(value) {
     print("Trigger value: " + value);
 }
 
-var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
+var MAPPING_NAME = "com.example.controllers.newMapping";
 var mapping = Controller.newMapping(MAPPING_NAME);
 
 mapping.from(Controller.Standard.RT).to(onRightTrigger);
@@ -538,7 +538,7 @@ when(expression)
 <div class="api-example" v-pre><strong>Example:</strong> <p>Process the right trigger differently in HMD and desktop modes.</p></div>
 
 ```js
-var MAPPING_NAME = "com.highfidelity.controllers.example.newMapping";
+var MAPPING_NAME = "com.example.controllers.newMapping";
 var mapping = Controller.newMapping(MAPPING_NAME);
 
 // Processed only if in HMD mode.
@@ -581,3 +581,7 @@ whenQml(expression)
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="">RouteObject</a> <p>The <code>RouteObject</code> with the condition added.</p></div>
 
 </div>
+
+::: tip Names from the engine's history
+Names and addresses with `hifi` or `tivoli` in them, such as `hifi_pbr`, a `hifi://` address or an example file's address, come from the engine's history and still work. Type them as they are.
+:::

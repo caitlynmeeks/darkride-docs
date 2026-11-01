@@ -1,21 +1,21 @@
 ---
 title: "ScriptDiscoveryService"
-description: "The ScriptDiscoveryService API provides facilities to work with Interface scripts."
+description: "The ScriptDiscoveryService API provides facilities to work with client scripts."
 ---
 
 # ScriptDiscoveryService
 
 <div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, avatar scripts, entity scripts.</div>
 
-<div class="api-text" v-pre><p>The <code>ScriptDiscoveryService</code> API provides facilities to work with Interface scripts.</p></div>
+<div class="api-text" v-pre><p>The <code>ScriptDiscoveryService</code> API provides facilities to work with client scripts.</p></div>
 
 ## Properties {#properties}
 
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>debugScriptUrl</code></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>The path and name of a script to debug using the "API Debugger" developer tool (currentAPI.js). If set, the API Debugger dialog displays the objects and values exposed by the script using <a href="Script#registerValue"><code>Script.registerValue</code></a> and similar.</p></td></tr>
-<tr><td><code>defaultScriptsPath</code></td><td>string</td><td></td><td><p>The path where the default scripts are located in the Interface installation. <em>Read-only.</em></p></td></tr>
-<tr><td><code>scriptsModel</code></td><td><a href="ScriptsModel">ScriptsModel</a></td><td></td><td><p>Information on the scripts that are in the default scripts directory of the Interface installation. <em>Read-only.</em></p></td></tr>
-<tr><td><code>scriptsModelFilter</code></td><td><a href="ScriptsModelFilter">ScriptsModelFilter</a></td><td></td><td><p>Sorted and filtered information on the scripts that are in the default scripts directory of the Interface installation. <em>Read-only.</em></p></td></tr>
+<tr><td><code>defaultScriptsPath</code></td><td>string</td><td></td><td><p>The path where the default scripts are located in the Darkride installation. <em>Read-only.</em></p></td></tr>
+<tr><td><code>scriptsModel</code></td><td><a href="ScriptsModel">ScriptsModel</a></td><td></td><td><p>Information on the scripts that are in the default scripts directory of the Darkride installation. <em>Read-only.</em></p></td></tr>
+<tr><td><code>scriptsModelFilter</code></td><td><a href="ScriptsModelFilter">ScriptsModelFilter</a></td><td></td><td><p>Sorted and filtered information on the scripts that are in the default scripts directory of the Darkride installation. <em>Read-only.</em></p></td></tr>
 </tbody></table></div>
 
 ## Functions {#functions}
@@ -28,8 +28,8 @@ description: "The ScriptDiscoveryService API provides facilities to work with In
 ScriptDiscoveryService.getPublic()
 ```
 
-<div class="api-text" v-pre><p>Gets a list of all script files that are in the default scripts directory of the Interface installation.</p></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;<a href="#PublicScript">ScriptDiscoveryService.PublicScript</a>&gt; <p>All scripts in the "scripts" directory of the Interface installation.</p></div>
+<div class="api-text" v-pre><p>Gets a list of all script files that are in the default scripts directory of the Darkride installation.</p></div>
+<div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;<a href="#PublicScript">ScriptDiscoveryService.PublicScript</a>&gt; <p>All scripts in the "scripts" directory of the Darkride installation.</p></div>
 
 </div>
 
@@ -41,8 +41,8 @@ ScriptDiscoveryService.getPublic()
 ScriptDiscoveryService.getRunning()
 ```
 
-<div class="api-text" v-pre><p>Gets a list of all Interface scripts that are currently running.</p></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;<a href="#RunningScript">ScriptDiscoveryService.RunningScript</a>&gt; <p>All Interface scripts that are currently running.</p></div>
+<div class="api-text" v-pre><p>Gets a list of all client scripts that are currently running.</p></div>
+<div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;<a href="#RunningScript">ScriptDiscoveryService.RunningScript</a>&gt; <p>All client scripts that are currently running.</p></div>
 
 <div class="api-example" v-pre><strong>Example:</strong> <p>Report all running scripts.</p></div>
 
@@ -64,9 +64,9 @@ for (var i = 0; i < runningScripts.length; i++) {
 ScriptDiscoveryService.loadOneScript(url)
 ```
 
-<div class="api-text" v-pre><p>Starts running an Interface script, if it isn't already running. The script is automatically loaded next time Interface starts. </p>
+<div class="api-text" v-pre><p>Starts running a client script, if it isn't already running. The script is automatically loaded next time Darkride starts. </p>
 <p>This is a synonym for calling <a href="#loadScript">loadScript</a> with just the script URL.</p>
- <p class="availableIn"><strong>Supported Script Types:</strong> Interface Scripts • Avatar Scripts</p>
+ <p class="availableIn"><strong>Supported Script Types:</strong> client scripts • Avatar Scripts</p>
  <p>See also, <a href="Script#load"><code>Script.load</code></a>.</p>
 <p></p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
@@ -83,17 +83,17 @@ ScriptDiscoveryService.loadOneScript(url)
 ScriptDiscoveryService.loadScript(url?, isUserLoaded?, loadScriptFromEditor?, activateMainWindow?, reload?, quitWhenFinished?)
 ```
 
-<div class="api-text" v-pre><p>Starts running an Interface script, if it isn't already running. </p>
-<p class="availableIn"><strong>Supported Script Types:</strong> Interface Scripts • Avatar Scripts</p>
+<div class="api-text" v-pre><p>Starts running a client script, if it isn't already running. </p>
+<p class="availableIn"><strong>Supported Script Types:</strong> client scripts • Avatar Scripts</p>
  <p>See also, <a href="Script#load"><code>Script.load</code></a>.</p>
 <p></p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>url</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>The path and name of the script. If a local file, including the <code>"file:///"</code> scheme is optional.</p></td></tr>
-<tr><td><code>isUserLoaded</code> <em>optional</em></td><td>boolean</td><td><code>true</code></td><td><p><code>true</code> if the user specifically loaded it, <code>false</code> if not (e.g., a script loaded it). If <code>false</code>, the script is not automatically loaded next time Interface starts.</p></td></tr>
+<tr><td><code>isUserLoaded</code> <em>optional</em></td><td>boolean</td><td><code>true</code></td><td><p><code>true</code> if the user specifically loaded it, <code>false</code> if not (e.g., a script loaded it). If <code>false</code>, the script is not automatically loaded next time Darkride starts.</p></td></tr>
 <tr><td><code>loadScriptFromEditor</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p><em>Not used.</em></p></td></tr>
 <tr><td><code>activateMainWindow</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p><em>Not used.</em></p></td></tr>
 <tr><td><code>reload</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p><code>true</code> to redownload the script, <code>false</code> to use the copy from the cache if available.</p></td></tr>
-<tr><td><code>quitWhenFinished</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p><code>true</code> to close Interface when the script finishes, <code>false</code> to not close Interface.</p></td></tr>
+<tr><td><code>quitWhenFinished</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p><code>true</code> to close Darkride when the script finishes, <code>false</code> to not close Darkride.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> object <p>An empty object, <code>{}</code>.</p></div>
 
@@ -107,7 +107,7 @@ ScriptDiscoveryService.loadScript(url?, isUserLoaded?, loadScriptFromEditor?, ac
 ScriptDiscoveryService.reloadAllScripts()
 ```
 
-<div class="api-text" v-pre><p>Restarts all Interface, avatar, and client entity scripts after clearing the scripts cache.</p></div>
+<div class="api-text" v-pre><p>Restarts all Darkride, avatar, and client entity scripts after clearing the scripts cache.</p></div>
 
 </div>
 
@@ -119,7 +119,7 @@ ScriptDiscoveryService.reloadAllScripts()
 ScriptDiscoveryService.stopAllScripts(restart?)
 ```
 
-<div class="api-text" v-pre><p>Stops or restarts all Interface scripts. The scripts cache is not cleared. If restarting, avatar and client entity scripts are also restarted.</p></div>
+<div class="api-text" v-pre><p>Stops or restarts all client scripts. The scripts cache is not cleared. If restarting, avatar and client entity scripts are also restarted.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>restart</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p><code>true</code> to restart the scripts, <code>false</code> to stop them.</p></td></tr>
 </tbody></table></div>
@@ -134,7 +134,7 @@ ScriptDiscoveryService.stopAllScripts(restart?)
 ScriptDiscoveryService.stopScript(url, restart?)
 ```
 
-<div class="api-text" v-pre><p>Stops or restarts an Interface script.</p></div>
+<div class="api-text" v-pre><p>Stops or restarts a client script.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>url</code></td><td>string</td><td></td><td><p>The path and name of the script. If a local file, including the <code>"file:///"</code> scheme is optional.</p></td></tr>
 <tr><td><code>restart</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p><code>true</code> to redownload and restart the script, <code>false</code> to stop it.</p></td></tr>
@@ -225,7 +225,7 @@ ScriptDiscoveryService.scriptCountChanged.connect(function () {
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when the number of Interface scripts running changes.</p></div>
+<div class="api-text" v-pre><p>Triggered when the number of client scripts running changes.</p></div>
 
 <div class="api-example" v-pre><strong>Example:</strong> <p>Report when the number of running scripts changes.</p></div>
 
@@ -265,7 +265,7 @@ ScriptDiscoveryService.scriptsReloading.connect(function () {
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when Interface, avatar, and client entity scripts are restarting as a result of <a href="#reloadAllScripts">reloadAllScripts</a> or <a href="#stopAllScripts">stopAllScripts</a>.</p></div>
+<div class="api-text" v-pre><p>Triggered when Darkride, avatar, and client entity scripts are restarting as a result of <a href="#reloadAllScripts">reloadAllScripts</a> or <a href="#stopAllScripts">stopAllScripts</a>.</p></div>
 
 </div>
 
@@ -293,7 +293,7 @@ ScriptDiscoveryService.warningMessage.connect(function (message, scriptName) {
 
 ### PublicScript {#PublicScript}
 
-<div class="api-text" v-pre><p>Information on a public script, i.e., a script that's included in the Interface installation.</p></div>
+<div class="api-text" v-pre><p>Information on a public script, i.e., a script that's included in the Darkride installation.</p></div>
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>name</code></td><td>string</td><td><p>The script's file name.</p></td></tr>
 <tr><td><code>type</code></td><td>string</td><td><p><code>"script"</code> or <code>"folder"</code>. </p>

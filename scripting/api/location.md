@@ -137,7 +137,7 @@ location.goToLastAddress()
 location.goToLocalSandbox(path?, trigger?)
 ```
 
-<div class="api-text" v-pre><p>Takes you to the local Sandbox server that's running on the same PC as Interface.</p></div>
+<div class="api-text" v-pre><p>Takes you to the local Sandbox server that's running on the same PC as Darkride.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>path</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>The position and orientation to go to (e.g., <code>"/0,0,0"</code>).</p></td></tr>
 <tr><td><code>trigger</code> <em>optional</em></td><td><a href="#LookupTrigger">location.LookupTrigger</a></td><td><code>StartupFromSettings</code></td><td><p>The reason for the function call. Helps ensure that user's location history is correctly maintained.</p></td></tr>
@@ -198,7 +198,7 @@ location.reconnect()
 location.storeCurrentAddress()
 ```
 
-<div class="api-text" v-pre><p>Updates your current metaverse location in Interface's <a href="Settings"><code>Settings</code></a> file as your last-known address. This can be used to ensure that you start up at that address if you exit Interface without a later address automatically being saved.</p></div>
+<div class="api-text" v-pre><p>Updates your current metaverse location in Darkride's <a href="Settings"><code>Settings</code></a> file as your last-known address. This can be used to ensure that you start up at that address if you exit Darkride without a later address automatically being saved.</p></div>
 
 </div>
 
@@ -446,7 +446,7 @@ location.possibleDomainChangeRequiredViaICEForID.connect(function (iceServerHost
  <tbody> <tr> <td><strong>UserInput</strong></td> <td><code>0</code></td> <td>User-typed input.</td> </tr>
  <tr> <td><strong>Back</strong></td> <td><code>1</code></td> <td>Address from a <a href="#goBack">goBack</a> call.</td> </tr>
  <tr> <td><strong>Forward</strong></td> <td><code>2</code></td> <td>Address from a <a href="#goForward">goForward</a> call.</td> </tr>
- <tr> <td><strong>StartupFromSettings</strong></td> <td><code>3</code></td> <td>Initial location at Interface start-up from settings.</td> </tr>
+ <tr> <td><strong>StartupFromSettings</strong></td> <td><code>3</code></td> <td>Initial location at Darkride start-up from settings.</td> </tr>
  <tr> <td><strong>DomainPathResponse</strong></td> <td><code>4</code></td> <td>A named path in the world.</td> </tr>
  <tr> <td><strong>Internal</strong></td> <td><code>5</code></td> <td>An internal attempt to resolve an alternative path.</td> </tr>
  <tr> <td><strong>AttemptedRefresh</strong></td> <td><code>6</code></td> <td>A refresh after connecting to a world.</td> </tr>
@@ -517,3 +517,7 @@ location.refreshPreviousLookup()
 <div class="api-text" v-pre><p>Refreshes the current address, e.g., after connecting to a world in order to position the user to the desired location.</p></div>
 
 </div>
+
+::: tip Names from the engine's history
+Names and addresses with `hifi` or `tivoli` in them, such as `hifi_pbr`, a `hifi://` address or an example file's address, come from the engine's history and still work. Type them as they are.
+:::

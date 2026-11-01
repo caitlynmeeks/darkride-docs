@@ -318,7 +318,7 @@ Mat4.getRight(m)
 Mat4.getUp(m)
 ```
 
-<div class="api-text" v-pre><p>Gets the "up" direction that the camera would have if its orientation was set to the rotation contained in a matrix. The High Fidelity camera has axes x = right, y = up, -z = forward.</p></div>
+<div class="api-text" v-pre><p>Gets the "up" direction that the camera would have if its orientation was set to the rotation contained in a matrix. Darkride's camera has axes x = right, y = up, -z = forward.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>m</code></td><td><a href="">Mat4</a></td><td><p>The matrix.</p></td></tr>
 </tbody></table></div>

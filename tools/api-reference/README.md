@@ -18,11 +18,13 @@ npm ci
 # the engine's source at the release's tag, read-only, in a folder of its own
 mkdir -p /tmp/engine && git -C <engine checkout> archive v1.1.2-beta assignment-client interface libraries plugins \
   | tar -x -C /tmp/engine
-node build.mjs --engine /tmp/engine --version 1.1.2 --commit "$(git -C <engine checkout> rev-parse v1.1.2-beta)" --draft
+node build.mjs --engine /tmp/engine --version 1.1.2 --tag v1.1.2-beta \
+  --commit "$(git -C <engine checkout> rev-parse v1.1.2-beta)" --draft
 ```
 
-`--draft` puts the Draft banner on every page, until scripting has checked the facts. Then build the site from the
-top of the repository (`npm run build`) to check it.
+`--tag` names the release in links to the engine's files (else the commit). `--draft` puts the Draft banner on every
+page, until scripting has checked the facts. Then build the site from the top of the repository (`npm run build`) to
+check it.
 
 ## What it changes on the way
 

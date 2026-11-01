@@ -1,13 +1,13 @@
 ---
 title: "Stats"
-description: "The Stats API provides statistics on Interface and world operation, per the statistics overlay."
+description: "The Stats API provides statistics on Darkride and world operation, per the statistics overlay."
 ---
 
 # Stats
 
 <div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts, server entity scripts, agents.</div>
 
-<div class="api-text" v-pre><p>The <code>Stats</code> API provides statistics on Interface and world operation, per the statistics overlay.</p>
+<div class="api-text" v-pre><p>The <code>Stats</code> API provides statistics on Darkride and world operation, per the statistics overlay.</p>
  <p><strong>Note:</strong> This API is primarily an internal diagnostics tool and is provided "as is".</p></div>
 
 ## Properties {#properties}
@@ -16,7 +16,7 @@ description: "The Stats API provides statistics on Interface and world operation
 <tr><td><code>expanded</code></td><td>boolean</td><td><p><code>true</code> if the statistics overlay should be in expanded form when the overlay is displayed, <code>false</code> if it shouldn't be expanded.</p></td></tr>
 <tr><td><code>timingExpanded</code></td><td>boolean</td><td><p><code>true</code> if timing details should be displayed when the statistics overlay is displayed in expanded form, <code>false</code> if timing details should not be displayed. Set by the menu item, Developer &gt; Timing &gt; Performance Timer &gt; Display Timing Details. <em>Read-only.</em></p></td></tr>
 <tr><td><code>monospaceFont</code></td><td>string</td><td><p>The name of the monospace font used in the statistics overlay. <em>Read-only.</em></p></td></tr>
-<tr><td><code>serverCount</code></td><td>number</td><td><p>The number of servers that Interface is connected to. <em>Read-only.</em></p></td></tr>
+<tr><td><code>serverCount</code></td><td>number</td><td><p>The number of servers that Darkride is connected to. <em>Read-only.</em></p></td></tr>
 <tr><td><code>renderrate</code></td><td>number</td><td><p>The rate at which new GPU frames are being created, in Hz. <em>Read-only.</em></p></td></tr>
 <tr><td><code>presentrate</code></td><td>number</td><td><p>The rate at which the display plugin is presenting to the display device, in Hz. <em>Read-only.</em></p></td></tr>
 <tr><td><code>stutterrate</code></td><td>number</td><td><p>The rate at which the display plugin is reprojecting old GPU frames, in Hz. <em>Read-only.</em></p></td></tr>
@@ -32,7 +32,7 @@ description: "The Stats API provides statistics on Interface and world operation
 <tr><td><code>refreshRateTarget</code></td><td>number</td><td><p>The current target refresh rate, in Hz, per the current <code>refreshRateMode</code> and <code>refreshRateRegime</code> if in desktop mode; a higher rate if in VR mode. <em>Read-only.</em></p></td></tr>
 <tr><td><code>refreshRateMode</code></td><td><a href="globals#RefreshRateProfileName">RefreshRateProfileName</a></td><td><p>The current refresh rate profile. <em>Read-only.</em></p></td></tr>
 <tr><td><code>refreshRateRegime</code></td><td><a href="globals#RefreshRateRegimeName">RefreshRateRegimeName</a></td><td><p>The current refresh rate regime. <em>Read-only.</em></p></td></tr>
-<tr><td><code>uxMode</code></td><td><a href="globals#UXModeName">UXModeName</a></td><td><p>The user experience (UX) mode that Interface is running in. <em>Read-only.</em></p></td></tr>
+<tr><td><code>uxMode</code></td><td><a href="globals#UXModeName">UXModeName</a></td><td><p>The user experience (UX) mode that Darkride is running in. <em>Read-only.</em></p></td></tr>
 <tr><td><code>avatarCount</code></td><td>number</td><td><p>The number of avatars in the world other than the client's. <em>Read-only.</em></p></td></tr>
 <tr><td><code>heroAvatarCount</code></td><td>number</td><td><p>The number avatars in a "hero" zone in the world, other than the client's. <em>Read-only.</em></p></td></tr>
 <tr><td><code>physicsObjectCount</code></td><td>number</td><td><p>The number of objects that have collisions enabled. <em>Read-only.</em></p></td></tr>

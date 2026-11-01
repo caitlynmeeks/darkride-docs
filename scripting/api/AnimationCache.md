@@ -143,3 +143,7 @@ AnimationCache.updateTotalSize(deltaSize)
 </tbody></table></div>
 
 </div>
+
+::: tip Names from the engine's history
+Names and addresses with `hifi` or `tivoli` in them, such as `hifi_pbr`, a `hifi://` address or an example file's address, come from the engine's history and still work. Type them as they are.
+:::

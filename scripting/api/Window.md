@@ -12,10 +12,10 @@ description: "The Window API provides various facilities not covered elsewhere, 
 ## Properties {#properties}
 
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>innerWidth</code></td><td>number</td><td></td><td><p>The width of the drawable area of the Interface window (i.e., without borders or other chrome), in pixels. <em>Read-only.</em></p></td></tr>
-<tr><td><code>innerHeight</code></td><td>number</td><td></td><td><p>The height of the drawable area of the Interface window (i.e., without borders or other chrome), in pixels. <em>Read-only.</em></p></td></tr>
-<tr><td><code>x</code></td><td>number</td><td></td><td><p>The x display coordinate of the top left corner of the drawable area of the Interface window. <em>Read-only.</em></p></td></tr>
-<tr><td><code>y</code></td><td>number</td><td></td><td><p>The y display coordinate of the top left corner of the drawable area of the Interface window. <em>Read-only.</em></p></td></tr>
+<tr><td><code>innerWidth</code></td><td>number</td><td></td><td><p>The width of the drawable area of the Darkride window (i.e., without borders or other chrome), in pixels. <em>Read-only.</em></p></td></tr>
+<tr><td><code>innerHeight</code></td><td>number</td><td></td><td><p>The height of the drawable area of the Darkride window (i.e., without borders or other chrome), in pixels. <em>Read-only.</em></p></td></tr>
+<tr><td><code>x</code></td><td>number</td><td></td><td><p>The x display coordinate of the top left corner of the drawable area of the Darkride window. <em>Read-only.</em></p></td></tr>
+<tr><td><code>y</code></td><td>number</td><td></td><td><p>The y display coordinate of the top left corner of the drawable area of the Darkride window. <em>Read-only.</em></p></td></tr>
 <tr><td><code>interstitialModeEnabled</code></td><td>boolean</td><td><code>false</code></td><td><p><code>true</code> if the interstitial graphics are displayed when a world is loading, otherwise <code>false</code>.</p></td></tr>
 <tr><td><code>location</code></td><td><a href="location">location</a></td><td></td><td><p>Provides facilities for working with your current metaverse location.</p></td></tr>
 </tbody></table></div>
@@ -212,8 +212,8 @@ print("Script continues without waiting");
 Window.checkVersion()
 ```
 
-<div class="api-text" v-pre><p>Gets Interface's build number.</p></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> string <p>Interface's build number.</p></div>
+<div class="api-text" v-pre><p>Gets Darkride's build number.</p></div>
+<div class="api-returns" v-pre><strong>Returns:</strong> string <p>Darkride's build number.</p></div>
 
 </div>
 
@@ -318,8 +318,8 @@ Window.getActiveDisplayPlugin()
 Window.getDeviceSize()
 ```
 
-<div class="api-text" v-pre><p>Gets the size of the drawable area of the Interface window if in desktop mode or the HMD rendering surface if in HMD mode.</p></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> <a href="globals#Vec2">Vec2</a> <p>The width and height of the Interface window or HMD rendering surface, in pixels.</p></div>
+<div class="api-text" v-pre><p>Gets the size of the drawable area of the Darkride window if in desktop mode or the HMD rendering surface if in HMD mode.</p></div>
+<div class="api-returns" v-pre><strong>Returns:</strong> <a href="globals#Vec2">Vec2</a> <p>The width and height of the Darkride window or HMD rendering surface, in pixels.</p></div>
 
 </div>
 
@@ -394,8 +394,8 @@ Window.getWorldLoading()
 Window.hasFocus()
 ```
 
-<div class="api-text" v-pre><p>Checks whether the Interface window has focus.</p></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the Interface window has focus, <code>false</code> if it doesn't.</p></div>
+<div class="api-text" v-pre><p>Checks whether the Darkride window has focus.</p></div>
+<div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the Darkride window has focus, <code>false</code> if it doesn't.</p></div>
 
 </div>
 
@@ -545,9 +545,9 @@ messageBox = Window.openMessageBox("Reset Something",
 Window.openUrl(url)
 ```
 
-<div class="api-text" v-pre><p>Opens a URL in the Interface window or other application, depending on the URL's scheme. The following schemes are supported: </p>
-<ul> <li><code>hifi</code>: Navigate to the URL in Interface.</li>
- <li><code>hifiapp</code>: Open a system app in Interface.</li>
+<div class="api-text" v-pre><p>Opens a URL in the Darkride window or other application, depending on the URL's scheme. The following schemes are supported: </p>
+<ul> <li><code>hifi</code>: Navigate to the URL in Darkride.</li>
+ <li><code>hifiapp</code>: Open a system app in Darkride.</li>
  </ul>
  <p>Other schemes will either be handled by the OS (e.g. <code>http</code>, <code>https</code>, or <code>mailto</code>) or will display a dialog asking the user to confirm that they want to try to open the URL.</p>
 <p></p></div>
@@ -650,8 +650,8 @@ print("Script continues without waiting");
 Window.protocolSignature()
 ```
 
-<div class="api-text" v-pre><p>Gets the signature for Interface's protocol version.</p></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> string <p>A string uniquely identifying the version of the metaverse protocol that Interface is using.</p></div>
+<div class="api-text" v-pre><p>Gets the signature for Darkride's protocol version.</p></div>
+<div class="api-returns" v-pre><strong>Returns:</strong> string <p>A string uniquely identifying the version of the metaverse protocol that Darkride is using.</p></div>
 
 </div>
 
@@ -663,7 +663,7 @@ Window.protocolSignature()
 Window.raise()
 ```
 
-<div class="api-text" v-pre><p>Raises the Interface window if it is minimized. If raised, the window gains focus.</p></div>
+<div class="api-text" v-pre><p>Raises the Darkride window if it is minimized. If raised, the window gains focus.</p></div>
 
 </div>
 
@@ -775,7 +775,7 @@ Window.setDisplayTexture(texture)
 Window.setFocus()
 ```
 
-<div class="api-text" v-pre><p>Makes the Interface window have focus. On Windows, if Interface doesn't already have focus, the task bar icon flashes to indicate that Interface wants attention but focus isn't taken away from the application that the user is using.</p></div>
+<div class="api-text" v-pre><p>Makes the Darkride window have focus. On Windows, if Darkride doesn't already have focus, the task bar icon flashes to indicate that Darkride wants attention but focus isn't taken away from the application that the user is using.</p></div>
 
 </div>
 
@@ -860,7 +860,7 @@ Window.takeSecondaryCamera360Snapshot(cameraPosition, cubemapOutputFormat?, noti
 <tr><td><code>cameraPosition</code></td><td><a href="Vec3">Vec3</a></td><td></td><td><p>The position of the camera for the snapshot.</p></td></tr>
 <tr><td><code>cubemapOutputFormat</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p>If <code>true</code> then the snapshot is saved as a cube map image, otherwise it is saved as an equirectangular image.</p></td></tr>
 <tr><td><code>notify</code> <em>optional</em></td><td>boolean</td><td><code>true</code></td><td><p>This value is passed on through the <a href="#stillSnapshotTaken">stillSnapshotTaken</a> signal.</p></td></tr>
-<tr><td><code>filename</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>If a filename is not provided, the image is saved as "tivoli-snap-by-&lt;user name&gt;-on-YYYY-MM-DD_HH-MM-SS". </p>
+<tr><td><code>filename</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>If a filename is not provided, the image is saved as "snap-YYYY-MM-DD_HH-MM-SS-&lt;six random letters and digits&gt;.jpg". </p>
 <p>Images are saved in JPEG or PNG format according to the extension provided — <code>".jpg"</code>, <code>".jpeg"</code>, or <code>".png"</code> — or if not provided then in JPEG format with an extension of <code>".jpg"</code>.</p>
 <p></p></td></tr>
 </tbody></table></div>
@@ -880,7 +880,7 @@ Window.takeSecondaryCameraSnapshot(notify?, filename?)
 <p></p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>notify</code> <em>optional</em></td><td>boolean</td><td><code>true</code></td><td><p>This value is passed on through the <a href="#stillSnapshotTaken">stillSnapshotTaken</a> signal.</p></td></tr>
-<tr><td><code>filename</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>If a filename is not provided, the image is saved as "tivoli-snap-by-&lt;user name&gt;-on-YYYY-MM-DD_HH-MM-SS". </p>
+<tr><td><code>filename</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>If a filename is not provided, the image is saved as "snap-YYYY-MM-DD_HH-MM-SS-&lt;six random letters and digits&gt;.jpg". </p>
 <p>Images are saved in JPEG or PNG format according to the extension provided — <code>".jpg"</code>, <code>".jpeg"</code>, or <code>".png"</code> — or if not provided then in JPEG format with an extension of <code>".jpg"</code>.</p>
 <p></p></td></tr>
 </tbody></table></div>
@@ -895,14 +895,14 @@ Window.takeSecondaryCameraSnapshot(notify?, filename?)
 Window.takeSnapshot(notify?, includeAnimated?, aspectRatio?, filename?)
 ```
 
-<div class="api-text" v-pre><p>Takes a snapshot of the current Interface view from the primary camera. When a still image only is captured, <a href="#stillSnapshotTaken">stillSnapshotTaken</a> is emitted; when a still image plus moving images are captured, <a href="#processingGifStarted">processingGifStarted</a> and <a href="#processingGifCompleted">processingGifCompleted</a> are emitted. </p>
+<div class="api-text" v-pre><p>Takes a snapshot of the current Darkride view from the primary camera. When a still image only is captured, <a href="#stillSnapshotTaken">stillSnapshotTaken</a> is emitted; when a still image plus moving images are captured, <a href="#processingGifStarted">processingGifStarted</a> and <a href="#processingGifCompleted">processingGifCompleted</a> are emitted. </p>
 <p>Snapshots are saved to the path specified in Settings &gt; General &gt; Snapshots, which can be accessed via the <a href="Snapshot"><code>Snapshot</code></a> API.</p>
 <p></p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>notify</code> <em>optional</em></td><td>boolean</td><td><code>true</code></td><td><p>This value is passed on through the <a href="#stillSnapshotTaken">stillSnapshotTaken</a> signal.</p></td></tr>
 <tr><td><code>includeAnimated</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p>If <code>true</code>, a moving image is captured as an animated GIF in addition to a still image.</p></td></tr>
 <tr><td><code>aspectRatio</code> <em>optional</em></td><td>number</td><td><code>0</code></td><td><p>The width/height ratio of the snapshot required. If the value is <code>0</code>, the full resolution is used (window dimensions in desktop mode; HMD display dimensions in HMD mode), otherwise one of the dimensions is adjusted in order to match the aspect ratio.</p></td></tr>
-<tr><td><code>filename</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>If a filename is not provided, the image is saved as "tivoli-snap-by-&lt;user name&gt;-on-YYYY-MM-DD_HH-MM-SS". </p>
+<tr><td><code>filename</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>If a filename is not provided, the image is saved as "snap-YYYY-MM-DD_HH-MM-SS-&lt;six random letters and digits&gt;.jpg". </p>
 <p>Still images are saved in JPEG or PNG format according to the extension provided — <code>".jpg"</code>, <code>".jpeg"</code>, or <code>".png"</code> — or if not provided then in JPEG format with an extension of <code>".jpg"</code>. Animated images are saved in GIF format.</p>
 <p></p></td></tr>
 </tbody></table></div>
@@ -1119,7 +1119,7 @@ Window.domainConnectionTimedOut.connect(function () {
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when a world you're visiting or connected to hasn't answered for long enough that Interface gives up on it for now and shows its connection failure window (or goes to the error world). The connection keeps being tried: if the world answers later, <a href="#domainChanged"><code>Window.domainChanged</code></a> follows.</p></div>
+<div class="api-text" v-pre><p>Triggered when a world you're visiting or connected to hasn't answered for long enough that Darkride gives up on it for now and shows its connection failure window (or goes to the error world). The connection keeps being tried: if the world answers later, <a href="#domainChanged"><code>Window.domainChanged</code></a> follows.</p></div>
 
 </div>
 
@@ -1133,12 +1133,12 @@ Window.geometryChanged.connect(function (geometry) {
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when the position or size of the Interface window changes.</p></div>
+<div class="api-text" v-pre><p>Triggered when the position or size of the Darkride window changes.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>geometry</code></td><td><a href="globals#Rect">Rect</a></td><td><p>The position and size of the drawable area of the Interface window.</p></td></tr>
+<tr><td><code>geometry</code></td><td><a href="globals#Rect">Rect</a></td><td><p>The position and size of the drawable area of the Darkride window.</p></td></tr>
 </tbody></table></div>
 
-<div class="api-example" v-pre><strong>Example:</strong> <p>Report the position of size of the Interface window when it changes.</p></div>
+<div class="api-example" v-pre><strong>Example:</strong> <p>Report the position of size of the Darkride window when it changes.</p></div>
 
 ```js
 function onWindowGeometryChanged(rect) {
@@ -1229,12 +1229,12 @@ Window.minimizedChanged.connect(function (isMinimized) {
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when "minimized" state of the Interface window changes.</p></div>
+<div class="api-text" v-pre><p>Triggered when "minimized" state of the Darkride window changes.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>isMinimized</code></td><td>boolean</td><td><p><code>true</code> if the Interface window is minimized, <code>false</code> if it isn't.</p></td></tr>
+<tr><td><code>isMinimized</code></td><td>boolean</td><td><p><code>true</code> if the Darkride window is minimized, <code>false</code> if it isn't.</p></td></tr>
 </tbody></table></div>
 
-<div class="api-example" v-pre><strong>Example:</strong> <p>Report the "minimized" state of the Interface window when it changes.</p></div>
+<div class="api-example" v-pre><strong>Example:</strong> <p>Report the "minimized" state of the Darkride window when it changes.</p></div>
 
 ```js
 function onWindowMinimizedChanged(minimized) {
@@ -1377,7 +1377,7 @@ Window.startUpWorldUnreachable.connect(function (from) {
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when the world Interface started in (the last world you were in, or your home, by Settings &gt; General &gt; Start in) hasn't answered: Interface goes to the entry world instead, without its connection failure window. <a href="#domainConnectionTimedOut"><code>Window.domainConnectionTimedOut</code></a> is not triggered for it.</p></div>
+<div class="api-text" v-pre><p>Triggered when the world Darkride started in (the last world you were in, or your home, by Settings &gt; General &gt; Start in) hasn't answered: Darkride goes to the entry world instead, without its connection failure window. <a href="#domainConnectionTimedOut"><code>Window.domainConnectionTimedOut</code></a> is not triggered for it.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>from</code></td><td>string</td><td><p><code>"last"</code> for the last world you were in, <code>"home"</code> for your home.</p></td></tr>
 </tbody></table></div>
@@ -1412,7 +1412,7 @@ Window.svoImportRequested.connect(function (url) {
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when you try to navigate to a *.json, *.svo, or *.svo.json URL in a Web browser within Interface.</p></div>
+<div class="api-text" v-pre><p>Triggered when you try to navigate to a *.json, *.svo, or *.svo.json URL in a Web browser within Darkride.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>url</code></td><td>string</td><td><p>The URL of the file to import.</p></td></tr>
 </tbody></table></div>
@@ -1446,7 +1446,7 @@ Window.worldLoadingChanged.connect(function (loading) {
  <table> <thead> <tr> <th>Reason</th> <th>Value</th> <th>Description</th> </tr>
  </thead>
  <tbody> <tr> <td><strong>Unknown</strong></td> <td><code>0</code></td> <td>Some unknown reason.</td> </tr>
- <tr> <td><strong>ProtocolMismatch</strong></td> <td><code>1</code></td> <td>The communications protocols of the world and your Interface are not the same.</td> </tr>
+ <tr> <td><strong>ProtocolMismatch</strong></td> <td><code>1</code></td> <td>The communications protocols of the world and your Darkride are not the same.</td> </tr>
  <tr> <td><strong>LoginError</strong></td> <td><code>2</code></td> <td>You could not be logged into the world.</td> </tr>
  <tr> <td><strong>NotAuthorized</strong></td> <td><code>3</code></td> <td>You are not authorized to connect to the world.</td> </tr>
  <tr> <td><strong>TooManyUsers</strong></td> <td><code>4</code></td> <td>The world already has its maximum number of users.</td> </tr>
@@ -1555,3 +1555,7 @@ Window.domainLoadingProgress()
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>Progress.</p></div>
 
 </div>
+
+::: tip Names from the engine's history
+Names and addresses with `hifi` or `tivoli` in them, such as `hifi_pbr`, a `hifi://` address or an example file's address, come from the engine's history and still work. Type them as they are.
+:::

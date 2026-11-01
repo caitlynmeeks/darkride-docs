@@ -122,7 +122,7 @@ AddressManager.goToLastAddress()
 AddressManager.goToLocalSandbox(path?, trigger?)
 ```
 
-<div class="api-text" v-pre><p>Takes you to the local Sandbox server that's running on the same PC as Interface.</p></div>
+<div class="api-text" v-pre><p>Takes you to the local Sandbox server that's running on the same PC as Darkride.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>path</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>The position and orientation to go to (e.g., <code>"/0,0,0"</code>).</p></td></tr>
 <tr><td><code>trigger</code> <em>optional</em></td><td><a href="location#LookupTrigger">location.LookupTrigger</a></td><td><code>StartupFromSettings</code></td><td><p>The reason for the function call. Helps ensure that user's location history is correctly maintained.</p></td></tr>
@@ -171,7 +171,7 @@ AddressManager.handleLookupString(address, fromSuggestions?)
 AddressManager.storeCurrentAddress()
 ```
 
-<div class="api-text" v-pre><p>Updates your current metaverse location in Interface's <a href="Settings"><code>Settings</code></a> file as your last-known address. This can be used to ensure that you start up at that address if you exit Interface without a later address automatically being saved.</p></div>
+<div class="api-text" v-pre><p>Updates your current metaverse location in Darkride's <a href="Settings"><code>Settings</code></a> file as your last-known address. This can be used to ensure that you start up at that address if you exit Darkride without a later address automatically being saved.</p></div>
 
 </div>
 
@@ -466,3 +466,7 @@ AddressManager.refreshPreviousLookup()
 <div class="api-text" v-pre><p>Refreshes the current address, e.g., after connecting to a world in order to position the user to the desired location.</p></div>
 
 </div>
+
+::: tip Names from the engine's history
+Names and addresses with `hifi` or `tivoli` in them, such as `hifi_pbr`, a `hifi://` address or an example file's address, come from the engine's history and still work. Type them as they are.
+:::
