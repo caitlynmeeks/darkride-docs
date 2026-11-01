@@ -6,7 +6,7 @@ draft: true
 
 # Render
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>Render</code> API enables you to configure the graphics engine.</p></div>
 
@@ -28,6 +28,8 @@ draft: true
 
 ## Functions {#functions}
 
+<div class="api-entry">
+
 ### getAmbientOcclusionEnabled {#getAmbientOcclusionEnabled}
 
 ```js
@@ -36,6 +38,10 @@ Render.getAmbientOcclusionEnabled()
 
 <div class="api-text" v-pre><p>Gets whether or not ambient occlusion is enabled.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if ambient occlusion is enabled, <code>false</code> if it's disabled.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getAntialiasingMethod {#getAntialiasingMethod}
 
@@ -52,6 +58,10 @@ Render.getAntialiasingMethod()
 var antialiasingMethod = Render.getAntialiasingMethod();
 print("Current render method: " + Render.getAntialiasingMethodNames()[antialiasingMethod]);
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### getAntialiasingMethodNames {#getAntialiasingMethodNames}
 
@@ -72,6 +82,10 @@ for (var i = 0; i < antialiasingMethods.length; i++) {
 }
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getConfig {#getConfig}
 
 ```js
@@ -86,6 +100,10 @@ Render.getConfig(name)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> object <p>The configuration for the rendering job.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getFarClip {#getFarClip}
 
 ```js
@@ -94,6 +112,10 @@ Render.getFarClip()
 
 <div class="api-text" v-pre><p>Gets the far clip distance.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
+
+</div>
+
+<div class="api-entry">
 
 ### getFieldOfView {#getFieldOfView}
 
@@ -104,6 +126,10 @@ Render.getFieldOfView()
 <div class="api-text" v-pre><p>Gets the field of view in degrees.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
 
+</div>
+
+<div class="api-entry">
+
 ### getMaximumTextureMemory {#getMaximumTextureMemory}
 
 ```js
@@ -112,6 +138,10 @@ Render.getMaximumTextureMemory()
 
 <div class="api-text" v-pre><p>Gets the maxmium texture memory in MB.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
+
+</div>
+
+<div class="api-entry">
 
 ### getMsaaSamples {#getMsaaSamples}
 
@@ -122,6 +152,10 @@ Render.getMsaaSamples()
 <div class="api-text" v-pre><p>Gets the forward render method's multisampling: how many samples a pixel its frame is drawn with.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>1 (no multisampling), 2, 4 or 8.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getNametagsEnabled {#getNametagsEnabled}
 
 ```js
@@ -130,6 +164,10 @@ Render.getNametagsEnabled()
 
 <div class="api-text" v-pre><p>Gets whether nametags are enabled.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if nametags are enabled, <code>false</code> if they're disabled.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getNametagsShowSelf {#getNametagsShowSelf}
 
@@ -140,6 +178,10 @@ Render.getNametagsShowSelf()
 <div class="api-text" v-pre><p>Gets whether your nametag should appear above you.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if your nametag should appear above you, <code>false</code> if not.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getNearClip {#getNearClip}
 
 ```js
@@ -148,6 +190,10 @@ Render.getNearClip()
 
 <div class="api-text" v-pre><p>Gets the desktop camera's near clip distance.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>metres</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getRenderMethod {#getRenderMethod}
 
@@ -164,6 +210,10 @@ Render.getRenderMethod()
 var renderMethod = Render.getRenderMethod();
 print("Current render method: " + Render.getRenderMethodNames()[renderMethod]);
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### getRenderMethodNames {#getRenderMethodNames}
 
@@ -184,6 +234,10 @@ for (var i = 0; i < renderMethods.length; i++) {
 }
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getShadowsEnabled {#getShadowsEnabled}
 
 ```js
@@ -192,6 +246,10 @@ Render.getShadowsEnabled()
 
 <div class="api-text" v-pre><p>Gets whether or not shadows are enabled.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if shadows are enabled, <code>false</code> if they're disabled.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getViewportResolutionScale {#getViewportResolutionScale}
 
@@ -202,6 +260,10 @@ Render.getViewportResolutionScale()
 <div class="api-text" v-pre><p>Gets the view port resolution scale.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The view port resolution scale, <code>&gt; 0.0</code>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getVsyncEnabled {#getVsyncEnabled}
 
 ```js
@@ -210,6 +272,10 @@ Render.getVsyncEnabled()
 
 <div class="api-text" v-pre><p>Gets whether vsync is on: the swap waits for the display's refresh. Off, the default, the frames are paced at the display's rate and the compositor shows the newest at each refresh, which is even; on macOS the GL swap's wait is two refreshes with the odd frame queued without a wait, so vsync there is uneven.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if vsync is on, <code>false</code> if off.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setAmbientOcclusionEnabled {#setAmbientOcclusionEnabled}
 
@@ -222,6 +288,10 @@ Render.setAmbientOcclusionEnabled(enabled)
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> to enable ambient occlusion, <code>false</code> to disable.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setAntialiasingMethod {#setAntialiasingMethod}
 
 ```js
@@ -232,6 +302,10 @@ Render.setAntialiasingMethod(antialiasingMethod)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>antialiasingMethod</code></td><td><a href="#AntialiasingMethod">Render.AntialiasingMethod</a></td><td><p>The anti-aliasing method to use.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setFarClip {#setFarClip}
 
@@ -244,6 +318,10 @@ Render.setFarClip(farClip)
 <tr><td><code>farClip</code></td><td>number</td><td></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setFieldOfView {#setFieldOfView}
 
 ```js
@@ -254,6 +332,10 @@ Render.setFieldOfView(fieldOfView)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>fieldOfView</code></td><td>number</td><td></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setMaximumTextureMemory {#setMaximumTextureMemory}
 
@@ -266,6 +348,10 @@ Render.setMaximumTextureMemory(maximumTextureMemory)
 <tr><td><code>maximumTextureMemory</code></td><td>number</td><td></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setMsaaSamples {#setMsaaSamples}
 
 ```js
@@ -276,6 +362,10 @@ Render.setMsaaSamples(samples)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>samples</code></td><td>number</td><td><p>1 (no multisampling), 2, 4 or 8; anything else rounds down to one of them.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setNametagsEnabled {#setNametagsEnabled}
 
@@ -288,6 +378,10 @@ Render.setNametagsEnabled(enabled)
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> if nametags are enabled, <code>false</code> if they're disabled.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setNametagsShowSelf {#setNametagsShowSelf}
 
 ```js
@@ -298,6 +392,10 @@ Render.setNametagsShowSelf(enabled)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> if your nametag should appear above you, <code>false</code> if not.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setNearClip {#setNearClip}
 
@@ -310,6 +408,10 @@ Render.setNearClip(nearClip)
 <tr><td><code>nearClip</code></td><td>number</td><td><p>metres</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setRenderMethod {#setRenderMethod}
 
 ```js
@@ -320,6 +422,10 @@ Render.setRenderMethod(renderMethod)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>renderMethod</code></td><td><a href="#RenderMethod">Render.RenderMethod</a></td><td><p>The render method to use.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setShadowsEnabled {#setShadowsEnabled}
 
@@ -332,6 +438,10 @@ Render.setShadowsEnabled(enabled)
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> to enable shadows, <code>false</code> to disable.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setViewportResolutionScale {#setViewportResolutionScale}
 
 ```js
@@ -342,6 +452,10 @@ Render.setViewportResolutionScale(resolutionScale)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>resolutionScale</code></td><td>number</td><td><p>The view port resolution scale to set, <code>&gt; 0.0</code>.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setVsyncEnabled {#setVsyncEnabled}
 
@@ -354,9 +468,13 @@ Render.setVsyncEnabled(enabled)
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> for vsync, <code>false</code> for paced presents without a wait.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### settingsChanged {#settingsChanged}
 
@@ -377,7 +495,11 @@ Render.settingsChanged.connect(function () {
 // Toggle Developer > Render > Shadows or similar to trigger.
 ```
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### AntialiasingMethod {#AntialiasingMethod}
 
@@ -391,6 +513,10 @@ Render.settingsChanged.connect(function () {
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
 
+</div>
+
+<div class="api-entry">
+
 ### RenderMethod {#RenderMethod}
 
 <div class="api-text" v-pre><p>The rendering method is specified by the following values:</p>
@@ -401,3 +527,5 @@ Render.settingsChanged.connect(function () {
  </tbody>
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
+
+</div>

@@ -6,7 +6,7 @@ draft: true
 
 # XMLHttpRequest
 
-<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts, server entity scripts, assignment client scripts.</div>
+<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: client scripts, entity scripts, avatar scripts, server entity scripts, agents.</div>
 
 <div class="api-text" v-pre><p>Provides a means to interact with web servers. It is a near-complete implementation of the XMLHttpRequest API described in the Mozilla docs: <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest</a>.</p>
  <p>On a person's client, a script that came over the network (a world's script) may use web addresses only (http, https, atp), to public hosts: not the files on that computer, not services on it or on its network. A refused request ends as a failed one (status 0, error 201), with the reason in the script's log. A script loaded from the computer itself, or any script of a world served from that computer or its network, keeps every address.</p>
@@ -88,6 +88,8 @@ req.send();
 
 ## Methods {#functions}
 
+<div class="api-entry">
+
 ### abort {#abort}
 
 ```js
@@ -95,6 +97,10 @@ XMLHttpRequest.abort()
 ```
 
 <div class="api-text" v-pre><p>Aborts the request.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getAllResponseHeaders {#getAllResponseHeaders}
 
@@ -104,6 +110,10 @@ XMLHttpRequest.getAllResponseHeaders()
 
 <div class="api-text" v-pre><p>Gets the response headers.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>The response headers, separated by <code>"\n"</code> characters.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getResponseHeader {#getResponseHeader}
 
@@ -116,6 +126,10 @@ XMLHttpRequest.getResponseHeader(name)
 <tr><td><code>name</code></td><td>string</td><td><p>-</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>The response header.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### open {#open}
 
@@ -132,6 +146,10 @@ XMLHttpRequest.open(method, url, async?, username?, password?)
 <tr><td><code>password</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>Password for authentication.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### send {#send}
 
 ```js
@@ -142,6 +160,10 @@ XMLHttpRequest.send(data?)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>data</code> <em>optional</em></td><td>*</td><td><p>The data to send.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setRequestHeader {#setRequestHeader}
 
@@ -155,9 +177,13 @@ XMLHttpRequest.setRequestHeader(name, value)
 <tr><td><code>value</code></td><td>string</td><td><p>The value of the header.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### requestComplete {#requestComplete}
 
@@ -169,7 +195,11 @@ XMLHttpRequest.requestComplete.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the request is complete — with or without error (incl. timeout).</p></div>
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### NetworkError {#NetworkError}
 
@@ -214,15 +244,27 @@ XMLHttpRequest.requestComplete.connect(function () {
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
 
+</div>
+
+<div class="api-entry">
+
 ### onReadyStateChangeCallback {#onReadyStateChangeCallback}
 
 <div class="api-text" v-pre><p>Called when the request's ready state changes.</p></div>
 <div class="api-type" v-pre><strong>Type:</strong> function</div>
 
+</div>
+
+<div class="api-entry">
+
 ### onTimeoutCallback {#onTimeoutCallback}
 
 <div class="api-text" v-pre><p>Called when the request times out.</p></div>
 <div class="api-type" v-pre><strong>Type:</strong> function</div>
+
+</div>
+
+<div class="api-entry">
 
 ### ReadyState {#ReadyState}
 
@@ -237,3 +279,5 @@ XMLHttpRequest.requestComplete.connect(function () {
  </tbody>
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
+
+</div>

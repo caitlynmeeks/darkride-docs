@@ -30,14 +30,23 @@ if (!args.engine || !args.version || !args.commit) {
 const sourceDirs = ['assignment-client', 'interface', 'libraries', 'plugins']
 const skipDirs = [path.join('interface', 'src', 'audio')]
 
-// the kinds of script, as the engine's tags name them
+// the kinds of script, by the engine's tags, in the names builders use (scripting, 11-01)
 const scriptTypes = {
-  interface: 'Interface scripts',
-  clientEntity: 'client entity scripts',
+  interface: 'client scripts',
+  clientEntity: 'entity scripts',
   avatar: 'avatar scripts',
   serverEntity: 'server entity scripts',
-  assignmentClient: 'assignment client scripts',
+  assignmentClient: 'agents',
 }
+
+// documented, but not there in this version: left out (scripting, 11-01: Midi isn't registered in 1.1.2)
+const notAvailable = ['Midi']
+
+// what the old marketplace left: still in the API, does nothing in Darkride (scripting, 11-01)
+const commerceLine = 'From the old marketplace; does nothing in Darkride.'
+const commerceFunctions = /Certif/
+const commerceProperties = ['itemName', 'itemDescription', 'itemCategories', 'itemArtist', 'itemLicense', 'limitedRun',
+  'editionNumber', 'entityInstanceNumber', 'marketplaceID', 'certificateID', 'staticCertificateVersion']
 
 // addresses that no longer answer: a link to one keeps its words and loses the link
 const deadHosts = [
@@ -58,7 +67,19 @@ const fixes = [
   [/"Tivoli (build date|version): "/g, '"Darkride $1: "'],
 ]
 
-const report = { fixes: new Map(), unresolved: new Map(), deadLinks: new Map(), orphans: new Map(), duplicates: 0 }
+// "domain" is "world" in Darkride's words: changed in the notes' prose, never in names, quoted values, code, or where
+// it means the "domain" kind of entity (scripting, 11-01)
+const domainWord = /(?<![\w"'“.\/-])([Dd])omain(s|'s)?(?![\w"'”\/-])(?!\s+entit)(?!,\s*avatar)(?!\s+or\s+avatar)/g
+
+// a page whose Markdown is bigger than this (about 400 KB of HTML) gets its types on a page of their own, so the
+// browser has fewer elements to lay out (performance, 11-01), when the types are a big part of it (Entities' are; on
+// MyAvatar it's the functions, which stay together so the browser's find covers them)
+const splitAt = 170 * 1024
+const splitTypesAt = 60 * 1024
+
+const newReport = () => ({ fixes: new Map(), unresolved: new Map(), deadLinks: new Map(), orphans: new Map(),
+  worlds: 0, duplicates: 0 })
+let report = newReport()
 const bump = (map, key) => map.set(key, (map.get(key) || 0) + 1)
 
 // --- read the notes ---------------------------------------------------------------------------------------------
@@ -99,22 +120,26 @@ const plain = (longname) => longname.replace(/\(0\)/g, '')
 // a dot in the last part of an address reads as a file ending on the website's server, so nested names use a dash
 const fileName = (longname) => plain(longname).replace(/\./g, '-')
 const isSignal = (d) => d.kind === 'function' && d.returns?.[0]?.type?.names?.[0] === 'Signal'
+const leftOut = (longname) => notAvailable.includes(plain(longname).split(/[.#~]/)[0])
 
 const pages = new Map()
 const newPage = (key, title, doclet) => {
   const page = { key, title, file: fileName(key), doclet, type: null, properties: [], functions: [], signals: [],
-    types: [], anchors: new Set() }
+    types: [], anchors: new Set(), split: false }
+  page.typesPage = { title: `${title} types`, file: page.file + '-types', anchors: new Set(), owner: page }
   pages.set(key, page)
   return page
 }
-for (const d of doclets) if (d.kind === 'namespace' || d.kind === 'class') newPage(d.longname, plain(d.longname), d)
+for (const d of doclets) {
+  if ((d.kind === 'namespace' || d.kind === 'class') && !leftOut(d.longname)) newPage(d.longname, plain(d.longname), d)
+}
 const globals = newPage('globals', 'Global types and functions', null)
 globals.file = 'globals'
 
 // the same note read twice (a header and its source both carry it) is kept once
 const seen = new Set()
 for (const d of doclets) {
-  if (d.kind === 'namespace' || d.kind === 'class') continue
+  if (d.kind === 'namespace' || d.kind === 'class' || leftOut(d.memberof || d.longname)) continue
   const fingerprint = d.longname + '\u0000' + (d.description || '') + JSON.stringify(d.params || [])
   if (seen.has(fingerprint)) { report.duplicates++; continue }
   seen.add(fingerprint)
@@ -133,22 +158,38 @@ for (const d of doclets) {
   else if (d.kind === 'member') page.properties.push(d)
   else if (isSignal(d)) page.signals.push(d)
   else if (d.kind === 'function') page.functions.push(d)
-}
 
-// one anchor per item, unique on its page
-const anchorOf = new Map()
-const giveAnchor = (page, d) => {
-  let id = d.name.replace(/[^\w-]/g, '-')
-  for (let n = 2; page.anchors.has(id); n++) id = d.name.replace(/[^\w-]/g, '-') + '-' + n
-  page.anchors.add(id)
-  if (!anchorOf.has(d.longname)) anchorOf.set(d.longname, { page, id })
-  return id
+  if (d.memberof === 'Entities' && d.kind === 'function' && commerceFunctions.test(d.name) && !d.deprecated) {
+    d.deprecated = commerceLine
+  }
+  for (const p of d.longname === 'Entities.EntityProperties' ? d.properties || [] : []) {
+    if (commerceProperties.includes(p.name)) p.description = `<em>${commerceLine}</em> ` + (p.description || '')
+  }
 }
+const { duplicates, orphans } = report
+
 const byName = (a, b) => a.name.localeCompare(b.name, 'en', { sensitivity: 'base' }) || 0
-for (const page of pages.values()) {
-  for (const list of [page.functions, page.signals, page.types]) {
-    list.sort(byName)
-    for (const d of list) d.anchor = giveAnchor(page, d)
+for (const page of pages.values()) for (const list of [page.functions, page.signals, page.types]) list.sort(byName)
+
+// one anchor per item, unique on its page; the sections' own anchors are taken first
+const sectionIds = ['type', 'properties', 'functions', 'signals', 'types', 'deprecated']
+let anchorOf
+function giveAnchors() {
+  anchorOf = new Map()
+  for (const page of pages.values()) {
+    page.anchors = new Set(sectionIds)
+    page.typesPage.anchors = new Set(sectionIds)
+    for (const [list, onPage] of [[page.functions, page], [page.signals, page],
+      [page.types, page.split ? page.typesPage : page]]) {
+      for (const d of list) {
+        const base = d.name.replace(/[^\w-]/g, '-')
+        let id = base
+        for (let n = 2; onPage.anchors.has(id); n++) id = base + '-' + n
+        onPage.anchors.add(id)
+        d.anchor = id
+        if (!anchorOf.has(d.longname)) anchorOf.set(d.longname, { page: onPage, id })
+      }
+    }
   }
 }
 
@@ -162,7 +203,7 @@ function target(name) {
     if (pages.has(t + '(0)')) return { page: pages.get(t + '(0)'), id: '' }
     if (anchorOf.has(t)) return anchorOf.get(t)
   }
-  // a global type that went on a namespace's page, or onto the globals page
+  // a global type that went on a namespace's page
   const g = doclets.find((d) => d.longname === name && d.kind === 'typedef' && !d.memberof)
   if (g) return pages.get(name + '(0)') ? { page: pages.get(name + '(0)'), id: 'type' } : null
   // a property of a namespace: its page's Properties
@@ -206,7 +247,7 @@ function typeHtml(type, from) {
   }).join('')).join(' | ')
 }
 
-// --- a note's text, as HTML on one line -------------------------------------------------------------------------
+// --- a note's text, as HTML ------------------------------------------------------------------------------------
 
 const applyFixes = (s) => {
   for (const [pattern, to] of fixes) {
@@ -218,7 +259,13 @@ const applyFixes = (s) => {
   return s
 }
 
+const prose = (s) => s.replace(domainWord, (_, d, end = '') => {
+  report.worlds++
+  return (d === 'D' ? 'W' : 'w') + 'orld' + end
+})
+
 const blockStart = /^\s*<(p|ul|ol|table|pre|div|h\d|blockquote|dl)[\s>]/i
+const blockEnd = /<\/(p|li|tr|thead|tbody|table|ul|ol|pre|div|h\d|blockquote|dl|dt|dd)>(?!$)/g
 
 // the notes are HTML with JSDoc's {@link} tags: links resolved, paragraphs made, then parsed and written out again so
 // that the page always gets well-formed HTML with no blank line in it (Markdown leaves such an HTML block alone). Lines
@@ -231,8 +278,11 @@ function textHtml(text, from) {
   s = s.split(/\n\s*\n/).map((chunk) => (chunk.trim() && !blockStart.test(chunk) ? `<p>${chunk}</p>` : chunk)).join('\n')
 
   const tree = parseFragment(s)
-  const visit = (node, inPre) => {
-    if (node.nodeName === '#text' && !inPre) node.value = node.value.replace(/\s+/g, ' ')
+  const visit = (node, inPre, inCode) => {
+    if (node.nodeName === '#text' && !inPre) {
+      node.value = node.value.replace(/\s+/g, ' ')
+      if (!inCode) node.value = prose(node.value)
+    }
     if (node.attrs) for (const a of node.attrs) a.value = a.value.replace(/\s+/g, ' ')
     // the notes' pictures are copied beside the pages (images/)
     if (node.nodeName === 'img') {
@@ -248,13 +298,13 @@ function textHtml(text, from) {
         node.attrs.push({ name: 'target', value: '_blank' }, { name: 'rel', value: 'noopener' })
       }
     }
-    for (const child of node.childNodes || []) visit(child, inPre || node.nodeName === 'pre')
+    for (const child of node.childNodes || []) {
+      visit(child, inPre || node.nodeName === 'pre', inCode || node.nodeName === 'code')
+    }
   }
-  visit(tree, false)
+  visit(tree, false, false)
   return serialize(tree).replace(/\n/g, '&#10;').trim().replace(blockEnd, '$&\n')
 }
-
-const blockEnd = /<\/(p|li|tr|thead|tbody|table|ul|ol|pre|div|h\d|blockquote|dl|dt|dd)>(?!$)/g
 
 // a block of HTML in a page: v-pre keeps Vue from reading {{ }} in a note as its own
 const block = (cls, html) => (html ? `<div class="${cls}" v-pre>${html}</div>\n` : '')
@@ -267,7 +317,7 @@ function summary(text) {
     .replace(/<[^>]+>/g, ' ').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&amp;/g, '&')
     .replace(/&mdash;/g, '—').replace(/&[a-z]+;/g, ' ').replace(/\s+/g, ' ').trim()
   const m = words.match(/^(.+?[.!?])(\s|$)/)
-  return (m ? m[1] : words).slice(0, 200)
+  return prose(m ? m[1] : words).slice(0, 200)
 }
 
 // --- the parts of a page ----------------------------------------------------------------------------------------
@@ -317,8 +367,10 @@ function examples(d, from) {
   return out
 }
 
+// one entry, in an element of its own: the browser lays out only the entries near the screen (content-visibility,
+// custom.css; performance, 11-01)
 function item(d, page, ownerName) {
-  let out = `\n### ${d.name} {#${d.anchor}}\n\n`
+  let out = `\n<div class="api-entry">\n\n### ${d.name} {#${d.anchor}}\n\n`
   if (d.kind === 'function') out += fence(signature(d, ownerName), 'js') + '\n'
   if (d.deprecated) {
     out += '::: warning Deprecated\n' + block('api-text', textHtml(d.deprecated === true ? '' : d.deprecated, page) ||
@@ -341,13 +393,20 @@ function item(d, page, ownerName) {
     out += block('api-see', '<strong>See also:</strong> ' + d.see.map((s) =>
       /^\{@link/.test(s) || /\s/.test(s.trim()) ? textHtml(s, page).replace(/^<p>|<\/p>$/g, '') : linkHtml(s.trim(), '', page)).join(', '))
   }
-  return out + examples(d, page)
+  return out + examples(d, page) + '\n</div>\n'
 }
 
-function section(title, id, list, page, ownerName) {
+function section(title, id, list, page, ownerName, intro = '') {
   const live = list.filter((d) => !d.deprecated)
   if (!live.length) return ''
-  return `\n## ${title} {#${id}}\n` + live.map((d) => item(d, page, ownerName)).join('')
+  return `\n## ${title} {#${id}}\n` + (intro ? `\n${intro}\n` : '') + live.map((d) => item(d, page, ownerName)).join('')
+}
+
+function deprecatedSection(list, page, ownerName) {
+  const old = list.filter((x) => x.deprecated)
+  if (!old.length) return ''
+  return '\n## Deprecated {#deprecated}\n\nStill there for older scripts; new scripts should not use these.\n' +
+    old.map((x) => item(x, page, ownerName)).join('')
 }
 
 function front(title, description) {
@@ -356,7 +415,10 @@ function front(title, description) {
     (args.draft ? 'draft: true\n' : '') + '---\n'
 }
 
-function writePage(page) {
+const signalsIntro = 'Connect a function to a signal to run it each time the signal fires; disconnect it the same way ' +
+  'with `disconnect`.'
+
+function renderPage(page) {
   const d = page.doclet
   const ownerName = page.title
   let out = front(page.title, summary(d?.description) || (page === globals ? 'Types and functions every script can use.' : ''))
@@ -378,28 +440,33 @@ function writePage(page) {
     out += examples(d, page)
   }
   if (page.type) {
-    page.anchors.add('type')
     out += `\n## The ${page.title} type {#type}\n\n` + block('api-text', textHtml(page.type.description, page)) +
       block('api-table', propertiesTable(page.type.properties, page)) + examples(page.type, page)
   }
-  const props = [...(d?.properties || []), ...page.properties.map((m) => ({ ...m, name: m.name }))]
+  const props = [...(d?.properties || []), ...page.properties]
   if (props.length) {
     out += '\n## Properties {#properties}\n\n' + block('api-table', propertiesTable(props, page))
   }
   out += section(page === globals ? 'Functions' : d?.kind === 'class' ? 'Methods' : 'Functions', 'functions',
     page.functions, page, ownerName)
-  out += section('Signals', 'signals', page.signals, page, ownerName)
-  if (page.signals.some((s) => !s.deprecated)) {
-    out = out.replace('\n## Signals {#signals}\n', '\n## Signals {#signals}\n\n' +
-      `Connect a function to a signal to run it each time the signal fires; disconnect it the same way with \`disconnect\`.\n`)
+  out += section('Signals', 'signals', page.signals, page, ownerName, signalsIntro)
+  if (page.split) {
+    out += `\n## Types {#types}\n\n${page.title}'s types (${page.types.slice(0, 3).map((t) => t.name).join(', ')} and ` +
+      `the rest) are on a page of their own: [${page.typesPage.title}](./${page.typesPage.file}).\n`
+    out += deprecatedSection([...page.functions, ...page.signals], page, ownerName)
+  } else {
+    out += section('Types', 'types', page.types, page, ownerName)
+    out += deprecatedSection([...page.functions, ...page.signals, ...page.types], page, ownerName)
   }
-  out += section('Types', 'types', page.types, page, ownerName)
-  const old = [...page.functions, ...page.signals, ...page.types].filter((x) => x.deprecated)
-  if (old.length) {
-    out += '\n## Deprecated {#deprecated}\n\nStill there for older scripts; new scripts should not use these.\n' +
-      old.map((x) => item(x, page, ownerName)).join('')
-  }
-  fs.writeFileSync(path.join(outDir, page.file + '.md'), out)
+  return out
+}
+
+function renderTypesPage(page) {
+  const tp = page.typesPage
+  let out = front(tp.title, `The types used by ${page.title}.`)
+  out += `\n# ${tp.title}\n\nThe types used by [${page.title}](./${page.file}).\n`
+  out += section('Types', 'types', page.types, tp, page.title)
+  return out + deprecatedSection(page.types, tp, page.title)
 }
 
 // --- the overview and the sidebar -------------------------------------------------------------------------------
@@ -407,7 +474,7 @@ function writePage(page) {
 const mostUsed = ['Entities', 'MyAvatar', 'AvatarList', 'Script', 'Vec3', 'Quat', 'Messages', 'Audio', 'SoundCache',
   'Camera', 'Controller', 'Window', 'Overlays', 'Uuid']
 
-function writeOverview(list) {
+function renderOverview(list) {
   const row = (p) => `| [${p.title}](./${p.file}) | ${summary(p.doclet?.description).replace(/\|/g, '\\|')} |`
   const shortCommit = args.commit.slice(0, 10)
   let out = front('Scripting API reference', `Every namespace, class and function a Darkride script can use, as of ${args.version}.`)
@@ -417,8 +484,17 @@ function writeOverview(list) {
 Every namespace, class, function and signal a Darkride script can use, as of Darkride ${args.version}. It's built from
 the reference notes in Darkride's code (commit \`${shortCommit}\`), so it says what that version does.
 
-Scripts are JavaScript. Darkride runs them on its WebAssembly script engine (QuickJS), which understands modern
-JavaScript (ES2023).
+## The engine
+
+Scripts are JavaScript. Darkride ${args.version} runs every kind of script on its WebAssembly script engine (QuickJS) by
+default, and it understands modern JavaScript (ES2023). A visitor can switch their own app back to the older QtScript
+engine (**Developer** > **Scripting**), and a server's operator can switch the server; QtScript understands only older
+JavaScript (ES5), so a script meant to run on both should stick to ES5. A world can't choose.
+
+- IDs (UUIDs) are strings.
+- There's no debugger: use \`print\` and \`console\`.
+- Each call into a script (an update, a timer, a signal) is stopped after 5 seconds of its own running time.
+- What doesn't work yet: [Known issues](/known-issues).
 
 ## The kinds of script
 
@@ -426,14 +502,17 @@ Each page says which kinds of script can use it.
 
 | Kind | Where it runs |
 | --- | --- |
-| **Interface scripts** | In your copy of the Darkride app, for you alone: the scripts you run from **Edit** > **Running Scripts**. |
-| **Client entity scripts** | In each visitor's app, attached to an entity in a world. |
-| **Avatar scripts** | In each visitor's app, attached to an avatar. |
-| **Server entity scripts** | On the world's server, attached to an entity; everyone sees what they do. |
-| **Assignment client scripts** | On the world's server, on their own, such as a bot (an agent). |
+| **Client scripts** | In your own copy of the Darkride app, for you alone: the app's own scripts and the ones you run from **Edit** > **Running Scripts**. |
+| **Entity scripts** | Attached to an entity in a world; they run in each visitor's app. |
+| **Avatar scripts** | Attached to an avatar, in the app of the person wearing it. |
+| **Server entity scripts** | Attached to an entity, on the world's server; everyone sees what they do. |
+| **Agents** | On the world's server, on their own, taking part like a visitor: a bot, for example. |
 
-Since 1.1.2, a world's own scripts (client entity scripts) can use only the parts of the API a world needs; your own
-Interface scripts can use everything. The pages don't show this yet.
+The engine's own notes call client scripts "Interface scripts", entity scripts "client entity scripts" and agents
+"assignment client scripts".
+
+Since 1.1.2, a world's entity scripts (its scripts on visitors' computers) can use only the parts of the API a world
+needs; your own client scripts can use everything. The pages don't show this yet.
 
 ## Most used
 
@@ -449,33 +528,53 @@ ${list.map(row).join('\n')}
 
 [Global types and functions](./globals): \`Vec2\`, \`Color\`, the event types, \`print\`, \`request\` and the rest.
 `
-  fs.writeFileSync(path.join(outDir, 'index.md'), out)
+  return out
 }
 
 const pageList = [...pages.values()].filter((p) => p !== globals)
   .sort((a, b) => a.title.localeCompare(b.title, 'en', { sensitivity: 'base' }))
 
+// two passes: the first measures each page and decides which get their types split off, the second writes them with
+// every link pointing to where its item ended up
+giveAnchors()
+for (const page of pages.values()) {
+  page.split = renderPage(page).length > splitAt &&
+    section('Types', 'types', page.types, page, page.title).length > splitTypesAt
+}
+giveAnchors()
+report = { ...newReport(), duplicates, orphans }
+
 fs.rmSync(outDir, { recursive: true, force: true })
 fs.mkdirSync(outDir, { recursive: true })
 fs.cpSync(path.join(here, 'images'), path.join(outDir, 'images'), { recursive: true })
-for (const page of pages.values()) writePage(page)
-writeOverview(pageList)
+for (const page of pages.values()) {
+  fs.writeFileSync(path.join(outDir, page.file + '.md'), renderPage(page))
+  if (page.split) fs.writeFileSync(path.join(outDir, page.typesPage.file + '.md'), renderTypesPage(page))
+}
+fs.writeFileSync(path.join(outDir, 'index.md'), renderOverview(pageList))
+
+// the sidebar: the overview, the most used, then A to Z, closed until opened (or until one of its pages is shown), so
+// fewer links are in view for VitePress to fetch ahead (performance, 11-01)
 const link = (p) => ({ text: p.title, link: `/scripting/api/${p.file}` })
 fs.writeFileSync(path.join(outDir, 'sidebar.json'), JSON.stringify([
   { text: 'Scripting API', items: [{ text: 'Overview', link: '/scripting/api/' }, link(globals)] },
   { text: 'Most used', items: mostUsed.map((n) => pages.get(n) || pages.get(n + '(0)')).filter(Boolean).map(link) },
-  { text: 'A to Z', collapsed: false, items: pageList.map(link) },
+  { text: 'A to Z', collapsed: true, items: pageList.flatMap((p) => (p.split ? [link(p), link(p.typesPage)] : [link(p)])) },
 ], null, 2) + '\n')
 
 // --- the report, for scripting's check ---------------------------------------------------------------------------
 
 const count = (kind) => doclets.filter((d) => d.kind === kind).length
+const written = fs.readdirSync(outDir).filter((f) => f.endsWith('.md')).length
 const lines = [
   `# API reference build: Darkride ${args.version} (${args.commit})`,
   '',
-  `${notes.length} notes; ${pages.size} pages; ${count('namespace')} namespaces, ${count('class')} classes, ` +
+  `${notes.length} notes; ${written} pages; ${count('namespace')} namespaces, ${count('class')} classes, ` +
     `${doclets.filter((d) => d.kind === 'function' && !isSignal(d)).length} functions, ` +
     `${doclets.filter(isSignal).length} signals, ${count('typedef')} types; ${report.duplicates} repeated notes kept once.`,
+  `Left out as not in this version: ${notAvailable.join(', ')}. Types on a page of their own: ` +
+    `${pageList.filter((p) => p.split).map((p) => p.title).join(', ') || 'none'}. "domain" read as "world" in prose: ` +
+    `${report.worlds} times.`,
   '',
   '## Old names changed on the pages (to fix in the engine notes)', '',
   ...[...report.fixes].map(([k, v]) => `- ${v} x \`${k}\``),
@@ -488,6 +587,6 @@ const lines = [
   '',
 ]
 fs.writeFileSync(path.join(here, 'REPORT.md'), lines.join('\n'))
-console.log(lines.slice(0, 3).join('\n'))
+console.log(lines.slice(0, 4).join('\n'))
 console.log(`fixes ${[...report.fixes.values()].reduce((a, b) => a + b, 0)}, dead links ${report.deadLinks.size}, ` +
   `unresolved ${report.unresolved.size}, orphans ${report.orphans.size}; see tools/api-reference/REPORT.md`)

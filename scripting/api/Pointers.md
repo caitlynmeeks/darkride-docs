@@ -6,11 +6,13 @@ draft: true
 
 # Pointers
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>Pointers</code> API lets you create, manage, and visually represent objects for repeatedly calculating intersections with avatars, entities, and overlays. Pointers can also be configured to generate events on entities and overlays intersected.</p></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### createPointer {#createPointer}
 
@@ -93,6 +95,10 @@ Script.scriptEnding.connect(function () {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### disablePointer {#disablePointer}
 
 ```js
@@ -103,6 +109,10 @@ Pointers.disablePointer(id)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>id</code></td><td>number</td><td><p>The ID of the pointer.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### editRenderState {#editRenderState}
 
@@ -181,6 +191,10 @@ Script.scriptEnding.connect(function () {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### enablePointer {#enablePointer}
 
 ```js
@@ -191,6 +205,10 @@ Pointers.enablePointer(id)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>id</code></td><td>number</td><td><p>The ID of the pointer.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getPointerProperties {#getPointerProperties}
 
@@ -253,6 +271,10 @@ Script.scriptEnding.connect(function () {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getPointers {#getPointers}
 
 ```js
@@ -261,6 +283,10 @@ Pointers.getPointers()
 
 <div class="api-text" v-pre><p>Gets all pointers which currently exist, including disabled pointers.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;number&gt; <p>pointers - The IDs of the pointers.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getPointerScriptParameters {#getPointerScriptParameters}
 
@@ -275,6 +301,10 @@ Pointers.getPointerScriptParameters(id)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="#RayPointerProperties">Pointers.RayPointerProperties</a> | <a href="#ParabolaPointerProperties">Pointers.ParabolaPointerProperties</a> | <a href="#StylusPointerProperties">Pointers.StylusPointerProperties</a> <p>Script-provided properties, per the pointer <code>type</code>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getPrevPickResult {#getPrevPickResult}
 
 ```js
@@ -286,6 +316,10 @@ Pointers.getPrevPickResult(id)
 <tr><td><code>id</code></td><td>number</td><td><p>The ID of the pointer.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="globals#RayPickResult">RayPickResult</a> | <a href="globals#ParabolaPickResult">ParabolaPickResult</a> | <a href="globals#StylusPickResult">StylusPickResult</a> <p>The most recent intersection of the pointer.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### isLeftHand {#isLeftHand}
 
@@ -299,6 +333,10 @@ Pointers.isLeftHand(id)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the pointer is associated with the left hand, <code>false</code> if it isn't.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### isMouse {#isMouse}
 
 ```js
@@ -310,6 +348,10 @@ Pointers.isMouse(id)
 <tr><td><code>id</code></td><td>number</td><td><p>The ID of the pointer.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the pointer is associated with the system mouse, <code>false</code> if it isn't.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### isPointerEnabled {#isPointerEnabled}
 
@@ -323,6 +365,10 @@ Pointers.isPointerEnabled(id)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p>enabled - Whether or not the pointer is enabled.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### isRightHand {#isRightHand}
 
 ```js
@@ -335,6 +381,10 @@ Pointers.isRightHand(id)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the pointer is associated with the right hand, <code>false</code> if it isn't.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### removePointer {#removePointer}
 
 ```js
@@ -345,6 +395,10 @@ Pointers.removePointer(id)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>id</code></td><td>number</td><td><p>The ID of the pointer.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setIgnoreItems {#setIgnoreItems}
 
@@ -360,6 +414,10 @@ Pointers.setIgnoreItems(id, ignoreItems)
 <tr><td><code>ignoreItems</code></td><td>Array&lt;<a href="Uuid">Uuid</a>&gt;</td><td><p>A list of IDs to ignore.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setIncludeItems {#setIncludeItems}
 
 ```js
@@ -374,6 +432,10 @@ Pointers.setIncludeItems(id, includeItems)
 <tr><td><code>includeItems</code></td><td>Array&lt;<a href="Uuid">Uuid</a>&gt;</td><td><p>A list of IDs to include.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setLength {#setLength}
 
 ```js
@@ -387,6 +449,10 @@ Pointers.setLength(id, length)
 <tr><td><code>id</code></td><td>number</td><td><p>The ID of the pointer.</p></td></tr>
 <tr><td><code>length</code></td><td>number</td><td><p>The desired length of the pointer.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setLockEndUUID {#setLockEndUUID}
 
@@ -404,6 +470,10 @@ Pointers.setLockEndUUID(id, targetID, isAvatar, offset?)
 <tr><td><code>offset</code> <em>optional</em></td><td><a href="Mat4">Mat4</a></td><td><p>The offset of the target point from the center of the target item. If not specified, the pointer locks on to the center of the target item.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setPrecisionPicking {#setPrecisionPicking}
 
 ```js
@@ -415,6 +485,10 @@ Pointers.setPrecisionPicking(id, precisionPicking)
 <tr><td><code>id</code></td><td>number</td><td><p>The ID of the pointer.</p></td></tr>
 <tr><td><code>precisionPicking</code></td><td>boolean</td><td><p><code>true</code> to use precision picking, <code>false</code> to use coarse picking.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setRenderState {#setRenderState}
 
@@ -499,7 +573,11 @@ Script.scriptEnding.connect(function () {
 });
 ```
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### DefaultParabolaPointerRenderState {#DefaultParabolaPointerRenderState}
 
@@ -509,6 +587,10 @@ Script.scriptEnding.connect(function () {
 </tbody></table></div>
 <div class="api-see" v-pre><strong>See also:</strong> <a href="#ParabolaPointerRenderState"><code>Pointers.ParabolaPointerRenderState</code></a> for the remainder of the properties.</div>
 
+</div>
+
+<div class="api-entry">
+
 ### DefaultRayPointerRenderState {#DefaultRayPointerRenderState}
 
 <div class="api-text" v-pre><p>Properties that define the visual appearance of a ray pointer when the pointer is not intersecting something. These are the properties of <a href="#RayPointerRenderState"><code>Pointers.RayPointerRenderState</code></a> but with an additional property.</p></div>
@@ -516,6 +598,10 @@ Script.scriptEnding.connect(function () {
 <tr><td><code>distance</code></td><td>number</td><td><p>The distance at which to render the end of the ray pointer.</p></td></tr>
 </tbody></table></div>
 <div class="api-see" v-pre><strong>See also:</strong> <a href="#RayPointerRenderState"><code>Pointers.RayPointerRenderState</code></a> for the remainder of the properties.</div>
+
+</div>
+
+<div class="api-entry">
 
 ### ParabolaPointerPath {#ParabolaPointerPath}
 
@@ -527,6 +613,10 @@ Script.scriptEnding.connect(function () {
 <tr><td><code>isVisibleInSecondaryCamera</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p><code>true</code> if the parabola is rendered in the secondary camera, <code>false</code> if it isn't.</p></td></tr>
 <tr><td><code>drawInFront</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p><code>true</code> if the parabola is rendered in front of objects in the world, but behind the HUD, <code>false</code> if it is occluded by objects in front of it.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### ParabolaPointerProperties {#ParabolaPointerProperties}
 
@@ -555,6 +645,10 @@ Script.scriptEnding.connect(function () {
 </tbody></table></div>
 <div class="api-see" v-pre><strong>See also:</strong> <a href="Picks#ParabolaPickProperties"><code>Picks.ParabolaPickProperties</code></a> for additional properties from the underlying parabola pick.</div>
 
+</div>
+
+<div class="api-entry">
+
 ### ParabolaPointerRenderState {#ParabolaPointerRenderState}
 
 <div class="api-text" v-pre><p>Properties that define the visual appearance of a parabola pointer when the pointer is intersecting something.</p></div>
@@ -567,6 +661,10 @@ Script.scriptEnding.connect(function () {
 <tr><td><code>end</code> <em>optional</em></td><td><a href="Overlays#OverlayProperties">Overlays.OverlayProperties</a> | <a href="Uuid">Uuid</a></td><td><p>When creating or editing using <a href="#createPointer"><code>Pointers.createPointer</code></a> or <a href="#editRenderState"><code>Pointers.editRenderState</code></a>, the properties of an overlay to render at the end of the ray pointer. The <code>type</code> property must be specified.</p>
  <p>When getting using <a href="#getPointerProperties"><code>Pointers.getPointerProperties</code></a>, the ID of the overlay rendered at the end of the parabola; <code>null</code> if there is no overlay.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### RayPointerProperties {#RayPointerProperties}
 
@@ -595,6 +693,10 @@ Script.scriptEnding.connect(function () {
 </tbody></table></div>
 <div class="api-see" v-pre><strong>See also:</strong> <a href="Picks#RayPickProperties"><code>Picks.RayPickProperties</code></a> for additional properties from the underlying ray pick.</div>
 
+</div>
+
+<div class="api-entry">
+
 ### RayPointerRenderState {#RayPointerRenderState}
 
 <div class="api-text" v-pre><p>Properties that define the visual appearance of a ray pointer when the pointer is intersecting something.</p></div>
@@ -608,6 +710,10 @@ Script.scriptEnding.connect(function () {
  <p>When getting using <a href="#getPointerProperties"><code>Pointers.getPointerProperties</code></a>, the ID of the overlay rendered at the end of the ray; <code>null</code> if there is no overlay.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### StylusPointerModel {#StylusPointerModel}
 
 <div class="api-text" v-pre><p>The properties of a stylus pointer model.</p></div>
@@ -617,6 +723,10 @@ Script.scriptEnding.connect(function () {
 <tr><td><code>positionOffset</code> <em>optional</em></td><td><a href="Vec3">Vec3</a></td><td><p>The position offset of the model from the stylus tip, to override the default position offset.</p></td></tr>
 <tr><td><code>rotationOffset</code> <em>optional</em></td><td><a href="Quat">Quat</a></td><td><p>The rotation offset of the model from the hand, to override the default rotation offset.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### StylusPointerProperties {#StylusPointerProperties}
 
@@ -629,6 +739,10 @@ Script.scriptEnding.connect(function () {
 </tbody></table></div>
 <div class="api-see" v-pre><strong>See also:</strong> <a href="Picks#StylusPickProperties"><code>Picks.StylusPickProperties</code></a> for additional properties from the underlying stylus pick.</div>
 
+</div>
+
+<div class="api-entry">
+
 ### Trigger {#Trigger}
 
 <div class="api-text" v-pre><p>Specifies that a <a href="Controller"><code>Controller</code></a> action or function should trigger events on the entity or overlay currently intersected by a <a href="#RayPointerProperties">Ray</a> or <a href="#ParabolaPointerProperties">Parabola</a> pointer.</p></div>
@@ -640,3 +754,5 @@ Script.scriptEnding.connect(function () {
  </ul>
 <p></p></td></tr>
 </tbody></table></div>
+
+</div>

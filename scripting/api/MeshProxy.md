@@ -6,11 +6,13 @@ draft: true
 
 # MeshProxy
 
-<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts, server entity scripts, assignment client scripts.</div>
+<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: client scripts, entity scripts, avatar scripts, server entity scripts, agents.</div>
 
 <div class="api-text" v-pre><p>A handle for a mesh in an entity, such as returned by <a href="Entities#getMeshes"><code>Entities.getMeshes</code></a>.</p></div>
 
 ## Methods {#functions}
+
+<div class="api-entry">
 
 ### getNumVertices {#getNumVertices}
 
@@ -20,6 +22,10 @@ getNumVertices()
 
 <div class="api-text" v-pre><p>Gets the number of vertices in the mesh.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>Integer number of vertices in the mesh.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getPos {#getPos}
 
@@ -32,3 +38,5 @@ getPos(index)
 <tr><td><code>index</code></td><td>number</td><td><p>Integer index of the vertex.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p>Local position of the vertex relative to the mesh.</p></div>
+
+</div>

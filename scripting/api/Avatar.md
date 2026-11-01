@@ -1,14 +1,14 @@
 ---
 title: "Avatar"
-description: "The Avatar API is used to manipulate scriptable avatars on the domain."
+description: "The Avatar API is used to manipulate scriptable avatars on the world."
 draft: true
 ---
 
 # Avatar
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: assignment client scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: agents.</div>
 
-<div class="api-text" v-pre><p>The <code>Avatar</code> API is used to manipulate scriptable avatars on the domain. This API is a subset of the <a href="MyAvatar"><code>MyAvatar</code></a> API. To enable this API, set <a href="Agent">Agent.isAvatar</a> to <code>true</code>.</p>
+<div class="api-text" v-pre><p>The <code>Avatar</code> API is used to manipulate scriptable avatars on the world. This API is a subset of the <a href="MyAvatar"><code>MyAvatar</code></a> API. To enable this API, set <a href="Agent">Agent.isAvatar</a> to <code>true</code>.</p>
  <p>For Interface, client entity, and avatar scripts, see <a href="MyAvatar"><code>MyAvatar</code></a>.</p></div>
 
 <div class="api-example" v-pre><strong>Example:</strong> <p>Create a scriptable avatar.</p></div>
@@ -24,7 +24,7 @@ draft: true
 
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>position</code></td><td><a href="Vec3">Vec3</a></td><td></td><td><p>The position of the avatar.</p></td></tr>
-<tr><td><code>scale</code></td><td>number</td><td><code>1.0</code></td><td><p>The scale of the avatar. The value can be set to anything between <code>0.005</code> and <code>1000.0</code>. When the scale value is fetched, it may temporarily be further limited by the domain's settings.</p></td></tr>
+<tr><td><code>scale</code></td><td>number</td><td><code>1.0</code></td><td><p>The scale of the avatar. The value can be set to anything between <code>0.005</code> and <code>1000.0</code>. When the scale value is fetched, it may temporarily be further limited by the world's settings.</p></td></tr>
 <tr><td><code>density</code></td><td>number</td><td></td><td><p>The density of the avatar in kg/m<sup>3</sup>. The density is used to work out its mass in the application of physics. <em>Read-only.</em></p></td></tr>
 <tr><td><code>handPosition</code></td><td><a href="Vec3">Vec3</a></td><td></td><td><p>A user-defined hand position, in world coordinates. The position moves with the avatar but is otherwise not used or changed by Interface.</p></td></tr>
 <tr><td><code>bodyYaw</code></td><td>number</td><td></td><td><p>The left or right rotation about an axis running from the head to the feet of the avatar. Yaw is sometimes called "heading".</p></td></tr>
@@ -37,10 +37,10 @@ draft: true
 <tr><td><code>headRoll</code></td><td>number</td><td></td><td><p>The rotation about an axis running from the nose to the back of the avatar's head. Roll is sometimes called "bank".</p></td></tr>
 <tr><td><code>velocity</code></td><td><a href="Vec3">Vec3</a></td><td></td><td><p>The current velocity of the avatar.</p></td></tr>
 <tr><td><code>angularVelocity</code></td><td><a href="Vec3">Vec3</a></td><td></td><td><p>The current angular velocity of the avatar.</p></td></tr>
-<tr><td><code>audioLoudness</code></td><td>number</td><td></td><td><p>The instantaneous loudness of the audio input that the avatar is injecting into the domain.</p></td></tr>
-<tr><td><code>audioAverageLoudness</code></td><td>number</td><td></td><td><p>The rolling average loudness of the audio input that the avatar is injecting into the domain.</p></td></tr>
+<tr><td><code>audioLoudness</code></td><td>number</td><td></td><td><p>The instantaneous loudness of the audio input that the avatar is injecting into the world.</p></td></tr>
+<tr><td><code>audioAverageLoudness</code></td><td>number</td><td></td><td><p>The rolling average loudness of the audio input that the avatar is injecting into the world.</p></td></tr>
 <tr><td><code>displayName</code></td><td>string</td><td></td><td><p>The avatar's display name.</p></td></tr>
-<tr><td><code>sessionDisplayName</code></td><td>string</td><td></td><td><p><code>displayName's</code> sanitized and default version defined by the avatar mixer rather than Interface clients. The result is unique among all avatars present in the domain at the time.</p></td></tr>
+<tr><td><code>sessionDisplayName</code></td><td>string</td><td></td><td><p><code>displayName's</code> sanitized and default version defined by the avatar mixer rather than Interface clients. The result is unique among all avatars present in the world at the time.</p></td></tr>
 <tr><td><code>lookAtSnappingEnabled</code></td><td>boolean</td><td><code>true</code></td><td><p><code>true</code> if the avatar's eyes snap to look at another avatar's eyes when the other avatar is in the line of sight and also has <code>lookAtSnappingEnabled == true</code>.</p></td></tr>
 <tr><td><code>gazeStyle</code></td><td>string</td><td><code>&quot;calm&quot;</code></td><td><p>How the avatar's eyes behave, for everyone to see: <code>"calm"</code>, <code>"excited"</code>, <code>"shy"</code>, <code>"sleepy"</code> or <code>"intent"</code>. A style sets how often and how far the eyes dart, where they rest and how much they meet other people's eyes, what the head does with them, and how the lids blink.</p></td></tr>
 <tr><td><code>skeletonModelURL</code></td><td>string</td><td></td><td><p>The avatar's FST file.</p></td></tr>
@@ -48,7 +48,7 @@ draft: true
 <p class="important">Deprecated: This property is deprecated and will be removed. Use avatar entities instead.</p>
 <p></p></td></tr>
 <tr><td><code>jointNames</code></td><td>Array&lt;string&gt;</td><td></td><td><p>The list of joints in the current avatar model. <em>Read-only.</em></p></td></tr>
-<tr><td><code>sessionUUID</code></td><td><a href="Uuid">Uuid</a></td><td></td><td><p>Unique ID of the avatar in the domain. <em>Read-only.</em></p></td></tr>
+<tr><td><code>sessionUUID</code></td><td><a href="Uuid">Uuid</a></td><td></td><td><p>Unique ID of the avatar in the world. <em>Read-only.</em></p></td></tr>
 <tr><td><code>sensorToWorldMatrix</code></td><td><a href="Mat4">Mat4</a></td><td></td><td><p>The scale, rotation, and translation transform from the user's real world to the avatar's size, orientation, and position in the virtual world. <em>Read-only.</em></p></td></tr>
 <tr><td><code>controllerLeftHandMatrix</code></td><td><a href="Mat4">Mat4</a></td><td></td><td><p>The rotation and translation of the left hand controller relative to the avatar. <em>Read-only.</em></p></td></tr>
 <tr><td><code>controllerRightHandMatrix</code></td><td><a href="Mat4">Mat4</a></td><td></td><td><p>The rotation and translation of the right hand controller relative to the avatar. <em>Read-only.</em></p></td></tr>
@@ -64,6 +64,8 @@ draft: true
 
 ## Functions {#functions}
 
+<div class="api-entry">
+
 ### clearJointData {#clearJointData}
 
 ```js
@@ -76,6 +78,10 @@ Avatar.clearJointData(index)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>index</code></td><td>number</td><td><p>The index of the joint.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### clearJointData {#clearJointData-2}
 
@@ -104,6 +110,10 @@ Script.setTimeout(function () {
 // Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### clearJointsData {#clearJointsData}
 
 ```js
@@ -131,6 +141,10 @@ Script.setTimeout(function () {
 // Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getAbsoluteJointRotationInObjectFrame {#getAbsoluteJointRotationInObjectFrame}
 
 ```js
@@ -145,6 +159,10 @@ Avatar.getAbsoluteJointRotationInObjectFrame(index)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Quat">Quat</a> <p><code>Quat.IDENTITY</code>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getAbsoluteJointTranslationInObjectFrame {#getAbsoluteJointTranslationInObjectFrame}
 
 ```js
@@ -158,6 +176,10 @@ Avatar.getAbsoluteJointTranslationInObjectFrame(index)
 <tr><td><code>index</code></td><td>number</td><td><p>The index of the joint. <em>Not used.</em></p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p><code>Vec3.ZERO</code>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getAnimationDetails {#getAnimationDetails}
 
@@ -174,6 +196,10 @@ Avatar.getAnimationDetails()
 var animationDetails = Avatar.getAnimationDetails();
 print("Animation details: " + JSON.stringify(animationDetails));
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### getAvatarEntityData {#getAvatarEntityData}
 
@@ -192,6 +218,10 @@ Avatar.getAvatarEntityData()
 var avatarEntityData = Avatar.getAvatarEntityData();
 print("Avatar entities: " + JSON.stringify(avatarEntityData));
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### getControllerLeftHandMatrix {#getControllerLeftHandMatrix}
 
@@ -214,6 +244,10 @@ print("Scale: " + JSON.stringify(Mat4.extractScale(leftHandMatrix))); // Always 
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getControllerRightHandMatrix {#getControllerRightHandMatrix}
 
 ```js
@@ -222,6 +256,10 @@ Avatar.getControllerRightHandMatrix()
 
 <div class="api-text" v-pre><p>Gets the rotation and translation of the right hand controller relative to the avatar.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Mat4">Mat4</a> <p>The rotation and translation of the right hand controller relative to the avatar.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getDataRate {#getDataRate}
 
@@ -235,14 +273,22 @@ Avatar.getDataRate(rateName?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The data rate in kbps.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getDomainMaxScale {#getDomainMaxScale}
 
 ```js
 Avatar.getDomainMaxScale()
 ```
 
-<div class="api-text" v-pre><p>Gets the maximum scale allowed for this avatar in the current domain. This value can change as the user changes avatars or when changing domains.</p></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> number <p>The maximum scale allowed for this avatar in the current domain.</p></div>
+<div class="api-text" v-pre><p>Gets the maximum scale allowed for this avatar in the current world. This value can change as the user changes avatars or when changing worlds.</p></div>
+<div class="api-returns" v-pre><strong>Returns:</strong> number <p>The maximum scale allowed for this avatar in the current world.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getDomainMinScale {#getDomainMinScale}
 
@@ -250,8 +296,12 @@ Avatar.getDomainMaxScale()
 Avatar.getDomainMinScale()
 ```
 
-<div class="api-text" v-pre><p>Gets the minimum scale allowed for this avatar in the current domain. This value can change as the user changes avatars or when changing domains.</p></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> number <p>The minimum scale allowed for this avatar in the current domain.</p></div>
+<div class="api-text" v-pre><p>Gets the minimum scale allowed for this avatar in the current world. This value can change as the user changes avatars or when changing worlds.</p></div>
+<div class="api-returns" v-pre><strong>Returns:</strong> number <p>The minimum scale allowed for this avatar in the current world.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getEyeHeight {#getEyeHeight}
 
@@ -262,6 +312,10 @@ Avatar.getEyeHeight()
 <div class="api-text" v-pre><p>Gets the current eye height of the avatar. This height is only an estimate and might be incorrect for avatars that are missing standard joints.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The eye height of the avatar.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getEyesLookAt {#getEyesLookAt}
 
 ```js
@@ -270,6 +324,10 @@ Avatar.getEyesLookAt()
 
 <div class="api-text" v-pre><p>Gets the point the eyes were last told to look at.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p>The eyes' look-at target in world coordinates.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getHandState {#getHandState}
 
@@ -280,6 +338,10 @@ Avatar.getHandState()
 <div class="api-text" v-pre><p>Gets the pointing state of the hands to control where the laser emanates from. If the right index finger is pointing, the laser emanates from the tip of that finger, otherwise it emanates from the palm.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="globals#HandState">HandState</a> <p>The pointing state of the hand.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getHeadLookAt {#getHeadLookAt}
 
 ```js
@@ -289,6 +351,10 @@ Avatar.getHeadLookAt()
 <div class="api-text" v-pre><p>Gets the point the head was last told to look at.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p>The head's look-at target in world coordinates.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getHeight {#getHeight}
 
 ```js
@@ -297,6 +363,10 @@ Avatar.getHeight()
 
 <div class="api-text" v-pre><p>Gets the current height of the avatar. This height is only an estimate and might be incorrect for avatars that are missing standard joints.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The height of the avatar.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getJointIndex {#getJointIndex}
 
@@ -318,6 +388,10 @@ print(JSON.stringify(MyAvatar.getJointIndex("LeftArm")));
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getJointNames {#getJointNames}
 
 ```js
@@ -335,6 +409,10 @@ print(JSON.stringify(MyAvatar.getJointNames()));
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getJointRotation {#getJointRotation}
 
 ```js
@@ -346,6 +424,10 @@ Avatar.getJointRotation(index)
 <tr><td><code>index</code></td><td>number</td><td><p>The index of the joint.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Quat">Quat</a> <p>The rotation of the joint relative to its parent.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getJointRotation {#getJointRotation-2}
 
@@ -367,6 +449,10 @@ print(JSON.stringify(MyAvatar.getJointRotation("Hips")));
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getJointRotations {#getJointRotations}
 
 ```js
@@ -384,6 +470,10 @@ print(JSON.stringify(MyAvatar.getJointRotations()));
 // Note: If using from the Avatar API, replace all "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getJointTranslation {#getJointTranslation}
 
 ```js
@@ -398,6 +488,10 @@ Avatar.getJointTranslation(index)
 <tr><td><code>index</code></td><td>number</td><td><p>The index of the joint.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p>The translation of the joint relative to its parent, in model coordinates.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getJointTranslation {#getJointTranslation-2}
 
@@ -422,6 +516,10 @@ print(JSON.stringify(MyAvatar.getJointRotation("Hips")));
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getJointTranslations {#getJointTranslations}
 
 ```js
@@ -432,6 +530,10 @@ Avatar.getJointTranslations()
 <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p>
 <p></p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;<a href="Vec3">Vec3</a>&gt; <p>The translations of all joints relative to each's parent, in model coordinates. The values are in the same order as the array returned by <a href="MyAvatar#getJointNames"><code>MyAvatar.getJointNames</code></a>, or <a href="#getJointNames"><code>Avatar.getJointNames</code></a> if using the <code>Avatar</code> API.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getSensorToLocalMatrix {#getSensorToLocalMatrix}
 
@@ -454,6 +556,10 @@ print("Scale: " + JSON.stringify(Mat4.extractScale(sensorToLocalMatrix)));
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getSensorToWorldMatrix {#getSensorToWorldMatrix}
 
 ```js
@@ -475,6 +581,10 @@ print("Scale: " + JSON.stringify(Mat4.extractScale(sensorToWorldMatrix)));
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getSensorToWorldScale {#getSensorToWorldScale}
 
 ```js
@@ -484,13 +594,17 @@ Avatar.getSensorToWorldScale()
 <div class="api-text" v-pre><p>Gets the scale that transforms dimensions in the user's real world to the avatar's size in the virtual world.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The scale that transforms dimensions in the user's real world to the avatar's size in the virtual world.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getTargetScale {#getTargetScale}
 
 ```js
 Avatar.getTargetScale()
 ```
 
-<div class="api-text" v-pre><p>Gets the target scale of the avatar without any restrictions on permissible values imposed by the domain. In contrast, the <code>scale</code> property's value may be limited by the domain's settings.</p></div>
+<div class="api-text" v-pre><p>Gets the target scale of the avatar without any restrictions on permissible values imposed by the world. In contrast, the <code>scale</code> property's value may be limited by the world's settings.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The target scale of the avatar.</p></div>
 
 <div class="api-example" v-pre><strong>Example:</strong> <p>Compare the target and current avatar scales.</p></div>
@@ -501,6 +615,10 @@ print("Target avatar scale:  " + MyAvatar.getTargetScale());
 
 // Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### getUpdateRate {#getUpdateRate}
 
@@ -514,6 +632,10 @@ Avatar.getUpdateRate(rateName?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The update rate in Hz.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### isJointDataValid {#isJointDataValid}
 
 ```js
@@ -525,6 +647,10 @@ Avatar.isJointDataValid(index)
 <tr><td><code>index</code></td><td>number</td><td><p>The index of the joint.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the joint data are valid, <code>false</code> if not.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### isJointDataValid {#isJointDataValid-2}
 
@@ -538,6 +664,10 @@ Avatar.isJointDataValid(name)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the joint data are valid, <code>false</code> if not.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### releaseEyesLookAtControl {#releaseEyesLookAtControl}
 
 ```js
@@ -546,6 +676,10 @@ Avatar.releaseEyesLookAtControl()
 
 <div class="api-text" v-pre><p>Gives the eyes back: they look where the head looks.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### releaseHeadLookAtControl {#releaseHeadLookAtControl}
 
 ```js
@@ -553,6 +687,10 @@ Avatar.releaseHeadLookAtControl()
 ```
 
 <div class="api-text" v-pre><p>Gives the head back: it eases back to looking ahead.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setAbsoluteJointRotationInObjectFrame {#setAbsoluteJointRotationInObjectFrame}
 
@@ -569,6 +707,10 @@ Avatar.setAbsoluteJointRotationInObjectFrame(index, rotation)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>false</code>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setAbsoluteJointTranslationInObjectFrame {#setAbsoluteJointTranslationInObjectFrame}
 
 ```js
@@ -584,6 +726,10 @@ Avatar.setAbsoluteJointTranslationInObjectFrame(index, translation)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>false</code>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setAvatarEntityData {#setAvatarEntityData}
 
 ```js
@@ -596,6 +742,10 @@ Avatar.setAvatarEntityData(avatarEntityData)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>avatarEntityData</code></td><td><a href="globals#AvatarEntityMap">AvatarEntityMap</a></td><td><p>Details of the avatar entities.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setBlendshape {#setBlendshape}
 
@@ -618,6 +768,10 @@ MyAvatar.setBlendshape("JawOpen", 1.0);
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### setEyesLookAt {#setEyesLookAt}
 
 ```js
@@ -628,6 +782,10 @@ Avatar.setEyesLookAt(lookAtTarget)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>lookAtTarget</code></td><td><a href="Vec3">Vec3</a></td><td><p>The target point in world coordinates.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setForceFaceTrackerConnected {#setForceFaceTrackerConnected}
 
@@ -642,6 +800,10 @@ Avatar.setForceFaceTrackerConnected(connected)
 <tr><td><code>connected</code></td><td>boolean</td><td><p><code>true</code> to enable blend shape changes to be transmitted to other users, <code>false</code> to disable.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setHandState {#setHandState}
 
 ```js
@@ -652,6 +814,10 @@ Avatar.setHandState(state)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>state</code></td><td><a href="globals#HandState">HandState</a></td><td><p>The pointing state of the hand.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setHeadLookAt {#setHeadLookAt}
 
@@ -665,6 +831,10 @@ Avatar.setHeadLookAt(lookAtTarget)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>lookAtTarget</code></td><td><a href="Vec3">Vec3</a></td><td><p>The target point in world coordinates.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setJointData {#setJointData}
 
@@ -701,6 +871,10 @@ Script.setTimeout(function () {
 // Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### setJointData {#setJointData-2}
 
 ```js
@@ -717,6 +891,10 @@ Avatar.setJointData(name, rotation, translation)
 <tr><td><code>translation</code></td><td><a href="Vec3">Vec3</a></td><td><p>The translation of the joint relative to its parent, in model coordinates.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setJointRotation {#setJointRotation}
 
 ```js
@@ -730,6 +908,10 @@ Avatar.setJointRotation(index, rotation)
 <tr><td><code>index</code></td><td>number</td><td><p>The index of the joint.</p></td></tr>
 <tr><td><code>rotation</code></td><td><a href="Quat">Quat</a></td><td><p>The rotation of the joint relative to its parent.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setJointRotation {#setJointRotation-2}
 
@@ -767,6 +949,10 @@ Script.setTimeout(function () {
 
 // Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### setJointRotations {#setJointRotations}
 
@@ -809,6 +995,10 @@ Script.setTimeout(function () {
 // Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### setJointTranslation {#setJointTranslation}
 
 ```js
@@ -823,6 +1013,10 @@ Avatar.setJointTranslation(index, translation)
 <tr><td><code>index</code></td><td>number</td><td><p>The index of the joint.</p></td></tr>
 <tr><td><code>translation</code></td><td><a href="Vec3">Vec3</a></td><td><p>The translation of the joint relative to its parent, in model coordinates.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setJointTranslation {#setJointTranslation-2}
 
@@ -853,6 +1047,10 @@ Script.setTimeout(function () {
 // Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### setJointTranslations {#setJointTranslations}
 
 ```js
@@ -867,6 +1065,10 @@ Avatar.setJointTranslations(translations)
 <tr><td><code>translations</code></td><td>Array&lt;<a href="Vec3">Vec3</a>&gt;</td><td><p>The translations for all joints in the avatar, in model coordinates. The values are in the same order as the array returned by <a href="MyAvatar#getJointNames"><code>MyAvatar.getJointNames</code></a>, or <a href="#getJointNames"><code>Avatar.getJointNames</code></a> if using the <code>Avatar</code> API.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setProperties {#setProperties}
 
 ```js
@@ -875,8 +1077,12 @@ Avatar.setProperties(properties)
 
 <div class="api-text" v-pre><p>Magic function that works like Entities.editEntity. currently supports: parentID, parentJointIndex, localPosition, localRotation, localVelocity, localAngularVelocity</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>properties</code></td><td><a href="Entities#EntityProperties">Entities.EntityProperties</a></td><td><p>The new property values.</p></td></tr>
+<tr><td><code>properties</code></td><td><a href="Entities-types#EntityProperties">Entities.EntityProperties</a></td><td><p>The new property values.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setSkeletonModelURL {#setSkeletonModelURL}
 
@@ -888,6 +1094,10 @@ Avatar.setSkeletonModelURL(url)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>url</code></td><td>string</td><td><p>The avatar's FST file.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### startAnimation {#startAnimation}
 
@@ -909,6 +1119,10 @@ Avatar.startAnimation(url, fps?, priority?, loop?, hold?, firstFrame?, lastFrame
 <tr><td><code>maskedJoints</code> <em>optional</em></td><td>Array&lt;string&gt;</td><td><code>[]</code></td><td><p>The names of joints that should not be animated.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### stopAnimation {#stopAnimation}
 
 ```js
@@ -917,9 +1131,13 @@ Avatar.stopAnimation()
 
 <div class="api-text" v-pre><p>Stops playing the current animation.</p></div>
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### displayNameChanged {#displayNameChanged}
 
@@ -940,6 +1158,10 @@ MyAvatar.displayNameChanged.connect(function () {
 
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### lookAtSnappingChanged {#lookAtSnappingChanged}
 
@@ -964,6 +1186,10 @@ MyAvatar.lookAtSnappingChanged.connect(function () {
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### sessionDisplayNameChanged {#sessionDisplayNameChanged}
 
 ```js
@@ -983,6 +1209,10 @@ MyAvatar.sessionDisplayNameChanged.connect(function () {
 
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### sessionUUIDChanged {#sessionUUIDChanged}
 
@@ -1004,6 +1234,10 @@ MyAvatar.sessionUUIDChanged.connect(function () {
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### skeletonModelURLChanged {#skeletonModelURLChanged}
 
 ```js
@@ -1024,7 +1258,11 @@ MyAvatar.skeletonModelURLChanged.connect(function () {
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### AnimationDetails {#AnimationDetails}
 
@@ -1046,9 +1284,13 @@ MyAvatar.skeletonModelURLChanged.connect(function () {
 <tr><td><code>allowTranslation</code></td><td>boolean</td><td><p><em>Not used.</em></p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Deprecated {#deprecated}
 
 Still there for older scripts; new scripts should not use these.
+
+<div class="api-entry">
 
 ### attach {#attach}
 
@@ -1096,6 +1338,10 @@ var attachment = {
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### clearAvatarEntity {#clearAvatarEntity}
 
 ```js
@@ -1110,6 +1356,10 @@ Avatar.clearAvatarEntity(entityID, requiresRemovalFromTree?)
 <tr><td><code>entityID</code></td><td><a href="Uuid">Uuid</a></td><td></td><td><p>The entity ID.</p></td></tr>
 <tr><td><code>requiresRemovalFromTree</code> <em>optional</em></td><td>boolean</td><td><code>true</code></td><td><p>unused</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### detachAll {#detachAll}
 
@@ -1127,6 +1377,10 @@ Avatar.detachAll(modelURL, jointName?)
 <tr><td><code>jointName</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>The name of the joint to detach the model from. If <code>""</code>, then the model is detached from all joints.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### detachOne {#detachOne}
 
 ```js
@@ -1142,6 +1396,10 @@ Avatar.detachOne(modelURL, jointName?)
 <tr><td><code>modelURL</code></td><td>string</td><td></td><td><p>The URL of the model to detach.</p></td></tr>
 <tr><td><code>jointName</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>The name of the joint to detach the model from. If <code>""</code>, then the most recently attached model is removed from which ever joint it was attached to.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getAttachmentData {#getAttachmentData}
 
@@ -1167,6 +1425,10 @@ for (var i = 0; i < attachments.length; i++) {
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getAttachmentsVariant {#getAttachmentsVariant}
 
 ```js
@@ -1180,6 +1442,10 @@ Avatar.getAttachmentsVariant()
 <div class="api-text" v-pre><p>Gets information about the models currently attached to your avatar.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;<a href="globals#AttachmentData">AttachmentData</a>&gt; <p>Information about all models attached to your avatar.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### resetLastSent {#resetLastSent}
 
 ```js
@@ -1190,6 +1456,10 @@ Avatar.resetLastSent()
 <div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
 :::
 
+
+</div>
+
+<div class="api-entry">
 
 ### sendAvatarDataPacket {#sendAvatarDataPacket}
 
@@ -1206,6 +1476,10 @@ Avatar.sendAvatarDataPacket(sendAll?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
 
+</div>
+
+<div class="api-entry">
+
 ### sendIdentityPacket {#sendIdentityPacket}
 
 ```js
@@ -1217,6 +1491,10 @@ Avatar.sendIdentityPacket()
 :::
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
+
+</div>
+
+<div class="api-entry">
 
 ### setAttachmentData {#setAttachmentData}
 
@@ -1250,6 +1528,10 @@ for (var i = 0; i < attachments.length; i++) {
 // Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### setAttachmentsVariant {#setAttachmentsVariant}
 
 ```js
@@ -1265,6 +1547,10 @@ Avatar.setAttachmentsVariant(variant)
 <tr><td><code>variant</code></td><td>Array&lt;<a href="globals#AttachmentData">AttachmentData</a>&gt;</td><td><p>The attachment data defining the models to have attached to your avatar.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setJointMappingsFromNetworkReply {#setJointMappingsFromNetworkReply}
 
 ```js
@@ -1275,6 +1561,10 @@ Avatar.setJointMappingsFromNetworkReply()
 <div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
 :::
 
+
+</div>
+
+<div class="api-entry">
 
 ### setRawJointData {#setRawJointData}
 
@@ -1291,6 +1581,10 @@ Avatar.setRawJointData(data)
 <tr><td><code>data</code></td><td>Array&lt;JointData&gt;</td><td><p>The raw joint data.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setSessionUUID {#setSessionUUID}
 
 ```js
@@ -1304,6 +1598,10 @@ Avatar.setSessionUUID(sessionUUID)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>sessionUUID</code></td><td><a href="Uuid">Uuid</a></td><td><p>Session UUID.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### update {#update}
 
@@ -1319,6 +1617,10 @@ Avatar.update(deltaTime)
 <tr><td><code>deltaTime</code></td><td>number</td><td><p>Delta time.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### updateAvatarEntity {#updateAvatarEntity}
 
 ```js
@@ -1333,3 +1635,5 @@ Avatar.updateAvatarEntity(entityID, entityData)
 <tr><td><code>entityID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The entity ID.</p></td></tr>
 <tr><td><code>entityData</code></td><td>ArrayBuffer</td><td><p>Entity data.</p></td></tr>
 </tbody></table></div>
+
+</div>

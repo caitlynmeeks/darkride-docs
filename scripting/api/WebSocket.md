@@ -6,7 +6,7 @@ draft: true
 
 # WebSocket
 
-<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts, server entity scripts, assignment client scripts.</div>
+<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: client scripts, entity scripts, avatar scripts, server entity scripts, agents.</div>
 
 <div class="api-text" v-pre><p>Provides a bi-directional, event-driven communication session between the script and another WebSocket connection. It is a near-complete implementation of the WebSocket API described in the Mozilla docs: <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSocket" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/WebSocket</a>.</p>
  <p>Create using <code>new WebSocket(...)</code> in Interface, client entity, avatar, and server entity scripts, or the <a href="WebSocketServer"><code>WebSocketServer</code></a> class in server entity and assignment client scripts. </p>
@@ -70,6 +70,8 @@ webSocket.onopen = function () {
 
 ## Methods {#functions}
 
+<div class="api-entry">
+
 ### close {#close}
 
 ```js
@@ -82,6 +84,10 @@ WebSocket.close(closeCode?, reason?)
 <tr><td><code>reason</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>A description of the reason for closing.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### send {#send}
 
 ```js
@@ -93,7 +99,11 @@ WebSocket.send(message)
 <tr><td><code>message</code></td><td>string | object</td><td><p>The message to send. If an object, it is converted to a string.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### CloseCode {#CloseCode}
 
@@ -119,6 +129,10 @@ WebSocket.send(message)
 <table></table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
 
+</div>
+
+<div class="api-entry">
+
 ### CloseData {#CloseData}
 
 <div class="api-text" v-pre><p>Information on a connection being closed.</p></div>
@@ -128,12 +142,20 @@ WebSocket.send(message)
 <tr><td><code>wasClean</code></td><td>boolean</td><td><p><code>true</code> if the connection closed cleanly, <code>false</code> if it didn't.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### MessageData {#MessageData}
 
 <div class="api-text" v-pre><p>A message received on a WebSocket connection.</p></div>
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>data</code></td><td>string</td><td><p>The message content.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### onCloseCallback {#onCloseCallback}
 
@@ -143,6 +165,10 @@ WebSocket.send(message)
 <tr><td><code>data</code></td><td><a href="#CloseData">WebSocket.CloseData</a></td><td><p>Information on the connection closure.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### onErrorCallback {#onErrorCallback}
 
 <div class="api-text" v-pre><p>Called when an error occurs.</p></div>
@@ -150,6 +176,10 @@ WebSocket.send(message)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>error</code></td><td><a href="#SocketError">WebSocket.SocketError</a></td><td><p>The error.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### onMessageCallback {#onMessageCallback}
 
@@ -159,10 +189,18 @@ WebSocket.send(message)
 <tr><td><code>message</code></td><td><a href="#MessageData">WebSocket.MessageData</a></td><td><p>The message received.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### onOpenCallback {#onOpenCallback}
 
 <div class="api-text" v-pre><p>Called when the connection opens.</p></div>
 <div class="api-type" v-pre><strong>Type:</strong> function</div>
+
+</div>
+
+<div class="api-entry">
 
 ### ReadyState {#ReadyState}
 
@@ -177,6 +215,10 @@ WebSocket.send(message)
  </table>
 <p></p></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
+
+</div>
+
+<div class="api-entry">
 
 ### SocketError {#SocketError}
 
@@ -210,3 +252,5 @@ WebSocket.send(message)
  </tbody>
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
+
+</div>

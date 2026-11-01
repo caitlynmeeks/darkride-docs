@@ -6,7 +6,7 @@ draft: true
 
 # Uuid
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts, server entity scripts, assignment client scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts, server entity scripts, agents.</div>
 
 <div class="api-text" v-pre><p>The <code>Uuid</code> API provides facilities for working with UUIDs.</p></div>
 
@@ -21,6 +21,8 @@ draft: true
 </tbody></table></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### fromString {#fromString}
 
@@ -47,6 +49,10 @@ uuid = Uuid.fromString("527c27ea");
 print(uuid); // null
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### generate {#generate}
 
 ```js
@@ -63,6 +69,10 @@ var uuid = Uuid.generate();
 print(uuid);        // {nnnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnn}
 print(typeof uuid); // string
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### isEqual {#isEqual}
 
@@ -86,6 +96,10 @@ print(Uuid.isEqual(uuidA, uuidB)); // false
 uuidB = uuidA;
 print(Uuid.isEqual(uuidA, uuidB)); // true
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### isNull {#isNull}
 
@@ -112,6 +126,10 @@ uuid = null;
 print(Uuid.isNull(uuid)); // true
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### print {#print}
 
 ```js
@@ -132,6 +150,10 @@ Uuid.print("Generated UUID:", uuid); // Generated UUID: {nnnnnnnn-nnnn-nnnn-nnnn
 print("Generated UUID: " + uuid);    // Generated UUID: {nnnnnnnn-nnnn-nnnn-nnnn-nnnnnnnnnnnn}
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### toString {#toString}
 
 ```js
@@ -143,3 +165,5 @@ Uuid.toString(id)
 <tr><td><code>id</code></td><td><a href="">Uuid</a></td><td><p>The UUID to generate a string from.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>- A string representation of the UUID.</p></div>
+
+</div>

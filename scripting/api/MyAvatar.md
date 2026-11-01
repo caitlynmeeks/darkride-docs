@@ -6,16 +6,16 @@ draft: true
 
 # MyAvatar
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
-<div class="api-text" v-pre><p>Your avatar is your in-world representation of you. The <code>MyAvatar</code> API is used to manipulate the avatar. For example, you can customize the avatar's appearance, run custom avatar animations, change the avatar's position within the domain, or manage the avatar's collisions with the environment and other avatars.</p>
+<div class="api-text" v-pre><p>Your avatar is your in-world representation of you. The <code>MyAvatar</code> API is used to manipulate the avatar. For example, you can customize the avatar's appearance, run custom avatar animations, change the avatar's position within the world, or manage the avatar's collisions with the environment and other avatars.</p>
  <p>For assignment client scripts, see <a href="Avatar"><code>Avatar</code></a>.</p></div>
 
 ## Properties {#properties}
 
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>position</code></td><td><a href="Vec3">Vec3</a></td><td></td><td><p>The position of the avatar.</p></td></tr>
-<tr><td><code>scale</code></td><td>number</td><td><code>1.0</code></td><td><p>The scale of the avatar. The value can be set to anything between <code>0.005</code> and <code>1000.0</code>. When the scale value is fetched, it may temporarily be further limited by the domain's settings.</p></td></tr>
+<tr><td><code>scale</code></td><td>number</td><td><code>1.0</code></td><td><p>The scale of the avatar. The value can be set to anything between <code>0.005</code> and <code>1000.0</code>. When the scale value is fetched, it may temporarily be further limited by the world's settings.</p></td></tr>
 <tr><td><code>density</code></td><td>number</td><td></td><td><p>The density of the avatar in kg/m<sup>3</sup>. The density is used to work out its mass in the application of physics. <em>Read-only.</em></p></td></tr>
 <tr><td><code>handPosition</code></td><td><a href="Vec3">Vec3</a></td><td></td><td><p>A user-defined hand position, in world coordinates. The position moves with the avatar but is otherwise not used or changed by Interface.</p></td></tr>
 <tr><td><code>bodyYaw</code></td><td>number</td><td></td><td><p>The left or right rotation about an axis running from the head to the feet of the avatar. Yaw is sometimes called "heading".</p></td></tr>
@@ -28,10 +28,10 @@ draft: true
 <tr><td><code>headRoll</code></td><td>number</td><td></td><td><p>The rotation about an axis running from the nose to the back of the avatar's head. Roll is sometimes called "bank".</p></td></tr>
 <tr><td><code>velocity</code></td><td><a href="Vec3">Vec3</a></td><td></td><td><p>The current velocity of the avatar.</p></td></tr>
 <tr><td><code>angularVelocity</code></td><td><a href="Vec3">Vec3</a></td><td></td><td><p>The current angular velocity of the avatar.</p></td></tr>
-<tr><td><code>audioLoudness</code></td><td>number</td><td></td><td><p>The instantaneous loudness of the audio input that the avatar is injecting into the domain.</p></td></tr>
-<tr><td><code>audioAverageLoudness</code></td><td>number</td><td></td><td><p>The rolling average loudness of the audio input that the avatar is injecting into the domain.</p></td></tr>
+<tr><td><code>audioLoudness</code></td><td>number</td><td></td><td><p>The instantaneous loudness of the audio input that the avatar is injecting into the world.</p></td></tr>
+<tr><td><code>audioAverageLoudness</code></td><td>number</td><td></td><td><p>The rolling average loudness of the audio input that the avatar is injecting into the world.</p></td></tr>
 <tr><td><code>displayName</code></td><td>string</td><td></td><td><p>The avatar's display name.</p></td></tr>
-<tr><td><code>sessionDisplayName</code></td><td>string</td><td></td><td><p><code>displayName's</code> sanitized and default version defined by the avatar mixer rather than Interface clients. The result is unique among all avatars present in the domain at the time.</p></td></tr>
+<tr><td><code>sessionDisplayName</code></td><td>string</td><td></td><td><p><code>displayName's</code> sanitized and default version defined by the avatar mixer rather than Interface clients. The result is unique among all avatars present in the world at the time.</p></td></tr>
 <tr><td><code>lookAtSnappingEnabled</code></td><td>boolean</td><td><code>true</code></td><td><p><code>true</code> if the avatar's eyes snap to look at another avatar's eyes when the other avatar is in the line of sight and also has <code>lookAtSnappingEnabled == true</code>.</p></td></tr>
 <tr><td><code>gazeStyle</code></td><td>string</td><td><code>&quot;calm&quot;</code></td><td><p>How the avatar's eyes behave, for everyone to see: <code>"calm"</code>, <code>"excited"</code>, <code>"shy"</code>, <code>"sleepy"</code> or <code>"intent"</code>. A style sets how often and how far the eyes dart, where they rest and how much they meet other people's eyes, what the head does with them, and how the lids blink.</p></td></tr>
 <tr><td><code>skeletonModelURL</code></td><td>string</td><td></td><td><p>The avatar's FST file.</p></td></tr>
@@ -39,7 +39,7 @@ draft: true
 <p class="important">Deprecated: This property is deprecated and will be removed. Use avatar entities instead.</p>
 <p></p></td></tr>
 <tr><td><code>jointNames</code></td><td>Array&lt;string&gt;</td><td></td><td><p>The list of joints in the current avatar model. <em>Read-only.</em></p></td></tr>
-<tr><td><code>sessionUUID</code></td><td><a href="Uuid">Uuid</a></td><td></td><td><p>Unique ID of the avatar in the domain. <em>Read-only.</em></p></td></tr>
+<tr><td><code>sessionUUID</code></td><td><a href="Uuid">Uuid</a></td><td></td><td><p>Unique ID of the avatar in the world. <em>Read-only.</em></p></td></tr>
 <tr><td><code>sensorToWorldMatrix</code></td><td><a href="Mat4">Mat4</a></td><td></td><td><p>The scale, rotation, and translation transform from the user's real world to the avatar's size, orientation, and position in the virtual world. <em>Read-only.</em></p></td></tr>
 <tr><td><code>controllerLeftHandMatrix</code></td><td><a href="Mat4">Mat4</a></td><td></td><td><p>The rotation and translation of the left hand controller relative to the avatar. <em>Read-only.</em></p></td></tr>
 <tr><td><code>controllerRightHandMatrix</code></td><td><a href="Mat4">Mat4</a></td><td></td><td><p>The rotation and translation of the right hand controller relative to the avatar. <em>Read-only.</em></p></td></tr>
@@ -103,7 +103,7 @@ draft: true
 <tr><td><code>hmdRollControlRate</code></td><td>number</td><td></td><td><p>If <code>MyAvatar.hmdRollControlEnabled</code> is true, this value determines the maximum turn rate of your avatar when rolling your HMD in degrees per second.</p></td></tr>
 <tr><td><code>userHeight</code></td><td>number</td><td><code>1.75</code></td><td><p>The height of the user in sensor space.</p></td></tr>
 <tr><td><code>userEyeHeight</code></td><td>number</td><td><code>1.65</code></td><td><p>The estimated height of the user's eyes in sensor space. <em>Read-only.</em></p></td></tr>
-<tr><td><code>SELF_ID</code></td><td><a href="Uuid">Uuid</a></td><td></td><td><p>UUID representing "my avatar". Only use for local-only entities in situations where MyAvatar.sessionUUID is not available (e.g., if not connected to a domain). Note: Likely to be deprecated. <em>Read-only.</em></p></td></tr>
+<tr><td><code>SELF_ID</code></td><td><a href="Uuid">Uuid</a></td><td></td><td><p>UUID representing "my avatar". Only use for local-only entities in situations where MyAvatar.sessionUUID is not available (e.g., if not connected to a world). Note: Likely to be deprecated. <em>Read-only.</em></p></td></tr>
 <tr><td><code>walkSpeed</code></td><td>number</td><td></td><td><p>The walk speed of your avatar for the current control scheme (see <a href="#getControlScheme">getControlScheme</a>).</p></td></tr>
 <tr><td><code>walkBackwardSpeed</code></td><td>number</td><td></td><td><p>The walk backward speed of your avatar for the current control scheme (see <a href="#getControlScheme">getControlScheme</a>).</p></td></tr>
 <tr><td><code>sprintSpeed</code></td><td>number</td><td></td><td><p>The sprint (run) speed of your avatar for the current control scheme (see <a href="#getControlScheme">getControlScheme</a>).</p></td></tr>
@@ -125,6 +125,8 @@ draft: true
 </tbody></table></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### addAnimationStateHandler {#addAnimationStateHandler}
 
@@ -156,6 +158,10 @@ Script.setTimeout(function () {
 }, 100);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### beginReaction {#beginReaction}
 
 ```js
@@ -170,6 +176,10 @@ MyAvatar.beginReaction(reactionName)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the reaction was started, <code>false</code> if the reaction is not supported.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### beginSit {#beginSit}
 
 ```js
@@ -182,6 +192,10 @@ MyAvatar.beginSit(position, rotation)
 <tr><td><code>rotation</code></td><td><a href="Quat">Quat</a></td><td><p>The initial orientation of the seated avatar.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### centerBody {#centerBody}
 
 ```js
@@ -189,6 +203,10 @@ MyAvatar.centerBody()
 ```
 
 <div class="api-text" v-pre><p>Moves and orients the avatar, such that it is directly underneath the HMD, with toes pointed forward in the direction of the HMD.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### clearIKJointLimitHistory {#clearIKJointLimitHistory}
 
@@ -199,6 +217,10 @@ MyAvatar.clearIKJointLimitHistory()
 <div class="api-text" v-pre><p>Clears inverse kinematics joint limit history. </p>
 <p>The internal inverse-kinematics system maintains a record of which joints are "locked". Sometimes it is useful to forget this history to prevent contorted joints, e.g., after finishing with an override animation.</p>
 <p></p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### clearJointData {#clearJointData}
 
@@ -212,6 +234,10 @@ MyAvatar.clearJointData(index)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>index</code></td><td>number</td><td><p>The index of the joint.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### clearJointData {#clearJointData-2}
 
@@ -240,6 +266,10 @@ Script.setTimeout(function () {
 // Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### clearJointsData {#clearJointsData}
 
 ```js
@@ -267,6 +297,10 @@ Script.setTimeout(function () {
 // Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### clearPinOnJoint {#clearPinOnJoint}
 
 ```js
@@ -280,6 +314,10 @@ MyAvatar.clearPinOnJoint(index)
 <tr><td><code>index</code></td><td>number</td><td><p>The index of the joint.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the joint was unpinned, <code>false</code> if it wasn't.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### decreaseSize {#decreaseSize}
 
@@ -299,6 +337,10 @@ for (var i = 0; i < 5; i++){
     MyAvatar.decreaseSize();
 }
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### disableDriveKey {#disableDriveKey}
 
@@ -322,6 +364,10 @@ Script.setTimeout(function () {
 }, 5000);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### disableHandTouchForID {#disableHandTouchForID}
 
 ```js
@@ -335,6 +381,10 @@ MyAvatar.disableHandTouchForID(entityID)
 <tr><td><code>entityID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The entity that the hand touch effect will be disabled for.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### enableDriveKey {#enableDriveKey}
 
 ```js
@@ -345,6 +395,10 @@ MyAvatar.enableDriveKey(key)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>key</code></td><td><a href="globals#DriveKey">DriveKey</a></td><td><p>The drive key to enable.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### enableHandTouchForID {#enableHandTouchForID}
 
@@ -359,6 +413,10 @@ MyAvatar.enableHandTouchForID(entityID)
 <tr><td><code>entityID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The entity that the hand touch effect will be enabled for.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### endReaction {#endReaction}
 
 ```js
@@ -371,6 +429,10 @@ MyAvatar.endReaction(reactionName)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the reaction was stopped, <code>false</code> if the reaction is not supported.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### endSit {#endSit}
 
 ```js
@@ -382,6 +444,10 @@ MyAvatar.endSit(position, rotation)
 <tr><td><code>position</code></td><td><a href="Vec3">Vec3</a></td><td><p>The position of the avatar when standing up.</p></td></tr>
 <tr><td><code>rotation</code></td><td><a href="Quat">Quat</a></td><td><p>The orientation of the avatar when standing up.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getAbsoluteDefaultJointRotationInObjectFrame {#getAbsoluteDefaultJointRotationInObjectFrame}
 
@@ -403,6 +469,10 @@ var defaultHeadRotation = MyAvatar.getAbsoluteDefaultJointRotationInObjectFrame(
 print("Default head rotation: " + JSON.stringify(Quat.safeEulerAngles(defaultHeadRotation))); // Degrees
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getAbsoluteDefaultJointTranslationInObjectFrame {#getAbsoluteDefaultJointTranslationInObjectFrame}
 
 ```js
@@ -422,6 +492,10 @@ var headIndex = MyAvatar.getJointIndex("Head");
 var defaultHeadTranslation = MyAvatar.getAbsoluteDefaultJointTranslationInObjectFrame(headIndex);
 print("Default head translation: " + JSON.stringify(defaultHeadTranslation));
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### getAbsoluteJointRotationInObjectFrame {#getAbsoluteJointRotationInObjectFrame}
 
@@ -443,6 +517,10 @@ var headRotation = MyAvatar.getAbsoluteJointRotationInObjectFrame(headIndex);
 print("Head rotation: " + JSON.stringify(Quat.safeEulerAngles(headRotation))); // Degrees
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getAbsoluteJointTranslationInObjectFrame {#getAbsoluteJointTranslationInObjectFrame}
 
 ```js
@@ -463,6 +541,10 @@ var headTranslation = MyAvatar.getAbsoluteJointTranslationInObjectFrame(headInde
 print("Head translation: " + JSON.stringify(headTranslation));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getAcceleration {#getAcceleration}
 
 ```js
@@ -471,6 +553,10 @@ MyAvatar.getAcceleration()
 
 <div class="api-text" v-pre><p>Gets the current acceleration of the avatar.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p>The current acceleration of the avatar.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getAnimationRoles {#getAnimationRoles}
 
@@ -493,6 +579,10 @@ for (var i = 0; i < roles.length; i++) {
 }
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getAnimGraphOverrideUrl {#getAnimGraphOverrideUrl}
 
 ```js
@@ -503,6 +593,10 @@ MyAvatar.getAnimGraphOverrideUrl()
 <p>See Custom Avatar Animations for information on animation graphs.</p>
 <p></p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>The URL of the override animation graph JSON file. <code>""</code> if there is no override animation graph.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getAnimGraphUrl {#getAnimGraphUrl}
 
@@ -521,6 +615,10 @@ MyAvatar.getAnimGraphUrl()
 print(MyAvatar.getAnimGraphUrl());
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getAvatarEntitiesVariant {#getAvatarEntitiesVariant}
 
 ```js
@@ -529,6 +627,10 @@ MyAvatar.getAvatarEntitiesVariant()
 
 <div class="api-text" v-pre><p>Gets the current avatar entity IDs and their properties.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;<a href="#AvatarEntityData">MyAvatar.AvatarEntityData</a>&gt; <p>The current avatar entity IDs and their properties.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getAvatarEntityData {#getAvatarEntityData}
 
@@ -548,6 +650,10 @@ var avatarEntityData = MyAvatar.getAvatarEntityData();
 print("Avatar entities: " + JSON.stringify(avatarEntityData));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getAvatarMenu {#getAvatarMenu}
 
 ```js
@@ -556,6 +662,10 @@ MyAvatar.getAvatarMenu()
 
 <div class="api-text" v-pre><p>Gets the avatar's menu: an imported avatar's menu, the parameters its menu and its animator use, each with its type, value and default, and the emotes its menu picks. All are empty when the avatar has none.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> object <p><code>{menu: {controls: [...]}, parameters: [{name, type, value, default, saved, synced, builtin}], emotes: [{parameter, value, name, seated, loop, hold, own}]}</code></p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getAvatarParameter {#getAvatarParameter}
 
@@ -569,6 +679,10 @@ MyAvatar.getAvatarParameter(name)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>Its value, 0 if the avatar has no such parameter.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getAvatarPreviewImageURL {#getAvatarPreviewImageURL}
 
 ```js
@@ -578,14 +692,22 @@ MyAvatar.getAvatarPreviewImageURL()
 <div class="api-text" v-pre><p>Gets preview image url for current avatar if it's available.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>url</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getAvatarScale {#getAvatarScale}
 
 ```js
 MyAvatar.getAvatarScale()
 ```
 
-<div class="api-text" v-pre><p>Gets the target scale of the avatar. The target scale is the desired scale of the avatar without any restrictions on permissible scale values imposed by the domain.</p></div>
+<div class="api-text" v-pre><p>Gets the target scale of the avatar. The target scale is the desired scale of the avatar without any restrictions on permissible scale values imposed by the world.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The target scale for the avatar, range <code>0.005</code> – <code>1000.0</code>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getBeginEndReactions {#getBeginEndReactions}
 
@@ -603,6 +725,10 @@ MyAvatar.getBeginEndReactions()
 print("Begin-end reactions:", JSON.stringify(MyAvatar.getBeginEndReactions()));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getBoomLength {#getBoomLength}
 
 ```js
@@ -611,6 +737,10 @@ MyAvatar.getBoomLength()
 
 <div class="api-text" v-pre><p>Gets the avatar's camera's boom length.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>Boom length of the avatar's camera.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getCenterOfGravityModelEnabled {#getCenterOfGravityModelEnabled}
 
@@ -621,6 +751,10 @@ MyAvatar.getCenterOfGravityModelEnabled()
 <div class="api-text" v-pre><p>Gets whether the avatar hips are being balanced over the feet or placed under the head.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the hips are being balanced over the feet, <code>false</code> if the hips are being positioned under the head.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getCollidingFlowJoints {#getCollidingFlowJoints}
 
 ```js
@@ -629,6 +763,10 @@ MyAvatar.getCollidingFlowJoints()
 
 <div class="api-text" v-pre><p>Gets the indexes of currently colliding flow joints.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;number&gt; <p>The indexes of currently colliding flow joints.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getCollisionCapsule {#getCollisionCapsule}
 
@@ -641,6 +779,10 @@ MyAvatar.getCollisionCapsule()
 <p></p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="#CollisionCapsule">MyAvatar.CollisionCapsule</a> <p>The avatar's collision capsule.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getCollisionsEnabled {#getCollisionsEnabled}
 
 ```js
@@ -650,6 +792,10 @@ MyAvatar.getCollisionsEnabled()
 <div class="api-text" v-pre><p>Gets whether the avatar will currently collide with entities. </p>
 <p><strong>Note:</strong> The avatar will always collide with entities if in a zone that disallows collisionless avatars.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the avatar will currently collide with entities, <code>false</code> if it won't.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getControllerLeftHandMatrix {#getControllerLeftHandMatrix}
 
@@ -672,6 +818,10 @@ print("Scale: " + JSON.stringify(Mat4.extractScale(leftHandMatrix))); // Always 
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getControllerRightHandMatrix {#getControllerRightHandMatrix}
 
 ```js
@@ -681,6 +831,10 @@ MyAvatar.getControllerRightHandMatrix()
 <div class="api-text" v-pre><p>Gets the rotation and translation of the right hand controller relative to the avatar.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Mat4">Mat4</a> <p>The rotation and translation of the right hand controller relative to the avatar.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getControlScheme {#getControlScheme}
 
 ```js
@@ -689,6 +843,10 @@ MyAvatar.getControlScheme()
 
 <div class="api-text" v-pre><p>Gets the control scheme that is in use.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="#LocomotionControlsMode">MyAvatar.LocomotionControlsMode</a> <p>The control scheme that is in use.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getDataRate {#getDataRate}
 
@@ -701,6 +859,10 @@ MyAvatar.getDataRate(rateName?)
 <tr><td><code>rateName</code> <em>optional</em></td><td><a href="globals#AvatarDataRate">AvatarDataRate</a></td><td><code>&quot;&quot;</code></td><td><p>The type of avatar mixer data to get the data rate of.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The data rate in kbps.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getDefaultEyePosition {#getDefaultEyePosition}
 
@@ -718,6 +880,10 @@ var defaultEyePosition = MyAvatar.getDefaultEyePosition();
 print(JSON.stringify(defaultEyePosition));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getDefaultFullAvatarURL {#getDefaultFullAvatarURL}
 
 ```js
@@ -725,6 +891,10 @@ MyAvatar.getDefaultFullAvatarURL()
 ```
 
 <div class="api-text" v-pre><p>Returns the URL for the default avatar. <code>MyAvatar.useFullAvatarURL(MyAvatar.getDefaultFullAvatarURL(), "Default")</code> will set you back.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getDefaultJointRotation {#getDefaultJointRotation}
 
@@ -739,6 +909,10 @@ MyAvatar.getDefaultJointRotation(index)
 <tr><td><code>index</code></td><td>number</td><td><p>The joint index.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Quat">Quat</a> <p>The default rotation of the joint if the joint index is valid, otherwise <a href="Quat">Quat.IDENTITY</a>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getDefaultJointTranslation {#getDefaultJointTranslation}
 
@@ -755,14 +929,22 @@ MyAvatar.getDefaultJointTranslation(index)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p>The default translation of the joint (in model coordinates) if the joint index is valid, otherwise <a href="Vec3">Vec3.ZERO</a>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getDomainMaxScale {#getDomainMaxScale}
 
 ```js
 MyAvatar.getDomainMaxScale()
 ```
 
-<div class="api-text" v-pre><p>Gets the maximum scale allowed for this avatar in the current domain. This value can change as the user changes avatars or when changing domains.</p></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> number <p>The maximum scale allowed for this avatar in the current domain.</p></div>
+<div class="api-text" v-pre><p>Gets the maximum scale allowed for this avatar in the current world. This value can change as the user changes avatars or when changing worlds.</p></div>
+<div class="api-returns" v-pre><strong>Returns:</strong> number <p>The maximum scale allowed for this avatar in the current world.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getDomainMinScale {#getDomainMinScale}
 
@@ -770,8 +952,12 @@ MyAvatar.getDomainMaxScale()
 MyAvatar.getDomainMinScale()
 ```
 
-<div class="api-text" v-pre><p>Gets the minimum scale allowed for this avatar in the current domain. This value can change as the user changes avatars or when changing domains.</p></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> number <p>The minimum scale allowed for this avatar in the current domain.</p></div>
+<div class="api-text" v-pre><p>Gets the minimum scale allowed for this avatar in the current world. This value can change as the user changes avatars or when changing worlds.</p></div>
+<div class="api-returns" v-pre><strong>Returns:</strong> number <p>The minimum scale allowed for this avatar in the current world.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getDominantHand {#getDominantHand}
 
@@ -782,6 +968,10 @@ MyAvatar.getDominantHand()
 <div class="api-text" v-pre><p>Gets the avatar's dominant hand.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p><code>"left"</code> for the left hand, <code>"right"</code> for the right hand.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getDriveGear1 {#getDriveGear1}
 
 ```js
@@ -790,6 +980,10 @@ MyAvatar.getDriveGear1()
 
 <div class="api-text" v-pre><p>Get the first 'shifting point' for acceleration step function.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>Value between [0.0, 1.0].</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getDriveGear2 {#getDriveGear2}
 
@@ -800,6 +994,10 @@ MyAvatar.getDriveGear2()
 <div class="api-text" v-pre><p>Get the second 'shifting point' for acceleration step function.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>Value between [0.0, 1.0].</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getDriveGear3 {#getDriveGear3}
 
 ```js
@@ -808,6 +1006,10 @@ MyAvatar.getDriveGear3()
 
 <div class="api-text" v-pre><p>Get the third 'shifting point' for acceleration step function.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>Value between [0.0, 1.0].</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getDriveGear4 {#getDriveGear4}
 
@@ -818,6 +1020,10 @@ MyAvatar.getDriveGear4()
 <div class="api-text" v-pre><p>Get the fourth 'shifting point' for acceleration step function.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>Value between [0.0, 1.0].</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getDriveGear5 {#getDriveGear5}
 
 ```js
@@ -826,6 +1032,10 @@ MyAvatar.getDriveGear5()
 
 <div class="api-text" v-pre><p>Get the fifth 'shifting point' for acceleration step function.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>Value between [0.0, 1.0].</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getEnableFlow {#getEnableFlow}
 
@@ -836,6 +1046,10 @@ MyAvatar.getEnableFlow()
 <div class="api-text" v-pre><p>Gets whether dynamic bones (flow bones) are enabled.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p>- Whether dynamic bones (flow bones) are enabled.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getEnableMeshVisible {#getEnableMeshVisible}
 
 ```js
@@ -845,6 +1059,10 @@ MyAvatar.getEnableMeshVisible()
 <div class="api-text" v-pre><p>Gets whether your avatar mesh is visible.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if your avatar's mesh is visible, otherwise <code>false</code>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getEyeHeight {#getEyeHeight}
 
 ```js
@@ -853,6 +1071,10 @@ MyAvatar.getEyeHeight()
 
 <div class="api-text" v-pre><p>Gets the current eye height of the avatar. This height is only an estimate and might be incorrect for avatars that are missing standard joints.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The eye height of the avatar.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getEyePosition {#getEyePosition}
 
@@ -870,6 +1092,10 @@ var eyePosition = MyAvatar.getEyePosition();
 print(JSON.stringify(eyePosition));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getEyesLookAt {#getEyesLookAt}
 
 ```js
@@ -878,6 +1104,10 @@ MyAvatar.getEyesLookAt()
 
 <div class="api-text" v-pre><p>Returns the current target point of the eyes look direction in world coordinates.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p>The eyes' look-at target in world coordinates.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getFlowData {#getFlowData}
 
@@ -888,14 +1118,22 @@ MyAvatar.getFlowData()
 <div class="api-text" v-pre><p>Gets the current flow configuration.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="#FlowData">MyAvatar.FlowData</a> </div>
 
+</div>
+
+<div class="api-entry">
+
 ### getFlyingDesktopPref {#getFlyingDesktopPref}
 
 ```js
 MyAvatar.getFlyingDesktopPref()
 ```
 
-<div class="api-text" v-pre><p>Gets your preference for flying in desktop display mode. Note that your ability to fly also depends on whether the domain you're in allows you to fly.</p></div>
+<div class="api-text" v-pre><p>Gets your preference for flying in desktop display mode. Note that your ability to fly also depends on whether the world you're in allows you to fly.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if your preference is to enable flying in desktop display mode, otherwise <code>false</code>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getFlyingEnabled {#getFlyingEnabled}
 
@@ -903,8 +1141,12 @@ MyAvatar.getFlyingDesktopPref()
 MyAvatar.getFlyingEnabled()
 ```
 
-<div class="api-text" v-pre><p>Gets your preference for flying in your current desktop or HMD display mode. Note that your ability to fly also depends on whether the domain you're in allows you to fly.</p></div>
+<div class="api-text" v-pre><p>Gets your preference for flying in your current desktop or HMD display mode. Note that your ability to fly also depends on whether the world you're in allows you to fly.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if your preference is to enable flying in your current desktop or HMD display mode, otherwise <code>false</code>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getFlyingHMDPref {#getFlyingHMDPref}
 
@@ -912,8 +1154,12 @@ MyAvatar.getFlyingEnabled()
 MyAvatar.getFlyingHMDPref()
 ```
 
-<div class="api-text" v-pre><p>Gets your preference for flying in HMD display mode. Note that your ability to fly also depends on whether the domain you're in allows you to fly.</p></div>
+<div class="api-text" v-pre><p>Gets your preference for flying in HMD display mode. Note that your ability to fly also depends on whether the world you're in allows you to fly.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if your preference is to enable flying in HMD display mode, otherwise <code>false</code>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getFullAvatarModelName {#getFullAvatarModelName}
 
@@ -930,6 +1176,10 @@ MyAvatar.getFullAvatarModelName()
 print(MyAvatar.getFullAvatarModelName());
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getFullAvatarURLFromPreferences {#getFullAvatarURLFromPreferences}
 
 ```js
@@ -945,6 +1195,10 @@ MyAvatar.getFullAvatarURLFromPreferences()
 print(MyAvatar.getFullAvatarURLFromPreferences());
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getGazeStyles {#getGazeStyles}
 
 ```js
@@ -953,6 +1207,10 @@ MyAvatar.getGazeStyles()
 
 <div class="api-text" v-pre><p>Gets the names of the gaze styles an avatar can wear (the <code>gazeStyle</code> property).</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;string&gt; <p>The names: <code>"calm"</code> (the default), <code>"excited"</code>, <code>"shy"</code>, <code>"sleepy"</code> and <code>"intent"</code>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getGravity {#getGravity}
 
@@ -963,6 +1221,10 @@ MyAvatar.getGravity()
 <div class="api-text" v-pre><p>Sets the amount of gravity applied to the avatar in the y-axis direction. (Negative values are downward.) The default value is <code>-5</code> m/s<sup>2</sup>.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The amount of gravity currently applied to the avatar, in m/s<sup>2</sup>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getHandRelativeMovement {#getHandRelativeMovement}
 
 ```js
@@ -971,6 +1233,10 @@ MyAvatar.getHandRelativeMovement()
 
 <div class="api-text" v-pre><p>Get your preference for hand-relative movement.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p><code>true</code> if your preference is for user locomotion to be relative to the direction your controller is pointing, otherwise <code>false</code>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getHandState {#getHandState}
 
@@ -981,6 +1247,10 @@ MyAvatar.getHandState()
 <div class="api-text" v-pre><p>Gets the pointing state of the hands to control where the laser emanates from. If the right index finger is pointing, the laser emanates from the tip of that finger, otherwise it emanates from the palm.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="globals#HandState">HandState</a> <p>The pointing state of the hand.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getHeadDeltaPitch {#getHeadDeltaPitch}
 
 ```js
@@ -989,6 +1259,10 @@ MyAvatar.getHeadDeltaPitch()
 
 <div class="api-text" v-pre><p>If a face tracker is connected and being used, gets the estimated pitch of the user's head scaled. This is scale such that the avatar looks at the edge of the view frustum when the user looks at the edge of their screen.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The pitch that the avatar's head should be if a face tracker is connected and being used, otherwise <code>0</code>, in degrees.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getHeadFinalPitch {#getHeadFinalPitch}
 
@@ -999,6 +1273,10 @@ MyAvatar.getHeadFinalPitch()
 <div class="api-text" v-pre><p>Gets the pitch of the avatar's head relative to its body.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The pitch of the avatar's head, in degrees.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getHeadFinalRoll {#getHeadFinalRoll}
 
 ```js
@@ -1007,6 +1285,10 @@ MyAvatar.getHeadFinalRoll()
 
 <div class="api-text" v-pre><p>Gets the roll of the avatar's head relative to its body.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The roll of the avatar's head, in degrees.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getHeadFinalYaw {#getHeadFinalYaw}
 
@@ -1017,6 +1299,10 @@ MyAvatar.getHeadFinalYaw()
 <div class="api-text" v-pre><p>Gets the yaw of the avatar's head relative to its body.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The yaw of the avatar's head, in degrees.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getHeadLookAt {#getHeadLookAt}
 
 ```js
@@ -1025,6 +1311,10 @@ MyAvatar.getHeadLookAt()
 
 <div class="api-text" v-pre><p>Returns the current target point of the head's look direction in world coordinates.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p>The head's look-at target in world coordinates.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getHeadPosition {#getHeadPosition}
 
@@ -1041,6 +1331,10 @@ MyAvatar.getHeadPosition()
 print(JSON.stringify(MyAvatar.getHeadPosition()));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getHeight {#getHeight}
 
 ```js
@@ -1049,6 +1343,10 @@ MyAvatar.getHeight()
 
 <div class="api-text" v-pre><p>Gets the current height of the avatar. This height is only an estimate and might be incorrect for avatars that are missing standard joints.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The height of the avatar.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getHmdAvatarAlignmentType {#getHmdAvatarAlignmentType}
 
@@ -1059,6 +1357,10 @@ MyAvatar.getHmdAvatarAlignmentType()
 <div class="api-text" v-pre><p>Gets the HMD alignment relative to your avatar.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p><code>"head"</code> if aligning your head and your avatar's head, <code>"eyes"</code> if aligning your eyes and your avatar's eyes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getHMDLeanRecenterEnabled {#getHMDLeanRecenterEnabled}
 
 ```js
@@ -1068,6 +1370,10 @@ MyAvatar.getHMDLeanRecenterEnabled()
 <div class="api-text" v-pre><p>Gets whether the avatar's position updates to recenter the avatar under the head. In room-scale VR, recentering causes your avatar to follow your HMD as you walk around the room.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if recentering is enabled, <code>false</code> if not.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getIKErrorOnLastSolve {#getIKErrorOnLastSolve}
 
 ```js
@@ -1076,6 +1382,10 @@ MyAvatar.getIKErrorOnLastSolve()
 
 <div class="api-text" v-pre><p>Gets the maximum error distance from the most recent inverse kinematics (IK) solution.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The maximum IK error distance.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getJointIndex {#getJointIndex}
 
@@ -1097,6 +1407,10 @@ print(JSON.stringify(MyAvatar.getJointIndex("LeftArm")));
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getJointNames {#getJointNames}
 
 ```js
@@ -1114,6 +1428,10 @@ print(JSON.stringify(MyAvatar.getJointNames()));
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getJointPosition {#getJointPosition}
 
 ```js
@@ -1125,6 +1443,10 @@ MyAvatar.getJointPosition(index)
 <tr><td><code>index</code></td><td>number</td><td><p>The index of the joint.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p>The position of the joint in world coordinates.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getJointPosition {#getJointPosition-2}
 
@@ -1144,6 +1466,10 @@ MyAvatar.getJointPosition(name)
 print(JSON.stringify(MyAvatar.getJointPosition("Hips")));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getJointRotation {#getJointRotation}
 
 ```js
@@ -1155,6 +1481,10 @@ MyAvatar.getJointRotation(index)
 <tr><td><code>index</code></td><td>number</td><td><p>The index of the joint.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Quat">Quat</a> <p>The rotation of the joint relative to its parent.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getJointRotation {#getJointRotation-2}
 
@@ -1176,6 +1506,10 @@ print(JSON.stringify(MyAvatar.getJointRotation("Hips")));
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getJointRotations {#getJointRotations}
 
 ```js
@@ -1193,6 +1527,10 @@ print(JSON.stringify(MyAvatar.getJointRotations()));
 // Note: If using from the Avatar API, replace all "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getJointTranslation {#getJointTranslation}
 
 ```js
@@ -1207,6 +1545,10 @@ MyAvatar.getJointTranslation(index)
 <tr><td><code>index</code></td><td>number</td><td><p>The index of the joint.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p>The translation of the joint relative to its parent, in model coordinates.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getJointTranslation {#getJointTranslation-2}
 
@@ -1231,6 +1573,10 @@ print(JSON.stringify(MyAvatar.getJointRotation("Hips")));
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getJointTranslations {#getJointTranslations}
 
 ```js
@@ -1241,6 +1587,10 @@ MyAvatar.getJointTranslations()
 <p><strong>Warning:</strong> These coordinates are not necessarily in meters.</p>
 <p></p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;<a href="Vec3">Vec3</a>&gt; <p>The translations of all joints relative to each's parent, in model coordinates. The values are in the same order as the array returned by <a href="#getJointNames"><code>MyAvatar.getJointNames</code></a>, or <a href="Avatar#getJointNames"><code>Avatar.getJointNames</code></a> if using the <code>Avatar</code> API.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getLeftHandPose {#getLeftHandPose}
 
@@ -1259,6 +1609,10 @@ MyAvatar.getLeftHandPose()
 print(JSON.stringify(MyAvatar.getLeftHandPose()));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getLeftHandPosition {#getLeftHandPosition}
 
 ```js
@@ -1276,6 +1630,10 @@ MyAvatar.getLeftHandPosition()
 print(JSON.stringify(MyAvatar.getLeftHandPosition()));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getLeftHandTipPose {#getLeftHandTipPose}
 
 ```js
@@ -1287,6 +1645,10 @@ MyAvatar.getLeftHandTipPose()
 <p></p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="globals#Pose">Pose</a> <p>The pose of the avatar's left hand, relative to the avatar, as positioned by a hand controller, and translated 0.3m along the palm.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getLeftHandTipPosition {#getLeftHandTipPosition}
 
 ```js
@@ -1295,6 +1657,10 @@ MyAvatar.getLeftHandTipPosition()
 
 <div class="api-text" v-pre><p>Gets the position 0.3m in front of the left hand's position in the direction along the palm, in avatar coordinates, as positioned by a hand controller.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p>The position 0.3m in front of the left hand's position in the direction along the palm, in avatar coordinates. If the hand isn't being positioned by a controller, <code><a href="Vec3">Vec3.ZERO</a></code> is returned.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getLeftPalmPosition {#getLeftPalmPosition}
 
@@ -1311,6 +1677,10 @@ MyAvatar.getLeftPalmPosition()
 print(JSON.stringify(MyAvatar.getLeftPalmPosition()));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getLeftPalmRotation {#getLeftPalmRotation}
 
 ```js
@@ -1325,6 +1695,10 @@ MyAvatar.getLeftPalmRotation()
 ```js
 print(JSON.stringify(MyAvatar.getLeftPalmRotation()));
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### getNeckPosition {#getNeckPosition}
 
@@ -1341,6 +1715,10 @@ MyAvatar.getNeckPosition()
 print(JSON.stringify(MyAvatar.getNeckPosition()));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getOrientationForAudio {#getOrientationForAudio}
 
 ```js
@@ -1349,6 +1727,10 @@ MyAvatar.getOrientationForAudio()
 
 <div class="api-text" v-pre><p>Gets the orientation of your listening position for spatialized audio. The orientation depends on the value of the audioListenerMode property.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Quat">Quat</a> <p>The orientation of your listening position.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getOrientationVar {#getOrientationVar}
 
@@ -1359,6 +1741,10 @@ MyAvatar.getOrientationVar()
 <div class="api-text" v-pre><p>Gets the avatar orientation. Suitable for use in QML.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> object <p>The avatar's orientation.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getOtherAvatarsCollisionsEnabled {#getOtherAvatarsCollisionsEnabled}
 
 ```js
@@ -1367,6 +1753,10 @@ MyAvatar.getOtherAvatarsCollisionsEnabled()
 
 <div class="api-text" v-pre><p>Gets whether the avatar will collide with other avatars.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the avatar will collide with other avatars, <code>false</code> if it won't.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getParentID {#getParentID}
 
@@ -1377,6 +1767,10 @@ MyAvatar.getParentID()
 <div class="api-text" v-pre><p>Gets the ID of the entity of avatar that the avatar is parented to.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Uuid">Uuid</a> <p>The ID of the entity or avatar that the avatar is parented to. <a href="Uuid">Uuid.NULL</a> if not parented.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getParentJointIndex {#getParentJointIndex}
 
 ```js
@@ -1386,6 +1780,10 @@ MyAvatar.getParentJointIndex()
 <div class="api-text" v-pre><p>Gets the joint of the entity or avatar that the avatar is parented to.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The joint of the entity or avatar that the avatar is parented to. <code>65535</code> or <code>-1</code> if parented to the entity or avatar's position and orientation rather than a joint.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getPositionForAudio {#getPositionForAudio}
 
 ```js
@@ -1394,6 +1792,10 @@ MyAvatar.getPositionForAudio()
 
 <div class="api-text" v-pre><p>Gets your listening position for spatialized audio. The position depends on the value of the audioListenerMode property.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p>Your listening position.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getRawDriveKey {#getRawDriveKey}
 
@@ -1406,6 +1808,10 @@ MyAvatar.getRawDriveKey(key)
 <tr><td><code>key</code></td><td><a href="globals#DriveKey">DriveKey</a></td><td><p>The drive key.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The value of the drive key.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getRightHandPose {#getRightHandPose}
 
@@ -1424,6 +1830,10 @@ MyAvatar.getRightHandPose()
 print(JSON.stringify(MyAvatar.getRightHandPose()));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getRightHandPosition {#getRightHandPosition}
 
 ```js
@@ -1441,6 +1851,10 @@ MyAvatar.getRightHandPosition()
 print(JSON.stringify(MyAvatar.getLeftHandPosition()));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getRightHandTipPose {#getRightHandTipPose}
 
 ```js
@@ -1452,6 +1866,10 @@ MyAvatar.getRightHandTipPose()
 <p></p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="globals#Pose">Pose</a> <p>The pose of the avatar's right hand, relative to the avatar, as positioned by a hand controller, and translated 0.3m along the palm.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getRightHandTipPosition {#getRightHandTipPosition}
 
 ```js
@@ -1460,6 +1878,10 @@ MyAvatar.getRightHandTipPosition()
 
 <div class="api-text" v-pre><p>Gets the position 0.3m in front of the right hand's position in the direction along the palm, in avatar coordinates, as positioned by a hand controller.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p>The position 0.3m in front of the right hand's position in the direction along the palm, in avatar coordinates. If the hand isn't being positioned by a controller, <code><a href="Vec3">Vec3.ZERO</a></code> is returned.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getRightPalmPosition {#getRightPalmPosition}
 
@@ -1476,6 +1898,10 @@ MyAvatar.getRightPalmPosition()
 print(JSON.stringify(MyAvatar.getRightPalmPosition()));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getRightPalmRotation {#getRightPalmRotation}
 
 ```js
@@ -1490,6 +1916,10 @@ MyAvatar.getRightPalmRotation()
 ```js
 print(JSON.stringify(MyAvatar.getRightPalmRotation()));
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### getSensorToWorldMatrix {#getSensorToWorldMatrix}
 
@@ -1512,6 +1942,10 @@ print("Scale: " + JSON.stringify(Mat4.extractScale(sensorToWorldMatrix)));
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getSensorToWorldScale {#getSensorToWorldScale}
 
 ```js
@@ -1521,6 +1955,10 @@ MyAvatar.getSensorToWorldScale()
 <div class="api-text" v-pre><p>Gets the scale that transforms dimensions in the user's real world to the avatar's size in the virtual world.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The scale that transforms dimensions in the user's real world to the avatar's size in the virtual world.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getSkeleton {#getSkeleton}
 
 ```js
@@ -1529,6 +1967,10 @@ MyAvatar.getSkeleton()
 
 <div class="api-text" v-pre><p>Gets information on all the joints in the avatar's skeleton.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;<a href="globals#SkeletonJoint">SkeletonJoint</a>&gt; <p>Information about each joint in the avatar's skeleton.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getSkeletonOffset {#getSkeletonOffset}
 
@@ -1545,6 +1987,10 @@ MyAvatar.getSkeletonOffset()
 print(JSON.stringify(MyAvatar.getSkeletonOffset());
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getSnapTurn {#getSnapTurn}
 
 ```js
@@ -1553,6 +1999,10 @@ MyAvatar.getSnapTurn()
 
 <div class="api-text" v-pre><p>Gets whether you do snap turns in HMD mode.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if you do snap turns in HMD mode; <code>false</code> if you do smooth turns in HMD mode.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getStrafeEnabled {#getStrafeEnabled}
 
@@ -1563,6 +2013,10 @@ MyAvatar.getStrafeEnabled()
 <div class="api-text" v-pre><p>Gets whether strafing is enabled.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if strafing is enabled, <code>false</code> if it isn't.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getTargetAvatar {#getTargetAvatar}
 
 ```js
@@ -1571,6 +2025,10 @@ MyAvatar.getTargetAvatar()
 
 <div class="api-text" v-pre><p>Gets information on the avatar your avatar is currently looking at.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="ScriptAvatar">ScriptAvatar</a> <p>Information on the avatar being looked at, <code>null</code> if no avatar is being looked at.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getTargetAvatarPosition {#getTargetAvatarPosition}
 
@@ -1587,13 +2045,17 @@ MyAvatar.getTargetAvatarPosition()
 print(JSON.stringify(MyAvatar.getTargetAvatarPosition()));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getTargetScale {#getTargetScale}
 
 ```js
 MyAvatar.getTargetScale()
 ```
 
-<div class="api-text" v-pre><p>Gets the target scale of the avatar without any restrictions on permissible values imposed by the domain. In contrast, the <code>scale</code> property's value may be limited by the domain's settings.</p></div>
+<div class="api-text" v-pre><p>Gets the target scale of the avatar without any restrictions on permissible values imposed by the world. In contrast, the <code>scale</code> property's value may be limited by the world's settings.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The target scale of the avatar.</p></div>
 
 <div class="api-example" v-pre><strong>Example:</strong> <p>Compare the target and current avatar scales.</p></div>
@@ -1604,6 +2066,10 @@ print("Target avatar scale:  " + MyAvatar.getTargetScale());
 
 // Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### getTriggerReactions {#getTriggerReactions}
 
@@ -1621,6 +2087,10 @@ MyAvatar.getTriggerReactions()
 print("Trigger reactions:", JSON.stringify(MyAvatar.getTriggerReactions()));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getUpdateRate {#getUpdateRate}
 
 ```js
@@ -1633,6 +2103,10 @@ MyAvatar.getUpdateRate(rateName?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The update rate in Hz.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getWorldFeetPosition {#getWorldFeetPosition}
 
 ```js
@@ -1642,13 +2116,17 @@ MyAvatar.getWorldFeetPosition()
 <div class="api-text" v-pre><p>Gets the position of the current avatar's feet (or rather, bottom of its collision capsule) in world coordinates.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p>The position of the avatar's feet in world coordinates.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### goToFeetLocation {#goToFeetLocation}
 
 ```js
 MyAvatar.goToFeetLocation(position, hasOrientation?, orientation?, shouldFaceLocation?)
 ```
 
-<div class="api-text" v-pre><p>Moves the avatar to a new position and/or orientation in the domain, while taking into account Avatar leg-length.</p></div>
+<div class="api-text" v-pre><p>Moves the avatar to a new position and/or orientation in the world, while taking into account Avatar leg-length.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>position</code></td><td><a href="Vec3">Vec3</a></td><td></td><td><p>The new position for the avatar, in world coordinates.</p></td></tr>
 <tr><td><code>hasOrientation</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p>Set to <code>true</code> to set the orientation of the avatar.</p></td></tr>
@@ -1656,13 +2134,17 @@ MyAvatar.goToFeetLocation(position, hasOrientation?, orientation?, shouldFaceLoc
 <tr><td><code>shouldFaceLocation</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p>Set to <code>true</code> to position the avatar a short distance away from the new position and orientate the avatar to face the position.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### goToLocation {#goToLocation}
 
 ```js
 MyAvatar.goToLocation(position, hasOrientation?, orientation?, shouldFaceLocation?, withSafeLanding?)
 ```
 
-<div class="api-text" v-pre><p>Moves the avatar to a new position and/or orientation in the domain.</p></div>
+<div class="api-text" v-pre><p>Moves the avatar to a new position and/or orientation in the world.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>position</code></td><td><a href="Vec3">Vec3</a></td><td></td><td><p>The new position for the avatar, in world coordinates.</p></td></tr>
 <tr><td><code>hasOrientation</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p>Set to <code>true</code> to set the orientation of the avatar.</p></td></tr>
@@ -1671,16 +2153,24 @@ MyAvatar.goToLocation(position, hasOrientation?, orientation?, shouldFaceLocatio
 <tr><td><code>withSafeLanding</code> <em>optional</em></td><td>boolean</td><td><code>true</code></td><td><p>Set to <code>false</code> to disable safe landing when teleporting.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### goToLocation {#goToLocation-2}
 
 ```js
 MyAvatar.goToLocation(target)
 ```
 
-<div class="api-text" v-pre><p>Moves the avatar to a new position and (optional) orientation in the domain.</p></div>
+<div class="api-text" v-pre><p>Moves the avatar to a new position and (optional) orientation in the world.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>target</code></td><td><a href="#GoToProperties">MyAvatar.GoToProperties</a></td><td><p>The goto target.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### goToLocationAndEnableCollisions {#goToLocationAndEnableCollisions}
 
@@ -1692,6 +2182,10 @@ MyAvatar.goToLocationAndEnableCollisions(position)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>position</code></td><td><a href="Vec3">Vec3</a></td><td><p>The new position for the avatar, in world coordinates.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### grab {#grab}
 
@@ -1730,6 +2224,10 @@ Script.setTimeout(function () {
 }, 10000);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### hoverWhenUnsupported {#hoverWhenUnsupported}
 
 ```js
@@ -1738,6 +2236,10 @@ MyAvatar.hoverWhenUnsupported()
 
 <div class="api-text" v-pre><p>Gets whether your avatar hovers when its feet are not on the ground.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if your avatar hovers when its feet are not on the ground, <code>false</code> if it falls.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### increaseSize {#increaseSize}
 
@@ -1758,6 +2260,10 @@ for (var i = 0; i < 5; i++){
 }
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### isDown {#isDown}
 
 ```js
@@ -1769,6 +2275,10 @@ MyAvatar.isDown(direction)
 <tr><td><code>direction</code></td><td><a href="Vec3">Vec3</a></td><td><p>The vector to test.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the direction vector is pointing generally in the direction of the avatar's "down" direction.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### isDriveKeyDisabled {#isDriveKeyDisabled}
 
@@ -1782,6 +2292,10 @@ MyAvatar.isDriveKeyDisabled(key)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the drive key is disabled, <code>false</code> if it isn't.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### isFlying {#isFlying}
 
 ```js
@@ -1791,6 +2305,10 @@ MyAvatar.isFlying()
 <div class="api-text" v-pre><p>Checks whether your avatar is flying.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if your avatar is flying and not taking off or falling, <code>false</code> if not.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### isInAir {#isInAir}
 
 ```js
@@ -1799,6 +2317,10 @@ MyAvatar.isInAir()
 
 <div class="api-text" v-pre><p>Checks whether your avatar is in the air.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if your avatar is taking off, flying, or falling, otherwise <code>false</code> because your avatar is on the ground.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### isJointDataValid {#isJointDataValid}
 
@@ -1812,6 +2334,10 @@ MyAvatar.isJointDataValid(index)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the joint data are valid, <code>false</code> if not.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### isJointDataValid {#isJointDataValid-2}
 
 ```js
@@ -1824,6 +2350,10 @@ MyAvatar.isJointDataValid(name)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the joint data are valid, <code>false</code> if not.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### isRecenteringHorizontally {#isRecenteringHorizontally}
 
 ```js
@@ -1832,6 +2362,10 @@ MyAvatar.isRecenteringHorizontally()
 
 <div class="api-text" v-pre><p>Gets whether the avatar is configured to keep its center of gravity under its head.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the avatar is keeping its center of gravity under its head position, <code>false</code> if not.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### isSeated {#isSeated}
 
@@ -1842,6 +2376,10 @@ MyAvatar.isSeated()
 <div class="api-text" v-pre><p>Gets whether the avatar is in a seated pose. The seated pose is set by calling <a href="#beginSit"><code>MyAvatar.beginSit</code></a>.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the avatar is in a seated pose, <code>false</code> if it isn't.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### isSkeletonModelLoaded {#isSkeletonModelLoaded}
 
 ```js
@@ -1850,6 +2388,10 @@ MyAvatar.isSkeletonModelLoaded()
 
 <div class="api-text" v-pre><p>Checks whether the avatar's own model has loaded, with its textures: until then others see, and the user sees in third person, the stand-in. The loading screen waits for it.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the avatar's model and its textures have loaded, <code>false</code> if not.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### isUp {#isUp}
 
@@ -1862,6 +2404,10 @@ MyAvatar.isUp(direction)
 <tr><td><code>direction</code></td><td><a href="Vec3">Vec3</a></td><td><p>The vector to test.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the direction vector is pointing generally in the direction of the avatar's "up" direction.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### jointToWorldDirection {#jointToWorldDirection}
 
@@ -1876,6 +2422,10 @@ MyAvatar.jointToWorldDirection(direction, jointIndex?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p>The direction in world coordinates.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### jointToWorldPoint {#jointToWorldPoint}
 
 ```js
@@ -1889,6 +2439,10 @@ MyAvatar.jointToWorldPoint(position, jointIndex?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p>The position in world coordinates.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### jointToWorldRotation {#jointToWorldRotation}
 
 ```js
@@ -1901,6 +2455,10 @@ MyAvatar.jointToWorldRotation(rotation, jointIndex?)
 <tr><td><code>jointIndex</code> <em>optional</em></td><td>number</td><td><code>-1</code></td><td><p>The index of the joint.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Quat">Quat</a> <p>The rotation in world coordinates.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### overrideAnimation {#overrideAnimation}
 
@@ -1933,6 +2491,10 @@ Script.setTimeout(function () {
 }, 3000);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### overrideHandAnimation {#overrideHandAnimation}
 
 ```js
@@ -1960,6 +2522,10 @@ Script.setTimeout(function () {
     MyAvatar.restoreHandAnimation();
 }, 3000);
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### overrideRoleAnimation {#overrideRoleAnimation}
 
@@ -1993,6 +2559,10 @@ Script.setTimeout(function () {
 }, 30000);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### pinJoint {#pinJoint}
 
 ```js
@@ -2009,6 +2579,10 @@ MyAvatar.pinJoint(index, position, orientation)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the joint was pinned, <code>false</code> if it wasn't.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### randomizeDefaultAvatar {#randomizeDefaultAvatar}
 
 ```js
@@ -2017,6 +2591,10 @@ MyAvatar.randomizeDefaultAvatar()
 
 <div class="api-text" v-pre><p>Randomizes the colors of the default avatar. <code>MyAvatar.useFullAvatarURL(MyAvatar.getDefaultFullAvatarURL(), "Default")</code> will set you back.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### releaseEyesLookAtControl {#releaseEyesLookAtControl}
 
 ```js
@@ -2024,6 +2602,10 @@ MyAvatar.releaseEyesLookAtControl()
 ```
 
 <div class="api-text" v-pre><p>Returns control of the avatar's eyes to the engine, and releases control from API calls.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### releaseGrab {#releaseGrab}
 
@@ -2036,6 +2618,10 @@ MyAvatar.releaseGrab(grabID)
 <tr><td><code>grabID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The ID of the grab to release.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### releaseHeadLookAtControl {#releaseHeadLookAtControl}
 
 ```js
@@ -2043,6 +2629,10 @@ MyAvatar.releaseHeadLookAtControl()
 ```
 
 <div class="api-text" v-pre><p>Returns control of the avatar's head to the engine, and releases control from API calls.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### removeAnimationStateHandler {#removeAnimationStateHandler}
 
@@ -2055,6 +2645,10 @@ MyAvatar.removeAnimationStateHandler(handler)
 <tr><td><code>handler</code></td><td>number</td><td><p>The ID of the animation state handler function to remove.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### requestDisableHandTouch {#requestDisableHandTouch}
 
 ```js
@@ -2064,6 +2658,10 @@ MyAvatar.requestDisableHandTouch()
 <div class="api-text" v-pre><p>Requests that the hand touch effect is enabled for your avatar. Any resulting change in the status of the hand touch effect will be signaled by <a href="#shouldDisableHandTouchChanged"><code>MyAvatar.shouldDisableHandTouchChanged</code></a>. </p>
 <p>The hand touch effect makes the avatar's fingers adapt to the shape of any object grabbed, creating the effect that it is really touching that object.</p>
 <p></p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### requestEnableHandTouch {#requestEnableHandTouch}
 
@@ -2075,6 +2673,10 @@ MyAvatar.requestEnableHandTouch()
 <p>The hand touch effect makes the avatar's fingers adapt to the shape of any object grabbed, creating the effect that it is really touching that object.</p>
 <p></p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### resetSensorsAndBody {#resetSensorsAndBody}
 
 ```js
@@ -2083,6 +2685,10 @@ MyAvatar.resetSensorsAndBody()
 
 <div class="api-text" v-pre><p>Resets the sensor positioning of your HMD (if in use) and recenters your avatar body and head.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### resetSize {#resetSize}
 
 ```js
@@ -2090,6 +2696,10 @@ MyAvatar.resetSize()
 ```
 
 <div class="api-text" v-pre><p>Resets the avatar's scale back to the default scale of <code>1.0</code>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### restoreAnimation {#restoreAnimation}
 
@@ -2110,6 +2720,10 @@ Script.setTimeout(function () {
     MyAvatar.restoreAnimation();
 }, 3000);
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### restoreHandAnimation {#restoreHandAnimation}
 
@@ -2134,6 +2748,10 @@ Script.setTimeout(function () {
 }, 3000);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### restoreRoleAnimation {#restoreRoleAnimation}
 
 ```js
@@ -2145,6 +2763,10 @@ MyAvatar.restoreRoleAnimation(role)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>role</code></td><td>string</td><td><p>The animation role clip to restore.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setAbsoluteJointRotationInObjectFrame {#setAbsoluteJointRotationInObjectFrame}
 
@@ -2161,6 +2783,10 @@ MyAvatar.setAbsoluteJointRotationInObjectFrame(index, rotation)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>false</code>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setAbsoluteJointTranslationInObjectFrame {#setAbsoluteJointTranslationInObjectFrame}
 
 ```js
@@ -2176,6 +2802,10 @@ MyAvatar.setAbsoluteJointTranslationInObjectFrame(index, translation)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>false</code>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setAnimGraphOverrideUrl {#setAnimGraphOverrideUrl}
 
 ```js
@@ -2188,6 +2818,10 @@ MyAvatar.setAnimGraphOverrideUrl(url)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>url</code></td><td>string</td><td><p>The URL of the animation graph JSON file to use. Set to <code>""</code> to clear an override.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setAnimGraphUrl {#setAnimGraphUrl}
 
@@ -2202,6 +2836,10 @@ MyAvatar.setAnimGraphUrl(url)
 <tr><td><code>url</code></td><td>string</td><td><p>The URL of the animation graph JSON file to use.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setAvatarEntityData {#setAvatarEntityData}
 
 ```js
@@ -2212,6 +2850,10 @@ MyAvatar.setAvatarEntityData(avatarEntityData)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>avatarEntityData</code></td><td><a href="globals#AvatarEntityMap">AvatarEntityMap</a></td><td><p>Details of the avatar entities.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setAvatarParameter {#setAvatarParameter}
 
@@ -2226,16 +2868,24 @@ MyAvatar.setAvatarParameter(name, value)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the avatar has the parameter.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setAvatarScale {#setAvatarScale}
 
 ```js
 MyAvatar.setAvatarScale(scale)
 ```
 
-<div class="api-text" v-pre><p>Sets the target scale of the avatar. The target scale is the desired scale of the avatar without any restrictions on permissible scale values imposed by the domain.</p></div>
+<div class="api-text" v-pre><p>Sets the target scale of the avatar. The target scale is the desired scale of the avatar without any restrictions on permissible scale values imposed by the world.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>scale</code></td><td>number</td><td><p>The target scale for the avatar, range <code>0.005</code> – <code>1000.0</code>.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setBlendshape {#setBlendshape}
 
@@ -2258,6 +2908,10 @@ MyAvatar.setBlendshape("JawOpen", 1.0);
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### setBoomLength {#setBoomLength}
 
 ```js
@@ -2269,6 +2923,10 @@ MyAvatar.setBoomLength(boomLength)
 <tr><td><code>boomLength</code></td><td>number</td><td><p>Boom length of the avatar's camera.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setCenterOfGravityModelEnabled {#setCenterOfGravityModelEnabled}
 
 ```js
@@ -2279,6 +2937,10 @@ MyAvatar.setCenterOfGravityModelEnabled(enabled)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> to balance the hips over the feet, <code>false</code> to position the hips under the head.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setCollisionsEnabled {#setCollisionsEnabled}
 
@@ -2292,6 +2954,10 @@ MyAvatar.setCollisionsEnabled(enabled)
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> to enable the avatar to collide with entities, <code>false</code> to disable.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setControlScheme {#setControlScheme}
 
 ```js
@@ -2302,6 +2968,10 @@ MyAvatar.setControlScheme(controlScheme)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>controlScheme</code></td><td><a href="#LocomotionControlsMode">MyAvatar.LocomotionControlsMode</a></td><td><p>The control scheme to use.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setDebugDrawAnimPoseName {#setDebugDrawAnimPoseName}
 
@@ -2314,6 +2984,10 @@ MyAvatar.setDebugDrawAnimPoseName(poseName)
 <tr><td><code>poseName</code></td><td>string</td><td><p>The name of the animation node to display debug graphics for. Use <code>""</code> to reset to default.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setDominantHand {#setDominantHand}
 
 ```js
@@ -2324,6 +2998,10 @@ MyAvatar.setDominantHand(hand)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>hand</code></td><td>string</td><td><p>The dominant hand: <code>"left"</code> for the left hand or <code>"right"</code> for the right hand. Any other value has no effect.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setDriveGear1 {#setDriveGear1}
 
@@ -2336,6 +3014,10 @@ MyAvatar.setDriveGear1(shiftPoint)
 <tr><td><code>shiftPoint</code></td><td>number</td><td><p>Set the first shift point for analog movement acceleration step function, between [0.0, 1.0]. Must be less than or equal to Gear 2.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setDriveGear2 {#setDriveGear2}
 
 ```js
@@ -2346,6 +3028,10 @@ MyAvatar.setDriveGear2(shiftPoint)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>shiftPoint</code></td><td>number</td><td><p>Defines the second shift point for analog movement acceleration step function, between [0, 1]. Must be greater than or equal to Gear 1 and less than or equal to Gear 2.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setDriveGear3 {#setDriveGear3}
 
@@ -2358,6 +3044,10 @@ MyAvatar.setDriveGear3(shiftPoint)
 <tr><td><code>shiftPoint</code></td><td>number</td><td><p>Defines the third shift point for analog movement acceleration step function, between [0, 1]. Must be greater than or equal to Gear 2 and less than or equal to Gear 4.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setDriveGear4 {#setDriveGear4}
 
 ```js
@@ -2368,6 +3058,10 @@ MyAvatar.setDriveGear4(shiftPoint)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>shiftPoint</code></td><td>number</td><td><p>Defines the fourth shift point for analog movement acceleration step function, between [0, 1]. Must be greater than Gear 3 and less than Gear 5.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setDriveGear5 {#setDriveGear5}
 
@@ -2380,6 +3074,10 @@ MyAvatar.setDriveGear5(shiftPoint)
 <tr><td><code>shiftPoint</code></td><td>number</td><td><p>Defines the fifth shift point for analog movement acceleration step function, between [0, 1]. Must be greater than or equal to Gear 4.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setEnableDebugDrawAnimPose {#setEnableDebugDrawAnimPose}
 
 ```js
@@ -2390,6 +3088,10 @@ MyAvatar.setEnableDebugDrawAnimPose(enabled)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> to show the debug graphics, <code>false</code> to hide.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setEnableDebugDrawBaseOfSupport {#setEnableDebugDrawBaseOfSupport}
 
@@ -2402,6 +3104,10 @@ MyAvatar.setEnableDebugDrawBaseOfSupport(enabled)
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> to show the debug graphics, <code>false</code> to hide.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setEnableDebugDrawDefaultPose {#setEnableDebugDrawDefaultPose}
 
 ```js
@@ -2412,6 +3118,10 @@ MyAvatar.setEnableDebugDrawDefaultPose(enabled)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> to show the debug graphics, <code>false</code> to hide.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setEnableDebugDrawDetailedCollision {#setEnableDebugDrawDetailedCollision}
 
@@ -2424,6 +3134,10 @@ MyAvatar.setEnableDebugDrawDetailedCollision(enabled)
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> to show the debug graphics, <code>false</code> to hide.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setEnableDebugDrawHandControllers {#setEnableDebugDrawHandControllers}
 
 ```js
@@ -2434,6 +3148,10 @@ MyAvatar.setEnableDebugDrawHandControllers(enabled)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> to show the debug graphics, <code>false</code> to hide.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setEnableDebugDrawIKChains {#setEnableDebugDrawIKChains}
 
@@ -2446,6 +3164,10 @@ MyAvatar.setEnableDebugDrawIKChains(enabled)
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> to show the debug graphics, <code>false</code> to hide.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setEnableDebugDrawIKConstraints {#setEnableDebugDrawIKConstraints}
 
 ```js
@@ -2456,6 +3178,10 @@ MyAvatar.setEnableDebugDrawIKConstraints(enabled)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> to show the debug graphics, <code>false</code> to hide.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setEnableDebugDrawIKTargets {#setEnableDebugDrawIKTargets}
 
@@ -2468,6 +3194,10 @@ MyAvatar.setEnableDebugDrawIKTargets(enabled)
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> to show the debug graphics, <code>false</code> to hide.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setEnableDebugDrawPosition {#setEnableDebugDrawPosition}
 
 ```js
@@ -2478,6 +3208,10 @@ MyAvatar.setEnableDebugDrawPosition(enabled)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> to show the debug graphics, <code>false</code> to hide.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setEnableDebugDrawSensorToWorldMatrix {#setEnableDebugDrawSensorToWorldMatrix}
 
@@ -2490,6 +3224,10 @@ MyAvatar.setEnableDebugDrawSensorToWorldMatrix(enable)
 <tr><td><code>enable</code></td><td>boolean</td><td><p><code>true</code> to show the debug graphics, <code>false</code> to hide.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setEnableFlow {#setEnableFlow}
 
 ```js
@@ -2501,6 +3239,10 @@ MyAvatar.setEnableFlow(enabled)
 <tr><td><code>enabled</code></td><td>boolean</td><td><p>Whether dynamic bones (flow bones) are enabled.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setEnableInverseKinematics {#setEnableInverseKinematics}
 
 ```js
@@ -2511,6 +3253,10 @@ MyAvatar.setEnableInverseKinematics(enabled)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> to enable IK, <code>false</code> to disable.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setEnableMeshVisible {#setEnableMeshVisible}
 
@@ -2532,6 +3278,10 @@ Script.setTimeout(function () {
 }, 10000);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### setEyesLookAt {#setEyesLookAt}
 
 ```js
@@ -2543,16 +3293,24 @@ MyAvatar.setEyesLookAt(lookAtTarget)
 <tr><td><code>lookAtTarget</code></td><td><a href="Vec3">Vec3</a></td><td><p>The target point in world coordinates.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setFlyingDesktopPref {#setFlyingDesktopPref}
 
 ```js
 MyAvatar.setFlyingDesktopPref(enabled)
 ```
 
-<div class="api-text" v-pre><p>Sets your preference for flying in desktop display mode. Note that your ability to fly also depends on whether the domain you're in allows you to fly.</p></div>
+<div class="api-text" v-pre><p>Sets your preference for flying in desktop display mode. Note that your ability to fly also depends on whether the world you're in allows you to fly.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>enabled</code></td><td>boolean</td><td><p>Set <code>true</code> if you want to enable flying in desktop display mode, otherwise set <code>false</code>.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setFlyingEnabled {#setFlyingEnabled}
 
@@ -2560,10 +3318,14 @@ MyAvatar.setFlyingDesktopPref(enabled)
 MyAvatar.setFlyingEnabled(enabled)
 ```
 
-<div class="api-text" v-pre><p>Sets your preference for flying in your current desktop or HMD display mode. Note that your ability to fly also depends on whether the domain you're in allows you to fly.</p></div>
+<div class="api-text" v-pre><p>Sets your preference for flying in your current desktop or HMD display mode. Note that your ability to fly also depends on whether the world you're in allows you to fly.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>enabled</code></td><td>boolean</td><td><p>Set <code>true</code> if you want to enable flying in your current desktop or HMD display mode, otherwise set <code>false</code>.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setFlyingHMDPref {#setFlyingHMDPref}
 
@@ -2571,10 +3333,14 @@ MyAvatar.setFlyingEnabled(enabled)
 MyAvatar.setFlyingHMDPref(enabled)
 ```
 
-<div class="api-text" v-pre><p>Sets your preference for flying in HMD display mode. Note that your ability to fly also depends on whether the domain you're in allows you to fly.</p></div>
+<div class="api-text" v-pre><p>Sets your preference for flying in HMD display mode. Note that your ability to fly also depends on whether the world you're in allows you to fly.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>enabled</code></td><td>boolean</td><td><p>Set <code>true</code> if you want to enable flying in HMD display mode, otherwise set <code>false</code>.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setForceFaceTrackerConnected {#setForceFaceTrackerConnected}
 
@@ -2589,6 +3355,10 @@ MyAvatar.setForceFaceTrackerConnected(connected)
 <tr><td><code>connected</code></td><td>boolean</td><td><p><code>true</code> to enable blend shape changes to be transmitted to other users, <code>false</code> to disable.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setGazeStyle {#setGazeStyle}
 
 ```js
@@ -2599,6 +3369,10 @@ MyAvatar.setGazeStyle(name)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>name</code></td><td>string</td><td><p>One of the names <a href="#getGazeStyles"><code>MyAvatar.getGazeStyles</code></a> returns; any other name is refused.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setGravity {#setGravity}
 
@@ -2611,6 +3385,10 @@ MyAvatar.setGravity(gravity)
 <tr><td><code>gravity</code></td><td>number</td><td><p>The amount of gravity to be applied to the avatar, in m/s<sup>2</sup>.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setHandRelativeMovement {#setHandRelativeMovement}
 
 ```js
@@ -2621,6 +3399,10 @@ MyAvatar.setHandRelativeMovement(enabled)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>enabled</code></td><td>number</td><td><p>Set <code>true</code> if you want to enable hand-relative movement, otherwise set to <code>false</code>.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setHandState {#setHandState}
 
@@ -2633,6 +3415,10 @@ MyAvatar.setHandState(state)
 <tr><td><code>state</code></td><td><a href="globals#HandState">HandState</a></td><td><p>The pointing state of the hand.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setHeadLookAt {#setHeadLookAt}
 
 ```js
@@ -2643,6 +3429,10 @@ MyAvatar.setHeadLookAt(lookAtTarget)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>lookAtTarget</code></td><td><a href="Vec3">Vec3</a></td><td><p>The target point in world coordinates.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setHmdAvatarAlignmentType {#setHmdAvatarAlignmentType}
 
@@ -2655,6 +3445,10 @@ MyAvatar.setHmdAvatarAlignmentType(type)
 <tr><td><code>type</code></td><td>string</td><td><p><code>"head"</code> to align your head and your avatar's head, <code>"eyes"</code> to align your eyes and your avatar's eyes.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setHMDLeanRecenterEnabled {#setHMDLeanRecenterEnabled}
 
 ```js
@@ -2666,6 +3460,10 @@ MyAvatar.setHMDLeanRecenterEnabled(enabled)
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> to recenter the avatar under the head as it moves, <code>false</code> to disable recentering.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setHoverWhenUnsupported {#setHoverWhenUnsupported}
 
 ```js
@@ -2676,6 +3474,10 @@ MyAvatar.setHoverWhenUnsupported(hover)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>hover</code></td><td>boolean</td><td><p><code>true</code> if your avatar hovers when its feet are not on the ground, <code>false</code> if it falls.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setJointData {#setJointData}
 
@@ -2712,6 +3514,10 @@ Script.setTimeout(function () {
 // Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### setJointData {#setJointData-2}
 
 ```js
@@ -2728,6 +3534,10 @@ MyAvatar.setJointData(name, rotation, translation)
 <tr><td><code>translation</code></td><td><a href="Vec3">Vec3</a></td><td><p>The translation of the joint relative to its parent, in model coordinates.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setJointRotation {#setJointRotation}
 
 ```js
@@ -2741,6 +3551,10 @@ MyAvatar.setJointRotation(index, rotation)
 <tr><td><code>index</code></td><td>number</td><td><p>The index of the joint.</p></td></tr>
 <tr><td><code>rotation</code></td><td><a href="Quat">Quat</a></td><td><p>The rotation of the joint relative to its parent.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setJointRotation {#setJointRotation-2}
 
@@ -2778,6 +3592,10 @@ Script.setTimeout(function () {
 
 // Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### setJointRotations {#setJointRotations}
 
@@ -2820,6 +3638,10 @@ Script.setTimeout(function () {
 // Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### setJointTranslation {#setJointTranslation}
 
 ```js
@@ -2834,6 +3656,10 @@ MyAvatar.setJointTranslation(index, translation)
 <tr><td><code>index</code></td><td>number</td><td><p>The index of the joint.</p></td></tr>
 <tr><td><code>translation</code></td><td><a href="Vec3">Vec3</a></td><td><p>The translation of the joint relative to its parent, in model coordinates.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setJointTranslation {#setJointTranslation-2}
 
@@ -2864,6 +3690,10 @@ Script.setTimeout(function () {
 // Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### setJointTranslations {#setJointTranslations}
 
 ```js
@@ -2878,6 +3708,10 @@ MyAvatar.setJointTranslations(translations)
 <tr><td><code>translations</code></td><td>Array&lt;<a href="Vec3">Vec3</a>&gt;</td><td><p>The translations for all joints in the avatar, in model coordinates. The values are in the same order as the array returned by <a href="#getJointNames"><code>MyAvatar.getJointNames</code></a>, or <a href="Avatar#getJointNames"><code>Avatar.getJointNames</code></a> if using the <code>Avatar</code> API.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setOrientationVar {#setOrientationVar}
 
 ```js
@@ -2888,6 +3722,10 @@ MyAvatar.setOrientationVar(newOrientationVar)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>newOrientationVar</code></td><td>object</td><td><p>The avatar's orientation.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setOtherAvatarsCollisionsEnabled {#setOtherAvatarsCollisionsEnabled}
 
@@ -2900,6 +3738,10 @@ MyAvatar.setOtherAvatarsCollisionsEnabled(enabled)
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> to enable the avatar to collide with other avatars, <code>false</code> to disable.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setParentID {#setParentID}
 
 ```js
@@ -2911,6 +3753,10 @@ MyAvatar.setParentID(parentID)
 <tr><td><code>parentID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The ID of the entity or avatar that the avatar should be parented to. Set to <a href="Uuid">Uuid.NULL</a> to unparent.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setParentJointIndex {#setParentJointIndex}
 
 ```js
@@ -2921,6 +3767,10 @@ MyAvatar.setParentJointIndex(parentJointIndex)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>parentJointIndex</code></td><td>number</td><td><p>The joint of the entity or avatar that the avatar should be parented to. Use <code>65535</code> or <code>-1</code> to parent to the entity or avatar's position and orientation rather than a joint.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setPointAt {#setPointAt}
 
@@ -2936,6 +3786,10 @@ MyAvatar.setPointAt(pointAtTarget)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the target point was set, <code>false</code> if it wasn't.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setProperties {#setProperties}
 
 ```js
@@ -2944,8 +3798,12 @@ MyAvatar.setProperties(properties)
 
 <div class="api-text" v-pre><p>Magic function that works like Entities.editEntity. currently supports: parentID, parentJointIndex, localPosition, localRotation, localVelocity, localAngularVelocity</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>properties</code></td><td><a href="Entities#EntityProperties">Entities.EntityProperties</a></td><td><p>The new property values.</p></td></tr>
+<tr><td><code>properties</code></td><td><a href="Entities-types#EntityProperties">Entities.EntityProperties</a></td><td><p>The new property values.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setSkeletonModelURL {#setSkeletonModelURL}
 
@@ -2957,6 +3815,10 @@ MyAvatar.setSkeletonModelURL(url)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>url</code></td><td>string</td><td><p>The avatar's FST file.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setSkeletonOffset {#setSkeletonOffset}
 
@@ -2981,6 +3843,10 @@ Script.setTimeout(function () {
 }, 5000);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### setSnapTurn {#setSnapTurn}
 
 ```js
@@ -2991,6 +3857,10 @@ MyAvatar.setSnapTurn(on)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>on</code></td><td>boolean</td><td><p><code>true</code> to do snap turns in HMD mode; <code>false</code> to do smooth turns in HMD mode.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setStrafeEnabled {#setStrafeEnabled}
 
@@ -3003,17 +3873,25 @@ MyAvatar.setStrafeEnabled(enabled)
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> if strafing is enabled, <code>false</code> if it isn't.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### targetScaleChanged {#targetScaleChanged}
 
 ```js
 MyAvatar.targetScaleChanged(targetScale)
 ```
 
-<div class="api-text" v-pre><p>Triggered when the avatar's target scale is changed. The target scale is the desired scale of the avatar without any restrictions on permissible scale values imposed by the domain.</p></div>
+<div class="api-text" v-pre><p>Triggered when the avatar's target scale is changed. The target scale is the desired scale of the avatar without any restrictions on permissible scale values imposed by the world.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>targetScale</code></td><td>number</td><td><p>The avatar's target scale.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong>  <p>Signal</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### triggerHorizontalRecenter {#triggerHorizontalRecenter}
 
@@ -3022,6 +3900,10 @@ MyAvatar.triggerHorizontalRecenter()
 ```
 
 <div class="api-text" v-pre><p>Recenter the avatar in the horizontal direction, if <code><a href="">MyAvatar.hmdLeanRecenterEnabled</a></code> is <code>false</code>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### triggerReaction {#triggerReaction}
 
@@ -3037,6 +3919,10 @@ MyAvatar.triggerReaction(reactionName)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the reaction was played, <code>false</code> if the reaction is not supported.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### triggerRotationRecenter {#triggerRotationRecenter}
 
 ```js
@@ -3044,6 +3930,10 @@ MyAvatar.triggerRotationRecenter()
 ```
 
 <div class="api-text" v-pre><p>Recenter the avatar's rotation, if <code><a href="">MyAvatar.hmdLeanRecenterEnabled</a></code> is <code>false</code>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### triggerVerticalRecenter {#triggerVerticalRecenter}
 
@@ -3053,6 +3943,10 @@ MyAvatar.triggerVerticalRecenter()
 
 <div class="api-text" v-pre><p>Recenter the avatar in the vertical direction, if <code><a href="">MyAvatar.hmdLeanRecenterEnabled</a></code> is <code>false</code>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### updateMotionBehaviorFromMenu {#updateMotionBehaviorFromMenu}
 
 ```js
@@ -3060,6 +3954,10 @@ MyAvatar.updateMotionBehaviorFromMenu()
 ```
 
 <div class="api-text" v-pre><p>Updates avatar motion behavior from the Developer &gt; Avatar &gt; Enable Default Motor Control and Enable Scripted Motor Control menu items.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### useFlow {#useFlow}
 
@@ -3075,6 +3973,10 @@ MyAvatar.useFlow(isActive, isCollidable, physicsConfig?, collisionsConfig?)
 <tr><td><code>collisionsConfig</code> <em>optional</em></td><td>Object&lt;JointName, <a href="#FlowCollisionsOptions">MyAvatar.FlowCollisionsOptions</a>&gt;</td><td><p>Collision configurations for particular entity and avatar joints.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### useFullAvatarURL {#useFullAvatarURL}
 
 ```js
@@ -3086,6 +3988,10 @@ MyAvatar.useFullAvatarURL(fullAvatarURL, modelName?)
 <tr><td><code>fullAvatarURL</code></td><td>string</td><td></td><td><p>The URL of the avatar's <code>.fst</code> file.</p></td></tr>
 <tr><td><code>modelName</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>Descriptive name of the avatar.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### worldToJointDirection {#worldToJointDirection}
 
@@ -3100,6 +4006,10 @@ MyAvatar.worldToJointDirection(direction, jointIndex?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p>The direction in the joint's coordinate system, or avatar coordinate system if no joint is specified.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### worldToJointPoint {#worldToJointPoint}
 
 ```js
@@ -3112,6 +4022,10 @@ MyAvatar.worldToJointPoint(position, jointIndex?)
 <tr><td><code>jointIndex</code> <em>optional</em></td><td>number</td><td><code>-1</code></td><td><p>The index of the joint.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p>The position in the joint's coordinate system, or avatar coordinate system if no joint is specified.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### worldToJointRotation {#worldToJointRotation}
 
@@ -3126,9 +4040,13 @@ MyAvatar.worldToJointRotation(rotation, jointIndex?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Quat">Quat</a> <p>The rotation in the joint's coordinate system, or avatar coordinate system if no joint is specified.</p></div>
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### analogPlusSprintSpeedChanged {#analogPlusSprintSpeedChanged}
 
@@ -3143,6 +4061,10 @@ MyAvatar.analogPlusSprintSpeedChanged.connect(function (speed) {
 <tr><td><code>speed</code></td><td>number</td><td><p>The new sprint speed set for the "AnalogPlus" control scheme.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### analogPlusWalkSpeedChanged {#analogPlusWalkSpeedChanged}
 
 ```js
@@ -3155,6 +4077,10 @@ MyAvatar.analogPlusWalkSpeedChanged.connect(function (speed) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>speed</code></td><td>number</td><td><p>The new walk speed set for the "AnalogPlus" control scheme.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### animGraphUrlChanged {#animGraphUrlChanged}
 
@@ -3177,6 +4103,10 @@ MyAvatar.animGraphUrlChanged.connect(function (url) {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### audioListenerModeChanged {#audioListenerModeChanged}
 
 ```js
@@ -3187,6 +4117,10 @@ MyAvatar.audioListenerModeChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the <a href="">audioListenerMode</a> property value changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### avatarMenuChanged {#avatarMenuChanged}
 
 ```js
@@ -3196,6 +4130,10 @@ MyAvatar.avatarMenuChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the avatar's menu (an imported avatar's menu and parameters) is set up for a newly loaded avatar, or cleared.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### collisionsEnabledChanged {#collisionsEnabledChanged}
 
@@ -3209,6 +4147,10 @@ MyAvatar.collisionsEnabledChanged.connect(function (enabled) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> if collisions with the environment are enabled, <code>false</code> if they're not.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### collisionWithEntity {#collisionWithEntity}
 
@@ -3231,6 +4173,10 @@ MyAvatar.collisionWithEntity.connect(function (collision) {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### disableHandTouchForIDChanged {#disableHandTouchForIDChanged}
 
 ```js
@@ -3246,6 +4192,10 @@ MyAvatar.disableHandTouchForIDChanged.connect(function (entityID, disabled) {
 <tr><td><code>entityID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The entity that the hand touch effect has been enabled or disabled for.</p></td></tr>
 <tr><td><code>disabled</code></td><td>boolean</td><td><p><code>true</code> if the hand touch effect is disabled for the entity, <code>false</code> if it isn't disabled.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### displayNameChanged {#displayNameChanged}
 
@@ -3267,6 +4217,10 @@ MyAvatar.displayNameChanged.connect(function () {
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### dominantHandChanged {#dominantHandChanged}
 
 ```js
@@ -3280,6 +4234,10 @@ MyAvatar.dominantHandChanged.connect(function (hand) {
 <tr><td><code>hand</code></td><td>string</td><td><p>The dominant hand: <code>"left"</code> for the left hand, <code>"right"</code> for the right hand.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### gazeStyleChanged {#gazeStyleChanged}
 
 ```js
@@ -3289,6 +4247,10 @@ MyAvatar.gazeStyleChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the avatar's gaze style changes (its <code>gazeStyle</code> property).</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### hmdAvatarAlignmentTypeChanged {#hmdAvatarAlignmentTypeChanged}
 
@@ -3302,6 +4264,10 @@ MyAvatar.hmdAvatarAlignmentTypeChanged.connect(function (type) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>type</code></td><td>string</td><td><p><code>"head"</code> if aligning your head and your avatar's head, <code>"eyes"</code> if aligning your eyes and your avatar's eyes.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### lookAtSnappingChanged {#lookAtSnappingChanged}
 
@@ -3326,6 +4292,10 @@ MyAvatar.lookAtSnappingChanged.connect(function () {
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### newCollisionSoundURL {#newCollisionSoundURL}
 
 ```js
@@ -3339,6 +4309,10 @@ MyAvatar.newCollisionSoundURL.connect(function (url) {
 <tr><td><code>url</code></td><td>string</td><td><p>The URL of the new collision sound.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### onLoadComplete {#onLoadComplete}
 
 ```js
@@ -3349,6 +4323,10 @@ MyAvatar.onLoadComplete.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the avatar's model finishes loading.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### onLoadFailed {#onLoadFailed}
 
 ```js
@@ -3358,6 +4336,10 @@ MyAvatar.onLoadFailed.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the avatar's model has failed to load.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### otherAvatarsCollisionsEnabledChanged {#otherAvatarsCollisionsEnabledChanged}
 
@@ -3372,6 +4354,10 @@ MyAvatar.otherAvatarsCollisionsEnabledChanged.connect(function (enabled) {
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> if collisions with other avatars are enabled, <code>false</code> if they're not.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### positionGoneTo {#positionGoneTo}
 
 ```js
@@ -3382,6 +4368,10 @@ MyAvatar.positionGoneTo.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the avatar has been moved to a new position by one of the MyAvatar "goTo" functions.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### scaleChanged {#scaleChanged}
 
 ```js
@@ -3390,7 +4380,11 @@ MyAvatar.scaleChanged.connect(function () {
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when the avatar's size changes. This can be due to the user changing the size of their avatar or the domain limiting the size of their avatar.</p></div>
+<div class="api-text" v-pre><p>Triggered when the avatar's size changes. This can be due to the user changing the size of their avatar or the world limiting the size of their avatar.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### sensorToWorldScaleChanged {#sensorToWorldScaleChanged}
 
@@ -3404,6 +4398,10 @@ MyAvatar.sensorToWorldScaleChanged.connect(function (scale) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>scale</code></td><td>number</td><td><p>The scale that transforms dimensions in the user's real world to the avatar's size in the virtual world.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### sessionDisplayNameChanged {#sessionDisplayNameChanged}
 
@@ -3425,6 +4423,10 @@ MyAvatar.sessionDisplayNameChanged.connect(function () {
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### sessionUUIDChanged {#sessionUUIDChanged}
 
 ```js
@@ -3445,6 +4447,10 @@ MyAvatar.sessionUUIDChanged.connect(function () {
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### shouldDisableHandTouchChanged {#shouldDisableHandTouchChanged}
 
 ```js
@@ -3460,6 +4466,10 @@ MyAvatar.shouldDisableHandTouchChanged.connect(function (disabled) {
 <tr><td><code>disabled</code></td><td>boolean</td><td><p><code>true</code> if the hand touch effect is disabled for the avatar, <code>false</code> if it isn't disabled.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### skeletonChanged {#skeletonChanged}
 
 ```js
@@ -3471,6 +4481,10 @@ MyAvatar.skeletonChanged.connect(function () {
 <div class="api-text" v-pre><p>Triggered when the avatar's model (i.e., <a href="">skeletonModelURL</a> property value) is changed. </p>
 <p>Synonym of <a href="#skeletonModelURLChanged">skeletonModelURLChanged</a>.</p>
 <p></p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### skeletonModelURLChanged {#skeletonModelURLChanged}
 
@@ -3492,6 +4506,10 @@ MyAvatar.skeletonModelURLChanged.connect(function () {
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### sprintSpeedChanged {#sprintSpeedChanged}
 
 ```js
@@ -3504,6 +4522,10 @@ MyAvatar.sprintSpeedChanged.connect(function (speed) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>speed</code></td><td>number</td><td><p>The new sprint speed set for the current control scheme.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### walkBackwardSpeedChanged {#walkBackwardSpeedChanged}
 
@@ -3518,6 +4540,10 @@ MyAvatar.walkBackwardSpeedChanged.connect(function (speed) {
 <tr><td><code>speed</code></td><td>number</td><td><p>The new walk backward speed set for the current control scheme.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### wentActive {#wentActive}
 
 ```js
@@ -3527,6 +4553,10 @@ MyAvatar.wentActive.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when your avatar changes from being away to being active.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### wentAway {#wentAway}
 
@@ -3547,7 +4577,11 @@ MyAvatar.wentAway.connect(function () {
 // In desktop mode, pres the Esc key to go away.
 ```
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### AnimIKSolutionSource {#AnimIKSolutionSource}
 
@@ -3565,6 +4599,10 @@ MyAvatar.wentAway.connect(function () {
  </tbody>
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
+
+</div>
+
+<div class="api-entry">
 
 ### AnimOverlayBoneSet {#AnimOverlayBoneSet}
 
@@ -3588,6 +4626,10 @@ MyAvatar.wentAway.connect(function () {
  </tbody>
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
+
+</div>
+
+<div class="api-entry">
 
 ### AnimStateDictionary {#AnimStateDictionary}
 
@@ -3709,15 +4751,23 @@ MyAvatar.wentAway.connect(function () {
  <p>Note: Rig coordinates are <code>+z</code> forward and <code>+y</code> up.</p>
 <p></p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### AvatarEntityData {#AvatarEntityData}
 
 <div class="api-text" v-pre><p>Information about an avatar entity.</p>
  <table> <thead> <tr><th>Property</th><th>Type</th><th>Description</th></tr>
  </thead>
  <tbody> <tr><td><code>id</code></td><td>Uuid</td><td>Entity ID.</td></tr>
- <tr><td><code>properties</code></td><td><a href="Entities#EntityProperties"><code>Entities.EntityProperties</code></a></td><td>Entity properties.</td></tr>
+ <tr><td><code>properties</code></td><td><a href="Entities-types#EntityProperties"><code>Entities.EntityProperties</code></a></td><td>Entity properties.</td></tr>
  </tbody>
  </table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### CollisionCapsule {#CollisionCapsule}
 
@@ -3728,6 +4778,10 @@ MyAvatar.wentAway.connect(function () {
 <tr><td><code>radius</code></td><td>number</td><td><p>The radius of the cylinder and the hemispheres.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### FlowCollisionsData {#FlowCollisionsData}
 
 <div class="api-text" v-pre><p>A set of collision options currently used in flow simulation.</p></div>
@@ -3736,6 +4790,10 @@ MyAvatar.wentAway.connect(function () {
 <tr><td><code>offset</code></td><td>number</td><td><p>Offset of the collision sphere from the joint.</p></td></tr>
 <tr><td><code>jointIndex</code></td><td>number</td><td><p>The index of the joint the options are applied to.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### FlowCollisionsOptions {#FlowCollisionsOptions}
 
@@ -3748,6 +4806,10 @@ MyAvatar.wentAway.connect(function () {
 <tr><td><code>endOffset</code> <em>optional</em></td><td>number</td><td><code>Vec3.ZERO</code></td><td><p>For a capsule, offset of the far end from the <code>end</code> joint.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### FlowData {#FlowData}
 
 <div class="api-text" v-pre><p>Flow options currently used in flow simulation.</p></div>
@@ -3759,6 +4821,10 @@ MyAvatar.wentAway.connect(function () {
 <tr><td><code>collisions</code></td><td>Object&lt;JointName, <a href="#FlowCollisionsData">MyAvatar.FlowCollisionsData</a>&gt;</td><td><p>The collisions configuration for each joint that has collisions configured.</p></td></tr>
 <tr><td><code>threads</code></td><td>Object&lt;ThreadName, Array&lt;number&gt;&gt;</td><td><p>The threads that have been configured, with the first joint's name as the <code>ThreadName</code> and value as an array of the indexes of all the joints in the thread.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### FlowPhysicsData {#FlowPhysicsData}
 
@@ -3773,6 +4839,10 @@ MyAvatar.wentAway.connect(function () {
 <tr><td><code>delta</code></td><td>number</td><td><p>Delta time for every integration step.</p></td></tr>
 <tr><td><code>jointIndices</code></td><td>Array&lt;number&gt;</td><td><p>The indexes of the joints the options are applied to.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### FlowPhysicsOptions {#FlowPhysicsOptions}
 
@@ -3789,6 +4859,10 @@ MyAvatar.wentAway.connect(function () {
 <tr><td><code>lift</code> <em>optional</em></td><td>number</td><td><code>0</code></td><td><p>Degrees each bone's rest direction is curled up from the model's pose, for a tail or hair modelled hanging limper than wanted.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### GoToProperties {#GoToProperties}
 
 <div class="api-text" v-pre><p>A teleport target.</p></div>
@@ -3796,6 +4870,10 @@ MyAvatar.wentAway.connect(function () {
 <tr><td><code>position</code></td><td><a href="Vec3">Vec3</a></td><td><p>The avatar's new position.</p></td></tr>
 <tr><td><code>orientation</code> <em>optional</em></td><td><a href="Quat">Quat</a></td><td><p>The avatar's new orientation.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### IKTargetType {#IKTargetType}
 
@@ -3814,6 +4892,10 @@ MyAvatar.wentAway.connect(function () {
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
 
+</div>
+
+<div class="api-entry">
+
 ### LocomotionControlsMode {#LocomotionControlsMode}
 
 <div class="api-text" v-pre><p>Locomotion control types.</p>
@@ -3825,6 +4907,10 @@ MyAvatar.wentAway.connect(function () {
  </tbody>
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
+
+</div>
+
+<div class="api-entry">
 
 ### SitStandModelType {#SitStandModelType}
 
@@ -3841,9 +4927,13 @@ MyAvatar.wentAway.connect(function () {
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
 
+</div>
+
 ## Deprecated {#deprecated}
 
 Still there for older scripts; new scripts should not use these.
+
+<div class="api-entry">
 
 ### addThrust {#addThrust}
 
@@ -3860,6 +4950,10 @@ MyAvatar.addThrust(thrust)
 <tr><td><code>thrust</code></td><td><a href="Vec3">Vec3</a></td><td><p>The thrust direction and magnitude.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### animGraphLoaded {#animGraphLoaded}
 
 ```js
@@ -3870,6 +4964,10 @@ MyAvatar.animGraphLoaded()
 <div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
 :::
 
+
+</div>
+
+<div class="api-entry">
 
 ### attach {#attach}
 
@@ -3917,6 +5015,10 @@ var attachment = {
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### clearAvatarEntity {#clearAvatarEntity}
 
 ```js
@@ -3932,6 +5034,10 @@ MyAvatar.clearAvatarEntity(entityID, requiresRemovalFromTree?)
 <tr><td><code>requiresRemovalFromTree</code> <em>optional</em></td><td>boolean</td><td><code>true</code></td><td><p>unused</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### clearScaleRestriction {#clearScaleRestriction}
 
 ```js
@@ -3942,6 +5048,10 @@ MyAvatar.clearScaleRestriction()
 <div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
 :::
 
+
+</div>
+
+<div class="api-entry">
 
 ### detachAll {#detachAll}
 
@@ -3959,6 +5069,10 @@ MyAvatar.detachAll(modelURL, jointName?)
 <tr><td><code>jointName</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>The name of the joint to detach the model from. If <code>""</code>, then the model is detached from all joints.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### detachOne {#detachOne}
 
 ```js
@@ -3974,6 +5088,10 @@ MyAvatar.detachOne(modelURL, jointName?)
 <tr><td><code>modelURL</code></td><td>string</td><td></td><td><p>The URL of the model to detach.</p></td></tr>
 <tr><td><code>jointName</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>The name of the joint to detach the model from. If <code>""</code>, then the most recently attached model is removed from which ever joint it was attached to.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getAttachmentData {#getAttachmentData}
 
@@ -3999,6 +5117,10 @@ for (var i = 0; i < attachments.length; i++) {
 // Note: If using from the Avatar API, replace "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getAttachmentsVariant {#getAttachmentsVariant}
 
 ```js
@@ -4012,6 +5134,10 @@ MyAvatar.getAttachmentsVariant()
 <div class="api-text" v-pre><p>Gets information about the models currently attached to your avatar.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;<a href="globals#AttachmentData">AttachmentData</a>&gt; <p>Information about all models attached to your avatar.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getCharacterControllerEnabled {#getCharacterControllerEnabled}
 
 ```js
@@ -4023,6 +5149,10 @@ MyAvatar.getCharacterControllerEnabled()
 :::
 
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the avatar will currently collide with entities, <code>false</code> if it won't.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getSimulationRate {#getSimulationRate}
 
@@ -4039,6 +5169,10 @@ MyAvatar.getSimulationRate(rateName?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>Simulation rate in Hz.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getThrust {#getThrust}
 
 ```js
@@ -4052,6 +5186,10 @@ MyAvatar.getThrust()
 <div class="api-text" v-pre><p>Gets the thrust currently being applied to your avatar.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p>The thrust currently being applied to your avatar.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### resetLastSent {#resetLastSent}
 
 ```js
@@ -4062,6 +5200,10 @@ MyAvatar.resetLastSent()
 <div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
 :::
 
+
+</div>
+
+<div class="api-entry">
 
 ### restrictScaleFromDomainSettings {#restrictScaleFromDomainSettings}
 
@@ -4074,8 +5216,12 @@ MyAvatar.restrictScaleFromDomainSettings(domainSettings)
 :::
 
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>domainSettings</code></td><td>object</td><td><p>Domain settings.</p></td></tr>
+<tr><td><code>domainSettings</code></td><td>object</td><td><p>World settings.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### rigReady {#rigReady}
 
@@ -4088,6 +5234,10 @@ MyAvatar.rigReady()
 :::
 
 
+</div>
+
+<div class="api-entry">
+
 ### rigReset {#rigReset}
 
 ```js
@@ -4098,6 +5248,10 @@ MyAvatar.rigReset()
 <div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
 :::
 
+
+</div>
+
+<div class="api-entry">
 
 ### safeLanding {#safeLanding}
 
@@ -4114,6 +5268,10 @@ MyAvatar.safeLanding(position)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the avatar was moved, <code>false</code> if it wasn't.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### sanitizeAvatarEntityProperties {#sanitizeAvatarEntityProperties}
 
 ```js
@@ -4127,6 +5285,10 @@ MyAvatar.sanitizeAvatarEntityProperties(properties)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>properties</code></td><td>EntityItemProperties</td><td><p>Properties.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### sendAvatarDataPacket {#sendAvatarDataPacket}
 
@@ -4143,6 +5305,10 @@ MyAvatar.sendAvatarDataPacket(sendAll?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
 
+</div>
+
+<div class="api-entry">
+
 ### sendIdentityPacket {#sendIdentityPacket}
 
 ```js
@@ -4154,6 +5320,10 @@ MyAvatar.sendIdentityPacket()
 :::
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
+
+</div>
+
+<div class="api-entry">
 
 ### setAttachmentData {#setAttachmentData}
 
@@ -4187,6 +5357,10 @@ for (var i = 0; i < attachments.length; i++) {
 // Note: If using from the Avatar API, replace all occurrences of "MyAvatar" with "Avatar".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### setAttachmentsVariant {#setAttachmentsVariant}
 
 ```js
@@ -4202,6 +5376,10 @@ MyAvatar.setAttachmentsVariant(variant)
 <tr><td><code>variant</code></td><td>Array&lt;<a href="globals#AttachmentData">AttachmentData</a>&gt;</td><td><p>The attachment data defining the models to have attached to your avatar.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setCharacterControllerEnabled {#setCharacterControllerEnabled}
 
 ```js
@@ -4215,6 +5393,10 @@ MyAvatar.setCharacterControllerEnabled(enabled)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> to enable the avatar to collide with entities, <code>false</code> to disable.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setModelScale {#setModelScale}
 
@@ -4230,6 +5412,10 @@ MyAvatar.setModelScale(scale)
 <tr><td><code>scale</code></td><td>number</td><td><p>The scale.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setModelURLFinished {#setModelURLFinished}
 
 ```js
@@ -4243,6 +5429,10 @@ MyAvatar.setModelURLFinished(success)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>success</code></td><td>boolean</td><td></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setRawJointData {#setRawJointData}
 
@@ -4259,6 +5449,10 @@ MyAvatar.setRawJointData(data)
 <tr><td><code>data</code></td><td>Array&lt;JointData&gt;</td><td><p>The raw joint data.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setSessionUUID {#setSessionUUID}
 
 ```js
@@ -4272,6 +5466,10 @@ MyAvatar.setSessionUUID(sessionUUID)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>sessionUUID</code></td><td><a href="Uuid">Uuid</a></td><td><p>Session UUID.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setThrust {#setThrust}
 
@@ -4288,6 +5486,10 @@ MyAvatar.setThrust(thrust)
 <tr><td><code>thrust</code></td><td><a href="Vec3">Vec3</a></td><td><p>The thrust direction and magnitude.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setToggleHips {#setToggleHips}
 
 ```js
@@ -4302,6 +5504,10 @@ MyAvatar.setToggleHips(enabled)
 <tr><td><code>enabled</code></td><td>boolean</td><td><p>Enabled.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### storeAvatarEntityDataPayload {#storeAvatarEntityDataPayload}
 
 ```js
@@ -4312,6 +5518,10 @@ MyAvatar.storeAvatarEntityDataPayload()
 <div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
 :::
 
+
+</div>
+
+<div class="api-entry">
 
 ### updateAvatarEntity {#updateAvatarEntity}
 
@@ -4328,6 +5538,10 @@ MyAvatar.updateAvatarEntity(entityID, entityData)
 <tr><td><code>entityData</code></td><td>ArrayBuffer</td><td><p>Entity data.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### attachmentsChanged {#attachmentsChanged}
 
 ```js
@@ -4341,6 +5555,10 @@ MyAvatar.attachmentsChanged.connect(function () {
 :::
 
 <div class="api-text" v-pre><p>Triggered when the a model is attached to or detached from one of the avatar's joints using one of <a href="#attach">attach</a>, <a href="#detachOne">detachOne</a>, <a href="#detachAll">detachAll</a>, or <a href="#setAttachmentData">setAttachmentData</a>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### energyChanged {#energyChanged}
 
@@ -4358,6 +5576,10 @@ MyAvatar.energyChanged.connect(function (energy) {
 <tr><td><code>energy</code></td><td>number</td><td><p>Avatar energy.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### transformChanged {#transformChanged}
 
 ```js
@@ -4370,3 +5592,5 @@ MyAvatar.transformChanged.connect(function () {
 <div class="api-text" v-pre><p>This signal is deprecated and will be removed.</p></div>
 :::
 
+
+</div>

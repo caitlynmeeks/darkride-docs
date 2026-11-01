@@ -6,12 +6,14 @@ draft: true
 
 # Tablet
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>Tablet</code> API provides the facilities to work with the system or other tablet. In toolbar mode (see Developer &gt; UI options), the tablet's menu buttons are displayed in a toolbar and other tablet content is displayed in a dialog.</p>
  <p>See also the <a href="Toolbars"><code>Toolbars</code></a> API for working with toolbars.</p></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### getTablet {#getTablet}
 
@@ -32,6 +34,10 @@ var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");
 tablet.gotoWebScreen("https://darkride.ai/");
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### playSound {#playSound}
 
 ```js
@@ -50,9 +56,13 @@ var TABLET_BUTTON_CLICK = 0;
 Tablet.playSound(TABLET_BUTTON_CLICK);
 ```
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### tabletNotification {#tabletNotification}
 
@@ -66,7 +76,11 @@ Tablet.tabletNotification.connect(function () {
 <p><strong>Note:</strong> Only triggered if the script is running in the same script engine as the script that created the tablet. By default, this means in scripts included as part of the default scripts.</p>
 <p></p></div>
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### AudioEvents {#AudioEvents}
 
@@ -81,3 +95,5 @@ Tablet.tabletNotification.connect(function () {
  </tbody>
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
+
+</div>

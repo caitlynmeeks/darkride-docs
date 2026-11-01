@@ -1,17 +1,19 @@
 ---
 title: "AvatarManager"
-description: "The AvatarManager API provides information about avatars within the current domain."
+description: "The AvatarManager API provides information about avatars within the current world."
 draft: true
 ---
 
 # AvatarManager
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
-<div class="api-text" v-pre><p>The <code>AvatarManager</code> API provides information about avatars within the current domain. The avatars available are those that Interface has displayed and therefore knows about.</p>
+<div class="api-text" v-pre><p>The <code>AvatarManager</code> API provides information about avatars within the current world. The avatars available are those that Interface has displayed and therefore knows about.</p>
  <p><strong>Warning:</strong> This API is also provided to Interface, client entity, and avatar scripts as the synonym, "<code>AvatarList</code>". For assignment client scripts, see the separate <a href="AvatarList"><code>AvatarList</code></a> API.</p></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### findRayIntersection {#findRayIntersection}
 
@@ -44,6 +46,10 @@ if (intersection.intersects) {
 }
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getAvatar {#getAvatar}
 
 ```js
@@ -55,6 +61,10 @@ AvatarManager.getAvatar(avatarID)
 <tr><td><code>avatarID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The ID of the avatar.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="ScriptAvatar">ScriptAvatar</a> <p>Information about the avatar.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getAvatarDataRate {#getAvatarDataRate}
 
@@ -69,22 +79,30 @@ AvatarManager.getAvatarDataRate(sessionID, rateName?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The data rate in kbps; <code>0</code> if the avatar is your own.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getAvatarIdentifiers {#getAvatarIdentifiers}
 
 ```js
 AvatarManager.getAvatarIdentifiers()
 ```
 
-<div class="api-text" v-pre><p>Gets the IDs of all avatars known about in the domain. Your own avatar is included in the list as a <code>null</code> value.</p></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;<a href="Uuid">Uuid</a>&gt; <p>The IDs of all known avatars in the domain.</p></div>
+<div class="api-text" v-pre><p>Gets the IDs of all avatars known about in the world. Your own avatar is included in the list as a <code>null</code> value.</p></div>
+<div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;<a href="Uuid">Uuid</a>&gt; <p>The IDs of all known avatars in the world.</p></div>
 
-<div class="api-example" v-pre><strong>Example:</strong> <p>Report the IDS of all avatars within the domain.</p></div>
+<div class="api-example" v-pre><strong>Example:</strong> <p>Report the IDS of all avatars within the world.</p></div>
 
 ```js
 var avatars = AvatarManager.getAvatarIdentifiers();
 print("Avatars in the domain: " + JSON.stringify(avatars));
 // A null item is included for your avatar.
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### getAvatarSimulationRate {#getAvatarSimulationRate}
 
@@ -98,6 +116,10 @@ AvatarManager.getAvatarSimulationRate(sessionID, rateName?)
 <tr><td><code>rateName</code> <em>optional</em></td><td><a href="globals#AvatarSimulationRate">AvatarSimulationRate</a></td><td><code>&quot;&quot;</code></td><td><p>The type of avatar data to get the simulation rate of.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The simulation rate in Hz; <code>0</code> if the avatar is your own.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getAvatarsInRange {#getAvatarsInRange}
 
@@ -121,6 +143,10 @@ print("Nearby avatars: " + JSON.stringify(avatars));
 print("Own avatar: " + MyAvatar.sessionUUID);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getAvatarUpdateRate {#getAvatarUpdateRate}
 
 ```js
@@ -133,6 +159,10 @@ AvatarManager.getAvatarUpdateRate(sessionID, rateName?)
 <tr><td><code>rateName</code> <em>optional</em></td><td><a href="globals#AvatarUpdateRate">AvatarUpdateRate</a></td><td><code>&quot;&quot;</code></td><td><p>The type of avatar mixer data to get the update rate of.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The update rate in Hz; <code>0</code> if the avatar is your own.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getPalData {#getPalData}
 
@@ -153,6 +183,10 @@ var palData = AvatarManager.getPalData();
 print("PAL data for one avatar: " + JSON.stringify(palData.data[0]));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### isAvatarInRange {#isAvatarInRange}
 
 ```js
@@ -166,6 +200,10 @@ AvatarManager.isAvatarInRange(position, range)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if there's an avatar within the specified distance of the point, <code>false</code> if not.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setEnableDebugDrawOtherSkeletons {#setEnableDebugDrawOtherSkeletons}
 
 ```js
@@ -176,6 +214,10 @@ AvatarManager.setEnableDebugDrawOtherSkeletons(enabled)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> to show the debug graphics, <code>false</code> to hide.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setUseAvatarPlaceholders {#setUseAvatarPlaceholders}
 
@@ -188,9 +230,13 @@ AvatarManager.setUseAvatarPlaceholders(enabled)
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> to use a placeholder instead of avatar mesh, <code>false</code> to hide.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### avatarAddedEvent {#avatarAddedEvent}
 
@@ -200,12 +246,12 @@ AvatarManager.avatarAddedEvent.connect(function (sessionUUID) {
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when an avatar arrives in the domain.</p></div>
+<div class="api-text" v-pre><p>Triggered when an avatar arrives in the world.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>sessionUUID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The ID of the avatar that arrived in the domain.</p></td></tr>
+<tr><td><code>sessionUUID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The ID of the avatar that arrived in the world.</p></td></tr>
 </tbody></table></div>
 
-<div class="api-example" v-pre><strong>Example:</strong> <p>Report when an avatar arrives in the domain.</p></div>
+<div class="api-example" v-pre><strong>Example:</strong> <p>Report when an avatar arrives in the world.</p></div>
 
 ```js
 AvatarManager.avatarAddedEvent.connect(function (sessionID) {
@@ -215,6 +261,10 @@ AvatarManager.avatarAddedEvent.connect(function (sessionID) {
 // Note: If using from the AvatarList API, replace "AvatarManager" with "AvatarList".
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### avatarRemovedEvent {#avatarRemovedEvent}
 
 ```js
@@ -223,12 +273,12 @@ AvatarManager.avatarRemovedEvent.connect(function (sessionUUID) {
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when an avatar leaves the domain.</p></div>
+<div class="api-text" v-pre><p>Triggered when an avatar leaves the world.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>sessionUUID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The ID of the avatar that left the domain.</p></td></tr>
+<tr><td><code>sessionUUID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The ID of the avatar that left the world.</p></td></tr>
 </tbody></table></div>
 
-<div class="api-example" v-pre><strong>Example:</strong> <p>Report when an avatar leaves the domain.</p></div>
+<div class="api-example" v-pre><strong>Example:</strong> <p>Report when an avatar leaves the world.</p></div>
 
 ```js
 AvatarManager.avatarRemovedEvent.connect(function (sessionID) {
@@ -237,6 +287,10 @@ AvatarManager.avatarRemovedEvent.connect(function (sessionID) {
 
 // Note: If using from the AvatarList API, replace "AvatarManager" with "AvatarList".
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### avatarSessionChangedEvent {#avatarSessionChangedEvent}
 
@@ -262,23 +316,31 @@ AvatarManager.avatarSessionChangedEvent.connect(function (newSessionID, oldSessi
 // Note: If using from the AvatarList API, replace "AvatarManager" with "AvatarList".
 ```
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### PalData {#PalData}
 
 <div class="api-text" v-pre><p>PAL (People Access List) data for an avatar.</p></div>
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>sessionUUID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The avatar's session ID. <code>""</code> if the avatar is your own.</p></td></tr>
-<tr><td><code>sessionDisplayName</code></td><td>string</td><td><p>The avatar's display name, sanitized and versioned, as defined by the avatar mixer. It is unique among all avatars present in the domain at the time.</p></td></tr>
-<tr><td><code>audioLoudness</code></td><td>number</td><td><p>The instantaneous loudness of the audio input that the avatar is injecting into the domain.</p></td></tr>
+<tr><td><code>sessionDisplayName</code></td><td>string</td><td><p>The avatar's display name, sanitized and versioned, as defined by the avatar mixer. It is unique among all avatars present in the world at the time.</p></td></tr>
+<tr><td><code>audioLoudness</code></td><td>number</td><td><p>The instantaneous loudness of the audio input that the avatar is injecting into the world.</p></td></tr>
 <tr><td><code>isReplicated</code></td><td>boolean</td><td><p><span class="important">Deprecated: This property is deprecated and will be removed.</span></p></td></tr>
 <tr><td><code>position</code></td><td><a href="Vec3">Vec3</a></td><td><p>The position of the avatar.</p></td></tr>
 <tr><td><code>palOrbOffset</code></td><td>number</td><td><p>The vertical offset from the avatar's position that an overlay orb should be displayed at.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Deprecated {#deprecated}
 
 Still there for older scripts; new scripts should not use these.
+
+<div class="api-entry">
 
 ### findParabolaIntersectionVector {#findParabolaIntersectionVector}
 
@@ -296,6 +358,10 @@ AvatarManager.findParabolaIntersectionVector(pick, avatarsToInclude, avatarsToDi
 <tr><td><code>avatarsToDiscard</code></td><td>Array&lt;<a href="Uuid">Uuid</a>&gt;</td><td><p>Avatars to discard.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> ParabolaToAvatarIntersectionResult <p>Intersection result.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### findRayIntersectionVector {#findRayIntersectionVector}
 
@@ -315,6 +381,10 @@ AvatarManager.findRayIntersectionVector(ray, avatarsToInclude, avatarsToDiscard,
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="globals#RayToAvatarIntersectionResult">RayToAvatarIntersectionResult</a> <p>Intersection result.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getAvatarSortCoefficient {#getAvatarSortCoefficient}
 
 ```js
@@ -329,6 +399,10 @@ AvatarManager.getAvatarSortCoefficient(name)
 <tr><td><code>name</code></td><td>string</td><td><p>Name.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>Value.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### processAvatarDataPacket {#processAvatarDataPacket}
 
@@ -345,6 +419,10 @@ AvatarManager.processAvatarDataPacket(message, sendingNode)
 <tr><td><code>sendingNode</code></td><td>object</td><td><p>Sending node.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### processAvatarIdentityPacket {#processAvatarIdentityPacket}
 
 ```js
@@ -359,6 +437,10 @@ AvatarManager.processAvatarIdentityPacket(message, sendingNode)
 <tr><td><code>message</code></td><td>object</td><td><p>Message.</p></td></tr>
 <tr><td><code>sendingNode</code></td><td>object</td><td><p>Sending node.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### processBulkAvatarTraits {#processBulkAvatarTraits}
 
@@ -375,6 +457,10 @@ AvatarManager.processBulkAvatarTraits(message, sendingNode)
 <tr><td><code>sendingNode</code></td><td>object</td><td><p>Sending node.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### processKillAvatar {#processKillAvatar}
 
 ```js
@@ -389,6 +475,10 @@ AvatarManager.processKillAvatar(message, sendingNode)
 <tr><td><code>message</code></td><td>object</td><td><p>Message.</p></td></tr>
 <tr><td><code>sendingNode</code></td><td>object</td><td><p>Sending node.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### sessionUUIDChanged {#sessionUUIDChanged}
 
@@ -405,6 +495,10 @@ AvatarManager.sessionUUIDChanged(sessionUUID, oldSessionUUID)
 <tr><td><code>oldSessionUUID</code></td><td><a href="Uuid">Uuid</a></td><td><p>Old session ID.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setAvatarSortCoefficient {#setAvatarSortCoefficient}
 
 ```js
@@ -420,6 +514,10 @@ AvatarManager.setAvatarSortCoefficient(name, value)
 <tr><td><code>value</code></td><td>number</td><td><p>Value.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### updateAvatarRenderStatus {#updateAvatarRenderStatus}
 
 ```js
@@ -433,3 +531,5 @@ AvatarManager.updateAvatarRenderStatus(shouldRenderAvatars)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>shouldRenderAvatars</code></td><td>boolean</td><td><p>Should render avatars.</p></td></tr>
 </tbody></table></div>
+
+</div>

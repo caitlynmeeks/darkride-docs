@@ -6,7 +6,7 @@ draft: true
 
 # ScriptsModelFilter
 
-<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>Sorted and filtered information on the scripts that are in the default scripts directory of the Interface installation. This is provided as a property of <a href="ScriptDiscoveryService"><code>ScriptDiscoveryService</code></a>.</p>
  <p>The information provided reflects the subdirectory structure. Properties, methods, and signals are per QT's <a href="https://doc.qt.io/qt-5/qsortfilterproxymodel.html" target="_blank" rel="noopener">QSortFilterProxyModel</a> class, with the following details:</p>

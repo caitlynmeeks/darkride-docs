@@ -1,14 +1,14 @@
 ---
 title: "Stats"
-description: "The Stats API provides statistics on Interface and domain operation, per the statistics overlay."
+description: "The Stats API provides statistics on Interface and world operation, per the statistics overlay."
 draft: true
 ---
 
 # Stats
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts, server entity scripts, assignment client scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts, server entity scripts, agents.</div>
 
-<div class="api-text" v-pre><p>The <code>Stats</code> API provides statistics on Interface and domain operation, per the statistics overlay.</p>
+<div class="api-text" v-pre><p>The <code>Stats</code> API provides statistics on Interface and world operation, per the statistics overlay.</p>
  <p><strong>Note:</strong> This API is primarily an internal diagnostics tool and is provided "as is".</p></div>
 
 ## Properties {#properties}
@@ -34,16 +34,16 @@ draft: true
 <tr><td><code>refreshRateMode</code></td><td><a href="globals#RefreshRateProfileName">RefreshRateProfileName</a></td><td><p>The current refresh rate profile. <em>Read-only.</em></p></td></tr>
 <tr><td><code>refreshRateRegime</code></td><td><a href="globals#RefreshRateRegimeName">RefreshRateRegimeName</a></td><td><p>The current refresh rate regime. <em>Read-only.</em></p></td></tr>
 <tr><td><code>uxMode</code></td><td><a href="globals#UXModeName">UXModeName</a></td><td><p>The user experience (UX) mode that Interface is running in. <em>Read-only.</em></p></td></tr>
-<tr><td><code>avatarCount</code></td><td>number</td><td><p>The number of avatars in the domain other than the client's. <em>Read-only.</em></p></td></tr>
-<tr><td><code>heroAvatarCount</code></td><td>number</td><td><p>The number avatars in a "hero" zone in the domain, other than the client's. <em>Read-only.</em></p></td></tr>
+<tr><td><code>avatarCount</code></td><td>number</td><td><p>The number of avatars in the world other than the client's. <em>Read-only.</em></p></td></tr>
+<tr><td><code>heroAvatarCount</code></td><td>number</td><td><p>The number avatars in a "hero" zone in the world, other than the client's. <em>Read-only.</em></p></td></tr>
 <tr><td><code>physicsObjectCount</code></td><td>number</td><td><p>The number of objects that have collisions enabled. <em>Read-only.</em></p></td></tr>
-<tr><td><code>updatedAvatarCount</code></td><td>number</td><td><p>The number of avatars in the domain, other than the client's, that were updated in the most recent game loop. <em>Read-only.</em></p></td></tr>
-<tr><td><code>updatedHeroAvatarCount</code></td><td>number</td><td><p>The number of avatars in a "hero" zone in the domain, other than the client's, that were updated in the most recent game loop. <em>Read-only.</em></p></td></tr>
-<tr><td><code>notUpdatedAvatarCount</code></td><td>number</td><td><p>The number of avatars in the domain, other than the client's, that weren't able to be updated in the most recent game loop because there wasn't enough time to. <em>Read-only.</em></p></td></tr>
-<tr><td><code>packetInCount</code></td><td>number</td><td><p>The number of packets being received from the domain server, in packets per second. <em>Read-only.</em></p></td></tr>
-<tr><td><code>packetOutCount</code></td><td>number</td><td><p>The number of packets being sent to the domain server, in packets per second. <em>Read-only.</em></p></td></tr>
-<tr><td><code>mbpsIn</code></td><td>number</td><td><p>The amount of data being received from the domain server, in megabits per second. <em>Read-only.</em></p></td></tr>
-<tr><td><code>mbpsOut</code></td><td>number</td><td><p>The amount of data being sent to the domain server, in megabits per second. <em>Read-only.</em></p></td></tr>
+<tr><td><code>updatedAvatarCount</code></td><td>number</td><td><p>The number of avatars in the world, other than the client's, that were updated in the most recent game loop. <em>Read-only.</em></p></td></tr>
+<tr><td><code>updatedHeroAvatarCount</code></td><td>number</td><td><p>The number of avatars in a "hero" zone in the world, other than the client's, that were updated in the most recent game loop. <em>Read-only.</em></p></td></tr>
+<tr><td><code>notUpdatedAvatarCount</code></td><td>number</td><td><p>The number of avatars in the world, other than the client's, that weren't able to be updated in the most recent game loop because there wasn't enough time to. <em>Read-only.</em></p></td></tr>
+<tr><td><code>packetInCount</code></td><td>number</td><td><p>The number of packets being received from the world server, in packets per second. <em>Read-only.</em></p></td></tr>
+<tr><td><code>packetOutCount</code></td><td>number</td><td><p>The number of packets being sent to the world server, in packets per second. <em>Read-only.</em></p></td></tr>
+<tr><td><code>mbpsIn</code></td><td>number</td><td><p>The amount of data being received from the world server, in megabits per second. <em>Read-only.</em></p></td></tr>
+<tr><td><code>mbpsOut</code></td><td>number</td><td><p>The amount of data being sent to the world server, in megabits per second. <em>Read-only.</em></p></td></tr>
 <tr><td><code>assetMbpsIn</code></td><td>number</td><td><p>The amount of data being received from the asset server, in megabits per second. <code>0.0</code> if not connected to an avatar mixer. <em>Read-only.</em></p></td></tr>
 <tr><td><code>assetMbpsOut</code></td><td>number</td><td><p>The amount of data being sent to the asset server, in megabits per second. <code>0.0</code> if not connected to an avatar mixer. <em>Read-only.</em></p></td></tr>
 <tr><td><code>audioPing</code></td><td>number</td><td><p>The ping time to the audio mixer, in ms. <code>-1</code> if not connected to an audio mixer. <em>Read-only.</em></p></td></tr>
@@ -231,6 +231,8 @@ draft: true
 
 ## Functions {#functions}
 
+<div class="api-entry">
+
 ### forceUpdateStats {#forceUpdateStats}
 
 ```js
@@ -261,9 +263,13 @@ for (var i = 0; i < stats.length; i++) {
 }
 ```
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### apiDrawcallsChanged {#apiDrawcallsChanged}
 
@@ -275,6 +281,10 @@ Stats.apiDrawcallsChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>apiDrawcalls</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### appdroppedChanged {#appdroppedChanged}
 
 ```js
@@ -284,6 +294,10 @@ Stats.appdroppedChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>appdropped</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### assetMbpsInChanged {#assetMbpsInChanged}
 
@@ -295,6 +309,10 @@ Stats.assetMbpsInChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>assetMbpsIn</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### assetMbpsOutChanged {#assetMbpsOutChanged}
 
 ```js
@@ -304,6 +322,10 @@ Stats.assetMbpsOutChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>assetMbpsOut</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### assetPingChanged {#assetPingChanged}
 
@@ -315,6 +337,10 @@ Stats.assetPingChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>assetPing</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### audioCodecChanged {#audioCodecChanged}
 
 ```js
@@ -324,6 +350,10 @@ Stats.audioCodecChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>audioCodec</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### audioInboundPPSChanged {#audioInboundPPSChanged}
 
@@ -335,6 +365,10 @@ Stats.audioInboundPPSChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>audioInboundPPS</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### audioInjectorsChanged {#audioInjectorsChanged}
 
 ```js
@@ -344,6 +378,10 @@ Stats.audioInjectorsChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>audioInjectors</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### audioMixerInKbpsChanged {#audioMixerInKbpsChanged}
 
@@ -355,6 +393,10 @@ Stats.audioMixerInKbpsChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>audioMixerInKbps</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### audioMixerInPpsChanged {#audioMixerInPpsChanged}
 
 ```js
@@ -364,6 +406,10 @@ Stats.audioMixerInPpsChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>audioMixerInPps</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### audioMixerKbpsChanged {#audioMixerKbpsChanged}
 
@@ -375,6 +421,10 @@ Stats.audioMixerKbpsChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>audioMixerKbps</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### audioMixerOutKbpsChanged {#audioMixerOutKbpsChanged}
 
 ```js
@@ -384,6 +434,10 @@ Stats.audioMixerOutKbpsChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>audioMixerOutKbps</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### audioMixerOutPpsChanged {#audioMixerOutPpsChanged}
 
@@ -395,6 +449,10 @@ Stats.audioMixerOutPpsChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>audioMixerOutPps</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### audioMixerPpsChanged {#audioMixerPpsChanged}
 
 ```js
@@ -404,6 +462,10 @@ Stats.audioMixerPpsChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>audioMixerPps</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### audioNoiseGateChanged {#audioNoiseGateChanged}
 
@@ -415,6 +477,10 @@ Stats.audioNoiseGateChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>audioNoiseGate</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### audioOutboundPPSChanged {#audioOutboundPPSChanged}
 
 ```js
@@ -424,6 +490,10 @@ Stats.audioOutboundPPSChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>audioOutboundPPS</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### audioPacketLossChanged {#audioPacketLossChanged}
 
@@ -435,6 +505,10 @@ Stats.audioPacketLossChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>audioPacketLoss</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### audioPingChanged {#audioPingChanged}
 
 ```js
@@ -444,6 +518,10 @@ Stats.audioPingChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>audioPing</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### audioSilentInboundPPSChanged {#audioSilentInboundPPSChanged}
 
@@ -455,6 +533,10 @@ Stats.audioSilentInboundPPSChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>audioSilentInboundPPS</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### audioSilentOutboundPPSChanged {#audioSilentOutboundPPSChanged}
 
 ```js
@@ -464,6 +546,10 @@ Stats.audioSilentOutboundPPSChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>audioSilentOutboundPPS</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### avatarCountChanged {#avatarCountChanged}
 
@@ -475,6 +561,10 @@ Stats.avatarCountChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>avatarCount</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### avatarMixerInKbpsChanged {#avatarMixerInKbpsChanged}
 
 ```js
@@ -484,6 +574,10 @@ Stats.avatarMixerInKbpsChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>avatarMixerInKbps</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### avatarMixerInPpsChanged {#avatarMixerInPpsChanged}
 
@@ -495,6 +589,10 @@ Stats.avatarMixerInPpsChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>avatarMixerInPps</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### avatarMixerOutKbpsChanged {#avatarMixerOutKbpsChanged}
 
 ```js
@@ -504,6 +602,10 @@ Stats.avatarMixerOutKbpsChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>avatarMixerOutKbps</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### avatarMixerOutPpsChanged {#avatarMixerOutPpsChanged}
 
@@ -515,6 +617,10 @@ Stats.avatarMixerOutPpsChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>avatarMixerOutPps</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### avatarPingChanged {#avatarPingChanged}
 
 ```js
@@ -524,6 +630,10 @@ Stats.avatarPingChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>avatarPing</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### avatarSimulationTimeChanged {#avatarSimulationTimeChanged}
 
@@ -535,6 +645,10 @@ Stats.avatarSimulationTimeChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>avatarSimulationTime</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### batchFrameTimeChanged {#batchFrameTimeChanged}
 
 ```js
@@ -544,6 +658,10 @@ Stats.batchFrameTimeChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>batchFrameTime</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### bypassPrioritySortingChanged {#bypassPrioritySortingChanged}
 
@@ -555,6 +673,10 @@ Stats.bypassPrioritySortingChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>bypassPrioritySorting</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### collisionPicksCountChanged {#collisionPicksCountChanged}
 
 ```js
@@ -564,6 +686,10 @@ Stats.collisionPicksCountChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>collisionPicksCount</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### collisionPicksUpdatedChanged {#collisionPicksUpdatedChanged}
 
@@ -575,6 +701,10 @@ Stats.collisionPicksUpdatedChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>collisionPicksUpdated</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### decimatedTextureCountChanged {#decimatedTextureCountChanged}
 
 ```js
@@ -584,6 +714,10 @@ Stats.decimatedTextureCountChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>decimatedTextureCount</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### downloadLimitChanged {#downloadLimitChanged}
 
@@ -595,6 +729,10 @@ Stats.downloadLimitChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>downloadLimit</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### downloadsChanged {#downloadsChanged}
 
 ```js
@@ -604,6 +742,10 @@ Stats.downloadsChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>downloads</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### downloadsPendingChanged {#downloadsPendingChanged}
 
@@ -615,6 +757,10 @@ Stats.downloadsPendingChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>downloadsPending</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### downloadUrlsChanged {#downloadUrlsChanged}
 
 ```js
@@ -624,6 +770,10 @@ Stats.downloadUrlsChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>downloadUrls</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### drawcallsChanged {#drawcallsChanged}
 
@@ -635,6 +785,10 @@ Stats.drawcallsChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>drawcalls</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### engineFrameTimeChanged {#engineFrameTimeChanged}
 
 ```js
@@ -644,6 +798,10 @@ Stats.engineFrameTimeChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>engineFrameTime</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### entitiesPingChanged {#entitiesPingChanged}
 
@@ -655,6 +813,10 @@ Stats.entitiesPingChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>entitiesPing</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### entityPacketsInKbpsChanged {#entityPacketsInKbpsChanged}
 
 ```js
@@ -664,6 +826,10 @@ Stats.entityPacketsInKbpsChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>entityPacketsInKbps</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### eventQueueDebuggingOnChanged {#eventQueueDebuggingOnChanged}
 
@@ -675,6 +841,10 @@ Stats.eventQueueDebuggingOnChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>eventQueueDebuggingOn</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### expandedChanged {#expandedChanged}
 
 ```js
@@ -684,6 +854,10 @@ Stats.expandedChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>expanded</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### gameLoopRateChanged {#gameLoopRateChanged}
 
@@ -695,6 +869,10 @@ Stats.gameLoopRateChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>gameLoopRate</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### gameUpdateStatsChanged {#gameUpdateStatsChanged}
 
 ```js
@@ -704,6 +882,10 @@ Stats.gameUpdateStatsChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>gameUpdateStats</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### glContextSwapchainMemoryChanged {#glContextSwapchainMemoryChanged}
 
@@ -715,6 +897,10 @@ Stats.glContextSwapchainMemoryChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>glContextSwapchainMemory</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### gpuBufferMemoryChanged {#gpuBufferMemoryChanged}
 
 ```js
@@ -724,6 +910,10 @@ Stats.gpuBufferMemoryChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>gpuBufferMemory</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### gpuBuffersChanged {#gpuBuffersChanged}
 
@@ -735,6 +925,10 @@ Stats.gpuBuffersChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>gpuBuffers</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### gpuFrameSizeChanged {#gpuFrameSizeChanged}
 
 ```js
@@ -744,6 +938,10 @@ Stats.gpuFrameSizeChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>gpuFrameSize</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### gpuFrameTimeChanged {#gpuFrameTimeChanged}
 
@@ -755,6 +953,10 @@ Stats.gpuFrameTimeChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>gpuFrameTime</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### gpuFrameTimePerPixelChanged {#gpuFrameTimePerPixelChanged}
 
 ```js
@@ -764,6 +966,10 @@ Stats.gpuFrameTimePerPixelChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>gpuFrameTimePerPixel</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### gpuFreeMemoryChanged {#gpuFreeMemoryChanged}
 
@@ -775,6 +981,10 @@ Stats.gpuFreeMemoryChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>gpuFreeMemory</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### gpuTextureExternalMemoryChanged {#gpuTextureExternalMemoryChanged}
 
 ```js
@@ -784,6 +994,10 @@ Stats.gpuTextureExternalMemoryChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>gpuTextureExternalMemory</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### gpuTextureFramebufferMemoryChanged {#gpuTextureFramebufferMemoryChanged}
 
@@ -795,6 +1009,10 @@ Stats.gpuTextureFramebufferMemoryChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>gpuTextureFramebufferMemory</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### gpuTextureMemoryChanged {#gpuTextureMemoryChanged}
 
 ```js
@@ -804,6 +1022,10 @@ Stats.gpuTextureMemoryChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>gpuTextureMemory</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### gpuTextureMemoryPressureStateChanged {#gpuTextureMemoryPressureStateChanged}
 
@@ -815,6 +1037,10 @@ Stats.gpuTextureMemoryPressureStateChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>gpuTextureMemoryPressureState</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### gpuTextureResidentMemoryChanged {#gpuTextureResidentMemoryChanged}
 
 ```js
@@ -824,6 +1050,10 @@ Stats.gpuTextureResidentMemoryChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>gpuTextureResidentMemory</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### gpuTextureResourceIdealMemoryChanged {#gpuTextureResourceIdealMemoryChanged}
 
@@ -835,6 +1065,10 @@ Stats.gpuTextureResourceIdealMemoryChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>gpuTextureResourceIdealMemory</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### gpuTextureResourceMemoryChanged {#gpuTextureResourceMemoryChanged}
 
 ```js
@@ -844,6 +1078,10 @@ Stats.gpuTextureResourceMemoryChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>gpuTextureResourceMemory</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### gpuTextureResourcePopulatedMemoryChanged {#gpuTextureResourcePopulatedMemoryChanged}
 
@@ -855,6 +1093,10 @@ Stats.gpuTextureResourcePopulatedMemoryChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>gpuTextureResourcePopulatedMemory</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### gpuTexturesChanged {#gpuTexturesChanged}
 
 ```js
@@ -864,6 +1106,10 @@ Stats.gpuTexturesChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>gpuTextures</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### heroAvatarCountChanged {#heroAvatarCountChanged}
 
@@ -875,6 +1121,10 @@ Stats.heroAvatarCountChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>heroAvatarCount</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### instancedDrawcallsChanged {#instancedDrawcallsChanged}
 
 ```js
@@ -884,6 +1134,10 @@ Stats.instancedDrawcallsChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>instancedDrawcalls</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### instancesChanged {#instancesChanged}
 
@@ -895,6 +1149,10 @@ Stats.instancesChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>instances</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### itemConsideredChanged {#itemConsideredChanged}
 
 ```js
@@ -904,6 +1162,10 @@ Stats.itemConsideredChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>itemConsidered</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### itemOutOfViewChanged {#itemOutOfViewChanged}
 
@@ -915,6 +1177,10 @@ Stats.itemOutOfViewChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>itemOutOfView</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### itemRenderedChanged {#itemRenderedChanged}
 
 ```js
@@ -924,6 +1190,10 @@ Stats.itemRenderedChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>itemRendered</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### itemTooSmallChanged {#itemTooSmallChanged}
 
@@ -935,6 +1205,10 @@ Stats.itemTooSmallChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>itemTooSmall</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### localElementsChanged {#localElementsChanged}
 
 ```js
@@ -944,6 +1218,10 @@ Stats.localElementsChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>localElements</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### localInternalChanged {#localInternalChanged}
 
@@ -955,6 +1233,10 @@ Stats.localInternalChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>localInternal</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### localLeavesChanged {#localLeavesChanged}
 
 ```js
@@ -964,6 +1246,10 @@ Stats.localLeavesChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>localLeaves</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### localShadowMapsChanged {#localShadowMapsChanged}
 
@@ -975,6 +1261,10 @@ Stats.localShadowMapsChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>localShadowMaps</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### localShadowMapsDrawnChanged {#localShadowMapsDrawnChanged}
 
 ```js
@@ -984,6 +1274,10 @@ Stats.localShadowMapsDrawnChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>localShadowMapsDrawn</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### localShadowStaticMapsDrawnChanged {#localShadowStaticMapsDrawnChanged}
 
@@ -995,6 +1289,10 @@ Stats.localShadowStaticMapsDrawnChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>localShadowStaticMapsDrawn</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### lodAngleChanged {#lodAngleChanged}
 
 ```js
@@ -1004,6 +1302,10 @@ Stats.lodAngleChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>lodAngle</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### lodStatusChanged {#lodStatusChanged}
 
@@ -1015,6 +1317,10 @@ Stats.lodStatusChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>lodStatus</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### lodTargetFramerateChanged {#lodTargetFramerateChanged}
 
 ```js
@@ -1024,6 +1330,10 @@ Stats.lodTargetFramerateChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>lodTargetFramerate</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### longframesChanged {#longframesChanged}
 
@@ -1035,6 +1345,10 @@ Stats.longframesChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>longframes</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### longrendersChanged {#longrendersChanged}
 
 ```js
@@ -1044,6 +1358,10 @@ Stats.longrendersChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>longrenders</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### longsubmitsChanged {#longsubmitsChanged}
 
@@ -1055,6 +1373,10 @@ Stats.longsubmitsChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>longsubmits</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### mainThreadQueueDepthChanged {#mainThreadQueueDepthChanged}
 
 ```js
@@ -1064,6 +1386,10 @@ Stats.mainThreadQueueDepthChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>mainThreadQueueDepth</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### materialSwitchesChanged {#materialSwitchesChanged}
 
@@ -1075,6 +1401,10 @@ Stats.materialSwitchesChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>materialSwitches</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### mbpsInChanged {#mbpsInChanged}
 
 ```js
@@ -1084,6 +1414,10 @@ Stats.mbpsInChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>mbpsIn</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### mbpsOutChanged {#mbpsOutChanged}
 
@@ -1095,6 +1429,10 @@ Stats.mbpsOutChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>mbpsOut</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### messagePingChanged {#messagePingChanged}
 
 ```js
@@ -1104,6 +1442,10 @@ Stats.messagePingChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>messagePing</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### mirrorPixelsChanged {#mirrorPixelsChanged}
 
@@ -1115,6 +1457,10 @@ Stats.mirrorPixelsChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>mirrorPixels</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### mirrorsDrawnChanged {#mirrorsDrawnChanged}
 
 ```js
@@ -1124,6 +1470,10 @@ Stats.mirrorsDrawnChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>mirrorsDrawn</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### myAvatarSendRateChanged {#myAvatarSendRateChanged}
 
@@ -1135,6 +1485,10 @@ Stats.myAvatarSendRateChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>myAvatarSendRate</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### nodeListThreadQueueDepth {#nodeListThreadQueueDepth}
 
 ```js
@@ -1144,6 +1498,10 @@ Stats.nodeListThreadQueueDepth.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>nodeListThreadQueueDepth</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### notUpdatedAvatarCountChanged {#notUpdatedAvatarCountChanged}
 
@@ -1155,6 +1513,10 @@ Stats.notUpdatedAvatarCountChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>notUpdatedAvatarCount</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### numEntityUpdatesChanged {#numEntityUpdatesChanged}
 
 ```js
@@ -1164,6 +1526,10 @@ Stats.numEntityUpdatesChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>numEntityUpdates</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### numNeededEntityUpdatesChanged {#numNeededEntityUpdatesChanged}
 
@@ -1175,6 +1541,10 @@ Stats.numNeededEntityUpdatesChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>numNeededEntityUpdates</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### packetInCountChanged {#packetInCountChanged}
 
 ```js
@@ -1184,6 +1554,10 @@ Stats.packetInCountChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>packetInCount</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### packetOutCountChanged {#packetOutCountChanged}
 
@@ -1195,6 +1569,10 @@ Stats.packetOutCountChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>packetOutCount</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### packetStatsChanged {#packetStatsChanged}
 
 ```js
@@ -1204,6 +1582,10 @@ Stats.packetStatsChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>packetStats</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### parabolaPicksCountChanged {#parabolaPicksCountChanged}
 
@@ -1215,6 +1597,10 @@ Stats.parabolaPicksCountChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>parabolaPicksCount</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### parabolaPicksUpdatedChanged {#parabolaPicksUpdatedChanged}
 
 ```js
@@ -1224,6 +1610,10 @@ Stats.parabolaPicksUpdatedChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>parabolaPicksUpdated</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### physicsObjectCountChanged {#physicsObjectCountChanged}
 
@@ -1235,6 +1625,10 @@ Stats.physicsObjectCountChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>physicsObjectCount</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### positionChanged {#positionChanged}
 
 ```js
@@ -1244,6 +1638,10 @@ Stats.positionChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>position</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### presentdroprateChanged {#presentdroprateChanged}
 
@@ -1255,6 +1653,10 @@ Stats.presentdroprateChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>presentdroprate</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### presentnewrateChanged {#presentnewrateChanged}
 
 ```js
@@ -1264,6 +1666,10 @@ Stats.presentnewrateChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>presentnewrate</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### presentrateChanged {#presentrateChanged}
 
@@ -1275,6 +1681,10 @@ Stats.presentrateChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>presentrate</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### processingChanged {#processingChanged}
 
 ```js
@@ -1284,6 +1694,10 @@ Stats.processingChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>processing</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### processingPendingChanged {#processingPendingChanged}
 
@@ -1295,6 +1709,10 @@ Stats.processingPendingChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>processingPending</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### qmlTextureMemoryChanged {#qmlTextureMemoryChanged}
 
 ```js
@@ -1304,6 +1722,10 @@ Stats.qmlTextureMemoryChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>qmlTextureMemory</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### rayPicksCountChanged {#rayPicksCountChanged}
 
@@ -1315,6 +1737,10 @@ Stats.rayPicksCountChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>rayPicksCount</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### rayPicksUpdatedChanged {#rayPicksUpdatedChanged}
 
 ```js
@@ -1324,6 +1750,10 @@ Stats.rayPicksUpdatedChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>rayPicksUpdated</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### rectifiedTextureCountChanged {#rectifiedTextureCountChanged}
 
@@ -1335,6 +1765,10 @@ Stats.rectifiedTextureCountChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>rectifiedTextureCount</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### refreshRateModeChanged {#refreshRateModeChanged}
 
 ```js
@@ -1344,6 +1778,10 @@ Stats.refreshRateModeChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>refreshRateMode</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### refreshRateRegimeChanged {#refreshRateRegimeChanged}
 
@@ -1355,6 +1793,10 @@ Stats.refreshRateRegimeChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>refreshRateRegime</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### refreshRateTargetChanged {#refreshRateTargetChanged}
 
 ```js
@@ -1364,6 +1806,10 @@ Stats.refreshRateTargetChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>refreshRateTarget</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### renderrateChanged {#renderrateChanged}
 
@@ -1375,6 +1821,10 @@ Stats.renderrateChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>renderrate</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### sendingModeChanged {#sendingModeChanged}
 
 ```js
@@ -1384,6 +1834,10 @@ Stats.sendingModeChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>sendingMode</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### serverCountChanged {#serverCountChanged}
 
@@ -1395,6 +1849,10 @@ Stats.serverCountChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>serverCount</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### serverElementsChanged {#serverElementsChanged}
 
 ```js
@@ -1404,6 +1862,10 @@ Stats.serverElementsChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>serverElements</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### serverInternalChanged {#serverInternalChanged}
 
@@ -1415,6 +1877,10 @@ Stats.serverInternalChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>serverInternal</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### serverLeavesChanged {#serverLeavesChanged}
 
 ```js
@@ -1424,6 +1890,10 @@ Stats.serverLeavesChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>serverLeaves</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### shadowConsideredChanged {#shadowConsideredChanged}
 
@@ -1435,6 +1905,10 @@ Stats.shadowConsideredChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>shadowConsidered</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### shadowOutOfViewChanged {#shadowOutOfViewChanged}
 
 ```js
@@ -1444,6 +1918,10 @@ Stats.shadowOutOfViewChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>shadowOutOfView</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### shadowRenderedChanged {#shadowRenderedChanged}
 
@@ -1455,6 +1933,10 @@ Stats.shadowRenderedChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>shadowRendered</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### shadowTooSmallChanged {#shadowTooSmallChanged}
 
 ```js
@@ -1464,6 +1946,10 @@ Stats.shadowTooSmallChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>shadowTooSmall</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### speedChanged {#speedChanged}
 
@@ -1475,6 +1961,10 @@ Stats.speedChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>speed</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### stutterrateChanged {#stutterrateChanged}
 
 ```js
@@ -1484,6 +1974,10 @@ Stats.stutterrateChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>stutterrate</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### stylusPicksCountChanged {#stylusPicksCountChanged}
 
@@ -1495,6 +1989,10 @@ Stats.stylusPicksCountChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>stylusPicksCount</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### stylusPicksUpdatedChanged {#stylusPicksUpdatedChanged}
 
 ```js
@@ -1504,6 +2002,10 @@ Stats.stylusPicksUpdatedChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>stylusPicksUpdated</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### texturePendingTransfersChanged {#texturePendingTransfersChanged}
 
@@ -1515,6 +2017,10 @@ Stats.texturePendingTransfersChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>texturePendingTransfers</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### timingExpandedChanged {#timingExpandedChanged}
 
 ```js
@@ -1524,6 +2030,10 @@ Stats.timingExpandedChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>timingExpanded</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### timingStatsChanged {#timingStatsChanged}
 
@@ -1535,6 +2045,10 @@ Stats.timingStatsChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>timingStats</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### trianglesChanged {#trianglesChanged}
 
 ```js
@@ -1544,6 +2058,10 @@ Stats.trianglesChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>triangles</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### updatedAvatarCountChanged {#updatedAvatarCountChanged}
 
@@ -1555,6 +2073,10 @@ Stats.updatedAvatarCountChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>updatedAvatarCount</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### updatedHeroAvatarCountChanged {#updatedHeroAvatarCountChanged}
 
 ```js
@@ -1564,6 +2086,10 @@ Stats.updatedHeroAvatarCountChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>updatedHeroAvatarCount</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### uxModeChanged {#uxModeChanged}
 
@@ -1575,6 +2101,10 @@ Stats.uxModeChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>uxMode</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### yawChanged {#yawChanged}
 
 ```js
@@ -1585,9 +2115,13 @@ Stats.yawChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>yaw</code> property changes.</p></div>
 
+</div>
+
 ## Deprecated {#deprecated}
 
 Still there for older scripts; new scripts should not use these.
+
+<div class="api-entry">
 
 ### childAt {#childAt}
 
@@ -1605,6 +2139,10 @@ Stats.childAt(x, y)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> object </div>
 
+</div>
+
+<div class="api-entry">
+
 ### contains {#contains}
 
 ```js
@@ -1620,6 +2158,10 @@ Stats.contains(point)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean </div>
 
+</div>
+
+<div class="api-entry">
+
 ### forceActiveFocus {#forceActiveFocus}
 
 ```js
@@ -1633,6 +2175,10 @@ Stats.forceActiveFocus(reason?)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>reason</code> <em>optional</em></td><td>number</td><td><code>7</code></td><td><p>Reason</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### grabToImage {#grabToImage}
 
@@ -1650,6 +2196,10 @@ Stats.grabToImage(callback, targetSize?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean </div>
 
+</div>
+
+<div class="api-entry">
+
 ### mapFromGlobal {#mapFromGlobal}
 
 ```js
@@ -1663,6 +2213,10 @@ Stats.mapFromGlobal(global)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>global</code></td><td>object</td><td><p>Global.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### mapFromItem {#mapFromItem}
 
@@ -1678,6 +2232,10 @@ Stats.mapFromItem(item)
 <tr><td><code>item</code></td><td>object</td><td><p>Item.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### mapToGlobal {#mapToGlobal}
 
 ```js
@@ -1692,6 +2250,10 @@ Stats.mapToGlobal(global)
 <tr><td><code>global</code></td><td>object</td><td><p>Global.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### mapToItem {#mapToItem}
 
 ```js
@@ -1705,6 +2267,10 @@ Stats.mapToItem(item)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>item</code></td><td>object</td><td><p>Item</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### nextItemInFocusChain {#nextItemInFocusChain}
 
@@ -1721,6 +2287,10 @@ Stats.nextItemInFocusChain(forward?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> object </div>
 
+</div>
+
+<div class="api-entry">
+
 ### update {#update}
 
 ```js
@@ -1731,6 +2301,10 @@ Stats.update()
 <div class="api-text" v-pre><p>This method is deprecated and will be removed.</p></div>
 :::
 
+
+</div>
+
+<div class="api-entry">
 
 ### activeFocusChanged {#activeFocusChanged}
 
@@ -1749,6 +2323,10 @@ Stats.activeFocusChanged.connect(function (activeFocus) {
 <tr><td><code>activeFocus</code></td><td>boolean</td><td><p>Active focus.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### activeFocusOnTabChanged {#activeFocusOnTabChanged}
 
 ```js
@@ -1765,6 +2343,10 @@ Stats.activeFocusOnTabChanged.connect(function (activeFocusOnTab) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>activeFocusOnTab</code></td><td>boolean</td><td><p>Active focus on tab.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### antialiasingChanged {#antialiasingChanged}
 
@@ -1783,6 +2365,10 @@ Stats.antialiasingChanged.connect(function (antialiasing) {
 <tr><td><code>antialiasing</code></td><td>boolean</td><td><p>Antialiasing.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### audioAudioInboundPPSChanged {#audioAudioInboundPPSChanged}
 
 ```js
@@ -1796,6 +2382,10 @@ Stats.audioAudioInboundPPSChanged.connect(function () {
 :::
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>audioAudioInboundPPS</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### baselineOffsetChanged {#baselineOffsetChanged}
 
@@ -1814,6 +2404,10 @@ Stats.baselineOffsetChanged.connect(function (baselineOffset) {
 <tr><td><code>baselineOffset</code></td><td>number</td><td><p>Baseline offset.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### bgColorChanged {#bgColorChanged}
 
 ```js
@@ -1828,6 +2422,10 @@ Stats.bgColorChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>bgColor</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### childrenChanged {#childrenChanged}
 
 ```js
@@ -1841,6 +2439,10 @@ Stats.childrenChanged.connect(function () {
 :::
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>children</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### childrenRectChanged {#childrenRectChanged}
 
@@ -1859,6 +2461,10 @@ Stats.childrenRectChanged.connect(function (childrenRect) {
 <tr><td><code>childrenRect</code></td><td><a href="globals#Rect">Rect</a></td><td><p>Children rect.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### clipChanged {#clipChanged}
 
 ```js
@@ -1876,6 +2482,10 @@ Stats.clipChanged.connect(function (clip) {
 <tr><td><code>clip</code></td><td>boolean</td><td><p>Clip.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### containmentMaskChanged {#containmentMaskChanged}
 
 ```js
@@ -1890,6 +2500,10 @@ Stats.containmentMaskChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>containmentMask</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### enabledChanged {#enabledChanged}
 
 ```js
@@ -1903,6 +2517,10 @@ Stats.enabledChanged.connect(function () {
 :::
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>enabled</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### focusChanged {#focusChanged}
 
@@ -1921,6 +2539,10 @@ Stats.focusChanged.connect(function (focus) {
 <tr><td><code>focus</code></td><td>boolean</td><td><p>Focus.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### heightChanged {#heightChanged}
 
 ```js
@@ -1934,6 +2556,10 @@ Stats.heightChanged.connect(function () {
 :::
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>height</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### implicitHeightChanged {#implicitHeightChanged}
 
@@ -1949,6 +2575,10 @@ Stats.implicitHeightChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>implicitHeight</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### implicitWidthChanged {#implicitWidthChanged}
 
 ```js
@@ -1963,6 +2593,10 @@ Stats.implicitWidthChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>implicitWidth</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### opacityChanged {#opacityChanged}
 
 ```js
@@ -1976,6 +2610,10 @@ Stats.opacityChanged.connect(function () {
 :::
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>opacity</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### parentChanged {#parentChanged}
 
@@ -1994,6 +2632,10 @@ Stats.parentChanged.connect(function (parent) {
 <tr><td><code>parent</code></td><td>object</td><td><p>Parent.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### rotationChanged {#rotationChanged}
 
 ```js
@@ -2008,6 +2650,10 @@ Stats.rotationChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>rotation</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### scaleChanged {#scaleChanged}
 
 ```js
@@ -2021,6 +2667,10 @@ Stats.scaleChanged.connect(function () {
 :::
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>scale</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### smoothChanged {#smoothChanged}
 
@@ -2039,6 +2689,10 @@ Stats.smoothChanged.connect(function (smooth) {
 <tr><td><code>smooth</code></td><td>boolean</td><td><p>Smooth.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### stateChanged {#stateChanged}
 
 ```js
@@ -2052,6 +2706,10 @@ Stats.stateChanged.connect(function () {
 :::
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>state</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### transformOriginChanged {#transformOriginChanged}
 
@@ -2070,6 +2728,10 @@ Stats.transformOriginChanged.connect(function (transformOrigin) {
 <tr><td><code>transformOrigin</code></td><td>number</td><td><p>Transformm origin.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### visibleChanged {#visibleChanged}
 
 ```js
@@ -2083,6 +2745,10 @@ Stats.visibleChanged.connect(function () {
 :::
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>visibleChanged</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### visibleChildrenChanged {#visibleChildrenChanged}
 
@@ -2098,6 +2764,10 @@ Stats.visibleChildrenChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the list of visible children changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### widthChanged {#widthChanged}
 
 ```js
@@ -2111,6 +2781,10 @@ Stats.widthChanged.connect(function () {
 :::
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>width</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### windowChanged {#windowChanged}
 
@@ -2129,6 +2803,10 @@ Stats.windowChanged.connect(function (window) {
 <tr><td><code>window</code></td><td>object</td><td><p>Window.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### xChanged {#xChanged}
 
 ```js
@@ -2142,6 +2820,10 @@ Stats.xChanged.connect(function () {
 :::
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>x</code> property changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### yChanged {#yChanged}
 
@@ -2157,6 +2839,10 @@ Stats.yChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>y</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### zChanged {#zChanged}
 
 ```js
@@ -2170,3 +2856,5 @@ Stats.zChanged.connect(function () {
 :::
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>z</code> property changes.</p></div>
+
+</div>

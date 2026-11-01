@@ -6,12 +6,14 @@ draft: true
 
 # Toolbars
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>Toolbars</code> API provides facilities to work with the system or other toolbar.</p>
  <p>See also the <a href="Tablet"><code>Tablet</code></a> API for use of the system tablet and toolbar in desktop and HMD modes.</p></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### getToolbar {#getToolbar}
 
@@ -25,9 +27,13 @@ Toolbars.getToolbar(name)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="ToolbarProxy">ToolbarProxy</a> <p>The toolbar instance.</p></div>
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### toolbarVisibleChanged {#toolbarVisibleChanged}
 
@@ -58,3 +64,5 @@ if (toolbar) {
     }, 2000);
 }
 ```
+
+</div>

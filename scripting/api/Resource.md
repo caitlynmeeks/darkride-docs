@@ -6,7 +6,7 @@ draft: true
 
 # Resource
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts, server entity scripts, assignment client scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts, server entity scripts, agents.</div>
 
 <div class="api-text" v-pre><p>The <code>Resource</code> API provides values that define the possible loading states of a resource.</p></div>
 
@@ -18,6 +18,8 @@ draft: true
 
 ## Types {#types}
 
+<div class="api-entry">
+
 ### State {#State}
 
 <div class="api-text" v-pre><p>The loading state of a resource.</p></div>
@@ -28,3 +30,5 @@ draft: true
 <tr><td><code>FINISHED</code></td><td>number</td><td><p>The resource has completely finished loading and is ready.</p></td></tr>
 <tr><td><code>FAILED</code></td><td>number</td><td><p>The resource has failed to download.</p></td></tr>
 </tbody></table></div>
+
+</div>

@@ -6,7 +6,7 @@ draft: true
 
 # ScriptsModel
 
-<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>Information on the scripts that are in the default scripts directory of the Interface installation. This is provided as a property of <a href="ScriptDiscoveryService"><code>ScriptDiscoveryService</code></a>.</p>
  <p>The information provided reflects the subdirectory structure. Methods and signals are per QT's <a href="http://doc.qt.io/qt-5/qabstractitemmodel.html" target="_blank" rel="noopener">QAbstractItemModel</a> class, with the following details:</p>
@@ -53,6 +53,8 @@ printDirectory(null, 0, "");  // null index for the root directory.
 
 Still there for older scripts; new scripts should not use these.
 
+<div class="api-entry">
+
 ### downloadFinished {#downloadFinished}
 
 ```js
@@ -63,6 +65,10 @@ ScriptsModel.downloadFinished()
 <div class="api-text" v-pre><p>This method is deprecated and will be removed from the API.</p></div>
 :::
 
+
+</div>
+
+<div class="api-entry">
 
 ### reloadDefaultFiles {#reloadDefaultFiles}
 
@@ -75,6 +81,10 @@ ScriptsModel.reloadDefaultFiles()
 :::
 
 
+</div>
+
+<div class="api-entry">
+
 ### reloadLocalFiles {#reloadLocalFiles}
 
 ```js
@@ -85,6 +95,10 @@ ScriptsModel.reloadLocalFiles()
 <div class="api-text" v-pre><p>This method is deprecated and will be removed from the API.</p></div>
 :::
 
+
+</div>
+
+<div class="api-entry">
 
 ### updateScriptsLocation {#updateScriptsLocation}
 
@@ -99,3 +113,5 @@ ScriptsModel.updateScriptsLocation(newPath)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>newPath</code></td><td>string</td><td><p>New path.</p></td></tr>
 </tbody></table></div>
+
+</div>

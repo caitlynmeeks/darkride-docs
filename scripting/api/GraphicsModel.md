@@ -6,7 +6,7 @@ draft: true
 
 # GraphicsModel
 
-<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>A handle to in-memory model data such as may be used in displaying avatars, 3D entities, or 3D overlays in the rendered scene. Changes made to the model are visible only to yourself; they are not persisted. </p>
 <p>Note: The model may be used for more than one instance of an item displayed in the scene. Modifying the model updates all instances displayed.</p>
@@ -25,6 +25,8 @@ draft: true
 
 ## Methods {#functions}
 
+<div class="api-entry">
+
 ### cloneModel {#cloneModel}
 
 ```js
@@ -36,6 +38,10 @@ GraphicsModel.cloneModel(options?)
 <tr><td><code>options</code> <em>optional</em></td><td>object</td><td><p><em>Not used.</em></p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="">GraphicsModel</a> <p>A copy of the model.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### toString {#toString}
 
@@ -52,3 +58,5 @@ GraphicsModel.toString()
 var model = Graphics.getModel(MyAvatar.sessionUUID);
 print("Avatar model info:", model.toString());
 ```
+
+</div>

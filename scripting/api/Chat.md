@@ -6,11 +6,13 @@ draft: true
 
 # Chat
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>Chat</code> API lets you use chat in world.</p></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### addCommand {#addCommand}
 
@@ -47,6 +49,10 @@ Script.scriptEnding.connect(function () {
 })
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getCommand {#getCommand}
 
 ```js
@@ -59,6 +65,10 @@ Chat.getCommand(command)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="ChatCommand">ChatCommand</a> <p>The command.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getCommands {#getCommands}
 
 ```js
@@ -67,6 +77,10 @@ Chat.getCommands()
 
 <div class="api-text" v-pre><p>Get all commands for chat.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;<a href="ChatCommand">ChatCommand</a>&gt; <p>All available commands.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### removeCommand {#removeCommand}
 
@@ -78,6 +92,10 @@ Chat.removeCommand(command)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>command</code></td><td><a href="ChatCommand">ChatCommand</a></td><td><p>The command to remove.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### sendMessage {#sendMessage}
 
@@ -92,6 +110,10 @@ Chat.sendMessage(message, me?, tts?)
 <tr><td><code>tts</code> <em>optional</em></td><td>bool</td><td><code>false</code></td><td><p>Send the message with text to speech.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### showMessage {#showMessage}
 
 ```js
@@ -103,9 +125,13 @@ Chat.showMessage(message)
 <tr><td><code>message</code></td><td>string</td><td><p>The text message to show.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### messageReceived {#messageReceived}
 
@@ -143,6 +169,10 @@ Chat.messageReceived.connect(function (data, senderID) {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### messageSent {#messageSent}
 
 ```js
@@ -169,3 +199,5 @@ Chat.messageSent.connect(function (message) {
     }
 });
 ```
+
+</div>

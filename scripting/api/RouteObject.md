@@ -6,7 +6,7 @@ draft: true
 
 # RouteObject
 
-<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>A route in a <a href="MappingObject"><code>MappingObject</code></a> used by the <a href="Controller"><code>Controller</code></a> API.</p>
  <p>Create a route using <a href="MappingObject"><code>MappingObject</code></a> methods and apply this object's methods to process it, terminating with <a href="#to"><code>RouteObject#to</code></a> to apply it to a <code>Standard</code> control, action, or script function. Note: Loops are not permitted.</p>
@@ -14,6 +14,8 @@ draft: true
 <p></p></div>
 
 ## Methods {#functions}
+
+<div class="api-entry">
 
 ### clamp {#clamp}
 
@@ -43,6 +45,10 @@ Script.scriptEnding.connect(function () {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### constrainToInteger {#constrainToInteger}
 
 ```js
@@ -67,6 +73,10 @@ Script.scriptEnding.connect(function () {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### constrainToPositiveInteger {#constrainToPositiveInteger}
 
 ```js
@@ -90,6 +100,10 @@ Script.scriptEnding.connect(function () {
     Controller.disableMapping(MAPPING_NAME);
 });
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### deadZone {#deadZone}
 
@@ -117,6 +131,10 @@ Script.scriptEnding.connect(function () {
     Controller.disableMapping(MAPPING_NAME);
 });
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### debug {#debug}
 
@@ -155,6 +173,10 @@ Script.scriptEnding.connect(function () {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### exponentialSmoothing {#exponentialSmoothing}
 
 ```js
@@ -167,6 +189,10 @@ exponentialSmoothing(rotationConstant, translationConstant)
 <tr><td><code>translationConstant</code></td><td>number</td><td><p>Translation filter constant, <code>0.0–1.0</code>.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="">RouteObject</a> <p>The <code>RouteObject</code> smoothed by an exponential filter.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### hysteresis {#hysteresis}
 
@@ -199,6 +225,10 @@ Script.scriptEnding.connect(function () {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### invert {#invert}
 
 ```js
@@ -225,6 +255,10 @@ Script.scriptEnding.connect(function () {
     Controller.disableMapping(MAPPING_NAME);
 });
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### logicalNot {#logicalNot}
 
@@ -254,6 +288,10 @@ Script.scriptEnding.connect(function () {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### lowVelocity {#lowVelocity}
 
 ```js
@@ -267,6 +305,10 @@ lowVelocity(rotationConstant, translationConstant)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="">RouteObject</a> <p>The <code>RouteObject</code> smoothed by low velocity filtering.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### peek {#peek}
 
 ```js
@@ -279,6 +321,10 @@ peek(enable?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="">RouteObject</a> <p>The <code>RouteObject</code> with the peek feature enabled.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### postTransform {#postTransform}
 
 ```js
@@ -290,6 +336,10 @@ postTransform(transform)
 <tr><td><code>transform</code></td><td><a href="Mat4">Mat4</a></td><td><p>The post-transform to apply.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="">RouteObject</a> <p>The <code>RouteObject</code> with the post-transform applied.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### pulse {#pulse}
 
@@ -318,6 +368,10 @@ Script.scriptEnding.connect(function () {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### rotate {#rotate}
 
 ```js
@@ -329,6 +383,10 @@ rotate(rotation)
 <tr><td><code>rotation</code></td><td><a href="Quat">Quat</a></td><td><p>The pre-rotation to add to the pose.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="">RouteObject</a> <p>The <code>RouteObject</code> with the pre-rotation applied.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### scale {#scale}
 
@@ -359,6 +417,10 @@ Script.scriptEnding.connect(function () {
     Controller.disableMapping(MAPPING_NAME);
 });
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### to {#to}
 
@@ -403,6 +465,10 @@ Script.scriptEnding.connect(function () {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### toQml {#toQml}
 
 ```js
@@ -416,6 +482,10 @@ toQml(destination)
 <tr><td><code>destination</code></td><td><a href="Controller#Standard">Controller.Standard</a> | <a href="Controller#Actions">Controller.Actions</a> | function</td><td><p>The standard control, action, or JavaScript function that the route output is mapped to. For a function, the parameter can be either the name of the function or an in-line function definition.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### transform {#transform}
 
 ```js
@@ -428,6 +498,10 @@ transform(transform)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="">RouteObject</a> <p>The <code>RouteObject</code> with the pre-transform applied.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### translate {#translate}
 
 ```js
@@ -439,6 +513,10 @@ translate(translate)
 <tr><td><code>translate</code></td><td><a href="Vec3">Vec3</a></td><td><p>The pre-translation to add to the pose.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="">RouteObject</a> <p>The <code>RouteObject</code> with the pre-translation applied.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### when {#when}
 
@@ -480,6 +558,10 @@ Script.scriptEnding.connect(function () {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### whenQml {#whenQml}
 
 ```js
@@ -498,3 +580,5 @@ whenQml(expression)
  <p>If an array of conditions is provided, their values are ANDed together.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="">RouteObject</a> <p>The <code>RouteObject</code> with the condition added.</p></div>
+
+</div>

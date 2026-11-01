@@ -6,7 +6,7 @@ draft: true
 
 # Audio
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts, server entity scripts, assignment client scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts, server entity scripts, agents.</div>
 
 <div class="api-text" v-pre><p>The <code>Audio</code> API provides facilities to interact with audio inputs and outputs and to play sounds.</p></div>
 
@@ -40,6 +40,8 @@ draft: true
 </tbody></table></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### addToSoloList {#addToSoloList}
 
@@ -82,6 +84,10 @@ if (nearbyAvatars.length > 0) {
 }
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getAvatarGain {#getAvatarGain}
 
 ```js
@@ -101,6 +107,10 @@ print("Environment local gain: " + Audio.getLocalInjectorGain());
 print("System gain: " + Audio.getSystemInjectorGain());
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getInjectorGain {#getInjectorGain}
 
 ```js
@@ -109,6 +119,10 @@ Audio.getInjectorGain()
 
 <div class="api-text" v-pre><p>Gets the gain (relative volume) that environment sounds from the server are played at.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The injector gain (dB) at the server.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getLocalEcho {#getLocalEcho}
 
@@ -119,6 +133,10 @@ Audio.getLocalEcho()
 <div class="api-text" v-pre><p>Gets whether your microphone audio is echoed back to you by the client. When enabled, microphone audio is echoed even if you're muted or not using push-to-talk.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if echoing microphone audio back to you from the client is enabled, <code>false</code> if it isn't.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getLocalInjectorGain {#getLocalInjectorGain}
 
 ```js
@@ -127,6 +145,10 @@ Audio.getLocalInjectorGain()
 
 <div class="api-text" v-pre><p>Gets the gain (relative volume) that environment sounds from the client are played at.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The injector gain (dB) in the client.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getPushingToTalkOutputGainDesktop {#getPushingToTalkOutputGainDesktop}
 
@@ -137,6 +159,10 @@ Audio.getPushingToTalkOutputGainDesktop()
 <div class="api-text" v-pre><p>Gets the output volume gain that is used when the user is holding the push-to-talk key. Should be negative.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>gain - The output volume gain (dB) while using push-to-talk.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getRecording {#getRecording}
 
 ```js
@@ -145,6 +171,10 @@ Audio.getRecording()
 
 <div class="api-text" v-pre><p>Checks whether an audio recording is currently being made.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if an audio recording is currently being made, otherwise <code>false</code>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getServerEcho {#getServerEcho}
 
@@ -155,6 +185,10 @@ Audio.getServerEcho()
 <div class="api-text" v-pre><p>Gets whether your microphone audio is echoed back to you from the server. When enabled, microphone audio is echoed only if you're unmuted or are using push-to-talk.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if echoing microphone audio back to you from the server is enabled, <code>false</code> if it isn't.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getSystemInjectorGain {#getSystemInjectorGain}
 
 ```js
@@ -164,6 +198,10 @@ Audio.getSystemInjectorGain()
 <div class="api-text" v-pre><p>Gets the gain (relative volume) that system sounds are played at.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The injector gain (dB) in the client.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### isStereoInput {#isStereoInput}
 
 ```js
@@ -172,6 +210,10 @@ Audio.isStereoInput()
 
 <div class="api-text" v-pre><p>Gets whether the audio input is used in stereo.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the audio input is used in stereo, otherwise <code>false</code>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### playSound {#playSound}
 
@@ -210,6 +252,10 @@ if (sound.downloaded) {
 }
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### playSystemSound {#playSystemSound}
 
 ```js
@@ -222,6 +268,10 @@ Audio.playSystemSound(sound)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="AudioInjector">AudioInjector</a> <p>The audio injector that plays the audio file.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### removeFromSoloList {#removeFromSoloList}
 
 ```js
@@ -233,6 +283,10 @@ Audio.removeFromSoloList(ids)
 <tr><td><code>ids</code></td><td>Array&lt;<a href="Uuid">Uuid</a>&gt;</td><td><p>Avatar IDs to remove from the solo list.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### resetSoloList {#resetSoloList}
 
 ```js
@@ -240,6 +294,10 @@ Audio.resetSoloList()
 ```
 
 <div class="api-text" v-pre><p>Clears the audio solo list.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setAvatarGain {#setAvatarGain}
 
@@ -252,6 +310,10 @@ Audio.setAvatarGain(gain)
 <tr><td><code>gain</code></td><td>number</td><td><p>The avatar gain (dB) at the server.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setInjectorGain {#setInjectorGain}
 
 ```js
@@ -262,6 +324,10 @@ Audio.setInjectorGain(gain)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>gain</code></td><td>number</td><td><p>The injector gain (dB) at the server.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setLocalEcho {#setLocalEcho}
 
@@ -280,6 +346,10 @@ Script.setTimeout(function () {
 }, 3000); // 3s
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### setLocalInjectorGain {#setLocalInjectorGain}
 
 ```js
@@ -290,6 +360,10 @@ Audio.setLocalInjectorGain(gain)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>gain</code></td><td>number</td><td><p>The injector gain (dB) in the client.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setPushingToTalkOutputGainDesktop {#setPushingToTalkOutputGainDesktop}
 
@@ -302,13 +376,17 @@ Audio.setPushingToTalkOutputGainDesktop(gain)
 <tr><td><code>gain</code></td><td>number</td><td><p>The output volume gain (dB) while using push-to-talk.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setReverb {#setReverb}
 
 ```js
 Audio.setReverb(enable)
 ```
 
-<div class="api-text" v-pre><p>Enables or disables reverberation. Reverberation is done by the client on the post-mix audio. The reverberation options come from either the domain's audio zone configured on the server or settings scripted by <a href="#setReverbOptions">setReverbOptions</a>.</p></div>
+<div class="api-text" v-pre><p>Enables or disables reverberation. Reverberation is done by the client on the post-mix audio. The reverberation options come from either the world's audio zone configured on the server or settings scripted by <a href="#setReverbOptions">setReverbOptions</a>.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>enable</code></td><td>boolean</td><td><p><code>true</code> to enable reverberation, <code>false</code> to disable.</p></td></tr>
 </tbody></table></div>
@@ -342,6 +420,10 @@ Script.setTimeout(function () {
 }, 8000);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### setReverbOptions {#setReverbOptions}
 
 ```js
@@ -352,6 +434,10 @@ Audio.setReverbOptions(options)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>options</code></td><td><a href="AudioEffectOptions">AudioEffectOptions</a></td><td><p>The reverberation options.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setServerEcho {#setServerEcho}
 
@@ -364,6 +450,10 @@ Audio.setServerEcho(serverEcho)
 <tr><td><code>serverEcho</code></td><td>boolean</td><td><p><code>true</code> to enable echoing microphone back to you from the server, <code>false</code> to disable.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setStereoInput {#setStereoInput}
 
 ```js
@@ -375,6 +465,10 @@ Audio.setStereoInput(stereo)
 <tr><td><code>stereo</code></td><td>boolean</td><td><p><code>true</code> if the audio input should be used in stereo, otherwise <code>false</code>.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setSystemInjectorGain {#setSystemInjectorGain}
 
 ```js
@@ -385,6 +479,10 @@ Audio.setSystemInjectorGain(gain)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>gain</code></td><td>number</td><td><p>The injector gain (dB) in the client.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### startRecording {#startRecording}
 
@@ -413,6 +511,10 @@ if (Audio.startRecording(filename)) {
 }
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### stopRecording {#stopRecording}
 
 ```js
@@ -420,6 +522,10 @@ Audio.stopRecording()
 ```
 
 <div class="api-text" v-pre><p>Finishes making an audio recording started with <a href="#startRecording">startRecording</a>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### toggleLocalEcho {#toggleLocalEcho}
 
@@ -429,6 +535,10 @@ Audio.toggleLocalEcho()
 
 <div class="api-text" v-pre><p>Toggles the echoing of microphone audio back to you by the client. When enabled, microphone audio is echoed even if you're muted or not using push-to-talk.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### toggleServerEcho {#toggleServerEcho}
 
 ```js
@@ -437,9 +547,13 @@ Audio.toggleServerEcho()
 
 <div class="api-text" v-pre><p>Toggles the echoing of microphone audio back to you from the server. When enabled, microphone audio is echoed only if you're unmuted or are using push-to-talk.</p></div>
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### acousticEchoCancellationChanged {#acousticEchoCancellationChanged}
 
@@ -454,6 +568,10 @@ Audio.acousticEchoCancellationChanged.connect(function (isEnabled) {
 <tr><td><code>isEnabled</code></td><td>boolean</td><td><p><code>true</code> if acoustic echo cancellation is enabled, otherwise <code>false</code>.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### avatarGainChanged {#avatarGainChanged}
 
 ```js
@@ -466,6 +584,10 @@ Audio.avatarGainChanged.connect(function (gain) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>gain</code></td><td>number</td><td><p>The new avatar gain value (dB).</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### clippingChanged {#clippingChanged}
 
@@ -480,6 +602,10 @@ Audio.clippingChanged.connect(function (isClipping) {
 <tr><td><code>isClipping</code></td><td>boolean</td><td><p><code>true</code> if the audio input is clipping, otherwise <code>false</code>.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### contextChanged {#contextChanged}
 
 ```js
@@ -493,6 +619,10 @@ Audio.contextChanged.connect(function (context) {
 <tr><td><code>context</code></td><td>string</td><td><p>The current context of the audio: either <code>"Desktop"</code> or <code>"HMD"</code>.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### disconnected {#disconnected}
 
 ```js
@@ -503,6 +633,10 @@ Audio.disconnected.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the client is disconnected from the audio mixer.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### environmentMuted {#environmentMuted}
 
 ```js
@@ -512,6 +646,10 @@ Audio.environmentMuted.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the client is muted by the mixer because they're within a certain radius (50m) of someone who requested the mute through Developer &gt; Audio &gt; Mute Environment.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### inputLevelChanged {#inputLevelChanged}
 
@@ -526,6 +664,10 @@ Audio.inputLevelChanged.connect(function (level) {
 <tr><td><code>level</code></td><td>number</td><td><p>The loudness of the input audio, range <code>0.0</code> (no sound) – <code>1.0</code> (the onset of clipping).</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### inputReceived {#inputReceived}
 
 ```js
@@ -538,6 +680,10 @@ Audio.inputReceived.connect(function (inputSamples) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>inputSamples</code></td><td>Int16Array</td><td><p>The audio input processed.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### inputVolumeChanged {#inputVolumeChanged}
 
@@ -552,6 +698,10 @@ Audio.inputVolumeChanged.connect(function (volume) {
 <tr><td><code>volume</code></td><td>number</td><td><p>The requested volume to be applied to the audio input, range <code>0.0</code> – <code>1.0</code>. The resulting value of <code>Audio.inputVolume</code> depends on the capabilities of the device. For example, the volume can't be changed on some devices, while others might only support values of <code>0.0</code> and <code>1.0</code>.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### isStereoInputChanged {#isStereoInputChanged}
 
 ```js
@@ -564,6 +714,10 @@ Audio.isStereoInputChanged.connect(function (isStereo) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>isStereo</code></td><td>boolean</td><td><p><code>true</code> if the input audio is stereo, otherwise <code>false</code>.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### localInjectorGainChanged {#localInjectorGainChanged}
 
@@ -578,6 +732,10 @@ Audio.localInjectorGainChanged.connect(function (gain) {
 <tr><td><code>gain</code></td><td>number</td><td><p>The new local injector gain value (dB).</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### mutedByMixer {#mutedByMixer}
 
 ```js
@@ -586,7 +744,11 @@ Audio.mutedByMixer.connect(function () {
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when the client is muted by the mixer because their loudness value for the noise background has reached the threshold set for the domain (in the server settings).</p></div>
+<div class="api-text" v-pre><p>Triggered when the client is muted by the mixer because their loudness value for the noise background has reached the threshold set for the world (in the server settings).</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### mutedChanged {#mutedChanged}
 
@@ -609,6 +771,10 @@ Audio.mutedChanged.connect(function (isMuted) {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### mutedDesektopChanged {#mutedDesektopChanged}
 
 ```js
@@ -630,6 +796,10 @@ Audio.mutedDesktopChanged.connect(function (isMuted) {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### mutedHMDChanged {#mutedHMDChanged}
 
 ```js
@@ -643,6 +813,10 @@ Audio.mutedHMDChanged.connect(function (isMuted) {
 <tr><td><code>isMuted</code></td><td>boolean</td><td><p><code>true</code> if HMD audio input is muted, otherwise <code>false</code>.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### noiseGateClosed {#noiseGateClosed}
 
 ```js
@@ -653,6 +827,10 @@ Audio.noiseGateClosed.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the noise gate is closed. The input audio signal is blocked (fully attenuated) because it has fallen below an adaptive threshold set just above the noise floor. Only occurs if <code>Audio.noiseReduction</code> is <code>true</code>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### noiseGateOpened {#noiseGateOpened}
 
 ```js
@@ -662,6 +840,10 @@ Audio.noiseGateOpened.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the noise gate is opened. The input audio signal is no longer blocked (fully attenuated) because it has risen above an adaptive threshold set just above the noise floor. Only occurs if <code>Audio.noiseReduction</code> is <code>true</code>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### noiseReductionChanged {#noiseReductionChanged}
 
@@ -676,6 +858,10 @@ Audio.noiseReductionChanged.connect(function (isEnabled) {
 <tr><td><code>isEnabled</code></td><td>boolean</td><td><p><code>true</code> if audio input noise reduction is enabled, otherwise <code>false</code>.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### pushingToTalkChanged {#pushingToTalkChanged}
 
 ```js
@@ -689,6 +875,10 @@ Audio.pushingToTalkChanged.connect(function (talking) {
 <tr><td><code>talking</code></td><td>boolean</td><td><p><code>true</code> if started push-to-talk, <code>false</code> if stopped push-to-talk.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### pushingToTalkOutputGainDesktopChanged {#pushingToTalkOutputGainDesktopChanged}
 
 ```js
@@ -701,6 +891,10 @@ Audio.pushingToTalkOutputGainDesktopChanged.connect(function (gain) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>gain</code></td><td>number</td><td><p>The new output gain value (dB).</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### pushToTalkChanged {#pushToTalkChanged}
 
@@ -723,6 +917,10 @@ Audio.pushToTalkChanged.connect(function (enabled) {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### pushToTalkDesktopChanged {#pushToTalkDesktopChanged}
 
 ```js
@@ -735,6 +933,10 @@ Audio.pushToTalkDesktopChanged.connect(function (enabled) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> if push-to-talk is enabled for desktop mode, otherwise <code>false</code>.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### pushToTalkHMDChanged {#pushToTalkHMDChanged}
 
@@ -749,6 +951,10 @@ Audio.pushToTalkHMDChanged.connect(function (enabled) {
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> if push-to-talk is enabled for HMD mode, otherwise <code>false</code>.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### receivedFirstPacket {#receivedFirstPacket}
 
 ```js
@@ -758,6 +964,10 @@ Audio.receivedFirstPacket.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the client receives its first packet from the audio mixer.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### serverInjectorGainChanged {#serverInjectorGainChanged}
 
@@ -772,6 +982,10 @@ Audio.serverInjectorGainChanged.connect(function (gain) {
 <tr><td><code>gain</code></td><td>number</td><td><p>The new server injector gain value (dB).</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### systemInjectorGainChanged {#systemInjectorGainChanged}
 
 ```js
@@ -784,6 +998,10 @@ Audio.systemInjectorGainChanged.connect(function (gain) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>gain</code></td><td>number</td><td><p>The new system injector gain value (dB).</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### warnWhenMutedChanged {#warnWhenMutedChanged}
 
@@ -798,9 +1016,13 @@ Audio.warnWhenMutedChanged.connect(function (isEnabled) {
 <tr><td><code>isEnabled</code></td><td>boolean</td><td><p><code>true</code> if "warn when muted" is enabled, otherwise <code>false</code>.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Deprecated {#deprecated}
 
 Still there for older scripts; new scripts should not use these.
+
+<div class="api-entry">
 
 ### onContextChanged {#onContextChanged}
 
@@ -812,6 +1034,10 @@ Audio.onContextChanged()
 <div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
 :::
 
+
+</div>
+
+<div class="api-entry">
 
 ### setInputDevice {#setInputDevice}
 
@@ -828,6 +1054,10 @@ Audio.setInputDevice(device, isHMD)
 <tr><td><code>isHMD</code></td><td>boolean</td><td><p>Is HMD.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setOutputDevice {#setOutputDevice}
 
 ```js
@@ -843,6 +1073,10 @@ Audio.setOutputDevice(device, isHMD)
 <tr><td><code>isHMD</code></td><td>boolean</td><td><p>Is HMD.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### nop {#nop}
 
 ```js
@@ -855,3 +1089,5 @@ Audio.nop.connect(function () {
 <div class="api-text" v-pre><p>This signal is deprecated and will be removed.</p></div>
 :::
 
+
+</div>

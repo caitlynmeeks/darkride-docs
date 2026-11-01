@@ -1,6 +1,7 @@
 # API reference build: Darkride 1.1.2 (02429ffa29fe90702c6054e18eab653fd778bc13)
 
-2438 notes; 109 pages; 82 namespaces, 26 classes, 1647 functions, 520 signals, 310 types; 1 repeated notes kept once.
+2438 notes; 110 pages; 82 namespaces, 26 classes, 1647 functions, 520 signals, 310 types; 1 repeated notes kept once.
+Left out as not in this version: Midi. Types on a page of their own: Entities. "domain" read as "world" in prose: 269 times.
 
 ## Old names changed on the pages (to fix in the engine notes)
 
@@ -22,7 +23,6 @@
 - 18 x https://legacydocs.tivolicloud.com/create/avatars/avatar-standards.html
 - 4 x https://legacydocs.tivolicloud.com/create/avatars/custom-animations.html
 - 1 x https://legacydocs.tivolicloud.com/script/js-tips.html
-- 1 x https://legacydocs.tivolicloud.com/script/midi-tutorial.html
 
 ## Names that lead nowhere (shown as code, not links)
 

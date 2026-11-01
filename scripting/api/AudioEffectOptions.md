@@ -6,7 +6,7 @@ draft: true
 
 # AudioEffectOptions
 
-<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts, server entity scripts, assignment client scripts.</div>
+<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: client scripts, entity scripts, avatar scripts, server entity scripts, agents.</div>
 
 <div class="api-text" v-pre><p>Audio effect options used by the <a href="Audio"><code>Audio</code></a> API.</p>
  <p>Create using <code>new AudioEffectOptions(...)</code>.</p></div>
@@ -47,6 +47,8 @@ new AudioEffectOptions(reverbOptions?)
 
 ## Types {#types}
 
+<div class="api-entry">
+
 ### ReverbOptions {#ReverbOptions}
 
 <div class="api-text" v-pre><p>Reverberation options that can be used to initialize an <a href=""><code>AudioEffectOptions</code></a> object when created.</p></div>
@@ -73,3 +75,5 @@ new AudioEffectOptions(reverbOptions?)
 <tr><td><code>lateMixRight</code></td><td>number</td><td><code>90</code></td><td><p>The apparent distance of the source (percent) in the reverb tail.</p></td></tr>
 <tr><td><code>wetDryMix</code></td><td>number</td><td><code>50</code></td><td><p>Adjusts the wet/dry ratio, from completely dry (0%) to completely wet (100%).</p></td></tr>
 </tbody></table></div>
+
+</div>

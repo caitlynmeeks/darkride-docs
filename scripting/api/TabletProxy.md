@@ -6,7 +6,7 @@ draft: true
 
 # TabletProxy
 
-<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>An instance of a tablet. In toolbar mode (see Developer &gt; UI options), the tablet's menu buttons are displayed in a toolbar and other tablet content is displayed in a dialog.</p>
  <p>Retrieve an existing tablet or create a new tablet using <a href="Tablet#getTablet"><code>Tablet.getTablet</code></a>.</p></div>
@@ -26,6 +26,8 @@ draft: true
 </tbody></table></div>
 
 ## Methods {#functions}
+
+<div class="api-entry">
 
 ### addButton {#addButton}
 
@@ -54,6 +56,10 @@ Script.scriptEnding.connect(function () {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### closeDialog {#closeDialog}
 
 ```js
@@ -61,6 +67,10 @@ closeDialog()
 ```
 
 <div class="api-text" v-pre><p>Closes any open modal, non-modal, or message dialog, opened by <a href="Window#prompt"><code>Window.prompt</code></a>, <a href="Window#promptAsync"><code>Window.promptAsync</code></a>, <a href="Window#openMessageBox"><code>Window.openMessageBox</code></a>, or similar.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### emitScriptEvent {#emitScriptEvent}
 
@@ -76,6 +86,10 @@ emitScriptEvent(message)
 <tr><td><code>message</code></td><td>string | object</td><td><p>The message to send to the web page.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getLandscape {#getLandscape}
 
 ```js
@@ -87,6 +101,10 @@ getLandscape()
 <p></p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the tablet is displayed in landscape mode, <code>false</code> if it is displayed in portrait mode.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### gotoHomeScreen {#gotoHomeScreen}
 
 ```js
@@ -94,6 +112,10 @@ gotoHomeScreen()
 ```
 
 <div class="api-text" v-pre><p>Displays the tablet home screen, if the tablet is open.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### gotoMenuScreen {#gotoMenuScreen}
 
@@ -112,6 +134,10 @@ gotoMenuScreen(submenu?)
 tablet.gotoMenuScreen("View");
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### gotoWebScreen {#gotoWebScreen}
 
 ```js
@@ -127,6 +153,10 @@ gotoWebScreen(url, injectedJavaScriptUrl?, loadOtherBase?)
 <p></p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### isMessageDialogOpen {#isMessageDialogOpen}
 
 ```js
@@ -135,6 +165,10 @@ isMessageDialogOpen()
 
 <div class="api-text" v-pre><p>Checks if the tablet has a modal, non-modal, or message dialog open.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if a modal, non-modal, or message dialog is open, <code>false</code> if there isn't.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### isPathLoaded {#isPathLoaded}
 
@@ -148,6 +182,10 @@ isPathLoaded(path)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if <code>path</code> is the current app or dialog, <code>false</code> if it isn't.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### loadQMLOnTop {#loadQMLOnTop}
 
 ```js
@@ -158,6 +196,10 @@ loadQMLOnTop(path)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>path</code></td><td>string</td><td><p>The path to the app's QML.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### loadQMLSource {#loadQMLSource}
 
@@ -171,6 +213,10 @@ loadQMLSource(path, resizable?)
 <tr><td><code>resizable</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p><code>true</code> to make the dialog resizable in toolbar mode, <code>false</code> to have it not resizable.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### loadWebScreenOnTop {#loadWebScreenOnTop}
 
 ```js
@@ -183,6 +229,10 @@ loadWebScreenOnTop(path, injectedJavaScriptURL?)
 <tr><td><code>injectedJavaScriptURL</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>The URL of JavaScript to inject into the web page.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### onHomeScreen {#onHomeScreen}
 
 ```js
@@ -191,6 +241,10 @@ onHomeScreen()
 
 <div class="api-text" v-pre><p>Checks if the tablet is on the home screen.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the tablet is on the home screen, <code>false</code> if it isn't.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### popFromStack {#popFromStack}
 
@@ -201,6 +255,10 @@ popFromStack()
 <div class="api-text" v-pre><p>Closes a QML dialog that was displayed using pushOntoStack with a dialog implementing a QML <code>StackView</code>; otherwise, no action is taken. </p>
 <p>If using a QML <code>StackView</code>, its <code>popSource()</code> function is called.</p>
 <p></p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### pushOntoStack {#pushOntoStack}
 
@@ -216,6 +274,10 @@ pushOntoStack(path)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the dialog was successfully opened, <code>false</code> if it wasn't.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### removeButton {#removeButton}
 
 ```js
@@ -227,6 +289,10 @@ removeButton(button)
 <tr><td><code>button</code></td><td><a href="TabletButtonProxy">TabletButtonProxy</a></td><td><p>The button to remove.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### returnToPreviousApp {#returnToPreviousApp}
 
 ```js
@@ -234,6 +300,10 @@ returnToPreviousApp()
 ```
 
 <div class="api-text" v-pre><p>Closes the current app and returns to the previous app, if in tablet mode and the current app was loaded using <a href="#loadQMLOnTop">loadQMLOnTop</a> or <a href="#loadWebScreenOnTop">loadWebScreenOnTop</a>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### sendToQml {#sendToQml}
 
@@ -248,6 +318,10 @@ sendToQml(message)
 <tr><td><code>message</code></td><td>string | object</td><td><p>The message to send to the QML page.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setLandscape {#setLandscape}
 
 ```js
@@ -261,9 +335,13 @@ setLandscape(landscape)
 <tr><td><code>landscape</code></td><td>boolean</td><td><p><code>true</code> to display the tablet in landscape mode, <code>false</code> to display it in portrait mode.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### fromQml {#fromQml}
 
@@ -280,6 +358,10 @@ TabletProxy.fromQml.connect(function (message) {
 <tr><td><code>message</code></td><td>string | object</td><td><p>The message received.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### screenChanged {#screenChanged}
 
 ```js
@@ -294,6 +376,10 @@ TabletProxy.screenChanged.connect(function (type, url) {
 <tr><td><code>url</code></td><td>string</td><td><p>The url of the page displayed. Only valid for Web and QML.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### tabletShownChanged {#tabletShownChanged}
 
 ```js
@@ -305,6 +391,10 @@ TabletProxy.tabletShownChanged.connect(function () {
 <div class="api-text" v-pre><p>Triggered when the tablet is opened or closed. </p>
 <p>Note: Doesn't apply in toolbar mode.</p>
 <p></p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### toolbarModeChanged {#toolbarModeChanged}
 
@@ -326,6 +416,10 @@ tablet.toolbarModeChanged.connect(function () {
 // Use Developer > UI > Tablet Becomes Toolbar to change the toolbar mode.
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### webEventReceived {#webEventReceived}
 
 ```js
@@ -341,15 +435,23 @@ TabletProxy.webEventReceived.connect(function (message) {
 <tr><td><code>message</code></td><td>string | object</td><td><p>The message received.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### TabletButtonListModel {#TabletButtonListModel}
 
 <div class="api-text" v-pre><p>Information on the buttons in the tablet main menu (toolbar in toolbar mode) for use in QML. Has properties and functions per <a href="http://doc.qt.io/qt-5/qabstractlistmodel.html" target="_blank" rel="noopener">http://doc.qt.io/qt-5/qabstractlistmodel.html</a>.</p></div>
 
+</div>
+
 ## Deprecated {#deprecated}
 
 Still there for older scripts; new scripts should not use these.
+
+<div class="api-entry">
 
 ### desktopWindowClosed {#desktopWindowClosed}
 
@@ -361,6 +463,10 @@ desktopWindowClosed()
 <div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
 :::
 
+
+</div>
+
+<div class="api-entry">
 
 ### emitWebEvent {#emitWebEvent}
 
@@ -376,6 +482,10 @@ emitWebEvent(message)
 <tr><td><code>message</code></td><td>object | string</td><td><p>Message</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### initialScreen {#initialScreen}
 
 ```js
@@ -390,6 +500,10 @@ initialScreen(url)
 <tr><td><code>url</code></td><td>string</td><td><p>URL.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### loadHTMLSourceOnTopImpl {#loadHTMLSourceOnTopImpl}
 
 ```js
@@ -400,6 +514,10 @@ loadHTMLSourceOnTopImpl()
 <div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
 :::
 
+
+</div>
+
+<div class="api-entry">
 
 ### loadQMLOnTopImpl {#loadQMLOnTopImpl}
 
@@ -412,6 +530,10 @@ loadQMLOnTopImpl()
 :::
 
 
+</div>
+
+<div class="api-entry">
+
 ### loadQMLSourceImpl {#loadQMLSourceImpl}
 
 ```js
@@ -422,6 +544,10 @@ loadQMLSourceImpl()
 <div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
 :::
 
+
+</div>
+
+<div class="api-entry">
 
 ### onTabletShown {#onTabletShown}
 
@@ -434,6 +560,10 @@ onTabletShown()
 :::
 
 
+</div>
+
+<div class="api-entry">
+
 ### returnToPreviousAppImpl {#returnToPreviousAppImpl}
 
 ```js
@@ -444,3 +574,5 @@ returnToPreviousAppImpl()
 <div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
 :::
 
+
+</div>

@@ -6,11 +6,13 @@ draft: true
 
 # AvatarBookmarks
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>AvatarBookmarks</code> API provides facilities for working with avatar bookmarks ("favorites" in the Avatar app). An avatar bookmark associates a name with an avatar model, scale, and avatar entities (wearables).</p></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### addBookmark {#addBookmark}
 
@@ -32,6 +34,10 @@ var bookmarkData = AvatarBookmarks.getBookmark(bookmarkName);
 print("Bookmark data: " + JSON.stringify(bookmarkData));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getBookmark {#getBookmark}
 
 ```js
@@ -43,6 +49,10 @@ AvatarBookmarks.getBookmark(bookmarkName)
 <tr><td><code>bookmarkName</code></td><td>string</td><td><p>The name of the avatar bookmark (case sensitive).</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="#BookmarkData">AvatarBookmarks.BookmarkData</a> | Object <p>The bookmark data if the bookmark exists, <code>{}</code> if it doesn't.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getBookmarks {#getBookmarks}
 
@@ -63,6 +73,10 @@ for (var key in bookmarks) {
 };
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### loadBookmark {#loadBookmark}
 
 ```js
@@ -73,6 +87,10 @@ AvatarBookmarks.loadBookmark(bookmarkName)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>bookmarkName</code></td><td>string</td><td><p>The name of the avatar bookmark to load (case sensitive).</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### removeBookmark {#removeBookmark}
 
@@ -85,6 +103,10 @@ AvatarBookmarks.removeBookmark(bookmarkName)
 <tr><td><code>bookmarkName</code></td><td>string</td><td><p>The name of the avatar bookmark to delete (case sensitive).</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### saveBookmark {#saveBookmark}
 
 ```js
@@ -96,9 +118,13 @@ AvatarBookmarks.saveBookmark(bookmarkName)
 <tr><td><code>bookmarkName</code></td><td>string</td><td><p>The name of the avatar bookmark (case sensitive).</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### bookmarkAdded {#bookmarkAdded}
 
@@ -112,6 +138,10 @@ AvatarBookmarks.bookmarkAdded.connect(function (bookmarkName) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>bookmarkName</code></td><td>string</td><td><p>The name of the avatar bookmark added or updated.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### bookmarkDeleted {#bookmarkDeleted}
 
@@ -134,6 +164,10 @@ AvatarBookmarks.bookmarkDeleted.connect(function (bookmarkName) {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### bookmarkLoaded {#bookmarkLoaded}
 
 ```js
@@ -147,7 +181,11 @@ AvatarBookmarks.bookmarkLoaded.connect(function (bookmarkName) {
 <tr><td><code>bookmarkName</code></td><td>string</td><td><p>The name of the avatar bookmark loaded.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### BookmarkData {#BookmarkData}
 
@@ -156,14 +194,18 @@ AvatarBookmarks.bookmarkLoaded.connect(function (bookmarkName) {
 <tr><td><code>version</code></td><td>number</td><td><p>The version of the bookmark data format.</p></td></tr>
 <tr><td><code>avatarUrl</code></td><td>string</td><td><p>The URL of the avatar model.</p></td></tr>
 <tr><td><code>avatarScale</code></td><td>number</td><td><p>The target scale of the avatar.</p></td></tr>
-<tr><td><code>avatarEntites</code> <em>optional</em></td><td>Array&lt;Object&lt;&quot;properties&quot;, <a href="Entities#EntityProperties">Entities.EntityProperties</a>&gt;&gt;</td><td><p>The avatar entities included with the bookmark.</p></td></tr>
+<tr><td><code>avatarEntites</code> <em>optional</em></td><td>Array&lt;Object&lt;&quot;properties&quot;, <a href="Entities-types#EntityProperties">Entities.EntityProperties</a>&gt;&gt;</td><td><p>The avatar entities included with the bookmark.</p></td></tr>
 <tr><td><code>attachments</code> <em>optional</em></td><td>Array&lt;<a href="globals#AttachmentData">AttachmentData</a>&gt;</td><td><p>The attachments included with the bookmark. </p>
 <p class="important">Deprecated: Use avatar entities instead.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Deprecated {#deprecated}
 
 Still there for older scripts; new scripts should not use these.
+
+<div class="api-entry">
 
 ### deleteBookmark {#deleteBookmark}
 
@@ -176,6 +218,10 @@ AvatarBookmarks.deleteBookmark()
 :::
 
 <div class="api-text" v-pre><p>Performs no action.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### updateAvatarEntities {#updateAvatarEntities}
 
@@ -191,3 +237,5 @@ AvatarBookmarks.updateAvatarEntities(avatarEntities)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>avatarEntities</code></td><td>Array&lt;<a href="MyAvatar#AvatarEntityData">MyAvatar.AvatarEntityData</a>&gt;</td><td><p>The avatar entity IDs and properties.</p></td></tr>
 </tbody></table></div>
+
+</div>

@@ -6,7 +6,7 @@ draft: true
 
 # Paths
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>Paths</code> API provides absolute paths to the scripts and resources directories.</p></div>
 

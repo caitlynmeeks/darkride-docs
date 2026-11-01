@@ -6,7 +6,7 @@ draft: true
 
 # Controller
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>Controller</code> API provides facilities to interact with computer and controller hardware.</p>
  <h3>Facilities</h3>
@@ -141,6 +141,8 @@ draft: true
 
 ## Functions {#functions}
 
+<div class="api-entry">
+
 ### captureActionEvents {#captureActionEvents}
 
 ```js
@@ -160,6 +162,10 @@ Script.setTimeout(function () {
     Controller.releaseActionEvents();
 }, 10000);
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### captureEntityClickEvents {#captureEntityClickEvents}
 
@@ -184,6 +190,10 @@ Script.setTimeout(function () {
     Controller.releaseEntityClickEvents();
 }, 10000);
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### captureKeyEvents {#captureKeyEvents}
 
@@ -210,6 +220,10 @@ Script.scriptEnding.connect(function () {
     Controller.releaseKeyEvents(STRAFE_RIGHT);
 });
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### captureMouseEvents {#captureMouseEvents}
 
@@ -244,6 +258,10 @@ Script.setTimeout(function () {
 }, 10000);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### captureTouchEvents {#captureTouchEvents}
 
 ```js
@@ -252,6 +270,10 @@ Controller.captureTouchEvents()
 
 <div class="api-text" v-pre><p>Disables processing of touch "begin", "update", and "end" events into <a href="#Hardware">Controller.Hardware.Keyboard</a>, <a href="#Hardware">Controller.Hardware.Touchscreen</a>, and <a href="#Hardware">Controller.Hardware.TouchscreenVirtualPad</a> outputs.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### captureWheelEvents {#captureWheelEvents}
 
 ```js
@@ -259,6 +281,10 @@ Controller.captureWheelEvents()
 ```
 
 <div class="api-text" v-pre><p>Disables processing of mouse wheel rotation events into <a href="#Hardware">Controller.Hardware.Keyboard</a> outputs.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### disableMapping {#disableMapping}
 
@@ -271,6 +297,10 @@ Controller.disableMapping(mappingName)
 <tr><td><code>mappingName</code></td><td>string</td><td><p>The name of the mapping.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### enableMapping {#enableMapping}
 
 ```js
@@ -282,6 +312,10 @@ Controller.enableMapping(mappingName, enable?)
 <tr><td><code>mappingName</code></td><td>string</td><td></td><td><p>The name of the mapping.</p></td></tr>
 <tr><td><code>enable</code> <em>optional</em></td><td>boolean</td><td><code>true</code></td><td><p>If <code>true</code> then the mapping is enabled, otherwise it is disabled.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### findAction {#findAction}
 
@@ -303,6 +337,10 @@ print("Action ID = " + actionID);  // 1
 print("Property value = " + Controller.Actions.TranslateY);  // 537001728 or similar value.
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### findDevice {#findDevice}
 
 ```js
@@ -322,6 +360,10 @@ var deviceID = Controller.findDevice("OculusTouch");
 print("Device ID = " + deviceID);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getActionNames {#getActionNames}
 
 ```js
@@ -339,6 +381,10 @@ print("Action names: " + JSON.stringify(actionNames));
 // ["TranslateX","TranslateY","TranslateZ","Roll", ...
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getActions {#getActions}
 
 ```js
@@ -347,6 +393,10 @@ Controller.getActions()
 
 <div class="api-text" v-pre><p>Gets the <a href="#Actions"><code>Controller.Actions</code></a> property tree. Calling this function is the same as using the <a href=""><code>Controller</code></a> property, <code>Controller.Actions</code>.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="#Actions">Controller.Actions</a> <p>The <a href="#Actions"><code>Controller.Actions</code></a> property tree.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getActionValue {#getActionValue}
 
@@ -371,6 +421,10 @@ function reportValue() {
 reportTimer = Script.setInterval(reportValue, 1000);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getAxisValue {#getAxisValue}
 
 ```js
@@ -382,6 +436,10 @@ Controller.getAxisValue(source)
 <tr><td><code>source</code></td><td>number</td><td><p>The <a href="#Standard"><code>Controller.Standard</code></a> or <a href="#Hardware"><code>Controller.Hardware</code></a> item.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The current value of the controller item output if <code>source</code> is valid, otherwise <code>0</code>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getDeviceName {#getDeviceName}
 
@@ -405,6 +463,10 @@ var deviceName = Controller.getDeviceName(deviceID);
 print("Device name = " + deviceName);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getDeviceNames {#getDeviceNames}
 
 ```js
@@ -422,6 +484,10 @@ print(JSON.stringify(deviceNames));
 // ["Standard","Keyboard","LeapMotion","OculusTouch","Application","Actions"] or similar.
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getHardware {#getHardware}
 
 ```js
@@ -431,6 +497,10 @@ Controller.getHardware()
 <div class="api-text" v-pre><p>Gets the <a href="#Hardware"><code>Controller.Hardware</code></a> property tree. Calling this function is the same as using the <a href=""><code>Controller</code></a> property, <code>Controller.Hardware</code>.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="#Hardware">Controller.Hardware</a> <p>The <a href="#Hardware"><code>Controller.Hardware</code></a> property tree.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getInputRecorderSaveDirectory {#getInputRecorderSaveDirectory}
 
 ```js
@@ -439,6 +509,10 @@ Controller.getInputRecorderSaveDirectory()
 
 <div class="api-text" v-pre><p>Gets the directory in which input recordings are saved.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>The directory in which input recordings are saved.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getPoseValue {#getPoseValue}
 
@@ -452,6 +526,10 @@ Controller.getPoseValue(source)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="globals#Pose">Pose</a> <p>The current value of the controller pose output if <code>source</code> is a pose output, otherwise an invalid pose with <code>Pose.valid == false</code>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getRecommendedHUDRect {#getRecommendedHUDRect}
 
 ```js
@@ -460,6 +538,10 @@ Controller.getRecommendedHUDRect()
 
 <div class="api-text" v-pre><p>Gets the recommended area to position UI on the HUD surface if in HMD mode or Interface's window interior if in desktop mode.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="globals#Rect">Rect</a> <p>The recommended area in which to position UI.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getRunningInputDevices {#getRunningInputDevices}
 
@@ -476,6 +558,10 @@ Controller.getRunningInputDevices()
 print("Running devices: " + JSON.stringify(Controller.getRunningInputDeviceNames()));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getStandard {#getStandard}
 
 ```js
@@ -484,6 +570,10 @@ Controller.getStandard()
 
 <div class="api-text" v-pre><p>Gets the <a href="#Standard"><code>Controller.Standard</code></a> property tree. Calling this function is the same as using the <a href=""><code>Controller</code></a> property, <code>Controller.Standard</code>.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="#Standard">Controller.Standard</a> <p>The <a href="#Standard"><code>Controller.Standard</code></a> property tree.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getValue {#getValue}
 
@@ -511,6 +601,10 @@ if (Controller.Hardware.Vive) {
 }
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getViewportDimensions {#getViewportDimensions}
 
 ```js
@@ -519,6 +613,10 @@ Controller.getViewportDimensions()
 
 <div class="api-text" v-pre><p>Gets the dimensions of the Interface window's interior if in desktop mode or the HUD surface if in HMD mode.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="globals#Vec2">Vec2</a> <p>The dimensions of the Interface window interior if in desktop mode or HUD surface if in HMD mode.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### loadInputRecording {#loadInputRecording}
 
@@ -530,6 +628,10 @@ Controller.loadInputRecording(file)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>file</code></td><td>string</td><td><p>The path to the recording file, prefixed by <code>"file:///"</code>.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### loadMapping {#loadMapping}
 
@@ -543,6 +645,10 @@ Controller.loadMapping(jsonURL)
 <tr><td><code>jsonURL</code></td><td>string</td><td><p>The URL the <a href="#MappingJSON">MappingJSON</a> JSON file.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="MappingObject">MappingObject</a> <p>A controller mapping object.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### newMapping {#newMapping}
 
@@ -569,6 +675,10 @@ Script.scriptEnding.connect(function () {
     Controller.disableMapping(MAPPING_NAME);
 });
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### parseMapping {#parseMapping}
 
@@ -600,6 +710,10 @@ Script.scriptEnding.connect(function () {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### releaseActionEvents {#releaseActionEvents}
 
 ```js
@@ -608,6 +722,10 @@ Controller.releaseActionEvents()
 
 <div class="api-text" v-pre><p>Enables translating and rotating the user's avatar in response to keyboard and controller controls that were disabled using <a href="#captureActionEvents">captureActionEvents</a>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### releaseEntityClickEvents {#releaseEntityClickEvents}
 
 ```js
@@ -615,6 +733,10 @@ Controller.releaseEntityClickEvents()
 ```
 
 <div class="api-text" v-pre><p>Re-enables <a href="Entities#mousePressOnEntity"><code>Entities.mousePressOnEntity</code></a> and <a href="Entities#mouseDoublePressOnEntity"><code>Entities.mouseDoublePressOnEntity</code></a> events on entities that were disabled using <a href="#captureEntityClickEvents">captureEntityClickEvents</a>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### releaseKeyEvents {#releaseKeyEvents}
 
@@ -627,6 +749,10 @@ Controller.releaseKeyEvents(event)
 <tr><td><code>event</code></td><td><a href="globals#KeyEvent">KeyEvent</a></td><td><p>Details of the key event to release from capture. The <code>key</code> property must be specified. The <code>text</code> property is ignored. The other properties default to <code>false</code>.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### releaseMouseEvents {#releaseMouseEvents}
 
 ```js
@@ -634,6 +760,10 @@ Controller.releaseMouseEvents()
 ```
 
 <div class="api-text" v-pre><p>Enables processing of mouse "move", "press", "double-press", and "release" events into <a href="#Hardware-Keyboard">Controller.Hardware.Keyboard</a> outputs that were disabled using <a href="#captureMouseEvents">captureMouseEvents</a>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### releaseTouchEvents {#releaseTouchEvents}
 
@@ -643,6 +773,10 @@ Controller.releaseTouchEvents()
 
 <div class="api-text" v-pre><p>Enables processing of touch "begin", "update", and "end" events into <a href="#Hardware">Controller.Hardware.Keyboard</a>, <a href="#Hardware">Controller.Hardware.Touchscreen</a>, and <a href="#Hardware">Controller.Hardware.TouchscreenVirtualPad</a> outputs that were disabled using <a href="#captureTouchEvents">captureTouchEvents</a>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### releaseWheelEvents {#releaseWheelEvents}
 
 ```js
@@ -651,6 +785,10 @@ Controller.releaseWheelEvents()
 
 <div class="api-text" v-pre><p>Enables processing of mouse wheel rotation events into <a href="#Hardware">Controller.Hardware.Keyboard</a> outputs that wer disabled using <a href="#captureWheelEvents">captureWheelEvents</a>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### saveInputRecording {#saveInputRecording}
 
 ```js
@@ -658,6 +796,10 @@ Controller.saveInputRecording()
 ```
 
 <div class="api-text" v-pre><p>Saves the current recording to a file. The current recording may have been recorded by <a href="#startInputRecording">startInputRecording</a> and <a href="#stopInputRecording">stopInputRecording</a>, or loaded by <a href="#loadInputRecording">loadInputRecording</a>. It is saved in the directory returned by <a href="#getInputRecorderSaveDirectory">getInputRecorderSaveDirectory</a>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setVPadEnabled {#setVPadEnabled}
 
@@ -670,6 +812,10 @@ Controller.setVPadEnabled(enable)
 <tr><td><code>enable</code></td><td>boolean</td><td><p>If <code>true</code> then the virtual game pad doesn't work, otherwise it does work provided that it is not hidden by <a href="#setVPadHidden">setVPadHidden</a>.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setVPadExtraBottomMargin {#setVPadExtraBottomMargin}
 
 ```js
@@ -681,6 +827,10 @@ Controller.setVPadExtraBottomMargin(margin)
 <tr><td><code>margin</code></td><td>number</td><td><p>Integer number of pixels in the extra margin.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setVPadHidden {#setVPadHidden}
 
 ```js
@@ -691,6 +841,10 @@ Controller.setVPadHidden(hidden)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>hidden</code></td><td>boolean</td><td><p>If <code>true</code> then the virtual game pad is hidden, otherwise it is shown.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### startInputPlayback {#startInputPlayback}
 
@@ -716,6 +870,10 @@ if (file !== null) {
     }, 20000);
 }
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### startInputRecording {#startInputRecording}
 
@@ -743,6 +901,10 @@ Script.setTimeout(function () {
 }, 12000);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### stopInputPlayback {#stopInputPlayback}
 
 ```js
@@ -751,6 +913,10 @@ Controller.stopInputPlayback()
 
 <div class="api-text" v-pre><p>Stops play back of a recording started by <a href="#startInputPlayback">startInputPlayback</a>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### stopInputRecording {#stopInputRecording}
 
 ```js
@@ -758,6 +924,10 @@ Controller.stopInputRecording()
 ```
 
 <div class="api-text" v-pre><p>Stops making a recording started by <a href="#startInputRecording">startInputRecording</a>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### triggerHapticPulse {#triggerHapticPulse}
 
@@ -780,6 +950,10 @@ var HAPTIC_DURATION = 10;
 var RIGHT_HAND = 1;
 Controller.triggerHapticPulse(HAPTIC_STRENGTH, HAPTIC_DURATION, RIGHT_HAND);
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### triggerHapticPulseOnDevice {#triggerHapticPulseOnDevice}
 
@@ -805,6 +979,10 @@ var RIGHT_HAND = 1;
 Controller.triggerHapticPulseOnDevice(deviceID, HAPTIC_STRENGTH, HAPTIC_DURATION, RIGHT_HAND);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### triggerShortHapticPulse {#triggerShortHapticPulse}
 
 ```js
@@ -816,6 +994,10 @@ Controller.triggerShortHapticPulse(strength, hand?)
 <tr><td><code>strength</code></td><td>number</td><td></td><td><p>The strength of the haptic pulse, range <code>0.0</code> – <code>1.0</code>.</p></td></tr>
 <tr><td><code>hand</code> <em>optional</em></td><td><a href="#Hand">Controller.Hand</a></td><td><code>2</code></td><td><p>The hand or hands to trigger the haptic pulse on.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### triggerShortHapticPulseOnDevice {#triggerShortHapticPulseOnDevice}
 
@@ -830,9 +1012,13 @@ Controller.triggerShortHapticPulseOnDevice(deviceID, strength, hand?)
 <tr><td><code>hand</code> <em>optional</em></td><td><a href="#Hand">Controller.Hand</a></td><td><code>2</code></td><td><p>The hand or hands to trigger the haptic pulse on.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### actionEvent {#actionEvent}
 
@@ -868,6 +1054,10 @@ Script.scriptEnding.connect(function () {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### hardwareChanged {#hardwareChanged}
 
 ```js
@@ -877,6 +1067,10 @@ Controller.hardwareChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when a device is registered or unregistered by a plugin. Not all plugins generate <code>hardwareChanged</code> events: for example, connecting or disconnecting a mouse will not generate an event but connecting or disconnecting an Xbox controller will.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### inputDeviceRunningChanged {#inputDeviceRunningChanged}
 
@@ -891,6 +1085,10 @@ Controller.inputDeviceRunningChanged.connect(function (deviceName, isRunning) {
 <tr><td><code>deviceName</code></td><td>string</td><td><p>The name of the device.</p></td></tr>
 <tr><td><code>isRunning</code></td><td>boolean</td><td><p><code>true</code> if the device is active and running, <code>false</code> if it isn't.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### inputEvent {#inputEvent}
 
@@ -925,6 +1123,10 @@ Script.scriptEnding.connect(function () {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### keyPressEvent {#keyPressEvent}
 
 ```js
@@ -946,6 +1148,10 @@ Controller.keyPressEvent.connect(function (event) {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### keyReleaseEvent {#keyReleaseEvent}
 
 ```js
@@ -959,6 +1165,10 @@ Controller.keyReleaseEvent.connect(function (event) {
 <tr><td><code>event</code></td><td><a href="globals#KeyEvent">KeyEvent</a></td><td><p>Details of the key release.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### mouseDoublePressEvent {#mouseDoublePressEvent}
 
 ```js
@@ -971,6 +1181,10 @@ Controller.mouseDoublePressEvent.connect(function (event) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>event</code></td><td><a href="globals#MouseEvent">MouseEvent</a></td><td><p>Details of the button double-press.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### mouseMoveEvent {#mouseMoveEvent}
 
@@ -993,6 +1207,10 @@ Controller.mouseMoveEvent.connect(function (event) {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### mousePressEvent {#mousePressEvent}
 
 ```js
@@ -1006,6 +1224,10 @@ Controller.mousePressEvent.connect(function (event) {
 <tr><td><code>event</code></td><td><a href="globals#MouseEvent">MouseEvent</a></td><td><p>Details of the button press.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### mouseReleaseEvent {#mouseReleaseEvent}
 
 ```js
@@ -1018,6 +1240,10 @@ Controller.mouseReleaseEvent.connect(function (event) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>event</code></td><td><a href="globals#MouseEvent">MouseEvent</a></td><td><p>Details of the button release.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### touchBeginEvent {#touchBeginEvent}
 
@@ -1040,6 +1266,10 @@ Controller.touchBeginEvent.connect(function (event) {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### touchEndEvent {#touchEndEvent}
 
 ```js
@@ -1053,6 +1283,10 @@ Controller.touchEndEvent.connect(function (event) {
 <tr><td><code>event</code></td><td><a href="globals#TouchEvent">TouchEvent</a></td><td><p>Details of the touch end.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### touchUpdateEvent {#touchUpdateEvent}
 
 ```js
@@ -1065,6 +1299,10 @@ Controller.touchUpdateEvent.connect(function (event) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>event</code></td><td><a href="globals#TouchEvent">TouchEvent</a></td><td><p>Details of the touch update.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### wheelEvent {#wheelEvent}
 
@@ -1087,7 +1325,11 @@ Controller.wheelEvent.connect(function (event) {
 });
 ```
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### Actions {#Actions}
 
@@ -1253,6 +1495,10 @@ Controller.wheelEvent.connect(function (event) {
  </table>
 <p></p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### Hand {#Hand}
 
 <div class="api-text" v-pre><p>Some controller actions may be associated with one or both hands:</p>
@@ -1264,6 +1510,10 @@ Controller.wheelEvent.connect(function (event) {
  </tbody>
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
+
+</div>
+
+<div class="api-entry">
 
 ### Hardware {#Hardware}
 
@@ -1295,6 +1545,10 @@ function printProperties(string, item) {
 printProperties("Controller.Hardware", Controller.Hardware);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### Hardware-Application {#Hardware-Application}
 
 <div class="api-text" v-pre><p>The <code>Controller.Hardware.Application</code> object has properties representing Interface's state. The property values are integer IDs, uniquely identifying each output. <em>Read-only.</em></p>
@@ -1322,6 +1576,10 @@ printProperties("Controller.Hardware", Controller.Hardware);
  <tr><td><code>PlatformAndroid</code></td><td>number</td><td>number</td><td>The operating system is Android.</td></tr>
  </tbody>
  </table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### Hardware-Keyboard {#Hardware-Keyboard}
 
@@ -1368,6 +1626,10 @@ printProperties("Controller.Hardware", Controller.Hardware);
  </tbody>
  </table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### Hardware-OculusTouch {#Hardware-OculusTouch}
 
 <div class="api-text" v-pre><p>The <code>Controller.Hardware.OculusTouch</code> object has properties representing the Oculus Rift. The property values are integer IDs, uniquely identifying each output. <em>Read-only.</em></p>
@@ -1412,6 +1674,10 @@ printProperties("Controller.Hardware", Controller.Hardware);
  <tr><td><code>RightHand</code></td><td>number</td><td><a href="globals#Pose"><code>Pose</code></a></td><td>right hand pose.</td></tr>
  </tbody>
  </table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### Hardware-Vive {#Hardware-Vive}
 
@@ -1516,6 +1782,10 @@ printProperties("Controller.Hardware", Controller.Hardware);
  </tbody>
  </table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### MappingJSON {#MappingJSON}
 
 <div class="api-text" v-pre><p>A <a href="MappingObject"><code>MappingObject</code></a> can be specified in JSON format. A simple example is provided below. Full examples — the default mappings provided in Interface — can be found at <a href="https://github.com/highfidelity/hifi/tree/master/interface/resources/controllers" target="_blank" rel="noopener"> https://github.com/highfidelity/hifi/tree/master/interface/resources/controllers</a>.</p></div>
@@ -1539,6 +1809,10 @@ printProperties("Controller.Hardware", Controller.Hardware);
 }
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### MappingJSONAxis {#MappingJSONAxis}
 
 <div class="api-text" v-pre><p>An axis pair in a <a href="#MappingJSONRoute"><code>Controller.MappingJSONRoute</code></a>.</p></div>
@@ -1555,6 +1829,10 @@ printProperties("Controller.Hardware", Controller.Hardware);
     ]
 }
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### MappingJSONFilter {#MappingJSONFilter}
 
@@ -1575,6 +1853,10 @@ printProperties("Controller.Hardware", Controller.Hardware);
 }
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### MappingJSONRoute {#MappingJSONRoute}
 
 <div class="api-text" v-pre><p>A route in a <a href="#MappingJSON"><code>Controller.MappingJSON</code></a>.</p></div>
@@ -1586,6 +1868,10 @@ printProperties("Controller.Hardware", Controller.Hardware);
 <tr><td><code>filters</code> <em>optional</em></td><td><a href="#MappingJSONFilter">Controller.MappingJSONFilter</a> | Array&lt;<a href="#MappingJSONFilter">Controller.MappingJSONFilter</a>&gt;</td><td><code>[]</code></td><td><p>One or more filters in the route.</p></td></tr>
 <tr><td><code>to</code></td><td>string</td><td></td><td><p>The name of a <a href="#Actions"><code>Controller.Actions</code></a> or <a href="#Standard"><code>Controller.Standard</code></a> property. The leading <code>"Controller."</code> can be omitted.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### Standard {#Standard}
 
@@ -1748,9 +2034,13 @@ printProperties("Controller.Hardware", Controller.Hardware);
  </table>
 <p></p></div>
 
+</div>
+
 ## Deprecated {#deprecated}
 
 Still there for older scripts; new scripts should not use these.
+
+<div class="api-entry">
 
 ### captureJoystick {#captureJoystick}
 
@@ -1767,6 +2057,10 @@ Controller.captureJoystick(joystickID)
 <tr><td><code>joystickID</code></td><td>number</td><td><p>The integer ID of the joystick.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getAllActions {#getAllActions}
 
 ```js
@@ -1779,6 +2073,10 @@ Controller.getAllActions()
 
 <div class="api-text" v-pre><p>Gets a list of all available actions.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;Action&gt; <p>All available actions.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getAvailableInputs {#getAvailableInputs}
 
@@ -1796,6 +2094,10 @@ Controller.getAvailableInputs(deviceID)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;NamedPair&gt; <p>All available inputs for the device.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### releaseJoystick {#releaseJoystick}
 
 ```js
@@ -1810,6 +2112,10 @@ Controller.releaseJoystick(joystickID)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>joystickID</code></td><td>number</td><td><p>The integer ID of the joystick.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### updateRunningInputDevices {#updateRunningInputDevices}
 
@@ -1826,3 +2132,5 @@ Controller.updateRunningInputDevices(deviceName, isRunning, runningDevices)
 <tr><td><code>isRunning</code></td><td>boolean</td><td><p>Is running.</p></td></tr>
 <tr><td><code>runningDevices</code></td><td>Array&lt;string&gt;</td><td><p>Running devices.</p></td></tr>
 </tbody></table></div>
+
+</div>

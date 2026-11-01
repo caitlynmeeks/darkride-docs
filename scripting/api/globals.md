@@ -11,6 +11,8 @@ Types used across the API, and the few functions that belong to no namespace.
 
 ## Functions {#functions}
 
+<div class="api-entry">
+
 ### atob {#atob}
 
 ```js
@@ -22,6 +24,10 @@ atob(base64)
 <tr><td><code>base64</code></td><td>string</td><td><p>The base64 you want to decode.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>text</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### btoa {#btoa}
 
@@ -35,6 +41,10 @@ btoa(text)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>base64</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### print {#print}
 
 ```js
@@ -47,6 +57,10 @@ print(...message?)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>message</code> <em>optional</em></td><td>*</td><td><p>The message values to print.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### request {#request}
 
@@ -79,7 +93,11 @@ request({
 });
 ```
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### AACube {#AACube}
 
@@ -90,6 +108,10 @@ request({
 <tr><td><code>z</code></td><td>number</td><td><p>Z coordinate of the brn corner of the cube.</p></td></tr>
 <tr><td><code>scale</code></td><td>number</td><td><p>The dimensions of each side of the cube.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### AttachmentData {#AttachmentData}
 
@@ -102,6 +124,10 @@ request({
 <tr><td><code>scale</code></td><td>number</td><td><p>The scale applied to the attachment model.</p></td></tr>
 <tr><td><code>soft</code></td><td>boolean</td><td><p>If <code>true</code> and the model has a skeleton, the bones of the attached model's skeleton are rotated to fit the avatar's current pose. If <code>true</code>, the <code>translation</code>, <code>rotation</code>, and <code>scale</code> parameters are ignored.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### AvatarDataRate {#AvatarDataRate}
 
@@ -141,10 +167,18 @@ request({
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> string</div>
 
+</div>
+
+<div class="api-entry">
+
 ### AvatarEntityMap {#AvatarEntityMap}
 
 <div class="api-text" v-pre><p>An object with the UUIDs of avatar entities as keys and avatar entity properties objects as values.</p></div>
-<div class="api-type" v-pre><strong>Type:</strong> Object&lt;<a href="Uuid">Uuid</a>, <a href="Entities#EntityProperties">Entities.EntityProperties</a>&gt;</div>
+<div class="api-type" v-pre><strong>Type:</strong> Object&lt;<a href="Uuid">Uuid</a>, <a href="Entities-types#EntityProperties">Entities.EntityProperties</a>&gt;</div>
+
+</div>
+
+<div class="api-entry">
 
 ### AvatarSimulationRate {#AvatarSimulationRate}
 
@@ -159,6 +193,10 @@ request({
  </tbody>
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> string</div>
+
+</div>
+
+<div class="api-entry">
 
 ### AvatarUpdateRate {#AvatarUpdateRate}
 
@@ -184,6 +222,10 @@ request({
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> string</div>
 
+</div>
+
+<div class="api-entry">
+
 ### BillboardMode {#BillboardMode}
 
 <div class="api-text" v-pre><p>How an entity is billboarded.</p>
@@ -195,6 +237,10 @@ request({
  </tbody>
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> string</div>
+
+</div>
+
+<div class="api-entry">
 
 ### BoxFace {#BoxFace}
 
@@ -212,6 +258,10 @@ request({
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> string</div>
 
+</div>
+
+<div class="api-entry">
+
 ### Collision {#Collision}
 
 <div class="api-text" v-pre><p>Details of a collision between avatars and entities.</p></div>
@@ -224,6 +274,10 @@ request({
 <tr><td><code>velocityChange</code></td><td><a href="Vec3">Vec3</a></td><td><p>The change in relative velocity of the two items, in m/s.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### CollisionContact {#CollisionContact}
 
 <div class="api-text" v-pre><p>A pair of points that represents part of an overlap between a <code>CollisionPick</code> and an object in the physics engine. Points which are further apart represent deeper overlap.</p></div>
@@ -232,6 +286,10 @@ request({
 <tr><td><code>pointOnObject</code></td><td><a href="Vec3">Vec3</a></td><td><p>A point representing a penetration of the pick's surface into the volume of the object, in world coordinates.</p></td></tr>
 <tr><td><code>normalOnPick</code></td><td><a href="Vec3">Vec3</a></td><td><p>The normal vector pointing away from the pick, representing the direction of collision.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### CollisionMask {#CollisionMask}
 
@@ -248,6 +306,10 @@ request({
  <p>The values for the collision types that are enabled are added together to give the CollisionMask value. For example, a value of <code>31</code> means that an entity will collide with all item types.</p></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
 
+</div>
+
+<div class="api-entry">
+
 ### CollisionPickResult {#CollisionPickResult}
 
 <div class="api-text" v-pre><p>An intersection result for a collision pick.</p></div>
@@ -256,6 +318,10 @@ request({
 <tr><td><code>intersectingObjects</code></td><td>Array&lt;<a href="#IntersectingObject">IntersectingObject</a>&gt;</td><td><p>All objects which intersect with the <code>collisionRegion</code>.</p></td></tr>
 <tr><td><code>collisionRegion</code></td><td><a href="#CollisionRegion">CollisionRegion</a></td><td><p>The collision region that was used. Valid even if there was no intersection.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### CollisionRegion {#CollisionRegion}
 
@@ -268,6 +334,10 @@ request({
 <tr><td><code>threshold</code></td><td>number</td><td></td><td><p>The approximate minimum penetration depth for a test object to be considered in contact with the collision region. The depth is in world coordinates but scales with the parent if defined.</p></td></tr>
 <tr><td><code>collisionGroup</code> <em>optional</em></td><td><a href="#CollisionMask">CollisionMask</a></td><td><code>8</code></td><td><p>The type of objects the collision region collides as. Objects whose collision masks overlap with the region's collision group are considered to be colliding with the region.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### Color {#Color}
 
@@ -293,6 +363,10 @@ Entities.editEntity(<id>, { color: "red"});                                // { 
 Entities.editEntity(<id>, { color: "#00FF00"});                            // { red: 0, green: 255, blue: 0 }
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### ColorFloat {#ColorFloat}
 
 <div class="api-text" v-pre><p>A color vector with real values. Values may also be <code>null</code>. See also the <a href="Vec3">Vec3</a> object.</p></div>
@@ -317,6 +391,10 @@ Entities.editEntity(<id>, { color: "red"});                                // { 
 Entities.editEntity(<id>, { color: "#00FF00"});                            // { red: 0, green: 255, blue: 0 }
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### ContactEventType {#ContactEventType}
 
 <div class="api-text" v-pre><p>The type of a collision contact event.</p>
@@ -328,6 +406,10 @@ Entities.editEntity(<id>, { color: "#00FF00"});                            // { 
  </tbody>
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
+
+</div>
+
+<div class="api-entry">
 
 ### DriveKey {#DriveKey}
 
@@ -350,6 +432,10 @@ Entities.editEntity(<id>, { color: "#00FF00"});                            // { 
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
 
+</div>
+
+<div class="api-entry">
+
 ### FilterFlags {#FilterFlags}
 
 <div class="api-text" v-pre><p>A set of flags for a pick filter. The value is constructed by using the <code>|</code> (bitwise OR) operator on the individual flag values.</p>
@@ -371,6 +457,10 @@ Entities.editEntity(<id>, { color: "#00FF00"});                            // { 
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
 
+</div>
+
+<div class="api-entry">
+
 ### HandState {#HandState}
 
 <div class="api-text" v-pre><p>The pointing state of the hands is specified by the following values:</p>
@@ -385,6 +475,10 @@ Entities.editEntity(<id>, { color: "#00FF00"});                            // { 
  <p>The values for the hand states are added together to give the <code>HandState</code> value. For example, if the left hand's finger is pointing, the value is <code>1 + 4 == 5</code>.</p></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
 
+</div>
+
+<div class="api-entry">
+
 ### IntersectingObject {#IntersectingObject}
 
 <div class="api-text" v-pre><p>Information about a <code>CollisionPick</code>'s intersection with an object.</p></div>
@@ -393,6 +487,10 @@ Entities.editEntity(<id>, { color: "#00FF00"});                            // { 
 <tr><td><code>type</code></td><td><a href="#IntersectionType">IntersectionType</a></td><td><p>The type of the object, either <code>1</code> for INTERSECTED_ENTITY or <code>3</code> for INTERSECTED_AVATAR.</p></td></tr>
 <tr><td><code>collisionContacts</code></td><td>Array&lt;<a href="#CollisionContact">CollisionContact</a>&gt;</td><td><p>Information on the penetration between the pick and the object.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### IntersectionType {#IntersectionType}
 
@@ -408,6 +506,10 @@ Entities.editEntity(<id>, { color: "#00FF00"});                            // { 
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
 
+</div>
+
+<div class="api-entry">
+
 ### KeyboardModifiers {#KeyboardModifiers}
 
 <div class="api-text" v-pre><p>A KeyboardModifiers value is used to specify which modifier keys on the keyboard are pressed. The value is the sum (bitwise OR) of the relevant combination of values from the following table:</p>
@@ -422,6 +524,10 @@ Entities.editEntity(<id>, { color: "#00FF00"});                            // { 
  </tbody>
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
+
+</div>
+
+<div class="api-entry">
 
 ### KeyEvent {#KeyEvent}
 
@@ -445,12 +551,20 @@ Controller.keyPressEvent.connect(function (event) {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### MeshFace {#MeshFace}
 
 <div class="api-text" v-pre><p>A triangle in a mesh.</p></div>
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>vertices</code></td><td>Array&lt;number&gt;</td><td><p>The indexes of the three vertices that make up the fase.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### MouseEvent {#MouseEvent}
 
@@ -476,6 +590,10 @@ Controller.mouseMoveEvent.connect(function (event) {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### ParabolaPickResult {#ParabolaPickResult}
 
 <div class="api-text" v-pre><p>An intersection result for a parabola pick.</p></div>
@@ -491,6 +609,10 @@ Controller.mouseMoveEvent.connect(function (event) {
 <tr><td><code>parabola</code></td><td><a href="#PickParabola">PickParabola</a></td><td><p>The pick parabola that was used. Valid even if there is no intersection.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### PickParabola {#PickParabola}
 
 <div class="api-text" v-pre><p>A parabola defined by a starting point, initial velocity, and acceleration. It is used, for example, when finding entities or avatars that intersect a parabolic beam.</p></div>
@@ -500,6 +622,10 @@ Controller.mouseMoveEvent.connect(function (event) {
 <tr><td><code>acceleration</code></td><td><a href="Vec3">Vec3</a></td><td><p>The acceleration that the parabola experiences in m/s<sup>2</sup>, i.e., the acceleration of a virtual projectile whose trajectory defines the parabola, both magnitude and direction.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### PickRay {#PickRay}
 
 <div class="api-text" v-pre><p>A vector with a starting point. It is used, for example, when finding entities or avatars that lie under a mouse click or intersect a laser beam.</p></div>
@@ -507,6 +633,10 @@ Controller.mouseMoveEvent.connect(function (event) {
 <tr><td><code>origin</code></td><td><a href="Vec3">Vec3</a></td><td><p>The starting position of the ray.</p></td></tr>
 <tr><td><code>direction</code></td><td><a href="Vec3">Vec3</a></td><td><p>The direction that the ray travels.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### PointerEvent {#PointerEvent}
 
@@ -531,6 +661,10 @@ Controller.mouseMoveEvent.connect(function (event) {
 <tr><td><code>keyboardModifiers</code></td><td><a href="#KeyboardModifiers">KeyboardModifiers</a></td><td><p>Integer value with bits set according to which keyboard modifier keys were pressed when the event was generated.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### Pose {#Pose}
 
 <div class="api-text" v-pre><p>The pose of a joint or other item relative to the world or a parent.</p></div>
@@ -541,6 +675,10 @@ Controller.mouseMoveEvent.connect(function (event) {
 <tr><td><code>angularVelocity</code></td><td><a href="Vec3">Vec3</a></td><td><p>Angular velocity in rad/s.</p></td></tr>
 <tr><td><code>valid</code></td><td>boolean</td><td><p><code>true</code> if the pose is valid, otherwise <code>false</code>.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### ProceduralData {#ProceduralData}
 
@@ -553,9 +691,17 @@ Controller.mouseMoveEvent.connect(function (event) {
 <tr><td><code>uniforms</code></td><td><a href="#ProceduralUniforms">ProceduralUniforms</a></td><td><code>{}</code></td><td><p>A <a href="#ProceduralUniforms"><code>ProceduralUniforms</code></a> object containing all the custom uniforms to be passed to the shader.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### ProceduralUniforms {#ProceduralUniforms}
 
 <div class="api-text" v-pre><p>An object containing user-defined uniforms for communicating data to shaders.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### RayPickResult {#RayPickResult}
 
@@ -571,6 +717,10 @@ Controller.mouseMoveEvent.connect(function (event) {
 <tr><td><code>searchRay</code></td><td><a href="#PickRay">PickRay</a></td><td><p>The pick ray that was used. Valid even if there is no intersection.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### RayToAvatarIntersectionResult {#RayToAvatarIntersectionResult}
 
 <div class="api-text" v-pre><p>Information about a ray-to-avatar intersection.</p></div>
@@ -585,6 +735,10 @@ Controller.mouseMoveEvent.connect(function (event) {
 <tr><td><code>extraInfo</code></td><td><a href="#SubmeshIntersection">SubmeshIntersection</a></td><td><p>Extra information on the mesh intersected if mesh was picked against, <code>{}</code> if it wasn't.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### Rect {#Rect}
 
 <div class="api-text" v-pre><p>Defines a rectangular portion of an image or screen, or similar.</p></div>
@@ -594,6 +748,10 @@ Controller.mouseMoveEvent.connect(function (event) {
 <tr><td><code>width</code></td><td>number</td><td><p>Width of the rectangle.</p></td></tr>
 <tr><td><code>height</code></td><td>number</td><td><p>Height of the rectangle.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### RefreshRateProfileName {#RefreshRateProfileName}
 
@@ -607,6 +765,10 @@ Controller.mouseMoveEvent.connect(function (event) {
  </tbody>
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> string</div>
+
+</div>
+
+<div class="api-entry">
 
 ### RefreshRateRegime {#RefreshRateRegime}
 
@@ -623,6 +785,10 @@ Controller.mouseMoveEvent.connect(function (event) {
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
 
+</div>
+
+<div class="api-entry">
+
 ### RefreshRateRegimeName {#RefreshRateRegimeName}
 
 <div class="api-text" v-pre><p>Interface states that affect the refresh rate.</p>
@@ -638,6 +804,10 @@ Controller.mouseMoveEvent.connect(function (event) {
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> string</div>
 
+</div>
+
+<div class="api-entry">
+
 ### RequestCallback {#RequestCallback}
 
 <div class="api-text" v-pre><p>Callback for the <a href="#request"><code>request</code></a> function.</p></div>
@@ -647,6 +817,10 @@ Controller.mouseMoveEvent.connect(function (event) {
 <tr><td><code>response</code></td><td><a href="#RequestResponse">RequestResponse</a></td><td></td></tr>
 <tr><td><code>body</code></td><td>string | Object</td><td><p>Returns the response body or object if <code>json</code> was enabled in the request options.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### RequestOptions {#RequestOptions}
 
@@ -660,6 +834,10 @@ Controller.mouseMoveEvent.connect(function (event) {
 <tr><td><code>headers</code> <em>optional</em></td><td>Object&lt;string, string&gt;</td><td><p>Object of headers to send.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### RequestResponse {#RequestResponse}
 
 <div class="api-text" v-pre><p>Response for the <a href="#request"><code>request</code></a> function.</p></div>
@@ -667,6 +845,10 @@ Controller.mouseMoveEvent.connect(function (event) {
 <tr><td><code>statusCode</code></td><td>number</td><td><p>Find <a href="https://www.restapitutorial.com/httpstatuscodes.html" target="_blank" rel="noopener">all HTTP status codes here</a>.</p></td></tr>
 <tr><td><code>headers</code></td><td>Object&lt;string, string&gt;</td><td><p>Reponse headers where each key is lowercase, e.g. <code>headers["content-type"]</code>.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### RGBS {#RGBS}
 
@@ -681,6 +863,10 @@ Controller.mouseMoveEvent.connect(function (event) {
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> array</div>
 
+</div>
+
+<div class="api-entry">
+
 ### Shape {#Shape}
 
 <div class="api-text" v-pre><p>A physical volume.</p></div>
@@ -689,6 +875,10 @@ Controller.mouseMoveEvent.connect(function (event) {
 <tr><td><code>modelUrl</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>The model to load to for the shape if <code>shapeType</code> is one of <code>"compound"</code>, <code>"simple-hull"</code>, <code>"simple-compound"</code>, or <code>"static-mesh"</code>.</p></td></tr>
 <tr><td><code>dimensions</code></td><td><a href="Vec3">Vec3</a></td><td></td><td><p>The dimensions of the shape.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### ShapeType {#ShapeType}
 
@@ -717,6 +907,10 @@ Controller.mouseMoveEvent.connect(function (event) {
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> string</div>
 
+</div>
+
+<div class="api-entry">
+
 ### Size {#Size}
 
 <div class="api-text" v-pre><p>A 2D size value.</p></div>
@@ -724,6 +918,10 @@ Controller.mouseMoveEvent.connect(function (event) {
 <tr><td><code>height</code></td><td>number</td><td><p>The height value.</p></td></tr>
 <tr><td><code>width</code></td><td>number</td><td><p>The width value.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### SkeletonJoint {#SkeletonJoint}
 
@@ -733,6 +931,10 @@ Controller.mouseMoveEvent.connect(function (event) {
 <tr><td><code>index</code></td><td>number</td><td><p>Joint index.</p></td></tr>
 <tr><td><code>parentIndex</code></td><td>number</td><td><p>Index of this joint's parent (-1 if no parent).</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### StylusPickResult {#StylusPickResult}
 
@@ -747,6 +949,10 @@ Controller.mouseMoveEvent.connect(function (event) {
 <tr><td><code>stylusTip</code></td><td><a href="#StylusTip">StylusTip</a></td><td><p>The stylus tip at the time of the result. Valid even if there is no intersection.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### StylusTip {#StylusTip}
 
 <div class="api-text" v-pre><p>The tip of a stylus.</p></div>
@@ -757,6 +963,10 @@ Controller.mouseMoveEvent.connect(function (event) {
 <tr><td><code>orientation</code></td><td><a href="Quat">Quat</a></td><td><p>The orientation of the stylus.</p></td></tr>
 <tr><td><code>velocity</code></td><td><a href="Vec3">Vec3</a></td><td><p>The velocity of the stylus tip.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### SubmeshIntersection {#SubmeshIntersection}
 
@@ -772,6 +982,10 @@ Controller.mouseMoveEvent.connect(function (event) {
 <tr><td><code>subMeshNormal</code></td><td><a href="Vec3">Vec3</a></td><td><p>The normal of the intersected mesh part triangle in model coordinates.</p></td></tr>
 <tr><td><code>subMeshTriangle</code></td><td><a href="#Triangle">Triangle</a></td><td><p>The vertices of the intersected mesh part triangle in model coordinates.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### TouchEvent {#TouchEvent}
 
@@ -807,6 +1021,10 @@ Controller.touchBeginEvent.connect(function (event) {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### Triangle {#Triangle}
 
 <div class="api-text" v-pre><p>A triangle in a mesh.</p></div>
@@ -815,6 +1033,10 @@ Controller.touchBeginEvent.connect(function (event) {
 <tr><td><code>v1</code></td><td><a href="Vec3">Vec3</a></td><td><p>The position of vertex 1 in the triangle.</p></td></tr>
 <tr><td><code>v2</code></td><td><a href="Vec3">Vec3</a></td><td><p>The position of vertex 2 in the triangle.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### UXMode {#UXMode}
 
@@ -827,6 +1049,10 @@ Controller.touchBeginEvent.connect(function (event) {
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
 
+</div>
+
+<div class="api-entry">
+
 ### UXModeName {#UXModeName}
 
 <div class="api-text" v-pre><p>User experience (UX) modes.</p>
@@ -837,6 +1063,10 @@ Controller.touchBeginEvent.connect(function (event) {
  </tbody>
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> string</div>
+
+</div>
+
+<div class="api-entry">
 
 ### Vec2 {#Vec2}
 
@@ -857,6 +1087,10 @@ var color = Entities.getEntityProperties(<id>).materialMappingPos;             /
 color.v = 0.8;                                                                 // { x: 0.7, y: 0.8 }
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### Vec4 {#Vec4}
 
 <div class="api-text" v-pre><p>A 4-dimensional vector.</p></div>
@@ -866,6 +1100,10 @@ color.v = 0.8;                                                                 /
 <tr><td><code>z</code></td><td>number</td><td><p>Z-coordinate of the vector.</p></td></tr>
 <tr><td><code>w</code></td><td>number</td><td><p>W-coordinate of the vector.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### ViewFrustum {#ViewFrustum}
 
@@ -879,6 +1117,10 @@ color.v = 0.8;                                                                 /
 <tr><td><code>projection</code></td><td><a href="Mat4">Mat4</a></td><td><p>The projection matrix for the view defined by the frustum.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### WebInputMode {#WebInputMode}
 
 <div class="api-text" v-pre><p>Specifies how a web surface processes events.</p>
@@ -890,6 +1132,10 @@ color.v = 0.8;                                                                 /
  </tbody>
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> string</div>
+
+</div>
+
+<div class="api-entry">
 
 ### WheelEvent {#WheelEvent}
 
@@ -915,3 +1161,5 @@ Controller.wheelEvent.connect(function (event) {
     print(JSON.stringify(event));
 });
 ```
+
+</div>

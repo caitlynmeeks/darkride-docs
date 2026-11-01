@@ -6,11 +6,13 @@ draft: true
 
 # DebugDraw
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts, server entity scripts, assignment client scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts, server entity scripts, agents.</div>
 
 <div class="api-text" v-pre><p>The <code>DebugDraw</code> API renders debug markers and lines. These markers are only visible locally; they are not visible to other users.</p></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### addMarker {#addMarker}
 
@@ -43,6 +45,10 @@ Script.setTimeout(function () {
 }, 5000);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### addMyAvatarMarker {#addMyAvatarMarker}
 
 ```js
@@ -74,6 +80,10 @@ Script.setTimeout(function () {
 }, 5000);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### drawRay {#drawRay}
 
 ```js
@@ -98,6 +108,10 @@ Script.update.connect(function () {
     DebugDraw.drawRay(start, end, color);
 });
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### drawRays {#drawRays}
 
@@ -130,6 +144,10 @@ Script.update.connect(function () {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### removeMarker {#removeMarker}
 
 ```js
@@ -141,6 +159,10 @@ DebugDraw.removeMarker(key)
 <tr><td><code>key</code></td><td>string</td><td><p>The name of the world coordinates debug marker to remove.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### removeMyAvatarMarker {#removeMyAvatarMarker}
 
 ```js
@@ -151,3 +173,5 @@ DebugDraw.removeMyAvatarMarker(key)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>key</code></td><td>string</td><td><p>The name of the avatar coordinates debug marker to remove.</p></td></tr>
 </tbody></table></div>
+
+</div>

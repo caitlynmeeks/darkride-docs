@@ -6,7 +6,7 @@ draft: true
 
 # Picks
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>Picks</code> API lets you create and manage objects for repeatedly calculating intersections.</p></div>
 
@@ -18,7 +18,7 @@ draft: true
 <tr><td><code>PICK_LOCAL_ENTITIES</code></td><td><a href="globals#FilterFlags">FilterFlags</a></td><td><p>Include local entities when intersecting. <em>Read-only.</em></p></td></tr>
 <tr><td><code>PICK_AVATARS</code></td><td><a href="globals#FilterFlags">FilterFlags</a></td><td><p>Include avatars when intersecting. <em>Read-only.</em></p></td></tr>
 <tr><td><code>PICK_HUD</code></td><td><a href="globals#FilterFlags">FilterFlags</a></td><td><p>Include the HUD surface when intersecting in HMD mode. <em>Read-only.</em></p></td></tr>
-<tr><td><code>PICK_ENTITIES</code></td><td><a href="globals#FilterFlags">FilterFlags</a></td><td><p>Include domain and avatar entities when intersecting. <em>Read-only.</em> </p>
+<tr><td><code>PICK_ENTITIES</code></td><td><a href="globals#FilterFlags">FilterFlags</a></td><td><p>Include world and avatar entities when intersecting. <em>Read-only.</em> </p>
 <p class="important">Deprecated: This property is deprecated and will be removed. Use <code>PICK_DOMAIN_ENTITIES | PICK_AVATAR_ENTITIES</code> instead.</p>
 <p></p></td></tr>
 <tr><td><code>PICK_OVERLAYS</code></td><td><a href="globals#FilterFlags">FilterFlags</a></td><td><p>Include local entities when intersecting. <em>Read-only.</em> </p>
@@ -51,6 +51,8 @@ draft: true
 
 ## Functions {#functions}
 
+<div class="api-entry">
+
 ### createPick {#createPick}
 
 ```js
@@ -66,6 +68,10 @@ Picks.createPick(type, properties)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The ID of the pick created. <code>0</code> if invalid.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### disablePick {#disablePick}
 
 ```js
@@ -77,6 +83,10 @@ Picks.disablePick(id)
 <tr><td><code>id</code></td><td>number</td><td><p>The ID of the pick.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### enablePick {#enablePick}
 
 ```js
@@ -87,6 +97,10 @@ Picks.enablePick(id)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>id</code></td><td>number</td><td><p>The ID of the pick.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getPickProperties {#getPickProperties}
 
@@ -100,6 +114,10 @@ Picks.getPickProperties(id)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="#RayPickProperties">Picks.RayPickProperties</a> | <a href="#ParabolaPickProperties">Picks.ParabolaPickProperties</a> | <a href="#StylusPickProperties">Picks.StylusPickProperties</a> | <a href="#CollisionPickProperties">Picks.CollisionPickProperties</a> <p>Properties of the pick, per the pick <code>type</code>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getPicks {#getPicks}
 
 ```js
@@ -108,6 +126,10 @@ Picks.getPicks()
 
 <div class="api-text" v-pre><p>Gets all picks which currently exist, including disabled picks.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;number&gt; <p>picks - The IDs of the picks.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getPickScriptParameters {#getPickScriptParameters}
 
@@ -120,6 +142,10 @@ Picks.getPickScriptParameters(id)
 <tr><td><code>id</code></td><td>number</td><td><p>The ID of the pick.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="#RayPickProperties">Picks.RayPickProperties</a> | <a href="#ParabolaPickProperties">Picks.ParabolaPickProperties</a> | <a href="#StylusPickProperties">Picks.StylusPickProperties</a> | <a href="#CollisionPickProperties">Picks.CollisionPickProperties</a> <p>Script-provided properties, per the pick <code>type</code>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getPrevPickResult {#getPrevPickResult}
 
@@ -180,6 +206,10 @@ Script.scriptEnding.connect(function () {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### isLeftHand {#isLeftHand}
 
 ```js
@@ -191,6 +221,10 @@ Picks.isLeftHand(id)
 <tr><td><code>id</code></td><td>number</td><td><p>The ID of the pick.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the pick is associated with the left hand, <code>false</code> if it isn't.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### isMouse {#isMouse}
 
@@ -204,6 +238,10 @@ Picks.isMouse(id)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the pick is associated with the system mouse, <code>false</code> if it isn't.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### isPickEnabled {#isPickEnabled}
 
 ```js
@@ -215,6 +253,10 @@ Picks.isPickEnabled(id)
 <tr><td><code>id</code></td><td>number</td><td><p>The ID of the pick.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p>enabled - Whether or not the pick is enabled.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### isRightHand {#isRightHand}
 
@@ -228,6 +270,10 @@ Picks.isRightHand(id)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the pick is associated with the right hand, <code>false</code> if it isn't.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### removePick {#removePick}
 
 ```js
@@ -238,6 +284,10 @@ Picks.removePick(id)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>id</code></td><td>number</td><td><p>The ID of the pick.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setIgnoreItems {#setIgnoreItems}
 
@@ -253,6 +303,10 @@ Picks.setIgnoreItems(id, ignoreItems)
 <tr><td><code>ignoreItems</code></td><td>Array&lt;<a href="Uuid">Uuid</a>&gt;</td><td><p>The list of IDs to ignore.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setIncludeItems {#setIncludeItems}
 
 ```js
@@ -267,6 +321,10 @@ Picks.setIncludeItems(id, includeItems)
 <tr><td><code>includeItems</code></td><td>Array&lt;<a href="Uuid">Uuid</a>&gt;</td><td><p>The list of IDs to include.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setPrecisionPicking {#setPrecisionPicking}
 
 ```js
@@ -279,7 +337,11 @@ Picks.setPrecisionPicking(id, precisionPicking)
 <tr><td><code>precisionPicking</code></td><td>boolean</td><td><p><code>true</code> to use precision picking, <code>false</code> to use coarse picking.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### CollisionPickProperties {#CollisionPickProperties}
 
@@ -306,6 +368,10 @@ Picks.setPrecisionPicking(id, precisionPicking)
 <tr><td><code>pickType</code></td><td><a href="PickType">PickType</a></td><td></td><td><p>The type of pick when getting these properties from <a href="#getPickProperties"><code>Picks.getPickProperties</code></a> or <a href="#getPickScriptParameters"><code>Picks.getPickScriptParameters</code></a>. A collision pick's type is <a href="PickType#properties"><code>PickType.Collision</code></a>.</p></td></tr>
 <tr><td><code>baseScale</code></td><td><a href="Vec3">Vec3</a></td><td></td><td><p>Returned from <a href="#getPickProperties"><code>Picks.getPickProperties</code></a> when the pick has a parent with varying scale (usually an avatar or an entity). Its value is the original scale of the parent at the moment the pick was created, and is used to rescale the pick, and/or the pointer which owns this pick, if any.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### ParabolaPickProperties {#ParabolaPickProperties}
 
@@ -340,6 +406,10 @@ Picks.setPrecisionPicking(id, precisionPicking)
 <tr><td><code>baseScale</code></td><td><a href="Vec3">Vec3</a></td><td></td><td><p>Returned from <a href="#getPickProperties"><code>Picks.getPickProperties</code></a> when the pick has a parent with varying scale (usually an avatar or an entity). Its value is the original scale of the parent at the moment the pick was created, and is used to rescale the pick and the pointer which owns this pick, if any.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### RayPickProperties {#RayPickProperties}
 
 <div class="api-text" v-pre><p>The properties of a ray pick.</p></div>
@@ -366,6 +436,10 @@ Picks.setPrecisionPicking(id, precisionPicking)
 <tr><td><code>baseScale</code></td><td><a href="Vec3">Vec3</a></td><td></td><td><p>Returned from <a href="#getPickProperties"><code>Picks.getPickProperties</code></a> when the pick has a parent with varying scale (usually an avatar or an entity). Its value is the original scale of the parent at the moment the pick was created, and is used to scale the pointer which owns this pick, if any.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### StylusPickProperties {#StylusPickProperties}
 
 <div class="api-text" v-pre><p>The properties of a stylus pick.</p></div>
@@ -380,9 +454,13 @@ Picks.setPrecisionPicking(id, precisionPicking)
 <tr><td><code>pickType</code></td><td><a href="PickType">PickType</a></td><td></td><td><p>The type of pick when getting these properties from <a href="#getPickProperties"><code>Picks.getPickProperties</code></a> or <a href="#getPickScriptParameters"><code>Picks.getPickScriptParameters</code></a>. A stylus pick's type is <a href="PickType#properties"><code>PickType.Stylus</code></a>.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Deprecated {#deprecated}
 
 Still there for older scripts; new scripts should not use these.
+
+<div class="api-entry">
 
 ### INTERSECTED_AVATAR {#INTERSECTED_AVATAR}
 
@@ -396,6 +474,10 @@ Picks.INTERSECTED_AVATAR()
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
 
+</div>
+
+<div class="api-entry">
+
 ### INTERSECTED_ENTITY {#INTERSECTED_ENTITY}
 
 ```js
@@ -407,6 +489,10 @@ Picks.INTERSECTED_ENTITY()
 :::
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
+
+</div>
+
+<div class="api-entry">
 
 ### INTERSECTED_HUD {#INTERSECTED_HUD}
 
@@ -420,6 +506,10 @@ Picks.INTERSECTED_HUD()
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
 
+</div>
+
+<div class="api-entry">
+
 ### INTERSECTED_LOCAL_ENTITY {#INTERSECTED_LOCAL_ENTITY}
 
 ```js
@@ -431,6 +521,10 @@ Picks.INTERSECTED_LOCAL_ENTITY()
 :::
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
+
+</div>
+
+<div class="api-entry">
 
 ### INTERSECTED_NONE {#INTERSECTED_NONE}
 
@@ -444,6 +538,10 @@ Picks.INTERSECTED_NONE()
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
 
+</div>
+
+<div class="api-entry">
+
 ### INTERSECTED_OVERLAY {#INTERSECTED_OVERLAY}
 
 ```js
@@ -455,6 +553,10 @@ Picks.INTERSECTED_OVERLAY()
 :::
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
+
+</div>
+
+<div class="api-entry">
 
 ### PICK_ALL_INTERSECTIONS {#PICK_ALL_INTERSECTIONS}
 
@@ -468,6 +570,10 @@ Picks.PICK_ALL_INTERSECTIONS()
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
 
+</div>
+
+<div class="api-entry">
+
 ### PICK_AVATAR_ENTITIES {#PICK_AVATAR_ENTITIES}
 
 ```js
@@ -479,6 +585,10 @@ Picks.PICK_AVATAR_ENTITIES()
 :::
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
+
+</div>
+
+<div class="api-entry">
 
 ### PICK_AVATARS {#PICK_AVATARS}
 
@@ -492,6 +602,10 @@ Picks.PICK_AVATARS()
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
 
+</div>
+
+<div class="api-entry">
+
 ### PICK_COARSE {#PICK_COARSE}
 
 ```js
@@ -503,6 +617,10 @@ Picks.PICK_COARSE()
 :::
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
+
+</div>
+
+<div class="api-entry">
 
 ### PICK_DOMAIN_ENTITIES {#PICK_DOMAIN_ENTITIES}
 
@@ -516,6 +634,10 @@ Picks.PICK_DOMAIN_ENTITIES()
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
 
+</div>
+
+<div class="api-entry">
+
 ### PICK_ENTITIES {#PICK_ENTITIES}
 
 ```js
@@ -527,6 +649,10 @@ Picks.PICK_ENTITIES()
 :::
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
+
+</div>
+
+<div class="api-entry">
 
 ### PICK_HUD {#PICK_HUD}
 
@@ -540,6 +666,10 @@ Picks.PICK_HUD()
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
 
+</div>
+
+<div class="api-entry">
+
 ### PICK_INCLUDE_COLLIDABLE {#PICK_INCLUDE_COLLIDABLE}
 
 ```js
@@ -551,6 +681,10 @@ Picks.PICK_INCLUDE_COLLIDABLE()
 :::
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
+
+</div>
+
+<div class="api-entry">
 
 ### PICK_INCLUDE_INVISIBLE {#PICK_INCLUDE_INVISIBLE}
 
@@ -564,6 +698,10 @@ Picks.PICK_INCLUDE_INVISIBLE()
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
 
+</div>
+
+<div class="api-entry">
+
 ### PICK_INCLUDE_NONCOLLIDABLE {#PICK_INCLUDE_NONCOLLIDABLE}
 
 ```js
@@ -575,6 +713,10 @@ Picks.PICK_INCLUDE_NONCOLLIDABLE()
 :::
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
+
+</div>
+
+<div class="api-entry">
 
 ### PICK_INCLUDE_VISIBLE {#PICK_INCLUDE_VISIBLE}
 
@@ -588,6 +730,10 @@ Picks.PICK_INCLUDE_VISIBLE()
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
 
+</div>
+
+<div class="api-entry">
+
 ### PICK_LOCAL_ENTITIES {#PICK_LOCAL_ENTITIES}
 
 ```js
@@ -599,6 +745,10 @@ Picks.PICK_LOCAL_ENTITIES()
 :::
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
+
+</div>
+
+<div class="api-entry">
 
 ### PICK_OVERLAYS {#PICK_OVERLAYS}
 
@@ -612,6 +762,10 @@ Picks.PICK_OVERLAYS()
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
 
+</div>
+
+<div class="api-entry">
+
 ### PICK_PRECISE {#PICK_PRECISE}
 
 ```js
@@ -623,3 +777,5 @@ Picks.PICK_PRECISE()
 :::
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
+
+</div>

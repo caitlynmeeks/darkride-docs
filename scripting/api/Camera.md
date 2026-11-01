@@ -6,7 +6,7 @@ draft: true
 
 # Camera
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>Camera</code> API provides access to the "camera" that defines your view in desktop and HMD display modes. Darkride's camera has axes <code>x</code> = right, <code>y</code> = up, <code>-z</code> = forward.</p></div>
 
@@ -26,6 +26,8 @@ draft: true
 
 ## Functions {#functions}
 
+<div class="api-entry">
+
 ### clearChaseTarget {#clearChaseTarget}
 
 ```js
@@ -33,6 +35,10 @@ Camera.clearChaseTarget()
 ```
 
 <div class="api-text" v-pre><p>Ends the chase camera that <a href="#setChaseTarget">setChaseTarget</a> started; the camera stays where it is.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### collideBoom {#collideBoom}
 
@@ -55,6 +61,10 @@ var length = Vec3.distance(pivot, wanted);
 var allowed = Camera.collideBoom(pivot, wanted, [vehicleID]);
 Camera.position = Vec3.sum(pivot, Vec3.multiply(allowed / length, Vec3.subtract(wanted, pivot)));
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### computePickRay {#computePickRay}
 
@@ -83,6 +93,10 @@ function onMousePressEvent(event) {
 Controller.mousePressEvent.connect(onMousePressEvent);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getDisableLookAt {#getDisableLookAt}
 
 ```js
@@ -91,6 +105,10 @@ Camera.getDisableLookAt()
 
 <div class="api-text" v-pre><p>Gets whether "look at" is disabled which will make the camera rotate with the avatar's orientation.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean </div>
+
+</div>
+
+<div class="api-entry">
 
 ### getModeString {#getModeString}
 
@@ -101,6 +119,10 @@ Camera.getModeString()
 <div class="api-text" v-pre><p>Gets the current camera mode. You can also get the mode using the <a href="">Camera.mode</a> property.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="#Mode">Camera.Mode</a> <p>The current camera mode.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getOrientation {#getOrientation}
 
 ```js
@@ -110,6 +132,10 @@ Camera.getOrientation()
 <div class="api-text" v-pre><p>Gets the current camera orientation. You can also get the orientation using the <a href="">Camera.orientation</a> property.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Quat">Quat</a> <p>The current camera orientation.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getPosition {#getPosition}
 
 ```js
@@ -118,6 +144,10 @@ Camera.getPosition()
 
 <div class="api-text" v-pre><p>Gets the current camera position. You can also get the position using the <a href="">Camera.position</a> property.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p>The current camera position.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### keepLookingAt {#keepLookingAt}
 
@@ -129,6 +159,10 @@ Camera.keepLookingAt(position)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>position</code></td><td><a href="Vec3">Vec3</a></td><td><p>The position to keep looking at.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### lookAt {#lookAt}
 
@@ -159,6 +193,10 @@ function onMousePressEvent(event) {
 Controller.mousePressEvent.connect(onMousePressEvent);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### setChaseTarget {#setChaseTarget}
 
 ```js
@@ -178,6 +216,10 @@ Camera.mode = "independent";
 Camera.setChaseTarget(vehicleID, { back: 3.2, up: 1.5, rate: 9 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### setDisableLookAt {#setDisableLookAt}
 
 ```js
@@ -188,6 +230,10 @@ Camera.setDisableLookAt(disabled)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>disabled</code></td><td>boolean</td><td><p>-</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setModeString {#setModeString}
 
@@ -200,6 +246,10 @@ Camera.setModeString(mode)
 <tr><td><code>mode</code></td><td><a href="#Mode">Camera.Mode</a></td><td><p>The mode to set the camera to.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setOrientation {#setOrientation}
 
 ```js
@@ -210,6 +260,10 @@ Camera.setOrientation(orientation)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>orientation</code></td><td><a href="Quat">Quat</a></td><td><p>The orientation to set the camera to.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setPosition {#setPosition}
 
@@ -222,6 +276,10 @@ Camera.setPosition(position)
 <tr><td><code>position</code></td><td><a href="Vec3">Vec3</a></td><td><p>The position to set the camera at.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### stopLookingAt {#stopLookingAt}
 
 ```js
@@ -230,9 +288,13 @@ Camera.stopLookingAt()
 
 <div class="api-text" v-pre><p>Stops the camera from continually looking at the position that was set with <a href="#keepLookingAt"><code>Camera.keepLookingAt</code></a>.</p></div>
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### modeUpdated {#modeUpdated}
 
@@ -257,7 +319,11 @@ function onCameraModeUpdated(newMode) {
 Camera.modeUpdated.connect(onCameraModeUpdated);
 ```
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### Mode {#Mode}
 
@@ -290,9 +356,13 @@ Camera.modeUpdated.connect(onCameraModeUpdated);
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> string</div>
 
+</div>
+
 ## Deprecated {#deprecated}
 
 Still there for older scripts; new scripts should not use these.
+
+<div class="api-entry">
 
 ### getCameraEntity {#getCameraEntity}
 
@@ -306,6 +376,10 @@ Camera.getCameraEntity()
 
 <div class="api-text" v-pre><p>Gets the ID of the entity that the camera is set to follow (i.e., use the position and orientation from) when it's in entity mode. You can also get the entity ID using the <a href="">Camera.cameraEntity</a> property.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Uuid">Uuid</a> <p>The ID of the entity that the camera is set to follow when in entity mode; <code>null</code> if no camera entity has been set.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setCameraEntity {#setCameraEntity}
 
@@ -329,3 +403,5 @@ Camera.setModeString("entity");
 var entity = Entities.findClosestEntity(MyAvatar.position, 100.0);
 Camera.setCameraEntity(entity);
 ```
+
+</div>

@@ -6,7 +6,7 @@ draft: true
 
 # About
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>About</code> API provides information about the version of Interface that is currently running. It also has the functionality to open a web page in an Interface browser window.</p></div>
 

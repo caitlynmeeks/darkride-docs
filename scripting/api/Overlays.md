@@ -6,19 +6,21 @@ draft: true
 
 # Overlays
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
-<div class="api-text" v-pre><p>The <code>Overlays</code> API provides facilities to create and interact with overlays. These are 2D and 3D objects visible only to yourself and that aren't persisted to the domain. They are used for UI.</p>
+<div class="api-text" v-pre><p>The <code>Overlays</code> API provides facilities to create and interact with overlays. These are 2D and 3D objects visible only to yourself and that aren't persisted to the world. They are used for UI.</p>
  <p><strong>Note:</strong> 3D overlays are local <a href="Entities"><code>Entities</code></a>, internally, so many of the methods also work with entities.</p>
  <p class="important">3D overlays are deprecated: Use local <a href="Entities"><code>Entities</code></a> for these instead.</p></div>
 
 ## Properties {#properties}
 
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>keyboardFocusOverlay</code></td><td><a href="Uuid">Uuid</a></td><td><p>The <code><a href="#OverlayProperties-Web3D">"web3d"</a></code> overlay (<a href="Entities#EntityProperties-Web">Web</a> entity) that has keyboard focus. If no overlay (entity) has keyboard focus, returns <code>null</code>; set to <code>null</code> or <a href="Uuid">Uuid.NULL</a> to clear keyboard focus.</p></td></tr>
+<tr><td><code>keyboardFocusOverlay</code></td><td><a href="Uuid">Uuid</a></td><td><p>The <code><a href="#OverlayProperties-Web3D">"web3d"</a></code> overlay (<a href="Entities-types#EntityProperties-Web">Web</a> entity) that has keyboard focus. If no overlay (entity) has keyboard focus, returns <code>null</code>; set to <code>null</code> or <a href="Uuid">Uuid.NULL</a> to clear keyboard focus.</p></td></tr>
 </tbody></table></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### addOverlay {#addOverlay}
 
@@ -44,6 +46,10 @@ var overlay = Overlays.addOverlay("cube", {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### cloneOverlay {#cloneOverlay}
 
 ```js
@@ -58,6 +64,10 @@ Overlays.cloneOverlay(id)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Uuid">Uuid</a> <p>The ID of the new overlay (or entity) if successful, otherwise <a href="Uuid">Uuid.NULL</a>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### deleteOverlay {#deleteOverlay}
 
 ```js
@@ -68,6 +78,10 @@ Overlays.deleteOverlay(id)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>id</code></td><td><a href="Uuid">Uuid</a></td><td><p>The ID of the overlay (or entity) to delete.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### editOverlay {#editOverlay}
 
@@ -97,6 +111,10 @@ var success = Overlays.editOverlay(overlay, {
 });
 print("Success: " + success);
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### editOverlays {#editOverlays}
 
@@ -133,6 +151,10 @@ var success = Overlays.editOverlays(overlayEdits);
 print("Success: " + success);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### findOverlays {#findOverlays}
 
 ```js
@@ -168,6 +190,10 @@ var overlaysFound = Overlays.findOverlays(MyAvatar.position, 5.0);
 print("Overlays found: " + JSON.stringify(overlaysFound));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### findRayIntersection {#findRayIntersection}
 
 ```js
@@ -181,7 +207,7 @@ Overlays.findRayIntersection(pickRay, precisionPicking?, include?, discard?, vis
 <tr><td><code>include</code> <em>optional</em></td><td>Array&lt;<a href="Uuid">Uuid</a>&gt;</td><td><code>[]</code></td><td><p>If not empty, then the search is restricted to these overlays (and local entities).</p></td></tr>
 <tr><td><code>discard</code> <em>optional</em></td><td>Array&lt;<a href="Uuid">Uuid</a>&gt;</td><td><code>[]</code></td><td><p>Overlays (and local entities) to ignore during the search.</p></td></tr>
 <tr><td><code>visibleOnly</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p><code>true</code> if only overlays (and local entities) that are <code><a href="#OverlayProperties">visible</a></code> should be searched.</p></td></tr>
-<tr><td><code>collideableOnly</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p><code>true</code> if only local entities that are not <code><a href="Entities#EntityProperties">collisionless</a></code> should be searched.</p></td></tr>
+<tr><td><code>collideableOnly</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p><code>true</code> if only local entities that are not <code><a href="Entities-types#EntityProperties">collisionless</a></code> should be searched.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="#RayToOverlayIntersectionResult">Overlays.RayToOverlayIntersectionResult</a> <p>The result of the search for the first intersected overlay (or local entity.</p></div>
 
@@ -202,14 +228,22 @@ Controller.mousePressEvent.connect(function (event) {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getKeyboardFocusOverlay {#getKeyboardFocusOverlay}
 
 ```js
 Overlays.getKeyboardFocusOverlay()
 ```
 
-<div class="api-text" v-pre><p>Gets the ID of the <code><a href="#OverlayProperties-Web3D">"web3d"</a></code> overlay (<a href="Entities#EntityProperties-Web">Web</a> entity) that has keyboard focus.</p></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> <a href="Uuid">Uuid</a> <p>The ID of the <code><a href="#OverlayProperties-Web3D">"web3d"</a></code> overlay (<a href="Entities#EntityProperties-Web">Web</a> entity) that has focus, if any, otherwise <code>null</code>.</p></div>
+<div class="api-text" v-pre><p>Gets the ID of the <code><a href="#OverlayProperties-Web3D">"web3d"</a></code> overlay (<a href="Entities-types#EntityProperties-Web">Web</a> entity) that has keyboard focus.</p></div>
+<div class="api-returns" v-pre><strong>Returns:</strong> <a href="Uuid">Uuid</a> <p>The ID of the <code><a href="#OverlayProperties-Web3D">"web3d"</a></code> overlay (<a href="Entities-types#EntityProperties-Web">Web</a> entity) that has focus, if any, otherwise <code>null</code>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getOverlayAtPoint {#getOverlayAtPoint}
 
@@ -237,6 +271,10 @@ Controller.mousePressEvent.connect(function (event) {
     print("Clicked: " + overlay);
 });
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### getOverlayObject {#getOverlayObject}
 
@@ -311,6 +349,10 @@ Script.scriptEnding.connect(function() {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getOverlaysProperties {#getOverlaysProperties}
 
 ```js
@@ -345,6 +387,10 @@ var properties = Overlays.getOverlaysProperties(propertiesToGet);
 print("Overlays properties: " + JSON.stringify(properties));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getOverlayType {#getOverlayType}
 
 ```js
@@ -369,6 +415,10 @@ var overlay = Overlays.addOverlay("cube", {
 var type = Overlays.getOverlayType(overlay);
 print("Type: " + type); // cube
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### getProperties {#getProperties}
 
@@ -398,6 +448,10 @@ var properties = Overlays.getProperties(overlay, ["color", "alpha", "grabbable"]
 print("Overlay properties: " + JSON.stringify(properties));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getProperty {#getProperty}
 
 ```js
@@ -426,6 +480,10 @@ var alpha = Overlays.getProperty(overlay, "alpha");
 print("Overlay alpha: " + alpha);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### height {#height}
 
 ```js
@@ -434,6 +492,10 @@ Overlays.height()
 
 <div class="api-text" v-pre><p>Gets the height of the Interface window or HUD surface.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The height, in pixels, of the Interface window if in desktop mode or the HUD surface if in HMD mode.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### isAddedOverlay {#isAddedOverlay}
 
@@ -446,6 +508,10 @@ Overlays.isAddedOverlay(id)
 <tr><td><code>id</code></td><td><a href="Uuid">Uuid</a></td><td><p>The ID of the overlay (or entity) to check.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if an overlay (or entity) with the given ID exists, <code>false</code> if it doesn't.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### isLoaded {#isLoaded}
 
@@ -472,6 +538,10 @@ Script.setTimeout(function () {
 }, 1000);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### sendHoverEnterOverlay {#sendHoverEnterOverlay}
 
 ```js
@@ -483,6 +553,10 @@ Overlays.sendHoverEnterOverlay(id, event)
 <tr><td><code>id</code></td><td><a href="Uuid">Uuid</a></td><td><p>The ID of the overlay (or local entity) to generate a hover enter event on.</p></td></tr>
 <tr><td><code>event</code></td><td><a href="globals#PointerEvent">PointerEvent</a></td><td><p>The hover enter event details.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### sendHoverLeaveOverlay {#sendHoverLeaveOverlay}
 
@@ -496,6 +570,10 @@ Overlays.sendHoverLeaveOverlay(id, event)
 <tr><td><code>event</code></td><td><a href="globals#PointerEvent">PointerEvent</a></td><td><p>The hover leave event details.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### sendHoverOverOverlay {#sendHoverOverOverlay}
 
 ```js
@@ -508,6 +586,10 @@ Overlays.sendHoverOverOverlay(id, event)
 <tr><td><code>event</code></td><td><a href="globals#PointerEvent">PointerEvent</a></td><td><p>The hover over event details.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### sendMouseMoveOnOverlay {#sendMouseMoveOnOverlay}
 
 ```js
@@ -519,6 +601,10 @@ Overlays.sendMouseMoveOnOverlay(id, event)
 <tr><td><code>id</code></td><td><a href="Uuid">Uuid</a></td><td><p>The ID of the overlay (or local entity) to generate a mouse move event on.</p></td></tr>
 <tr><td><code>event</code></td><td><a href="globals#PointerEvent">PointerEvent</a></td><td><p>The mouse move event details.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### sendMousePressOnOverlay {#sendMousePressOnOverlay}
 
@@ -567,6 +653,10 @@ Controller.mousePressEvent.connect(function (event) {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### sendMouseReleaseOnOverlay {#sendMouseReleaseOnOverlay}
 
 ```js
@@ -579,16 +669,24 @@ Overlays.sendMouseReleaseOnOverlay(id, event)
 <tr><td><code>event</code></td><td><a href="globals#PointerEvent">PointerEvent</a></td><td><p>The mouse release event details.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setKeyboardFocusOverlay {#setKeyboardFocusOverlay}
 
 ```js
 Overlays.setKeyboardFocusOverlay(id)
 ```
 
-<div class="api-text" v-pre><p>Sets the <code><a href="#OverlayProperties-Web3D">"web3d"</a></code> overlay (<a href="Entities#EntityProperties-Web">Web</a> entity) that has keyboard focus.</p></div>
+<div class="api-text" v-pre><p>Sets the <code><a href="#OverlayProperties-Web3D">"web3d"</a></code> overlay (<a href="Entities-types#EntityProperties-Web">Web</a> entity) that has keyboard focus.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>id</code></td><td><a href="Uuid">Uuid</a></td><td><p>The ID of the <code><a href="#OverlayProperties-Web3D">"web3d"</a></code> overlay (<a href="Entities#EntityProperties-Web">Web</a> entity) to set keyboard focus to. Use <code>null</code> or <a href="Uuid">Uuid.NULL</a> to unset keyboard focus from an overlay (entity).</p></td></tr>
+<tr><td><code>id</code></td><td><a href="Uuid">Uuid</a></td><td><p>The ID of the <code><a href="#OverlayProperties-Web3D">"web3d"</a></code> overlay (<a href="Entities-types#EntityProperties-Web">Web</a> entity) to set keyboard focus to. Use <code>null</code> or <a href="Uuid">Uuid.NULL</a> to unset keyboard focus from an overlay (entity).</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### textSize {#textSize}
 
@@ -621,6 +719,10 @@ Script.setTimeout(function() {
 }, 500);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### width {#width}
 
 ```js
@@ -630,9 +732,13 @@ Overlays.width()
 <div class="api-text" v-pre><p>Gets the width of the Interface window or HUD surface.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The width, in pixels, of the Interface window if in desktop mode or the HUD surface if in HMD mode.</p></div>
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### hoverEnterOverlay {#hoverEnterOverlay}
 
@@ -663,6 +769,10 @@ Overlays.hoverEnterOverlay.connect(function(overlayID, event) {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### hoverLeaveOverlay {#hoverLeaveOverlay}
 
 ```js
@@ -676,6 +786,10 @@ Overlays.hoverLeaveOverlay.connect(function (id, event) {
 <tr><td><code>id</code></td><td><a href="Uuid">Uuid</a></td><td><p>The ID of the overlay the hover leave event occurred on.</p></td></tr>
 <tr><td><code>event</code></td><td><a href="globals#PointerEvent">PointerEvent</a></td><td><p>The hover leave event details.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### hoverOverOverlay {#hoverOverOverlay}
 
@@ -691,6 +805,10 @@ Overlays.hoverOverOverlay.connect(function (id, event) {
 <tr><td><code>event</code></td><td><a href="globals#PointerEvent">PointerEvent</a></td><td><p>The hover over event details.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### mouseDoublePressOffOverlay {#mouseDoublePressOffOverlay}
 
 ```js
@@ -700,6 +818,10 @@ Overlays.mouseDoublePressOffOverlay.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when a mouse double press event occurs on something other than a 3D overlay.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### mouseDoublePressOnOverlay {#mouseDoublePressOnOverlay}
 
@@ -715,6 +837,10 @@ Overlays.mouseDoublePressOnOverlay.connect(function (id, event) {
 <tr><td><code>event</code></td><td><a href="globals#PointerEvent">PointerEvent</a></td><td><p>The mouse double press event details.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### mouseMoveOnOverlay {#mouseMoveOnOverlay}
 
 ```js
@@ -729,6 +855,10 @@ Overlays.mouseMoveOnOverlay.connect(function (id, event) {
 <tr><td><code>event</code></td><td><a href="globals#PointerEvent">PointerEvent</a></td><td><p>The mouse move event details.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### mousePressOffOverlay {#mousePressOffOverlay}
 
 ```js
@@ -738,6 +868,10 @@ Overlays.mousePressOffOverlay.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when a mouse press event occurs on something other than a 3D overlay.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### mousePressOnOverlay {#mousePressOnOverlay}
 
@@ -771,6 +905,10 @@ Overlays.mousePressOnOverlay.connect(function(overlayID, event) {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### mouseReleaseOnOverlay {#mouseReleaseOnOverlay}
 
 ```js
@@ -784,6 +922,10 @@ Overlays.mouseReleaseOnOverlay.connect(function (id, event) {
 <tr><td><code>id</code></td><td><a href="Uuid">Uuid</a></td><td><p>The ID of the overlay the mouse release event occurred on.</p></td></tr>
 <tr><td><code>event</code></td><td><a href="globals#PointerEvent">PointerEvent</a></td><td><p>The mouse release event details.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### overlayDeleted {#overlayDeleted}
 
@@ -817,7 +959,11 @@ Script.setTimeout(function () {
 }, 1000);
 ```
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### OverlayProperties {#OverlayProperties}
 
@@ -831,9 +977,13 @@ Script.setTimeout(function () {
 </tbody></table></div>
 <div class="api-see" v-pre><strong>See also:</strong> <a href="#OverlayProperties-Rectangle">OverlayProperties-Rectangle</a>, <a href="#OverlayProperties-Image">OverlayProperties-Image</a>, <a href="#OverlayProperties-Text">OverlayProperties-Text</a>, <a href="#OverlayProperties-Cube">OverlayProperties-Cube</a> — <span class="important">Deprecated.</span>, <a href="#OverlayProperties-Sphere">OverlayProperties-Sphere</a> — <span class="important">Deprecated.</span>, <a href="#OverlayProperties-Shape">OverlayProperties-Shape</a> — <span class="important">Deprecated.</span>, <a href="#OverlayProperties-Model">OverlayProperties-Model</a> — <span class="important">Deprecated.</span>, <a href="#OverlayProperties-Rectangle3D">OverlayProperties-Rectangle3D</a> — <span class="important">Deprecated.</span>, <a href="#OverlayProperties-Image3D">OverlayProperties-Image3D</a> — <span class="important">Deprecated.</span>, <a href="#OverlayProperties-Text3D">OverlayProperties-Text3D</a> — <span class="important">Deprecated.</span>, <a href="#OverlayProperties-Web3D">OverlayProperties-Web3D</a> — <span class="important">Deprecated.</span>, <a href="#OverlayProperties-Line3D">OverlayProperties-Line3D</a> — <span class="important">Deprecated.</span>, <a href="#OverlayProperties-Grid">OverlayProperties-Grid</a> — <span class="important">Deprecated.</span>, <a href="#OverlayProperties-Circle3D">OverlayProperties-Circle3D</a> — <span class="important">Deprecated.</span></div>
 
+</div>
+
+<div class="api-entry">
+
 ### OverlayProperties-Circle3D {#OverlayProperties-Circle3D}
 
-<div class="api-text" v-pre><p>The <code>"circle3d"</code> <a href="#OverlayType">OverlayType</a> is for 3D circles. It has properties in addition to the common <a href="#OverlayProperties">OverlayProperties</a>. It additionally has properties per the <a href="Entities#EntityProperties-Gizmo">Gizmo</a> entity, with the <code>gizmoType</code> property value being <code>"ring"</code>. </p>
+<div class="api-text" v-pre><p>The <code>"circle3d"</code> <a href="#OverlayType">OverlayType</a> is for 3D circles. It has properties in addition to the common <a href="#OverlayProperties">OverlayProperties</a>. It additionally has properties per the <a href="Entities-types#EntityProperties-Gizmo">Gizmo</a> entity, with the <code>gizmoType</code> property value being <code>"ring"</code>. </p>
 <p class="important">Deprecated: Use local <a href="Entities"><code>Entities</code></a> instead.</p>
 <p></p></div>
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
@@ -886,9 +1036,13 @@ Script.setTimeout(function () {
 <tr><td><code>minorTickMarksColor</code></td><td><a href="globals#Color">Color</a></td><td><code>0,0,0</code></td><td><p>The color of the minor tick marks.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### OverlayProperties-Cube {#OverlayProperties-Cube}
 
-<div class="api-text" v-pre><p>The <code>"cube"</code> <a href="#OverlayType">OverlayType</a> is for 3D cubes. It has properties in addition to the common <a href="#OverlayProperties">OverlayProperties</a>. It additionally has properties per the <a href="Entities#EntityProperties-Box">Box</a> entity. </p>
+<div class="api-text" v-pre><p>The <code>"cube"</code> <a href="#OverlayType">OverlayType</a> is for 3D cubes. It has properties in addition to the common <a href="#OverlayProperties">OverlayProperties</a>. It additionally has properties per the <a href="Entities-types#EntityProperties-Box">Box</a> entity. </p>
 <p class="important">Deprecated: Use local <a href="Entities"><code>Entities</code></a> instead.</p>
 <p></p></div>
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
@@ -914,9 +1068,13 @@ Script.setTimeout(function () {
 <tr><td><code>parentJointIndex</code></td><td>number</td><td><code>65535</code></td><td><p>Integer value specifying the joint of the entity or avatar that the entity is parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather than a joint.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### OverlayProperties-Grid {#OverlayProperties-Grid}
 
-<div class="api-text" v-pre><p>The <code>"grid"</code> <a href="#OverlayType">OverlayType</a> is for 3D grids. It has properties in addition to the common <a href="#OverlayProperties">OverlayProperties</a>. It additionally has properties per the <a href="Entities#EntityProperties-Grid">Grid</a> entity. </p>
+<div class="api-text" v-pre><p>The <code>"grid"</code> <a href="#OverlayType">OverlayType</a> is for 3D grids. It has properties in addition to the common <a href="#OverlayProperties">OverlayProperties</a>. It additionally has properties per the <a href="Entities-types#EntityProperties-Grid">Grid</a> entity. </p>
 <p class="important">Deprecated: Use local <a href="Entities"><code>Entities</code></a> instead.</p>
 <p></p></div>
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
@@ -941,6 +1099,10 @@ Script.setTimeout(function () {
 <tr><td><code>parentJointIndex</code></td><td>number</td><td><code>65535</code></td><td><p>Integer value specifying the joint of the entity or avatar that the entity is parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather than a joint.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### OverlayProperties-Image {#OverlayProperties-Image}
 
 <div class="api-text" v-pre><p>The <code>"image"</code> <a href="#OverlayType">OverlayType</a> is for 2D images. It has properties in addition to the common <a href="#OverlayProperties">OverlayProperties</a>.</p></div>
@@ -956,9 +1118,13 @@ Script.setTimeout(function () {
 <tr><td><code>alpha</code></td><td>number</td><td><code>0.0</code></td><td><p>The opacity of the color applied over the top of the image, <code>0.0</code> – <code>1.0</code>. <em>Write-only.</em></p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### OverlayProperties-Image3D {#OverlayProperties-Image3D}
 
-<div class="api-text" v-pre><p>The <code>"image3D"</code> <a href="#OverlayType">OverlayType</a> is for 3D images. It has properties in addition to the common <a href="#OverlayProperties">OverlayProperties</a>. It additionally has properties per the <a href="Entities#EntityProperties-Image">Image</a> entity. </p>
+<div class="api-text" v-pre><p>The <code>"image3D"</code> <a href="#OverlayType">OverlayType</a> is for 3D images. It has properties in addition to the common <a href="#OverlayProperties">OverlayProperties</a>. It additionally has properties per the <a href="Entities-types#EntityProperties-Image">Image</a> entity. </p>
 <p class="important">Deprecated: Use local <a href="Entities"><code>Entities</code></a> instead.</p>
 <p></p></div>
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
@@ -984,9 +1150,13 @@ Script.setTimeout(function () {
 <tr><td><code>url</code></td><td>string</td><td></td><td><p>The URL of the image to display.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### OverlayProperties-Line3D {#OverlayProperties-Line3D}
 
-<div class="api-text" v-pre><p>The <code>"line3d"</code> <a href="#OverlayType">OverlayType</a> is for 3D lines. It has properties in addition to the common <a href="#OverlayProperties">OverlayProperties</a>. It additionally has properties per the <a href="Entities#EntityProperties-PolyLine">PolyLine</a> entity. </p>
+<div class="api-text" v-pre><p>The <code>"line3d"</code> <a href="#OverlayType">OverlayType</a> is for 3D lines. It has properties in addition to the common <a href="#OverlayProperties">OverlayProperties</a>. It additionally has properties per the <a href="Entities-types#EntityProperties-PolyLine">PolyLine</a> entity. </p>
 <p class="important">Deprecated: Use local <a href="Entities"><code>Entities</code></a> instead.</p>
 <p></p></div>
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
@@ -1033,9 +1203,13 @@ Script.setTimeout(function () {
 <p></p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### OverlayProperties-Model {#OverlayProperties-Model}
 
-<div class="api-text" v-pre><p>The <code>"model"</code> <a href="#OverlayType">OverlayType</a> is for 3D models. It has properties in addition to the common <a href="#OverlayProperties">OverlayProperties</a>. It additionally has properties per the <a href="Entities#EntityProperties-Model">Model</a> entity. </p>
+<div class="api-text" v-pre><p>The <code>"model"</code> <a href="#OverlayType">OverlayType</a> is for 3D models. It has properties in addition to the common <a href="#OverlayProperties">OverlayProperties</a>. It additionally has properties per the <a href="Entities-types#EntityProperties-Model">Model</a> entity. </p>
 <p class="important">Deprecated: Use local <a href="Entities"><code>Entities</code></a> instead.</p>
 <p></p></div>
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
@@ -1054,11 +1228,15 @@ Script.setTimeout(function () {
 <tr><td><code>parentJointIndex</code></td><td>number</td><td><code>65535</code></td><td><p>Integer value specifying the joint of the entity or avatar that the entity is parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather than a joint.</p></td></tr>
 <tr><td><code>url</code></td><td>string</td><td></td><td><p>The URL of the glTF, FBX, or OBJ model used for the overlay. glTF models may be in JSON or binary format (".gltf" or ".glb" URLs respectively). Baked models' URLs have ".baked" before the file type. Model files may also be compressed in GZ format, in which case the URL ends in ".gz".</p></td></tr>
 <tr><td><code>loadPriority</code></td><td>number</td><td><code>0.0</code></td><td><p>The priority for loading and displaying the overlay. Overlays with higher values load first. <em>Currently not used.</em></p></td></tr>
-<tr><td><code>textures</code></td><td>Object&lt;string, string&gt; | string</td><td></td><td><p>Texture name, URL pairs used when rendering the model in place of the model's original textures, per the <a href="Entities#EntityProperties-Model"><code>Entities.EntityProperties-Model</code></a> property of the same name. </p>
+<tr><td><code>textures</code></td><td>Object&lt;string, string&gt; | string</td><td></td><td><p>Texture name, URL pairs used when rendering the model in place of the model's original textures, per the <a href="Entities-types#EntityProperties-Model"><code>Entities.EntityProperties-Model</code></a> property of the same name. </p>
 <p>The value can be an object or a JSON string when setting the value; it is a JSON string when getting the value.</p>
 <p></p></td></tr>
-<tr><td><code>animationSettings</code></td><td><a href="Entities#AnimationProperties">Entities.AnimationProperties</a></td><td></td><td><p>An animation to play on the model.</p></td></tr>
+<tr><td><code>animationSettings</code></td><td><a href="Entities-types#AnimationProperties">Entities.AnimationProperties</a></td><td></td><td><p>An animation to play on the model.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### OverlayProperties-Rectangle {#OverlayProperties-Rectangle}
 
@@ -1077,9 +1255,13 @@ Script.setTimeout(function () {
 <tr><td><code>borderAlpha</code></td><td>number</td><td><code>1.0</code></td><td><p>The opacity of the border, <code>0.0</code> – <code>1.0</code>. <em>Write-only.</em></p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### OverlayProperties-Rectangle3D {#OverlayProperties-Rectangle3D}
 
-<div class="api-text" v-pre><p>The <code>"rectangle3D"</code> <a href="#OverlayType">OverlayType</a> is for 3D rectangles. It has properties in addition to the common <a href="#OverlayProperties">OverlayProperties</a>. It additionally has properties per the <a href="Entities#EntityProperties-Shape">Shape</a> entity, with the <code>shape</code> property value being <code>"Quad"</code>. </p>
+<div class="api-text" v-pre><p>The <code>"rectangle3D"</code> <a href="#OverlayType">OverlayType</a> is for 3D rectangles. It has properties in addition to the common <a href="#OverlayProperties">OverlayProperties</a>. It additionally has properties per the <a href="Entities-types#EntityProperties-Shape">Shape</a> entity, with the <code>shape</code> property value being <code>"Quad"</code>. </p>
 <p class="important">Deprecated: Use local <a href="Entities"><code>Entities</code></a> instead.</p>
 <p></p></div>
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
@@ -1105,9 +1287,13 @@ Script.setTimeout(function () {
 <tr><td><code>parentJointIndex</code></td><td>number</td><td><code>65535</code></td><td><p>Integer value specifying the joint of the entity or avatar that the entity is parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather than a joint.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### OverlayProperties-Shape {#OverlayProperties-Shape}
 
-<div class="api-text" v-pre><p>The <code>"shape"</code> <a href="#OverlayType">OverlayType</a> is for 3D shapes. It has properties in addition to the common <a href="#OverlayProperties">OverlayProperties</a>. It additionally has properties per the <a href="Entities#EntityProperties-Shape">Shape</a> entity. </p>
+<div class="api-text" v-pre><p>The <code>"shape"</code> <a href="#OverlayType">OverlayType</a> is for 3D shapes. It has properties in addition to the common <a href="#OverlayProperties">OverlayProperties</a>. It additionally has properties per the <a href="Entities-types#EntityProperties-Shape">Shape</a> entity. </p>
 <p class="important">Deprecated: Use local <a href="Entities"><code>Entities</code></a> instead.</p>
 <p></p></div>
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
@@ -1134,9 +1320,13 @@ Script.setTimeout(function () {
 <tr><td><code>shape</code></td><td><a href="#Shape">Overlays.Shape</a></td><td><code>Hexagon</code></td><td><p>The geometrical shape of the overlay.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### OverlayProperties-Sphere {#OverlayProperties-Sphere}
 
-<div class="api-text" v-pre><p>The <code>"sphere"</code> <a href="#OverlayType">OverlayType</a> is for 3D spheres. It has properties in addition to the common <a href="#OverlayProperties">OverlayProperties</a>. It additionally has properties per the <a href="Entities#EntityProperties-Sphere">Sphere</a> entity. </p>
+<div class="api-text" v-pre><p>The <code>"sphere"</code> <a href="#OverlayType">OverlayType</a> is for 3D spheres. It has properties in addition to the common <a href="#OverlayProperties">OverlayProperties</a>. It additionally has properties per the <a href="Entities-types#EntityProperties-Sphere">Sphere</a> entity. </p>
 <p class="important">Deprecated: Use local <a href="Entities"><code>Entities</code></a> instead.</p>
 <p></p></div>
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
@@ -1162,6 +1352,10 @@ Script.setTimeout(function () {
 <tr><td><code>parentJointIndex</code></td><td>number</td><td><code>65535</code></td><td><p>Integer value specifying the joint of the entity or avatar that the entity is parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather than a joint.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### OverlayProperties-Text {#OverlayProperties-Text}
 
 <div class="api-text" v-pre><p>The <code>"text"</code> <a href="#OverlayType">OverlayType</a> is for 2D text. It has properties in addition to the common <a href="#OverlayProperties">OverlayProperties</a>.</p></div>
@@ -1183,9 +1377,13 @@ Script.setTimeout(function () {
 <tr><td><code>backgroundAlpha</code></td><td>number</td><td><code>0.7</code></td><td><p>The opacity of the background rectangle, <code>0.0</code> – <code>1.0</code>. <em>Write-only.</em></p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### OverlayProperties-Text3D {#OverlayProperties-Text3D}
 
-<div class="api-text" v-pre><p>The <code>"text3D"</code> <a href="#OverlayType">OverlayType</a> is for 3D text. It has properties in addition to the common <a href="#OverlayProperties">OverlayProperties</a>. It additionally has properties per the <a href="Entities#EntityProperties-Text">Text</a> entity. </p>
+<div class="api-text" v-pre><p>The <code>"text3D"</code> <a href="#OverlayType">OverlayType</a> is for 3D text. It has properties in addition to the common <a href="#OverlayProperties">OverlayProperties</a>. It additionally has properties per the <a href="Entities-types#EntityProperties-Text">Text</a> entity. </p>
 <p class="important">Deprecated: Use local <a href="Entities"><code>Entities</code></a> instead.</p>
 <p></p></div>
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
@@ -1212,9 +1410,13 @@ Script.setTimeout(function () {
 <tr><td><code>parentJointIndex</code></td><td>number</td><td><code>65535</code></td><td><p>Integer value specifying the joint of the entity or avatar that the entity is parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather than a joint.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### OverlayProperties-Web3D {#OverlayProperties-Web3D}
 
-<div class="api-text" v-pre><p>The <code>"web3d"</code> <a href="#OverlayType">OverlayType</a> is for 3D web surfaces. It has properties in addition to the common <a href="#OverlayProperties">OverlayProperties</a>. It additionally has properties per the <a href="Entities#EntityProperties-Web">Web</a> entity. </p>
+<div class="api-text" v-pre><p>The <code>"web3d"</code> <a href="#OverlayType">OverlayType</a> is for 3D web surfaces. It has properties in addition to the common <a href="#OverlayProperties">OverlayProperties</a>. It additionally has properties per the <a href="Entities-types#EntityProperties-Web">Web</a> entity. </p>
 <p class="important">Deprecated: Use local <a href="Entities"><code>Entities</code></a> instead.</p>
 <p></p></div>
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
@@ -1239,6 +1441,10 @@ Script.setTimeout(function () {
 <tr><td><code>parentJointIndex</code></td><td>number</td><td><code>65535</code></td><td><p>Integer value specifying the joint of the entity or avatar that the entity is parented to if <code>parentID</code> is set. Use 65535 or -1 to parent to the parent's position and orientation rather than a joint.</p></td></tr>
 <tr><td><code>url</code></td><td>string</td><td></td><td><p>The URL of the web page to display.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### OverlayType {#OverlayType}
 
@@ -1287,6 +1493,10 @@ Script.setTimeout(function () {
  <p class="important">3D overlays are deprecated. Use local <a href="Entities"><code>Entities</code></a> instead.</p></div>
 <div class="api-type" v-pre><strong>Type:</strong> string</div>
 
+</div>
+
+<div class="api-entry">
+
 ### RayToOverlayIntersectionResult {#RayToOverlayIntersectionResult}
 
 <div class="api-text" v-pre><p>The result of a <a href="globals#PickRay"><code>PickRay</code></a> search using <a href="#findRayIntersection">findRayIntersection</a>.</p></div>
@@ -1298,6 +1508,10 @@ Script.setTimeout(function () {
 <tr><td><code>intersection</code></td><td><a href="Vec3">Vec3</a></td><td><p>The position of the intersection point.</p></td></tr>
 <tr><td><code>extraInfo</code></td><td>object</td><td><p>Additional intersection details, if available.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### Shape {#Shape}
 
@@ -1321,3 +1535,5 @@ Script.setTimeout(function () {
  </tbody>
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> string</div>
+
+</div>

@@ -6,11 +6,13 @@ draft: true
 
 # Snapshot
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>Snapshot</code> API provides access to the path that snapshots are saved to. This path is that provided in Settings &gt; General &gt; Snapshots. Snapshots may be taken using <code>Window</code> API functions such as <a href="Window#takeSnapshot"><code>Window.takeSnapshot</code></a>. A snapshot taken with the default name, as Snap takes them, goes to the user's files (My Files), in their Snapshots folder, when someone is signed in; it is saved to this path when no one is signed in or the upload fails.</p></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### deleteFromUserFiles {#deleteFromUserFiles}
 
@@ -23,6 +25,10 @@ Snapshot.deleteFromUserFiles(url)
 <tr><td><code>url</code></td><td>string</td><td><p>The snapshot's URL, as <a href="#snapshotStored">snapshotStored</a> gave it.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getAnimatedSnapshotDuration {#getAnimatedSnapshotDuration}
 
 ```js
@@ -32,6 +38,10 @@ Snapshot.getAnimatedSnapshotDuration()
 <div class="api-text" v-pre><p>Gets how long an animated snapshot (a GIF) records.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>Its length in seconds, 1 to 5.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getSnapshotsLocation {#getSnapshotsLocation}
 
 ```js
@@ -40,6 +50,10 @@ Snapshot.getSnapshotsLocation()
 
 <div class="api-text" v-pre><p>Gets the path that snapshots are saved to.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>The path to save snapshots to.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setAnimatedSnapshotDuration {#setAnimatedSnapshotDuration}
 
@@ -52,6 +66,10 @@ Snapshot.setAnimatedSnapshotDuration(seconds)
 <tr><td><code>seconds</code></td><td>number</td><td><p>Its length in seconds, held to 1 to 5.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setSnapshotsLocation {#setSnapshotsLocation}
 
 ```js
@@ -63,9 +81,13 @@ Snapshot.setSnapshotsLocation(location)
 <tr><td><code>location</code></td><td>String</td><td><p>The path to save snapshots to.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### snapshotDeleted {#snapshotDeleted}
 
@@ -80,6 +102,10 @@ Snapshot.snapshotDeleted.connect(function (url, error) {
 <tr><td><code>url</code></td><td>string</td><td><p>The snapshot's URL in the user's files.</p></td></tr>
 <tr><td><code>error</code></td><td>string</td><td><p>Why it could not be deleted; empty when it was.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### snapshotLocationSet {#snapshotLocationSet}
 
@@ -102,6 +128,10 @@ Snapshot.snapshotLocationSet.connect(function (path) {
     print("New snapshot location: " + path);
 });
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### snapshotStored {#snapshotStored}
 
@@ -126,3 +156,5 @@ Snapshot.snapshotStored.connect(function (takenPath, location, inUserFiles, uplo
     print(inUserFiles ? "In My Files: " + location : "On this computer: " + location + " " + uploadError);
 });
 ```
+
+</div>

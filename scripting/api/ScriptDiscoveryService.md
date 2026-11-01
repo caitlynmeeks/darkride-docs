@@ -6,7 +6,7 @@ draft: true
 
 # ScriptDiscoveryService
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, avatar scripts, client entity scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, avatar scripts, entity scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>ScriptDiscoveryService</code> API provides facilities to work with Interface scripts.</p></div>
 
@@ -21,6 +21,8 @@ draft: true
 
 ## Functions {#functions}
 
+<div class="api-entry">
+
 ### getPublic {#getPublic}
 
 ```js
@@ -29,6 +31,10 @@ ScriptDiscoveryService.getPublic()
 
 <div class="api-text" v-pre><p>Gets a list of all script files that are in the default scripts directory of the Interface installation.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;<a href="#PublicScript">ScriptDiscoveryService.PublicScript</a>&gt; <p>All scripts in the "scripts" directory of the Interface installation.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getRunning {#getRunning}
 
@@ -49,6 +55,10 @@ for (var i = 0; i < runningScripts.length; i++) {
 }
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### loadOneScript {#loadOneScript}
 
 ```js
@@ -63,6 +73,10 @@ ScriptDiscoveryService.loadOneScript(url)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>url</code></td><td>string</td><td><p>The path and name of the script. If a local file, including the <code>"file:///"</code> scheme is optional.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### loadScript {#loadScript}
 
@@ -84,6 +98,10 @@ ScriptDiscoveryService.loadScript(url?, isUserLoaded?, loadScriptFromEditor?, ac
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> object <p>An empty object, <code>{}</code>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### reloadAllScripts {#reloadAllScripts}
 
 ```js
@@ -91,6 +109,10 @@ ScriptDiscoveryService.reloadAllScripts()
 ```
 
 <div class="api-text" v-pre><p>Restarts all Interface, avatar, and client entity scripts after clearing the scripts cache.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### stopAllScripts {#stopAllScripts}
 
@@ -102,6 +124,10 @@ ScriptDiscoveryService.stopAllScripts(restart?)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>restart</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p><code>true</code> to restart the scripts, <code>false</code> to stop them.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### stopScript {#stopScript}
 
@@ -116,9 +142,13 @@ ScriptDiscoveryService.stopScript(url, restart?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the script was successfully stopped or restarted, <code>false</code> if it wasn't (e.g., the script couldn't be found).</p></div>
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### clearDebugWindow {#clearDebugWindow}
 
@@ -129,6 +159,10 @@ ScriptDiscoveryService.clearDebugWindow.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the Debug Window is cleared.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### errorMessage {#errorMessage}
 
@@ -144,6 +178,10 @@ ScriptDiscoveryService.errorMessage.connect(function (message, scriptName) {
 <tr><td><code>scriptName</code></td><td>string</td><td><p>The name of the script that generated the error message.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### infoMessage {#infoMessage}
 
 ```js
@@ -158,6 +196,10 @@ ScriptDiscoveryService.infoMessage.connect(function (message, scriptName) {
 <tr><td><code>scriptName</code></td><td>string</td><td><p>The name of the script that generated the informaton message.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### printedMessage {#printedMessage}
 
 ```js
@@ -171,6 +213,10 @@ ScriptDiscoveryService.printedMessage.connect(function (message, scriptName) {
 <tr><td><code>message</code></td><td>string</td><td><p>The message.</p></td></tr>
 <tr><td><code>scriptName</code></td><td>string</td><td><p>The name of the script that generated the message.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### scriptCountChanged {#scriptCountChanged}
 
@@ -190,6 +236,10 @@ ScriptDiscoveryService.scriptCountChanged.connect(function () {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### scriptLoadError {#scriptLoadError}
 
 ```js
@@ -204,6 +254,10 @@ ScriptDiscoveryService.scriptLoadError.connect(function (url, error) {
 <tr><td><code>error</code></td><td>string</td><td><p><code>""</code> always.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### scriptsReloading {#scriptsReloading}
 
 ```js
@@ -213,6 +267,10 @@ ScriptDiscoveryService.scriptsReloading.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when Interface, avatar, and client entity scripts are restarting as a result of <a href="#reloadAllScripts">reloadAllScripts</a> or <a href="#stopAllScripts">stopAllScripts</a>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### warningMessage {#warningMessage}
 
@@ -228,7 +286,11 @@ ScriptDiscoveryService.warningMessage.connect(function (message, scriptName) {
 <tr><td><code>scriptName</code></td><td>string</td><td><p>The name of the script that generated the warning message.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### PublicScript {#PublicScript}
 
@@ -245,6 +307,10 @@ ScriptDiscoveryService.warningMessage.connect(function (message, scriptName) {
 <p></p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### RunningScript {#RunningScript}
 
 <div class="api-text" v-pre><p>Information on a running script.</p></div>
@@ -255,9 +321,13 @@ ScriptDiscoveryService.warningMessage.connect(function (message, scriptName) {
 <tr><td><code>url</code></td><td>string</td><td><p>The full URL of the script — including the scheme if a local file.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Deprecated {#deprecated}
 
 Still there for older scripts; new scripts should not use these.
+
+<div class="api-entry">
 
 ### getLocal {#getLocal}
 
@@ -271,6 +341,10 @@ ScriptDiscoveryService.getLocal()
 
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;<a href="#LocalScript">ScriptDiscoveryService.LocalScript</a>&gt; <p>Local scripts.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### onClearDebugWindow {#onClearDebugWindow}
 
 ```js
@@ -281,6 +355,10 @@ ScriptDiscoveryService.onClearDebugWindow()
 <div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
 :::
 
+
+</div>
+
+<div class="api-entry">
 
 ### onErrorLoadingScript {#onErrorLoadingScript}
 
@@ -295,6 +373,10 @@ ScriptDiscoveryService.onErrorLoadingScript(url)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>url</code></td><td>string</td><td><p>URL.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### onErrorMessage {#onErrorMessage}
 
@@ -311,6 +393,10 @@ ScriptDiscoveryService.onErrorMessage(message, scriptName)
 <tr><td><code>scriptName</code></td><td>string</td><td><p>Script name.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### onInfoMessage {#onInfoMessage}
 
 ```js
@@ -325,6 +411,10 @@ ScriptDiscoveryService.onInfoMessage(message, scriptName)
 <tr><td><code>message</code></td><td>string</td><td><p>Message.</p></td></tr>
 <tr><td><code>scriptName</code></td><td>string</td><td><p>Script name.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### onPrintedMessage {#onPrintedMessage}
 
@@ -341,6 +431,10 @@ ScriptDiscoveryService.onPrintedMessage(message, scriptName)
 <tr><td><code>scriptName</code></td><td>string</td><td><p>Script name.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### onScriptFinished {#onScriptFinished}
 
 ```js
@@ -356,6 +450,10 @@ ScriptDiscoveryService.onScriptFinished(scriptName, engine)
 <tr><td><code>engine</code></td><td>object</td><td><p>Engine.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### onWarningMessage {#onWarningMessage}
 
 ```js
@@ -370,6 +468,10 @@ ScriptDiscoveryService.onWarningMessage(message, scriptName)
 <tr><td><code>message</code></td><td>string</td><td><p>Message.</p></td></tr>
 <tr><td><code>scriptName</code></td><td>string</td><td><p>Script name.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### errorLoadingScript {#errorLoadingScript}
 
@@ -387,6 +489,10 @@ ScriptDiscoveryService.errorLoadingScript.connect(function (url) {
 <tr><td><code>url</code></td><td>string</td><td><p>URL.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### LocalScript {#LocalScript}
 
 ::: warning Deprecated
@@ -398,3 +504,5 @@ ScriptDiscoveryService.errorLoadingScript.connect(function (url) {
 <tr><td><code>name</code></td><td>string</td><td><p>The script's file name.</p></td></tr>
 <tr><td><code>path</code></td><td>string</td><td><p>The script's path.</p></td></tr>
 </tbody></table></div>
+
+</div>

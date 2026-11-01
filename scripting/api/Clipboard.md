@@ -6,11 +6,13 @@ draft: true
 
 # Clipboard
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>Clipboard</code> API enables you to export and import entities to and from JSON files.</p></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### exportEntities {#exportEntities}
 
@@ -47,6 +49,10 @@ if (filename) {
 }
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### exportEntities {#exportEntities-2}
 
 ```js
@@ -63,6 +69,10 @@ Clipboard.exportEntities(filename, x, y, z, scale)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if entities were found and the file was written, otherwise <code>false</code>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getClipboardContentsLargestDimension {#getClipboardContentsLargestDimension}
 
 ```js
@@ -71,6 +81,10 @@ Clipboard.getClipboardContentsLargestDimension()
 
 <div class="api-text" v-pre><p>Gets the largest dimension of the extents of the entities held in the clipboard.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The largest dimension of the extents of the content held in the clipboard.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getContentsDimensions {#getContentsDimensions}
 
@@ -92,6 +106,10 @@ if (filename) {
 }
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### importEntities {#importEntities}
 
 ```js
@@ -106,7 +124,7 @@ Clipboard.importEntities(filename, isObservable?, callerID?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the import was successful, otherwise <code>false</code>.</p></div>
 
-<div class="api-example" v-pre><strong>Example:</strong> <p>Import entities and paste into the domain.</p></div>
+<div class="api-example" v-pre><strong>Example:</strong> <p>Import entities and paste into the world.</p></div>
 
 ```js
 var filename = Window.browse("Import entities to clipboard", "", "*.json");
@@ -119,15 +137,21 @@ if (filename) {
 }
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### pasteEntities {#pasteEntities}
 
 ```js
 Clipboard.pasteEntities(position, entityHostType?)
 ```
 
-<div class="api-text" v-pre><p>Pastes the contents of the clipboard into the domain.</p></div>
+<div class="api-text" v-pre><p>Pastes the contents of the clipboard into the world.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>position</code></td><td><a href="Vec3">Vec3</a></td><td></td><td><p>The position to paste the clipboard contents at.</p></td></tr>
-<tr><td><code>entityHostType</code> <em>optional</em></td><td><a href="Entities#EntityHostType">Entities.EntityHostType</a></td><td><code>&quot;domain&quot;</code></td><td><p>The type of entities to create.</p></td></tr>
+<tr><td><code>entityHostType</code> <em>optional</em></td><td><a href="Entities-types#EntityHostType">Entities.EntityHostType</a></td><td><code>&quot;domain&quot;</code></td><td><p>The type of entities to create.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;<a href="Uuid">Uuid</a>&gt; <p>The IDs of the new entities that were created as a result of the paste operation. If entities couldn't be created then an empty array is returned.</p></div>
+
+</div>

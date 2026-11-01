@@ -6,11 +6,13 @@ draft: true
 
 # PlatformInfo
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>PlatformInfo</code> API provides information about the hardware platform being used.</p></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### getComputer {#getComputer}
 
@@ -20,6 +22,10 @@ PlatformInfo.getComputer()
 
 <div class="api-text" v-pre><p>Gets the platform description of the computer.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>The <a href="#ComputerDescription">ComputerDescription</a> information as a JSON string.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getCPU {#getCPU}
 
@@ -44,6 +50,10 @@ for (var i = 0; i < numCPUs; i++) {
 }
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getDisplay {#getDisplay}
 
 ```js
@@ -66,6 +76,10 @@ for (var i = 0; i < numDisplays; i++) {
     print("Display " + i + ": " + displayDescription);
 }
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### getGPU {#getGPU}
 
@@ -90,6 +104,10 @@ for (var i = 0; i < numGPUs; i++) {
 }
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getMasterCPU {#getMasterCPU}
 
 ```js
@@ -98,6 +116,10 @@ PlatformInfo.getMasterCPU()
 
 <div class="api-text" v-pre><p>Gets the index number of the master CPU.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The index of the master CPU.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getMasterDisplay {#getMasterDisplay}
 
@@ -108,6 +130,10 @@ PlatformInfo.getMasterDisplay()
 <div class="api-text" v-pre><p>Gets the index number of the master display.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The index of the master display.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getMasterGPU {#getMasterGPU}
 
 ```js
@@ -116,6 +142,10 @@ PlatformInfo.getMasterGPU()
 
 <div class="api-text" v-pre><p>Gets the index number of the master GPU.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The index of the master GPU.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getMemory {#getMemory}
 
@@ -132,6 +162,10 @@ PlatformInfo.getMemory()
 print("Memory: " + PlatformInfo.getMemory());
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getNumCPUs {#getNumCPUs}
 
 ```js
@@ -140,6 +174,10 @@ PlatformInfo.getNumCPUs()
 
 <div class="api-text" v-pre><p>Gets the number of CPUs.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The number of CPUs.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getNumDisplays {#getNumDisplays}
 
@@ -150,6 +188,10 @@ PlatformInfo.getNumDisplays()
 <div class="api-text" v-pre><p>Gets the number of displays.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The number of displays.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getNumGPUs {#getNumGPUs}
 
 ```js
@@ -158,6 +200,10 @@ PlatformInfo.getNumGPUs()
 
 <div class="api-text" v-pre><p>Gets the number of GPUs.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The number of GPUs.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getPlatform {#getPlatform}
 
@@ -168,6 +214,10 @@ PlatformInfo.getPlatform()
 <div class="api-text" v-pre><p>Gets the complete description of the computer as a whole.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>The <a href="#PlatformDescription">PlatformDescription</a> information as a JSON string.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getPlatformTierNames {#getPlatformTierNames}
 
 ```js
@@ -176,6 +226,10 @@ PlatformInfo.getPlatformTierNames()
 
 <div class="api-text" v-pre><p>Gets the names of the possible platform tiers, per <a href="#PlatformTier"><code>PlatformInfo.PlatformTier</code></a>.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;string&gt; <p>The names of the possible platform tiers.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getTierProfiled {#getTierProfiled}
 
@@ -194,6 +248,10 @@ var platformTierName = PlatformInfo.getPlatformTierNames()[platformTier];
 print("Platform tier: " + platformTier + ", " + platformTierName);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### has3DHTML {#has3DHTML}
 
 ```js
@@ -202,6 +260,10 @@ PlatformInfo.has3DHTML()
 
 <div class="api-text" v-pre><p>Checks whether HTML on 3D surfaces (e.g., Web entities) is supported.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the current display supports HTML on 3D surfaces, <code>false</code> if it doesn't.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### hasRiftControllers {#hasRiftControllers}
 
@@ -212,6 +274,10 @@ PlatformInfo.hasRiftControllers()
 <div class="api-text" v-pre><p>Checks whether Oculus Touch controllers are connected.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if Oculus Touch controllers are connected, <code>false</code> if they aren't.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### hasViveControllers {#hasViveControllers}
 
 ```js
@@ -220,6 +286,10 @@ PlatformInfo.hasViveControllers()
 
 <div class="api-text" v-pre><p>Checks whether Vive controllers are connected.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if Vive controllers are connected, <code>false</code> if they aren't.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### isRenderMethodDeferredCapable {#isRenderMethodDeferredCapable}
 
@@ -230,6 +300,10 @@ PlatformInfo.isRenderMethodDeferredCapable()
 <div class="api-text" v-pre><p>Gets whether the current hardware can use deferred rendering.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the current hardware can use deferred rendering, <code>false</code> if it can't.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### isStandalone {#isStandalone}
 
 ```js
@@ -239,7 +313,11 @@ PlatformInfo.isStandalone()
 <div class="api-text" v-pre><p>Checks whether Interface is running on a stand-alone HMD device (CPU incorporated into the HMD display).</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if Interface is running on a stand-alone HMD device, <code>false</code> if it isn't.</p></div>
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### ComputerDescription {#ComputerDescription}
 
@@ -251,6 +329,10 @@ PlatformInfo.isStandalone()
 <tr><td><code>model</code></td><td>string</td><td><p>The computer model.</p></td></tr>
 <tr><td><code>profileTier</code></td><td><a href="#PlatformTier">PlatformInfo.PlatformTier</a></td><td><p>The platform tier of the computer, profiled at Interface start-up.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### ComputerOS {#ComputerOS}
 
@@ -265,6 +347,10 @@ PlatformInfo.isStandalone()
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> string</div>
 
+</div>
+
+<div class="api-entry">
+
 ### CPUDescription {#CPUDescription}
 
 <div class="api-text" v-pre><p>Information on a CPU.</p></div>
@@ -274,6 +360,10 @@ PlatformInfo.isStandalone()
 <tr><td><code>numCores</code></td><td>number</td><td><p>The number of logical cores.</p></td></tr>
 <tr><td><code>isMaster</code></td><td>boolean</td><td><p><code>true</code> if the CPU is the "master" or primary CPU, <code>false</code> or <code>undefined</code> if it isn't.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### DisplayDescription {#DisplayDescription}
 
@@ -296,6 +386,10 @@ PlatformInfo.isStandalone()
 <tr><td><code>isMaster</code></td><td>boolean</td><td><p><code>true</code> if the GPU is the "master" or primary display, <code>false</code> or <code>undefined</code> if it isn't.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### GPUDescription {#GPUDescription}
 
 <div class="api-text" v-pre><p>Information on a GPU.</p></div>
@@ -307,6 +401,10 @@ PlatformInfo.isStandalone()
 <tr><td><code>displays</code></td><td>Array&lt;number&gt;</td><td><p>The index numbers of the displays currently being driven by the GPU. An empty array if the GPU is currently not driving any displays.</p></td></tr>
 <tr><td><code>isMaster</code></td><td>boolean</td><td><p><code>true</code> if the GPU is the "master" or primary GPU, <code>false</code> or <code>undefined</code> if it isn't.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### GraphicsAPIDescription {#GraphicsAPIDescription}
 
@@ -321,12 +419,20 @@ PlatformInfo.isStandalone()
 <tr><td><code>devices</code> <em>optional</em></td><td>Array&lt;<a href="#VulkanAPIDescription">PlatformInfo.VulkanAPIDescription</a>&gt;</td><td><p>If a Vulkan API, then the devices provided in the API.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### MemoryDescription {#MemoryDescription}
 
 <div class="api-text" v-pre><p>Information on the computer's memory.</p></div>
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>memTotal</code></td><td>number</td><td><p>The total amount of usable physical memory, in MB.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### NICDescription {#NICDescription}
 
@@ -335,6 +441,10 @@ PlatformInfo.isStandalone()
 <tr><td><code>name</code></td><td>string</td><td><p>The name of the network card.</p></td></tr>
 <tr><td><code>mac</code></td><td>string</td><td><p>The MAC address of the network card.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### PlatformDescription {#PlatformDescription}
 
@@ -349,6 +459,10 @@ PlatformInfo.isStandalone()
 <tr><td><code>nics</code></td><td><a href="#NICDescription">PlatformInfo.NICDescription</a></td><td><p>Information on the computer's network cards.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### PlatformTier {#PlatformTier}
 
 <div class="api-text" v-pre><p>The platform tier of a computer is an indication of its rendering capability.</p>
@@ -361,6 +475,10 @@ PlatformInfo.isStandalone()
  </tbody>
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
+
+</div>
+
+<div class="api-entry">
 
 ### VulkanAPIDescription {#VulkanAPIDescription}
 
@@ -377,6 +495,10 @@ PlatformInfo.isStandalone()
 <tr><td><code>heaps</code></td><td>Array&lt;<a href="#VulkanHeapDescription">PlatformInfo.VulkanHeapDescription</a>&gt;</td><td><p>The Vulkan heaps available.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### VulkanHeapDescription {#VulkanHeapDescription}
 
 <div class="api-text" v-pre><p>Information on a Vulkan heap.</p></div>
@@ -384,6 +506,10 @@ PlatformInfo.isStandalone()
 <tr><td><code>flags</code></td><td>string</td><td><p>The Vulkan heap flags.</p></td></tr>
 <tr><td><code>size</code></td><td>number</td><td><p>The heap size.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### VulkanQueueDescription {#VulkanQueueDescription}
 
@@ -393,9 +519,13 @@ PlatformInfo.isStandalone()
 <tr><td><code>count</code></td><td>number</td><td><p>The queue count.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Deprecated {#deprecated}
 
 Still there for older scripts; new scripts should not use these.
+
+<div class="api-entry">
 
 ### getCPUBrand {#getCPUBrand}
 
@@ -410,6 +540,10 @@ PlatformInfo.getCPUBrand()
 <div class="api-text" v-pre><p>Gets information on the CPU model.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>Information on the CPU.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getGraphicsCardType {#getGraphicsCardType}
 
 ```js
@@ -423,6 +557,10 @@ PlatformInfo.getGraphicsCardType()
 <div class="api-text" v-pre><p>Gets the model of the graphics card currently being used.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>The model of the graphics card currently being used.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getInstance {#getInstance}
 
 ```js
@@ -433,6 +571,10 @@ PlatformInfo.getInstance()
 <div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
 :::
 
+
+</div>
+
+<div class="api-entry">
 
 ### getNumLogicalCores {#getNumLogicalCores}
 
@@ -447,6 +589,10 @@ PlatformInfo.getNumLogicalCores()
 <div class="api-text" v-pre><p>Gets the number of logical CPU cores.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The number of logical CPU cores.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getOperatingSystemType {#getOperatingSystemType}
 
 ```js
@@ -460,6 +606,10 @@ PlatformInfo.getOperatingSystemType()
 <div class="api-text" v-pre><p>Gets the operating system type.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>The operating system type: <code>"WINDOWS"</code>, <code>"MACOS"</code>, or <code>"UNKNOWN"</code>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getTotalSystemMemoryMB {#getTotalSystemMemoryMB}
 
 ```js
@@ -472,3 +622,5 @@ PlatformInfo.getTotalSystemMemoryMB()
 
 <div class="api-text" v-pre><p>Gets the total amount of usable physical memory, in MB.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The total system memory in megabytes.</p></div>
+
+</div>

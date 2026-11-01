@@ -6,7 +6,7 @@ draft: true
 
 # SoundObject
 
-<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts, server entity scripts, assignment client scripts.</div>
+<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: client scripts, entity scripts, avatar scripts, server entity scripts, agents.</div>
 
 <div class="api-text" v-pre><p>An audio resource, created by <a href="SoundCache#getSound"><code>SoundCache.getSound</code></a>, to be played back using <a href="Audio#playSound"><code>Audio.playSound</code></a>. </p>
 <p>Supported file formats:</p>
@@ -27,6 +27,8 @@ draft: true
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
 
+<div class="api-entry">
+
 ### ready {#ready}
 
 ```js
@@ -36,3 +38,5 @@ SoundObject.ready.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the sound has been downloaded and is ready to be played.</p></div>
+
+</div>

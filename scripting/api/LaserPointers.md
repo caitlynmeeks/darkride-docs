@@ -6,11 +6,13 @@ draft: true
 
 # LaserPointers
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>LaserPointers</code> API is a subset of the <a href="Pointers"><code>Pointers</code></a> API. It lets you create, manage, and visually represent objects for repeatedly calculating ray intersections with avatars, entities, and overlays. Ray pointers can also be configured to generate events on entities and overlays intersected.</p></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### createLaserPointer {#createLaserPointer}
 
@@ -26,6 +28,10 @@ LaserPointers.createLaserPointer(properties)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The ID of the pointer if successfully created, otherwise <code>0</code>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### disableLaserPointer {#disableLaserPointer}
 
 ```js
@@ -36,6 +42,10 @@ LaserPointers.disableLaserPointer(id)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>id</code></td><td>number</td><td><p>The ID of the pointer.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### editRenderState {#editRenderState}
 
@@ -53,6 +63,10 @@ LaserPointers.editRenderState(id, renderState, properties)
 <tr><td><code>properties</code></td><td><a href="Pointers#RayPointerRenderState">Pointers.RayPointerRenderState</a></td><td><p>The new properties for the render state. Only the overlay properties to change need be specified.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### enableLaserPointer {#enableLaserPointer}
 
 ```js
@@ -63,6 +77,10 @@ LaserPointers.enableLaserPointer(id)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>id</code></td><td>number</td><td><p>The ID of the pointer.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getPrevRayPickResult {#getPrevRayPickResult}
 
@@ -76,6 +94,10 @@ LaserPointers.getPrevRayPickResult(id)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="globals#RayPickResult">RayPickResult</a> <p>The most recent intersection of the pointer.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### isLeftHand {#isLeftHand}
 
 ```js
@@ -87,6 +109,10 @@ LaserPointers.isLeftHand(id)
 <tr><td><code>id</code></td><td>number</td><td><p>The ID of the pointer.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the pointer is associated with the left hand, <code>false</code> if it isn't.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### isMouse {#isMouse}
 
@@ -100,6 +126,10 @@ LaserPointers.isMouse(id)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the pointer is associated with the system mouse, <code>false</code> if it isn't.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### isRightHand {#isRightHand}
 
 ```js
@@ -112,6 +142,10 @@ LaserPointers.isRightHand(id)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the pointer is associated with the right hand, <code>false</code> if it isn't.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### removeLaserPointer {#removeLaserPointer}
 
 ```js
@@ -122,6 +156,10 @@ LaserPointers.removeLaserPointer(id)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>id</code></td><td>number</td><td><p>The ID of the pointer.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setIgnoreItems {#setIgnoreItems}
 
@@ -135,6 +173,10 @@ LaserPointers.setIgnoreItems(id, ignoreItems)
 <tr><td><code>ignoreItems</code></td><td>Array&lt;<a href="Uuid">Uuid</a>&gt;</td><td><p>A list of IDs to ignore.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setIncludeItems {#setIncludeItems}
 
 ```js
@@ -147,6 +189,10 @@ LaserPointers.setIncludeItems(id, includeItems)
 <tr><td><code>includeItems</code></td><td>Array&lt;<a href="Uuid">Uuid</a>&gt;</td><td><p>A list of IDs to include.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setLaserLength {#setLaserLength}
 
 ```js
@@ -158,6 +204,10 @@ LaserPointers.setLaserLength(id, laserLength)
 <tr><td><code>id</code></td><td>number</td><td><p>The ID of the pointer.</p></td></tr>
 <tr><td><code>laserLength</code></td><td>number</td><td><p>The desired length of the pointer.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setLockEndUUID {#setLockEndUUID}
 
@@ -173,6 +223,10 @@ LaserPointers.setLockEndUUID(id, targetID, isAvatar, offset?)
 <tr><td><code>offset</code> <em>optional</em></td><td><a href="Mat4">Mat4</a></td><td><p>The offset of the target point from the center of the target item. If not specified, the pointer locks on to the center of the target item.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setPrecisionPicking {#setPrecisionPicking}
 
 ```js
@@ -184,6 +238,10 @@ LaserPointers.setPrecisionPicking(id, precisionPicking)
 <tr><td><code>id</code></td><td>number</td><td><p>The ID of the pointer.</p></td></tr>
 <tr><td><code>precisionPicking</code></td><td>boolean</td><td><p><code>true</code> to use precision picking, <code>false</code> to use coarse picking.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setRenderState {#setRenderState}
 
@@ -199,3 +257,5 @@ LaserPointers.setRenderState(renderState, id)
  </ul></td></tr>
 <tr><td><code>id</code></td><td>number</td><td><p>The ID of the pointer.</p></td></tr>
 </tbody></table></div>
+
+</div>

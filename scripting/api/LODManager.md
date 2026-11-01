@@ -6,7 +6,7 @@ draft: true
 
 # LODManager
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>LODManager</code> API manages the Level of Detail displayed in Interface. If the LOD is being automatically adjusted, the LOD is decreased if the measured frame rate is lower than the target FPS, and increased if the measured frame rate is greater than the target FPS.</p></div>
 
@@ -53,6 +53,8 @@ draft: true
 
 ## Functions {#functions}
 
+<div class="api-entry">
+
 ### describeEntity {#describeEntity}
 
 ```js
@@ -65,6 +67,10 @@ LODManager.describeEntity(entityID)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> object <p><code>name</code>; <code>visuallyReady</code> (what it draws now has loaded, which the loading screen waits for); <code>card</code>, when the entity or an ancestor has an impostor card: <code>ownerID</code>, <code>ownerName</code>, <code>showing</code> ("card", "model", "dissolving" or "loading"), <code>standIn</code> (the card stands in for models not here yet), <code>angleDeg</code> (how wide its sphere looks), <code>switchAngleDeg</code> and <code>enabled</code>; <code>mesh</code>, for a model entity: "waiting" (behind its card, not fetched), "loading" or "loaded"; <code>textures</code>, for a loaded model: "loading" or "loaded"; <code>lods</code>, for a loaded model: <code>parts</code>, one per mesh part, each with <code>full</code> (its triangles), <code>levels</code> (each level's triangles) and <code>shown</code> (the level the main view draws, 0 for full detail), and <code>enabled</code>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getAutomaticLODAdjust {#getAutomaticLODAdjust}
 
 ```js
@@ -73,6 +79,10 @@ LODManager.getAutomaticLODAdjust()
 
 <div class="api-text" v-pre><p>Gets whether the LOD is being automatically adjusted.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the LOD is being automatically adjusted, <code>false</code> if it is being manually adjusted.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getDesktopLODTargetFPS {#getDesktopLODTargetFPS}
 
@@ -83,6 +93,10 @@ LODManager.getDesktopLODTargetFPS()
 <div class="api-text" v-pre><p>Gets the target desktop LOD FPS.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The target desktop LOD FPS, in Hz.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getHMDLODTargetFPS {#getHMDLODTargetFPS}
 
 ```js
@@ -91,6 +105,10 @@ LODManager.getHMDLODTargetFPS()
 
 <div class="api-text" v-pre><p>Gets the target HMD LOD FPS. The target FPS in HMD mode. The LOD is adjusted to ...</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The target HMD LOD FPS, in Hz.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getLODFeedbackText {#getLODFeedbackText}
 
@@ -107,6 +125,10 @@ LODManager.getLODFeedbackText()
 print("You can currently see: " + LODManager.getLODFeedbackText());
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getLODTargetFPS {#getLODTargetFPS}
 
 ```js
@@ -115,6 +137,10 @@ LODManager.getLODTargetFPS()
 
 <div class="api-text" v-pre><p>The target LOD FPS per the current desktop or HMD display mode, capped by the target refresh rate.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The target LOD FPS, in Hz.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setAutomaticLODAdjust {#setAutomaticLODAdjust}
 
@@ -127,6 +153,10 @@ LODManager.setAutomaticLODAdjust(value)
 <tr><td><code>value</code></td><td>boolean</td><td><p><code>true</code> to automatically adjust the LOD, <code>false</code> to manually adjust it.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setDesktopLODTargetFPS {#setDesktopLODTargetFPS}
 
 ```js
@@ -137,6 +167,10 @@ LODManager.setDesktopLODTargetFPS(value)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>value</code></td><td>number</td><td><p>The target desktop LOD FPS, in Hz.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setHMDLODTargetFPS {#setHMDLODTargetFPS}
 
@@ -149,9 +183,13 @@ LODManager.setHMDLODTargetFPS(value)
 <tr><td><code>value</code></td><td>number</td><td><p>The target HMD LOD FPS, in Hz.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### autoLODChanged {#autoLODChanged}
 
@@ -163,6 +201,10 @@ LODManager.autoLODChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when whether or not the LOD is being automatically adjusted changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### worldDetailQualityChanged {#worldDetailQualityChanged}
 
 ```js
@@ -173,7 +215,11 @@ LODManager.worldDetailQualityChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the world detail quality changes.</p></div>
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### WorldDetailQuality {#WorldDetailQuality}
 
@@ -187,9 +233,13 @@ LODManager.worldDetailQualityChanged.connect(function () {
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
 
+</div>
+
 ## Deprecated {#deprecated}
 
 Still there for older scripts; new scripts should not use these.
+
+<div class="api-entry">
 
 ### getBoundaryLevelAdjust {#getBoundaryLevelAdjust}
 
@@ -203,6 +253,10 @@ LODManager.getBoundaryLevelAdjust()
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The boundary level adjust factor.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getOctreeSizeScale {#getOctreeSizeScale}
 
 ```js
@@ -214,6 +268,10 @@ LODManager.getOctreeSizeScale()
 :::
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The octree size scale.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setBoundaryLevelAdjust {#setBoundaryLevelAdjust}
 
@@ -229,6 +287,10 @@ LODManager.setBoundaryLevelAdjust(boundaryLevelAdjust)
 <tr><td><code>boundaryLevelAdjust</code></td><td>number</td><td><p>The boundary level adjust factor.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setOctreeSizeScale {#setOctreeSizeScale}
 
 ```js
@@ -242,6 +304,10 @@ LODManager.setOctreeSizeScale(sizeScale)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>sizeScale</code></td><td>number</td><td><p>The octree size scale.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### LODDecreased {#LODDecreased}
 
@@ -257,6 +323,10 @@ LODManager.LODDecreased.connect(function () {
 
 <div class="api-text" v-pre><p><em>Not triggered.</em></p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### LODIncreased {#LODIncreased}
 
 ```js
@@ -271,6 +341,10 @@ LODManager.LODIncreased.connect(function () {
 
 <div class="api-text" v-pre><p><em>Not triggered.</em></p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### lodQualityLevelChanged {#lodQualityLevelChanged}
 
 ```js
@@ -284,3 +358,5 @@ LODManager.lodQualityLevelChanged.connect(function () {
 :::
 
 <div class="api-text" v-pre><p>Triggered when the <code>lodQualityLevel</code> property value changes.</p></div>
+
+</div>

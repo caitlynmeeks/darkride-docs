@@ -9,8 +9,17 @@ draft: true
 Every namespace, class, function and signal a Darkride script can use, as of Darkride 1.1.2. It's built from
 the reference notes in Darkride's code (commit `02429ffa29`), so it says what that version does.
 
-Scripts are JavaScript. Darkride runs them on its WebAssembly script engine (QuickJS), which understands modern
-JavaScript (ES2023).
+## The engine
+
+Scripts are JavaScript. Darkride 1.1.2 runs every kind of script on its WebAssembly script engine (QuickJS) by
+default, and it understands modern JavaScript (ES2023). A visitor can switch their own app back to the older QtScript
+engine (**Developer** > **Scripting**), and a server's operator can switch the server; QtScript understands only older
+JavaScript (ES5), so a script meant to run on both should stick to ES5. A world can't choose.
+
+- IDs (UUIDs) are strings.
+- There's no debugger: use `print` and `console`.
+- Each call into a script (an update, a timer, a signal) is stopped after 5 seconds of its own running time.
+- What doesn't work yet: [Known issues](/known-issues).
 
 ## The kinds of script
 
@@ -18,14 +27,17 @@ Each page says which kinds of script can use it.
 
 | Kind | Where it runs |
 | --- | --- |
-| **Interface scripts** | In your copy of the Darkride app, for you alone: the scripts you run from **Edit** > **Running Scripts**. |
-| **Client entity scripts** | In each visitor's app, attached to an entity in a world. |
-| **Avatar scripts** | In each visitor's app, attached to an avatar. |
-| **Server entity scripts** | On the world's server, attached to an entity; everyone sees what they do. |
-| **Assignment client scripts** | On the world's server, on their own, such as a bot (an agent). |
+| **Client scripts** | In your own copy of the Darkride app, for you alone: the app's own scripts and the ones you run from **Edit** > **Running Scripts**. |
+| **Entity scripts** | Attached to an entity in a world; they run in each visitor's app. |
+| **Avatar scripts** | Attached to an avatar, in the app of the person wearing it. |
+| **Server entity scripts** | Attached to an entity, on the world's server; everyone sees what they do. |
+| **Agents** | On the world's server, on their own, taking part like a visitor: a bot, for example. |
 
-Since 1.1.2, a world's own scripts (client entity scripts) can use only the parts of the API a world needs; your own
-Interface scripts can use everything. The pages don't show this yet.
+The engine's own notes call client scripts "Interface scripts", entity scripts "client entity scripts" and agents
+"assignment client scripts".
+
+Since 1.1.2, a world's entity scripts (its scripts on visitors' computers) can use only the parts of the API a world
+needs; your own client scripts can use everything. The pages don't show this yet.
 
 ## Most used
 
@@ -33,7 +45,7 @@ Interface scripts can use everything. The pages don't show this yet.
 | --- | --- |
 | [Entities](./Entities) | The Entities API provides facilities to create and interact with entities. |
 | [MyAvatar](./MyAvatar) | Your avatar is your in-world representation of you. |
-| [AvatarList](./AvatarList) | The AvatarList API provides information about avatars within the current domain. |
+| [AvatarList](./AvatarList) | The AvatarList API provides information about avatars within the current world. |
 | [Script](./Script) | The Script API provides facilities for working with scripts. |
 | [Vec3](./Vec3) | The Vec3 API provides facilities for generating and manipulating 3-dimensional vectors. |
 | [Quat](./Quat) | The Quat API provides facilities for generating and manipulating quaternions. |
@@ -58,17 +70,17 @@ Interface scripts can use everything. The pages don't show this yet.
 | [AnimationCache](./AnimationCache) | The AnimationCache API manages animation cache resources. |
 | [AnimationFrameObject](./AnimationFrameObject) | Joint rotations in one frame of an AnimationObject. |
 | [AnimationObject](./AnimationObject) | Information about an animation resource, created by AnimationCache.getAnimation. |
-| [Assets](./Assets) | The Assets API provides facilities for interacting with the domain's asset server and the client cache. |
+| [Assets](./Assets) | The Assets API provides facilities for interacting with the world's asset server and the client cache. |
 | [Audio](./Audio) | The Audio API provides facilities to interact with audio inputs and outputs and to play sounds. |
 | [AudioEffectOptions](./AudioEffectOptions) | Audio effect options used by the Audio API. |
 | [AudioInjector](./AudioInjector) | Plays or "injects" the content of an audio file. |
 | [AudioStats](./AudioStats) | The AudioStats API provides statistics of the client and mixer audio. |
 | [AudioStats.AudioStreamStats](./AudioStats-AudioStreamStats) | Statistics for an audio stream. |
-| [Avatar](./Avatar) | The Avatar API is used to manipulate scriptable avatars on the domain. |
+| [Avatar](./Avatar) | The Avatar API is used to manipulate scriptable avatars on the world. |
 | [AvatarBookmarks](./AvatarBookmarks) | The AvatarBookmarks API provides facilities for working with avatar bookmarks ("favorites" in the Avatar app). |
 | [AvatarInputs](./AvatarInputs) | The AvatarInputs API provides facilities to manage user inputs. |
-| [AvatarList](./AvatarList) | The AvatarList API provides information about avatars within the current domain. |
-| [AvatarManager](./AvatarManager) | The AvatarManager API provides information about avatars within the current domain. |
+| [AvatarList](./AvatarList) | The AvatarList API provides information about avatars within the current world. |
+| [AvatarManager](./AvatarManager) | The AvatarManager API provides information about avatars within the current world. |
 | [Camera](./Camera) | The Camera API provides access to the "camera" that defines your view in desktop and HMD display modes. |
 | [Chat](./Chat) | The Chat API lets you use chat in world. |
 | [ChatCommand](./ChatCommand) | A chat command. |
@@ -103,7 +115,6 @@ Interface scripts can use everything. The pages don't show this yet.
 | [Menu](./Menu) | The Menu API provides access to the menu that is displayed at the top of the window on a user's desktop and in the tablet when the "MENU" button is pressed. |
 | [MeshProxy](./MeshProxy) | A handle for a mesh in an entity, such as returned by Entities.getMeshes. |
 | [Messages](./Messages) | The Messages API enables text and data to be sent between scripts over named "channels". |
-| [Midi](./Midi) | The Midi API provides the ability to connect Interface with musical instruments and other external or virtual devices via the MIDI protocol. |
 | [Model](./Model) | The Model API provides the ability to manipulate meshes. |
 | [ModelCache](./ModelCache) | The ModelCache API manages model cache resources. |
 | [MyAvatar](./MyAvatar) | Your avatar is your in-world representation of you. |
@@ -140,7 +151,7 @@ Interface scripts can use everything. The pages don't show this yet.
 | [Snapshot](./Snapshot) | The Snapshot API provides access to the path that snapshots are saved to. |
 | [SoundCache](./SoundCache) | The SoundCache API manages sound cache resources. |
 | [SoundObject](./SoundObject) | An audio resource, created by SoundCache.getSound, to be played back using Audio.playSound. |
-| [Stats](./Stats) | The Stats API provides statistics on Interface and domain operation, per the statistics overlay. |
+| [Stats](./Stats) | The Stats API provides statistics on Interface and world operation, per the statistics overlay. |
 | [Tablet](./Tablet) | The Tablet API provides the facilities to work with the system or other tablet. |
 | [TabletButtonProxy](./TabletButtonProxy) | A tablet button. |
 | [tabletInterface](./tabletInterface) | The tabletInterface API provides the facilities to work with the system or other tablet. |

@@ -6,11 +6,13 @@ draft: true
 
 # DialogsManager
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>DialogsMamnager</code> API provides facilities to work with some key dialogs.</p></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### hideAddressBar {#hideAddressBar}
 
@@ -20,6 +22,10 @@ DialogsManager.hideAddressBar()
 
 <div class="api-text" v-pre><p>Hides the "Goto" dialog.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### showAddressBar {#showAddressBar}
 
 ```js
@@ -27,6 +33,10 @@ DialogsManager.showAddressBar()
 ```
 
 <div class="api-text" v-pre><p>Shows the "Goto" dialog.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### showFeed {#showFeed}
 
@@ -36,6 +46,10 @@ DialogsManager.showFeed()
 
 <div class="api-text" v-pre><p><em>Currently performs no action.</em></p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### showLoginDialog {#showLoginDialog}
 
 ```js
@@ -44,9 +58,13 @@ DialogsManager.showLoginDialog()
 
 <div class="api-text" v-pre><p>Shows the login dialog.</p></div>
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### addressBarShown {#addressBarShown}
 
@@ -62,3 +80,5 @@ DialogsManager.addressBarShown.connect(function (visible) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>visible</code></td><td>boolean</td><td><p><code>true</code> if the Goto dialog has been opened, <code>false</code> if it has been closed.</p></td></tr>
 </tbody></table></div>
+
+</div>

@@ -6,7 +6,7 @@ draft: true
 
 # Keyboard
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>Keyboard</code> API provides facilities to use an in-world, virtual keyboard. When enabled, this keyboard is displayed instead of the 2D keyboard that raises at the bottom of the tablet or Web entities when a text input field has focus and you're in HMD mode.</p></div>
 
@@ -21,6 +21,8 @@ draft: true
 
 ## Functions {#functions}
 
+<div class="api-entry">
+
 ### containsID {#containsID}
 
 ```js
@@ -33,6 +35,10 @@ Keyboard.containsID(entityID)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the entity is part of the virtual keyboard, <code>false</code> if it isn't.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### disableLeftMallet {#disableLeftMallet}
 
 ```js
@@ -40,6 +46,10 @@ Keyboard.disableLeftMallet()
 ```
 
 <div class="api-text" v-pre><p>Disables the left mallet so that it is not displayed when in HMD mode.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### disableRightMallet {#disableRightMallet}
 
@@ -49,6 +59,10 @@ Keyboard.disableRightMallet()
 
 <div class="api-text" v-pre><p>Disables the right mallet so that it is not displayed when in HMD mode.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### enableLeftMallet {#enableLeftMallet}
 
 ```js
@@ -57,6 +71,10 @@ Keyboard.enableLeftMallet()
 
 <div class="api-text" v-pre><p>Enables the left mallet so that it is displayed when in HMD mode.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### enableRightMallet {#enableRightMallet}
 
 ```js
@@ -64,6 +82,10 @@ Keyboard.enableRightMallet()
 ```
 
 <div class="api-text" v-pre><p>Enables the right mallet so that it is displayed when in HMD mode.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### loadKeyboardFile {#loadKeyboardFile}
 
@@ -76,6 +98,10 @@ Keyboard.loadKeyboardFile(path)
 <tr><td><code>path</code></td><td>string</td><td><p>The keyboard JSON file.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setLeftHandLaser {#setLeftHandLaser}
 
 ```js
@@ -87,6 +113,10 @@ Keyboard.setLeftHandLaser(leftHandLaser)
 <tr><td><code>leftHandLaser</code></td><td>number</td><td><p>The ID of a ray pointer created by <a href="Pointers#createPointer"><code>Pointers.createPointer</code></a>.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setRightHandLaser {#setRightHandLaser}
 
 ```js
@@ -97,3 +127,5 @@ Keyboard.setRightHandLaser(rightHandLaser)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>rightHandLaser</code></td><td>number</td><td><p>The ID of a ray pointer created by <a href="Pointers#createPointer"><code>Pointers.createPointer</code></a>.</p></td></tr>
 </tbody></table></div>
+
+</div>

@@ -6,7 +6,7 @@ draft: true
 
 # TabletButtonProxy
 
-<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>A tablet button. In toolbar mode (Developer &gt; UI &gt; Tablet Becomes Toolbar), the tablet button is displayed on the toolbar.</p>
  <p>Create a new button using <a href="TabletProxy#addButton"><code>TabletProxy#addButton</code></a>.</p></div>
@@ -19,6 +19,8 @@ draft: true
 </tbody></table></div>
 
 ## Methods {#functions}
+
+<div class="api-entry">
 
 ### editProperties {#editProperties}
 
@@ -50,6 +52,10 @@ Script.scriptEnding.connect(function () {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getProperties {#getProperties}
 
 ```js
@@ -73,9 +79,13 @@ Script.scriptEnding.connect(function () {
 });
 ```
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### clicked {#clicked}
 
@@ -102,6 +112,10 @@ Script.scriptEnding.connect(function () {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### propertiesChanged {#propertiesChanged}
 
 ```js
@@ -112,7 +126,11 @@ TabletButtonProxy.propertiesChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when a button's properties are changed.</p></div>
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### ButtonProperties {#ButtonProperties}
 
@@ -143,3 +161,5 @@ TabletButtonProxy.propertiesChanged.connect(function () {
 <tr><td><code>gridView</code></td><td>object</td><td></td><td><p>Internal tablet-only property.</p></td></tr>
 <tr><td><code>buttonIndex</code></td><td>number</td><td></td><td><p>Internal tablet-only property.</p></td></tr>
 </tbody></table></div>
+
+</div>

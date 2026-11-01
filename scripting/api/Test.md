@@ -6,7 +6,7 @@ draft: true
 
 # Test
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts.</div>
 
 <div class="api-text" v-pre><p>Here's how you could use the Test API:</p>
  <ul> <li>Write a script using the below and launch interface with: <code>interface --testScript path/to/script.js</code></li>
@@ -15,6 +15,8 @@ draft: true
  </ul></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### acceptPanelText {#acceptPanelText}
 
@@ -27,6 +29,10 @@ Test.acceptPanelText(objectName)
 <tr><td><code>objectName</code></td><td>string</td><td><p>The field's objectName.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p>Whether a field of that name was found.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### answerNextAlert {#answerNextAlert}
 
@@ -41,6 +47,10 @@ Test.answerNextAlert(button, fieldText?, picturePath?)
 <tr><td><code>picturePath</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>Where to save the alert's picture (PNG), if anywhere.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### answerNextPrompt {#answerNextPrompt}
 
 ```js
@@ -51,6 +61,10 @@ Test.answerNextPrompt(text)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>text</code></td><td>string</td><td><p>The answer.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### barButton {#barButton}
 
@@ -65,6 +79,10 @@ Test.barButton(text, click?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> object <p><code>{ active, badge, x, y, width, height, barWidth, barHeight }</code>: whether it shows active (before the click's effect), the count on its red badge (0 for none), its cell in the bar and the bar's size; empty when there's no such button.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### chooseTrackPoint {#chooseTrackPoint}
 
 ```js
@@ -76,6 +94,10 @@ Test.chooseTrackPoint(index)
 <tr><td><code>index</code></td><td>number</td><td><p>The point's index, from 0.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### chosenTrackPoint {#chosenTrackPoint}
 
 ```js
@@ -83,6 +105,10 @@ Test.chosenTrackPoint()
 ```
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The chosen control point's index, -1 for none.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### clear {#clear}
 
@@ -92,6 +118,10 @@ Test.clear()
 
 <div class="api-text" v-pre><p>Clears all caches</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### clearCaches {#clearCaches}
 
 ```js
@@ -99,6 +129,10 @@ Test.clearCaches()
 ```
 
 <div class="api-text" v-pre><p>Clear all caches (menu command Reload Content)</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### clickHierarchyRow {#clickHierarchyRow}
 
@@ -110,6 +144,10 @@ Test.clickHierarchyRow(id)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>id</code></td><td><a href="Uuid">Uuid</a></td><td><p>The entity.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### commitInspectorEdit {#commitInspectorEdit}
 
@@ -123,6 +161,10 @@ Test.commitInspectorEdit(key, value)
 <tr><td><code>value</code></td><td>string | number | boolean</td><td><p>The value as the field holds it.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### consoleRun {#consoleRun}
 
 ```js
@@ -135,6 +177,10 @@ Test.consoleRun(command)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p>Whether the console's panel exists.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### deleteTrackPoint {#deleteTrackPoint}
 
 ```js
@@ -142,6 +188,10 @@ Test.deleteTrackPoint()
 ```
 
 <div class="api-text" v-pre><p>Removes the selected Track's chosen control point, as Delete does.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### dockAction {#dockAction}
 
@@ -158,6 +208,10 @@ Test.dockAction(objectName, action)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p>Whether the panel has such a title bar.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### dumpDraws {#dumpDraws}
 
 ```js
@@ -168,6 +222,10 @@ Test.dumpDraws(frames)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>frames</code></td><td>number</td><td><p>How many frames to log.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### dumpFrameTrace {#dumpFrameTrace}
 
@@ -181,6 +239,10 @@ Test.dumpFrameTrace(path)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The rows written, or -1 when the file could not be written.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### editorCreate {#editorCreate}
 
 ```js
@@ -191,6 +253,10 @@ Test.editorCreate(key)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>key</code></td><td>string</td><td><p>The item's key in the catalogue (editor/EditorCreate.cpp): <code>"cube"</code>, <code>"vehicle-car"</code>, …</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### editorDrag {#editorDrag}
 
@@ -207,6 +273,10 @@ Test.editorDrag(delta, yawDegrees, rollDegrees, begin, final)
 <tr><td><code>final</code></td><td>boolean</td><td><p>The last call of a drag.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### editorExportSelection {#editorExportSelection}
 
 ```js
@@ -218,6 +288,10 @@ Test.editorExportSelection(path)
 <tr><td><code>path</code></td><td>string</td><td><p>The file to write (.json).</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>How many entities were written, -1 for none.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### editorImportEntities {#editorImportEntities}
 
@@ -231,6 +305,10 @@ Test.editorImportEntities(url)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p>Whether any entities were made.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### editorLoadProblem {#editorLoadProblem}
 
 ```js
@@ -243,6 +321,10 @@ Test.editorLoadProblem(id)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>The failures, one per line.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### editorMarqueeIds {#editorMarqueeIds}
 
 ```js
@@ -251,6 +333,10 @@ Test.editorMarqueeIds()
 
 <div class="api-text" v-pre><p>What a marquee over build mode's whole viewport would select.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;<a href="Uuid">Uuid</a>&gt; <p>The entities.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### editorPickAt {#editorPickAt}
 
@@ -263,6 +349,10 @@ Test.editorPickAt(id)
 <tr><td><code>id</code></td><td><a href="Uuid">Uuid</a></td><td><p>The entity.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Uuid">Uuid</a> <p>The entity picked there, null for none.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### editorScaleDrag {#editorScaleDrag}
 
@@ -277,6 +367,10 @@ Test.editorScaleDrag(scale, begin, final)
 <tr><td><code>final</code></td><td>boolean</td><td><p>The last call of a drag.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### editorScriptStatus {#editorScriptStatus}
 
 ```js
@@ -289,6 +383,10 @@ Test.editorScriptStatus(key)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>The status line, <code>""</code> when the row shows none.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### editorStatus {#editorStatus}
 
 ```js
@@ -298,6 +396,10 @@ Test.editorStatus()
 <div class="api-text" v-pre><p>What Build mode's status bar says now ("" for nothing).</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>The status bar's text.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### editorUndo {#editorUndo}
 
 ```js
@@ -305,6 +407,10 @@ Test.editorUndo()
 ```
 
 <div class="api-text" v-pre><p>Undoes the editor's last step, as Cmd+Z does in build mode.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### editorUploadFiles {#editorUploadFiles}
 
@@ -317,6 +423,10 @@ Test.editorUploadFiles(paths)
 <tr><td><code>paths</code></td><td>Array&lt;string&gt;</td><td><p>The files' paths on this computer.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### endTraceEvent {#endTraceEvent}
 
 ```js
@@ -328,6 +438,10 @@ Test.endTraceEvent(name)
 <tr><td><code>name</code></td><td>string</td><td><p>Name of event</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### frameEditorSelection {#frameEditorSelection}
 
 ```js
@@ -335,6 +449,10 @@ Test.frameEditorSelection()
 ```
 
 <div class="api-text" v-pre><p>Frames the editor's selection in the viewport, as the F key does in build mode.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### frameTrace {#frameTrace}
 
@@ -347,6 +465,10 @@ Test.frameTrace(on)
 <tr><td><code>on</code></td><td>boolean</td><td><p>Whether to record.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getDisplayRefreshRate {#getDisplayRefreshRate}
 
 ```js
@@ -355,6 +477,10 @@ Test.getDisplayRefreshRate()
 
 <div class="api-text" v-pre><p>The refresh rate of the display the window is on, in Hz, as the platform reports it (0 when it does not).</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The refresh rate.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getGameLoopRate {#getGameLoopRate}
 
@@ -365,6 +491,10 @@ Test.getGameLoopRate()
 <div class="api-text" v-pre><p>The rate of the game loop (simulation and script updates), in frames per second, as the stats show it.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
 
+</div>
+
+<div class="api-entry">
+
 ### getHierarchyCounts {#getHierarchyCounts}
 
 ```js
@@ -374,14 +504,22 @@ Test.getHierarchyCounts()
 <div class="api-text" v-pre><p>The build-mode Hierarchy's rows: how many in all and how many loaded, whether the entity server's list of every entity has arrived, the list request's state, and the editor's selection.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> object <p><code>{ entities, loaded, listed, state, selected }</code>; <code>state</code> is "none", "waiting", "answered" or "unanswered".</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getOtherAvatarsReplicaCount {#getOtherAvatarsReplicaCount}
 
 ```js
 Test.getOtherAvatarsReplicaCount()
 ```
 
-<div class="api-text" v-pre><p>Return the number of replicas that are being created of other-avatars when entering a domain</p></div>
+<div class="api-text" v-pre><p>Return the number of replicas that are being created of other-avatars when entering a world</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>Current number of replicas of other-avatars.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getPresentPeriod {#getPresentPeriod}
 
@@ -391,6 +529,10 @@ Test.getPresentPeriod()
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The period the presents are paced at, in seconds, as the physics reads it; 0 while they are not paced (vsync, an HMD, or a schedule that restarted after a present overran).</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getRenderLoopRate {#getRenderLoopRate}
 
 ```js
@@ -399,6 +541,10 @@ Test.getRenderLoopRate()
 
 <div class="api-text" v-pre><p>The rate at which frames are presented, in frames per second.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
+
+</div>
+
+<div class="api-entry">
 
 ### hierarchyRowColor {#hierarchyRowColor}
 
@@ -412,6 +558,10 @@ Test.hierarchyRowColor(id)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>"#rrggbb", or "".</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### hierarchyShowAll {#hierarchyShowAll}
 
 ```js
@@ -419,6 +569,10 @@ Test.hierarchyShowAll()
 ```
 
 <div class="api-text" v-pre><p>Does what a click on the Hierarchy note's Show All does.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### hierarchyToggle {#hierarchyToggle}
 
@@ -434,6 +588,10 @@ Test.hierarchyToggle(id, which, onlyThis?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p>Whether the row was there and the toggle could change.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### hierarchyToggles {#hierarchyToggles}
 
 ```js
@@ -446,6 +604,10 @@ Test.hierarchyToggles(id)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> object <p><code>{ hidden, noPick, locked, scriptsOff, drawn, hiddenCount, note, scriptsOffReminder }</code>: hidden in this view, unpickable, locked, its scripts off, whether the entity is drawn here, how many of this world's rows are hidden here, the note under the Hierarchy, and the reminder shown when build mode last closed with scripts off ("" for none).</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### holdPresents {#holdPresents}
 
 ```js
@@ -456,6 +618,10 @@ Test.holdPresents(milliseconds)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>milliseconds</code></td><td>number</td><td><p>How long; 0 lets presents go at once.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### importAvatar {#importAvatar}
 
@@ -468,6 +634,10 @@ Test.importAvatar(path)
 <tr><td><code>path</code></td><td>string</td><td><p>The file's path on this computer.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### insertTrackPoint {#insertTrackPoint}
 
 ```js
@@ -478,6 +648,10 @@ Test.insertTrackPoint(arcLength)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>arcLength</code></td><td>number</td><td><p>Metres along the curve from its first point.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### inspectorField {#inspectorField}
 
@@ -490,6 +664,10 @@ Test.inspectorField(key)
 <tr><td><code>key</code></td><td>string</td><td><p>The Inspector's key for the property (e.g. "locked").</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> object <p><code>{ found, shown, enabled, inHeader, value, mixed, tip, lockNote }</code>: whether the field is there and shown, whether it can be changed, whether it's in the header (Unity's: Visible, the name, Locked, Ignore Picking), its value, whether the selection's values differ, its tooltip, and the note the header shows while everything selected is locked (<code>""</code> when none).</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### inspectorToggle {#inspectorToggle}
 
@@ -504,6 +682,10 @@ Test.inspectorToggle(name, click?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> object <p><code>{ found, shown, look, usable, tip }</code>: whether it's there and shown, "on", "off" or "mixed" (before the click's effect), whether a click would change something, and its tooltip.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### isTextureLoadingComplete {#isTextureLoadingComplete}
 
 ```js
@@ -513,6 +695,10 @@ Test.isTextureLoadingComplete()
 <div class="api-text" v-pre><p>Check whether all textures have been loaded</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> texture memory usage is not increasing</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### isVsyncEnabled {#isVsyncEnabled}
 
 ```js
@@ -521,6 +707,10 @@ Test.isVsyncEnabled()
 
 <div class="api-text" v-pre><p>Whether the swap waits for the display's refresh (Render.vsyncEnabled, or TIVOLI_VSYNC in the environment).</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p>Whether vsync is on.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### loadTestScene {#loadTestScene}
 
@@ -532,6 +722,10 @@ Test.loadTestScene(sceneFile)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>sceneFile</code></td><td>string</td><td><p>URL of scene to load</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### panelTexts {#panelTexts}
 
@@ -545,6 +739,10 @@ Test.panelTexts(name)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;string&gt; <p>The texts; empty when the panel hasn't been made or is closed.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### quit {#quit}
 
 ```js
@@ -552,6 +750,10 @@ Test.quit()
 ```
 
 <div class="api-text" v-pre><p>Exits the application</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### reloadEditorScript {#reloadEditorScript}
 
@@ -564,6 +766,10 @@ Test.reloadEditorScript(key)
 <tr><td><code>key</code></td><td>string</td><td><p><code>"script"</code> or <code>"serverScripts"</code>.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p>Whether the row and its button were there to press.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### saveDockPicture {#saveDockPicture}
 
@@ -578,6 +784,10 @@ Test.saveDockPicture(objectName, path)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p>Whether it was saved.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### saveInspectorPicture {#saveInspectorPicture}
 
 ```js
@@ -589,6 +799,10 @@ Test.saveInspectorPicture(path)
 <tr><td><code>path</code></td><td>string</td><td><p>Where to save it (PNG).</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p>Whether it was saved.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### saveObject {#saveObject}
 
@@ -602,6 +816,10 @@ Test.saveObject(name, filename)
 <tr><td><code>filename</code></td><td>string</td><td><p>Name of file to save to</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### savePhysicsSimulationStats {#savePhysicsSimulationStats}
 
 ```js
@@ -612,6 +830,10 @@ Test.savePhysicsSimulationStats(filename)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>filename</code></td><td>string</td><td><p>Name of file to save to</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### savePhysicsSimulationStats {#savePhysicsSimulationStats-2}
 
@@ -625,6 +847,10 @@ Test.savePhysicsSimulationStats(name, function)
 <tr><td><code>function</code></td><td>function</td><td><p>Function to profile</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### saveWindowPicture {#saveWindowPicture}
 
 ```js
@@ -637,6 +863,10 @@ Test.saveWindowPicture(path)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p>Whether it was saved.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### selectInEditor {#selectInEditor}
 
 ```js
@@ -648,6 +878,10 @@ Test.selectInEditor(ids)
 <tr><td><code>ids</code></td><td>Array&lt;<a href="Uuid">Uuid</a>&gt;</td><td><p>The entities to select.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setBuildMode {#setBuildMode}
 
 ```js
@@ -658,6 +892,10 @@ Test.setBuildMode(on)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>on</code></td><td>boolean</td><td><p>Whether build mode is on.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setChatBadge {#setChatBadge}
 
@@ -671,6 +909,10 @@ Test.setChatBadge(count)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p>Whether the bar has a Chat button.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setMinimumGPUTextureMemStabilityCount {#setMinimumGPUTextureMemStabilityCount}
 
 ```js
@@ -682,16 +924,24 @@ Test.setMinimumGPUTextureMemStabilityCount(count)
 <tr><td><code>count</code></td><td>number</td><td><p>Number of cycles to wait</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setOtherAvatarsReplicaCount {#setOtherAvatarsReplicaCount}
 
 ```js
 Test.setOtherAvatarsReplicaCount(count)
 ```
 
-<div class="api-text" v-pre><p>Values higher than 0 will create replicas of other-avatars when entering a domain for testing purpouses</p></div>
+<div class="api-text" v-pre><p>Values higher than 0 will create replicas of other-avatars when entering a world for testing purpouses</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>count</code></td><td>number</td><td><p>Number of replicas we want to create</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setPanelText {#setPanelText}
 
@@ -706,6 +956,10 @@ Test.setPanelText(objectName, text)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p>Whether a field of that name was found.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setPresentLoad {#setPresentLoad}
 
 ```js
@@ -716,6 +970,10 @@ Test.setPresentLoad(microseconds)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>microseconds</code></td><td>number</td><td><p>The extra time each present takes.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setSkin {#setSkin}
 
@@ -728,6 +986,10 @@ Test.setSkin(id)
 <tr><td><code>id</code></td><td>string</td><td><p>The installed skin's id (its folder's name under the app data's skins/), or "".</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>"" when it is on, else what is wrong with it.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### showAlert {#showAlert}
 
@@ -745,6 +1007,10 @@ Test.showAlert(title, text, details, buttons, fieldPlaceholder?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The pressed button's place in the list, -1 for none.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### showMaximized {#showMaximized}
 
 ```js
@@ -753,6 +1019,10 @@ Test.showMaximized()
 
 <div class="api-text" v-pre><p>Maximizes the window</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### showSignInScreen {#showSignInScreen}
 
 ```js
@@ -760,6 +1030,10 @@ Test.showSignInScreen()
 ```
 
 <div class="api-text" v-pre><p>Brings the sign-in screen up as signing out does: out of the world, the avatar hidden, the screen over the window. Scripts go on running. For a test client, which skips the screen at start (--tokens) and isn't signed out.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### startTraceEvent {#startTraceEvent}
 
@@ -772,6 +1046,10 @@ Test.startTraceEvent(name)
 <tr><td><code>name</code></td><td>string</td><td><p>Name of event</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### startTracing {#startTracing}
 
 ```js
@@ -782,6 +1060,10 @@ Test.startTracing(logrules?)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>logrules</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>See implementation for explanation</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### stopTracing {#stopTracing}
 
@@ -795,6 +1077,10 @@ Test.stopTracing(filename)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> bool <p>True if successful.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### takeFrameTrace {#takeFrameTrace}
 
 ```js
@@ -803,6 +1089,10 @@ Test.takeFrameTrace()
 
 <div class="api-text" v-pre><p>Takes the frame trace's records: the column names first, then one row per frame, oldest first, in that order (a cell is a number, a string, or undefined where the frame has no value: test it with <code>cell == null</code>). The records are cleared in the same step; the trace stays on or off as it was.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;Array&lt;(number|string)&gt;&gt; <p>[columns, row, row, ...].</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### takePresentTrace {#takePresentTrace}
 
@@ -813,6 +1103,10 @@ Test.takePresentTrace()
 <div class="api-text" v-pre><p>Takes the presents recorded so far: each is [time in ms, the rendered frame's index (as in the render trace), 1 if that frame was new or 0 if the last frame was shown again, the present's whole duration in ms, the swap's own duration in ms (its wait for the display, with vsync), the GPU's averaged time per frame in ms].</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;Array&lt;number&gt;&gt; <p>The samples, oldest first.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### takeRefreshTrace {#takeRefreshTrace}
 
 ```js
@@ -821,6 +1115,10 @@ Test.takeRefreshTrace()
 
 <div class="api-text" v-pre><p>Takes the refreshes recorded so far: the time of each in ms, on the clock of the present trace.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;number&gt; <p>The refresh times, oldest first; empty where the display gives no signal.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### takeRenderTrace {#takeRenderTrace}
 
@@ -831,6 +1129,10 @@ Test.takeRenderTrace()
 <div class="api-text" v-pre><p>Takes the samples traced so far: each is [time in ms, camera x, y, z, item x, y, z, frame index].</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;Array&lt;number&gt;&gt; <p>The samples, oldest first.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### terrainNextAngle {#terrainNextAngle}
 
 ```js
@@ -839,6 +1141,10 @@ Test.terrainNextAngle()
 
 <div class="api-text" v-pre><p>The angle (degrees) the Terrain tool's next stroke will turn the brush's picture by, which its outline shows.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The angle.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### terrainRandomAngle {#terrainRandomAngle}
 
@@ -852,6 +1158,10 @@ Test.terrainRandomAngle(on)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> object <p><code>{ found, angleEnabled }</code>: whether the tick and the Angle field are there, and whether the Angle field can be changed after.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### terrainStroke {#terrainStroke}
 
 ```js
@@ -864,6 +1174,10 @@ Test.terrainStroke(id)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The angle (degrees) the stroke turned the brush's picture by, -1 when no terrain was there.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### tracePresents {#tracePresents}
 
 ```js
@@ -875,6 +1189,10 @@ Test.tracePresents(on)
 <tr><td><code>on</code></td><td>boolean</td><td><p>Whether to record.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### traceRefreshes {#traceRefreshes}
 
 ```js
@@ -885,6 +1203,10 @@ Test.traceRefreshes(on)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>on</code></td><td>boolean</td><td><p>Whether to record.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### traceRenderedEntity {#traceRenderedEntity}
 
@@ -898,6 +1220,10 @@ Test.traceRenderedEntity(entityID)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p>Whether the entity has a render item to trace.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### typeKeys {#typeKeys}
 
 ```js
@@ -910,6 +1236,10 @@ Test.typeKeys(text, toView?)
 <tr><td><code>toView</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p>To the 3D view.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### wait {#wait}
 
 ```js
@@ -920,6 +1250,10 @@ Test.wait(milliseconds)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>milliseconds</code></td><td>number</td><td><p>Number of milliseconds to wait</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### waitForConnection {#waitForConnection}
 
@@ -932,6 +1266,10 @@ Test.waitForConnection(maxWaitMs?)
 <tr><td><code>maxWaitMs</code> <em>optional</em></td><td>number</td><td><code>10000</code></td><td><p>Number of milliseconds to wait</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### waitForDownloadIdle {#waitForDownloadIdle}
 
 ```js
@@ -939,6 +1277,10 @@ Test.waitForDownloadIdle()
 ```
 
 <div class="api-text" v-pre><p>Waits for all pending downloads to be complete</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### waitForProcessingIdle {#waitForProcessingIdle}
 
@@ -948,6 +1290,10 @@ Test.waitForProcessingIdle()
 
 <div class="api-text" v-pre><p>Waits for all file parsing operations to be complete</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### waitForTextureIdle {#waitForTextureIdle}
 
 ```js
@@ -955,6 +1301,10 @@ Test.waitForTextureIdle()
 ```
 
 <div class="api-text" v-pre><p>Waits for all texture transfers to be complete</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### waitIdle {#waitIdle}
 
@@ -964,6 +1314,10 @@ Test.waitIdle()
 
 <div class="api-text" v-pre><p>Waits for all pending downloads, parsing and texture transfers to be complete</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### windowLayout {#windowLayout}
 
 ```js
@@ -972,6 +1326,10 @@ Test.windowLayout()
 
 <div class="api-text" v-pre><p>Where the window's dock panels are (ui/WindowLayout.h): chat's ("chat") and Build mode's ("hierarchy", "inspector", "assets"), each <code>{ open, floating, area, x, y, width, height }</code> (area "left", "right", "top", "bottom" or "none"; x and y on the screen), the side of the bar of app buttons ("bar"), and the width of the edges between the panels and the 3D view ("separator", px).</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> object <p>The panels, by name; a panel not made yet is missing.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### windowLayoutAction {#windowLayoutAction}
 
@@ -986,6 +1344,10 @@ Test.windowLayoutAction(action, name?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;string&gt; <p>The current mode's saved layouts' names, after the action.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### worldChat {#worldChat}
 
 ```js
@@ -994,3 +1356,5 @@ Test.worldChat()
 
 <div class="api-text" v-pre><p>This world in chat (chat/WorldChat.h): its lines and unseen count, whether the chat panel is open, and the widget that has the keyboard (its object name, and its text when it is chat's message box).</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> object <p><code>{items, unread, chatOpen, focus, focusText}</code></p></div>
+
+</div>

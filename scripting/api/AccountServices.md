@@ -6,7 +6,7 @@ draft: true
 
 # AccountServices
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>AccountServices</code> API provides functions that give information on user connectivity, visibility, and asset download progress.</p></div>
 
@@ -27,6 +27,8 @@ draft: true
 
 ## Functions {#functions}
 
+<div class="api-entry">
+
 ### checkAndSignalForAccessToken {#checkAndSignalForAccessToken}
 
 ```js
@@ -36,14 +38,22 @@ AccountServices.checkAndSignalForAccessToken()
 <div class="api-text" v-pre><p>The function returns the login status of the user and prompts the user to log in (with a login dialog) if they're not already logged in.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the user is logged in, <code>false</code> if not.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getDownloadInfo {#getDownloadInfo}
 
 ```js
 AccountServices.getDownloadInfo()
 ```
 
-<div class="api-text" v-pre><p>Gets information on the download progress of assets in the domain.</p></div>
+<div class="api-text" v-pre><p>Gets information on the download progress of assets in the world.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="#DownloadInfoResult">AccountServices.DownloadInfoResult</a> <p>Information on the download progress of assets.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### isLoggedIn {#isLoggedIn}
 
@@ -61,6 +71,10 @@ var isLoggedIn = AccountServices.isLoggedIn();
 print("You are logged in: " + isLoggedIn);  // true or false
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### logOut {#logOut}
 
 ```js
@@ -69,17 +83,25 @@ AccountServices.logOut()
 
 <div class="api-text" v-pre><p>Logs the user out.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### updateDownloadInfo {#updateDownloadInfo}
 
 ```js
 AccountServices.updateDownloadInfo()
 ```
 
-<div class="api-text" v-pre><p>Triggers a <a href="#downloadInfoChanged">downloadInfoChanged</a> signal with information on the current download progress of the assets in the domain.</p></div>
+<div class="api-text" v-pre><p>Triggers a <a href="#downloadInfoChanged">downloadInfoChanged</a> signal with information on the current download progress of the assets in the world.</p></div>
+
+</div>
 
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### connected {#connected}
 
@@ -90,6 +112,10 @@ AccountServices.connected.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Not currently used.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### disconnected {#disconnected}
 
@@ -104,6 +130,10 @@ AccountServices.disconnected.connect(function (reason) {
 <tr><td><code>reason</code></td><td>string</td><td><p>Has the value, <code>"logout"</code>.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### downloadInfoChanged {#downloadInfoChanged}
 
 ```js
@@ -112,10 +142,14 @@ AccountServices.downloadInfoChanged.connect(function (downloadInfo) {
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when the download progress of the assets in the domain changes.</p></div>
+<div class="api-text" v-pre><p>Triggered when the download progress of the assets in the world changes.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>downloadInfo</code></td><td><a href="#DownloadInfoResult">AccountServices.DownloadInfoResult</a></td><td><p>Information on the download progress of assets.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### findableByChanged {#findableByChanged}
 
@@ -154,6 +188,10 @@ Script.setTimeout(function () {
 }, 4000);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### loggedInChanged {#loggedInChanged}
 
 ```js
@@ -174,6 +212,10 @@ AccountServices.loggedInChanged.connect(function(loggedIn) {
     print("Logged in: " + loggedIn);
 });
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### myUsernameChanged {#myUsernameChanged}
 
@@ -196,7 +238,11 @@ AccountServices.myUsernameChanged.connect(function (username) {
 });
 ```
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### DownloadInfoResult {#DownloadInfoResult}
 
@@ -205,3 +251,5 @@ AccountServices.myUsernameChanged.connect(function (username) {
 <tr><td><code>downloading</code></td><td>Array&lt;number&gt;</td><td><p>The download percentage remaining of each asset currently downloading.</p></td></tr>
 <tr><td><code>pending</code></td><td>number</td><td><p>The number of assets pending download.</p></td></tr>
 </tbody></table></div>
+
+</div>

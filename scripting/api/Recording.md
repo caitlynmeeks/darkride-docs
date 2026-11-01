@@ -6,11 +6,13 @@ draft: true
 
 # Recording
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts, assignment client scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts, agents.</div>
 
 <div class="api-text" v-pre><p>The <code>Recording</code> API makes and plays back recordings of voice and avatar movements. Playback may be done on a user's avatar or an assignment client agent (see the <a href="Agent"><code>Agent</code></a> API).</p></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### getDefaultRecordingSaveDirectory {#getDefaultRecordingSaveDirectory}
 
@@ -27,6 +29,10 @@ Recording.getDefaultRecordingSaveDirectory()
 print("Default save directory: " + Recording.getDefaultRecordingSaveDirectory());
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getPlayerUseDisplayName {#getPlayerUseDisplayName}
 
 ```js
@@ -35,6 +41,10 @@ Recording.getPlayerUseDisplayName()
 
 <div class="api-text" v-pre><p>Gets whether recording playback will use the display name that the recording was made with.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if recording playback will use the display name that the recording was made with, <code>false</code> if playback will keep the current display name.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getPlayerUseSkeletonModel {#getPlayerUseSkeletonModel}
 
@@ -45,6 +55,10 @@ Recording.getPlayerUseSkeletonModel()
 <div class="api-text" v-pre><p>Gets whether recording playback will use the avatar model that the recording was made with.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if recording playback will use the avatar model that the recording was made with, <code>false</code> if playback will use the current avatar model.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getPlayFromCurrentLocation {#getPlayFromCurrentLocation}
 
 ```js
@@ -53,6 +67,10 @@ Recording.getPlayFromCurrentLocation()
 
 <div class="api-text" v-pre><p>Gets whether recordings are played at the current avatar location or the recorded location.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if recordings are played at the current avatar location, <code>false</code> if played at the recorded location.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### isPaused {#isPaused}
 
@@ -63,6 +81,10 @@ Recording.isPaused()
 <div class="api-text" v-pre><p>Gets whether recording playback is currently paused.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if recording playback is currently paused, <code>false</code> if it isn't.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### isPlaying {#isPlaying}
 
 ```js
@@ -72,6 +94,10 @@ Recording.isPlaying()
 <div class="api-text" v-pre><p>Gets whether a recording is currently playing.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if a recording is being played, <code>false</code> if one isn't.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### isRecording {#isRecording}
 
 ```js
@@ -80,6 +106,10 @@ Recording.isRecording()
 
 <div class="api-text" v-pre><p>Gets whether a recording is currently being made.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if a recording is currently being made, <code>false</code> if one isn't.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### loadLastRecording {#loadLastRecording}
 
@@ -99,6 +129,10 @@ Script.setTimeout(function () {
     Recording.loadLastRecording();
 }, 5000);
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### loadRecording {#loadRecording}
 
@@ -129,6 +163,10 @@ if (assetPath.slice(-4) === ".hfr") {
 }
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### pausePlayer {#pausePlayer}
 
 ```js
@@ -136,6 +174,10 @@ Recording.pausePlayer()
 ```
 
 <div class="api-text" v-pre><p>Pauses playback of the recording currently playing. Use <a href="#startPlaying">startPlaying</a> to resume playback or <a href="#stopPlaying">stopPlaying</a> to stop playback.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### playerElapsed {#playerElapsed}
 
@@ -146,6 +188,10 @@ Recording.playerElapsed()
 <div class="api-text" v-pre><p>Gets the current playback time in the loaded recording, in seconds.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The current playback time in the loaded recording, in seconds.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### playerLength {#playerLength}
 
 ```js
@@ -155,6 +201,10 @@ Recording.playerLength()
 <div class="api-text" v-pre><p>Gets the length of the loaded recording, in seconds.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The length of the recording currently loaded, in seconds</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### recorderElapsed {#recorderElapsed}
 
 ```js
@@ -163,6 +213,10 @@ Recording.recorderElapsed()
 
 <div class="api-text" v-pre><p>Gets the duration of the recording currently being made or recently made, in seconds.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The duration of the recording currently being made or recently made, in seconds.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### saveRecording {#saveRecording}
 
@@ -191,13 +245,17 @@ Script.setTimeout(function () {
 }, 5000);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### saveRecordingToAsset {#saveRecordingToAsset}
 
 ```js
 Recording.saveRecordingToAsset(callback)
 ```
 
-<div class="api-text" v-pre><p>Saves the most recently made recording to the domain's asset server.</p></div>
+<div class="api-text" v-pre><p>Saves the most recently made recording to the world's asset server.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>callback</code></td><td><a href="#saveRecordingToAssetCallback">Recording~saveRecordingToAssetCallback</a></td><td><p>The function to call upon completion.</p></td></tr>
 </tbody></table></div>
@@ -238,6 +296,10 @@ Script.setTimeout(function () {
 }, 5000);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### setPlayerAudioOffset {#setPlayerAudioOffset}
 
 ```js
@@ -248,6 +310,10 @@ Recording.setPlayerAudioOffset(audioOffset)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>audioOffset</code></td><td>number</td><td><p>Audio offset.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setPlayerLoop {#setPlayerLoop}
 
@@ -260,6 +326,10 @@ Recording.setPlayerLoop(loop)
 <tr><td><code>loop</code></td><td>boolean</td><td><p><code>true</code> if playback should repeat, <code>false</code> if it shouldn't.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setPlayerTime {#setPlayerTime}
 
 ```js
@@ -270,6 +340,10 @@ Recording.setPlayerTime(time)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>time</code></td><td>number</td><td><p>The current playback time, in seconds.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setPlayerUseDisplayName {#setPlayerUseDisplayName}
 
@@ -282,6 +356,10 @@ Recording.setPlayerUseDisplayName(useDisplayName)
 <tr><td><code>useDisplayName</code></td><td>boolean</td><td><p><code>true</code> to have recording playback use the display name that the recording was made with, <code>false</code> to have recording playback keep the current display name.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setPlayerUseSkeletonModel {#setPlayerUseSkeletonModel}
 
 ```js
@@ -292,6 +370,10 @@ Recording.setPlayerUseSkeletonModel(useSkeletonModel)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>useSkeletonModel</code></td><td>boolean</td><td><p><code>true</code> to have recording playback use the avatar model that the recording was made with, <code>false</code> to have playback use the current avatar model.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setPlayerVolume {#setPlayerVolume}
 
@@ -304,6 +386,10 @@ Recording.setPlayerVolume(volume)
 <tr><td><code>volume</code></td><td>number</td><td><p>The playback audio volume, range <code>0.0</code> – <code>1.0</code>.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setPlayFromCurrentLocation {#setPlayFromCurrentLocation}
 
 ```js
@@ -315,6 +401,10 @@ Recording.setPlayFromCurrentLocation(playFromCurrentLocation)
 <tr><td><code>playFromCurrentLocation</code></td><td>boolean</td><td><p><code>true</code> to play recordings at the current avatar location, <code>false</code> to play recordings at the recorded location.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### startPlaying {#startPlaying}
 
 ```js
@@ -322,6 +412,10 @@ Recording.startPlaying()
 ```
 
 <div class="api-text" v-pre><p>Starts playing the recording currently loaded or paused.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### startRecording {#startRecording}
 
@@ -331,6 +425,10 @@ Recording.startRecording()
 
 <div class="api-text" v-pre><p>Starts making a recording.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### stopPlaying {#stopPlaying}
 
 ```js
@@ -338,6 +436,10 @@ Recording.stopPlaying()
 ```
 
 <div class="api-text" v-pre><p>Stops playing the recording currently playing or paused.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### stopRecording {#stopRecording}
 
@@ -347,7 +449,11 @@ Recording.stopRecording()
 
 <div class="api-text" v-pre><p>Stops making a recording. The recording may be saved using <a href="#saveRecording">saveRecording</a> or <a href="#saveRecordingToAsset">saveRecordingToAsset</a>, or immediately played back with <a href="#loadLastRecording">loadLastRecording</a>.</p></div>
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### loadRecordingCallback {#loadRecordingCallback}
 
@@ -358,6 +464,10 @@ Recording.stopRecording()
 <tr><td><code>url</code></td><td>string</td><td><p>The URL of the recording that was requested to be loaded.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### saveRecordingToAssetCallback {#saveRecordingToAssetCallback}
 
 <div class="api-text" v-pre><p>Called when a <a href="#saveRecordingToAsset"><code>Recording.saveRecordingToAsset</code></a> call is complete.</p></div>
@@ -366,9 +476,13 @@ Recording.stopRecording()
 <tr><td><code>url</code></td><td>string</td><td><p>The URL of the recording stored in the asset server if successful, <code>""</code> if unsuccessful. The URL has <code>atp:</code> as the scheme and the SHA256 hash as the filename (with no extension).</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Deprecated {#deprecated}
 
 Still there for older scripts; new scripts should not use these.
+
+<div class="api-entry">
 
 ### getPlayerUseAttachments {#getPlayerUseAttachments}
 
@@ -383,6 +497,10 @@ Recording.getPlayerUseAttachments()
 <div class="api-text" v-pre><p><em>Not used.</em></p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p>Use attachments.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getPlayerUseHeadModel {#getPlayerUseHeadModel}
 
 ```js
@@ -395,6 +513,10 @@ Recording.getPlayerUseHeadModel()
 
 <div class="api-text" v-pre><p><em>Not used.</em></p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p>Use head model.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setPlayerUseAttachments {#setPlayerUseAttachments}
 
@@ -411,6 +533,10 @@ Recording.setPlayerUseAttachments(useAttachments)
 <tr><td><code>useAttachments</code></td><td>boolean</td><td><p>Use attachments.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setPlayerUseHeadModel {#setPlayerUseHeadModel}
 
 ```js
@@ -425,3 +551,5 @@ Recording.setPlayerUseHeadModel(useHeadModel)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>useHeadModel</code></td><td>boolean</td><td><p>Use head model.</p></td></tr>
 </tbody></table></div>
+
+</div>

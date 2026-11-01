@@ -6,7 +6,7 @@ draft: true
 
 # OffscreenFlags
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>OffscreenFlags</code> API enables gamepad joystick navigation of UI.</p>
  <p><em>This API currently has no effect and is not used.</em></p></div>
@@ -22,6 +22,8 @@ draft: true
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
 
+<div class="api-entry">
+
 ### navigationFocusDisabledChanged {#navigationFocusDisabledChanged}
 
 ```js
@@ -32,6 +34,10 @@ OffscreenFlags.navigationFocusDisabledChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>navigationFocusDisabled</code> property changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### navigationFocusedChanged {#navigationFocusedChanged}
 
 ```js
@@ -41,3 +47,5 @@ OffscreenFlags.navigationFocusedChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the value of the <code>navigationFocused</code> property changes.</p></div>
+
+</div>

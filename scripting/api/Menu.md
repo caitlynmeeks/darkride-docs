@@ -6,7 +6,7 @@ draft: true
 
 # Menu
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>Menu</code> API provides access to the menu that is displayed at the top of the window on a user's desktop and in the tablet when the "MENU" button is pressed.</p>
  <h3>Groupings</h3>
@@ -15,6 +15,8 @@ draft: true
  <p>If a menu item doesn't belong to a group, it is always displayed.</p></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### addMenu {#addMenu}
 
@@ -41,6 +43,10 @@ Menu.addMenu("Test Menu > Test Sub Menu");
 Menu.addMenu("Settings > Test Grouping Menu", "Developer");
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### addMenuItem {#addMenuItem}
 
 ```js
@@ -63,6 +69,10 @@ Menu.addMenuItem({
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### addMenuItem {#addMenuItem-2}
 
 ```js
@@ -82,6 +92,10 @@ Menu.addMenuItem(menuName, menuItem, shortcutKey?)
 Menu.addMenuItem("Developer", "Test", "Ctrl+Shift+T");
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### addSeparator {#addSeparator}
 
 ```js
@@ -99,6 +113,10 @@ Menu.addSeparator(menuName, separatorName)
 ```js
 Menu.addSeparator("Developer", "Test Separator");
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### isMenuEnabled {#isMenuEnabled}
 
@@ -118,6 +136,10 @@ Menu.isMenuEnabled(menuName)
 print("Developer Menu item enabled: " + Menu.isMenuEnabled("Settings > Developer Menu"));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### isOptionChecked {#isOptionChecked}
 
 ```js
@@ -135,6 +157,10 @@ Menu.isOptionChecked(menuOption)
 ```js
 print("Developer menu showing: " + Menu.isOptionChecked("Developer Menu"));
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### menuExists {#menuExists}
 
@@ -155,6 +181,10 @@ if (Menu.menuExists("Developer")) {
     print("Developer menu exists.");
 }
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### menuItemExists {#menuItemExists}
 
@@ -177,6 +207,10 @@ if (Menu.menuItemExists("Developer", "Stats")) {
 }
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### removeMenu {#removeMenu}
 
 ```js
@@ -194,6 +228,10 @@ Menu.removeMenu(menuName)
 Menu.removeMenu("Test Menu > Test Sub Menu");
 Menu.removeMenu("Test Menu");
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### removeMenuItem {#removeMenuItem}
 
@@ -213,6 +251,10 @@ Menu.removeMenuItem(menuName, menuItem)
 Menu.removeMenuItem("Developer", "Test");
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### removeSeparator {#removeSeparator}
 
 ```js
@@ -230,6 +272,10 @@ Menu.removeSeparator(menuName, separatorName)
 ```js
 Menu.removeSeparator("Developer", "Test Separator");
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### setIsOptionChecked {#setIsOptionChecked}
 
@@ -250,6 +296,10 @@ Menu.setIsOptionChecked("Developer Menu", true);
 print("Developer menu showing: " + Menu.isOptionChecked("Developer Menu"));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### setMenuEnabled {#setMenuEnabled}
 
 ```js
@@ -269,6 +319,10 @@ Menu.setMenuEnabled("Settings > Developer Menu", false);
 print("Developer Menu item enabled: " + Menu.isMenuEnabled("Settings > Developer Menu"));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### triggerOption {#triggerOption}
 
 ```js
@@ -286,9 +340,13 @@ Menu.triggerOption(menuOption)
 Menu.triggerOption('Asset Browser');
 ```
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### menuItemEvent {#menuItemEvent}
 
@@ -313,7 +371,11 @@ function onMenuItemEvent(menuItem) {
 Menu.menuItemEvent.connect(onMenuItemEvent);
 ```
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### MenuItemProperties {#MenuItemProperties}
 
@@ -332,3 +394,5 @@ Menu.menuItemEvent.connect(onMenuItemEvent);
 <tr><td><code>afterItem</code> <em>optional</em></td><td>string</td><td></td><td><p>The name of the menu item to place this menu item after.</p></td></tr>
 <tr><td><code>grouping</code> <em>optional</em></td><td>string</td><td></td><td><p>The name of grouping to add this menu item to.</p></td></tr>
 </tbody></table></div>
+
+</div>

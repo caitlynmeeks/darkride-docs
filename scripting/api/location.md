@@ -6,7 +6,7 @@ draft: true
 
 # location
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts, assignment client scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts, agents.</div>
 
 <div class="api-text" v-pre><p>The <code>location</code> API provides facilities related to your current location in the metaverse.</p>
  <h3>Getter/Setter</h3>
@@ -15,19 +15,21 @@ draft: true
 ## Properties {#properties}
 
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>domainID</code></td><td><a href="Uuid">Uuid</a></td><td><p>A UUID uniquely identifying the domain you're visiting. Is <a href="Uuid">Uuid.NULL</a> if you're not connected to the domain or are in a serverless domain. <em>Read-only.</em></p></td></tr>
+<tr><td><code>domainID</code></td><td><a href="Uuid">Uuid</a></td><td><p>A UUID uniquely identifying the world you're visiting. Is <a href="Uuid">Uuid.NULL</a> if you're not connected to the world or are in a serverless world. <em>Read-only.</em></p></td></tr>
 <tr><td><code>worldName</code></td><td>string</td><td><p>The name of the world you're connected to. <em>Read-only.</em></p></td></tr>
 <tr><td><code>worldAuthor</code></td><td>string</td><td><p>The author's username of the world you're connected to. <em>Read-only.</em></p></td></tr>
 <tr><td><code>worldDescription</code></td><td>string</td><td><p>The description of the world you're connected to. <em>Read-only.</em></p></td></tr>
-<tr><td><code>hostname</code></td><td>string</td><td><p>The name of the domain for your current metaverse address (e.g., <code>"DomainName"</code>, <code>localhost</code>, or an IP address). Is blank if you're in a serverless domain. <em>Read-only.</em></p></td></tr>
-<tr><td><code>href</code></td><td>string</td><td><p>Your current metaverse address (e.g., <code>"hifi://domainname/15,-10,26/0,0,0,1"</code>) regardless of whether or not you're connected to the domain. Starts with <code>"file:///"</code> if you're in a serverless domain. <em>Read-only.</em></p></td></tr>
-<tr><td><code>isConnected</code></td><td>boolean</td><td><p><code>true</code> if you're connected to the domain in your current <code>href</code> metaverse address, otherwise <code>false</code>.</p></td></tr>
+<tr><td><code>hostname</code></td><td>string</td><td><p>The name of the world for your current metaverse address (e.g., <code>"DomainName"</code>, <code>localhost</code>, or an IP address). Is blank if you're in a serverless world. <em>Read-only.</em></p></td></tr>
+<tr><td><code>href</code></td><td>string</td><td><p>Your current metaverse address (e.g., <code>"hifi://domainname/15,-10,26/0,0,0,1"</code>) regardless of whether or not you're connected to the world. Starts with <code>"file:///"</code> if you're in a serverless world. <em>Read-only.</em></p></td></tr>
+<tr><td><code>isConnected</code></td><td>boolean</td><td><p><code>true</code> if you're connected to the world in your current <code>href</code> metaverse address, otherwise <code>false</code>.</p></td></tr>
 <tr><td><code>pathname</code></td><td>string</td><td><p>The location and orientation in your current <code>href</code> metaverse address (e.g., <code>"/15,-10,26/0,0,0,1"</code>). <em>Read-only.</em></p></td></tr>
 <tr><td><code>placename</code></td><td>string</td><td><p>The place name in your current <code>href</code> metaverse address (e.g., <code>"DomainName"</code>). Is blank if your <code>hostname</code> is an IP address. <em>Read-only.</em></p></td></tr>
 <tr><td><code>protocol</code></td><td>string</td><td><p>The protocol of your current <code>href</code> metaverse address (e.g., <code>"hifi"</code>). <em>Read-only.</em></p></td></tr>
 </tbody></table></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### canGoBack {#canGoBack}
 
@@ -38,6 +40,10 @@ location.canGoBack()
 <div class="api-text" v-pre><p>Checks if going back to the previous location is possible.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if going back is possible, <code>false</code> if it isn't.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### canGoForward {#canGoForward}
 
 ```js
@@ -47,6 +53,10 @@ location.canGoForward()
 <div class="api-text" v-pre><p>Checks if going forward to the next location is possible.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if going forward is possible, <code>false</code> if it isn't.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### copyAddress {#copyAddress}
 
 ```js
@@ -54,6 +64,10 @@ location.copyAddress()
 ```
 
 <div class="api-text" v-pre><p>Copies your current metaverse address (i.e., <code>location.href</code> property value) to the OS clipboard.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### copyPath {#copyPath}
 
@@ -63,6 +77,10 @@ location.copyPath()
 
 <div class="api-text" v-pre><p>Copies your current metaverse location and orientation (i.e., <code>location.pathname</code> property value) to the OS clipboard.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### goBack {#goBack}
 
 ```js
@@ -71,6 +89,10 @@ location.goBack()
 
 <div class="api-text" v-pre><p>Takes you back to the previous location in your navigation history, if there is one.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### goForward {#goForward}
 
 ```js
@@ -78,6 +100,10 @@ location.goForward()
 ```
 
 <div class="api-text" v-pre><p>Takes you forward to the next location in your navigation history, if there is one.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### goToEntry {#goToEntry}
 
@@ -90,6 +116,10 @@ location.goToEntry(trigger)
 <tr><td><code>trigger</code></td><td><a href="#LookupTrigger">location.LookupTrigger</a></td><td><code>StartupFromSettings</code></td><td><p>The reason for the function call. Helps ensure that user's location history is correctly maintained.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### goToLastAddress {#goToLastAddress}
 
 ```js
@@ -97,6 +127,10 @@ location.goToLastAddress()
 ```
 
 <div class="api-text" v-pre><p>Takes you to the last address tried. This will be the last URL tried from <code>location.handleLookupString</code>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### goToLocalSandbox {#goToLocalSandbox}
 
@@ -110,6 +144,10 @@ location.goToLocalSandbox(path?, trigger?)
 <tr><td><code>trigger</code> <em>optional</em></td><td><a href="#LookupTrigger">location.LookupTrigger</a></td><td><code>StartupFromSettings</code></td><td><p>The reason for the function call. Helps ensure that user's location history is correctly maintained.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### goToUser {#goToUser}
 
 ```js
@@ -122,6 +160,10 @@ location.goToUser(username, matchOrientation?)
 <tr><td><code>matchOrientation</code> <em>optional</em></td><td>boolean</td><td><code>true</code></td><td><p>If <code>true</code> then go to a location just in front of the user and turn to face them, otherwise go to the user's exact location and orientation.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### handleLookupString {#handleLookupString}
 
 ```js
@@ -130,10 +172,14 @@ location.handleLookupString(address, fromSuggestions?)
 
 <div class="api-text" v-pre><p>Takes you to a specified metaverse address.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>address</code></td><td>string</td><td></td><td><p>The address to go to: a <code>"hifi://"</code> address, an IP address (e.g., <code>"127.0.0.1"</code> or <code>"localhost"</code>), a domain name, a named path on a domain (starts with <code>"/"</code>), a position or position and orientation, or a user (starts with <code>"@"</code>).</p></td></tr>
+<tr><td><code>address</code></td><td>string</td><td></td><td><p>The address to go to: a <code>"hifi://"</code> address, an IP address (e.g., <code>"127.0.0.1"</code> or <code>"localhost"</code>), a world name, a named path on a world (starts with <code>"/"</code>), a position or position and orientation, or a user (starts with <code>"@"</code>).</p></td></tr>
 <tr><td><code>fromSuggestions</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p>Set to <code>true</code> if the address is obtained from the "Goto" dialog. Helps ensure that user's location history is correctly maintained.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean </div>
+
+</div>
+
+<div class="api-entry">
 
 ### reconnect {#reconnect}
 
@@ -143,6 +189,10 @@ location.reconnect()
 
 <div class="api-text" v-pre><p>Reconnect to the current world, the same as leaving the world and returning.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### storeCurrentAddress {#storeCurrentAddress}
 
 ```js
@@ -151,9 +201,13 @@ location.storeCurrentAddress()
 
 <div class="api-text" v-pre><p>Updates your current metaverse location in Interface's <a href="Settings"><code>Settings</code></a> file as your last-known address. This can be used to ensure that you start up at that address if you exit Interface without a later address automatically being saved.</p></div>
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### goBackPossible {#goBackPossible}
 
@@ -178,6 +232,10 @@ function onGoBackPossible(isPossible) {
 location.goBackPossible.connect(onGoBackPossible);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### goForwardPossible {#goForwardPossible}
 
 ```js
@@ -201,6 +259,10 @@ function onGoForwardPossible(isPossible) {
 location.goForwardPossible.connect(onGoForwardPossible);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### hostChanged {#hostChanged}
 
 ```js
@@ -209,12 +271,12 @@ location.hostChanged.connect(function (hostname) {
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when you navigate to a new domain.</p></div>
+<div class="api-text" v-pre><p>Triggered when you navigate to a new world.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>hostname</code></td><td>string</td><td><p>The new domain's host name.</p></td></tr>
+<tr><td><code>hostname</code></td><td>string</td><td><p>The new world's host name.</p></td></tr>
 </tbody></table></div>
 
-<div class="api-example" v-pre><strong>Example:</strong> <p>Report when you navigate to a new domain.</p></div>
+<div class="api-example" v-pre><strong>Example:</strong> <p>Report when you navigate to a new world.</p></div>
 
 ```js
 function onHostChanged(host) {
@@ -224,6 +286,10 @@ function onHostChanged(host) {
 location.hostChanged.connect(onHostChanged);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### locationChangeRequired {#locationChangeRequired}
 
 ```js
@@ -232,7 +298,7 @@ location.locationChangeRequired.connect(function (position, hasOrientationChange
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when an attempt is made to send your avatar to a specified position on the current domain. For example, when you change domains or enter a position to go to in the "Goto" dialog.</p></div>
+<div class="api-text" v-pre><p>Triggered when an attempt is made to send your avatar to a specified position on the current world. For example, when you change worlds or enter a position to go to in the "Goto" dialog.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>position</code></td><td><a href="Vec3">Vec3</a></td><td><p>The position to go to.</p></td></tr>
 <tr><td><code>hasOrientationChange</code></td><td>boolean</td><td><p>If <code>true</code> then a new <code>orientation</code> has been requested.</p></td></tr>
@@ -254,6 +320,10 @@ function onLocationChangeRequired(newPosition, hasOrientationChange, newOrientat
 location.locationChangeRequired.connect(onLocationChangeRequired);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### lookupResultIsNotFound {#lookupResultIsNotFound}
 
 ```js
@@ -262,11 +332,15 @@ location.lookupResultIsNotFound.connect(function (name, isUser) {
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when looking up the details of a metaverse user or location to go to has completed and the domain or user could not be found.</p></div>
+<div class="api-text" v-pre><p>Triggered when looking up the details of a metaverse user or location to go to has completed and the world or user could not be found.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>name</code></td><td>string</td><td><p>The place's or user's name that was looked up, or <code>""</code> for a domain ID.</p></td></tr>
-<tr><td><code>isUser</code></td><td>boolean</td><td><p><code>true</code> if a user was looked up, <code>false</code> if a place or domain.</p></td></tr>
+<tr><td><code>name</code></td><td>string</td><td><p>The place's or user's name that was looked up, or <code>""</code> for a world ID.</p></td></tr>
+<tr><td><code>isUser</code></td><td>boolean</td><td><p><code>true</code> if a user was looked up, <code>false</code> if a place or world.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### lookupResultIsOffline {#lookupResultIsOffline}
 
@@ -276,11 +350,15 @@ location.lookupResultIsOffline.connect(function (name, isUser) {
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when looking up the details of a metaverse user or location to go to has completed and the domain or user is offline.</p></div>
+<div class="api-text" v-pre><p>Triggered when looking up the details of a metaverse user or location to go to has completed and the world or user is offline.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>name</code></td><td>string</td><td><p>The place's or user's name that was looked up, or <code>""</code> for a domain ID.</p></td></tr>
-<tr><td><code>isUser</code></td><td>boolean</td><td><p><code>true</code> if a user was looked up, <code>false</code> if a place or domain.</p></td></tr>
+<tr><td><code>name</code></td><td>string</td><td><p>The place's or user's name that was looked up, or <code>""</code> for a world ID.</p></td></tr>
+<tr><td><code>isUser</code></td><td>boolean</td><td><p><code>true</code> if a user was looked up, <code>false</code> if a place or world.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### lookupResultsFinished {#lookupResultsFinished}
 
@@ -292,6 +370,10 @@ location.lookupResultsFinished.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when looking up the details of a metaverse user or location to go to has completed (successfully or unsuccessfully).</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### pathChangeRequired {#pathChangeRequired}
 
 ```js
@@ -300,7 +382,7 @@ location.pathChangeRequired.connect(function (path) {
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when an attempt is made to send your avatar to a new named path on the domain (set in the domain server's settings). For example, when you enter a "/" followed by the path's name in the "GOTO" dialog.</p></div>
+<div class="api-text" v-pre><p>Triggered when an attempt is made to send your avatar to a new named path on the world (set in the world server's settings). For example, when you enter a "/" followed by the path's name in the "GOTO" dialog.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>path</code></td><td>string</td><td><p>The name of the path to go to.</p></td></tr>
 </tbody></table></div>
@@ -315,6 +397,10 @@ function onPathChangeRequired(newPath) {
 location.pathChangeRequired.connect(onPathChangeRequired);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### possibleDomainChangeRequired {#possibleDomainChangeRequired}
 
 ```js
@@ -325,9 +411,13 @@ location.possibleDomainChangeRequired.connect(function (domainURL, domainID) {
 
 <div class="api-text" v-pre><p>Triggered when a request is made to go to an IP address.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>domainURL</code></td><td>Url</td><td><p>URL for domain</p></td></tr>
-<tr><td><code>domainID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The UUID of the domain to go to.</p></td></tr>
+<tr><td><code>domainURL</code></td><td>Url</td><td><p>URL for world</p></td></tr>
+<tr><td><code>domainID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The UUID of the world to go to.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### possibleDomainChangeRequiredViaICEForID {#possibleDomainChangeRequiredViaICEForID}
 
@@ -337,13 +427,17 @@ location.possibleDomainChangeRequiredViaICEForID.connect(function (iceServerHost
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when a request is made to go to a named domain or user.</p></div>
+<div class="api-text" v-pre><p>Triggered when a request is made to go to a named world or user.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>iceServerHostName</code></td><td>string</td><td><p>IP address of the ICE server.</p></td></tr>
-<tr><td><code>domainID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The UUID of the domain to go to.</p></td></tr>
+<tr><td><code>domainID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The UUID of the world to go to.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### LookupTrigger {#LookupTrigger}
 
@@ -354,18 +448,22 @@ location.possibleDomainChangeRequiredViaICEForID.connect(function (iceServerHost
  <tr> <td><strong>Back</strong></td> <td><code>1</code></td> <td>Address from a <a href="#goBack">goBack</a> call.</td> </tr>
  <tr> <td><strong>Forward</strong></td> <td><code>2</code></td> <td>Address from a <a href="#goForward">goForward</a> call.</td> </tr>
  <tr> <td><strong>StartupFromSettings</strong></td> <td><code>3</code></td> <td>Initial location at Interface start-up from settings.</td> </tr>
- <tr> <td><strong>DomainPathResponse</strong></td> <td><code>4</code></td> <td>A named path in the domain.</td> </tr>
+ <tr> <td><strong>DomainPathResponse</strong></td> <td><code>4</code></td> <td>A named path in the world.</td> </tr>
  <tr> <td><strong>Internal</strong></td> <td><code>5</code></td> <td>An internal attempt to resolve an alternative path.</td> </tr>
- <tr> <td><strong>AttemptedRefresh</strong></td> <td><code>6</code></td> <td>A refresh after connecting to a domain.</td> </tr>
+ <tr> <td><strong>AttemptedRefresh</strong></td> <td><code>6</code></td> <td>A refresh after connecting to a world.</td> </tr>
  <tr> <td><strong>Suggestions</strong></td> <td><code>7</code></td> <td>Address from the Goto dialog.</td> </tr>
  <tr> <td><strong>VisitUserFromPAL</strong></td> <td><code>8</code></td> <td>User from the People dialog.</td> </tr>
  </tbody>
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
 
+</div>
+
 ## Deprecated {#deprecated}
 
 Still there for older scripts; new scripts should not use these.
+
+<div class="api-entry">
 
 ### goToViewpointForPath {#goToViewpointForPath}
 
@@ -377,12 +475,16 @@ location.goToViewpointForPath(path, namedPath)
 <div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
 :::
 
-<div class="api-text" v-pre><p>Takes you to a position and orientation resulting from a lookup for a named path in the domain (set in the domain server's settings).</p></div>
+<div class="api-text" v-pre><p>Takes you to a position and orientation resulting from a lookup for a named path in the world (set in the world server's settings).</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>path</code></td><td>string</td><td><p>The position and orientation corresponding to the named path.</p></td></tr>
 <tr><td><code>namedPath</code></td><td>string</td><td><p>The named path that was looked up on the server.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean </div>
+
+</div>
+
+<div class="api-entry">
 
 ### lookupShareableNameForDomainID {#lookupShareableNameForDomainID}
 
@@ -394,10 +496,14 @@ location.lookupShareableNameForDomainID(domainID)
 <div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
 :::
 
-<div class="api-text" v-pre><p>Retrieves and remembers the place name for the given domain ID if the place name is not already known.</p></div>
+<div class="api-text" v-pre><p>Retrieves and remembers the place name for the given world ID if the place name is not already known.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>domainID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The UUID of the domain.</p></td></tr>
+<tr><td><code>domainID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The UUID of the world.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### refreshPreviousLookup {#refreshPreviousLookup}
 
@@ -409,4 +515,6 @@ location.refreshPreviousLookup()
 <div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
 :::
 
-<div class="api-text" v-pre><p>Refreshes the current address, e.g., after connecting to a domain in order to position the user to the desired location.</p></div>
+<div class="api-text" v-pre><p>Refreshes the current address, e.g., after connecting to a world in order to position the user to the desired location.</p></div>
+
+</div>

@@ -6,11 +6,13 @@ draft: true
 
 # EntityScriptServerLog
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>EntityScriptServerLog</code> API makes server log file output written by server entity scripts available to client scripts.</p></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### receivedNewLogLines {#receivedNewLogLines}
 
@@ -38,3 +40,5 @@ EntityScriptServerLog.receivedNewLogLines.connect(function (logLines) {
     print("Hello from a server entity script!");
 })
 ```
+
+</div>

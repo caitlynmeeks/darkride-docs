@@ -6,7 +6,7 @@ draft: true
 
 # Vec3
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts, server entity scripts, assignment client scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts, server entity scripts, agents.</div>
 
 <div class="api-text" v-pre><p>The <code>Vec3</code> API provides facilities for generating and manipulating 3-dimensional vectors. Darkride uses a right-handed Cartesian coordinate system where the y-axis is the "up" and the negative z-axis is the "front" direction.</p></div>
 
@@ -60,6 +60,8 @@ Entities.editEntity(<id>, { position: "#00FF00"});                            //
 
 ## Functions {#functions}
 
+<div class="api-entry">
+
 ### cross {#cross}
 
 ```js
@@ -81,6 +83,10 @@ var v2 = { x: 0, y: 1, z: 0 };
 var crossProduct = Vec3.cross(v1, v2);
 print(JSON.stringify(crossProduct)); // {"x":0,"y":0,"z":1}
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### distance {#distance}
 
@@ -108,6 +114,10 @@ distance = Vec3.distance(p1, p2);
 print(distance); // 10
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### dot {#dot}
 
 ```js
@@ -129,6 +139,10 @@ var v2 = { x: 0, y: 1, z: 0 };
 var dotProduct = Vec3.dot(v1, v2);
 print(dotProduct); // 0
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### equal {#equal}
 
@@ -159,6 +173,10 @@ equal = Vec3.equal(v1, v2);
 print(equal);  // false
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### fromPolar {#fromPolar}
 
 ```js
@@ -178,6 +196,10 @@ var polar = { x: -19.471 * Math.PI / 180, y: 45 * Math.PI / 180, z: 7.5 };
 var p = Vec3.fromPolar(polar);
 print(JSON.stringify(p));  // {"x":5,"y":2.5,"z":5}
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### fromPolar {#fromPolar-2}
 
@@ -203,6 +225,10 @@ p = Vec3.multiply(7.5, p);
 print(JSON.stringify(p));  // {"x":5,"y":2.5,"z":5}
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getAngle {#getAngle}
 
 ```js
@@ -225,6 +251,10 @@ var angle = Vec3.getAngle(v1, v2);
 print(angle * 180 / Math.PI);  // 90
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### length {#length}
 
 ```js
@@ -236,6 +266,10 @@ Vec3.length(v)
 <tr><td><code>v</code></td><td><a href="">Vec3</a></td><td><p>The vector.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The length of the vector.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### mix {#mix}
 
@@ -260,6 +294,10 @@ var interpolated = Vec3.mix(v1, v2, 0.75);  // 1/4 of v1 and 3/4 of v2.
 print(JSON.stringify(interpolated));  // {"x":2.5,"y":7.5","z":0}
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### multiply {#multiply}
 
 ```js
@@ -273,6 +311,10 @@ Vec3.multiply(v, scale)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="">Vec3</a> <p>The vector with each ordinate value multiplied by the <code>scale</code>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### multiply {#multiply-2}
 
 ```js
@@ -285,6 +327,10 @@ Vec3.multiply(scale, v)
 <tr><td><code>v</code></td><td><a href="">Vec3</a></td><td><p>The vector.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="">Vec3</a> <p>The vector with each ordinate value multiplied by the <code>scale</code>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### multiplyQbyV {#multiplyQbyV}
 
@@ -308,6 +354,10 @@ var result = Vec3.multiplyQbyV(q, v);
 print(JSON.stringify(result));  // {"x":0,"y":1.000,"z":1.19e-7}
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### multiplyVbyV {#multiplyVbyV}
 
 ```js
@@ -330,6 +380,10 @@ var multiplied = Vec3.multiplyVbyV(v1, v2);
 print(JSON.stringify(multiplied));  // {"x":1,"y":4,"z":9}
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### normalize {#normalize}
 
 ```js
@@ -350,6 +404,10 @@ var normalized = Vec3.normalize(v);
 print(JSON.stringify(normalized));  // {"x":0.7071,"y":0.7071,"z":0}
 print(Vec3.length(normalized));  // 1
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### orientedAngle {#orientedAngle}
 
@@ -380,6 +438,10 @@ print(Vec3.orientedAngle(v1, v2, { x: 1, y: 2, z: -1 }));  // -45
 print(Vec3.orientedAngle(v1, v2, { x: 1, y: -2, z: -1 }));  // 45
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### print {#print}
 
 ```js
@@ -399,6 +461,10 @@ var v = { x: 1, y: 2, z: 3 };
 Vec3.print("Vector: ", v);  // dvec3(1.000000, 2.000000, 3.000000)
 print("Vector: " + JSON.stringify(v));  // {"x":1,"y":2,"z":3}
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### reflect {#reflect}
 
@@ -422,6 +488,10 @@ var reflected = Vec3.reflect(v, normal);
 print(JSON.stringify(reflected));  // {"x":1,"y":-2,"z":3}
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### subtract {#subtract}
 
 ```js
@@ -435,6 +505,10 @@ Vec3.subtract(v1, v2)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="">Vec3</a> <p>The second vector subtracted from the first.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### sum {#sum}
 
 ```js
@@ -447,6 +521,10 @@ Vec3.sum(v1, v2)
 <tr><td><code>v2</code></td><td><a href="">Vec3</a></td><td><p>The second vector.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="">Vec3</a> <p>The sum of the two vectors.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### toPolar {#toPolar}
 
@@ -469,6 +547,10 @@ print("Elevation: " + polar.x * 180 / Math.PI);  // -19.471
 print("Azimuth: " + polar.y * 180 / Math.PI);  // 45
 print("Radius: " + polar.z);  // 7.5
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### withinEpsilon {#withinEpsilon}
 
@@ -498,3 +580,5 @@ print(equal);  // false
 equal = Vec3.withinEpsilon(v1, v2, 0.001);
 print(equal);  // true
 ```
+
+</div>

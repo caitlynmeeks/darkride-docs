@@ -6,11 +6,13 @@ draft: true
 
 # TextToSpeech
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>TextToSpeech</code> API lets you use text to speech for your avatar in interface.</p></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### speakText {#speakText}
 
@@ -23,6 +25,10 @@ TextToSpeech.speakText(textToSpeak)
 <tr><td><code>textToSpeak</code></td><td>string</td><td><p>The text to speak.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### stopLastSpeech {#stopLastSpeech}
 
 ```js
@@ -30,3 +36,5 @@ TextToSpeech.stopLastSpeech()
 ```
 
 <div class="api-text" v-pre><p>Stops the last speech.</p></div>
+
+</div>

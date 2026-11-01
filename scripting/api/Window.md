@@ -6,9 +6,9 @@ draft: true
 
 # Window
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
-<div class="api-text" v-pre><p>The <code>Window</code> API provides various facilities not covered elsewhere, including: window dimensions, window focus, camera view, announcements, user connections, common dialog boxes, snapshots, file import, domain navigation, domain changes, domain physics, OS clipboard, build number.</p></div>
+<div class="api-text" v-pre><p>The <code>Window</code> API provides various facilities not covered elsewhere, including: window dimensions, window focus, camera view, announcements, user connections, common dialog boxes, snapshots, file import, world navigation, world changes, world physics, OS clipboard, build number.</p></div>
 
 ## Properties {#properties}
 
@@ -17,11 +17,13 @@ draft: true
 <tr><td><code>innerHeight</code></td><td>number</td><td></td><td><p>The height of the drawable area of the Interface window (i.e., without borders or other chrome), in pixels. <em>Read-only.</em></p></td></tr>
 <tr><td><code>x</code></td><td>number</td><td></td><td><p>The x display coordinate of the top left corner of the drawable area of the Interface window. <em>Read-only.</em></p></td></tr>
 <tr><td><code>y</code></td><td>number</td><td></td><td><p>The y display coordinate of the top left corner of the drawable area of the Interface window. <em>Read-only.</em></p></td></tr>
-<tr><td><code>interstitialModeEnabled</code></td><td>boolean</td><td><code>false</code></td><td><p><code>true</code> if the interstitial graphics are displayed when a domain is loading, otherwise <code>false</code>.</p></td></tr>
+<tr><td><code>interstitialModeEnabled</code></td><td>boolean</td><td><code>false</code></td><td><p><code>true</code> if the interstitial graphics are displayed when a world is loading, otherwise <code>false</code>.</p></td></tr>
 <tr><td><code>location</code></td><td><a href="location">location</a></td><td></td><td><p>Provides facilities for working with your current metaverse location.</p></td></tr>
 </tbody></table></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### alert {#alert}
 
@@ -40,6 +42,10 @@ Window.alert(message?)
 Window.alert("Welcome!");
 print("Script continues without waiting");
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### browse {#browse}
 
@@ -62,6 +68,10 @@ var filename = Window.browse("Select Image File", Paths.resources, "Images (*.pn
 print("File: " + filename);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### browseAssets {#browseAssets}
 
 ```js
@@ -82,6 +92,10 @@ Window.browseAssets(title?, directory?, nameFilter?)
 var asset = Window.browseAssets("Select FBX File", "/", "*.fbx");
 print("FBX file: " + asset);
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### browseAssetsAsync {#browseAssetsAsync}
 
@@ -108,6 +122,10 @@ Window.browseAssetsAsync("Select FBX File", "/", "*.fbx");
 print("Script continues without waiting");
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### browseAsync {#browseAsync}
 
 ```js
@@ -133,6 +151,10 @@ Window.browseAsync("Select Image File", Paths.resources, "Images (*.png *.jpg *.
 print("Script continues without waiting");
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### browseDir {#browseDir}
 
 ```js
@@ -152,6 +174,10 @@ Window.browseDir(title?, directory?)
 var directory = Window.browseDir("Select Directory", Paths.resources);
 print("Directory: " + directory);
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### browseDirAsync {#browseDirAsync}
 
@@ -177,6 +203,10 @@ Window.browseDirAsync("Select Directory", Paths.resources);
 print("Script continues without waiting");
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### checkVersion {#checkVersion}
 
 ```js
@@ -185,6 +215,10 @@ Window.checkVersion()
 
 <div class="api-text" v-pre><p>Gets Interface's build number.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>Interface's build number.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### closeMessageBox {#closeMessageBox}
 
@@ -196,6 +230,10 @@ Window.closeMessageBox(id)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>id</code></td><td>number</td><td><p>The ID of the message box.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### confirm {#confirm}
 
@@ -216,6 +254,10 @@ var answer = Window.confirm("Are you sure?");
 print(answer);  // true or false
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### copyToClipboard {#copyToClipboard}
 
 ```js
@@ -226,6 +268,10 @@ Window.copyToClipboard(text)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>text</code></td><td>string</td><td><p>The text to copy to the operating system's clipboard.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### displayAnnouncement {#displayAnnouncement}
 
@@ -250,6 +296,10 @@ Window.announcement.connect(onAnnouncement);
 Window.displayAnnouncement("Hello");
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getActiveDisplayPlugin {#getActiveDisplayPlugin}
 
 ```js
@@ -258,6 +308,10 @@ Window.getActiveDisplayPlugin()
 
 <div class="api-text" v-pre><p>Gets the index of the currently active display plugin.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The index of the currently active display plugin. The first display plugin has an index of <code>0</code>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getDeviceSize {#getDeviceSize}
 
@@ -268,6 +322,10 @@ Window.getDeviceSize()
 <div class="api-text" v-pre><p>Gets the size of the drawable area of the Interface window if in desktop mode or the HMD rendering surface if in HMD mode.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="globals#Vec2">Vec2</a> <p>The width and height of the Interface window or HMD rendering surface, in pixels.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getDisplayPluginCount {#getDisplayPluginCount}
 
 ```js
@@ -276,6 +334,10 @@ Window.getDisplayPluginCount()
 
 <div class="api-text" v-pre><p>Gets the number of display plugins currently available.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The number of display plugins currently available.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getDisplayPluginName {#getDisplayPluginName}
 
@@ -297,14 +359,22 @@ for (var i = 0, length = Window.getDisplayPluginCount(); i < length; i++) {
 }
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getLastDomainConnectionError {#getLastDomainConnectionError}
 
 ```js
 Window.getLastDomainConnectionError()
 ```
 
-<div class="api-text" v-pre><p>Gets the last domain connection error when a connection is refused.</p></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> <a href="#ConnectionRefusedReason">Window.ConnectionRefusedReason</a> <p>Integer number that enumerates the last domain connection refused.</p></div>
+<div class="api-text" v-pre><p>Gets the last world connection error when a connection is refused.</p></div>
+<div class="api-returns" v-pre><strong>Returns:</strong> <a href="#ConnectionRefusedReason">Window.ConnectionRefusedReason</a> <p>Integer number that enumerates the last world connection refused.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getWorldLoading {#getWorldLoading}
 
@@ -315,6 +385,10 @@ Window.getWorldLoading()
 <div class="api-text" v-pre><p>Gets the state of whole-world loading.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="#WorldLoading">Window.WorldLoading</a> <p>The state; only <code>active</code> when no loading screen is wanted.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### hasFocus {#hasFocus}
 
 ```js
@@ -323,6 +397,10 @@ Window.hasFocus()
 
 <div class="api-text" v-pre><p>Checks whether the Interface window has focus.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the Interface window has focus, <code>false</code> if it doesn't.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### isDisplayPluginHmd {#isDisplayPluginHmd}
 
@@ -336,16 +414,20 @@ Window.isDisplayPluginHmd(index)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the display plugin is a HMD, <code>false</code> if it isn't.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### isPhysicsEnabled {#isPhysicsEnabled}
 
 ```js
 Window.isPhysicsEnabled()
 ```
 
-<div class="api-text" v-pre><p>Checks to see if physics is active for you in the domain you're visiting - there is a delay between your arrival at a domain and physics becoming active for you in that domain.</p></div>
+<div class="api-text" v-pre><p>Checks to see if physics is active for you in the world you're visiting - there is a delay between your arrival at a world and physics becoming active for you in that world.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if physics is currently active for you, otherwise <code>false</code>.</p></div>
 
-<div class="api-example" v-pre><strong>Example:</strong> <p>Wait for physics to be enabled when you change domains.</p></div>
+<div class="api-example" v-pre><strong>Example:</strong> <p>Wait for physics to be enabled when you change worlds.</p></div>
 
 ```js
 function checkForPhysics() {
@@ -364,6 +446,10 @@ function onDomainChanged(domain) {
 Window.domainChanged.connect(onDomainChanged);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### isPointOnDesktopWindow {#isPointOnDesktopWindow}
 
 ```js
@@ -375,6 +461,10 @@ Window.isPointOnDesktopWindow(point)
 <tr><td><code>point</code></td><td><a href="globals#Vec2">Vec2</a></td><td><p>The point to check.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the point is within the window or HUD, otherwise <code>false</code>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### makeConnection {#makeConnection}
 
@@ -388,6 +478,10 @@ Window.makeConnection(success, description)
 <tr><td><code>description</code></td><td>string</td><td><p>Descriptive text about the connection success or error. This is sent in the signal emitted.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### openAndroidActivity {#openAndroidActivity}
 
 ```js
@@ -399,6 +493,10 @@ Window.openAndroidActivity(activityName, backToScene)
 <tr><td><code>activityName</code></td><td>string</td><td><p>The name of the activity to open: one of <code>"Home"</code>, <code>"Login"</code>, or <code>"Privacy Policy"</code>.</p></td></tr>
 <tr><td><code>backToScene</code></td><td>boolean</td><td><p>If <code>true</code>, the user is automatically returned back to the scene when the activity is completed.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### openMessageBox {#openMessageBox}
 
@@ -438,6 +536,10 @@ messageBox = Window.openMessageBox("Reset Something",
     resetButton + cancelButton, cancelButton);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### openUrl {#openUrl}
 
 ```js
@@ -454,6 +556,10 @@ Window.openUrl(url)
 <tr><td><code>url</code></td><td>string</td><td><p>The URL to open.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### openWebBrowser {#openWebBrowser}
 
 ```js
@@ -461,6 +567,10 @@ Window.openWebBrowser()
 ```
 
 <div class="api-text" v-pre><p>Opens a web browser in a pop-up window.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### pressLoadingScreenButton {#pressLoadingScreenButton}
 
@@ -472,6 +582,10 @@ Window.pressLoadingScreenButton(button)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>button</code></td><td>string</td><td><p><code>"cancel"</code> or <code>"showNow"</code>.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### prompt {#prompt}
 
@@ -498,6 +612,10 @@ if (answer === "") {
 }
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### promptAsync {#promptAsync}
 
 ```js
@@ -523,6 +641,10 @@ Window.promptAsync("Question", "answer");
 print("Script continues without waiting");
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### protocolSignature {#protocolSignature}
 
 ```js
@@ -532,6 +654,10 @@ Window.protocolSignature()
 <div class="api-text" v-pre><p>Gets the signature for Interface's protocol version.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>A string uniquely identifying the version of the metaverse protocol that Interface is using.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### raise {#raise}
 
 ```js
@@ -539,6 +665,10 @@ Window.raise()
 ```
 
 <div class="api-text" v-pre><p>Raises the Interface window if it is minimized. If raised, the window gains focus.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### save {#save}
 
@@ -560,6 +690,10 @@ Window.save(title?, directory?, nameFilter?)
 var filename = Window.save("Save to JSON file", Paths.resources, "*.json");
 print("File: " + filename);
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### saveAsync {#saveAsync}
 
@@ -586,6 +720,10 @@ Window.saveAsync("Save to JSON file", Paths.resources, "*.json");
 print("Script continues without waiting");
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### setActiveDisplayPlugin {#setActiveDisplayPlugin}
 
 ```js
@@ -597,6 +735,10 @@ Window.setActiveDisplayPlugin(index)
 <tr><td><code>index</code></td><td>number</td><td><p>The index of the display plugin. Must be less than the value returned by <a href="#getDisplayPluginCount">getDisplayPluginCount</a>. The first display plugin has an index of <code>0</code>.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setArrivalWaitsForNearby {#setArrivalWaitsForNearby}
 
 ```js
@@ -607,6 +749,10 @@ Window.setArrivalWaitsForNearby(wait)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>wait</code></td><td>boolean</td><td><p><code>true</code> while the loading screen is up, <code>false</code> once it has gone.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setDisplayTexture {#setDisplayTexture}
 
@@ -620,6 +766,10 @@ Window.setDisplayTexture(texture)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the display texture was successfully set, otherwise <code>false</code>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setFocus {#setFocus}
 
 ```js
@@ -627,6 +777,10 @@ Window.setFocus()
 ```
 
 <div class="api-text" v-pre><p>Makes the Interface window have focus. On Windows, if Interface doesn't already have focus, the task bar icon flashes to indicate that Interface wants attention but focus isn't taken away from the application that the user is using.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setLoadingScreen {#setLoadingScreen}
 
@@ -639,6 +793,10 @@ Window.setLoadingScreen(state)
 <tr><td><code>state</code></td><td>object</td><td><p><code>up</code> (boolean), the strings <code>world</code>, <code>author</code>, <code>picture</code> (a URL) and <code>status</code>, <code>progress</code>: 0 to 1 and the bar fills, or negative and it glides, and the buttons it offers, <code>canCancel</code> and <code>canShowNow</code> (booleans).</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### shareSnapshot {#shareSnapshot}
 
 ```js
@@ -650,6 +808,10 @@ Window.shareSnapshot(path, href?)
 <tr><td><code>path</code></td><td>string</td><td></td><td><p>The path and name of the image file to share.</p></td></tr>
 <tr><td><code>href</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>The metaverse location where the snapshot was taken.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### showAssetServer {#showAssetServer}
 
@@ -670,6 +832,10 @@ print("File: " + filename);
 Window.showAssetServer(filename);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### showWorldNow {#showWorldNow}
 
 ```js
@@ -677,6 +843,10 @@ Window.showWorldNow()
 ```
 
 <div class="api-text" v-pre><p>Lifts the whole-world loading screen now ("Show me now"); the rest of the world streams in as usual.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### takeSecondaryCamera360Snapshot {#takeSecondaryCamera360Snapshot}
 
@@ -696,6 +866,10 @@ Window.takeSecondaryCamera360Snapshot(cameraPosition, cubemapOutputFormat?, noti
 <p></p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### takeSecondaryCameraSnapshot {#takeSecondaryCameraSnapshot}
 
 ```js
@@ -711,6 +885,10 @@ Window.takeSecondaryCameraSnapshot(notify?, filename?)
 <p>Images are saved in JPEG or PNG format according to the extension provided — <code>".jpg"</code>, <code>".jpeg"</code>, or <code>".png"</code> — or if not provided then in JPEG format with an extension of <code>".jpg"</code>.</p>
 <p></p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### takeSnapshot {#takeSnapshot}
 
@@ -757,6 +935,10 @@ var filename = "example-snapshot";
 Window.takeSnapshot(notify, animated, aspect, filename);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### updateMessageBox {#updateMessageBox}
 
 ```js
@@ -772,9 +954,13 @@ Window.updateMessageBox(id, title, text, buttons, defaultButton)
 <tr><td><code>defaultButton</code></td><td><a href="#MessageBoxButton">Window.MessageBoxButton</a></td><td><p>The button that has focus when the message box is opened.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### announcement {#announcement}
 
@@ -789,6 +975,10 @@ Window.announcement.connect(function (message) {
 <tr><td><code>message</code></td><td>string</td><td><p>The message text.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### assetsDirChanged {#assetsDirChanged}
 
 ```js
@@ -801,6 +991,10 @@ Window.assetsDirChanged.connect(function (asset) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>asset</code></td><td>string</td><td><p>The path and name of the asset the user chose in the dialog.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### browseChanged {#browseChanged}
 
@@ -815,6 +1009,10 @@ Window.browseChanged.connect(function (filename) {
 <tr><td><code>filename</code></td><td>string</td><td><p>The path and name of the file the user chose in the dialog.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### browseDirChanged {#browseDirChanged}
 
 ```js
@@ -827,6 +1025,10 @@ Window.browseDirChanged.connect(function (directory) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>directory</code></td><td>string</td><td><p>The directory the user chose in the dialog.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### connectionAdded {#connectionAdded}
 
@@ -841,6 +1043,10 @@ Window.connectionAdded.connect(function (message) {
 <tr><td><code>message</code></td><td>string</td><td><p>A description of the success.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### connectionError {#connectionError}
 
 ```js
@@ -854,6 +1060,10 @@ Window.connectionError.connect(function (message) {
 <tr><td><code>message</code></td><td>string</td><td><p>A description of the error.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### domainChanged {#domainChanged}
 
 ```js
@@ -862,14 +1072,14 @@ Window.domainChanged.connect(function (domainURL) {
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when you change the domain you're visiting. </p>
-<p><strong>Warning:</strong> Is not emitted if you go to a domain that isn't running.</p>
+<div class="api-text" v-pre><p>Triggered when you change the world you're visiting. </p>
+<p><strong>Warning:</strong> Is not emitted if you go to a world that isn't running.</p>
 <p></p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>domainURL</code></td><td>string</td><td><p>The domain's URL.</p></td></tr>
+<tr><td><code>domainURL</code></td><td>string</td><td><p>The world's URL.</p></td></tr>
 </tbody></table></div>
 
-<div class="api-example" v-pre><strong>Example:</strong> <p>Report when you change domains.</p></div>
+<div class="api-example" v-pre><strong>Example:</strong> <p>Report when you change worlds.</p></div>
 
 ```js
 function onDomainChanged(domain) {
@@ -879,6 +1089,10 @@ function onDomainChanged(domain) {
 Window.domainChanged.connect(onDomainChanged);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### domainConnectionRefused {#domainConnectionRefused}
 
 ```js
@@ -887,12 +1101,16 @@ Window.domainConnectionRefused.connect(function (reasonMessage, reasonCode, extr
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when you try to visit a domain but are refused connection.</p></div>
+<div class="api-text" v-pre><p>Triggered when you try to visit a world but are refused connection.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>reasonMessage</code></td><td>string</td><td><p>A description of the refusal.</p></td></tr>
 <tr><td><code>reasonCode</code></td><td><a href="#ConnectionRefusedReason">Window.ConnectionRefusedReason</a></td><td><p>Integer number that enumerates the reason for the refusal.</p></td></tr>
 <tr><td><code>extraInfo</code></td><td>string</td><td><p>Extra information about the refusal.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### domainConnectionTimedOut {#domainConnectionTimedOut}
 
@@ -902,7 +1120,11 @@ Window.domainConnectionTimedOut.connect(function () {
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when a domain you're visiting or connected to hasn't answered for long enough that Interface gives up on it for now and shows its connection failure window (or goes to the error domain). The connection keeps being tried: if the domain answers later, <a href="#domainChanged"><code>Window.domainChanged</code></a> follows.</p></div>
+<div class="api-text" v-pre><p>Triggered when a world you're visiting or connected to hasn't answered for long enough that Interface gives up on it for now and shows its connection failure window (or goes to the error world). The connection keeps being tried: if the world answers later, <a href="#domainChanged"><code>Window.domainChanged</code></a> follows.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### geometryChanged {#geometryChanged}
 
@@ -927,6 +1149,10 @@ function onWindowGeometryChanged(rect) {
 Window.geometryChanged.connect(onWindowGeometryChanged);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### interstitialModeChanged {#interstitialModeChanged}
 
 ```js
@@ -937,8 +1163,12 @@ Window.interstitialModeChanged.connect(function (interstitialMode) {
 
 <div class="api-text" v-pre><p>Triggered when the interstitial mode changes.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>interstitialMode</code></td><td>boolean</td><td><p><code>true</code> if the interstitial graphics are displayed when the domain is loading, <code>false</code> if they are not.</p></td></tr>
+<tr><td><code>interstitialMode</code></td><td>boolean</td><td><p><code>true</code> if the interstitial graphics are displayed when the world is loading, <code>false</code> if they are not.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### loadingScreenButtonPressed {#loadingScreenButtonPressed}
 
@@ -953,6 +1183,10 @@ Window.loadingScreenButtonPressed.connect(function (button) {
 <tr><td><code>button</code></td><td>string</td><td><p><code>"cancel"</code> (go back where you came from) or <code>"showNow"</code> (stop waiting for the whole world).</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### loadingScreenChanged {#loadingScreenChanged}
 
 ```js
@@ -965,6 +1199,10 @@ Window.loadingScreenChanged.connect(function (state) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>state</code></td><td>object</td><td><p>The fields that changed.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### messageBoxClosed {#messageBoxClosed}
 
@@ -979,6 +1217,10 @@ Window.messageBoxClosed.connect(function (id, button) {
 <tr><td><code>id</code></td><td>number</td><td><p>The ID of the message box that was closed.</p></td></tr>
 <tr><td><code>button</code></td><td>number</td><td><p>The button that the user clicked. If the user presses Esc, the Cancel button value is returned, whether or not the Cancel button is displayed in the message box.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### minimizedChanged {#minimizedChanged}
 
@@ -1003,6 +1245,10 @@ function onWindowMinimizedChanged(minimized) {
 Window.minimizedChanged.connect(onWindowMinimizedChanged);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### processingGifCompleted {#processingGifCompleted}
 
 ```js
@@ -1015,6 +1261,10 @@ Window.processingGifCompleted.connect(function (pathAnimatedSnapshot) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>pathAnimatedSnapshot</code></td><td>string</td><td><p>The path and name of the moving snapshot GIF file.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### processingGifStarted {#processingGifStarted}
 
@@ -1029,6 +1279,10 @@ Window.processingGifStarted.connect(function (pathStillSnapshot) {
 <tr><td><code>pathStillSnapshot</code></td><td>string</td><td><p>The path and name of the still snapshot image file.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### promptTextChanged {#promptTextChanged}
 
 ```js
@@ -1042,6 +1296,10 @@ Window.promptTextChanged.connect(function (text) {
 <tr><td><code>text</code></td><td>string</td><td><p>The text the user entered in the dialog.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### redirectErrorStateChanged {#redirectErrorStateChanged}
 
 ```js
@@ -1050,10 +1308,14 @@ Window.redirectErrorStateChanged.connect(function (isInErrorState) {
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when you try to visit a domain but are redirected into the error state.</p></div>
+<div class="api-text" v-pre><p>Triggered when you try to visit a world but are redirected into the error state.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>isInErrorState</code></td><td>boolean</td><td><p><code>true</code> if the user has been redirected to the error URL, <code>false</code> if they haven't.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### saveFileChanged {#saveFileChanged}
 
@@ -1067,6 +1329,10 @@ Window.saveFileChanged.connect(function (filename) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>filename</code></td><td>string</td><td><p>The path and name of the file that the user specified in the dialog.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### snapshot360Taken {#snapshot360Taken}
 
@@ -1082,6 +1348,10 @@ Window.snapshot360Taken.connect(function (pathStillSnapshot, notify) {
 <tr><td><code>notify</code></td><td>boolean</td><td><p>The value of the <code>notify</code> parameter that <a href="#takeSecondaryCamera360Snapshot">takeSecondaryCamera360Snapshot</a> was called with.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### snapshotShared {#snapshotShared}
 
 ```js
@@ -1096,6 +1366,10 @@ Window.snapshotShared.connect(function (isError, reply) {
 <tr><td><code>reply</code></td><td>string</td><td><p>JSON-formatted information about the snapshot.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### startUpWorldUnreachable {#startUpWorldUnreachable}
 
 ```js
@@ -1108,6 +1382,10 @@ Window.startUpWorldUnreachable.connect(function (from) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>from</code></td><td>string</td><td><p><code>"last"</code> for the last world you were in, <code>"home"</code> for your home.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### stillSnapshotTaken {#stillSnapshotTaken}
 
@@ -1123,6 +1401,10 @@ Window.stillSnapshotTaken.connect(function (pathStillSnapshot, notify) {
 <tr><td><code>notify</code></td><td>boolean</td><td><p>The value of the <code>notify</code> parameter that <a href="#takeSnapshot">takeSnapshot</a> was called with.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### svoImportRequested {#svoImportRequested}
 
 ```js
@@ -1135,6 +1417,10 @@ Window.svoImportRequested.connect(function (url) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>url</code></td><td>string</td><td><p>The URL of the file to import.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### worldLoadingChanged {#worldLoadingChanged}
 
@@ -1149,22 +1435,30 @@ Window.worldLoadingChanged.connect(function (loading) {
 <tr><td><code>loading</code></td><td>boolean</td><td><p><code>true</code> when the loading screen should go up, <code>false</code> when it should lift.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### ConnectionRefusedReason {#ConnectionRefusedReason}
 
-<div class="api-text" v-pre><p>The reasons that you may be refused connection to a domain are defined by numeric values:</p>
+<div class="api-text" v-pre><p>The reasons that you may be refused connection to a world are defined by numeric values:</p>
  <table> <thead> <tr> <th>Reason</th> <th>Value</th> <th>Description</th> </tr>
  </thead>
  <tbody> <tr> <td><strong>Unknown</strong></td> <td><code>0</code></td> <td>Some unknown reason.</td> </tr>
- <tr> <td><strong>ProtocolMismatch</strong></td> <td><code>1</code></td> <td>The communications protocols of the domain and your Interface are not the same.</td> </tr>
- <tr> <td><strong>LoginError</strong></td> <td><code>2</code></td> <td>You could not be logged into the domain.</td> </tr>
- <tr> <td><strong>NotAuthorized</strong></td> <td><code>3</code></td> <td>You are not authorized to connect to the domain.</td> </tr>
- <tr> <td><strong>TooManyUsers</strong></td> <td><code>4</code></td> <td>The domain already has its maximum number of users.</td> </tr>
- <tr> <td><strong>TimedOut</strong></td> <td><code>5</code></td> <td>Connecting to the domain timed out.</td> </tr>
+ <tr> <td><strong>ProtocolMismatch</strong></td> <td><code>1</code></td> <td>The communications protocols of the world and your Interface are not the same.</td> </tr>
+ <tr> <td><strong>LoginError</strong></td> <td><code>2</code></td> <td>You could not be logged into the world.</td> </tr>
+ <tr> <td><strong>NotAuthorized</strong></td> <td><code>3</code></td> <td>You are not authorized to connect to the world.</td> </tr>
+ <tr> <td><strong>TooManyUsers</strong></td> <td><code>4</code></td> <td>The world already has its maximum number of users.</td> </tr>
+ <tr> <td><strong>TimedOut</strong></td> <td><code>5</code></td> <td>Connecting to the world timed out.</td> </tr>
  </tbody>
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
+
+</div>
+
+<div class="api-entry">
 
 ### DisplayTexture {#DisplayTexture}
 
@@ -1177,6 +1471,10 @@ Window.worldLoadingChanged.connect(function (loading) {
  </tbody>
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> string</div>
+
+</div>
+
+<div class="api-entry">
 
 ### MessageBoxButton {#MessageBoxButton}
 
@@ -1206,6 +1504,10 @@ Window.worldLoadingChanged.connect(function (loading) {
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
 
+</div>
+
+<div class="api-entry">
+
 ### PromptOptions {#PromptOptions}
 
 <div class="api-text" v-pre><p>How a <a href="#prompt">prompt</a> or <a href="#promptAsync">promptAsync</a> dialog looks.</p></div>
@@ -1215,9 +1517,13 @@ Window.worldLoadingChanged.connect(function (loading) {
 <tr><td><code>monospace</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p><code>true</code> to show the text in a fixed-width face, for paths and addresses.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### WorldLoading {#WorldLoading}
 
-<div class="api-text" v-pre><p>The state of whole-world loading. A domain's owner can ask (its settings, Loading) that visitors see a loading screen on arrival until the whole world has arrived and its models and textures have loaded.</p></div>
+<div class="api-text" v-pre><p>The state of whole-world loading. A world's owner can ask (its settings, Loading) that visitors see a loading screen on arrival until the whole world has arrived and its models and textures have loaded.</p></div>
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>active</code></td><td>boolean</td><td><p><code>true</code> while the loading screen should be up.</p></td></tr>
 <tr><td><code>received</code></td><td>number</td><td><p>The entities received so far (while <code>active</code>).</p></td></tr>
@@ -1225,13 +1531,17 @@ Window.worldLoadingChanged.connect(function (loading) {
 <tr><td><code>serverDone</code></td><td>boolean</td><td><p><code>true</code> once the entity server has sent the whole world, so <code>received</code> is the world's total.</p></td></tr>
 <tr><td><code>seconds</code></td><td>number</td><td><p>The seconds since loading began.</p></td></tr>
 <tr><td><code>secondsLeft</code></td><td>number</td><td><p>The seconds until the time limit lifts the loading screen anyway.</p></td></tr>
-<tr><td><code>timeLimit</code></td><td>number</td><td><p>The domain's time limit, in seconds.</p></td></tr>
+<tr><td><code>timeLimit</code></td><td>number</td><td><p>The world's time limit, in seconds.</p></td></tr>
 <tr><td><code>radius</code></td><td>number</td><td><p>The distance in metres within which the screen waits for models and textures (<code>0</code>: everywhere); <code>ready</code> counts the farther ones as ready.</p></td></tr>
 </tbody></table></div>
+
+</div>
 
 ## Deprecated {#deprecated}
 
 Still there for older scripts; new scripts should not use these.
+
+<div class="api-entry">
 
 ### domainLoadingProgress {#domainLoadingProgress}
 
@@ -1244,3 +1554,5 @@ Window.domainLoadingProgress()
 :::
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>Progress.</p></div>
+
+</div>

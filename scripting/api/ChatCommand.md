@@ -6,7 +6,7 @@ draft: true
 
 # ChatCommand
 
-<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>A chat command.</p>
  <p>Create a new command using <a href="Chat#addCommand"><code>Chat.addCommand</code></a>.</p></div>
@@ -20,6 +20,8 @@ draft: true
 
 ## Methods {#functions}
 
+<div class="api-entry">
+
 ### run {#run}
 
 ```js
@@ -31,9 +33,13 @@ ChatCommand.run(params?)
 <tr><td><code>params</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>The parameters the user typed after the command.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### running {#running}
 
@@ -47,3 +53,5 @@ ChatCommand.running.connect(function (params) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>params</code></td><td>string</td><td><p>The parameters the user typed after the command.</p></td></tr>
 </tbody></table></div>
+
+</div>

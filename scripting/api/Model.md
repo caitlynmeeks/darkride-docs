@@ -6,13 +6,15 @@ draft: true
 
 # Model
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts, server entity scripts, assignment client scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts, server entity scripts, agents.</div>
 
 <div class="api-text" v-pre><p>The <code>Model</code> API provides the ability to manipulate meshes. You can get the meshes for an entity using <a href="Entities#getMeshes"><code>Entities.getMeshes</code></a>, or create a new mesh using <a href="#newMesh"><code>Model.newMesh</code></a>. </p>
 <p>See also, the <a href="Graphics"><code>Graphics</code></a> API.</p>
 <p></p></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### appendMeshes {#appendMeshes}
 
@@ -25,6 +27,10 @@ Model.appendMeshes(meshes)
 <tr><td><code>meshes</code></td><td>Array&lt;<a href="MeshProxy">MeshProxy</a>&gt;</td><td><p>The meshes to combine.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="MeshProxy">MeshProxy</a> <p>The combined mesh.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getVertex {#getVertex}
 
@@ -39,6 +45,10 @@ Model.getVertex(mesh, index)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> | boolean <p>The local position of the vertex relative to the mesh, if valid. <code>false</code> if an error.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getVertexCount {#getVertexCount}
 
 ```js
@@ -51,6 +61,10 @@ Model.getVertexCount(mesh)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number | boolean <p>The number of vertices in the mesh, if valid. <code>false</code> if an error.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### meshToOBJ {#meshToOBJ}
 
 ```js
@@ -62,6 +76,10 @@ Model.meshToOBJ(meshes)
 <tr><td><code>meshes</code></td><td>Array&lt;<a href="MeshProxy">MeshProxy</a>&gt;</td><td><p>The meshes to export.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>The OBJ format representation of the meshes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### newMesh {#newMesh}
 
@@ -77,6 +95,10 @@ Model.newMesh(vertices, normals, faces)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="MeshProxy">MeshProxy</a> <p>A new mesh.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### transformMesh {#transformMesh}
 
 ```js
@@ -89,3 +111,5 @@ Model.transformMesh(transform, mesh)
 <tr><td><code>mesh</code></td><td><a href="MeshProxy">MeshProxy</a></td><td><p>The mesh to apply the transform to.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="MeshProxy">MeshProxy</a> | boolean <p>The transformed mesh, if valid. <code>false</code> if an error.</p></div>
+
+</div>

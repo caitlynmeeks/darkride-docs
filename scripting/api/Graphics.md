@@ -6,11 +6,13 @@ draft: true
 
 # Graphics
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
-<div class="api-text" v-pre><p>The <code>Graphics</code> API enables you to access and manipulate avatar, entity, and overlay models in the rendered scene. This includes getting mesh and material information for applying <a href="Entities#EntityProperties-Material">Material</a> entities.</p></div>
+<div class="api-text" v-pre><p>The <code>Graphics</code> API enables you to access and manipulate avatar, entity, and overlay models in the rendered scene. This includes getting mesh and material information for applying <a href="Entities-types#EntityProperties-Material">Material</a> entities.</p></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### canUpdateModel {#canUpdateModel}
 
@@ -52,6 +54,10 @@ Script.setTimeout(function () {
 }, 1000);  // Wait for the entities to rez.
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### exportModelToOBJ {#exportModelToOBJ}
 
 ```js
@@ -63,6 +69,10 @@ Graphics.exportModelToOBJ(model)
 <tr><td><code>model</code></td><td><a href="GraphicsModel">GraphicsModel</a></td><td><p>The model to export.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>The OBJ format representation of the model.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getModel {#getModel}
 
@@ -76,7 +86,7 @@ Graphics.getModel(id)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>id</code></td><td>UUID</td><td><p>The ID of the avatar, 3D entity, or 3D overlay.</p></td></tr>
 </tbody></table></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> <a href="GraphicsModel">GraphicsModel</a> <p>The model data for the avatar, entity, or overlay, as displayed. This includes the results of applying any <a href="Entities#EntityProperties-Material">Material</a> entities to the item.</p></div>
+<div class="api-returns" v-pre><strong>Returns:</strong> <a href="GraphicsModel">GraphicsModel</a> <p>The model data for the avatar, entity, or overlay, as displayed. This includes the results of applying any <a href="Entities-types#EntityProperties-Material">Material</a> entities to the item.</p></div>
 
 <div class="api-example" v-pre><strong>Example:</strong> <p>Report some details of your avatar's model.</p></div>
 
@@ -95,6 +105,10 @@ print("Material names: ", model.materialNames);
 print("Material layers:", Object.keys(model.materialLayers));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### newMesh {#newMesh}
 
 ```js
@@ -107,6 +121,10 @@ Graphics.newMesh(ifsMeshData)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="GraphicsMesh">GraphicsMesh</a> <p>The new graphics mesh.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### newModel {#newModel}
 
 ```js
@@ -118,6 +136,10 @@ Graphics.newModel(meshes)
 <tr><td><code>meshes</code></td><td>Array&lt;<a href="GraphicsMesh">GraphicsMesh</a>&gt;</td><td><p>The meshes to include in the model.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="GraphicsModel">GraphicsModel</a> <p>The new graphics model.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### updateModel {#updateModel}
 
@@ -132,7 +154,11 @@ Graphics.updateModel(id, model)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the update was completed successfully, <code>false</code> if it wasn't.</p></div>
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### BufferElementFormat {#BufferElementFormat}
 
@@ -146,6 +172,10 @@ Graphics.updateModel(id, model)
 <tr><td><code>BYTES_PER_ELEMENT</code></td><td>number</td><td><p>Bytes per element.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### BufferFormat {#BufferFormat}
 
 <div class="api-text" v-pre><p>Details of buffer's format.</p></div>
@@ -157,6 +187,10 @@ Graphics.updateModel(id, model)
 <tr><td><code>stride</code></td><td>number</td><td><p>Stride.</p></td></tr>
 <tr><td><code>element</code></td><td><a href="#BufferElementFormat">Graphics.BufferElementFormat</a></td><td><p>Element format.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### BufferType {#BufferType}
 
@@ -178,6 +212,10 @@ Graphics.updateModel(id, model)
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> <a href="Vec3">Vec3</a> | vec2</div>
 
+</div>
+
+<div class="api-entry">
+
 ### BufferTypeName {#BufferTypeName}
 
 <div class="api-text" v-pre><p>The type name of a graphics buffer.</p>
@@ -198,6 +236,10 @@ Graphics.updateModel(id, model)
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> string</div>
 
+</div>
+
+<div class="api-entry">
+
 ### IFSData {#IFSData}
 
 <div class="api-text" v-pre><p>IFS (Indexed-Face Set) data defining a mesh.</p></div>
@@ -210,6 +252,10 @@ Graphics.updateModel(id, model)
 <tr><td><code>colors</code> <em>optional</em></td><td>Array&lt;<a href="Vec3">Vec3</a>&gt;</td><td><code>[]</code></td><td><p>Vertex colors (normalized).</p></td></tr>
 <tr><td><code>texCoords0</code> <em>optional</em></td><td>Array&lt;<a href="globals#Vec2">Vec2</a>&gt;</td><td><code>[]</code></td><td><p>Vertex texture coordinates (normalized).</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### Material {#Material}
 
@@ -264,6 +310,10 @@ Graphics.updateModel(id, model)
 <tr><td><code>defaultFallthrough</code></td><td>boolean</td><td></td><td><p><code>true</code> if all properties fall through to the material below unless they are set, <code>false</code> if properties respect their individual fall-through settings.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### MaterialLayer {#MaterialLayer}
 
 <div class="api-text" v-pre><p>A material layer.</p></div>
@@ -271,6 +321,10 @@ Graphics.updateModel(id, model)
 <tr><td><code>material</code></td><td><a href="#Material">Graphics.Material</a></td><td><p>The layer's material.</p></td></tr>
 <tr><td><code>priority</code></td><td>number</td><td><p>The priority of the layer. If multiple materials are applied to a mesh part, only the layer with the highest priority is applied, with materials of the same priority randomly assigned.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### MeshExtents {#MeshExtents}
 
@@ -281,6 +335,10 @@ Graphics.updateModel(id, model)
 <tr><td><code>center</code></td><td><a href="Vec3">Vec3</a></td><td><p>The center of the enclosing box.</p></td></tr>
 <tr><td><code>dimensions</code></td><td><a href="Vec3">Vec3</a></td><td><p>The dimensions of the enclosing box.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### MeshTopology {#MeshTopology}
 
@@ -297,3 +355,5 @@ Graphics.updateModel(id, model)
  </tbody>
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> string</div>
+
+</div>

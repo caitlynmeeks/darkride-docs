@@ -6,11 +6,13 @@ draft: true
 
 # File
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts, server entity scripts, assignment client scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts, server entity scripts, agents.</div>
 
 <div class="api-text" v-pre><p>The <code>File</code> API provides some facilities for working with the file system.</p></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### convertUrlToPath {#convertUrlToPath}
 
@@ -31,6 +33,10 @@ var url = "http://domain.tld/path/page.html?filename=file.ext";
 print("File name: " + File.convertUrlToPath(url));  // file.ext
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getTempDir {#getTempDir}
 
 ```js
@@ -45,6 +51,10 @@ File.getTempDir()
 ```js
 print("New temporary directory: " + File.getTempDir());
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### runUnzip {#runUnzip}
 
@@ -81,9 +91,13 @@ if (zipFile) {
 }
 ```
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### unzipResult {#unzipResult}
 
@@ -101,3 +115,5 @@ File.unzipResult.connect(function (zipFile, unzipFiles, autoAdd, isZip, isBlocks
 <tr><td><code>isZip</code></td><td>boolean</td><td><p><code>true</code> if <a href="#runUnzip">runUnzip</a> was called with <code>isZip == true</code>, unless there is no FBX or OBJ file in the unzipped file(s) in which case the value is <code>false</code>.</p></td></tr>
 <tr><td><code>isBlocks</code></td><td>boolean</td><td><p>The value that <a href="#runUnzip">runUnzip</a> was called with.</p></td></tr>
 </tbody></table></div>
+
+</div>

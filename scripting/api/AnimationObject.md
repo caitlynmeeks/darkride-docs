@@ -6,7 +6,7 @@ draft: true
 
 # AnimationObject
 
-<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts, server entity scripts, assignment client scripts.</div>
+<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: client scripts, entity scripts, avatar scripts, server entity scripts, agents.</div>
 
 <div class="api-text" v-pre><p>Information about an animation resource, created by <a href="AnimationCache#getAnimation"><code>AnimationCache.getAnimation</code></a>.</p></div>
 
@@ -19,6 +19,8 @@ draft: true
 
 ## Methods {#functions}
 
+<div class="api-entry">
+
 ### getFrames {#getFrames}
 
 ```js
@@ -28,6 +30,10 @@ AnimationObject.getFrames()
 <div class="api-text" v-pre><p>Gets the frames in the animation.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;<a href="AnimationFrameObject">AnimationFrameObject</a>&gt; <p>The frames in the animation.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getJointNames {#getJointNames}
 
 ```js
@@ -36,3 +42,5 @@ AnimationObject.getJointNames()
 
 <div class="api-text" v-pre><p>Gets the names of the joints that are animated.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;string&gt; <p>The names of the joints that are animated.</p></div>
+
+</div>

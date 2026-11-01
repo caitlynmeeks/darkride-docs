@@ -6,11 +6,13 @@ draft: true
 
 # console
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts, server entity scripts, assignment client scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts, server entity scripts, agents.</div>
 
 <div class="api-text" v-pre><p>The <code>console</code> API provides program logging facilities.</p></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### assert {#assert}
 
@@ -42,6 +44,10 @@ console.info("Script continues running.");
 // INFO - Script continues running.
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### clear {#clear}
 
 ```js
@@ -49,6 +55,10 @@ console.clear()
 ```
 
 <div class="api-text" v-pre><p>Clears the Developer &gt; Scripting &gt; Script Log debug window.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### debug {#debug}
 
@@ -61,6 +71,10 @@ console.debug(...message?)
 <tr><td><code>message</code> <em>optional</em></td><td>*</td><td><p>The message values to log.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### error {#error}
 
 ```js
@@ -72,6 +86,10 @@ console.error(...message?)
 <tr><td><code>message</code> <em>optional</em></td><td>*</td><td><p>The message values to log.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### exception {#exception}
 
 ```js
@@ -82,6 +100,10 @@ console.exception(...message?)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>message</code> <em>optional</em></td><td>*</td><td><p>The message values to log.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### group {#group}
 
@@ -118,6 +140,10 @@ console.log("Sentence 6");
 //Sentence 6
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### groupCollapsed {#groupCollapsed}
 
 ```js
@@ -129,6 +155,10 @@ console.groupCollapsed(message)
 <tr><td><code>message</code></td><td>*</td><td><p>The message value to log.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### groupEnd {#groupEnd}
 
 ```js
@@ -136,6 +166,10 @@ console.groupEnd()
 ```
 
 <div class="api-text" v-pre><p>Finishes a group of indented <a href="#log"><code>console.log</code></a> messages.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### info {#info}
 
@@ -147,6 +181,10 @@ console.info(...message?)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>message</code> <em>optional</em></td><td>*</td><td><p>The message values to log.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### log {#log}
 
@@ -173,6 +211,10 @@ console.log("string", 7, true);
 // string 7 true
 // INFO - Console.log message: "string 7 true" in [console.js]
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### time {#time}
 
@@ -205,6 +247,10 @@ console.timeEnd("MyTimer");
 // MyTimer: 1001ms
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### timeEnd {#timeEnd}
 
 ```js
@@ -216,6 +262,10 @@ console.timeEnd(name)
 <tr><td><code>name</code></td><td>string</td><td><p>The name of the timer.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### trace {#trace}
 
 ```js
@@ -223,6 +273,10 @@ console.trace()
 ```
 
 <div class="api-text" v-pre><p>Logs the JavaScript call stack at the point of call to the program log.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### warn {#warn}
 
@@ -234,3 +288,5 @@ console.warn(...message?)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>message</code> <em>optional</em></td><td>*</td><td><p>The message values to log.</p></td></tr>
 </tbody></table></div>
+
+</div>

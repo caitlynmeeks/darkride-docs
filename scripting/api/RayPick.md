@@ -6,14 +6,14 @@ draft: true
 
 # RayPick
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>RayPick</code> API is a subset of the <a href="Picks"><code>Picks</code></a> API, as used for ray picks.</p></div>
 
 ## Properties {#properties}
 
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>PICK_ENTITIES</code></td><td><a href="globals#FilterFlags">FilterFlags</a></td><td><p>Include domain and avatar entities when intersecting. <em>Read-only.</em></p></td></tr>
+<tr><td><code>PICK_ENTITIES</code></td><td><a href="globals#FilterFlags">FilterFlags</a></td><td><p>Include world and avatar entities when intersecting. <em>Read-only.</em></p></td></tr>
 <tr><td><code>PICK_OVERLAYS</code></td><td><a href="globals#FilterFlags">FilterFlags</a></td><td><p>Include local entities when intersecting. <em>Read-only.</em></p></td></tr>
 <tr><td><code>PICK_AVATARS</code></td><td><a href="globals#FilterFlags">FilterFlags</a></td><td><p>Include avatars when intersecting. <em>Read-only.</em></p></td></tr>
 <tr><td><code>PICK_HUD</code></td><td><a href="globals#FilterFlags">FilterFlags</a></td><td><p>Include the HUD surface when intersecting in HMD mode. <em>Read-only.</em></p></td></tr>
@@ -31,6 +31,8 @@ draft: true
 
 ## Functions {#functions}
 
+<div class="api-entry">
+
 ### createRayPick {#createRayPick}
 
 ```js
@@ -45,6 +47,10 @@ RayPick.createRayPick(properties)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The ID of the pick created. <code>0</code> if invalid.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### disableRayPick {#disableRayPick}
 
 ```js
@@ -56,6 +62,10 @@ RayPick.disableRayPick(id)
 <tr><td><code>id</code></td><td>number</td><td><p>The ID of the ray pick.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### enableRayPick {#enableRayPick}
 
 ```js
@@ -66,6 +76,10 @@ RayPick.enableRayPick(id)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>id</code></td><td>number</td><td><p>The ID of the ray pick.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getPrevRayPickResult {#getPrevRayPickResult}
 
@@ -79,6 +93,10 @@ RayPick.getPrevRayPickResult(id)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="globals#RayPickResult">RayPickResult</a> </div>
 
+</div>
+
+<div class="api-entry">
+
 ### isLeftHand {#isLeftHand}
 
 ```js
@@ -90,6 +108,10 @@ RayPick.isLeftHand(id)
 <tr><td><code>id</code></td><td>number</td><td><p>The ID of the ray pick.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the pick is associated with the left hand, <code>false</code> if it isn't.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### isMouse {#isMouse}
 
@@ -103,6 +125,10 @@ RayPick.isMouse(id)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the pick is associated with the system mouse, <code>false</code> if it isn't.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### isRightHand {#isRightHand}
 
 ```js
@@ -115,6 +141,10 @@ RayPick.isRightHand(id)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the pick is associated with the right hand, <code>false</code> if it isn't.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### removeRayPick {#removeRayPick}
 
 ```js
@@ -125,6 +155,10 @@ RayPick.removeRayPick(id)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>id</code></td><td>number</td><td><p>The ID of the ray pick.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setIgnoreItems {#setIgnoreItems}
 
@@ -138,6 +172,10 @@ RayPick.setIgnoreItems(id, ignoreItems)
 <tr><td><code>ignoreItems</code></td><td>Array&lt;<a href="Uuid">Uuid</a>&gt;</td><td><p>The list of IDs to ignore.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setIncludeItems {#setIncludeItems}
 
 ```js
@@ -149,6 +187,10 @@ RayPick.setIncludeItems(id, includeItems)
 <tr><td><code>id</code></td><td>number</td><td><p>The ID of the ray pick.</p></td></tr>
 <tr><td><code>includeItems</code></td><td>Array&lt;<a href="Uuid">Uuid</a>&gt;</td><td><p>The list of IDs to include.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setPrecisionPicking {#setPrecisionPicking}
 
@@ -162,9 +204,13 @@ RayPick.setPrecisionPicking(id, precisionPicking)
 <tr><td><code>precisionPicking</code></td><td>boolean</td><td><p><code>true</code> to use precision picking, <code>false</code> to use coarse picking.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Deprecated {#deprecated}
 
 Still there for older scripts; new scripts should not use these.
+
+<div class="api-entry">
 
 ### INTERSECTED_AVATAR {#INTERSECTED_AVATAR}
 
@@ -178,6 +224,10 @@ RayPick.INTERSECTED_AVATAR()
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
 
+</div>
+
+<div class="api-entry">
+
 ### INTERSECTED_ENTITY {#INTERSECTED_ENTITY}
 
 ```js
@@ -189,6 +239,10 @@ RayPick.INTERSECTED_ENTITY()
 :::
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
+
+</div>
+
+<div class="api-entry">
 
 ### INTERSECTED_HUD {#INTERSECTED_HUD}
 
@@ -202,6 +256,10 @@ RayPick.INTERSECTED_HUD()
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
 
+</div>
+
+<div class="api-entry">
+
 ### INTERSECTED_NONE {#INTERSECTED_NONE}
 
 ```js
@@ -213,6 +271,10 @@ RayPick.INTERSECTED_NONE()
 :::
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
+
+</div>
+
+<div class="api-entry">
 
 ### INTERSECTED_OVERLAY {#INTERSECTED_OVERLAY}
 
@@ -226,6 +288,10 @@ RayPick.INTERSECTED_OVERLAY()
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
 
+</div>
+
+<div class="api-entry">
+
 ### PICK_ALL_INTERSECTIONS {#PICK_ALL_INTERSECTIONS}
 
 ```js
@@ -237,6 +303,10 @@ RayPick.PICK_ALL_INTERSECTIONS()
 :::
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
+
+</div>
+
+<div class="api-entry">
 
 ### PICK_AVATARS {#PICK_AVATARS}
 
@@ -250,6 +320,10 @@ RayPick.PICK_AVATARS()
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
 
+</div>
+
+<div class="api-entry">
+
 ### PICK_COARSE {#PICK_COARSE}
 
 ```js
@@ -261,6 +335,10 @@ RayPick.PICK_COARSE()
 :::
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
+
+</div>
+
+<div class="api-entry">
 
 ### PICK_ENTITIES {#PICK_ENTITIES}
 
@@ -274,6 +352,10 @@ RayPick.PICK_ENTITIES()
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
 
+</div>
+
+<div class="api-entry">
+
 ### PICK_HUD {#PICK_HUD}
 
 ```js
@@ -285,6 +367,10 @@ RayPick.PICK_HUD()
 :::
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
+
+</div>
+
+<div class="api-entry">
 
 ### PICK_INCLUDE_INVISIBLE {#PICK_INCLUDE_INVISIBLE}
 
@@ -298,6 +384,10 @@ RayPick.PICK_INCLUDE_INVISIBLE()
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
 
+</div>
+
+<div class="api-entry">
+
 ### PICK_INCLUDE_NONCOLLIDABLE {#PICK_INCLUDE_NONCOLLIDABLE}
 
 ```js
@@ -310,6 +400,10 @@ RayPick.PICK_INCLUDE_NONCOLLIDABLE()
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
 
+</div>
+
+<div class="api-entry">
+
 ### PICK_OVERLAYS {#PICK_OVERLAYS}
 
 ```js
@@ -321,3 +415,5 @@ RayPick.PICK_OVERLAYS()
 :::
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
+
+</div>

@@ -6,7 +6,7 @@ draft: true
 
 # TextureCache
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>TextureCache</code> API manages texture cache resources.</p></div>
 
@@ -22,6 +22,8 @@ draft: true
 </tbody></table></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### getResourceList {#getResourceList}
 
@@ -41,6 +43,10 @@ var cachedResources = AnimationCache.getResourceList();
 print("Cached resources: " + JSON.stringify(cachedResources));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### prefetch {#prefetch}
 
 ```js
@@ -54,6 +60,10 @@ TextureCache.prefetch(url, type, maxNumPixels?)
 <tr><td><code>maxNumPixels</code> <em>optional</em></td><td>number</td><td><code>67108864</code></td><td><p>The maximum number of pixels to use for the image. If the texture has more than this number it is downscaled.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="ResourceObject">ResourceObject</a> <p>A resource object.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### prefetch {#prefetch-2}
 
@@ -95,9 +105,13 @@ resourceObject.stateChanged.connect(function (state) {
 });
 ```
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### dirty {#dirty}
 
@@ -109,7 +123,11 @@ TextureCache.dirty.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the cache content has changed.</p></div>
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### TextureType {#TextureType}
 
@@ -136,9 +154,13 @@ TextureCache.dirty.connect(function () {
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
 
+</div>
+
 ## Deprecated {#deprecated}
 
 Still there for older scripts; new scripts should not use these.
+
+<div class="api-entry">
 
 ### updateTotalSize {#updateTotalSize}
 
@@ -154,6 +176,10 @@ TextureCache.updateTotalSize(deltaSize)
 <tr><td><code>deltaSize</code></td><td>number</td><td><p>Delta size.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### spectatorCameraFramebufferReset {#spectatorCameraFramebufferReset}
 
 ```js
@@ -166,3 +192,5 @@ TextureCache.spectatorCameraFramebufferReset.connect(function () {
 <div class="api-text" v-pre><p>This signal is deprecated and will be removed.</p></div>
 :::
 
+
+</div>

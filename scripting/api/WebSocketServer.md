@@ -6,7 +6,7 @@ draft: true
 
 # WebSocketServer
 
-<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: server entity scripts, assignment client scripts.</div>
+<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: server entity scripts, agents.</div>
 
 <div class="api-text" v-pre><p>Manages <a href="WebSocket"><code>WebSocket</code></a>s in server entity and assignment client scripts.</p>
  <p>Create using <code>new WebSocketServer(...)</code>.</p></div>
@@ -72,6 +72,8 @@ webSocket.onopen = function() {
 
 ## Methods {#functions}
 
+<div class="api-entry">
+
 ### close {#close}
 
 ```js
@@ -80,9 +82,13 @@ WebSocketServer.close()
 
 <div class="api-text" v-pre><p>Closes all connections and closes the WebSocketServer.</p></div>
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### newConnection {#newConnection}
 
@@ -96,3 +102,5 @@ WebSocketServer.newConnection.connect(function (webSocket) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>webSocket</code></td><td><a href="WebSocket">WebSocket</a></td><td><p>The <a href="WebSocket"><code>WebSocket</code></a> for the new connection.</p></td></tr>
 </tbody></table></div>
+
+</div>

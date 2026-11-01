@@ -6,7 +6,7 @@ draft: true
 
 # Quat
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts, server entity scripts, assignment client scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts, server entity scripts, agents.</div>
 
 <div class="api-text" v-pre><p>The <code>Quat</code> API provides facilities for generating and manipulating quaternions. Quaternions should be used in preference to Euler angles wherever possible because quaternions don't suffer from the problem of gimbal lock.</p></div>
 
@@ -35,6 +35,8 @@ print(JSON.stringify(Quat.safeEulerAngles(Quat.IDENTITY))); // { x: 0, y: 0, z: 
 
 ## Functions {#functions}
 
+<div class="api-entry">
+
 ### angle {#angle}
 
 ```js
@@ -56,6 +58,10 @@ var angle = Quat.angle(rotation);
 print("Angle: " + angle * 180 / Math.PI);  // 90 degrees.
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### angleAxis {#angleAxis}
 
 ```js
@@ -74,6 +80,10 @@ Quat.angleAxis(angle, axis)
 ```js
 var rotation = Quat.angleAxis(90, Quat.getForward(Camera.orientation));
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### axis {#axis}
 
@@ -96,6 +106,10 @@ var axis = Quat.axis(rotation);
 print("Forward: " + JSON.stringify(forward));
 print("Axis: " + JSON.stringify(axis)); // Same value as forward.
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### cancelOutRoll {#cancelOutRoll}
 
@@ -122,6 +136,10 @@ var lookAt = Quat.lookAtSimple(Vec3.ZERO, front);
 Quat.print("", lookAt, true); // dvec3(-1.033004, 22.245996, -0.000000)
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### cancelOutRollAndPitch {#cancelOutRollAndPitch}
 
 ```js
@@ -147,6 +165,10 @@ var lookAt = Quat.lookAtSimple(Vec3.ZERO, { x: front.x, y: 0, z: front.z });
 Quat.print("", lookAt, true); // dvec3(0.000000, 22.245996, 0.000000)
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### conjugate {#conjugate}
 
 ```js
@@ -169,6 +191,10 @@ Quat.print("conjugate", conjugate, true); // dvec3(1.116056, -22.242186, -28.451
 var identity = Quat.multiply(conjugate, quaternion);
 Quat.print("identity", identity, true); // dvec3(0.000000, 0.000000, 0.000000)
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### dot {#dot}
 
@@ -197,6 +223,10 @@ print(dot); // -0.9999999403953552
 var equal = Math.abs(1 - Math.abs(dot)) < 0.000001;
 print(equal); // true
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### equal {#equal}
 
@@ -228,6 +258,10 @@ var equal = Math.abs(1 - Math.abs(dot)) < 0.000001;
 print(equal); // true
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### fromPitchYawRollDegrees {#fromPitchYawRollDegrees}
 
 ```js
@@ -248,6 +282,10 @@ Quat.fromPitchYawRollDegrees(pitch, yaw, roll)
 var rotation = Quat.fromPitchYawRollDegrees(0, 180, 0 );
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### fromPitchYawRollRadians {#fromPitchYawRollRadians}
 
 ```js
@@ -267,6 +305,10 @@ Quat.fromPitchYawRollRadians(pitch, yaw, roll)
 ```js
 var rotation = Quat.fromPitchYawRollRadians(0, Math.PI, 0);
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### fromVec3Degrees {#fromVec3Degrees}
 
@@ -289,6 +331,10 @@ eulerAngles.z = 0;
 var newOrientation = Quat.fromVec3Degrees(eulerAngles);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### fromVec3Radians {#fromVec3Radians}
 
 ```js
@@ -306,6 +352,10 @@ Quat.fromVec3Radians(vector)
 ```js
 var rotation = Quat.fromVec3Radians({ x: 0, y: Math.PI, z: 0 });
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### getForward {#getForward}
 
@@ -326,6 +376,10 @@ var forward = Quat.getForward(Quat.IDENTITY);
 print(JSON.stringify(forward)); // {"x":0,"y":0,"z":-1}
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getFront {#getFront}
 
 ```js
@@ -337,6 +391,10 @@ Quat.getFront(orientation)
 <tr><td><code>orientation</code></td><td><a href="">Quat</a></td><td><p>A quaternion representing an orientation.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p>The negative z-axis rotated by <code>orientation</code>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getRight {#getRight}
 
@@ -350,6 +408,10 @@ Quat.getRight(orientation)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p>The x-axis rotated by <code>orientation</code>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getUp {#getUp}
 
 ```js
@@ -361,6 +423,10 @@ Quat.getUp(orientation)
 <tr><td><code>orientation</code></td><td><a href="">Quat</a></td><td><p>A quaternion representing an orientation.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p>The y-axis rotated by <code>orientation</code>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### inverse {#inverse}
 
@@ -385,6 +451,10 @@ var identity = Quat.multiply(inverse, quaternion);
 Quat.print("identity", identity, true); // dvec3(0.000000, 0.000000, 0.000000)
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### lookAt {#lookAt}
 
 ```js
@@ -406,6 +476,10 @@ Camera.mode = "independent";
 Camera.orientation = Quat.lookAt(Camera.position, Vec3.ZERO, Vec3.UNIT_NEG_Y);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### lookAtSimple {#lookAtSimple}
 
 ```js
@@ -425,6 +499,10 @@ Quat.lookAtSimple(eye, target)
 Camera.mode = "independent";
 Camera.orientation = Quat.lookAtSimple(Camera.position, Vec3.ZERO);
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### mix {#mix}
 
@@ -451,6 +529,10 @@ if (mixFactor > 1) {
 var newRotation = Quat.mix(startRotation, endRotation, mixFactor);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### multiply {#multiply}
 
 ```js
@@ -473,6 +555,10 @@ if (handPose.valid) {
     var handOrientation = Quat.multiply(MyAvatar.orientation, handPose.rotation);
 }
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### normalize {#normalize}
 
@@ -497,6 +583,10 @@ while (Quat.safeEulerAngles(currentRotation).y < 180) {
     // Use currentRotatation for something.
 }
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### print {#print}
 
@@ -523,6 +613,10 @@ Quat.print("Quaternion:", quaternion,  true);
 print("Quaternion: " + JSON.stringify(Quat.safeEulerAngles(quaternion)));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### rotationBetween {#rotationBetween}
 
 ```js
@@ -548,6 +642,10 @@ Entities.editEntity(entityID, properties);
 entityVelocity = newVelocity;
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### safeEulerAngles {#safeEulerAngles}
 
 ```js
@@ -567,6 +665,10 @@ var eulerAngles = Quat.safeEulerAngles(Camera.orientation);
 print("Camera yaw: " + eulerAngles.y);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### slerp {#slerp}
 
 ```js
@@ -580,6 +682,10 @@ Quat.slerp(q1, q2, alpha)
 <tr><td><code>alpha</code></td><td>number</td><td><p>The mixture coefficient between <code>0.0</code> and <code>1.0</code>. Specifies the proportion of <code>q2</code>'s value to return in favor of <code>q1</code>'s value. A value of <code>0.0</code> returns <code>q1</code>'s value; <code>1.0</code> returns <code>q2s</code>'s value.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="">Quat</a> <p>A spherical linear interpolation between rotations <code>q1</code> and <code>q2</code>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### squad {#squad}
 
@@ -596,3 +702,5 @@ Quat.squad(q1, q2, s1, s2, alpha)
 <tr><td><code>alpha</code></td><td>number</td><td><p>The mixture coefficient between <code>0.0</code> and <code>1.0</code>. A value of <code>0.0</code> returns <code>q1</code>'s value; <code>1.0</code> returns <code>q2s</code>'s value.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="">Quat</a> <p>A spherical quadrangle interpolation between rotations <code>q1</code> and <code>q2</code> using control points <code>s1</code> and <code>s2</code>.</p></div>
+
+</div>

@@ -6,7 +6,7 @@ draft: true
 
 # AvatarInputs
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>AvatarInputs</code> API provides facilities to manage user inputs.</p></div>
 
@@ -27,6 +27,8 @@ draft: true
 
 ## Functions {#functions}
 
+<div class="api-entry">
+
 ### loudnessToAudioLevel {#loudnessToAudioLevel}
 
 ```js
@@ -39,6 +41,10 @@ AvatarInputs.loudnessToAudioLevel(loudness)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The linear audio level.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### resetSensors {#resetSensors}
 
 ```js
@@ -46,6 +52,10 @@ AvatarInputs.resetSensors()
 ```
 
 <div class="api-text" v-pre><p>Resets sensors, audio, avatar animations, and the avatar rig.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setShowAudioTools {#setShowAudioTools}
 
@@ -58,6 +68,10 @@ AvatarInputs.setShowAudioTools(showAudioTools)
 <tr><td><code>showAudioTools</code></td><td>boolean</td><td><p><code>true</code> to show the microphone mute button and audio level meter, <code>false</code> to hide it.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setShowBubbleTools {#setShowBubbleTools}
 
 ```js
@@ -69,6 +83,10 @@ AvatarInputs.setShowBubbleTools(showBubbleTools)
 <tr><td><code>showBubbleTools</code></td><td>boolean</td><td><p><code>true</code> to show the privacy shield button, <code>false</code> to hide it.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### toggleCameraMute {#toggleCameraMute}
 
 ```js
@@ -79,9 +97,13 @@ AvatarInputs.toggleCameraMute()
 <p class="important">Deprecated: This function is deprecated and has been removed.</p>
 <p></p></div>
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### avatarEnteredIgnoreRadius {#avatarEnteredIgnoreRadius}
 
@@ -104,6 +126,10 @@ AvatarInputs.avatarEnteredIgnoreRadius.connect(function(avatarID) {
 };
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### enteredIgnoreRadiusChanged {#enteredIgnoreRadiusChanged}
 
 ```js
@@ -113,6 +139,10 @@ AvatarInputs.enteredIgnoreRadiusChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when another user enters the privacy shield.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### ignoreRadiusEnabledChanged {#ignoreRadiusEnabledChanged}
 
@@ -127,6 +157,10 @@ AvatarInputs.ignoreRadiusEnabledChanged.connect(function (enabled) {
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> if the privacy shield is enabled, <code>false</code> if it is disabled.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### isHMDChanged {#isHMDChanged}
 
 ```js
@@ -136,6 +170,10 @@ AvatarInputs.isHMDChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the display mode changes between desktop and HMD.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### showAudioToolsChanged {#showAudioToolsChanged}
 
@@ -150,6 +188,10 @@ AvatarInputs.showAudioToolsChanged.connect(function (show) {
 <tr><td><code>show</code></td><td>boolean</td><td><p><code>true</code> if the microphone mute button and audio level meter are shown, <code>false</code> if they are is hidden.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### showBubbleToolsChanged {#showBubbleToolsChanged}
 
 ```js
@@ -163,9 +205,13 @@ AvatarInputs.showBubbleToolsChanged.connect(function (show) {
 <tr><td><code>show</code></td><td>boolean</td><td><p><code>true</code> if the privacy shield UI button is shown, <code>false</code> if it is hidden.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Deprecated {#deprecated}
 
 Still there for older scripts; new scripts should not use these.
+
+<div class="api-entry">
 
 ### avatarLeftIgnoreRadius {#avatarLeftIgnoreRadius}
 
@@ -186,6 +232,10 @@ AvatarInputs.avatarLeftIgnoreRadius.connect(function (avatarID) {
 <tr><td><code>avatarID</code></td><td>QUuid</td><td><p>The session ID of the user that exited the privacy shield.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### cameraEnabledChanged {#cameraEnabledChanged}
 
 ```js
@@ -200,6 +250,10 @@ AvatarInputs.cameraEnabledChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when webcam face tracking is enabled or disabled.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### cameraMutedChanged {#cameraMutedChanged}
 
 ```js
@@ -213,3 +267,5 @@ AvatarInputs.cameraMutedChanged.connect(function () {
 :::
 
 <div class="api-text" v-pre><p>Triggered when webcam face tracking is muted (temporarily disabled) or unmuted.</p></div>
+
+</div>

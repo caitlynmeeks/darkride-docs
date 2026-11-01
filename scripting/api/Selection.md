@@ -6,7 +6,7 @@ draft: true
 
 # Selection
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>Selection</code> API provides a means of grouping together and highlighting avatars and entities in named lists.</p></div>
 
@@ -48,6 +48,8 @@ draft: true
 
 ## Functions {#functions}
 
+<div class="api-entry">
+
 ### addToSelectedItemsList {#addToSelectedItemsList}
 
 ```js
@@ -62,6 +64,10 @@ Selection.addToSelectedItemsList(listName, itemType, itemID)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the item was successfully added or already existed in the list, otherwise <code>false</code>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### clearSelectedItemsList {#clearSelectedItemsList}
 
 ```js
@@ -73,6 +79,10 @@ Selection.clearSelectedItemsList(listName)
 <tr><td><code>listName</code></td><td>string</td><td><p>The name of the selection list.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> always.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### disableListHighlight {#disableListHighlight}
 
@@ -88,6 +98,10 @@ Selection.disableListHighlight(listName)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> always.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### disableListToScene {#disableListToScene}
 
 ```js
@@ -99,6 +113,10 @@ Selection.disableListToScene(listName)
 <tr><td><code>listName</code></td><td>string</td><td><p>The name of the selection list.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> always.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### enableListHighlight {#enableListHighlight}
 
@@ -115,6 +133,10 @@ Selection.enableListHighlight(listName, highlightStyle)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> always.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### enableListToScene {#enableListToScene}
 
 ```js
@@ -127,6 +149,10 @@ Selection.enableListToScene(listName)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> always.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getHighlightedListNames {#getHighlightedListNames}
 
 ```js
@@ -135,6 +161,10 @@ Selection.getHighlightedListNames()
 
 <div class="api-text" v-pre><p>Gets the names of all current selection lists that have highlighting enabled.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;string&gt; <p>The names of the selection lists that currently have highlighting enabled.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getListHighlightStyle {#getListHighlightStyle}
 
@@ -147,6 +177,10 @@ Selection.getListHighlightStyle(listName)
 <tr><td><code>listName</code></td><td>string</td><td><p>The name of the selection list.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="#HighlightStyle">Selection.HighlightStyle</a> <p>The highlight style of the selection list if the list exists and highlighting is enabled, otherwise an empty object.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getListNames {#getListNames}
 
@@ -163,6 +197,10 @@ Selection.getListNames()
 print("Selection lists: " + Selection.getListNames());
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getSelectedItemsList {#getSelectedItemsList}
 
 ```js
@@ -175,6 +213,10 @@ Selection.getSelectedItemsList(listName)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="#SelectedItemsList">Selection.SelectedItemsList</a> <p>The content of the selection list if the list exists, otherwise an empty object.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### printList {#printList}
 
 ```js
@@ -185,6 +227,10 @@ Selection.printList(listName)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>listName</code></td><td>string</td><td><p>The name of the selection list.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### removeFromSelectedItemsList {#removeFromSelectedItemsList}
 
@@ -200,6 +246,10 @@ Selection.removeFromSelectedItemsList(listName, itemType, itemID)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the item was successfully removed or was not in the list, otherwise <code>false</code>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### removeListFromMap {#removeListFromMap}
 
 ```js
@@ -212,9 +262,13 @@ Selection.removeListFromMap(listName)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the selection existed and was successfully removed, otherwise <code>false</code>.</p></div>
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### selectedItemsListChanged {#selectedItemsListChanged}
 
@@ -229,7 +283,11 @@ Selection.selectedItemsListChanged.connect(function (listName) {
 <tr><td><code>listName</code></td><td>string</td><td><p>The name of the selection list that changed.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### HighlightStyle {#HighlightStyle}
 
@@ -247,6 +305,10 @@ Selection.selectedItemsListChanged.connect(function (listName) {
 <tr><td><code>isOutlineSmooth</code></td><td>boolean</td><td><code>false</code></td><td><p><code>true</code> to fade the outside edge of the outline, <code>false</code> to have a sharp edge.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### ItemType {#ItemType}
 
 <div class="api-text" v-pre><p>The type of a specific item in a selection list.</p>
@@ -258,6 +320,10 @@ Selection.selectedItemsListChanged.connect(function (listName) {
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> string</div>
 
+</div>
+
+<div class="api-entry">
+
 ### SelectedItemsList {#SelectedItemsList}
 
 <div class="api-text" v-pre><p>A selection list.</p></div>
@@ -265,3 +331,5 @@ Selection.selectedItemsListChanged.connect(function (listName) {
 <tr><td><code>avatars</code></td><td>Array&lt;<a href="Uuid">Uuid</a>&gt;</td><td><p>The IDs of the avatars in the selection list.</p></td></tr>
 <tr><td><code>entities</code></td><td>Array&lt;<a href="Uuid">Uuid</a>&gt;</td><td><p>The IDs of the entities in the selection list.</p></td></tr>
 </tbody></table></div>
+
+</div>

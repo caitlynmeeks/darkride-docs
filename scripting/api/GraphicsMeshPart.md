@@ -6,7 +6,7 @@ draft: true
 
 # GraphicsMeshPart
 
-<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>A handle to in-memory mesh part data in a <a href="GraphicsModel"><code>GraphicsModel</code></a>.</p>
  <p>Created using the <a href="Graphics"><code>Graphics</code></a> API, <a href="GraphicsModel#cloneModel"><code>GraphicsModel.cloneModel</code></a>, <a href="GraphicsMesh#cloneMesh"><code>GraphicsMesh.cloneMesh</code></a>, or <a href="#cloneMeshPart"><code>GraphicsMeshPart.cloneMeshPart</code></a>.</p></div>
@@ -32,6 +32,8 @@ draft: true
 
 ## Methods {#functions}
 
+<div class="api-entry">
+
 ### addAttribute {#addAttribute}
 
 ```js
@@ -45,6 +47,10 @@ GraphicsMeshPart.addAttribute(name, defaultValue?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The number of vertices the attribute was added to, <code>0</code> if the <code>name</code> was invalid or all vertices already had the attribute.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### cloneMeshPart {#cloneMeshPart}
 
 ```js
@@ -53,6 +59,10 @@ GraphicsMeshPart.cloneMeshPart()
 
 <div class="api-text" v-pre><p>Makes a copy of the mesh part.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="">GraphicsMeshPart</a> <p>A copy of the mesh part.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### dedupeVertices {#dedupeVertices}
 
@@ -65,6 +75,10 @@ GraphicsMeshPart.dedupeVertices(epsilon?)
 <tr><td><code>epsilon</code> <em>optional</em></td><td>number</td><td><code>1e-6</code></td><td><p>The deduplicadtion distance. If a pair of vertices is within this distance of each other they are combined into a single vertex.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the deduplication succeeded, <code>false</code> if it didn't.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### fillAttribute {#fillAttribute}
 
@@ -79,6 +93,10 @@ GraphicsMeshPart.fillAttribute(name, value)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p><code>1</code> if the attribute name was valid and the attribute values were set, <code>0</code> otherwise.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### findNearbyPartVertexIndices {#findNearbyPartVertexIndices}
 
 ```js
@@ -92,6 +110,10 @@ GraphicsMeshPart.findNearbyPartVertexIndices(origin, epsilon?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;number&gt; <p>The indices of nearby vertices.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getFace {#getFace}
 
 ```js
@@ -104,6 +126,10 @@ GraphicsMeshPart.getFace(index)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;number&gt; <p>The vertex indices that make up the face, of number per the mesh <code>topology</code>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getIndices {#getIndices}
 
 ```js
@@ -113,6 +139,10 @@ GraphicsMeshPart.getIndices()
 <div class="api-text" v-pre><p>Gets the vertex indices.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;number&gt; <p>The vertex indices.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getParentMesh {#getParentMesh}
 
 ```js
@@ -121,6 +151,10 @@ GraphicsMeshPart.getParentMesh()
 
 <div class="api-text" v-pre><p>Gets the parent mesh.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="GraphicsMesh">GraphicsMesh</a> <p>The parent mesh.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getVertexProperty {#getVertexProperty}
 
@@ -136,6 +170,10 @@ GraphicsMeshPart.getVertexProperty(index, name)
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Graphics#BufferType">Graphics.BufferType</a> <p>The value of the vertex attribute.</p></div>
 <div class="api-returns" v-pre><strong>Throws:</strong>  <p>Throws an error if the <code>index</code> is invalid or <code>name</code> is invalid or isn't used in the mesh.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getVertextAttributes {#getVertextAttributes}
 
 ```js
@@ -148,6 +186,10 @@ GraphicsMeshPart.getVertextAttributes(index)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Object&lt;<a href="Graphics#BufferTypeName">Graphics.BufferTypeName</a>, <a href="Graphics#BufferType">Graphics.BufferType</a>&gt; <p>The attribute names and values for the vertex.</p></div>
 <div class="api-returns" v-pre><strong>Throws:</strong>  <p>Throws an error if the <code>index</code> is invalid.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### isValidIndex {#isValidIndex}
 
@@ -163,6 +205,10 @@ GraphicsMeshPart.isValidIndex(index, attribute?)
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the index is valid and that vertex has the attribute if specified.</p></div>
 <div class="api-returns" v-pre><strong>Throws:</strong>  <p>Throws an error if the <code>index</code> if invalid or <code>name</code> is invalid or isn't used in the mesh.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### replaceMeshPartData {#replaceMeshPartData}
 
 ```js
@@ -176,6 +222,10 @@ GraphicsMeshPart.replaceMeshPartData(source, attributes?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the mesh part was successfully replaced, <code>false</code> if it wasn't.</p></div>
 <div class="api-returns" v-pre><strong>Throws:</strong>  <p>Throws an error if the mesh part of source mesh part aren't valid.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### rotate {#rotate}
 
@@ -192,6 +242,10 @@ GraphicsMeshPart.rotate(rotation, origin?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Graphics#MeshExtents">Graphics.MeshExtents</a> <p>The resulting mesh extents, in model coordinates.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### rotateDegrees {#rotateDegrees}
 
 ```js
@@ -207,6 +261,10 @@ GraphicsMeshPart.rotateDegrees(eulerAngles, origin?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Graphics#MeshExtents">Graphics.MeshExtents</a> <p>The resulting mesh extents, in model coordinates.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### scale {#scale}
 
 ```js
@@ -220,6 +278,10 @@ GraphicsMeshPart.scale(scale, origin?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Graphics#MeshExtents">Graphics.MeshExtents</a> <p>The resulting mesh extents, in model coordinates.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### scaleToFit {#scaleToFit}
 
 ```js
@@ -231,6 +293,10 @@ GraphicsMeshPart.scaleToFit(scale)
 <tr><td><code>scale</code></td><td>number</td><td><p>The target dimension.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Graphics#MeshExtents">Graphics.MeshExtents</a> <p>The resulting mesh extents, in model coordinates.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setIndices {#setIndices}
 
@@ -244,6 +310,10 @@ GraphicsMeshPart.setIndices(indices)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if successful, <code>false</code> if not.</p></div>
 <div class="api-returns" v-pre><strong>Throws:</strong>  <p>Throws an error if the number of indices isn't the same, or an index is invalid.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setVertexProperty {#setVertexProperty}
 
@@ -260,6 +330,10 @@ GraphicsMeshPart.setVertexProperty(index, name, value)
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the vertex attribute value was set, <code>false</code> if it wasn't.</p></div>
 <div class="api-returns" v-pre><strong>Throws:</strong>  <p>Throws an error if the <code>index</code> is invalid or <code>name</code> is invalid or isn't used in the mesh.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setVertextAttributes {#setVertextAttributes}
 
 ```js
@@ -274,6 +348,10 @@ GraphicsMeshPart.setVertextAttributes(index, values)
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the index and the attribute names and values were valid and the vertex was updated, <code>false</code> otherwise.</p></div>
 <div class="api-returns" v-pre><strong>Throws:</strong>  <p>Throws an error if the <code>index</code> is invalid or one of the attribute names is invalid or isn't used in the mesh.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### toOBJ {#toOBJ}
 
 ```js
@@ -282,6 +360,10 @@ GraphicsMeshPart.toOBJ()
 
 <div class="api-text" v-pre><p>Exports the mesh part to OBJ format.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>The OBJ format representation of the mesh part.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### transform {#transform}
 
@@ -295,6 +377,10 @@ GraphicsMeshPart.transform(transform)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Graphics#MeshExtents">Graphics.MeshExtents</a> <p>The resulting mesh extents, in model coordinates.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### translate {#translate}
 
 ```js
@@ -307,6 +393,10 @@ GraphicsMeshPart.translate(translation)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Graphics#MeshExtents">Graphics.MeshExtents</a> <p>The rseulting mesh extents, in model coordinates.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### updateVertexAttributes {#updateVertexAttributes}
 
 ```js
@@ -318,3 +408,5 @@ GraphicsMeshPart.updateVertexAttributes(callback)
 <tr><td><code>callback</code></td><td><a href="GraphicsMesh#updateVertexAttributesCallback">GraphicsMesh~updateVertexAttributesCallback</a></td><td><p>The function to call for each vertex.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The number of vertices the callback was called for.</p></div>
+
+</div>

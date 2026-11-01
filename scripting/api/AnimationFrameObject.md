@@ -6,7 +6,7 @@ draft: true
 
 # AnimationFrameObject
 
-<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts, server entity scripts, assignment client scripts.</div>
+<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: client scripts, entity scripts, avatar scripts, server entity scripts, agents.</div>
 
 <div class="api-text" v-pre><p>Joint rotations in one frame of an <a href="AnimationObject"><code>AnimationObject</code></a>.</p></div>
 
@@ -18,6 +18,8 @@ draft: true
 
 ## Methods {#functions}
 
+<div class="api-entry">
+
 ### getRotations {#getRotations}
 
 ```js
@@ -26,3 +28,5 @@ AnimationFrameObject.getRotations()
 
 <div class="api-text" v-pre><p>Gets the joint rotations in the animation frame.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;<a href="Quat">Quat</a>&gt; <p>The joint rotations in the animation frame.</p></div>
+
+</div>

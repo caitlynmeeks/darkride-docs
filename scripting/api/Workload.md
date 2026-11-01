@@ -5,7 +5,7 @@ draft: true
 
 # Workload
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 
 ## Properties {#properties}
@@ -18,6 +18,8 @@ draft: true
 
 ## Functions {#functions}
 
+<div class="api-entry">
+
 ### getConfig {#getConfig}
 
 ```js
@@ -29,6 +31,10 @@ Workload.getConfig(name)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> object </div>
 
+</div>
+
+<div class="api-entry">
+
 ### getNumSubs {#getNumSubs}
 
 ```js
@@ -36,6 +42,10 @@ Workload.getNumSubs()
 ```
 
 <div class="api-returns" v-pre><strong>Returns:</strong> number </div>
+
+</div>
+
+<div class="api-entry">
 
 ### getSubConfig {#getSubConfig}
 
@@ -48,6 +58,10 @@ Workload.getSubConfig(index)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> object </div>
 
+</div>
+
+<div class="api-entry">
+
 ### getSubConfigs {#getSubConfigs}
 
 ```js
@@ -55,6 +69,10 @@ Workload.getSubConfigs()
 ```
 
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;object&gt; </div>
+
+</div>
+
+<div class="api-entry">
 
 ### isSwitch {#isSwitch}
 
@@ -64,6 +82,10 @@ Workload.isSwitch()
 
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean </div>
 
+</div>
+
+<div class="api-entry">
+
 ### isTask {#isTask}
 
 ```js
@@ -71,6 +93,10 @@ Workload.isTask()
 ```
 
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean </div>
+
+</div>
+
+<div class="api-entry">
 
 ### load {#load}
 
@@ -82,6 +108,10 @@ Workload.load(map)
 <tr><td><code>map</code></td><td>object</td><td></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### load {#load-2}
 
 ```js
@@ -92,12 +122,20 @@ Workload.load(json)
 <tr><td><code>json</code></td><td>object</td><td></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### refresh {#refresh}
 
 ```js
 Workload.refresh()
 ```
 
+
+</div>
+
+<div class="api-entry">
 
 ### toJSON {#toJSON}
 
@@ -107,9 +145,13 @@ Workload.toJSON()
 
 <div class="api-returns" v-pre><strong>Returns:</strong> string </div>
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### dirtyEnabled {#dirtyEnabled}
 
@@ -120,6 +162,10 @@ Workload.dirtyEnabled.connect(function () {
 ```
 
 
+</div>
+
+<div class="api-entry">
+
 ### loaded {#loaded}
 
 ```js
@@ -129,6 +175,10 @@ Workload.loaded.connect(function () {
 ```
 
 
+</div>
+
+<div class="api-entry">
+
 ### newStats {#newStats}
 
 ```js
@@ -137,3 +187,5 @@ Workload.newStats.connect(function () {
 });
 ```
 
+
+</div>

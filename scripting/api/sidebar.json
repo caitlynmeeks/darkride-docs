@@ -75,7 +75,7 @@
   },
   {
     "text": "A to Z",
-    "collapsed": false,
+    "collapsed": true,
     "items": [
       {
         "text": "About",
@@ -202,6 +202,10 @@
         "link": "/scripting/api/Entities"
       },
       {
+        "text": "Entities types",
+        "link": "/scripting/api/Entities-types"
+      },
+      {
         "text": "EntityScriptServerLog",
         "link": "/scripting/api/EntityScriptServerLog"
       },
@@ -288,10 +292,6 @@
       {
         "text": "Messages",
         "link": "/scripting/api/Messages"
-      },
-      {
-        "text": "Midi",
-        "link": "/scripting/api/Midi"
       },
       {
         "text": "Model",

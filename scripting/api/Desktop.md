@@ -6,7 +6,7 @@ draft: true
 
 # Desktop
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>Desktop</code> API provides the dimensions of the computer screen, sets the opacity of the HUD surface, and enables QML and HTML windows to be shown inside or outside of Interface.</p></div>
 
@@ -23,6 +23,8 @@ draft: true
 </tbody></table></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### createWindow {#createWindow}
 
@@ -51,6 +53,10 @@ Script.scriptEnding.connect(function () {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### setHUDAlpha {#setHUDAlpha}
 
 ```js
@@ -61,6 +67,10 @@ Desktop.setHUDAlpha(alpha)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>alpha</code></td><td>number</td><td><p>The opacity, <code>0.0 – 1.0</code>.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### show {#show}
 
@@ -79,3 +89,5 @@ Desktop.show(url, name)
 ```js
 Desktop.show("hifi/dialogs/GeneralPreferencesDialog.qml", "GeneralPreferencesDialog");
 ```
+
+</div>

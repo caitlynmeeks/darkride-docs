@@ -6,7 +6,7 @@ draft: true
 
 # HMD
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>HMD</code> API provides access to the HMD used in VR display mode.</p></div>
 
@@ -43,6 +43,8 @@ draft: true
 
 ## Functions {#functions}
 
+<div class="api-entry">
+
 ### activateHMDHandMouse {#activateHMDHandMouse}
 
 ```js
@@ -50,6 +52,10 @@ HMD.activateHMDHandMouse()
 ```
 
 <div class="api-text" v-pre><p>Causes the borders in HUD windows to be enlarged when the laser intersects them in HMD mode. By default, borders are not enlarged.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### calculateRayUICollisionPoint {#calculateRayUICollisionPoint}
 
@@ -85,6 +91,10 @@ Script.scriptEnding.connect(function () {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### centerUI {#centerUI}
 
 ```js
@@ -92,6 +102,10 @@ HMD.centerUI()
 ```
 
 <div class="api-text" v-pre><p>Recenters the HMD HUD to the current HMD position and orientation.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### closeTablet {#closeTablet}
 
@@ -101,6 +115,10 @@ HMD.closeTablet()
 
 <div class="api-text" v-pre><p>Closes the tablet if it is open.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### deactivateHMDHandMouse {#deactivateHMDHandMouse}
 
 ```js
@@ -108,6 +126,10 @@ HMD.deactivateHMDHandMouse()
 ```
 
 <div class="api-text" v-pre><p>Causes the border in HUD windows to no longer be enlarged when the laser intersects them in HMD mode. By default, borders are not enlarged.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getHUDLookAtPosition2D {#getHUDLookAtPosition2D}
 
@@ -118,6 +140,10 @@ HMD.getHUDLookAtPosition2D()
 <div class="api-text" v-pre><p>Gets the position on the HUD overlay that your HMD is looking at, in HUD coordinates.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="globals#Vec2">Vec2</a> <p>The position on the HUD overlay that your HMD is looking at, in pixels.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getHUDLookAtPosition3D {#getHUDLookAtPosition3D}
 
 ```js
@@ -126,6 +152,10 @@ HMD.getHUDLookAtPosition3D()
 
 <div class="api-text" v-pre><p>Gets the position on the HUD overlay that your HMD is looking at, in world coordinates.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p>The position on the HUD overlay the your HMD is looking at, in world coordinates.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### isHandControllerAvailable {#isHandControllerAvailable}
 
@@ -147,6 +177,10 @@ print("Are Oculus hand controllers available: " + HMD.isHandControllerAvailable(
 print("Are Vive hand controllers available: " + HMD.isHandControllerAvailable("OpenVR"));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### isHeadControllerAvailable {#isHeadControllerAvailable}
 
 ```js
@@ -166,6 +200,10 @@ print("Is any HMD head controller available: " + HMD.isHeadControllerAvailable()
 print("Is an Oculus head controller available: " + HMD.isHeadControllerAvailable("Oculus"));
 print("Is a Vive head controller available: " + HMD.isHeadControllerAvailable("OpenVR"));
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### isHMDAvailable {#isHMDAvailable}
 
@@ -187,6 +225,10 @@ print("Is an Oculus Rift HMD available: " + HMD.isHMDAvailable("Oculus Rift"));
 print("Is a Vive HMD available: " + HMD.isHMDAvailable("OpenVR (Vive)"));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### isKeyboardVisible {#isKeyboardVisible}
 
 ```js
@@ -195,6 +237,10 @@ HMD.isKeyboardVisible()
 
 <div class="api-text" v-pre><p>Checks whether the HMD-provided keyboard, if any, is visible.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the current HMD provides a keyboard and it is visible, otherwise <code>false</code>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### isSubdeviceContainingNameAvailable {#isSubdeviceContainingNameAvailable}
 
@@ -215,6 +261,10 @@ print("Is an Oculus Touch controller available: " + HMD.isSubdeviceContainingNam
 print("Is an Oculus Remote controller available: " + HMD.isSubdeviceContainingNameAvailable("Remote"));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### openTablet {#openTablet}
 
 ```js
@@ -225,6 +275,10 @@ HMD.openTablet(contextualMode?)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>contextualMode</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p>If <code>true</code> then the tablet is opened at a specific position and orientation already set by the script, otherwise it opens at a position and orientation relative to the user. For contextual mode, set the world or local position and orientation of the <code>HMD.tabletID</code> overlay.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### overlayFromWorldPoint {#overlayFromWorldPoint}
 
@@ -259,6 +313,10 @@ Script.scriptEnding.connect(function () {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### overlayToSpherical {#overlayToSpherical}
 
 ```js
@@ -271,6 +329,10 @@ HMD.overlayToSpherical(overlayPos)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="globals#Vec2">Vec2</a> <p>The point on the HUD overlay in spherical coordinates.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### preferredAudioInput {#preferredAudioInput}
 
 ```js
@@ -279,6 +341,10 @@ HMD.preferredAudioInput()
 
 <div class="api-text" v-pre><p>Gets the name of the HMD audio input device.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>The name of the HMD audio input device if in HMD mode, otherwise an empty string.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### preferredAudioOutput {#preferredAudioOutput}
 
@@ -289,6 +355,10 @@ HMD.preferredAudioOutput()
 <div class="api-text" v-pre><p>Gets the name of the HMD audio output device.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>The name of the HMD audio output device if in HMD mode, otherwise an empty string.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### requestHideHandControllers {#requestHideHandControllers}
 
 ```js
@@ -296,6 +366,10 @@ HMD.requestHideHandControllers()
 ```
 
 <div class="api-text" v-pre><p>Signals that it is no longer necessary to display models of the HMD hand controllers being used. If no other scripts want the models displayed then they are no longer displayed.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### requestShowHandControllers {#requestShowHandControllers}
 
@@ -314,6 +388,10 @@ Script.setTimeout(function () {
 }, 10000);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### shouldShowHandControllers {#shouldShowHandControllers}
 
 ```js
@@ -322,6 +400,10 @@ HMD.shouldShowHandControllers()
 
 <div class="api-text" v-pre><p>Checks whether any script wants models of the HMD hand controllers displayed. Requests are made and canceled using <a href="#requestShowHandControllers">requestShowHandControllers</a> and <a href="#requestHideHandControllers">requestHideHandControllers</a>.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if any script is requesting that HMD hand controller models be displayed.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### sphericalToOverlay {#sphericalToOverlay}
 
@@ -335,6 +417,10 @@ HMD.sphericalToOverlay(sphericalPos)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="globals#Vec2">Vec2</a> <p>The point on the HUD overlay in HUD coordinates.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### suppressKeyboard {#suppressKeyboard}
 
 ```js
@@ -344,6 +430,10 @@ HMD.suppressKeyboard()
 <div class="api-text" v-pre><p>Suppresses the activation of the HMD-provided keyboard, if any. Successful calls should be balanced with a call to <a href="#unsuppressKeyboard">unsuppressKeyboard</a> within a reasonable amount of time.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the current HMD provides a keyboard and it was successfully suppressed (e.g., it isn't being displayed), otherwise <code>false</code>.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### unsuppressKeyboard {#unsuppressKeyboard}
 
 ```js
@@ -351,6 +441,10 @@ HMD.unsuppressKeyboard()
 ```
 
 <div class="api-text" v-pre><p>Unsuppresses the activation of the HMD-provided keyboard, if any.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### worldPointFromOverlay {#worldPointFromOverlay}
 
@@ -364,9 +458,13 @@ HMD.worldPointFromOverlay(coordinates)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p>The point on the HUD overlay in world coordinates.</p></div>
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### awayStateWhenFocusLostInVRChanged {#awayStateWhenFocusLostInVRChanged}
 
@@ -380,6 +478,10 @@ HMD.awayStateWhenFocusLostInVRChanged.connect(function (enabled) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>enabled</code></td><td>boolean</td><td><p><code>true</code> if the setting to go into an away state in VR when the interface focus is lost is enabled, otherwise <code>false</code>.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### displayModeChanged {#displayModeChanged}
 
@@ -405,6 +507,10 @@ HMD.displayModeChanged.connect(function (isHMDMode) {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### IPDScaleChanged {#IPDScaleChanged}
 
 ```js
@@ -414,6 +520,10 @@ HMD.IPDScaleChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the <code>HMD.ipdScale</code> property value changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### mountedChanged {#mountedChanged}
 
@@ -432,6 +542,10 @@ HMD.mountedChanged.connect(function () {
     print("Mounted changed. HMD is mounted: " + HMD.mounted);
 });
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### shouldShowHandControllersChanged {#shouldShowHandControllersChanged}
 
@@ -457,6 +571,10 @@ Script.setTimeout(function () {
 }, 10000);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### showTabletChanged {#showTabletChanged}
 
 ```js
@@ -469,3 +587,5 @@ HMD.showTabletChanged.connect(function (showTablet) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>showTablet</code></td><td>boolean</td><td><p><code>true</code> if the tablet is showing, otherwise <code>false</code>.</p></td></tr>
 </tbody></table></div>
+
+</div>

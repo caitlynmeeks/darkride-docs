@@ -6,7 +6,7 @@ draft: true
 
 # Mat4
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts, server entity scripts, assignment client scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts, server entity scripts, agents.</div>
 
 <div class="api-text" v-pre><p>The <code>Mat4</code> API provides facilities for generating and using 4 x 4 matrices. These matrices are typically used to represent transforms (scale, rotate, and translate) that convert one coordinate system into another, or perspective transforms that convert 3D points into screen coordinates.</p></div>
 
@@ -33,6 +33,8 @@ draft: true
 </tbody></table></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### createFromArray {#createFromArray}
 
@@ -62,6 +64,10 @@ Mat4.print("Matrix:", matrix);
 //                (1.478398, 0.560660, 1.224745, 0.000000),
 //                (10.000000, 11.000000, 12.000000, 1.000000))
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### createFromColumns {#createFromColumns}
 
@@ -93,6 +99,10 @@ Mat4.print("Matrix:", matrix);
 //                (10.000000, 11.000000, 12.000000, 1.000000))
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### createFromRotAndTrans {#createFromRotAndTrans}
 
 ```js
@@ -118,6 +128,10 @@ Mat4.print("Matrix:", matrix);
 //                 (0.739199, 0.280330, 0.612372, 0.000000),
 //                 (10.000000, 11.000000, 12.000000, 1.000000))
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### createFromScaleRotAndTrans {#createFromScaleRotAndTrans}
 
@@ -147,6 +161,10 @@ Mat4.print("Matrix:", matrix);
 //                 (10.000000, 11.000000, 12.000000, 1.000000))
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### extractRotation {#extractRotation}
 
 ```js
@@ -171,6 +189,10 @@ rot = Mat4.extractRotation(matrix);
 print("Rotation: " + JSON.stringify(Quat.safeEulerAngles(rot)));
 // Rotation: {"x":29.999998092651367,"y":45.00000762939453,"z":60.000003814697266}
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### extractScale {#extractScale}
 
@@ -197,6 +219,10 @@ print("Scale: " + JSON.stringify(scale));
 // Scale: {"x":1.9999998807907104,"y":1.9999998807907104,"z":1.9999998807907104}
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### extractTranslation {#extractTranslation}
 
 ```js
@@ -222,6 +248,10 @@ print("Translation: " + JSON.stringify(trans));
 // Translation: {"x":10,"y":11,"z":12}
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getForward {#getForward}
 
 ```js
@@ -245,6 +275,10 @@ print("Forward: " + JSON.stringify(forward));
 // Forward: {"x":0,"y":0,"z":-1}
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### getFront {#getFront}
 
 ```js
@@ -259,6 +293,10 @@ Mat4.getFront(m)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p>The negative z-axis rotated by orientation.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getRight {#getRight}
 
 ```js
@@ -271,6 +309,10 @@ Mat4.getRight(m)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p>The x-axis rotated by the rotation in the matrix.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getUp {#getUp}
 
 ```js
@@ -282,6 +324,10 @@ Mat4.getUp(m)
 <tr><td><code>m</code></td><td><a href="">Mat4</a></td><td><p>The matrix.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Vec3">Vec3</a> <p>The y-axis rotated by the rotation in the matrix.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### inverse {#inverse}
 
@@ -311,6 +357,10 @@ Mat4.print("Multiplied:", multiplied);
 //                    (0.000000, 0.000000, 0.000001, 1.000000))
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### multiply {#multiply}
 
 ```js
@@ -323,6 +373,10 @@ Mat4.multiply(m1, m2)
 <tr><td><code>m2</code></td><td><a href="">Mat4</a></td><td><p>The second matrix.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="">Mat4</a> <p><code>m1</code> multiplied with <code>m2</code>.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### print {#print}
 
@@ -358,6 +412,10 @@ print("Matrix: " + JSON.stringify(matrix));
 //          "r0c3": 10, "r1c3": 11, "r2c3": 12, "r3c3": 1}
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### transformPoint {#transformPoint}
 
 ```js
@@ -385,6 +443,10 @@ print("Transformed point: " + JSON.stringify(transformedPoint));
 // Transformed point: { "x": 2.8284270763397217, "y": 12, "z": -2.384185791015625e-7 }
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### transformVector {#transformVector}
 
 ```js
@@ -411,3 +473,5 @@ var transformedVector = Mat4.transformVector(matrix, vector);
 print("Transformed vector: " + JSON.stringify(transformedVector));
 // Transformed vector: { "x": 2.8284270763397217, "y": 2, "z": -2.384185791015625e-7 }
 ```
+
+</div>

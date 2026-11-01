@@ -6,11 +6,13 @@ draft: true
 
 # Resources
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts, server entity scripts, assignment client scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts, server entity scripts, agents.</div>
 
 <div class="api-text" v-pre><p>The <code>Resources</code> API enables the default location for different resource types to be overridden.</p></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### clearFailures {#clearFailures}
 
@@ -20,6 +22,10 @@ Resources.clearFailures()
 
 <div class="api-text" v-pre><p>Empties the list of failures (Resources.getFailures), to start a fresh pass.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getFailures {#getFailures}
 
 ```js
@@ -28,6 +34,10 @@ Resources.getFailures()
 
 <div class="api-text" v-pre><p>Every file whose load failed for good this run, one entry per address (its latest failure), the newest last: a list to work through. A file that loads later leaves it.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;<a href="#Failure">Resources.Failure</a>&gt; <p>The failures.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### overrideUrlPrefix {#overrideUrlPrefix}
 
@@ -41,6 +51,10 @@ Resources.overrideUrlPrefix(prefix, replacement)
 <tr><td><code>replacement</code></td><td>string</td><td><p>The replacement path for the prefix.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### restoreUrlPrefix {#restoreUrlPrefix}
 
 ```js
@@ -52,9 +66,13 @@ Resources.restoreUrlPrefix(prefix)
 <tr><td><code>prefix</code></td><td>string</td><td><p>The prefix of the resource to restore the path for.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### resourceFailed {#resourceFailed}
 
@@ -71,7 +89,11 @@ Resources.resourceFailed.connect(function (url, type, reason) {
 <tr><td><code>reason</code></td><td>string</td><td><p>Why.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### Failure {#Failure}
 
@@ -81,3 +103,5 @@ Resources.resourceFailed.connect(function (url, type, reason) {
 <tr><td><code>reason</code></td><td>string</td><td><p>Why, e.g. <code>"404 not found"</code>, <code>"host not found: example.com"</code>, <code>"could not be read"</code>.</p></td></tr>
 <tr><td><code>time</code></td><td>number</td><td><p>When, in milliseconds since the epoch.</p></td></tr>
 </tbody></table></div>
+
+</div>

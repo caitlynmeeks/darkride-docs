@@ -6,11 +6,13 @@ draft: true
 
 # Settings
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>Settings</code> API provides a facility to store and retrieve values that persist between Interface runs.</p></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### getValue {#getValue}
 
@@ -35,6 +37,10 @@ var value2 = Settings.getValue("Script Example/Nonexistent Key", true);
 print("Value: " + (typeof value2) + " " + JSON.stringify(value2));  // boolean true
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### setValue {#setValue}
 
 ```js
@@ -55,3 +61,5 @@ Settings.setValue("Script Example/My Key", { x: 0, y: 10, z: 0 });
 var value = Settings.getValue("Script Example/My Key");
 print("Value: " + (typeof value) + " " + JSON.stringify(value));  // object {"x":0,"y":10,"z":0}
 ```
+
+</div>

@@ -6,7 +6,7 @@ draft: true
 
 # InteractiveWindow
 
-<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>An <code>InteractiveWindow</code> can display either inside Interface or in its own window separate from the Interface window. The window content is defined by a QML file, which can optionally include a <code>WebView</code> control that embeds an HTML web page. (The <code>WebView</code> control is defined by a "WebView.qml" file included in the Interface install.)</p>
  <p>Create using <a href="Desktop#createWindow"><code>Desktop.createWindow</code></a>.</p></div>
@@ -25,6 +25,8 @@ draft: true
 
 ## Methods {#functions}
 
+<div class="api-entry">
+
 ### close {#close}
 
 ```js
@@ -32,6 +34,10 @@ InteractiveWindow.close()
 ```
 
 <div class="api-text" v-pre><p>Closes the window. It can then no longer be used.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### emitScriptEvent {#emitScriptEvent}
 
@@ -46,6 +52,10 @@ InteractiveWindow.emitScriptEvent(message)
 <tr><td><code>message</code></td><td>string | object</td><td><p>The message to send to the embedded HTML web page.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### raise {#raise}
 
 ```js
@@ -53,6 +63,10 @@ InteractiveWindow.raise()
 ```
 
 <div class="api-text" v-pre><p>Raises the window to the top.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### sendToQml {#sendToQml}
 
@@ -113,6 +127,10 @@ Rectangle {
 }
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### show {#show}
 
 ```js
@@ -121,9 +139,13 @@ InteractiveWindow.show()
 
 <div class="api-text" v-pre><p>Makes the window visible and raises it to the top.</p></div>
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### closed {#closed}
 
@@ -134,6 +156,10 @@ InteractiveWindow.closed.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the window is closed.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### fromQml {#fromQml}
 
@@ -150,6 +176,10 @@ InteractiveWindow.fromQml.connect(function (message) {
 <tr><td><code>message</code></td><td>string | object</td><td><p>The message received.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### positionChanged {#positionChanged}
 
 ```js
@@ -159,6 +189,10 @@ InteractiveWindow.positionChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the window's position changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### presentationModeChanged {#presentationModeChanged}
 
@@ -170,6 +204,10 @@ InteractiveWindow.presentationModeChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when the window's presentation mode changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### sizeChanged {#sizeChanged}
 
 ```js
@@ -179,6 +217,10 @@ InteractiveWindow.sizeChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the window's size changes.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### titleChanged {#titleChanged}
 
@@ -190,6 +232,10 @@ InteractiveWindow.titleChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when window's title changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### visibleChanged {#visibleChanged}
 
 ```js
@@ -199,6 +245,10 @@ InteractiveWindow.visibleChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the window is made visible or invisible, or is closed.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### webEventReceived {#webEventReceived}
 
@@ -215,7 +265,11 @@ InteractiveWindow.webEventReceived.connect(function (message) {
 <tr><td><code>message</code></td><td>string | object</td><td><p>The message received.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### DockArea {#DockArea}
 
@@ -231,6 +285,10 @@ InteractiveWindow.webEventReceived.connect(function (message) {
 </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
 
+</div>
+
+<div class="api-entry">
+
 ### DockAreas {#DockAreas}
 
 <div class="api-text" v-pre><p>The possible docking locations of an <code>InteractiveWindow</code>.</p></div>
@@ -240,6 +298,10 @@ InteractiveWindow.webEventReceived.connect(function (message) {
 <tr><td><code>LEFT</code></td><td><a href="#DockArea">InteractiveWindow.DockArea</a></td><td><p>Dock to the left edge of the Interface window.</p></td></tr>
 <tr><td><code>RIGHT</code></td><td><a href="#DockArea">InteractiveWindow.DockArea</a></td><td><p>Dock to the right edge of the Interface window.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### Flags {#Flags}
 
@@ -251,6 +313,10 @@ InteractiveWindow.webEventReceived.connect(function (message) {
  </tbody>
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
+
+</div>
+
+<div class="api-entry">
 
 ### OverrideFlags {#OverrideFlags}
 
@@ -269,6 +335,10 @@ InteractiveWindow.webEventReceived.connect(function (message) {
 </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
 
+</div>
+
+<div class="api-entry">
+
 ### PresentationMode {#PresentationMode}
 
 <div class="api-text" v-pre><p>A display mode for an <code>InteractiveWindow</code>.</p>
@@ -281,6 +351,10 @@ InteractiveWindow.webEventReceived.connect(function (message) {
 </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
 
+</div>
+
+<div class="api-entry">
+
 ### PresentationModes {#PresentationModes}
 
 <div class="api-text" v-pre><p>The possible display modes for an <code>InteractiveWindow</code>.</p></div>
@@ -289,12 +363,20 @@ InteractiveWindow.webEventReceived.connect(function (message) {
 <tr><td><code>NATIVE</code></td><td><a href="#PresentationMode">InteractiveWindow.PresentationMode</a></td><td><p>The window is displayed separately from the Interface window, as its own separate window.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### PresentationWindowInfo {#PresentationWindowInfo}
 
 <div class="api-text" v-pre><p>Configures how a <code>NATIVE</code> window is displayed.</p></div>
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>dockArea</code></td><td><a href="#DockArea">InteractiveWindow.DockArea</a></td><td><p>The edge of the Interface window to dock to.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### RelativePositionAnchor {#RelativePositionAnchor}
 
@@ -311,6 +393,10 @@ InteractiveWindow.webEventReceived.connect(function (message) {
 </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
 
+</div>
+
+<div class="api-entry">
+
 ### RelativePositionAnchors {#RelativePositionAnchors}
 
 <div class="api-text" v-pre><p>The possible relative position anchors of an <code>InteractiveWindow</code> relative to the Interface window.</p></div>
@@ -321,6 +407,10 @@ InteractiveWindow.webEventReceived.connect(function (message) {
 <tr><td><code>BOTTOM_RIGHT</code></td><td><a href="#RelativePositionAnchor">InteractiveWindow.RelativePositionAnchor</a></td><td><p>Position offset from the bottom right of the Interface window.</p></td></tr>
 <tr><td><code>BOTTOM_LEFT</code></td><td><a href="#RelativePositionAnchor">InteractiveWindow.RelativePositionAnchor</a></td><td><p>Position is offset from the bottom left of the Interface window.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### WindowProperties {#WindowProperties}
 
@@ -339,9 +429,13 @@ InteractiveWindow.webEventReceived.connect(function (message) {
 <tr><td><code>isFullScreenWindow</code> <em>optional</em></td><td>boolean</td><td></td><td><p><code>true</code> to make the window full screen.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Deprecated {#deprecated}
 
 Still there for older scripts; new scripts should not use these.
+
+<div class="api-entry">
 
 ### emitWebEvent {#emitWebEvent}
 
@@ -357,6 +451,10 @@ InteractiveWindow.emitWebEvent(message)
 <tr><td><code>message</code></td><td>object | string</td><td><p>Message.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### qmlToScript {#qmlToScript}
 
 ```js
@@ -370,6 +468,10 @@ InteractiveWindow.qmlToScript(message)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>message</code></td><td>object</td><td><p>Message.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### scriptEventReceived {#scriptEventReceived}
 
@@ -386,3 +488,5 @@ InteractiveWindow.scriptEventReceived.connect(function (message) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>message</code></td><td>object</td><td><p>Message.</p></td></tr>
 </tbody></table></div>
+
+</div>

@@ -6,7 +6,7 @@ draft: true
 
 # AudioStats
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>The <code>AudioStats</code> API provides statistics of the client and mixer audio.</p></div>
 
@@ -29,6 +29,8 @@ draft: true
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
 
+<div class="api-entry">
+
 ### clientStreamChanged {#clientStreamChanged}
 
 ```js
@@ -38,6 +40,10 @@ AudioStats.clientStreamChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the client's stream statisticss have been updated.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### injectorStreamsChanged {#injectorStreamsChanged}
 
@@ -50,6 +56,10 @@ AudioStats.injectorStreamsChanged.connect(function () {
 <div class="api-text" v-pre><p>Triggered when the injector streams' statistics have been updated. </p>
 <p><strong>Note:</strong> The injector streams' statistics are currently not provided.</p>
 <p></p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### inputReadMsMaxChanged {#inputReadMsMaxChanged}
 
@@ -64,6 +74,10 @@ AudioStats.inputReadMsMaxChanged.connect(function (inputReadMsMax) {
 <tr><td><code>inputReadMsMax</code></td><td>number</td><td><p>The maximum duration of a block of audio data recently read from the microphone, in ms.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### inputUnplayedMsMaxChanged {#inputUnplayedMsMaxChanged}
 
 ```js
@@ -77,6 +91,10 @@ AudioStats.inputUnplayedMsMaxChanged.connect(function (inputUnplayedMsMax) {
 <tr><td><code>inputUnplayedMsMax</code></td><td>number</td><td><p>The maximum duration of microphone audio recently in the input buffer waiting to be played, in ms.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### mixerStreamChanged {#mixerStreamChanged}
 
 ```js
@@ -86,6 +104,10 @@ AudioStats.mixerStreamChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the mixer's stream statistics have been updated.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### outputUnplayedMsMaxChanged {#outputUnplayedMsMaxChanged}
 
@@ -100,6 +122,10 @@ AudioStats.outputUnplayedMsMaxChanged.connect(function (outputUnplayedMsMax) {
 <tr><td><code>outputUnplayedMsMax</code></td><td>number</td><td><p>The maximum duration of output audio recently in the output buffer waiting to be played, in ms.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### pingMsChanged {#pingMsChanged}
 
 ```js
@@ -112,6 +138,10 @@ AudioStats.pingMsChanged.connect(function (pingMs) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>pingMs</code></td><td>number</td><td><p>The ping time to the audio mixer, in ms.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### sentTimegapMsAvgChanged {#sentTimegapMsAvgChanged}
 
@@ -126,6 +156,10 @@ AudioStats.sentTimegapMsAvgChanged.connect(function (sentTimegapMsAvg) {
 <tr><td><code>sentTimegapMsAvg</code></td><td>number</td><td><p>The overall average time between sending data packets to the audio mixer, in ms.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### sentTimegapMsAvgWindowChanged {#sentTimegapMsAvgWindowChanged}
 
 ```js
@@ -138,6 +172,10 @@ AudioStats.sentTimegapMsAvgWindowChanged.connect(function (sentTimegapMsAvgWindo
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>sentTimegapMsAvgWindow</code></td><td>number</td><td><p>The recent average time between sending data packets to the audio mixer, in ms.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### sentTimegapMsMaxChanged {#sentTimegapMsMaxChanged}
 
@@ -152,6 +190,10 @@ AudioStats.sentTimegapMsMaxChanged.connect(function (sentTimegapMsMax) {
 <tr><td><code>sentTimegapMsMax</code></td><td>number</td><td><p>The overall maximum time between sending data packets to the audio mixer, in ms.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### sentTimegapMsMaxWindowChanged {#sentTimegapMsMaxWindowChanged}
 
 ```js
@@ -164,3 +206,5 @@ AudioStats.sentTimegapMsMaxWindowChanged.connect(function (sentTimegapMsMaxWindo
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>sentTimegapMsMaxWindow</code></td><td>number</td><td><p>The recent maximum time between sending data packets to the audio mixer, in ms.</p></td></tr>
 </tbody></table></div>
+
+</div>

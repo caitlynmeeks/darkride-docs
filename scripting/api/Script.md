@@ -6,7 +6,7 @@ draft: true
 
 # Script
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts, server entity scripts, assignment client scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts, server entity scripts, agents.</div>
 
 <div class="api-text" v-pre><p>The <code>Script</code> API provides facilities for working with scripts.</p></div>
 
@@ -32,6 +32,8 @@ draft: true
 </tbody></table></div>
 
 ## Functions {#functions}
+
+<div class="api-entry">
 
 ### addEventHandler {#addEventHandler}
 
@@ -65,6 +67,10 @@ function reportMousePress(entityID, event) {
 Script.addEventHandler(entityID, "mousePressOnEntity", reportMousePress);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### beginProfileRange {#beginProfileRange}
 
 ```js
@@ -75,6 +81,10 @@ Script.beginProfileRange(label)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>label</code></td><td>string</td><td><p>A name that identifies the section of code.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### callEntityScriptMethod {#callEntityScriptMethod}
 
@@ -89,6 +99,10 @@ Script.callEntityScriptMethod(entityID, methodName, parameters?, remoteCallerID?
 <tr><td><code>parameters</code> <em>optional</em></td><td>Array&lt;string&gt;</td><td><code>[]</code></td><td><p>The parameters to call the specified method with.</p></td></tr>
 <tr><td><code>remoteCallerID</code> <em>optional</em></td><td><a href="Uuid">Uuid</a></td><td><code>Uuid.NULL</code></td><td><p>An ID that identifies the caller.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### clearInterval {#clearInterval}
 
@@ -116,6 +130,10 @@ Script.setTimeout(function () {
 }, 10000);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### clearTimeout {#clearTimeout}
 
 ```js
@@ -139,6 +157,10 @@ var timer = Script.setTimeout(function () {
 //Script.clearTimeout(timer);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### dumpApi {#dumpApi}
 
 ```js
@@ -151,6 +173,10 @@ Script.dumpApi(path)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the file was written.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### endProfileRange {#endProfileRange}
 
 ```js
@@ -161,6 +187,10 @@ Script.endProfileRange(label)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>label</code></td><td>string</td><td><p>A name that identifies the section of code.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getContext {#getContext}
 
@@ -177,6 +207,10 @@ Script.getContext()
  </ul>
 <p></p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### include {#include}
 
 ```js
@@ -188,6 +222,10 @@ Script.include(filenames, callback?)
 <tr><td><code>filenames</code></td><td>Array&lt;string&gt;</td><td></td><td><p>The URLs of the scripts to include. Each can be relative to the current script.</p></td></tr>
 <tr><td><code>callback</code> <em>optional</em></td><td>function</td><td><code>null</code></td><td><p>The function to call back when the scripts have been included. It can be either the name of a function or an in-line definition.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### include {#include-2}
 
@@ -220,6 +258,10 @@ Script.include("scriptA.js", function () {
 // Script A has been included
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### isAgentScript {#isAgentScript}
 
 ```js
@@ -228,6 +270,10 @@ Script.isAgentScript()
 
 <div class="api-text" v-pre><p>Checks whether the script is running as an assignment client script.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the script is running as an assignment client script, <code>false</code> if it isn't.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### isClientScript {#isClientScript}
 
@@ -238,6 +284,10 @@ Script.isClientScript()
 <div class="api-text" v-pre><p>Checks whether the script is running as an Interface or avatar script.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the script is running as an Interface or avatar script, <code>false</code> if it isn't.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### isDebugMode {#isDebugMode}
 
 ```js
@@ -247,6 +297,10 @@ Script.isDebugMode()
 <div class="api-text" v-pre><p>Checks whether the application was compiled as a debug build.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the application was compiled as a debug build, <code>false</code> if it was compiled as a release build.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### isEntityClientScript {#isEntityClientScript}
 
 ```js
@@ -255,6 +309,10 @@ Script.isEntityClientScript()
 
 <div class="api-text" v-pre><p>Checks whether the script is running as a client entity script.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the script is running as a client entity script, <code>false</code> if it isn't.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### isEntityScriptRunning {#isEntityScriptRunning}
 
@@ -268,6 +326,10 @@ Script.isEntityScriptRunning(entityID)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the entity has an entity script running, <code>false</code> if it doesn't.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### isEntityServerScript {#isEntityServerScript}
 
 ```js
@@ -276,6 +338,10 @@ Script.isEntityServerScript()
 
 <div class="api-text" v-pre><p>Checks whether the script is running as a server entity script.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the script is running as a server entity script, <code>false</code> if it isn't.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### load {#load}
 
@@ -307,6 +373,10 @@ Script.load("scriptA.js");
 // This is script A
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### print {#print}
 
 ```js
@@ -319,6 +389,10 @@ Script.print(message)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>message</code></td><td>string</td><td><p>The message to print.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### removeEventHandler {#removeEventHandler}
 
@@ -335,6 +409,10 @@ Script.removeEventHandler(entityID, eventName, handler)
 <tr><td><code>handler</code></td><td>function</td><td><p>The name of the function to no longer call when the entity event occurs on the entity.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### requestGarbageCollection {#requestGarbageCollection}
 
 ```js
@@ -342,6 +420,10 @@ Script.requestGarbageCollection()
 ```
 
 <div class="api-text" v-pre><p>Manually runs the JavaScript garbage collector which reclaims memory by disposing of objects that are no longer reachable.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### require {#require}
 
@@ -354,6 +436,10 @@ Script.require(module)
 <tr><td><code>module</code></td><td>string</td><td><p>The module to use. May be a JavaScript file, a JSON file, or the name of a system module such as <code>"appUi"</code> (i.e., the "appUi.js" system module JavaScript file).</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> object | array <p>The value assigned to <code>module.exports</code> in the JavaScript file, or the value defined in the JSON file.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### resolvePath {#resolvePath}
 
@@ -385,6 +471,10 @@ print(Script.resolvePath("."));
 print(Script.resolvePath("../assets/sounds/hello.wav"));
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### resourcesPath {#resourcesPath}
 
 ```js
@@ -393,6 +483,10 @@ Script.resourcesPath()
 
 <div class="api-text" v-pre><p>Gets the path to the resources directory for QML files.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>The path to the resources directory for QML files.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setInterval {#setInterval}
 
@@ -415,6 +509,10 @@ Script.setInterval(function () {
 }, 1000);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### setTimeout {#setTimeout}
 
 ```js
@@ -435,6 +533,10 @@ Script.setTimeout(function () {
     print("Timeout timer fired");
 }, 1000);
 ```
+
+</div>
+
+<div class="api-entry">
 
 ### stop {#stop}
 
@@ -463,9 +565,13 @@ Script.setTimeout(function () {
 }, 5000);
 ```
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### doneRunning {#doneRunning}
 
@@ -476,6 +582,10 @@ Script.doneRunning.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the script has stopped.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### entityScriptPreloadFinished {#entityScriptPreloadFinished}
 
@@ -514,6 +624,10 @@ var entityID = Entities.addEntity({
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### errorMessage {#errorMessage}
 
 ```js
@@ -527,6 +641,10 @@ Script.errorMessage.connect(function (message, scriptName) {
 <tr><td><code>message</code></td><td>string</td><td><p>The error message.</p></td></tr>
 <tr><td><code>scriptName</code></td><td>string</td><td><p>The name of the script that generated the error message.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### infoMessage {#infoMessage}
 
@@ -542,6 +660,10 @@ Script.infoMessage.connect(function (message, scriptName) {
 <tr><td><code>scriptName</code></td><td>string</td><td><p>The name of the script that generated the information message.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### printedMessage {#printedMessage}
 
 ```js
@@ -556,6 +678,10 @@ Script.printedMessage.connect(function (message, scriptName) {
 <tr><td><code>scriptName</code></td><td>string</td><td><p>The name of the script that generated the message.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### runningStateChanged {#runningStateChanged}
 
 ```js
@@ -565,6 +691,10 @@ Script.runningStateChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the running state of the script changes, e.g., from running to stopping.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### scriptEnding {#scriptEnding}
 
@@ -591,6 +721,10 @@ Script.setTimeout(function () {
 }, 1000);
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### unhandledException {#unhandledException}
 
 ```js
@@ -613,6 +747,10 @@ Script.unhandledException.connect(function (exception) {
 var properties = JSON.parse("{ x: 1"); // Invalid JSON string.
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### update {#update}
 
 ```js
@@ -634,6 +772,10 @@ Script.update.connect(function (deltaTime) {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### warningMessage {#warningMessage}
 
 ```js
@@ -648,7 +790,11 @@ Script.warningMessage.connect(function (message, scriptName) {
 <tr><td><code>scriptName</code></td><td>string</td><td><p>The name of the script that generated the warning message.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### collisionEventCallback {#collisionEventCallback}
 
@@ -659,6 +805,10 @@ Script.warningMessage.connect(function (message, scriptName) {
 <tr><td><code>entityB</code></td><td><a href="Uuid">Uuid</a></td><td><p>The ID of the other entity in the collision.</p></td></tr>
 <tr><td><code>collisionEvent</code></td><td><a href="globals#Collision">Collision</a></td><td><p>Details of the collision.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### EntityEvent {#EntityEvent}
 
@@ -681,6 +831,10 @@ Script.warningMessage.connect(function (message, scriptName) {
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> string</div>
 
+</div>
+
+<div class="api-entry">
+
 ### entityEventCallback {#entityEventCallback}
 
 <div class="api-text" v-pre><p>Called when an entity event occurs on an entity as registered with <a href="#addEventHandler"><code>Script.addEventHandler</code></a>.</p></div>
@@ -688,6 +842,10 @@ Script.warningMessage.connect(function (message, scriptName) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>entityID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The ID of the entity the event has occured on.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### pointerEventCallback {#pointerEventCallback}
 
@@ -698,9 +856,13 @@ Script.warningMessage.connect(function (message, scriptName) {
 <tr><td><code>pointerEvent</code></td><td><a href="globals#PointerEvent">PointerEvent</a></td><td><p>Details of the event.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Deprecated {#deprecated}
 
 Still there for older scripts; new scripts should not use these.
+
+<div class="api-entry">
 
 ### _requireResolve {#_requireResolve}
 
@@ -717,6 +879,10 @@ Script._requireResolve(module, relativeTo?)
 <tr><td><code>relativeTo</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>Relative to.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>Result.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### callAnimationStateHandler {#callAnimationStateHandler}
 
@@ -736,6 +902,10 @@ Script.callAnimationStateHandler(callback, parameters, names, useNames, resultHa
 <tr><td><code>resultHandler</code></td><td>function</td><td><p>Result handler.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### callEntityScriptMethod {#callEntityScriptMethod-2}
 
 ```js
@@ -752,6 +922,10 @@ Script.callEntityScriptMethod(entityID, methodName, event)
 <tr><td><code>methodName</code></td><td>string</td><td><p>Method name.</p></td></tr>
 <tr><td><code>event</code></td><td><a href="globals#PointerEvent">PointerEvent</a></td><td><p>Pointer event.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### callEntityScriptMethod {#callEntityScriptMethod-3}
 
@@ -770,6 +944,10 @@ Script.callEntityScriptMethod(entityID, methodName, otherID, collision)
 <tr><td><code>otherID</code></td><td><a href="Uuid">Uuid</a></td><td><p>Other entity ID.</p></td></tr>
 <tr><td><code>collision</code></td><td><a href="globals#Collision">Collision</a></td><td><p>Collision.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### entityScriptContentAvailable {#entityScriptContentAvailable}
 
@@ -790,6 +968,10 @@ Script.entityScriptContentAvailable(entityID, scriptOrURL, contents, isURL, succ
 <tr><td><code>status</code></td><td>string</td><td><p>Status.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### evaluate {#evaluate}
 
 ```js
@@ -807,6 +989,10 @@ Script.evaluate(program, filename, lineNumber?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> object <p>Object.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### evaluateInClosure {#evaluateInClosure}
 
 ```js
@@ -823,6 +1009,10 @@ Script.evaluateInClosure(locals, program)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> object <p>Object.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### executeOnScriptThread {#executeOnScriptThread}
 
 ```js
@@ -837,6 +1027,10 @@ Script.executeOnScriptThread(function, type?)
 <tr><td><code>function</code></td><td>function</td><td></td><td><p>Function.</p></td></tr>
 <tr><td><code>type</code> <em>optional</em></td><td>ConnectionType</td><td><code>2</code></td><td><p>Connection type.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### formatExecption {#formatExecption}
 
@@ -854,6 +1048,10 @@ Script.formatExecption(exception, inludeExtendeDetails)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> string <p>String.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### generateUUID {#generateUUID}
 
 ```js
@@ -865,6 +1063,10 @@ Script.generateUUID()
 :::
 
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Uuid">Uuid</a> <p>A new UUID.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### lintScript {#lintScript}
 
@@ -883,6 +1085,10 @@ Script.lintScript(sourceCode, fileName, lineNumber?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> object <p>Object.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### loadEntityScript {#loadEntityScript}
 
 ```js
@@ -898,6 +1104,10 @@ Script.loadEntityScript(entityID, script, forceRedownload)
 <tr><td><code>script</code></td><td>string</td><td><p>Script.</p></td></tr>
 <tr><td><code>forceRedownload</code></td><td>boolean</td><td><p>Force re-download.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### makeError {#makeError}
 
@@ -915,6 +1125,10 @@ Script.makeError(other?, type?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> object <p>Object.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### registerFunction {#registerFunction}
 
 ```js
@@ -930,6 +1144,10 @@ Script.registerFunction(name, function, numArguments?)
 <tr><td><code>function</code></td><td>function</td><td></td><td><p>Function.</p></td></tr>
 <tr><td><code>numArguments</code> <em>optional</em></td><td>number</td><td><code>-1</code></td><td><p>Number of arguments.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### registerFunction {#registerFunction-2}
 
@@ -948,6 +1166,10 @@ Script.registerFunction(parent, name, function, numArguments?)
 <tr><td><code>numArguments</code> <em>optional</em></td><td>number</td><td><code>-1</code></td><td><p>Number of arguments.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### registerGetterSetter {#registerGetterSetter}
 
 ```js
@@ -965,6 +1187,10 @@ Script.registerGetterSetter(name, getter, setter, parent?)
 <tr><td><code>parent</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>Parent.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### registerValue {#registerValue}
 
 ```js
@@ -980,6 +1206,10 @@ Script.registerValue(name, value)
 <tr><td><code>value</code></td><td>object</td><td><p>Value.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### resetModuleCache {#resetModuleCache}
 
 ```js
@@ -994,6 +1224,10 @@ Script.resetModuleCache(deleteScriptCache?)
 <tr><td><code>deleteScriptCache</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p>Delete script cache.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### unloadAllEntityScripts {#unloadAllEntityScripts}
 
 ```js
@@ -1007,6 +1241,10 @@ Script.unloadAllEntityScripts(blockingCall?)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>blockingCall</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p>Wait for completion if call moved to another thread.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### unloadEntityScript {#unloadEntityScript}
 
@@ -1023,6 +1261,10 @@ Script.unloadEntityScript(entityID, shouldRemoveFromMap?)
 <tr><td><code>shouldRemoveFromMap</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p>Should remove from map.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### updateMemoryCost {#updateMemoryCost}
 
 ```js
@@ -1036,6 +1278,10 @@ Script.updateMemoryCost(deltaSize)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>deltaSize</code></td><td>number</td><td><p>Delta size.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### cleanupMenuItem {#cleanupMenuItem}
 
@@ -1053,6 +1299,10 @@ Script.cleanupMenuItem.connect(function (menuItem) {
 <tr><td><code>menuItem</code></td><td>string</td><td><p>Menu item.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### clearDebugWindow {#clearDebugWindow}
 
 ```js
@@ -1066,6 +1316,10 @@ Script.clearDebugWindow.connect(function () {
 :::
 
 
+</div>
+
+<div class="api-entry">
+
 ### entityScriptDetailsUpdated {#entityScriptDetailsUpdated}
 
 ```js
@@ -1078,6 +1332,10 @@ Script.entityScriptDetailsUpdated.connect(function () {
 <div class="api-text" v-pre><p>This signal is deprecated and will be removed.</p></div>
 :::
 
+
+</div>
+
+<div class="api-entry">
 
 ### errorLoadingScript {#errorLoadingScript}
 
@@ -1094,6 +1352,10 @@ Script.errorLoadingScript.connect(function (filename) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>filename</code></td><td>string</td><td><p>File name.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### finished {#finished}
 
@@ -1112,6 +1374,10 @@ Script.finished.connect(function (filename, engine) {
 <tr><td><code>engine</code></td><td>object</td><td><p>Engine.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### loadScript {#loadScript}
 
 ```js
@@ -1128,6 +1394,10 @@ Script.loadScript.connect(function (scriptName, isUserLoaded) {
 <tr><td><code>scriptName</code></td><td>string</td><td><p>Script name.</p></td></tr>
 <tr><td><code>isUserLoaded</code></td><td>boolean</td><td><p>Is user loaded.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### reloadScript {#reloadScript}
 
@@ -1146,6 +1416,10 @@ Script.reloadScript.connect(function (scriptName, isUserLoaded) {
 <tr><td><code>isUserLoaded</code></td><td>boolean</td><td><p>Is user loaded.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### scriptLoaded {#scriptLoaded}
 
 ```js
@@ -1162,6 +1436,10 @@ Script.scriptLoaded.connect(function (filename) {
 <tr><td><code>filename</code></td><td>string</td><td><p>File name.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### signalHandlerException {#signalHandlerException}
 
 ```js
@@ -1177,3 +1455,5 @@ Script.signalHandlerException.connect(function (exception) {
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>exception</code></td><td>object</td><td><p>Exception.</p></td></tr>
 </tbody></table></div>
+
+</div>

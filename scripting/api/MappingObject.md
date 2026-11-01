@@ -6,7 +6,7 @@ draft: true
 
 # MappingObject
 
-<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>A <a href="Controller"><code>Controller</code></a> mapping object that can contain a set of routes that map:</p>
  <ul> <li><a href="Controller#Standard"><code>Controller.Standard</code></a> outputs to <a href="Controller#Actions"><code>Controller.Actions</code></a> actions or script functions.</li>
@@ -25,6 +25,8 @@ draft: true
 
 ## Methods {#functions}
 
+<div class="api-entry">
+
 ### disable {#disable}
 
 ```js
@@ -35,6 +37,10 @@ disable()
 <p>Synonymous with <a href="Controller#disableMapping"><code>Controller.disableMapping</code></a>.</p>
 <p></p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="">MappingObject</a> <p>The mapping object, so that further routes can be added.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### enable {#enable}
 
@@ -50,6 +56,10 @@ enable(enable)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="">MappingObject</a> <p>The mapping object, so that further routes can be added.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### from {#from}
 
 ```js
@@ -61,6 +71,10 @@ from(source)
 <tr><td><code>source</code></td><td><a href="Controller#Standard">Controller.Standard</a> | <a href="Controller#Hardware">Controller.Hardware</a> | function</td><td><p>The controller output or function that is the source of the route data. If a function, it must return a number or a <a href="globals#Pose"><code>Pose</code></a> value as the route data.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="RouteObject">RouteObject</a> <p>A route ready for mapping to an action or function using <a href="RouteObject"><code>RouteObject</code></a> methods.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### fromQml {#fromQml}
 
@@ -75,6 +89,10 @@ fromQml(source)
 <tr><td><code>source</code></td><td><a href="Controller#Standard">Controller.Standard</a> | <a href="Controller#Hardware">Controller.Hardware</a> | function</td><td><p>The controller output or function that is the source of the route data. If a function, it must return a number or a <a href="globals#Pose"><code>Pose</code></a> value as the route data.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="RouteObject">RouteObject</a> <p>A route ready for mapping to an action or function using <a href="RouteObject"><code>RouteObject</code></a> methods.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### makeAxis {#makeAxis}
 
@@ -104,6 +122,10 @@ Script.scriptEnding.connect(function () {
 });
 ```
 
+</div>
+
+<div class="api-entry">
+
 ### makeAxisQml {#makeAxisQml}
 
 ```js
@@ -118,3 +140,5 @@ makeAxisQml(source1, source2)
 <tr><td><code>source2</code></td><td><a href="Controller#Hardware">Controller.Hardware</a></td><td><p>The second, positive-direction controller output.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="RouteObject">RouteObject</a> <p>A route ready for mapping to an action or function using <a href="RouteObject"><code>RouteObject</code></a> methods. The data value passed to the route is the combined value of <code>source2 - source1</code>.</p></div>
+
+</div>

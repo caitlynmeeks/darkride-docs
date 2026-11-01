@@ -6,7 +6,7 @@ draft: true
 
 # GraphicsMesh
 
-<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>A handle to in-memory mesh data in a <a href="GraphicsModel"><code>GraphicsModel</code></a>.</p>
  <p>Created using the <a href="Graphics"><code>Graphics</code></a> API, <a href="GraphicsModel#cloneModel"><code>GraphicsModel.cloneModel</code></a>, or <a href="#cloneMesh"><code>GraphicsMesh.cloneMesh</code></a>.</p></div>
@@ -28,6 +28,8 @@ draft: true
 
 ## Methods {#functions}
 
+<div class="api-entry">
+
 ### addAttribute {#addAttribute}
 
 ```js
@@ -41,6 +43,10 @@ GraphicsMesh.addAttribute(name, defaultValue?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The number of vertices the attribute was added to, <code>0</code> if the <code>name</code> was invalid or all vertices already had the attribute.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### cloneMesh {#cloneMesh}
 
 ```js
@@ -49,6 +55,10 @@ GraphicsMesh.cloneMesh()
 
 <div class="api-text" v-pre><p>Makes a copy of the mesh.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="">GraphicsMesh</a> <p>A copy of the mesh.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### fillAttribute {#fillAttribute}
 
@@ -63,6 +73,10 @@ GraphicsMesh.fillAttribute(name, value)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p><code>1</code> if the attribute name was valid and the attribute values were set, <code>0</code> otherwise.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### findNearbyVertexIndices {#findNearbyVertexIndices}
 
 ```js
@@ -76,6 +90,10 @@ GraphicsMesh.findNearbyVertexIndices(origin, epsilon?)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;number&gt; <p>The indices of nearby vertices.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### forEachVertex {#forEachVertex}
 
 ```js
@@ -88,6 +106,10 @@ GraphicsMesh.forEachVertex(callback)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The number of vertices the callback was called for.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### getIndices {#getIndices}
 
 ```js
@@ -96,6 +118,10 @@ GraphicsMesh.getIndices()
 
 <div class="api-text" v-pre><p>Gets the vertex indices.</p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;number&gt; <p>The vertex indices.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getParentModel {#getParentModel}
 
@@ -107,6 +133,10 @@ GraphicsMesh.getParentModel()
 <p><em>Currently doesn't work.</em></p>
 <p></p></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="GraphicsModel">GraphicsModel</a> <p>The model the mesh is part of, <code>null</code> if it isn't part of a model.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getVertexAttributes {#getVertexAttributes}
 
@@ -120,6 +150,10 @@ GraphicsMesh.getVertexAttributes(index)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Object&lt;<a href="Graphics#BufferTypeName">Graphics.BufferTypeName</a>, <a href="Graphics#BufferType">Graphics.BufferType</a>&gt; <p>The attribute names and values for the vertex.</p></div>
 <div class="api-returns" v-pre><strong>Throws:</strong>  <p>Throws an error if the <code>index</code> is invalid.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### getVertexProperty {#getVertexProperty}
 
@@ -135,6 +169,10 @@ GraphicsMesh.getVertexProperty(index, name)
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Graphics#BufferType">Graphics.BufferType</a> <p>The value of the vertex attribute.</p></div>
 <div class="api-returns" v-pre><strong>Throws:</strong>  <p>Throws an error if the <code>index</code> is invalid or <code>name</code> is invalid or isn't used in the mesh.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### isValidIndex {#isValidIndex}
 
 ```js
@@ -149,6 +187,10 @@ GraphicsMesh.isValidIndex(index, attribute?)
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the index is valid and that vertex has the attribute if specified.</p></div>
 <div class="api-returns" v-pre><strong>Throws:</strong>  <p>Throws an error if the <code>index</code> if invalid or <code>name</code> is invalid or isn't used in the mesh.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### queryVertexAttributes {#queryVertexAttributes}
 
 ```js
@@ -161,6 +203,10 @@ GraphicsMesh.queryVertexAttributes(name)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;<a href="Graphics#BufferType">Graphics.BufferType</a>&gt; <p>The attribute values for all vertices.</p></div>
 <div class="api-returns" v-pre><strong>Throws:</strong>  <p>Throws an error if the <code>name</code> is invalid or isn't used in the mesh.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### removeAttribute {#removeAttribute}
 
@@ -176,6 +222,10 @@ GraphicsMesh.removeAttribute(name)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the attribute existed and was removed, <code>false</code> otherwise.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### setVertexAttributes {#setVertexAttributes}
 
 ```js
@@ -189,6 +239,10 @@ GraphicsMesh.setVertexAttributes(index, values)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the index and the attribute names and values were valid and the vertex was updated, <code>false</code> otherwise.</p></div>
 <div class="api-returns" v-pre><strong>Throws:</strong>  <p>Throws an error if the <code>index</code> is invalid or one of the attribute names is invalid or isn't used in the mesh.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setVertexProperty {#setVertexProperty}
 
@@ -205,6 +259,10 @@ GraphicsMesh.setVertexProperty(index, name, value)
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the vertex attribute value was set, <code>false</code> if it wasn't.</p></div>
 <div class="api-returns" v-pre><strong>Throws:</strong>  <p>Throws an error if the <code>index</code> is invalid or <code>name</code> is invalid or isn't used in the mesh.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### updateVertexAttributes {#updateVertexAttributes}
 
 ```js
@@ -217,7 +275,11 @@ GraphicsMesh.updateVertexAttributes(callback)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> number <p>The number of vertices the callback was called for.</p></div>
 
+</div>
+
 ## Types {#types}
+
+<div class="api-entry">
 
 ### forEachVertexCallback {#forEachVertexCallback}
 
@@ -228,6 +290,10 @@ GraphicsMesh.updateVertexAttributes(callback)
 <tr><td><code>index</code></td><td>number</td><td><p>The vertex index.</p></td></tr>
 <tr><td><code>properties</code></td><td>object</td><td><p>The properties of the mesh, per <a href=""><code>GraphicsMesh</code></a>.</p></td></tr>
 </tbody></table></div>
+
+</div>
+
+<div class="api-entry">
 
 ### updateVertexAttributesCallback {#updateVertexAttributesCallback}
 
@@ -240,9 +306,13 @@ GraphicsMesh.updateVertexAttributes(callback)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> Object&lt;<a href="Graphics#BufferTypeName">Graphics.BufferTypeName</a>, <a href="Graphics#BufferType">Graphics.BufferType</a>&gt; | boolean <p>The attribute values to update the vertex with, or <code>false</code> to not update the vertex.</p></div>
 
+</div>
+
 ## Deprecated {#deprecated}
 
 Still there for older scripts; new scripts should not use these.
+
+<div class="api-entry">
 
 ### getMeshPointer {#getMeshPointer}
 
@@ -256,6 +326,10 @@ GraphicsMesh.getMeshPointer()
 
 <div class="api-returns" v-pre><strong>Returns:</strong> undefined </div>
 
+</div>
+
+<div class="api-entry">
+
 ### getModelBasePointer {#getModelBasePointer}
 
 ```js
@@ -268,6 +342,10 @@ GraphicsMesh.getModelBasePointer()
 
 <div class="api-returns" v-pre><strong>Returns:</strong> undefined </div>
 
+</div>
+
+<div class="api-entry">
+
 ### getModelProviderPointer {#getModelProviderPointer}
 
 ```js
@@ -279,3 +357,5 @@ GraphicsMesh.getModelProviderPointer()
 :::
 
 <div class="api-returns" v-pre><strong>Returns:</strong> undefined </div>
+
+</div>

@@ -6,7 +6,7 @@ draft: true
 
 # Friends
 
-<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: Interface scripts, client entity scripts, avatar scripts.</div>
+<div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts.</div>
 
 <div class="api-text" v-pre><p>Your Darkride friends: the requests waiting for you, who sees you're online and where, and direct messages.</p></div>
 
@@ -20,6 +20,8 @@ draft: true
 
 ## Functions {#functions}
 
+<div class="api-entry">
+
 ### openDirectMessage {#openDirectMessage}
 
 ```js
@@ -31,6 +33,10 @@ Friends.openDirectMessage(username)
 <tr><td><code>username</code></td><td>string</td><td><p>Their Darkride username.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
+<div class="api-entry">
+
 ### refresh {#refresh}
 
 ```js
@@ -38,6 +44,10 @@ Friends.refresh()
 ```
 
 <div class="api-text" v-pre><p>Asks Darkride again for your friends, the requests and your setting, after a friend action made elsewhere, so <a href="#properties"><code>Friends.requestCount</code></a> and chat's list follow at once.</p></div>
+
+</div>
+
+<div class="api-entry">
 
 ### setAvailability {#setAvailability}
 
@@ -50,9 +60,13 @@ Friends.setAvailability(availability)
 <tr><td><code>availability</code></td><td>string</td><td><p><code>"all"</code>, <code>"friends"</code> or <code>"none"</code>.</p></td></tr>
 </tbody></table></div>
 
+</div>
+
 ## Signals {#signals}
 
 Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
+
+<div class="api-entry">
 
 ### availabilityChanged {#availabilityChanged}
 
@@ -64,6 +78,10 @@ Friends.availabilityChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when Darkride says what <a href="#properties"><code>Friends.availability</code></a> is, or refuses a change of it.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### canMessageChanged {#canMessageChanged}
 
 ```js
@@ -74,6 +92,10 @@ Friends.canMessageChanged.connect(function () {
 
 <div class="api-text" v-pre><p>Triggered when <a href="#properties"><code>Friends.canMessage</code></a> changes.</p></div>
 
+</div>
+
+<div class="api-entry">
+
 ### requestCountChanged {#requestCountChanged}
 
 ```js
@@ -83,3 +105,5 @@ Friends.requestCountChanged.connect(function () {
 ```
 
 <div class="api-text" v-pre><p>Triggered when <a href="#properties"><code>Friends.requestCount</code></a> changes.</p></div>
+
+</div>
