@@ -50,6 +50,12 @@ What doesn't work yet in Darkride 1.1.2, and what to do instead. Found something
   outside the zone as before. It's being fixed in 1.1.3. For a big world today, select the big things seen from far
   away and choose **Build > Bake Impostor**, and set things that never move to **Priority: Static**.
 
+## Vehicles
+
+- **In VR, riding with the tablet open can make your view slide.** On a vehicle or the monorail, the view can turn
+  in slow circles while it's stopped, or drift off the car while it moves. Close the tablet before you board. If
+  the view starts sliding, step off or teleport out. Riding on the desktop isn't affected. We're looking into it.
+
 ## The radio
 
 - **It plays through your computer's default sound output.** Darkride's volume doesn't change it: use the radio's own
