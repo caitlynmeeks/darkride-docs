@@ -52,9 +52,10 @@ What doesn't work yet in Darkride 1.1.2, and what to do instead. Found something
 
 ## Vehicles
 
-- **In VR, riding with the tablet open can make your view slide.** On a vehicle or the monorail, the view can turn
-  in slow circles while it's stopped, or drift off the car while it moves. Close the tablet before you board. If
-  the view starts sliding, step off or teleport out. Riding on the desktop isn't affected. We're looking into it.
+- **In VR, your view can slide while you ride.** On the monorail or another vehicle, the view can slide around in
+  small circles while the car is stopped, or drift off the car while it moves. We've seen it with the tablet open,
+  so keep the tablet closed while you ride. If your view starts sliding, teleport out, or step off at a stop. Riding
+  on the desktop isn't affected. We're looking into it.
 
 ## The radio
 
