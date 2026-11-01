@@ -1,7 +1,6 @@
 ---
 title: "Audio"
 description: "The Audio API provides facilities to interact with audio inputs and outputs and to play sounds."
-draft: true
 ---
 
 # Audio

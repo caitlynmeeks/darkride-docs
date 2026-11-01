@@ -1,7 +1,6 @@
 ---
 title: "LaserPointers"
 description: "The LaserPointers API is a subset of the Pointers API."
-draft: true
 ---
 
 # LaserPointers

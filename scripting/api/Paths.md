@@ -1,7 +1,6 @@
 ---
 title: "Paths"
 description: "The Paths API provides absolute paths to the scripts and resources directories."
-draft: true
 ---
 
 # Paths

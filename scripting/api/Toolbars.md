@@ -1,7 +1,6 @@
 ---
 title: "Toolbars"
 description: "The Toolbars API provides facilities to work with the system or other toolbar."
-draft: true
 ---
 
 # Toolbars

@@ -1,7 +1,6 @@
 ---
 title: "DriveKeys"
 description: "The DriveKeys API provides constant numeric values that represent different logical keys that drive your avatar and camera."
-draft: true
 ---
 
 # DriveKeys

@@ -1,7 +1,6 @@
 ---
 title: "Camera"
 description: "The Camera API provides access to the \"camera\" that defines your view in desktop and HMD display modes."
-draft: true
 ---
 
 # Camera

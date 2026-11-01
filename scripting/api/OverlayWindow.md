@@ -1,7 +1,6 @@
 ---
 title: "OverlayWindow"
 description: "A OverlayWindow displays a QML window inside Interface."
-draft: true
 ---
 
 # OverlayWindow

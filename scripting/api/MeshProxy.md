@@ -1,7 +1,6 @@
 ---
 title: "MeshProxy"
 description: "A handle for a mesh in an entity, such as returned by Entities.getMeshes."
-draft: true
 ---
 
 # MeshProxy

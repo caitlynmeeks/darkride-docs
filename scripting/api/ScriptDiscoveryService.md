@@ -1,7 +1,6 @@
 ---
 title: "ScriptDiscoveryService"
 description: "The ScriptDiscoveryService API provides facilities to work with Interface scripts."
-draft: true
 ---
 
 # ScriptDiscoveryService

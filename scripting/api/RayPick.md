@@ -1,7 +1,6 @@
 ---
 title: "RayPick"
 description: "The RayPick API is a subset of the Picks API, as used for ray picks."
-draft: true
 ---
 
 # RayPick

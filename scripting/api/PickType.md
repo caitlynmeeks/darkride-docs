@@ -1,7 +1,6 @@
 ---
 title: "PickType"
 description: "The PickType API provides constant numeric values that represent different types of picks."
-draft: true
 ---
 
 # PickType

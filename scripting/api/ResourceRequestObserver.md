@@ -1,7 +1,6 @@
 ---
 title: "ResourceRequestObserver"
 description: "The ResourceRequestObserver API provides notifications when an observable resource request is made."
-draft: true
 ---
 
 # ResourceRequestObserver

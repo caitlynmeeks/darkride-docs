@@ -1,7 +1,6 @@
 ---
 title: "LocationBookmarks"
 description: "The LocationBookmarks API provides facilities for working with location bookmarks."
-draft: true
 ---
 
 # LocationBookmarks

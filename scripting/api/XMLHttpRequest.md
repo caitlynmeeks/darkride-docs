@@ -1,7 +1,6 @@
 ---
 title: "XMLHttpRequest"
 description: "Provides a means to interact with web servers."
-draft: true
 ---
 
 # XMLHttpRequest

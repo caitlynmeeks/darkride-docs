@@ -1,7 +1,6 @@
 ---
 title: "OffscreenFlags"
 description: "The OffscreenFlags API enables gamepad joystick navigation of UI."
-draft: true
 ---
 
 # OffscreenFlags

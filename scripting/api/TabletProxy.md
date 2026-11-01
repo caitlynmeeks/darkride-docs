@@ -1,7 +1,6 @@
 ---
 title: "TabletProxy"
 description: "An instance of a tablet."
-draft: true
 ---
 
 # TabletProxy

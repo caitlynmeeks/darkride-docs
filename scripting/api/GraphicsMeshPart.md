@@ -1,7 +1,6 @@
 ---
 title: "GraphicsMeshPart"
 description: "A handle to in-memory mesh part data in a GraphicsModel."
-draft: true
 ---
 
 # GraphicsMeshPart

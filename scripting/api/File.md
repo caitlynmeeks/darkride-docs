@@ -1,7 +1,6 @@
 ---
 title: "File"
 description: "The File API provides some facilities for working with the file system."
-draft: true
 ---
 
 # File

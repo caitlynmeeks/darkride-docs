@@ -1,7 +1,6 @@
 ---
 title: "Vec3"
 description: "The Vec3 API provides facilities for generating and manipulating 3-dimensional vectors."
-draft: true
 ---
 
 # Vec3

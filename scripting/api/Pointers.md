@@ -1,7 +1,6 @@
 ---
 title: "Pointers"
 description: "The Pointers API lets you create, manage, and visually represent objects for repeatedly calculating intersections with avatars, entities, and overlays."
-draft: true
 ---
 
 # Pointers

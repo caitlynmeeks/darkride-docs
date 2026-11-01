@@ -1,7 +1,6 @@
 ---
 title: "Entities"
 description: "The Entities API provides facilities to create and interact with entities."
-draft: true
 ---
 
 # Entities

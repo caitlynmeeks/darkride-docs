@@ -1,7 +1,6 @@
 ---
 title: "AudioStats"
 description: "The AudioStats API provides statistics of the client and mixer audio."
-draft: true
 ---
 
 # AudioStats

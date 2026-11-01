@@ -1,7 +1,6 @@
 ---
 title: "Mat4"
 description: "The Mat4 API provides facilities for generating and using 4 x 4 matrices."
-draft: true
 ---
 
 # Mat4

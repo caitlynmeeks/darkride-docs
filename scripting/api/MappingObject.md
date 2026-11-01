@@ -1,7 +1,6 @@
 ---
 title: "MappingObject"
 description: "A Controller mapping object that can contain a set of routes that map: Controller.Standard outputs to Controller.Actions actions or script functions."
-draft: true
 ---
 
 # MappingObject

@@ -1,7 +1,6 @@
 ---
 title: "Panels"
 description: "The window's panels, by name: Darkride's QML panels and chat."
-draft: true
 ---
 
 # Panels

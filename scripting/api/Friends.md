@@ -1,7 +1,6 @@
 ---
 title: "Friends"
 description: "Your Darkride friends: the requests waiting for you, who sees you're online and where, and direct messages."
-draft: true
 ---
 
 # Friends

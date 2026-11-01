@@ -1,7 +1,6 @@
 ---
 title: "AvatarManager"
 description: "The AvatarManager API provides information about avatars within the current world."
-draft: true
 ---
 
 # AvatarManager

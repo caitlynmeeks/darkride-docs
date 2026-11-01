@@ -1,7 +1,6 @@
 ---
 title: "RouteObject"
 description: "A route in a MappingObject used by the Controller API."
-draft: true
 ---
 
 # RouteObject

@@ -1,7 +1,6 @@
 ---
 title: "Scene"
 description: "The Scene API provides some control over what is rendered."
-draft: true
 ---
 
 # Scene

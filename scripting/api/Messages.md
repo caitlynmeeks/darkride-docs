@@ -1,7 +1,6 @@
 ---
 title: "Messages"
 description: "The Messages API enables text and data to be sent between scripts over named \"channels\"."
-draft: true
 ---
 
 # Messages

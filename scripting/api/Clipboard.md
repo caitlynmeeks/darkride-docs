@@ -1,7 +1,6 @@
 ---
 title: "Clipboard"
 description: "The Clipboard API enables you to export and import entities to and from JSON files."
-draft: true
 ---
 
 # Clipboard

@@ -1,7 +1,6 @@
 ---
 title: "Reticle"
 description: "The Reticle API provides access to the mouse cursor."
-draft: true
 ---
 
 # Reticle

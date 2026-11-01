@@ -1,7 +1,6 @@
 ---
 title: "Resources"
 description: "The Resources API enables the default location for different resource types to be overridden."
-draft: true
 ---
 
 # Resources

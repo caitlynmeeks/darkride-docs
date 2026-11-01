@@ -1,7 +1,6 @@
 ---
 title: "ToolbarProxy"
 description: "An instance of a toolbar."
-draft: true
 ---
 
 # ToolbarProxy

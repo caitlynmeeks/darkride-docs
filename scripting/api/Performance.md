@@ -1,7 +1,6 @@
 ---
 title: "Performance"
 description: "The Performance API provides control and information on graphics performance settings."
-draft: true
 ---
 
 # Performance

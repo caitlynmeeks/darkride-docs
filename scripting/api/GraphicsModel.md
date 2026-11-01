@@ -1,7 +1,6 @@
 ---
 title: "GraphicsModel"
 description: "A handle to in-memory model data such as may be used in displaying avatars, 3D entities, or 3D overlays in the rendered scene."
-draft: true
 ---
 
 # GraphicsModel

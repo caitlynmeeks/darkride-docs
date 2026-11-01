@@ -1,7 +1,6 @@
 ---
 title: "GraphicsMesh"
 description: "A handle to in-memory mesh data in a GraphicsModel."
-draft: true
 ---
 
 # GraphicsMesh

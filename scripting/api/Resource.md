@@ -1,7 +1,6 @@
 ---
 title: "Resource"
 description: "The Resource API provides values that define the possible loading states of a resource."
-draft: true
 ---
 
 # Resource

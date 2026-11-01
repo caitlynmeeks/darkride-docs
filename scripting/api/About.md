@@ -1,7 +1,6 @@
 ---
 title: "About"
 description: "The About API provides information about the version of Interface that is currently running."
-draft: true
 ---
 
 # About

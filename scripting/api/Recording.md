@@ -1,7 +1,6 @@
 ---
 title: "Recording"
 description: "The Recording API makes and plays back recordings of voice and avatar movements."
-draft: true
 ---
 
 # Recording

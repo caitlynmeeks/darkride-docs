@@ -1,7 +1,6 @@
 ---
 title: "EntityViewer"
 description: "The EntityViewer API provides a headless viewer for assignment client scripts, so that they can \"see\" entities in order for them to be available in the Entities API."
-draft: true
 ---
 
 # EntityViewer

@@ -1,7 +1,6 @@
 ---
 title: "Overlays"
 description: "The Overlays API provides facilities to create and interact with overlays."
-draft: true
 ---
 
 # Overlays

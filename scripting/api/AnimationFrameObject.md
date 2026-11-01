@@ -1,7 +1,6 @@
 ---
 title: "AnimationFrameObject"
 description: "Joint rotations in one frame of an AnimationObject."
-draft: true
 ---
 
 # AnimationFrameObject

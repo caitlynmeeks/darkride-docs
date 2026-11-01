@@ -1,7 +1,6 @@
 ---
 title: "AddressManager"
 description: "The AddressManager API provides facilities related to your current location in the metaverse."
-draft: true
 ---
 
 # AddressManager

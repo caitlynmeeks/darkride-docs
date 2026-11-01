@@ -1,7 +1,6 @@
 ---
 title: "HMD"
 description: "The HMD API provides access to the HMD used in VR display mode."
-draft: true
 ---
 
 # HMD

@@ -1,7 +1,6 @@
 ---
 title: "DiskCache"
 description: "The DiskCache API lets you manage your cache."
-draft: true
 ---
 
 # DiskCache

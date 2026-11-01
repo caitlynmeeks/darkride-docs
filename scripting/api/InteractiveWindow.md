@@ -1,7 +1,6 @@
 ---
 title: "InteractiveWindow"
 description: "An InteractiveWindow can display either inside Interface or in its own window separate from the Interface window."
-draft: true
 ---
 
 # InteractiveWindow

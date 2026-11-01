@@ -1,7 +1,6 @@
 ---
 title: "AnimationObject"
 description: "Information about an animation resource, created by AnimationCache.getAnimation."
-draft: true
 ---
 
 # AnimationObject

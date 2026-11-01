@@ -1,7 +1,6 @@
 ---
 title: "AudioInjector"
 description: "Plays or \"injects\" the content of an audio file."
-draft: true
 ---
 
 # AudioInjector

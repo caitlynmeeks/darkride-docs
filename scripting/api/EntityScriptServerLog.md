@@ -1,7 +1,6 @@
 ---
 title: "EntityScriptServerLog"
 description: "The EntityScriptServerLog API makes server log file output written by server entity scripts available to client scripts."
-draft: true
 ---
 
 # EntityScriptServerLog

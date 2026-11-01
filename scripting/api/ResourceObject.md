@@ -1,7 +1,6 @@
 ---
 title: "ResourceObject"
 description: "Information about a cached resource."
-draft: true
 ---
 
 # ResourceObject

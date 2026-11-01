@@ -1,7 +1,6 @@
 ---
 title: "DialogsManager"
 description: "The DialogsMamnager API provides facilities to work with some key dialogs."
-draft: true
 ---
 
 # DialogsManager

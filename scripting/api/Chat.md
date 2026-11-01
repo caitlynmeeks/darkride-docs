@@ -1,7 +1,6 @@
 ---
 title: "Chat"
 description: "The Chat API lets you use chat in world."
-draft: true
 ---
 
 # Chat

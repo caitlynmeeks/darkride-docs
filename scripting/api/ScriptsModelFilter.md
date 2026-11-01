@@ -1,7 +1,6 @@
 ---
 title: "ScriptsModelFilter"
 description: "Sorted and filtered information on the scripts that are in the default scripts directory of the Interface installation."
-draft: true
 ---
 
 # ScriptsModelFilter

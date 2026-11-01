@@ -1,7 +1,6 @@
 ---
 title: "WebSocketServer"
 description: "Manages WebSockets in server entity and assignment client scripts."
-draft: true
 ---
 
 # WebSocketServer

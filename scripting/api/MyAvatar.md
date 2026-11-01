@@ -1,7 +1,6 @@
 ---
 title: "MyAvatar"
 description: "Your avatar is your in-world representation of you."
-draft: true
 ---
 
 # MyAvatar

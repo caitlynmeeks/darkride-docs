@@ -1,7 +1,6 @@
 ---
 title: "Account"
 description: "The Account API provides functions that give information on user connectivity, visibility, and asset download progress."
-draft: true
 ---
 
 # Account

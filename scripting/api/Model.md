@@ -1,7 +1,6 @@
 ---
 title: "Model"
 description: "The Model API provides the ability to manipulate meshes."
-draft: true
 ---
 
 # Model

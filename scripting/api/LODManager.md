@@ -1,7 +1,6 @@
 ---
 title: "LODManager"
 description: "The LODManager API manages the Level of Detail displayed in Interface."
-draft: true
 ---
 
 # LODManager

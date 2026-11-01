@@ -1,7 +1,6 @@
 ---
 title: "location"
 description: "The location API provides facilities related to your current location in the metaverse."
-draft: true
 ---
 
 # location

@@ -1,7 +1,6 @@
 ---
 title: "ScriptAvatar"
 description: "Information about an avatar."
-draft: true
 ---
 
 # ScriptAvatar

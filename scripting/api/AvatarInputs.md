@@ -1,7 +1,6 @@
 ---
 title: "AvatarInputs"
 description: "The AvatarInputs API provides facilities to manage user inputs."
-draft: true
 ---
 
 # AvatarInputs

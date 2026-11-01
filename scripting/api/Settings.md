@@ -1,7 +1,6 @@
 ---
 title: "Settings"
 description: "The Settings API provides a facility to store and retrieve values that persist between Interface runs."
-draft: true
 ---
 
 # Settings

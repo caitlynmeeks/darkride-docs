@@ -1,7 +1,6 @@
 ---
 title: "SoundObject"
 description: "An audio resource, created by SoundCache.getSound, to be played back using Audio.playSound."
-draft: true
 ---
 
 # SoundObject

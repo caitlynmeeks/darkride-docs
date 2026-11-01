@@ -1,7 +1,6 @@
 ---
 title: "TextToSpeech"
 description: "The TextToSpeech API lets you use text to speech for your avatar in interface."
-draft: true
 ---
 
 # TextToSpeech

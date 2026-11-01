@@ -1,6 +1,5 @@
 ---
 title: "Workload"
-draft: true
 ---
 
 # Workload

@@ -1,7 +1,6 @@
 ---
 title: "Test"
 description: "Here's how you could use the Test API: Write a script using the below and launch interface with: interface --testScript path/to/script.js Save the recorded events with Test.stopTracing to a .json or ."
-draft: true
 ---
 
 # Test

@@ -1,7 +1,6 @@
 ---
 title: "tabletInterface"
 description: "The tabletInterface API provides the facilities to work with the system or other tablet."
-draft: true
 ---
 
 # tabletInterface

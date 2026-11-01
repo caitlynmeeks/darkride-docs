@@ -1,7 +1,6 @@
 ---
 title: "Window"
 description: "The Window API provides various facilities not covered elsewhere, including: window dimensions, window focus, camera view, announcements, user connections, common dialog boxes, snapshots, file import,"
-draft: true
 ---
 
 # Window

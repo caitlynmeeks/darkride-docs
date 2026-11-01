@@ -1,7 +1,6 @@
 ---
 title: "Desktop"
 description: "The Desktop API provides the dimensions of the computer screen, sets the opacity of the HUD surface, and enables QML and HTML windows to be shown inside or outside of Interface."
-draft: true
 ---
 
 # Desktop

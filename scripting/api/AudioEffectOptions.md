@@ -1,7 +1,6 @@
 ---
 title: "AudioEffectOptions"
 description: "Audio effect options used by the Audio API."
-draft: true
 ---
 
 # AudioEffectOptions

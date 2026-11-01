@@ -1,7 +1,6 @@
 ---
 title: "Assets"
 description: "The Assets API provides facilities for interacting with the world's asset server and the client cache."
-draft: true
 ---
 
 # Assets

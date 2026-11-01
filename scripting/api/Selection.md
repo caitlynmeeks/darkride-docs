@@ -1,7 +1,6 @@
 ---
 title: "Selection"
 description: "The Selection API provides a means of grouping together and highlighting avatars and entities in named lists."
-draft: true
 ---
 
 # Selection

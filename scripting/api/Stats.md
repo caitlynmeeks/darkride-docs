@@ -1,7 +1,6 @@
 ---
 title: "Stats"
 description: "The Stats API provides statistics on Interface and world operation, per the statistics overlay."
-draft: true
 ---
 
 # Stats

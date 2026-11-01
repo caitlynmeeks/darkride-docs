@@ -1,7 +1,6 @@
 ---
 title: "SoundCache"
 description: "The SoundCache API manages sound cache resources."
-draft: true
 ---
 
 # SoundCache

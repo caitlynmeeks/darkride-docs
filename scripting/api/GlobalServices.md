@@ -1,7 +1,6 @@
 ---
 title: "GlobalServices"
 description: "The GlobalServices API provides functions that give information on user connectivity, visibility, and asset download progress."
-draft: true
 ---
 
 # GlobalServices

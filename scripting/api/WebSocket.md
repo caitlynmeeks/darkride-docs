@@ -1,7 +1,6 @@
 ---
 title: "WebSocket"
 description: "Provides a bi-directional, event-driven communication session between the script and another WebSocket connection."
-draft: true
 ---
 
 # WebSocket

@@ -1,7 +1,6 @@
 ---
 title: "AnimationCache"
 description: "The AnimationCache API manages animation cache resources."
-draft: true
 ---
 
 # AnimationCache

@@ -1,7 +1,6 @@
 ---
 title: "Snapshot"
 description: "The Snapshot API provides access to the path that snapshots are saved to."
-draft: true
 ---
 
 # Snapshot

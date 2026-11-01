@@ -1,7 +1,6 @@
 ---
 title: "ModelCache"
 description: "The ModelCache API manages model cache resources."
-draft: true
 ---
 
 # ModelCache

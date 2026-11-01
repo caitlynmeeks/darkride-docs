@@ -1,7 +1,6 @@
 ---
 title: "MaterialCache"
 description: "The MaterialCache API manages material cache resources."
-draft: true
 ---
 
 # MaterialCache

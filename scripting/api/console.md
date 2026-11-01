@@ -1,7 +1,6 @@
 ---
 title: "console"
 description: "The console API provides program logging facilities."
-draft: true
 ---
 
 # console

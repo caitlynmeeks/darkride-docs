@@ -1,7 +1,6 @@
 ---
 title: "Global types and functions"
 description: "Types and functions every script can use."
-draft: true
 ---
 
 # Global types and functions

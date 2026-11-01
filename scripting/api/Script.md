@@ -1,7 +1,6 @@
 ---
 title: "Script"
 description: "The Script API provides facilities for working with scripts."
-draft: true
 ---
 
 # Script

@@ -1,7 +1,6 @@
 ---
 title: "Render"
 description: "The Render API enables you to configure the graphics engine."
-draft: true
 ---
 
 # Render

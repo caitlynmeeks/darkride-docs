@@ -1,7 +1,6 @@
 ---
 title: "Controller"
 description: "The Controller API provides facilities to interact with computer and controller hardware."
-draft: true
 ---
 
 # Controller

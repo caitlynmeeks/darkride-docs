@@ -1,7 +1,6 @@
 ---
 title: "Graphics"
 description: "The Graphics API enables you to access and manipulate avatar, entity, and overlay models in the rendered scene."
-draft: true
 ---
 
 # Graphics

@@ -1,7 +1,6 @@
 ---
 title: "Picks"
 description: "The Picks API lets you create and manage objects for repeatedly calculating intersections."
-draft: true
 ---
 
 # Picks

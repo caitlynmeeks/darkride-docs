@@ -1,7 +1,6 @@
 ---
 title: "Entities types"
 description: "The types used by Entities."
-draft: true
 ---
 
 # Entities types

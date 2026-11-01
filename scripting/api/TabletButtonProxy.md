@@ -1,7 +1,6 @@
 ---
 title: "TabletButtonProxy"
 description: "A tablet button."
-draft: true
 ---
 
 # TabletButtonProxy

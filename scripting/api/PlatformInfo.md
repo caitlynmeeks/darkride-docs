@@ -1,7 +1,6 @@
 ---
 title: "PlatformInfo"
 description: "The PlatformInfo API provides information about the hardware platform being used."
-draft: true
 ---
 
 # PlatformInfo

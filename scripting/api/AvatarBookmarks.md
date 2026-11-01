@@ -1,7 +1,6 @@
 ---
 title: "AvatarBookmarks"
 description: "The AvatarBookmarks API provides facilities for working with avatar bookmarks (\"favorites\" in the Avatar app)."
-draft: true
 ---
 
 # AvatarBookmarks

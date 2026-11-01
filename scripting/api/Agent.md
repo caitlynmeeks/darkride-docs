@@ -1,7 +1,6 @@
 ---
 title: "Agent"
 description: "The Agent API enables an assignment client to emulate an avatar."
-draft: true
 ---
 
 # Agent

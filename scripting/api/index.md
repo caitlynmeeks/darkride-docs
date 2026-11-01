@@ -1,7 +1,6 @@
 ---
 title: "Scripting API reference"
 description: "Every namespace, class and function a Darkride script can use, as of 1.1.2."
-draft: true
 ---
 
 # Scripting API reference

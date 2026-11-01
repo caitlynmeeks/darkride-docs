@@ -1,7 +1,6 @@
 ---
 title: "Rates"
 description: "The Rates API provides some information on current rendering performance."
-draft: true
 ---
 
 # Rates

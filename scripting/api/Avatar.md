@@ -1,7 +1,6 @@
 ---
 title: "Avatar"
 description: "The Avatar API is used to manipulate scriptable avatars on the world."
-draft: true
 ---
 
 # Avatar

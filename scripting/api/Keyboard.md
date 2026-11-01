@@ -1,7 +1,6 @@
 ---
 title: "Keyboard"
 description: "The Keyboard API provides facilities to use an in-world, virtual keyboard."
-draft: true
 ---
 
 # Keyboard

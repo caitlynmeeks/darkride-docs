@@ -1,7 +1,6 @@
 ---
 title: "Menu"
 description: "The Menu API provides access to the menu that is displayed at the top of the window on a user's desktop and in the tablet when the \"MENU\" button is pressed."
-draft: true
 ---
 
 # Menu

@@ -1,7 +1,6 @@
 ---
 title: "ScriptsModel"
 description: "Information on the scripts that are in the default scripts directory of the Interface installation."
-draft: true
 ---
 
 # ScriptsModel

@@ -1,7 +1,6 @@
 ---
 title: "AvatarList"
 description: "The AvatarList API provides information about avatars within the current world."
-draft: true
 ---
 
 # AvatarList

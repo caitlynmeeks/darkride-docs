@@ -1,7 +1,6 @@
 ---
 title: "ChatCommand"
 description: "A chat command."
-draft: true
 ---
 
 # ChatCommand
