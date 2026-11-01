@@ -12,8 +12,7 @@ FOR reviewers (docs, 2026-11-01; remove this block before publishing):
   11-01: the password-first page and the spare-port fix aren't in the next server release, so both steps stay).
 - New since security's read: what doesn't apply to a self-hosted world (instances, versions, the website's Instances
   settings and Bans); Explore lists it only when open to anyone or anyone signed in and on the visitor's version;
-  friends-only = share the World link (metaverse 13:1x); the vehicle physics line (physics to check: "turn it on if
-  your world has vehicles", servers 13:1x); file names 1.1.2; the token dialog's older networking notes.
+  friends-only = share the World link (metaverse 13:1x); the vehicle physics line (physics's wording, 13:0x); file names 1.1.2; the token dialog's older networking notes.
 - Waiting for security's public wording before adding 1.1.2's visitor rules to the update section.
 -->
 
@@ -115,8 +114,10 @@ On a rented Windows server, don't click **Allow**. Open only the UDP ports from 
 
 The settings page says **Connected: your world can be listed in Places and visitors can find it**.
 
-**Vehicles?** The physics assignment client runs only if you turn it on: if your world has vehicles, open
-**Vehicle physics** on the settings page, tick **Run vehicle physics on the server**, and save.
+**Vehicles?** If your world has vehicles (trains on tracks, cars, airships), open **Vehicle physics** on the
+settings page, tick **Run vehicle physics on the server**, and save; your world server restarts by itself. The
+server then moves them, so every visitor sees each vehicle in the same place. Without vehicles, leave it off: it
+costs nothing.
 
 ## 4. Let visitors in
 
