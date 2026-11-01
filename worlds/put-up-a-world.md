@@ -75,6 +75,20 @@ While you're in your world, the top of **Explore** has a section, **You're in** 
 
 The toolbar's buttons show the same keys when you point at them.
 
+### The Entities list's icons
+
+Each row in the **Entities** list has four icons. Point at one to see what it does.
+
+| Icon | What it does | For |
+| --- | --- | --- |
+| Eye | Hides it while you build | Only you |
+| Arrow | Your clicks in the 3D view can't select it while you build (the list still can) | Only you |
+| Padlock | Locks it: no one can move, change or delete it | Everyone |
+| Braces `{ }` | Turns its scripts off: they stop running (a door stops opening) and stay attached, until you turn them on again | Everyone |
+
+Click an icon to change the row and everything under it. **Alt-click** (Option-click on a Mac) changes that row
+alone.
+
 Come back, change things and save as often as you like.
 
 - **An instance keeps the version it started with.** One that was already open when you saved shows as "An older
