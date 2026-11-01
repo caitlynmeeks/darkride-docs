@@ -56,6 +56,8 @@ What doesn't work yet in Darkride 1.1.2, and what to do instead. Found something
   small circles while the car is stopped, or drift off the car while it moves. If it does, teleport out, or step off
   at a stop. Riding on the desktop isn't affected. We're fixing it.
 - **In VR, keep the tablet closed while you ride.** On a vehicle it can vanish or float away. We're fixing it.
+- **Things attached to the avatar's sensor joint (`parentJointIndex` 65534) are misplaced while the avatar rides a
+  vehicle,** for the rider and for everyone watching. They're right again once the avatar steps off. We're fixing it.
 
 ## The radio
 
