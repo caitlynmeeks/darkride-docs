@@ -33,6 +33,7 @@ export default defineConfig({
           items: [
             { text: 'Put up a world', link: '/worlds/put-up-a-world' },
             { text: 'Run your own world server', link: '/worlds/your-own-server' },
+            { text: 'Keep a big world fast', link: '/worlds/big-worlds' },
           ],
         },
         {
@@ -46,6 +47,7 @@ export default defineConfig({
         {
           text: 'Releases',
           items: [
+            { text: "What's new in 1.1.3", link: '/releases/1.1.3/' },
             { text: "What's new in 1.1.2.1", link: '/releases/1.1.2.1/' },
             { text: "What's new in 1.1.2", link: '/releases/1.1.2/' },
             { text: 'Known issues', link: '/known-issues' },

@@ -3,7 +3,6 @@ title: Run your own world server
 description: Run a Darkride world on your own computer or a rented server, keep it updated, and back it up.
 ---
 
-
 # Run your own world server
 
 Most worlds don't need a server of their own: [Put up a world](/worlds/put-up-a-world) runs yours on Darkride's
@@ -55,7 +54,7 @@ match.
 ### Linux
 
 ```sh
-tar xzf darkride-server-linux-x64-1.1.2.1-beta.tar.gz
+tar xzf darkride-server-linux-x64-1.1.3-beta.tar.gz
 nohup ./server.AppDir/domain-server > domain-server.log 2>&1 &
 nohup ./server.AppDir/assignment-client -n 6 --max 6 --min-listen-port 40110 -a 127.0.0.1 --server-port 40102 > assignment-client.log 2>&1 &
 ```
@@ -68,7 +67,7 @@ you log out, and their messages go to the two `.log` files.
 
 ### Windows
 
-1. Unzip `Darkride-1.1.2.1-beta-windows.zip`. The server is in its `server` folder.
+1. Unzip `Darkride-1.1.3-beta-windows.zip`. The server is in its `server` folder.
 2. In that folder, start `domain-server.exe`.
 3. Then start the assignment clients from a Command Prompt in the same folder:
 
@@ -149,11 +148,16 @@ Addresses on your own computer or home network include `file:`, `http://localhos
 ending `.local`, and names with no dot, such as `http://nas/`. This applies to everyone, the world's owner too, and no
 setting turns it off. To put a script in the world's assets, use **Edit** > **Asset Browser** in Darkride.
 
+In 1.1.3, the same goes for models, pictures, sounds and a world's other files: an address that names a file on a
+computer (`file:///Users/me/car.glb`, `C:\models\car.glb`, or a bare file name) works only while you test on your own
+computer or home network. Elsewhere the thing shows without it, for everyone. Upload the file (to the world's assets,
+My Files or your own web server) and use its web address.
+
 ## Update to a new version
 
-Update your server with each Darkride version. If you run your own world server, update it to 1.1.2.1 for its safety
-fixes. 1.1.2.1 works with every 1.1 world and server. When a version can't join older servers, its
-release notes say so.
+Update your server with each Darkride version. If you run your own world server, update it to 1.1.3 for its safety
+fixes. 1.1.3 and 1.1.2.1 work together: either app can visit worlds served by either version. When a version can't
+join older servers, its release notes say so.
 
 Before you update to 1.1.2, move any scripts on your own computer or home network
 ([Where to put your world's scripts](#where-to-put-your-world-s-scripts)), and give each object its script's new

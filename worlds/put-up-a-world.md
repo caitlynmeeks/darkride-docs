@@ -3,7 +3,6 @@ title: Put up a world
 description: Make a world on darkride.ai, build and save it in Darkride, bring in an old High Fidelity world, and invite your friends. It runs on Darkride's servers, with nothing to install or keep running.
 ---
 
-
 # Put up a world
 
 Your world lives on darkride.ai, and Darkride's servers run it. When someone wants to visit, a copy of it starts on
@@ -88,7 +87,8 @@ Point at one to see what it does.
 | Braces `{ }` | Turns its scripts off: they stop running (a door stops opening) and stay attached, until you turn them on again | Everyone |
 
 Click an icon to change the row and everything under it. **Alt-click** (Option-click on a Mac) changes that row
-alone. Locking takes the world's **Lock / Unlock** right, which its owner can give; without it, the padlock is dimmed.
+alone. Drag along a column to set every row you pass the same way; the whole drag is one Undo. Locking takes the
+world's **Lock / Unlock** right, which its owner can give; without it, the padlock is dimmed.
 
 Come back, change things and save as often as you like.
 
@@ -137,6 +137,10 @@ Darkride see it where you use it (your avatar, your worlds); it can't be opened 
 - Anyone who can see a private file can also load the private files in its folder and the folders inside it, so keep
   each private model and its textures in a folder of their own.
 - Visitors need Darkride 1.1 or newer to see private files.
+
+An address that names a file on your computer (such as `file:///Users/me/car.glb` or `C:\models\car.glb`) works
+only while you test on your own computer or home network. In your world on Darkride's servers, the thing shows
+without it, for everyone, you too. Upload the file to My Files and use its link instead.
 
 ## 5. Bring in a world from High Fidelity
 
