@@ -98,9 +98,9 @@ Come back, change things and save as often as you like.
 - **Your world is edited in one instance at a time.** If someone is already changing it in another instance,
   Darkride tells you who. In the same instance, you and your Editors can build together.
 - **Others can build with you.** On darkride.ai, open **My Worlds**, click your world's **Edit details** and go to
-  **Instances**. Under **Editors**, click **Add a friend** and pick a friend from the list (type to narrow it). For
-  someone who isn't your friend, type their username and click **Add**. Then click **Save settings**. A world can
-  have up to 50 Editors. Editors can always come in, but for now Explore shows them your world only if it's open to
+  **Instances**. Under **Editors**, click **Add a friend** and pick a friend from the list (type part of their name
+  to narrow it). For someone who isn't your friend, type their username and click **Add**. Then click **Save
+  settings**. A world can have up to 50 Editors. Editors can always come in, but for now Explore shows them your world only if it's open to
   **Everyone signed in** (or to **My friends** and they're your friends). Send them your instance's link
   ([section 7](#_7-invite-your-friends)).
 - **What runs on Darkride's servers:**
