@@ -10,8 +10,8 @@ Your world lives on darkride.ai, and Darkride's servers run it. When someone wan
 one of our servers (an **instance**), and it closes again when everyone has left. Your world stays saved between
 visits, as numbered **versions**.
 
-There's nothing to install and nothing to keep running. When no server is free, a fresh one starts by itself first;
-that takes a minute or two. You don't set any of it up.
+There's nothing to install and nothing to keep running. Usually your world opens within seconds. When no server is
+free, a fresh one starts by itself first; that takes a minute or two. You don't set any of it up.
 
 ## What you need
 
@@ -236,6 +236,7 @@ These are today's settings and may change.
 | "You already have an instance open." | Join the one you have, or close it (**You're in** section, **Close This Instance…**). |
 | "You've started a lot of instances this hour." | Wait a little, then try again. |
 | "Couldn't start a server right now. Try again in a minute." | Our servers are busy. Try again in a few minutes. |
+| "Darkride is full right now. Please try again in a few minutes." | Every spare server is taken. Try again in a few minutes. |
 | "Nobody can open this world right now." | The world's owner has set it to **Nobody (off)**. |
 | "This instance runs version *N*; the world is now at version *M*. Start a new instance to edit it." | The world was saved since this instance opened. **More ⌄** > **New instance**, then edit there. |
 | "*Name* is changing this world in another instance." | Someone else is editing it. Join their instance, or wait until they're done. |
