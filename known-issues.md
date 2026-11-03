@@ -1,11 +1,11 @@
 ---
 title: Known issues
-description: What doesn't work yet in Darkride 1.1.3, and what to do instead.
+description: What doesn't work yet in Darkride 1.1.3.1, and what to do instead.
 ---
 
 # Known issues
 
-What doesn't work yet in Darkride 1.1.3, and what to do instead. Found something that isn't here? Tell us on
+What doesn't work yet in Darkride 1.1.3.1, and what to do instead. Found something that isn't here? Tell us on
 [Darkride's Discord](https://darkride.ai/discord).
 
 ## Installing and opening
