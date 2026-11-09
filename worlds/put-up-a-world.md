@@ -24,7 +24,7 @@ free, a fresh one starts by itself first; that takes a minute or two. You don't 
 
 1. On [darkride.ai](https://darkride.ai), sign in, open the **Apps** menu and choose **My Worlds**.
 2. Click **Create new world**.
-3. Give it a **Name** (4 to 64 characters), and a **Description** and a picture if you like.
+3. Give it a **Name** (4 to 64 characters), and a **Description** and an image if you like.
 4. Under **Start with**, choose how it begins:
    - **Empty**: a floor and a sky.
    - **Darkside**: a copy of Darkside, the lobby world, to change as you like.
@@ -114,7 +114,7 @@ Come back, change things and save as often as you like.
   - **Edit** > **Asset Browser** (files kept in the world itself) works only in a world that already has such files,
     like one started from Darkside. For a world started from Empty, use **My Files** (section 4).
 
-## 4. Add your own models, pictures and sounds
+## 4. Add your own models, images and sounds
 
 Everything in your world needs to be online. The easy place for it is **My Files** on darkride.ai:
 
@@ -122,7 +122,7 @@ Everything in your world needs to be online. The easy place for it is **My Files
    Each file can be up to **50 MB**, and you have **1 GB** in all.
 2. Right-click a file and, under **Copy stable link**, click **https://**. That link keeps working even if you move
    or rename the file.
-3. In Darkride's Build Mode, paste the link where the model, picture or sound goes.
+3. In Darkride's Build Mode, paste the link where the model, image or sound goes.
 
 <img src="./images/files-copy-link.png" width="457" alt="My Files: a file's right-click menu, with Copy stable link > https://">
 
@@ -148,7 +148,7 @@ If you built a world in High Fidelity (or another app built on it), you can brin
 
 1. Find your old world's **entities file**: `models.json.gz` from your old server's content backup or its
    `entities` folder. Unzip it, so you have `models.json` to check in the next step.
-2. **Check its links.** Open `models.json` in a text editor and look at the addresses of models, pictures, sounds
+2. **Check its links.** Open `models.json` in a text editor and look at the addresses of models, images, sounds
    and scripts:
    - Links to websites that are still up keep working.
    - Links starting `atp:` were files on your old server, and links to High Fidelity's own servers are gone. Upload

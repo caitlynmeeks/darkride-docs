@@ -36,4 +36,4 @@ check it.
 Each run writes `REPORT.md` here: the old names it changed, the dead links, the names that lead nowhere, and the
 notes it left out. Those are fixes for the engine's notes, so the lists should shrink release by release.
 
-The three pose pictures in `images/` come from High Fidelity's engine (Apache 2.0), where the notes link to them.
+The three pose images in `images/` come from High Fidelity's engine (Apache 2.0), where the notes link to them.

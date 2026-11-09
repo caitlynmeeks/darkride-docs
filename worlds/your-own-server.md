@@ -54,7 +54,7 @@ match.
 ### Linux
 
 ```sh
-tar xzf darkride-server-linux-x64-1.1.3.1-beta.tar.gz
+tar xzf darkride-server-linux-x64-1.1.4-beta.tar.gz
 nohup ./server.AppDir/domain-server > domain-server.log 2>&1 &
 nohup ./server.AppDir/assignment-client -n 6 --max 6 --min-listen-port 40110 -a 127.0.0.1 --server-port 40102 > assignment-client.log 2>&1 &
 ```
@@ -67,7 +67,7 @@ you log out, and their messages go to the two `.log` files.
 
 ### Windows
 
-1. Unzip `Darkride-1.1.3.1-beta-windows.zip`. The server is in its `Darkride\server` folder.
+1. Unzip `Darkride-1.1.4-beta-windows.zip`. The server is in its `Darkride\server` folder.
 2. In that folder, start `domain-server.exe`.
 3. Then start the assignment clients from a Command Prompt in the same folder:
 
@@ -148,16 +148,23 @@ Addresses on your own computer or home network include `file:`, `http://localhos
 ending `.local`, and names with no dot, such as `http://nas/`. This applies to everyone, the world's owner too, and no
 setting turns it off. To put a script in the world's assets, use **Edit** > **Asset Browser** in Darkride.
 
-In 1.1.3, the same goes for models, pictures, sounds and a world's other files: an address that names a file on a
+In 1.1.3, the same goes for models, images, sounds and a world's other files: an address that names a file on a
 computer (`file:///Users/me/car.glb`, `C:\models\car.glb`, or a bare file name) works only while you test on your own
 computer or home network. Elsewhere the thing shows without it, for everyone. Upload the file (to the world's assets,
 My Files or your own web server) and use its web address.
 
 ## Update to a new version
 
-Update your server with each Darkride version. If you run your own world server, update it to 1.1.3.1 for its safety
-fixes. 1.1.3.1, 1.1.3 and 1.1.2.1 work together: any of these apps can visit worlds served by any of these versions.
+Update your server with each Darkride version. If you run your own world server, update it to 1.1.4 for its fixes.
+1.1.4, 1.1.3.1, 1.1.3 and 1.1.2.1 work together: any of these apps can visit worlds served by any of these versions.
+Some of 1.1.4's fixes work only once the world's server runs 1.1.4, such as the clicks in voices after someone joins.
 When a version can't join older servers, its release notes say so.
+
+Before you update to 1.1.4: the old script engine (QtScript) is gone from the server, and server scripts and edit
+filters run only on the WebAssembly engine, the default since 1.1.0. If you made your server use the old engine
+(`DARKRIDE_RUN_JS_ON_QTSCRIPT=1` or `DARKRIDE_RUN_JS_ON_WASM=0`), those settings no longer exist: test your server
+scripts and edit filters on 1.1.4. Keep each object's userData, and a Material's materialData, under 1,200 bytes
+([Known issues](/known-issues)).
 
 Before you update to 1.1.2, move any scripts on your own computer or home network
 ([Where to put your world's scripts](#where-to-put-your-world-s-scripts)), and give each object its script's new
@@ -214,7 +221,7 @@ world.)
 Inside it:
 
 - `assignment-client/entities/models.json.gz`: the world's objects
-- `assignment-client/assets/`: its files (models, pictures, sounds)
+- `assignment-client/assets/`: its files (models, images, sounds)
 - `domain-server/config.json`: its settings, including the World ID and the access token. Keep this file private.
 
 ## If something goes wrong

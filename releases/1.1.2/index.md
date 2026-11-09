@@ -5,7 +5,7 @@ description: What changes in Darkride 1.1.2 for people who build worlds and run 
 
 # What's new in 1.1.2
 
-Darkride 1.1.2 beta is on [GitHub](https://github.com/caitlynmeeks/darkride-interface/releases/latest). This page
+Darkride 1.1.2 beta is on [GitHub](https://github.com/caitlynmeeks/darkride-interface/releases/tag/v1.1.2-beta). This page
 covers what changes for builders and for people who run their own world server. For what doesn't work yet, see
 [Known issues](/known-issues).
 
@@ -14,7 +14,7 @@ covers what changes for builders and for people who run their own world server. 
 1.1.2 brings important security fixes, in the app and in the server.
 
 In the app (they protect you in every world, whatever version its server runs): world scripts can reach less of your
-computer, your network and the app itself; models, pictures, sounds and other people's avatars load more safely; what
+computer, your network and the app itself; models, images, sounds and other people's avatars load more safely; what
 you type into the sign-in box goes only to it.
 
 In the server: stricter checks on the network data and world data a server receives.
@@ -47,4 +47,4 @@ Models made very small and shown at full size, and parts drawn on both sides, no
    user. Check each download against the SHA-256 on the GitHub release.
 
 Everything else in 1.1.2, for everyone, is in the release notes on
-[GitHub](https://github.com/caitlynmeeks/darkride-interface/releases/latest).
+[GitHub](https://github.com/caitlynmeeks/darkride-interface/releases/tag/v1.1.2-beta).

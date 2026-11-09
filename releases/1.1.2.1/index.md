@@ -5,7 +5,7 @@ description: Darkride 1.1.2.1, an important security update for the app.
 
 # What's new in 1.1.2.1
 
-Darkride 1.1.2.1 beta is on [GitHub](https://github.com/caitlynmeeks/darkride-interface/releases/latest). For what
+Darkride 1.1.2.1 beta is on [GitHub](https://github.com/caitlynmeeks/darkride-interface/releases/tag/v1.1.2.1-beta). For what
 changed in 1.1.2, see [What's new in 1.1.2](/releases/1.1.2/); for what doesn't work yet, see
 [Known issues](/known-issues).
 

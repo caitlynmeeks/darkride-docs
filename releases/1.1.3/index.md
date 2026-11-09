@@ -5,7 +5,7 @@ description: What changes in Darkride 1.1.3 for people who build worlds and run 
 
 # What's new in 1.1.3
 
-Darkride 1.1.3 beta is on [GitHub](https://github.com/caitlynmeeks/darkride-interface/releases/latest). This page
+Darkride 1.1.3 beta is on [GitHub](https://github.com/caitlynmeeks/darkride-interface/releases/tag/v1.1.3-beta). This page
 covers what changes for builders and for people who run their own world server. For what doesn't work yet, see
 [Known issues](/known-issues).
 
@@ -46,9 +46,9 @@ your visitors have 1.1.3.
 
 ## Files on your computer
 
-A world's models, pictures, sounds and other files no longer load from a file address on a computer; upload them and
+A world's models, images, sounds and other files no longer load from a file address on a computer; upload them and
 use their links. While you test on your own computer or home network, local files still work. See
-[Add your own models, pictures and sounds](/worlds/put-up-a-world#_4-add-your-own-models-pictures-and-sounds).
+[Add your own models, images and sounds](/worlds/put-up-a-world#_4-add-your-own-models-images-and-sounds).
 
 ## Scripts when someone leaves your world
 
@@ -94,4 +94,4 @@ If you run your own world server, update it to 1.1.3: it has important safety fi
 [Update to a new version](/worlds/your-own-server#update-to-a-new-version).
 
 Everything else in 1.1.3, for everyone, is in the release notes on
-[GitHub](https://github.com/caitlynmeeks/darkride-interface/releases/latest).
+[GitHub](https://github.com/caitlynmeeks/darkride-interface/releases/tag/v1.1.3-beta).

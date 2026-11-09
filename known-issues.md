@@ -1,11 +1,11 @@
 ---
 title: Known issues
-description: What doesn't work yet in Darkride 1.1.3.1, and what to do instead.
+description: What doesn't work yet in Darkride 1.1.4, and what to do instead.
 ---
 
 # Known issues
 
-What doesn't work yet in Darkride 1.1.3.1, and what to do instead. Found something that isn't here? Tell us on
+What doesn't work yet in Darkride 1.1.4, and what to do instead. Found something that isn't here? Tell us on
 [Darkride's Discord](https://darkride.ai/discord).
 
 ## Installing and opening
@@ -13,8 +13,6 @@ What doesn't work yet in Darkride 1.1.3.1, and what to do instead. Found somethi
 - **Mac: macOS won't open Darkride the first time.** Darkride isn't notarized yet. Try to open it once, then go to
   **System Settings** > **Privacy & Security**, click **Open Anyway**, and confirm. On macOS 14 or earlier, you can
   instead right-click Darkride.app, choose **Open**, then **Open** again.
-- **Mac: Finder's Get Info shows no version number.** To see which version you have, open Darkride and choose
-  **Help** > **About Darkride**.
 - **Windows: "Darkride requires OpenGL 4.1 or higher".** This can show even on a recent graphics card. If your
   graphics are recent and Darkride starts anyway, you can ignore the message and tell us. If it doesn't start, install
   your graphics maker's latest driver. Darkride needs a graphics card whose driver offers OpenGL 4.1: roughly any
@@ -34,15 +32,31 @@ What doesn't work yet in Darkride 1.1.3.1, and what to do instead. Found somethi
 - **Scripts on your own computer or home network don't load** in 1.1.2 and newer apps, or on any 1.1.2 or newer
   world server, Darkride's included. See
   [What's new in 1.1.2](/releases/1.1.2/#scripts) for where scripts can live.
-- **`location = "hifi://…"` (or `Window.location = …`) does nothing** in the default script engine. Use
-  `location.handleLookupString("hifi://…")`, which works in both engines.
+- **`location = "hifi://…"` (or `Window.location = …`) does nothing.** Use
+  `location.handleLookupString("hifi://…")` instead.
 - **Two scripts that `require` the same remote file at the same moment:** the second can get an empty module, with no
   error. Give each its own address (add `?a=1`, `?b=1`), or require the file in one place.
-- **A Track with more than about 100 points never reaches the server or other people.** It vanishes for them, with no
-  warning. Keep tracks under 100 points.
+- **Keep userData, and a Material's materialData, under 1,200 bytes.** A longer value isn't saved: a new entity or
+  Material with one isn't added, and a change that would make one is ignored. Darkride doesn't show a message about it
+  yet. Keep long data in a file instead: put a material in a material file and link it, and have a script load long
+  data from a file.
+- **A Track with more than about 100 points never reaches the server or other people.** It vanishes for them, and
+  Darkride shows no warning on screen. Keep tracks under about 100 points.
 - **A script that moves your avatar by setting `MyAvatar.position` can be undone by the next physics step**, leaving
   the avatar where it was. Check the position a frame later and set it again. The built-in teleports (`/tp`, Hop,
   bookmarks) aren't affected.
+
+## Frame rate
+
+- **In Darkside on a 144 Hz display, the frame rate can switch between 144 and 72** a few times in your first minute or
+  two. It settles at 72 after that. (In heavy worlds, Darkride runs at half a 144 Hz display's rate on purpose, to keep
+  the picture smooth.)
+
+## Make
+
+- **On a few computers, Make can't use Blender.** If Make's Connect step says "Blender isn't available here" even
+  though Blender 5.2 or newer is installed, Make couldn't close Blender off on that computer, so it leaves Blender out.
+  Everything else in Make works.
 
 ## Vehicles
 
@@ -50,17 +64,14 @@ What doesn't work yet in Darkride 1.1.3.1, and what to do instead. Found somethi
   small circles while the car is stopped, or drift off the car while it moves. If it does, teleport out, or step off
   at a stop. Riding on the desktop isn't affected. We're fixing it.
 - **In VR, keep the tablet closed while you ride.** On a vehicle it can vanish or float away. We're fixing it.
-- **Things attached to the avatar's sensor joint (`parentJointIndex` 65534) are misplaced while the avatar rides a
-  vehicle,** for the rider and for everyone watching. They're right again once the avatar steps off. We're fixing it.
-- **On the monorail, the world can slide a little for a moment as you come into or leave a station,** as the car
-  catches up with the server; the car itself stays smooth. We're tuning it.
+- **Things attached to the avatar's sensor joint (`parentJointIndex` 65534) look misplaced to everyone watching while
+  the avatar rides a vehicle.** They're right again once the avatar steps off. We're fixing it.
+- **On the monorail, the world can slide a little for a moment as you come into or leave a station.** The car itself
+  stays smooth. We're tuning it.
 - **On a moving vehicle (the monorail, a car, a moving platform), its railings and things you carry can flick back
   slightly for a moment now and then.** The vehicle itself stays smooth. We're fixing it.
 - **On a Mac, undocking a panel while you ride freezes the view for about a quarter of a second.** Undock panels
   before you get on; docking them back while you ride is fine.
-- **Step off the monorail before you go to another world.** If you Hop, teleport or use a bookmark while standing in
-  the monorail car, you may arrive unable to walk (your avatar walks in place). Restart Darkride to fix it. We're
-  fixing it.
 
 ## The radio
 

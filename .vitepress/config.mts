@@ -37,6 +37,10 @@ export default defineConfig({
           ],
         },
         {
+          text: 'Make',
+          items: [{ text: 'Make things with Claude', link: '/make/' }],
+        },
+        {
           text: 'Bots',
           items: [{ text: 'Making bots for Darkride', link: '/bots/guide' }],
         },
@@ -47,6 +51,7 @@ export default defineConfig({
         {
           text: 'Releases',
           items: [
+            { text: "What's new in 1.1.4", link: '/releases/1.1.4/' },
             { text: "What's new in 1.1.3.1", link: '/releases/1.1.3.1/' },
             { text: "What's new in 1.1.3", link: '/releases/1.1.3/' },
             { text: "What's new in 1.1.2.1", link: '/releases/1.1.2.1/' },
