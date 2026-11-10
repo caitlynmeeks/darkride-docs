@@ -58,6 +58,16 @@ What doesn't work yet in Darkride 1.1.4.1, and what to do instead. Found somethi
   though Blender 5.2 or newer is installed, Make couldn't close Blender off on that computer, so it leaves Blender out.
   Everything else in Make works.
 
+## Avatars
+
+- **If you turn on face tracking while you wear an avatar with many bones, such as many avatars from Unity packages,
+  other people don't see your face expressions.** The same happens to a face a script sets. Your voice still moves
+  your mouth. Small avatars, such as the Lightling, aren't affected: to get around it, turn face tracking on (or start
+  the script) while you wear a small one, then put on your avatar
+  ([#69](https://github.com/caitlynmeeks/darkride-interface/issues/69)).
+- **The first time a Lightling comes into view after you start Darkride, the picture may freeze for a moment** while
+  Darkride gets the Lightling's look ready. It happens once per start, and we're working on a fix.
+
 ## Web pages in worlds
 
 - **A click on a web page in a world lands at the page's top-left corner, not where you point.** This happens on the
