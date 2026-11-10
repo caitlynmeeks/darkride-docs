@@ -91,8 +91,9 @@ surfaces, or lower it if a shadow doesn't quite meet the thing casting it.
 
 ## Your own world server
 
-If you run your own world server, update it to 1.1.4: it has important fixes, including one for clicks in voices after
-someone joins. See [Update to a new version](/worlds/your-own-server#update-to-a-new-version).
+If you run your own world server, update it to 1.1.4: it has important fixes. Before 1.1.4, one very long value on an
+object could stop other visitors receiving part of a world, and voices could click after someone joined. See
+[Update to a new version](/worlds/your-own-server#update-to-a-new-version).
 
 Everything else in 1.1.4, for everyone, is in the release notes on
 [GitHub](https://github.com/caitlynmeeks/darkride-interface/releases/tag/v1.1.4-beta).
