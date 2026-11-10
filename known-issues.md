@@ -58,10 +58,20 @@ What doesn't work yet in Darkride 1.1.4.1, and what to do instead. Found somethi
   though Blender 5.2 or newer is installed, Make couldn't close Blender off on that computer, so it leaves Blender out.
   Everything else in Make works.
 
+## Web pages in worlds
+
+- **A click on a web page in a world lands at the page's top-left corner, not where you point.** This happens on the
+  desktop and in VR, since 1.1.4, so a page's buttons and links may not respond. We're looking into it
+  ([#67](https://github.com/caitlynmeeks/darkride-interface/issues/67)).
+
 ## VR
 
-- **In VR on Windows, the menu that opens with Y may not respond to your controllers.** We're looking into it
-  ([#67](https://github.com/caitlynmeeks/darkride-interface/issues/67)).
+- **In VR on Windows, the menu that opens with Y doesn't respond when you pull the trigger.** Its buttons light up
+  when you point at them, but pressing does nothing. It's the same problem as clicks on
+  [web pages in worlds](#web-pages-in-worlds) ([#67](https://github.com/caitlynmeeks/darkride-interface/issues/67)).
+- **In VR on Windows, if the headset loses its connection to your computer, Darkride doesn't come back in the
+  headset.** This can happen after the headset has been off for a few minutes. Take off the headset, quit Darkride on
+  your computer (Ctrl+Q), and start it again ([#68](https://github.com/caitlynmeeks/darkride-interface/issues/68)).
 
 ## Vehicles
 
