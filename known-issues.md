@@ -1,11 +1,11 @@
 ---
 title: Known issues
-description: What doesn't work yet in Darkride 1.1.4, and what to do instead.
+description: What doesn't work yet in Darkride 1.1.4.1, and what to do instead.
 ---
 
 # Known issues
 
-What doesn't work yet in Darkride 1.1.4, and what to do instead. Found something that isn't here? Tell us on
+What doesn't work yet in Darkride 1.1.4.1, and what to do instead. Found something that isn't here? Tell us on
 [Darkride's Discord](https://darkride.ai/discord).
 
 ## Installing and opening
@@ -57,6 +57,11 @@ What doesn't work yet in Darkride 1.1.4, and what to do instead. Found something
 - **On a few computers, Make can't use Blender.** If Make's Connect step says "Blender isn't available here" even
   though Blender 5.2 or newer is installed, Make couldn't close Blender off on that computer, so it leaves Blender out.
   Everything else in Make works.
+
+## VR
+
+- **In VR on Windows, the menu that opens with Y may not respond to your controllers.** We're looking into it
+  ([#67](https://github.com/caitlynmeeks/darkride-interface/issues/67)).
 
 ## Vehicles
 

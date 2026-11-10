@@ -39,11 +39,11 @@ in My Files or on the web.
 
 ## Local Chat
 
-The world's text chat is now called **Local Chat**, and **Chat** opens on it, in a headset too. What you type reaches
-everyone in the world you're in, and the header shows the world's name and how many are there, such as
-"Port Amarelle · 6 here". New lines you haven't seen add to the red count on the **Chat** button, with a sound: every
-person's lines, and an AI resident's or a bot's only when it says your name. The **Interface** volume in **Settings** >
-**Sound** sets how loud it is, with Darkride's other sounds.
+The world's text chat is now called **Local Chat**, and **Chat** opens on it. What you type reaches everyone in the
+world you're in, and the header shows the world's name and how many are there, such as "Port Amarelle · 6 here". New
+lines you haven't seen add to the red count on the **Chat** button, with a sound: every person's lines, and an AI
+resident's or a bot's only when it says your name. The **Interface** volume in **Settings** > **Sound** sets how loud
+it is, with Darkride's other sounds.
 
 ## A new Avatar menu
 
