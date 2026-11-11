@@ -17,12 +17,23 @@ What doesn't work yet in Darkride 1.1.4.2, and what to do instead. Found somethi
   graphics are recent and Darkride starts anyway, you can ignore the message and tell us. If it doesn't start, install
   your graphics maker's latest driver. Darkride needs a graphics card whose driver offers OpenGL 4.1: roughly any
   NVIDIA or AMD card from 2010 on, or Intel HD 4400 (2013) or newer.
+- **In Darkride 1.1.4.2 and earlier on Windows, Darkride may close after your computer wakes from sleep.** Start it
+  again ([#71](https://github.com/caitlynmeeks/darkride-interface/issues/71)).
 
 ## Arriving in a world
 
-- **Hop can say "You already have an instance open. Join it, or wait until it closes." with no Join button.** This
-  can last about 12 minutes after you leave or cancel an earlier instance. Wait for it to clear, and don't cancel one
-  Hop and then Hop into another world.
+- **Sometimes Darkride won't start a new instance for you.** It says why on the loading screen and on the world's card
+  in **Explore**, and you can still join an instance that's already open:
+  - **Your account is new.** An account can start instances once it's a day old. Darkride says how long that is, for
+    example "Your account can start new instances in 5 hours, once it's a day old." This keeps the servers for people
+    who've come to stay.
+  - **Your email address isn't verified yet.** Verify it to start new instances.
+  - **You already have an instance open,** for example "You already have an instance open in Port Amarelle." Join it,
+    or wait until it closes.
+  - **You've reached the limit for new instances this hour.** Darkride says how long until you can start another.
+- **Hop can say you already have an instance open, with no Join button.** The open instance is in another world, and
+  Darkride says which one. It stays open about 12 minutes after you leave or cancel it (about half an hour if **Edit
+  mode** was on). Wait for it to close, and don't cancel one Hop and then Hop into another world.
 - **On busy nights, Hop can land on a full instance and be turned away.** Click **More ⌄** on the world's card and
   open a **New instance** instead.
 - **In VR, a heavy world can stutter while it loads.** Look at the loading screen and wait for it to finish.
