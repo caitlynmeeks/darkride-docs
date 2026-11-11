@@ -85,6 +85,12 @@ What doesn't work yet in Darkride 1.1.4.3, and what to do instead. Found somethi
   applies, but a web page standing in a world hasn't been checked with a controller yet. If one doesn't respond in VR,
   tell us in [#67](https://github.com/caitlynmeeks/darkride-interface/issues/67).
 
+## Chat
+
+- **If chat at chat.darkride.ai shows "Reconnecting…" after you signed out everywhere or reset your password:** click
+  the gear (**User Settings**) next to your name at the bottom left, then **Log Out**, then **Sign in with Darkride**.
+  Clearing chat.darkride.ai's site data in your browser and reloading also works. A fix is on its way.
+
 ## VR
 
 - **In VR, you can't open other panels from the screen yet.** The VR screen shows People and Explore. To open the
