@@ -1,11 +1,11 @@
 ---
 title: Known issues
-description: What doesn't work yet in Darkride 1.1.4.2, and what to do instead.
+description: What doesn't work yet in Darkride 1.1.4.3, and what to do instead.
 ---
 
 # Known issues
 
-What doesn't work yet in Darkride 1.1.4.2, and what to do instead. Found something that isn't here? Tell us on
+What doesn't work yet in Darkride 1.1.4.3, and what to do instead. Found something that isn't here? Tell us on
 [Darkride's Discord](https://darkride.ai/discord).
 
 ## Installing and opening
@@ -17,8 +17,8 @@ What doesn't work yet in Darkride 1.1.4.2, and what to do instead. Found somethi
   graphics are recent and Darkride starts anyway, you can ignore the message and tell us. If it doesn't start, install
   your graphics maker's latest driver. Darkride needs a graphics card whose driver offers OpenGL 4.1: roughly any
   NVIDIA or AMD card from 2010 on, or Intel HD 4400 (2013) or newer.
-- **In Darkride 1.1.4.2 and earlier on Windows, Darkride may close after your computer wakes from sleep.** Start it
-  again ([#71](https://github.com/caitlynmeeks/darkride-interface/issues/71)).
+- **Fixed in 1.1.4.3: on Windows, Darkride no longer closes after your computer wakes from sleep.** In 1.1.4.2 and
+  earlier it may: update, or start it again ([#71](https://github.com/caitlynmeeks/darkride-interface/issues/71)).
 
 ## Arriving in a world
 

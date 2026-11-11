@@ -11,6 +11,7 @@ For what doesn't work yet, see [Known issues](/known-issues).
 
 | Version | What's new | Downloads |
 |---|---|---|
+| 1.1.4.3 | [What's new in 1.1.4.3](/releases/1.1.4.3/) | [GitHub](https://github.com/caitlynmeeks/darkride-interface/releases/tag/v1.1.4.3-beta) |
 | 1.1.4.2 | [What's new in 1.1.4.2](/releases/1.1.4.2/) | [GitHub](https://github.com/caitlynmeeks/darkride-interface/releases/tag/v1.1.4.2-beta) |
 | 1.1.4.1 | [What's new in 1.1.4.1](/releases/1.1.4.1/) | [GitHub](https://github.com/caitlynmeeks/darkride-interface/releases/tag/v1.1.4.1-beta) |
 | 1.1.4 | [What's new in 1.1.4](/releases/1.1.4/) | [GitHub](https://github.com/caitlynmeeks/darkride-interface/releases/tag/v1.1.4-beta) |

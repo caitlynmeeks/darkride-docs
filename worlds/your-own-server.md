@@ -46,10 +46,12 @@ sudo ufw allow 40110:40115/udp
 sudo ufw enable
 ```
 
-Download the server for your computer from the
-[latest release](https://github.com/caitlynmeeks/darkride-interface/releases/latest), and check it against the
-**SHA-256** listed there: `sha256sum <file>` on Linux, `certutil -hashfile <file> SHA256` on Windows. The two should
-match.
+Download the server for your computer: on Linux, the tarball from the
+[1.1.4.2 release](https://github.com/caitlynmeeks/darkride-interface/releases/tag/v1.1.4.2-beta) (1.1.4.3 has no new
+Linux server); on Windows, the zip from the
+[latest release](https://github.com/caitlynmeeks/darkride-interface/releases/latest). Check it against the
+**SHA-256** listed on that release: `sha256sum <file>` on Linux, `certutil -hashfile <file> SHA256` on Windows. The two
+should match.
 
 ### Linux
 
@@ -67,7 +69,7 @@ you log out, and their messages go to the two `.log` files.
 
 ### Windows
 
-1. Unzip `Darkride-1.1.4.2-beta-windows.zip`. The server is in its `Darkride\server` folder.
+1. Unzip `Darkride-1.1.4.3-beta-windows.zip`. The server is in its `Darkride\server` folder.
 2. In that folder, start `domain-server.exe`.
 3. Then start the assignment clients from a Command Prompt in the same folder:
 
@@ -155,11 +157,13 @@ My Files or your own web server) and use its web address.
 
 ## Update to a new version
 
-Update your server with each Darkride version. If you run your own world server, update it to 1.1.4.2: a bot or AI
-resident with no avatar of its own then appears as the Lightling for everyone on 1.1.4.2. 1.1.4.2, 1.1.4.1, 1.1.4,
-1.1.3.1, 1.1.3 and 1.1.2.1 work together: any of these apps can visit worlds served by any of these versions.
-Some of 1.1.4's fixes work only once the world's server runs 1.1.4, such as the clicks in voices after someone joins.
-When a version can't join older servers, its release notes say so.
+Update your server with each Darkride version that changes it. 1.1.4.3 doesn't: on Linux, keep the 1.1.4.2 server; on
+Windows, the 1.1.4.3 zip's server works the same as 1.1.4.2's, so you can keep running the one you have. If your server
+is older than 1.1.4.2, update it: a bot or AI resident with no avatar of its own then appears as the Lightling for
+everyone on 1.1.4.2 or later. 1.1.4.3, 1.1.4.2, 1.1.4.1, 1.1.4, 1.1.3.1, 1.1.3 and 1.1.2.1 work together: any of these
+apps can visit worlds served by any of these versions. Some of 1.1.4's fixes work only once the world's server runs
+1.1.4, such as the clicks in voices after someone joins. When a version can't join older servers, its release notes say
+so.
 
 From 1.1.4.2, a bot or AI resident on your server that has no avatar of its own, or wears the Lightling, loads the
 Lightling from cdn.darkride.ai the first time and keeps a copy after that. If your server can't reach the web, let it
