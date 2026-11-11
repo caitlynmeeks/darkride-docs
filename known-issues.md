@@ -1,11 +1,11 @@
 ---
 title: Known issues
-description: What doesn't work yet in Darkride 1.1.4.1, and what to do instead.
+description: What doesn't work yet in Darkride 1.1.4.2, and what to do instead.
 ---
 
 # Known issues
 
-What doesn't work yet in Darkride 1.1.4.1, and what to do instead. Found something that isn't here? Tell us on
+What doesn't work yet in Darkride 1.1.4.2, and what to do instead. Found something that isn't here? Tell us on
 [Darkride's Discord](https://darkride.ai/discord).
 
 ## Installing and opening
@@ -70,18 +70,20 @@ What doesn't work yet in Darkride 1.1.4.1, and what to do instead. Found somethi
 
 ## Web pages in worlds
 
-- **A click on a web page in a world lands at the page's top-left corner, not where you point.** This happens on the
-  desktop and in VR, since 1.1.4, so a page's buttons and links may not respond. We're looking into it
-  ([#67](https://github.com/caitlynmeeks/darkride-interface/issues/67)).
+- **Fixed on the desktop in 1.1.4.2: clicks on web pages in a world land where you point again.** In VR the same fix
+  applies, but a web page standing in a world hasn't been checked with a controller yet. If one doesn't respond in VR,
+  tell us in [#67](https://github.com/caitlynmeeks/darkride-interface/issues/67).
 
 ## VR
 
-- **In VR on Windows, the menu that opens with Y doesn't respond when you pull the trigger.** Its buttons light up
-  when you point at them, but pressing does nothing. It's the same problem as clicks on
-  [web pages in worlds](#web-pages-in-worlds) ([#67](https://github.com/caitlynmeeks/darkride-interface/issues/67)).
-- **In VR on Windows, if the headset loses its connection to your computer, Darkride doesn't come back in the
-  headset.** This can happen after the headset has been off for a few minutes. Take off the headset, quit Darkride on
-  your computer (Ctrl+Q), and start it again ([#68](https://github.com/caitlynmeeks/darkride-interface/issues/68)).
+- **In VR, you can't open other panels from the screen yet.** The VR screen shows People and Explore. To open the
+  Radio, Settings, Avatar or another panel, use **View** > **Panels** on your computer. The Radio then shows on the
+  right of the screen.
+- **In VR, there's no keyboard on the screen yet, and Chat isn't on it.** The VR keyboard appears only when you sign
+  in. To search in Explore, click the Darkride window on your computer with the mouse, then type on your computer's
+  keyboard. To chat, open **View** > **Panels** > **Chat** on your computer.
+- **In VR on Windows, if the headset's link drops, Darkride goes back to your computer's screen.** To use VR again,
+  quit and start Darkride again ([#68](https://github.com/caitlynmeeks/darkride-interface/issues/68)).
 
 ## Vehicles
 
@@ -92,14 +94,14 @@ What doesn't work yet in Darkride 1.1.4.1, and what to do instead. Found somethi
   through a model with any other Collision Shape. People on foot aren't affected, and neither is the monorail or
   anything else that rides a Track. Until it's fixed, either of these gets around it:
   - Put Boxes under the road and along its walls, and turn off their **Visible** setting. For a flat stretch of road,
-    you can instead set the model's **Collision Shape** to **Box**. A Terrain under the road should work too.
+    you can instead set the model's **Collision Shape** to **Box**. A Terrain under the road works too.
   - On your own world server: in its settings page, under **Vehicle physics**, turn off **Run vehicle physics on the
     server** (saving restarts the world server). Each car is then moved by one visitor's Darkride and collides with
     models again, though it looks a little less steady to everyone else.
 - **In VR, your view can slide while you ride.** On the monorail or another vehicle, the view can slide around in
   small circles while the car is stopped, or drift off the car while it moves. If it does, teleport out, or step off
   at a stop. Riding on the desktop isn't affected. We're fixing it.
-- **In VR, keep the tablet closed while you ride.** On a vehicle it can vanish or float away. We're fixing it.
+- **In VR, put the screen away (press Y) before you ride.** It hasn't been checked on vehicles yet.
 - **Things attached to the avatar's sensor joint (`parentJointIndex` 65534) look misplaced to everyone watching while
   the avatar rides a vehicle.** They're right again once the avatar steps off. We're fixing it.
 - **On the monorail, the world can slide a little for a moment as you come into or leave a station.** The car itself
@@ -118,11 +120,8 @@ What doesn't work yet in Darkride 1.1.4.1, and what to do instead. Found somethi
 
 In VR:
 
-- **Play the radio in one place**, the tablet or the desktop, not both. Otherwise two radios play at once.
 - **To hear it in the headset**, make the headset Windows' default sound device. Otherwise it plays through your
   computer's speakers.
-- **The radio lives in the tablet.** Putting the tablet away keeps it playing, but switching the tablet to another app
-  stops it. Stay in the Radio app while you listen.
-- **Radio started in the tablet stops when you switch back to the desktop.** Press **Play** there to start it again.
-- **It can go blank, and its music stop, after the headset is taken off or pushed up.** Take the headset fully off and
-  put it back on, then start the radio again.
+- **Turn the Radio on from your computer** (**View** > **Panels** > **Radio**). It then shows on the right of the VR
+  screen and plays.
+- **The Radio's music can stop when you take the headset off or leave VR.** Press **Play** to start it again.

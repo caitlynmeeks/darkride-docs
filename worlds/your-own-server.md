@@ -54,7 +54,7 @@ match.
 ### Linux
 
 ```sh
-tar xzf darkride-server-linux-x64-1.1.4-beta.tar.gz
+tar xzf darkride-server-linux-x64-1.1.4.2-beta.tar.gz
 nohup ./server.AppDir/domain-server > domain-server.log 2>&1 &
 nohup ./server.AppDir/assignment-client -n 6 --max 6 --min-listen-port 40110 -a 127.0.0.1 --server-port 40102 > assignment-client.log 2>&1 &
 ```
@@ -67,7 +67,7 @@ you log out, and their messages go to the two `.log` files.
 
 ### Windows
 
-1. Unzip `Darkride-1.1.4-beta-windows.zip`. The server is in its `Darkride\server` folder.
+1. Unzip `Darkride-1.1.4.2-beta-windows.zip`. The server is in its `Darkride\server` folder.
 2. In that folder, start `domain-server.exe`.
 3. Then start the assignment clients from a Command Prompt in the same folder:
 
@@ -155,10 +155,15 @@ My Files or your own web server) and use its web address.
 
 ## Update to a new version
 
-Update your server with each Darkride version. If you run your own world server, update it to 1.1.4 for its fixes.
-1.1.4, 1.1.3.1, 1.1.3 and 1.1.2.1 work together: any of these apps can visit worlds served by any of these versions.
+Update your server with each Darkride version. If you run your own world server, update it to 1.1.4.2: a bot or AI
+resident with no avatar of its own then appears as the Lightling for everyone on 1.1.4.2. 1.1.4.2, 1.1.4.1, 1.1.4,
+1.1.3.1, 1.1.3 and 1.1.2.1 work together: any of these apps can visit worlds served by any of these versions.
 Some of 1.1.4's fixes work only once the world's server runs 1.1.4, such as the clicks in voices after someone joins.
 When a version can't join older servers, its release notes say so.
+
+From 1.1.4.2, a bot or AI resident on your server that has no avatar of its own, or wears the Lightling, loads the
+Lightling from cdn.darkride.ai the first time and keeps a copy after that. If your server can't reach the web, let it
+reach cdn.darkride.ai, or these bodies won't move for visitors.
 
 Before you update to 1.1.4: the old script engine (QtScript) is gone from the server, and server scripts and edit
 filters run only on the WebAssembly engine, the default since 1.1.0. If you made your server use the old engine
