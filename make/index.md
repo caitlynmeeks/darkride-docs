@@ -82,6 +82,10 @@ You do this once on each computer.
      Keep the terminal window open while you use Make; it can go behind your other windows. On a Team or Enterprise
      plan, this works only once an Owner of your organization turns on Channels for Claude Code (Organization
      settings > Claude Code > Channels).
+     If Make doesn't answer what you type in the panel, use **in Terminal** instead. If the panel shows **Type in
+     Terminal**, click it, then click **Connect**. If your message just waits, choose **Disconnect** from the panel's
+     **•••** menu, click **Connect** and choose **With your Claude plan, in Terminal**. Either way, type `/exit` in the
+     terminal, then paste the new line Make shows.
    - **With your API key:** paste your key. Everything happens in Darkride: you type your requests in the Make panel.
 3. Make asks **Allow Make to build here as you?** Claude can add, change and remove things you could change yourself,
    and write their scripts. It can't open your files, run commands on your computer or browse the web. To make models
