@@ -1,11 +1,11 @@
 ---
 title: Known issues
-description: What doesn't work yet in Darkride 1.1.4.3, and what to do instead.
+description: What doesn't work yet in Darkride 1.1.4.4, and what to do instead.
 ---
 
 # Known issues
 
-What doesn't work yet in Darkride 1.1.4.3, and what to do instead. Found something that isn't here? Tell us on
+What doesn't work yet in Darkride 1.1.4.4, and what to do instead. Found something that isn't here? Tell us on
 [Darkride's Discord](https://darkride.ai/discord).
 
 ## Installing and opening
@@ -61,7 +61,7 @@ What doesn't work yet in Darkride 1.1.4.3, and what to do instead. Found somethi
 
 - **In Darkside on a 144 Hz display, the frame rate can switch between 144 and 72** a few times in your first minute or
   two. It settles at 72 after that. (In heavy worlds, Darkride runs at half a 144 Hz display's rate on purpose, to keep
-  the picture smooth.)
+  the view smooth.)
 
 ## Make
 
@@ -76,7 +76,7 @@ What doesn't work yet in Darkride 1.1.4.3, and what to do instead. Found somethi
   your mouth. Small avatars, such as the Lightling, aren't affected: to get around it, turn face tracking on (or start
   the script) while you wear a small one, then put on your avatar
   ([#69](https://github.com/caitlynmeeks/darkride-interface/issues/69)).
-- **The first time a Lightling comes into view after you start Darkride, the picture may freeze for a moment** while
+- **The first time a Lightling comes into view after you start Darkride, the view may freeze for a moment** while
   Darkride gets the Lightling's look ready. It happens once per start, and we're working on a fix.
 
 ## Web pages in worlds

@@ -8,16 +8,15 @@ description: "Provides a bi-directional, event-driven communication session betw
 <div class="api-kind" v-pre><strong>Class.</strong> Can be used in: client scripts, entity scripts, avatar scripts, server entity scripts, agents.</div>
 
 <div class="api-text" v-pre><p>Provides a bi-directional, event-driven communication session between the script and another WebSocket connection. It is a near-complete implementation of the WebSocket API described in the Mozilla docs: <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSocket" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/WebSocket</a>.</p>
- <p>Create using <code>new WebSocket(...)</code> in Darkride, client entity, avatar, and server entity scripts, or the <a href="WebSocketServer"><code>WebSocketServer</code></a> class in server entity and assignment client scripts. </p>
-<p><strong>Note:</strong> Does not support secure, <code>wss:</code> protocol.</p>
- <p>On a person's client, a script that came over the network (a world's script) may connect to public hosts only: not to services on that computer or on its network. A refused connection fails as an unreachable one does (onerror, then onclose with code 1006), with the reason in the script's log. A script loaded from the computer itself, or any script of a world served from that computer or its network, keeps every address.</p></div>
+ <p>Create using <code>new WebSocket(...)</code> in client, client entity, avatar, server entity and assignment client scripts. An assignment client script also gets one for each connection to its <a href="WebSocketServer"><code>WebSocketServer</code></a>. </p>
+<p>On a person's client, a script that came over the network (a world's script) may connect to public hosts only: not to services on that computer or on its network. A refused connection fails as an unreachable one does (onerror, then onclose with code 1006), with the reason in the script's log. A script loaded from the computer itself, or any script of a world served from that computer or its network, keeps every address.</p></div>
 
 ```js
-new WebSocket(urlOrWebSocket)
+new WebSocket(url)
 ```
 
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>urlOrWebSocket</code></td><td>string | <a href="">WebSocket</a></td><td><p>The URL to connect to or an existing <a href=""><code>WebSocket</code></a> to reuse the connection of.</p></td></tr>
+<tr><td><code>url</code></td><td>string</td><td><p>The URL to connect to.</p></td></tr>
 </tbody></table></div>
 
 <div class="api-example" v-pre><strong>Example:</strong> <p>Echo a message off websocket.org.</p></div>

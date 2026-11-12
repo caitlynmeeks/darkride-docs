@@ -43,6 +43,17 @@ const scriptTypes = {
 // documented, but not there in this version: left out (scripting, 11-01: Midi isn't registered in 1.1.2)
 const notAvailable = ['Midi']
 
+// Test: only the engine's own test functions (the ones it had before Darkride's team began, 2020) are shown. Every
+// other Test function is one of the team's test hooks, which drive the app's own panels for the team's checks and do
+// nothing for a builder (scripting, 11-11): left out, and each one listed in the report, so a new hook is held back
+// until someone decides, never published by default. (profileRange went with QtScript in 1.1.4.)
+const testShown = ['clear', 'clearCaches', 'endTraceEvent', 'getOtherAvatarsReplicaCount', 'isTextureLoadingComplete',
+  'loadTestScene', 'quit', 'saveObject', 'savePhysicsSimulationStats', 'setMinimumGPUTextureMemStabilityCount',
+  'setOtherAvatarsReplicaCount', 'showMaximized', 'startTraceEvent', 'startTracing', 'stopTracing', 'wait',
+  'waitForConnection', 'waitForDownloadIdle', 'waitForProcessingIdle', 'waitForTextureIdle', 'waitIdle']
+const testHook = (d) => d.memberof === 'Test' && !testShown.includes(d.name)
+const hooksFile = 'test-hooks-left-out.txt' // in .gitignore: the internal names aren't advertised (security, 11-11)
+
 // what the old marketplace left: still in the API, does nothing in Darkride (scripting, 11-01)
 const commerceLine = 'From the old marketplace; does nothing in Darkride.'
 const commerceFunctions = /Certif/
@@ -106,6 +117,7 @@ const splitAt = 170 * 1024
 const splitTypesAt = 60 * 1024
 
 const newReport = () => ({ fixes: new Map(), unresolved: new Map(), deadLinks: new Map(), orphans: new Map(),
+  testHooks: new Map(),
   worlds: 0, interfaceWord: 0, duplicates: 0 })
 let report = newReport()
 const bump = (map, key) => map.set(key, (map.get(key) || 0) + 1)
@@ -168,6 +180,7 @@ globals.file = 'globals'
 const seen = new Set()
 for (const d of doclets) {
   if (d.kind === 'namespace' || d.kind === 'class' || leftOut(d.memberof || d.longname)) continue
+  if (testHook(d)) { bump(report.testHooks, d.name); continue }
   const fingerprint = d.longname + '\u0000' + (d.description || '') + JSON.stringify(d.params || [])
   if (seen.has(fingerprint)) { report.duplicates++; continue }
   seen.add(fingerprint)
@@ -194,7 +207,7 @@ for (const d of doclets) {
     if (commerceProperties.includes(p.name)) p.description = `<em>${commerceLine}</em> ` + (p.description || '')
   }
 }
-const { duplicates, orphans } = report
+const { duplicates, orphans, testHooks } = report
 
 const byName = (a, b) => a.name.localeCompare(b.name, 'en', { sensitivity: 'base' }) || 0
 for (const page of pages.values()) for (const list of [page.functions, page.signals, page.types]) list.sort(byName)
@@ -293,12 +306,25 @@ const interfaceWords = [
   [/\b([Aa])n\s+Interface\s+(script|or)\b/g, (_, a, w) => `${a} client ${w}`],
   [/\bInterface\s+[Ss]cript(s?)\b/g, (_, s) => `client script${s}`],
   [/\bInterface\s+(and|or)\s+(avatar|client|server)\b/g, (_, c, w) => `client ${c} ${w}`],
+  // "Interface" first in a list of kinds of script: "Interface, avatar, and client entity scripts" (scripting, 11-11)
+  [/(^|[.!?]\s+|<p>\s*)Interface,(?=\s+(client|avatar|server|assignment)\b)/g, (_, b) => `${b}Client,`],
+  [/\b([Aa]n\s+)?Interface,(?=\s+(client|avatar|server|assignment)\b)/g, (_, a) => `${a ? a[0] + ' ' : ''}client,`],
   [/\bInterface\s+clients\b/g, () => 'Darkride apps'],
   [/\bInterface\b/g, () => 'Darkride'],
   [/\b([Aa])n\s+Darkride\b/g, (_, a) => `${a} Darkride`],
 ]
 
+// a note's own list of the kinds of script it works in, in the names the pages use (the overview's table)
+const kindWords = [
+  [/Supported Script Types:/g, 'Can be used in:'],
+  [/\bClient Entity Scripts\b/g, 'entity scripts'],
+  [/\bServer Entity Scripts\b/g, 'server entity scripts'],
+  [/\bAvatar Scripts\b/g, 'avatar scripts'],
+  [/\bAssignment Client Scripts\b/g, 'agents'],
+]
+
 const prose = (s) => {
+  for (const [pattern, to] of kindWords) s = s.replace(pattern, to)
   s = s.replace(domainWord, (_, d, end = '') => {
     report.worlds++
     return (d === 'D' ? 'W' : 'w') + 'orld' + end
@@ -534,14 +560,18 @@ the reference notes in Darkride's code (commit \`${shortCommit}\`), so it says w
 
 ## The engine
 
-Scripts are JavaScript. Darkride ${args.version} runs every kind of script on its WebAssembly script engine (QuickJS) by
-default, and it understands modern JavaScript (ES2023). A visitor can switch their own app back to the older QtScript
-engine (**Developer** > **Scripting**), and a server's operator can switch the server; QtScript understands only older
-JavaScript (ES5), so a script meant to run on both should stick to ES5. A world can't choose.
+Scripts are JavaScript. Darkride runs every kind of script on its WebAssembly script engine (QuickJS-NG), which
+understands modern JavaScript (ES2023). The old QtScript engine, and its switch in **Developer** > **Scripting**, went
+away in 1.1.4.
 
+- Scripts load only public files. Every entity script, and every file a script loads (include, require, web
+  requests), must be public: in any world, scripts never load a file marked **Private** in your My Files. Keep Private
+  for your own drafts.
 - IDs (UUIDs) are strings.
 - There's no debugger: use \`print\` and \`console\`.
-- Each call into a script (an update, a timer, a signal) is stopped after 5 seconds of its own running time.
+- In entity scripts and server entity scripts, a call (an update, a timer, a signal) that runs for more than 5 seconds
+  of its own time is stopped, and that script stops with it. In your own client scripts and in agents, such a call
+  is noted once in the log and carries on.
 - Some names still carry the engine's earlier names: the \`hifi://\` address, \`hifi_pbr\` materials, the system
   tablet's \`com.highfidelity.interface.tablet.system\`, \`TIVOLI_\` settings. They're technical names the code needs;
   type them as they are.
@@ -593,7 +623,7 @@ for (const page of pages.values()) {
     section('Types', 'types', page.types, page, page.title).length > splitTypesAt
 }
 giveAnchors()
-report = { ...newReport(), duplicates, orphans }
+report = { ...newReport(), duplicates, orphans, testHooks }
 
 fs.rmSync(outDir, { recursive: true, force: true })
 fs.mkdirSync(outDir, { recursive: true })
@@ -636,9 +666,13 @@ const lines = [
   ...[...report.unresolved].sort().map(([k, v]) => `- ${v} x \`${k}\``),
   '', '## Notes whose namespace has no note of its own (left out)', '',
   ...[...report.orphans].sort().map(([k, v]) => `- ${v} x \`${k}\``),
+  '', '## Test hooks left out', '',
+  `${report.testHooks.size} of the team's Test hooks; a new one stays out until scripting says builders need it. ` +
+    `Their names are in ${hooksFile}, which stays on this computer (never committed: security, 11-11).`,
   '',
 ]
 fs.writeFileSync(path.join(here, 'REPORT.md'), lines.join('\n'))
+fs.writeFileSync(path.join(here, hooksFile), [...report.testHooks.keys()].sort().join('\n') + '\n')
 console.log(lines.slice(0, 4).join('\n'))
 console.log(`fixes ${[...report.fixes.values()].reduce((a, b) => a + b, 0)}, dead links ${report.deadLinks.size}, ` +
   `unresolved ${report.unresolved.size}, orphans ${report.orphans.size}; see tools/api-reference/REPORT.md`)

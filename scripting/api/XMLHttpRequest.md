@@ -40,29 +40,6 @@ req.open("GET", URL);
 req.send();
 ```
 
-<div class="api-example" v-pre><strong>Example:</strong> <p>Get a web page's HTML — alternative method.</p></div>
-
-```js
-var URL = "https://darkride.ai/";
-
-var req = new XMLHttpRequest();
-req.requestComplete.connect(function () {
-    if (req.status === 200) {
-        print("Success");
-        print("Content type:", req.getResponseHeader("content-type"));
-        print("Content:", req.responseText.slice(0, 100), "...");
-
-    } else {
-        print("Error", req.status, req.statusText);
-    }
-
-    req = null;
-});
-
-req.open("GET", URL);
-req.send();
-```
-
 ## Properties {#properties}
 
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
@@ -83,6 +60,9 @@ req.send();
 <p>Note: This is called in addition to any function set for <code>onreadystatechange</code>.</p>
 <p></p></td></tr>
 <tr><td><code>onreadystatechange</code></td><td><a href="#onReadyStateChangeCallback">XMLHttpRequest~onReadyStateChangeCallback</a></td><td><p>Function called when the request's ready state changes.</p></td></tr>
+<tr><td><code>onload</code></td><td>function</td><td><p>Function called when the request is complete without a network error.</p></td></tr>
+<tr><td><code>onerror</code></td><td>function</td><td><p>Function called when the request is complete with a network error.</p></td></tr>
+<tr><td><code>onloadend</code></td><td>function</td><td><p>Function called when the request is complete, after <code>onload</code> or <code>onerror</code>.</p></td></tr>
 </tbody></table></div>
 
 ## Methods {#functions}
@@ -178,24 +158,6 @@ XMLHttpRequest.setRequestHeader(name, value)
 
 </div>
 
-## Signals {#signals}
-
-Connect a function to a signal to run it each time the signal fires; disconnect it the same way with `disconnect`.
-
-<div class="api-entry">
-
-### requestComplete {#requestComplete}
-
-```js
-XMLHttpRequest.requestComplete.connect(function () {
-    ...
-});
-```
-
-<div class="api-text" v-pre><p>Triggered when the request is complete — with or without error (incl. timeout).</p></div>
-
-</div>
-
 ## Types {#types}
 
 <div class="api-entry">
@@ -203,7 +165,8 @@ XMLHttpRequest.requestComplete.connect(function () {
 ### NetworkError {#NetworkError}
 
 <div class="api-text" v-pre><p>The type of network error.</p>
- <table> <thead> <tr><th>Value</th><th>Name</th><th>Description</th></tr>
+ <p> </p>
+<table> <thead> <tr><th>Value</th><th>Name</th><th>Description</th></tr>
  </thead>
  <tbody> <tr><td><code>0</code></td><td>NoError</td><td>No error.</td></tr>
  <tr><td><code>1</code></td><td>ConnectionRefusedError</td><td>The server refused the connection.</td></tr>
@@ -240,7 +203,8 @@ XMLHttpRequest.requestComplete.connect(function () {
  <tr><td><code>399</code></td><td>ProtocolFailure</td><td>Protocol error.</td></tr>
  <tr><td><code>499</code></td><td>UnknownServerError</td><td>Unknown server response error.</td></tr>
  </tbody>
- </table></div>
+ </table>
+<p></p></div>
 <div class="api-type" v-pre><strong>Type:</strong> number</div>
 
 </div>

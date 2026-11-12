@@ -14,18 +14,3 @@ description: "Joint rotations in one frame of an AnimationObject."
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>rotations</code></td><td>Array&lt;<a href="Quat">Quat</a>&gt;</td><td><p>Joint rotations. <em>Read-only.</em></p></td></tr>
 </tbody></table></div>
-
-## Methods {#functions}
-
-<div class="api-entry">
-
-### getRotations {#getRotations}
-
-```js
-AnimationFrameObject.getRotations()
-```
-
-<div class="api-text" v-pre><p>Gets the joint rotations in the animation frame.</p></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> Array&lt;<a href="Quat">Quat</a>&gt; <p>The joint rotations in the animation frame.</p></div>
-
-</div>

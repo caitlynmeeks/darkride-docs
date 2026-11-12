@@ -393,19 +393,3 @@ GraphicsMeshPart.translate(translation)
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Graphics#MeshExtents">Graphics.MeshExtents</a> <p>The rseulting mesh extents, in model coordinates.</p></div>
 
 </div>
-
-<div class="api-entry">
-
-### updateVertexAttributes {#updateVertexAttributes}
-
-```js
-GraphicsMeshPart.updateVertexAttributes(callback)
-```
-
-<div class="api-text" v-pre><p>Updates vertex attributes by calling a function for each vertex in the <em>whole</em> mesh (i.e., the parent and mesh parts). The function can return modified attributes to update the vertex with.</p></div>
-<div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>callback</code></td><td><a href="GraphicsMesh#updateVertexAttributesCallback">GraphicsMesh~updateVertexAttributesCallback</a></td><td><p>The function to call for each vertex.</p></td></tr>
-</tbody></table></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> number <p>The number of vertices the callback was called for.</p></div>
-
-</div>

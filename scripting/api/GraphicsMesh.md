@@ -93,22 +93,6 @@ GraphicsMesh.findNearbyVertexIndices(origin, epsilon?)
 
 <div class="api-entry">
 
-### forEachVertex {#forEachVertex}
-
-```js
-GraphicsMesh.forEachVertex(callback)
-```
-
-<div class="api-text" v-pre><p>Calls a function for each vertex.</p></div>
-<div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>callback</code></td><td><a href="#forEachVertexCallback">GraphicsMesh~forEachVertexCallback</a></td><td><p>The function to call for each vertex.</p></td></tr>
-</tbody></table></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> number <p>The number of vertices the callback was called for.</p></div>
-
-</div>
-
-<div class="api-entry">
-
 ### getIndices {#getIndices}
 
 ```js
@@ -257,53 +241,6 @@ GraphicsMesh.setVertexProperty(index, name, value)
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the vertex attribute value was set, <code>false</code> if it wasn't.</p></div>
 <div class="api-returns" v-pre><strong>Throws:</strong>  <p>Throws an error if the <code>index</code> is invalid or <code>name</code> is invalid or isn't used in the mesh.</p></div>
-
-</div>
-
-<div class="api-entry">
-
-### updateVertexAttributes {#updateVertexAttributes}
-
-```js
-GraphicsMesh.updateVertexAttributes(callback)
-```
-
-<div class="api-text" v-pre><p>Updates vertex attributes by calling a function for each vertex. The function can return modified attributes to update the vertex with.</p></div>
-<div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>callback</code></td><td><a href="#updateVertexAttributesCallback">GraphicsMesh~updateVertexAttributesCallback</a></td><td><p>The function to call for each vertex.</p></td></tr>
-</tbody></table></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> number <p>The number of vertices the callback was called for.</p></div>
-
-</div>
-
-## Types {#types}
-
-<div class="api-entry">
-
-### forEachVertexCallback {#forEachVertexCallback}
-
-<div class="api-text" v-pre><p>Called for each vertex when <a href="#updateVertexAttributes"><code>GraphicsMesh.updateVertexAttributes</code></a> is called.</p></div>
-<div class="api-type" v-pre><strong>Type:</strong> function</div>
-<div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>attributes</code></td><td>Object&lt;<a href="Graphics#BufferTypeName">Graphics.BufferTypeName</a>, <a href="Graphics#BufferType">Graphics.BufferType</a>&gt;</td><td><p>The attributes of the vertex.</p></td></tr>
-<tr><td><code>index</code></td><td>number</td><td><p>The vertex index.</p></td></tr>
-<tr><td><code>properties</code></td><td>object</td><td><p>The properties of the mesh, per <a href=""><code>GraphicsMesh</code></a>.</p></td></tr>
-</tbody></table></div>
-
-</div>
-
-<div class="api-entry">
-
-### updateVertexAttributesCallback {#updateVertexAttributesCallback}
-
-<div class="api-text" v-pre><p>Called for each vertex when <a href="#updateVertexAttributes"><code>GraphicsMesh.updateVertexAttributes</code></a> is called. The value returned by the script function should be the modified attributes to update the vertex with, or <code>false</code> to not update the particular vertex.</p></div>
-<div class="api-type" v-pre><strong>Type:</strong> function</div>
-<div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>attributes</code></td><td>Object&lt;<a href="Graphics#BufferTypeName">Graphics.BufferTypeName</a>, <a href="Graphics#BufferType">Graphics.BufferType</a>&gt;</td><td><p>The attributes of the vertex.</p></td></tr>
-<tr><td><code>index</code></td><td>number</td><td><p>The vertex index.</p></td></tr>
-<tr><td><code>properties</code></td><td>object</td><td><p>The properties of the mesh, per <a href=""><code>GraphicsMesh</code></a>.</p></td></tr>
-</tbody></table></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> Object&lt;<a href="Graphics#BufferTypeName">Graphics.BufferTypeName</a>, <a href="Graphics#BufferType">Graphics.BufferType</a>&gt; | boolean <p>The attribute values to update the vertex with, or <code>false</code> to not update the vertex.</p></div>
 
 </div>
 

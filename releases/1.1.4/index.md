@@ -60,7 +60,7 @@ Avatar Link…** (it was **Wear from Link…**), then **Keep in My Avatars** if 
 - On a small texture budget (the Potato preset), a heavy world's loading screen ends in seconds instead of running to
   its limit, and textures no longer flicker between sharp and blurry.
 - On a 144 Hz display, heavy worlds run at 72 frames a second. Darkride drops to half the display's rate shortly after
-  you arrive in a heavy world such as Port Amarelle, which keeps the picture smooth. Lighter worlds keep 144.
+  you arrive in a heavy world such as Port Amarelle, which keeps the view smooth. Lighter worlds keep 144.
 
 ## Scripts
 

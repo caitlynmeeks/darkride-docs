@@ -1,23 +1,27 @@
 ---
 title: "Scripting API reference"
-description: "Every namespace, class and function a Darkride script can use, as of 1.1.2."
+description: "Every namespace, class and function a Darkride script can use, as of 1.1.4.4."
 ---
 
 # Scripting API reference
 
-Every namespace, class, function and signal a Darkride script can use, as of Darkride 1.1.2. It's built from
-the reference notes in Darkride's code (commit `02429ffa29`), so it says what that version does.
+Every namespace, class, function and signal a Darkride script can use, as of Darkride 1.1.4.4. It's built from
+the reference notes in Darkride's code (commit `2b658cd31c`), so it says what that version does.
 
 ## The engine
 
-Scripts are JavaScript. Darkride 1.1.2 runs every kind of script on its WebAssembly script engine (QuickJS) by
-default, and it understands modern JavaScript (ES2023). A visitor can switch their own app back to the older QtScript
-engine (**Developer** > **Scripting**), and a server's operator can switch the server; QtScript understands only older
-JavaScript (ES5), so a script meant to run on both should stick to ES5. A world can't choose.
+Scripts are JavaScript. Darkride runs every kind of script on its WebAssembly script engine (QuickJS-NG), which
+understands modern JavaScript (ES2023). The old QtScript engine, and its switch in **Developer** > **Scripting**, went
+away in 1.1.4.
 
+- Scripts load only public files. Every entity script, and every file a script loads (include, require, web
+  requests), must be public: in any world, scripts never load a file marked **Private** in your My Files. Keep Private
+  for your own drafts.
 - IDs (UUIDs) are strings.
 - There's no debugger: use `print` and `console`.
-- Each call into a script (an update, a timer, a signal) is stopped after 5 seconds of its own running time.
+- In entity scripts and server entity scripts, a call (an update, a timer, a signal) that runs for more than 5 seconds
+  of its own time is stopped, and that script stops with it. In your own client scripts and in agents, such a call
+  is noted once in the log and carries on.
 - Some names still carry the engine's earlier names: the `hifi://` address, `hifi_pbr` materials, the system
   tablet's `com.highfidelity.interface.tablet.system`, `TIVOLI_` settings. They're technical names the code needs;
   type them as they are.
@@ -167,7 +171,7 @@ needs; your own client scripts can use everything. The pages don't show this yet
 | [Uuid](./Uuid) | The Uuid API provides facilities for working with UUIDs. |
 | [Vec3](./Vec3) | The Vec3 API provides facilities for generating and manipulating 3-dimensional vectors. |
 | [WebSocket](./WebSocket) | Provides a bi-directional, event-driven communication session between the script and another WebSocket connection. |
-| [WebSocketServer](./WebSocketServer) | Manages WebSockets in server entity and assignment client scripts. |
+| [WebSocketServer](./WebSocketServer) | Manages WebSockets in assignment client scripts: a listening socket that other scripts connect to. |
 | [Window](./Window) | The Window API provides various facilities not covered elsewhere, including: window dimensions, window focus, camera view, announcements, user connections, common dialog boxes, snapshots, file import, |
 | [Workload](./Workload) |  |
 | [XMLHttpRequest](./XMLHttpRequest) | Provides a means to interact with web servers. |

@@ -119,7 +119,7 @@ you chose **in Darkride** or your API key.
 
 Make works better when you:
 
-- say the size, the colours and the style;
+- say the size, the colors and the style;
 - ask for one thing at a time, then for changes ("make the awning blue");
 - stand where you want it: the model appears in front of you.
 

@@ -29,7 +29,7 @@ Messages.sendData(channel, data, localOnly?)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>channel</code></td><td>string</td><td></td><td><p>The channel to send the data on.</p></td></tr>
 <tr><td><code>data</code></td><td>object</td><td></td><td><p>The data to send. The data is handled as a byte stream, for example, as may be provided via a JavaScript <code>Int8Array</code> object.</p></td></tr>
-<tr><td><code>localOnly</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p>If <code>false</code> then the message is sent to all Darkride, client entity, server entity, and assignment client scripts in the world. </p>
+<tr><td><code>localOnly</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p>If <code>false</code> then the message is sent to all client, client entity, server entity, and assignment client scripts in the world. </p>
 <p>If <code>true</code> then: if sent from a client or client entity script it is received by all client and client entity scripts; if sent from a server entity script it is received by all entity server scripts; and if sent from an assignment client script it is received only by that same assignment client script.</p>
 <p></p></td></tr>
 </tbody></table></div>
@@ -101,7 +101,7 @@ Messages.sendMessage(channel, message, localOnly?)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>channel</code></td><td>string</td><td></td><td><p>The channel to send the message on.</p></td></tr>
 <tr><td><code>message</code></td><td>string</td><td></td><td><p>The message to send.</p></td></tr>
-<tr><td><code>localOnly</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p>If <code>false</code> then the message is sent to all Darkride, client entity, server entity, and assignment client scripts in the world. </p>
+<tr><td><code>localOnly</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p>If <code>false</code> then the message is sent to all client, client entity, server entity, and assignment client scripts in the world. </p>
 <p>If <code>true</code> then: if sent from a client or client entity script it is received by all client and client entity scripts; if sent from a server entity script it is received by all entity server scripts; and if sent from an assignment client script it is received only by that same assignment client script.</p>
 <p></p></td></tr>
 </tbody></table></div>

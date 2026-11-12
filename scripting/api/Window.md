@@ -30,7 +30,9 @@ description: "The Window API provides various facilities not covered elsewhere, 
 Window.alert(message?)
 ```
 
-<div class="api-text" v-pre><p>Displays a dialog with the specified message and an "OK" button. The dialog is non-modal; the script continues without waiting for a user response.</p></div>
+<div class="api-text" v-pre><p>Displays a dialog with the specified message and an "OK" button. The dialog is non-modal; the script continues without waiting for a user response. </p>
+<p>A world's script (an entity's script, not one the user runs) gets a dialog of the world's own: titled "&lt;world&gt; asks", its message shown as plain text, in a look unlike the app's. One of a world's dialogs shows at a time: while one is open, after three in 30 seconds, or once the user has ticked "Don't let this world show more dialogs" (offered from the second), the call is refused as if the user had answered Cancel (<code>confirm</code> gives <code>false</code>, <code>prompt</code> <code>null</code>). Leaving the world answers Cancel on its open dialog. The same holds for <a href="#confirm">confirm</a>, <a href="#prompt">prompt</a> and <a href="#promptAsync">promptAsync</a>.</p>
+<p></p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>message</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>The message to display.</p></td></tr>
 </tbody></table></div>

@@ -1003,7 +1003,7 @@ var entity = Entities.addEntity({
 <pre>function filter(properties) {&#10;    // Check and edit properties object values,&#10;    // e.g., properties.modelURL, as required.&#10;    return properties;&#10;}&#10;</pre>
 <p></p></td></tr>
 <tr><td><code>avatarPriority</code></td><td><a href="#AvatarPriorityMode">Entities.AvatarPriorityMode</a></td><td><code>&quot;inherit&quot;</code></td><td><p>Configures the priority of updates from avatars in the zone to other clients.</p></td></tr>
-<tr><td><code>zoneCulling</code></td><td><a href="#ZoneCullingMode">Entities.ZoneCullingMode</a></td><td><code>&quot;inherit&quot;</code></td><td><p>Configures the culling mode of entities inside the zone.</p></td></tr>
+<tr><td><code>zoneCullingMode</code></td><td><a href="#ZoneCullingMode">Entities.ZoneCullingMode</a></td><td><code>&quot;inherit&quot;</code></td><td><p>Zone culling: while you stand in the zone, whether the world's entities outside it are drawn and, with <code>"outsideNoLoad"</code>, downloaded (ZONE-CULLING.md). The innermost zone whose mode is not <code>"inherit"</code> decides.</p></td></tr>
 </tbody></table></div>
 
 <div class="api-example" v-pre><strong>Example:</strong> <p>Create a zone that casts a red key light along the x-axis.</p></div>
@@ -1153,7 +1153,7 @@ var zone = Entities.addEntity({
 <tr><td><code>intensity</code></td><td>number</td><td><code>1</code></td><td><p>The intensity of the light.</p></td></tr>
 <tr><td><code>direction</code></td><td><a href="Vec3">Vec3</a></td><td></td><td><p>The direction the light is shining.</p></td></tr>
 <tr><td><code>castShadows</code></td><td>boolean</td><td><code>true</code></td><td><p><code>true</code> if shadows are cast, <code>false</code> if they aren't. Shadows are cast by avatars, plus <a href="#EntityProperties-Model">Model</a> and <a href="#EntityProperties-Shape">Shape</a> entities that have their <code><a href="#EntityProperties">canCastShadow</a></code> property set to <code>true</code>.</p></td></tr>
-<tr><td><code>shadowBias</code></td><td>number</td><td><code>0.5</code></td><td><p>The bias of the shadows cast by the light, range <code>0.0</code> – <code>1.0</code>. This fine-tunes shadows cast by the light, to prevent shadow acne and peter panning.</p></td></tr>
+<tr><td><code>shadowBias</code></td><td>number</td><td><code>0.5</code></td><td><p>Fine-tunes where the key light starts its shadows, range <code>0.0</code> – <code>1.0</code>. The default, <code>0.5</code>, suits most worlds. If you see speckled stripes on lit surfaces, raise it a little. If a shadow doesn't quite meet the thing casting it, lower it. (The value scales a bias measured in shadow-map texels.)</p></td></tr>
 <tr><td><code>shadowMaxDistance</code></td><td>number</td><td><code>40.0</code></td><td><p>The maximum distance from the camera position at which shadows will be computed, range <code>1.0</code> – <code>250.0</code>. Higher values cover more of the scene but with less precision.</p></td></tr>
 </tbody></table></div>
 
@@ -1572,9 +1572,10 @@ var zone = Entities.addEntity({
 <div class="api-text" v-pre><p>How zone culling is applied in a <a href="#EntityProperties-Zone">Zone</a> entity.</p>
  <table> <thead> <tr><th>Value</th><th>Description</th></tr>
  </thead>
- <tbody> <tr><td><code>"inherit"</code></td><td>Inherits whatever zone culling paroperties are outside this zone.</td></tr>
- <tr><td><code>"outside"</code></td><td>Culls everything outside of this + any outer zones.</td></tr>
- <tr><td><code>"disabled"</code></td><td>Culls nothing, including overriding outer zone culling..</td></tr>
+ <tbody> <tr><td><code>"inherit"</code></td><td>Nothing of its own: the zone around it decides (the default).</td></tr>
+ <tr><td><code>"outside"</code></td><td>While you stand in this zone, the world's entities outside it are not drawn.</td></tr>
+ <tr><td><code>"disabled"</code></td><td>Nothing is culled while you stand in this zone, even inside a culling zone.</td></tr>
+ <tr><td><code>"outsideNoLoad"</code></td><td>As <code>"outside"</code>, and while you are inside, the world beyond the zone is not downloaded either (what was already loaded stays; leaving the zone loads the rest).</td></tr>
  </tbody>
  </table></div>
 <div class="api-type" v-pre><strong>Type:</strong> string</div>

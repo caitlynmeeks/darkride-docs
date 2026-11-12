@@ -12,7 +12,7 @@ duck. A character whose words come from a language model or another neural netwo
 it uses the same accounts and tools, but people are told an AI is speaking.
 
 Today you can run a bot two ways, both signed in to its own bot account (below). A proper bot API, where your program
-drives a body over one WebSocket in any language, is in preview; see "Coming next".
+drives a body over one WebSocket in any language, is only an early version so far; see "Coming next".
 
 ## 1. Make a bot account (5 minutes a bot)
 
@@ -206,7 +206,7 @@ another, pausing when the visitor falls behind: the standard drama manager patte
 - **The bot's name is its account's username**: a script can't change it. For a friendlier label, a text entity the
   bot moves with it.
 
-## Coming next: the bot API (preview)
+## Coming next: the bot API (early version)
 
 Your program, in any language, opens a WebSocket to the world's **resident service**, sends `hello` with the bot's name
 and key, and its body walks into the world. Then it sends requests and gets events: `go_to`, `route` (waypoints at a

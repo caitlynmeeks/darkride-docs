@@ -359,6 +359,24 @@ location.lookupResultIsOffline.connect(function (name, isUser) {
 
 <div class="api-entry">
 
+### lookupResultIsRefused {#lookupResultIsRefused}
+
+```js
+location.lookupResultIsRefused.connect(function (name, isUser) {
+    ...
+});
+```
+
+<div class="api-text" v-pre><p>Triggered when looking up the details of a metaverse user or location to go to has completed and the metaverse refused it because the sign-in has ended (an answer of 401): the place may well exist.</p></div>
+<div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>name</code></td><td>string</td><td><p>The place's or user's name that was looked up, or <code>""</code> for a world ID.</p></td></tr>
+<tr><td><code>isUser</code></td><td>boolean</td><td><p><code>true</code> if a user was looked up, <code>false</code> if a place or world.</p></td></tr>
+</tbody></table></div>
+
+</div>
+
+<div class="api-entry">
+
 ### lookupResultsFinished {#lookupResultsFinished}
 
 ```js

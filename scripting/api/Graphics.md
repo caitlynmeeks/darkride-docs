@@ -256,68 +256,11 @@ Graphics.updateModel(id, model)
 
 <div class="api-entry">
 
-### Material {#Material}
-
-<div class="api-text" v-pre><p>A material in a <a href="GraphicsModel"><code>GraphicsModel</code></a>.</p></div>
-<div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>name</code></td><td>string</td><td></td><td><p>The name of the material.</p></td></tr>
-<tr><td><code>model</code></td><td>string</td><td></td><td><p>Different material models support different properties and rendering modes. Supported models are: <code>"hifi_pbr"</code> and <code>"hifi_shader_simple"</code>.</p></td></tr>
-<tr><td><code>albedo</code> <em>optional</em></td><td><a href="Vec3">Vec3</a> | string</td><td></td><td><p>The albedo color. Component values are in the range <code>0.0</code> – <code>1.0</code>. If <code>"fallthrough"</code> then it falls through to the material below.</p></td></tr>
-<tr><td><code>opacity</code> <em>optional</em></td><td>number | string</td><td></td><td><p>The opacity, range <code>0.0</code> – <code>1.0</code>. If <code>"fallthrough"</code> then it falls through to the material below.</p></td></tr>
-<tr><td><code>opacityCutoff</code> <em>optional</em></td><td>number | string</td><td></td><td><p>The opacity cutoff threshold used to determine the opaque texels of the <code>opacityMap</code> when <code>opacityMapMode</code> is <code>"OPACITY_MAP_MASK"</code>. Range <code>0.0</code> – <code>1.0</code>. If <code>"fallthrough"</code> then it falls through to the material below. <code>"hifi_pbr"</code> model only.</p></td></tr>
-<tr><td><code>roughness</code> <em>optional</em></td><td>number | string</td><td></td><td><p>The roughness, range <code>0.0</code> – <code>1.0</code>. If <code>"fallthrough"</code> then it falls through to the material below. <code>"hifi_pbr"</code> model only.</p></td></tr>
-<tr><td><code>metallic</code> <em>optional</em></td><td>number | string</td><td></td><td><p>The metallicness, range <code>0.0</code> – <code>1.0</code>. If <code>"fallthrough"</code> then it falls through to the material below. <code>"hifi_pbr"</code> model only.</p></td></tr>
-<tr><td><code>scattering</code> <em>optional</em></td><td>number | string</td><td></td><td><p>The scattering, range <code>0.0</code> – <code>1.0</code>. If <code>"fallthrough"</code> then it falls through to the material below. <code>"hifi_pbr"</code> model only.</p></td></tr>
-<tr><td><code>unlit</code> <em>optional</em></td><td>boolean | string</td><td></td><td><p><code>true</code> if the material is unaffected by lighting, <code>false</code> if it it is lit by the key light and local lights. If <code>"fallthrough"</code> then it falls through to the material below. <code>"hifi_pbr"</code> model only.</p></td></tr>
-<tr><td><code>emissive</code> <em>optional</em></td><td><a href="Vec3">Vec3</a> | string</td><td></td><td><p>The emissive color, i.e., the color that the material emits. Component values are in the range <code>0.0</code> – <code>1.0</code>. If <code>"fallthrough"</code> then it falls through to the material below. <code>"hifi_pbr"</code> model only.</p></td></tr>
-<tr><td><code>albedoMap</code> <em>optional</em></td><td>string</td><td></td><td><p>The URL of the albedo texture image. If <code>"fallthrough"</code> then it falls through to the material below. <code>"hifi_pbr"</code> model only.</p></td></tr>
-<tr><td><code>opacityMap</code> <em>optional</em></td><td>string</td><td></td><td><p>The URL of the opacity texture image. <code>"hifi_pbr"</code> model only.</p></td></tr>
-<tr><td><code>opacityMapMode</code> <em>optional</em></td><td>string</td><td></td><td><p>The mode defining the interpretation of the opacity map. Values can be: </p>
-<ul> <li><code>"OPACITY_MAP_OPAQUE"</code> for ignoring the opacity map information.</li>
- <li><code>"OPACITY_MAP_MASK"</code> for using the <code>opacityMap</code> as a mask, where only the texel greater than <code>opacityCutoff</code> are visible and rendered opaque.</li>
- <li><code>"OPACITY_MAP_BLEND"</code> for using the <code>opacityMap</code> for alpha blending the material surface with the background.</li>
- <li><code>"OPACITY_MAP_MASK_BLEND"</code> for both: the texels below <code>opacityCutoff</code> are cut out and the rest alpha blended.</li>
- </ul>
- If <code>"fallthrough"</code> then it falls through to the material below. <code>"hifi_pbr"</code> model only.<p></p></td></tr>
-<tr><td><code>occlusionMap</code> <em>optional</em></td><td>string</td><td></td><td><p>The URL of the occlusion texture image. If <code>"fallthrough"</code> then it falls through to the material below. <code>"hifi_pbr"</code> model only.</p></td></tr>
-<tr><td><code>lightMap</code> <em>optional</em></td><td>string</td><td></td><td><p>The URL of the light map texture image. If <code>"fallthrough"</code> then it falls through to the material below. <code>"hifi_pbr"</code> model only.</p></td></tr>
-<tr><td><code>lightmapParams</code> <em>optional</em></td><td>string</td><td></td><td><p>Parameters for controlling how <code>lightMap</code> is used. If <code>"fallthrough"</code> then it falls through to the material below. <code>"hifi_pbr"</code> model only. </p>
-<p><em>Currently not used.</em></p>
-<p></p></td></tr>
-<tr><td><code>scatteringMap</code> <em>optional</em></td><td>string</td><td></td><td><p>The URL of the scattering texture image. If <code>"fallthrough"</code> then it falls through to the material below. <code>"hifi_pbr"</code> model only.</p></td></tr>
-<tr><td><code>emissiveMap</code> <em>optional</em></td><td>string</td><td></td><td><p>The URL of the emissive texture image. If <code>"fallthrough"</code> then it falls through to the material below. <code>"hifi_pbr"</code> model only.</p></td></tr>
-<tr><td><code>metallicMap</code> <em>optional</em></td><td>string</td><td></td><td><p>The URL of the metallic texture image. If <code>"fallthrough"</code> then it and <code>specularMap</code> fall through to the material below. Only use one of <code>metallicMap</code> and <code>specularMap</code>. <code>"hifi_pbr"</code> model only.</p></td></tr>
-<tr><td><code>specularMap</code> <em>optional</em></td><td>string</td><td></td><td><p>The URL of the specular texture image. Only use one of <code>metallicMap</code> and <code>specularMap</code>. <code>"hifi_pbr"</code> model only.</p></td></tr>
-<tr><td><code>roughnessMap</code> <em>optional</em></td><td>string</td><td></td><td><p>The URL of the roughness texture image. If <code>"fallthrough"</code> then it and <code>glossMap</code> fall through to the material below. Only use one of <code>roughnessMap</code> and <code>glossMap</code>. <code>"hifi_pbr"</code> model only.</p></td></tr>
-<tr><td><code>glossMap</code> <em>optional</em></td><td>string</td><td></td><td><p>The URL of the gloss texture image. Only use one of <code>roughnessMap</code> and <code>glossMap</code>. <code>"hifi_pbr"</code> model only.</p></td></tr>
-<tr><td><code>normalMap</code> <em>optional</em></td><td>string</td><td></td><td><p>The URL of the normal texture image. If <code>"fallthrough"</code> then it and <code>bumpMap</code> fall through to the material below. Only use one of <code>normalMap</code> and <code>bumpMap</code>. <code>"hifi_pbr"</code> model only.</p></td></tr>
-<tr><td><code>bumpMap</code> <em>optional</em></td><td>string</td><td></td><td><p>The URL of the bump texture image. Only use one of <code>normalMap</code> and <code>bumpMap</code>. <code>"hifi_pbr"</code> model only.</p></td></tr>
-<tr><td><code>materialParams</code> <em>optional</em></td><td>string</td><td></td><td><p>Parameters for controlling the material projection and repetition. If <code>"fallthrough"</code> then it falls through to the material below. <code>"hifi_pbr"</code> model only. </p>
-<p><em>Currently not used.</em></p>
-<p></p></td></tr>
-<tr><td><code>cullFaceMode</code> <em>optional</em></td><td>string</td><td><code>&quot;CULL_BACK&quot;</code></td><td><p>Specifies Which faces of the geometry to render. Values can be: </p>
-<ul> <li><code>"CULL_NONE"</code> to render both sides of the geometry.</li>
- <li><code>"CULL_FRONT"</code> to cull the front faces of the geometry.</li>
- <li><code>"CULL_BACK"</code> (the default) to cull the back faces of the geometry.</li>
- </ul>
- If <code>"fallthrough"</code> then it falls through to the material below. <code>"hifi_pbr"</code> model only.<p></p></td></tr>
-<tr><td><code>texCoordTransform0</code> <em>optional</em></td><td><a href="Mat4">Mat4</a> | string</td><td></td><td><p>The transform to use for all of the maps apart from <code>occlusionMap</code> and <code>lightMap</code>. If <code>"fallthrough"</code> then it falls through to the material below. <code>"hifi_pbr"</code> model only.</p></td></tr>
-<tr><td><code>texCoordTransform1</code> <em>optional</em></td><td><a href="Mat4">Mat4</a> | string</td><td></td><td><p>The transform to use for <code>occlusionMap</code> and <code>lightMap</code>. If <code>"fallthrough"</code> then it falls through to the material below. <code>"hifi_pbr"</code> model only.</p></td></tr>
-<tr><td><code>procedural</code></td><td>string</td><td></td><td><p>The definition of a procedural shader material. <code>"hifi_shader_simple"</code> model only. </p>
-<p><em>Currently not used.</em></p>
-<p></p></td></tr>
-<tr><td><code>defaultFallthrough</code></td><td>boolean</td><td></td><td><p><code>true</code> if all properties fall through to the material below unless they are set, <code>false</code> if properties respect their individual fall-through settings.</p></td></tr>
-</tbody></table></div>
-
-</div>
-
-<div class="api-entry">
-
 ### MaterialLayer {#MaterialLayer}
 
 <div class="api-text" v-pre><p>A material layer.</p></div>
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>material</code></td><td><a href="#Material">Graphics.Material</a></td><td><p>The layer's material.</p></td></tr>
+<tr><td><code>material</code></td><td>Graphics.Material</td><td><p>The layer's material.</p></td></tr>
 <tr><td><code>priority</code></td><td>number</td><td><p>The priority of the layer. If multiple materials are applied to a mesh part, only the layer with the highest priority is applied, with materials of the same priority randomly assigned.</p></td></tr>
 </tbody></table></div>
 
@@ -356,7 +299,3 @@ Graphics.updateModel(id, model)
 <div class="api-type" v-pre><strong>Type:</strong> string</div>
 
 </div>
-
-::: tip Names from the engine's history
-Names and addresses with `hifi` or `tivoli` in them, such as `hifi_pbr`, a `hifi://` address or an example file's address, come from the engine's history and still work. Type them as they are.
-:::

@@ -44,6 +44,19 @@ Panels.isOpen(name)
 
 <div class="api-entry">
 
+### isScreenUp {#isScreenUp}
+
+```js
+Panels.isScreenUp()
+```
+
+<div class="api-text" v-pre><p>Whether the VR screen is up (in the headset it stands for the tablet in toolbar mode: tabletUI.js leaves its "shown" alone while it is).</p></div>
+<div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> while the VR screen is up.</p></div>
+
+</div>
+
+<div class="api-entry">
+
 ### names {#names}
 
 ```js

@@ -8,7 +8,7 @@ description: "The Avatar API is used to manipulate scriptable avatars on the wor
 <div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: agents.</div>
 
 <div class="api-text" v-pre><p>The <code>Avatar</code> API is used to manipulate scriptable avatars on the world. This API is a subset of the <a href="MyAvatar"><code>MyAvatar</code></a> API. To enable this API, set <a href="Agent">Agent.isAvatar</a> to <code>true</code>.</p>
- <p>For Darkride, client entity, and avatar scripts, see <a href="MyAvatar"><code>MyAvatar</code></a>.</p></div>
+ <p>For client, client entity, and avatar scripts, see <a href="MyAvatar"><code>MyAvatar</code></a>.</p></div>
 
 <div class="api-example" v-pre><strong>Example:</strong> <p>Create a scriptable avatar.</p></div>
 

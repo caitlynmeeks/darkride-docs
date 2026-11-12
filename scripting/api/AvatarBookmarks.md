@@ -37,6 +37,23 @@ print("Bookmark data: " + JSON.stringify(bookmarkData));
 
 <div class="api-entry">
 
+### addBookmarkForLink {#addBookmarkForLink}
+
+```js
+AvatarBookmarks.addBookmarkForLink(bookmarkName, avatarUrl)
+```
+
+<div class="api-text" v-pre><p>Adds a new avatar bookmark for an avatar given by its link, not the one you're wearing: the avatar model's URL at scale 1, with no avatar entities. An existing bookmark is never replaced.</p></div>
+<div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>bookmarkName</code></td><td>string</td><td><p>The name of the new avatar bookmark (case sensitive).</p></td></tr>
+<tr><td><code>avatarUrl</code></td><td>string</td><td><p>The URL of the avatar model (an .fst or a model file).</p></td></tr>
+</tbody></table></div>
+<div class="api-returns" v-pre><strong>Returns:</strong> boolean <p><code>true</code> if the bookmark was added, <code>false</code> if the name or URL is empty or the name is in use already.</p></div>
+
+</div>
+
+<div class="api-entry">
+
 ### getBookmark {#getBookmark}
 
 ```js

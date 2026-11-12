@@ -1,7 +1,7 @@
-# API reference build: Darkride 1.1.2 (02429ffa29fe90702c6054e18eab653fd778bc13)
+# API reference build: Darkride 1.1.4.4 (2b658cd31c188cfde90a1e7e0698fd0013732178)
 
-2438 notes; 110 pages; 82 namespaces, 26 classes, 1647 functions, 520 signals, 310 types; 1 repeated notes kept once.
-Left out as not in this version: Midi. Types on a page of their own: Entities. "domain" read as "world" in prose: 269 times; "Interface" as Darkride or a client script: 270 times.
+2445 notes; 110 pages; 82 namespaces, 26 classes, 1659 functions, 518 signals, 307 types; 1 repeated notes kept once.
+Left out as not in this version: Midi. Types on a page of their own: Entities. "domain" read as "world" in prose: 271 times; "Interface" as Darkride or a client script: 270 times.
 
 ## Old names changed on the pages (to fix in the engine notes)
 
@@ -17,7 +17,7 @@ Left out as not in this version: Midi. Types on a page of their own: Entities. "
 - 1 x `/produced\s+by\s+High\s+Fidelity\s+signing/g`
 - 1 x `/a\s+High\s+Fidelity\s+datagram\s+packet/g`
 - 2 x `/"http:\/\/content\.highfidelity\.com\/seefo\/production\/puck-attach\/vive_tracker_puck\.obj"/g`
-- 5 x `/"https:\/\/(www\.)?highfidelity\.com\/"/g`
+- 4 x `/"https:\/\/(www\.)?highfidelity\.com\/"/g`
 - 1 x `/as\s+High\s+Fidelity's\s+bakes\)\.\s+See\s+LIGHTMAPS\.md\./g`
 - 4 x `/com\.highfidelity\.example\./g`
 - 2 x `/in\s+order\s+to\s+send\s+usage\s+data\s+about\s+it\s+to\s+High\s+Fidelity/g`
@@ -46,6 +46,9 @@ Left out as not in this version: Midi. Types on a page of their own: Entities. "
 
 ## Notes whose namespace has no note of its own (left out)
 
-- 3 x `GraphicsMeshPArt`
-- 1 x `QmlFragmentClass`
+- 2 x `GraphicsMeshPArt`
 - 4 x `ResourceCache`
+
+## Test hooks left out
+
+98 of the team's Test hooks; a new one stays out until scripting says builders need it. Their names are in test-hooks-left-out.txt, which stays on this computer (never committed: security, 11-11).

@@ -1,13 +1,13 @@
 ---
 title: "WebSocketServer"
-description: "Manages WebSockets in server entity and assignment client scripts."
+description: "Manages WebSockets in assignment client scripts: a listening socket that other scripts connect to."
 ---
 
 # WebSocketServer
 
-<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: server entity scripts, agents.</div>
+<div class="api-kind" v-pre><strong>Class.</strong> Can be used in: agents.</div>
 
-<div class="api-text" v-pre><p>Manages <a href="WebSocket"><code>WebSocket</code></a>s in server entity and assignment client scripts.</p>
+<div class="api-text" v-pre><p>Manages <a href="WebSocket"><code>WebSocket</code></a>s in assignment client scripts: a listening socket that other scripts connect to. A world's entity scripts, on a client or on the entity script server, have no <code>WebSocketServer</code>.</p>
  <p>Create using <code>new WebSocketServer(...)</code>.</p></div>
 
 ```js
@@ -17,33 +17,31 @@ new WebSocketServer()
 <div class="api-example" v-pre><strong>Example:</strong> <p>Echo a message back to sender.</p></div>
 
 ```js
-// Server entity script. Echoes received message back to sender.
-(function () {
-    print("Create WebSocketServer");
-    var webSocketServer = new WebSocketServer();
-    print("Server url:", webSocketServer.url);
+// Assignment client script. Echoes received message back to sender.
+print("Create WebSocketServer");
+var webSocketServer = new WebSocketServer();
+print("Server url:", webSocketServer.url);
 
-    function onNewConnection(webSocket) {
-        print("New connection");
+function onNewConnection(webSocket) {
+    print("New connection");
 
-        webSocket.onmessage = function (message) {
-            print("Message received:", message.data);
+    webSocket.onmessage = function (message) {
+        print("Message received:", message.data);
 
-            var returnMessage = message.data + " back!";
-            print("Echo a message back:", returnMessage);
-            webSocket.send(message.data + " back!");
-        };
-    }
+        var returnMessage = message.data + " back!";
+        print("Echo a message back:", returnMessage);
+        webSocket.send(message.data + " back!");
+    };
+}
 
-    webSocketServer.newConnection.connect(onNewConnection);
-})
+webSocketServer.newConnection.connect(onNewConnection);
 ```
 
 <div class="api-example" v-pre><strong>Example</strong> </div>
 
 ```js
-// Interface script. Bounces message off server entity script.
-// Use the server URL reported by the server entity script.
+// Interface script, run from the same computer. Bounces a message off the assignment client script.
+// Use the server URL reported by the assignment client script.
 var WEBSOCKET_PING_URL = "ws://127.0.0.1:nnnnn";
 var TEST_MESSAGE = "Hello";
 

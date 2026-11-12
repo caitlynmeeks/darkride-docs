@@ -1,6 +1,6 @@
 ---
 title: What's new in 1.1.4.2
-description: An early version of the VR screen, the Lightling in place of the grey mannequin, and fixes.
+description: An early version of the VR screen, the Lightling in place of the gray mannequin, and fixes.
 ---
 
 # What's new in 1.1.4.2
@@ -9,7 +9,7 @@ Darkride 1.1.4.2 beta is on [GitHub](https://github.com/caitlynmeeks/darkride-in
 For what changed in 1.1.4.1, see [What's new in 1.1.4.1](/releases/1.1.4.1/); for what doesn't work yet, see
 [Known issues](/known-issues).
 
-**1.1.4.2 brings an early version of the VR screen, and the Lightling replaces the grey mannequin everywhere.** Please
+**1.1.4.2 brings an early version of the VR screen, and the Lightling replaces the gray mannequin everywhere.** Please
 update; your settings carry over from 1.1.4.1.
 
 ## The VR screen
@@ -25,7 +25,7 @@ what to do instead.
 ## The Lightling
 
 An avatar worn from someone's own computer, a bot with no avatar of its own, and an avatar that can't be loaded now
-appear as the Lightling. People still on an older version see the grey mannequin until they update. Someone wearing an
+appear as the Lightling. People still on an older version see the gray mannequin until they update. Someone wearing an
 avatar from their own computer appears to others as a Lightling standing still, as the mannequin did, because that
 avatar stays on their computer.
 

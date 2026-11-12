@@ -12,7 +12,7 @@ description: "The ScriptDiscoveryService API provides facilities to work with cl
 ## Properties {#properties}
 
 <div class="api-table" v-pre><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>debugScriptUrl</code></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>The path and name of a script to debug using the "API Debugger" developer tool (currentAPI.js). If set, the API Debugger dialog displays the objects and values exposed by the script using <a href="Script#registerValue"><code>Script.registerValue</code></a> and similar.</p></td></tr>
+<tr><td><code>debugScriptUrl</code></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>The path and name of a script to debug using the "API Debugger" developer tool (currentAPI.js). If set, the API Debugger dialog displays the objects and values that script registered for it.</p></td></tr>
 <tr><td><code>defaultScriptsPath</code></td><td>string</td><td></td><td><p>The path where the default scripts are located in the Darkride installation. <em>Read-only.</em></p></td></tr>
 <tr><td><code>scriptsModel</code></td><td><a href="ScriptsModel">ScriptsModel</a></td><td></td><td><p>Information on the scripts that are in the default scripts directory of the Darkride installation. <em>Read-only.</em></p></td></tr>
 <tr><td><code>scriptsModelFilter</code></td><td><a href="ScriptsModelFilter">ScriptsModelFilter</a></td><td></td><td><p>Sorted and filtered information on the scripts that are in the default scripts directory of the Darkride installation. <em>Read-only.</em></p></td></tr>
@@ -66,7 +66,7 @@ ScriptDiscoveryService.loadOneScript(url)
 
 <div class="api-text" v-pre><p>Starts running a client script, if it isn't already running. The script is automatically loaded next time Darkride starts. </p>
 <p>This is a synonym for calling <a href="#loadScript">loadScript</a> with just the script URL.</p>
- <p class="availableIn"><strong>Supported Script Types:</strong> client scripts • Avatar Scripts</p>
+ <p class="availableIn"><strong>Can be used in:</strong> client scripts • avatar scripts</p>
  <p>See also, <a href="Script#load"><code>Script.load</code></a>.</p>
 <p></p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
@@ -84,7 +84,7 @@ ScriptDiscoveryService.loadScript(url?, isUserLoaded?, loadScriptFromEditor?, ac
 ```
 
 <div class="api-text" v-pre><p>Starts running a client script, if it isn't already running. </p>
-<p class="availableIn"><strong>Supported Script Types:</strong> client scripts • Avatar Scripts</p>
+<p class="availableIn"><strong>Can be used in:</strong> client scripts • avatar scripts</p>
  <p>See also, <a href="Script#load"><code>Script.load</code></a>.</p>
 <p></p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
@@ -107,7 +107,7 @@ ScriptDiscoveryService.loadScript(url?, isUserLoaded?, loadScriptFromEditor?, ac
 ScriptDiscoveryService.reloadAllScripts()
 ```
 
-<div class="api-text" v-pre><p>Restarts all Darkride, avatar, and client entity scripts after clearing the scripts cache.</p></div>
+<div class="api-text" v-pre><p>Restarts all client, avatar, and client entity scripts after clearing the scripts cache.</p></div>
 
 </div>
 
@@ -265,7 +265,7 @@ ScriptDiscoveryService.scriptsReloading.connect(function () {
 });
 ```
 
-<div class="api-text" v-pre><p>Triggered when Darkride, avatar, and client entity scripts are restarting as a result of <a href="#reloadAllScripts">reloadAllScripts</a> or <a href="#stopAllScripts">stopAllScripts</a>.</p></div>
+<div class="api-text" v-pre><p>Triggered when client, avatar, and client entity scripts are restarting as a result of <a href="#reloadAllScripts">reloadAllScripts</a> or <a href="#stopAllScripts">stopAllScripts</a>.</p></div>
 
 </div>
 

@@ -349,7 +349,7 @@ Script.load(filename)
 ```
 
 <div class="api-text" v-pre><p>Starts running another script in Darkride, if it isn't already running. The script is not automatically loaded next time Darkride starts. </p>
-<p class="availableIn"><strong>Supported Script Types:</strong> client scripts • Avatar Scripts</p>
+<p class="availableIn"><strong>Can be used in:</strong> client scripts</p>
  <p>See also, <a href="ScriptDiscoveryService#loadScript"><code>ScriptDiscoveryService.loadScript</code></a>.</p>
 <p></p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
@@ -595,7 +595,7 @@ Script.entityScriptPreloadFinished.connect(function (entityID) {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the script starts for the user. See also, <a href="Entities#preload"><code>Entities.preload</code></a>. </p>
-<p class="availableIn"><strong>Supported Script Types:</strong> Client Entity Scripts • Server Entity Scripts</p>
+<p class="availableIn"><strong>Can be used in:</strong> entity scripts • server entity scripts</p>
 <p></p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>entityID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The ID of the entity that the script is running in.</p></td></tr>
@@ -724,32 +724,6 @@ Script.setTimeout(function () {
 
 <div class="api-entry">
 
-### unhandledException {#unhandledException}
-
-```js
-Script.unhandledException.connect(function (exception) {
-    ...
-});
-```
-
-<div class="api-text" v-pre><p>Triggered when a script generates an unhandled exception.</p></div>
-<div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>exception</code></td><td>object</td><td><p>The details of the exception.</p></td></tr>
-</tbody></table></div>
-
-<div class="api-example" v-pre><strong>Example:</strong> <p>Report the details of an unhandled exception.</p></div>
-
-```js
-Script.unhandledException.connect(function (exception) {
-    print("Unhandled exception: " + JSON.stringify(exception));
-});
-var properties = JSON.parse("{ x: 1"); // Invalid JSON string.
-```
-
-</div>
-
-<div class="api-entry">
-
 ### update {#update}
 
 ```js
@@ -863,48 +837,6 @@ Still there for older scripts; new scripts should not use these.
 
 <div class="api-entry">
 
-### _requireResolve {#_requireResolve}
-
-```js
-Script._requireResolve(module, relativeTo?)
-```
-
-::: warning Deprecated
-<div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
-:::
-
-<div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>module</code></td><td>string</td><td></td><td><p>Module.</p></td></tr>
-<tr><td><code>relativeTo</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>Relative to.</p></td></tr>
-</tbody></table></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> string <p>Result.</p></div>
-
-</div>
-
-<div class="api-entry">
-
-### callAnimationStateHandler {#callAnimationStateHandler}
-
-```js
-Script.callAnimationStateHandler(callback, parameters, names, useNames, resultHandler)
-```
-
-::: warning Deprecated
-<div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
-:::
-
-<div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>callback</code></td><td>function</td><td><p>Callback function.</p></td></tr>
-<tr><td><code>parameters</code></td><td>object</td><td><p>Parameters.</p></td></tr>
-<tr><td><code>names</code></td><td>Array&lt;string&gt;</td><td><p>Names.</p></td></tr>
-<tr><td><code>useNames</code></td><td>boolean</td><td><p>Use names.</p></td></tr>
-<tr><td><code>resultHandler</code></td><td>function</td><td><p>Result handler.</p></td></tr>
-</tbody></table></div>
-
-</div>
-
-<div class="api-entry">
-
 ### callEntityScriptMethod {#callEntityScriptMethod-2}
 
 ```js
@@ -948,29 +880,6 @@ Script.callEntityScriptMethod(entityID, methodName, otherID, collision)
 
 <div class="api-entry">
 
-### entityScriptContentAvailable {#entityScriptContentAvailable}
-
-```js
-Script.entityScriptContentAvailable(entityID, scriptOrURL, contents, isURL, success, status)
-```
-
-::: warning Deprecated
-<div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
-:::
-
-<div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>entityID</code></td><td><a href="Uuid">Uuid</a></td><td><p>Entity ID.</p></td></tr>
-<tr><td><code>scriptOrURL</code></td><td>string</td><td><p>Path.</p></td></tr>
-<tr><td><code>contents</code></td><td>string</td><td><p>Contents.</p></td></tr>
-<tr><td><code>isURL</code></td><td>boolean</td><td><p>Is a URL.</p></td></tr>
-<tr><td><code>success</code></td><td>boolean</td><td><p>Success.</p></td></tr>
-<tr><td><code>status</code></td><td>string</td><td><p>Status.</p></td></tr>
-</tbody></table></div>
-
-</div>
-
-<div class="api-entry">
-
 ### evaluate {#evaluate}
 
 ```js
@@ -985,26 +894,6 @@ Script.evaluate(program, filename, lineNumber?)
 <tr><td><code>program</code></td><td>string</td><td></td><td><p>Program.</p></td></tr>
 <tr><td><code>filename</code></td><td>string</td><td></td><td><p>File name.</p></td></tr>
 <tr><td><code>lineNumber</code> <em>optional</em></td><td>number</td><td><code>-1</code></td><td><p>Line number.</p></td></tr>
-</tbody></table></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> object <p>Object.</p></div>
-
-</div>
-
-<div class="api-entry">
-
-### evaluateInClosure {#evaluateInClosure}
-
-```js
-Script.evaluateInClosure(locals, program)
-```
-
-::: warning Deprecated
-<div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
-:::
-
-<div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>locals</code></td><td>object</td><td><p>Locals.</p></td></tr>
-<tr><td><code>program</code></td><td>object</td><td><p>Program.</p></td></tr>
 </tbody></table></div>
 <div class="api-returns" v-pre><strong>Returns:</strong> object <p>Object.</p></div>
 
@@ -1031,26 +920,6 @@ Script.executeOnScriptThread(function, type?)
 
 <div class="api-entry">
 
-### formatExecption {#formatExecption}
-
-```js
-Script.formatExecption(exception, inludeExtendeDetails)
-```
-
-::: warning Deprecated
-<div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
-:::
-
-<div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>exception</code></td><td>object</td><td><p>Exception.</p></td></tr>
-<tr><td><code>inludeExtendeDetails</code></td><td>boolean</td><td><p>Include extended details.</p></td></tr>
-</tbody></table></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> string <p>String.</p></div>
-
-</div>
-
-<div class="api-entry">
-
 ### generateUUID {#generateUUID}
 
 ```js
@@ -1062,27 +931,6 @@ Script.generateUUID()
 :::
 
 <div class="api-returns" v-pre><strong>Returns:</strong> <a href="Uuid">Uuid</a> <p>A new UUID.</p></div>
-
-</div>
-
-<div class="api-entry">
-
-### lintScript {#lintScript}
-
-```js
-Script.lintScript(sourceCode, fileName, lineNumber?)
-```
-
-::: warning Deprecated
-<div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
-:::
-
-<div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>sourceCode</code></td><td>string</td><td></td><td><p>Source code.</p></td></tr>
-<tr><td><code>fileName</code></td><td>string</td><td></td><td><p>File name.</p></td></tr>
-<tr><td><code>lineNumber</code> <em>optional</em></td><td>number</td><td><code>1</code></td><td><p>Line number.</p></td></tr>
-</tbody></table></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> object <p>Object.</p></div>
 
 </div>
 
@@ -1102,107 +950,6 @@ Script.loadEntityScript(entityID, script, forceRedownload)
 <tr><td><code>entityID</code></td><td><a href="Uuid">Uuid</a></td><td><p>Entity ID.</p></td></tr>
 <tr><td><code>script</code></td><td>string</td><td><p>Script.</p></td></tr>
 <tr><td><code>forceRedownload</code></td><td>boolean</td><td><p>Force re-download.</p></td></tr>
-</tbody></table></div>
-
-</div>
-
-<div class="api-entry">
-
-### makeError {#makeError}
-
-```js
-Script.makeError(other?, type?)
-```
-
-::: warning Deprecated
-<div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
-:::
-
-<div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>other</code> <em>optional</em></td><td>object</td><td></td><td><p>Other.</p></td></tr>
-<tr><td><code>type</code> <em>optional</em></td><td>string</td><td><code>&quot;Error&quot;</code></td><td><p>Error.</p></td></tr>
-</tbody></table></div>
-<div class="api-returns" v-pre><strong>Returns:</strong> object <p>Object.</p></div>
-
-</div>
-
-<div class="api-entry">
-
-### registerFunction {#registerFunction}
-
-```js
-Script.registerFunction(name, function, numArguments?)
-```
-
-::: warning Deprecated
-<div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
-:::
-
-<div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>name</code></td><td>string</td><td></td><td><p>Name.</p></td></tr>
-<tr><td><code>function</code></td><td>function</td><td></td><td><p>Function.</p></td></tr>
-<tr><td><code>numArguments</code> <em>optional</em></td><td>number</td><td><code>-1</code></td><td><p>Number of arguments.</p></td></tr>
-</tbody></table></div>
-
-</div>
-
-<div class="api-entry">
-
-### registerFunction {#registerFunction-2}
-
-```js
-Script.registerFunction(parent, name, function, numArguments?)
-```
-
-::: warning Deprecated
-<div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
-:::
-
-<div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>parent</code></td><td>string</td><td></td><td><p>Parent.</p></td></tr>
-<tr><td><code>name</code></td><td>string</td><td></td><td><p>Name.</p></td></tr>
-<tr><td><code>function</code></td><td>function</td><td></td><td><p>Function.</p></td></tr>
-<tr><td><code>numArguments</code> <em>optional</em></td><td>number</td><td><code>-1</code></td><td><p>Number of arguments.</p></td></tr>
-</tbody></table></div>
-
-</div>
-
-<div class="api-entry">
-
-### registerGetterSetter {#registerGetterSetter}
-
-```js
-Script.registerGetterSetter(name, getter, setter, parent?)
-```
-
-::: warning Deprecated
-<div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
-:::
-
-<div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>name</code></td><td>string</td><td></td><td><p>Name.</p></td></tr>
-<tr><td><code>getter</code></td><td>function</td><td></td><td><p>Getter.</p></td></tr>
-<tr><td><code>setter</code></td><td>function</td><td></td><td><p>Setter.</p></td></tr>
-<tr><td><code>parent</code> <em>optional</em></td><td>string</td><td><code>&quot;&quot;</code></td><td><p>Parent.</p></td></tr>
-</tbody></table></div>
-
-</div>
-
-<div class="api-entry">
-
-### registerValue {#registerValue}
-
-```js
-Script.registerValue(name, value)
-```
-
-::: warning Deprecated
-<div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
-:::
-
-<div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>name</code></td><td>string</td><td><p>Name.</p></td></tr>
-<tr><td><code>value</code></td><td>object</td><td><p>Value.</p></td></tr>
 </tbody></table></div>
 
 </div>
@@ -1258,24 +1005,6 @@ Script.unloadEntityScript(entityID, shouldRemoveFromMap?)
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>entityID</code></td><td><a href="Uuid">Uuid</a></td><td></td><td><p>Entity ID.</p></td></tr>
 <tr><td><code>shouldRemoveFromMap</code> <em>optional</em></td><td>boolean</td><td><code>false</code></td><td><p>Should remove from map.</p></td></tr>
-</tbody></table></div>
-
-</div>
-
-<div class="api-entry">
-
-### updateMemoryCost {#updateMemoryCost}
-
-```js
-Script.updateMemoryCost(deltaSize)
-```
-
-::: warning Deprecated
-<div class="api-text" v-pre><p>This function is deprecated and will be removed.</p></div>
-:::
-
-<div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>deltaSize</code></td><td>number</td><td><p>Delta size.</p></td></tr>
 </tbody></table></div>
 
 </div>
@@ -1433,26 +1162,6 @@ Script.scriptLoaded.connect(function (filename) {
 
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>filename</code></td><td>string</td><td><p>File name.</p></td></tr>
-</tbody></table></div>
-
-</div>
-
-<div class="api-entry">
-
-### signalHandlerException {#signalHandlerException}
-
-```js
-Script.signalHandlerException.connect(function (exception) {
-    ...
-});
-```
-
-::: warning Deprecated
-<div class="api-text" v-pre><p>This signal is deprecated and will be removed.</p></div>
-:::
-
-<div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>exception</code></td><td>object</td><td><p>Exception.</p></td></tr>
 </tbody></table></div>
 
 </div>

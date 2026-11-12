@@ -8,7 +8,7 @@ description: "The Entities API provides facilities to create and interact with e
 <div class="api-kind" v-pre><strong>Namespace.</strong> Can be used in: client scripts, entity scripts, avatar scripts, server entity scripts, agents.</div>
 
 <div class="api-text" v-pre><p>The <code>Entities</code> API provides facilities to create and interact with entities. Entities are 2D or 3D objects displayed in-world. Depending on their <a href="Entities-types#EntityHostType">EntityHostType</a>, they may persist in the world as "domain" entities, travel to different worlds with a user as "avatar" entities, or be visible only to an individual user as "local" entities (a.k.a. "overlays").</p>
- <p>Note: For Darkride, avatar, and client entity scripts, the entities available to scripts are those that Darkride has displayed and so knows about. For assignment client scripts, the entities available are those that are "seen" by the <a href="EntityViewer"><code>EntityViewer</code></a>. For entity server scripts, all entities are available.</p>
+ <p>Note: For client, avatar, and client entity scripts, the entities available to scripts are those that Darkride has displayed and so knows about. For assignment client scripts, the entities available are those that are "seen" by the <a href="EntityViewer"><code>EntityViewer</code></a>. For entity server scripts, all entities are available.</p>
  <h3>Entity Types and Properties</h3>
  <p>For a list of the entity types that you can use, see <a href="Entities-types#EntityType">Entity Types</a>.</p>
  <p>For the properties of the different entity types, see <a href="Entities-types#EntityProperties">Entity Properties</a>. Some properties are universal to all entity types, and some are specific to particular entity types.</p>
@@ -231,7 +231,7 @@ Script.setTimeout(function () {
 Entities.callEntityMethod(entityID, method, parameters?)
 ```
 
-<div class="api-text" v-pre><p>Calls a method in a client entity script from a Darkride, avatar, or client entity script, or calls a method in a server entity script from a server entity script. The entity script method must be exposed as a property in the target entity script. Additionally, if calling a server entity script, the server entity script must include the method's name in an exposed property called <code>remotelyCallable</code> that is an array of method names that can be called.</p></div>
+<div class="api-text" v-pre><p>Calls a method in a client entity script from a client, avatar, or client entity script, or calls a method in a server entity script from a server entity script. The entity script method must be exposed as a property in the target entity script. Additionally, if calling a server entity script, the server entity script must include the method's name in an exposed property called <code>remotelyCallable</code> that is an array of method names that can be called.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>entityID</code></td><td><a href="Uuid">Uuid</a></td><td></td><td><p>The ID of the entity to call the method in.</p></td></tr>
 <tr><td><code>method</code></td><td>string</td><td></td><td><p>The name of the method to call. The method is called with the entity ID as the first parameter and the <code>parameters</code> value as the second parameter.</p></td></tr>
@@ -273,7 +273,7 @@ Script.setTimeout(function () {
 Entities.callEntityServerMethod(entityID, method, parameters?)
 ```
 
-<div class="api-text" v-pre><p>Calls a method in a server entity script from a Darkride, avatar, or client entity script. The server entity script method must be exposed as a property in the target server entity script. Additionally, the server entity script must include the method's name in an exposed property called <code>remotelyCallable</code> that is an array of method names that can be called.</p></div>
+<div class="api-text" v-pre><p>Calls a method in a server entity script from a client, avatar, or client entity script. The server entity script method must be exposed as a property in the target server entity script. Additionally, the server entity script must include the method's name in an exposed property called <code>remotelyCallable</code> that is an array of method names that can be called.</p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>entityID</code></td><td><a href="Uuid">Uuid</a></td><td></td><td><p>The ID of the entity to call the method in.</p></td></tr>
 <tr><td><code>method</code></td><td>string</td><td></td><td><p>The name of the method to call. The method is called with the entity ID as the first parameter and the <code>parameters</code> value as the second parameter.</p></td></tr>
@@ -3216,7 +3216,7 @@ Entities.preload.connect(function (entityID) {
 
 <div class="api-text" v-pre><p>Triggered when the script starts for a user. See also, <a href="Script#entityScriptPreloadFinished"><code>Script.entityScriptPreloadFinished</code></a>. </p>
 <p>Note: Can only be connected to via <code>this.preload = function (...) { ... }</code> in the entity script.</p>
- <p class="availableIn"><strong>Supported Script Types:</strong> Client Entity Scripts • Server Entity Scripts</p>
+ <p class="availableIn"><strong>Can be used in:</strong> entity scripts • server entity scripts</p>
 <p></p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>entityID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The ID of the entity that the script is running in.</p></td></tr>
@@ -3257,8 +3257,8 @@ Entities.unload.connect(function (entityID) {
 ```
 
 <div class="api-text" v-pre><p>Triggered when the script terminates for a user. </p>
-<p>Note: Can only be connected to via <code>this.unoad = function () { ... }</code> in the entity script.</p>
- <p class="availableIn"><strong>Supported Script Types:</strong> Client Entity Scripts • Server Entity Scripts</p>
+<p>Note: Can only be connected to via <code>this.unload = function () { ... }</code> in the entity script.</p>
+ <p class="availableIn"><strong>Can be used in:</strong> entity scripts • server entity scripts</p>
 <p></p></div>
 <div class="api-table" v-pre><strong>Parameters</strong><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>entityID</code></td><td><a href="Uuid">Uuid</a></td><td><p>The ID of the entity that the script is running in.</p></td></tr>
