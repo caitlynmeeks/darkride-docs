@@ -46,17 +46,15 @@ sudo ufw allow 40110:40115/udp
 sudo ufw enable
 ```
 
-Download the server for your computer: on Linux, the tarball from the
-[1.1.4.2 release](https://github.com/caitlynmeeks/darkride-interface/releases/tag/v1.1.4.2-beta) (1.1.4.3 and 1.1.4.4
-have no new Linux server); on Windows, the zip from the
-[latest release](https://github.com/caitlynmeeks/darkride-interface/releases/latest). Check it against the
-**SHA-256** listed on that release: `sha256sum <file>` on Linux, `certutil -hashfile <file> SHA256` on Windows. The two
-should match.
+Download the server for your computer from the
+[1.1.4.5 server release](https://github.com/caitlynmeeks/darkride-interface/releases/tag/v1.1.4.5-server-beta): the tarball on Linux,
+the zip on Windows. Check it against the **SHA-256** listed on that release: `sha256sum <file>` on Linux,
+`certutil -hashfile <file> SHA256` on Windows. The two should match.
 
 ### Linux
 
 ```sh
-tar xzf darkride-server-linux-x64-1.1.4.2-beta.tar.gz
+tar xzf darkride-server-linux-x64-1.1.4.5-beta.tar.gz
 nohup ./server.AppDir/domain-server > domain-server.log 2>&1 &
 nohup ./server.AppDir/assignment-client -n 6 --max 6 --min-listen-port 40110 -a 127.0.0.1 --server-port 40102 > assignment-client.log 2>&1 &
 ```
@@ -69,7 +67,7 @@ you log out, and their messages go to the two `.log` files.
 
 ### Windows
 
-1. Unzip `Darkride-1.1.4.4-beta-windows.zip`. The server is in its `Darkride\server` folder.
+1. Unzip `darkride-server-windows-x64-1.1.4.5-beta.zip`. The server is in its `darkride-server` folder.
 2. In that folder, start `domain-server.exe`.
 3. Then start the assignment clients from a Command Prompt in the same folder:
 
@@ -157,12 +155,11 @@ My Files or your own web server) and use its web address.
 
 ## Update to a new version
 
-Update your server with each Darkride version that changes it. 1.1.4.3 and 1.1.4.4 don't: on Linux, keep the 1.1.4.2
-server; on Windows, the 1.1.4.4 zip's server works the same as 1.1.4.2's, so you can keep running the one you have. If
-your server is older than 1.1.4.2, update it: a bot or AI resident with no avatar of its own then appears as the
-Lightling for everyone on 1.1.4.2 or later. 1.1.4.4, 1.1.4.3, 1.1.4.2, 1.1.4.1, 1.1.4, 1.1.3.1, 1.1.3 and 1.1.2.1 work
-together: any of these apps can visit worlds served by any of these versions. Some of 1.1.4's fixes work only once the
-world's server runs 1.1.4, such as the clicks in voices after someone joins. When a version can't join older servers,
+Update your server with each Darkride version that changes it. The newest server is
+[1.1.4.5](https://github.com/caitlynmeeks/darkride-interface/releases/tag/v1.1.4.5-server-beta), a security fix: if you
+host your own world, update your world server. 1.1.4.4, 1.1.4.3, 1.1.4.2, 1.1.4.1, 1.1.4, 1.1.3.1, 1.1.3 and
+1.1.2.1 work together: any of these apps can visit worlds served by any of these versions, or by the 1.1.4.5 server.
+Some of 1.1.4's fixes work only once the world's server runs 1.1.4, such as the clicks in voices after someone joins. When a version can't join older servers,
 its release notes say so.
 
 From 1.1.4.2, a bot or AI resident on your server that has no avatar of its own, or wears the Lightling, loads the
@@ -195,7 +192,8 @@ items under **Access and permissions**.
 3. **Swap in the new version.**
    - **Linux:** move your old `server.AppDir` aside, then unpack the new version's tarball
      (`darkride-server-linux-x64-<version>.tar.gz`) in its place.
-   - **Windows:** unzip the new version's zip and use its `server` folder.
+   - **Windows:** unzip the new server's zip (`darkride-server-windows-x64-<version>.zip`) and use its
+     `darkride-server` folder.
 4. **Start it again** with the same commands, as the **same user** as before, so it finds the same data folder.
 5. **Check it works**, as in step 5.
 

@@ -48,6 +48,6 @@ Chat keeps what you've read to yourself: Darkride never tells anyone you've read
 
 ## Your own world server
 
-Nothing changes for the world server. On Linux, keep the 1.1.4.2 server; on Windows, the 1.1.4.4 zip's server works the
-same as 1.1.4.2's, so you can keep running the one you have. See [Update to a new
+If you host your own world, update your world server: it's on the
+[1.1.4.5 server release](https://github.com/caitlynmeeks/darkride-interface/releases/tag/v1.1.4.5-server-beta). See [Update to a new
 version](/worlds/your-own-server#update-to-a-new-version).
