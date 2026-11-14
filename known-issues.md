@@ -79,6 +79,15 @@ What doesn't work yet in Darkride 1.1.4.4, and what to do instead. Found somethi
 - **The first time a Lightling comes into view after you start Darkride, the view may freeze for a moment** while
   Darkride gets the Lightling's look ready. It happens once per start, and we're working on a fix.
 
+## Sound
+
+- **Windows: while Darkride is open, a Bluetooth headset can sound thin or noisy, in every app.** Darkride keeps the
+  headset's microphone on even while you're muted, so Windows keeps the headset in its call mode, which sounds thin
+  and can add noise. A fix is on its way. Until then, in Darkride's own **Settings** > **Sound** (not Windows' sound
+  settings), under **Devices**, set **Microphone** to your computer's own microphone and **Speakers** to the headset's
+  "Headphones" entry, not its "Headset" one. If you talk through the headset's microphone, it has to stay in call
+  mode; other voice apps work the same way ([#81](https://github.com/caitlynmeeks/darkride-interface/issues/81)).
+
 ## Web pages in worlds
 
 - **Fixed on the desktop in 1.1.4.2: clicks on web pages in a world land where you point again.** In VR the same fix
