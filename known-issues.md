@@ -93,6 +93,12 @@ What doesn't work yet in Darkride 1.1.4.4, and what to do instead. Found somethi
 - **Fixed on the desktop in 1.1.4.2: clicks on web pages in a world land where you point again.** In VR the same fix
   applies, but a web page standing in a world hasn't been checked with a controller yet. If one doesn't respond in VR,
   tell us in [#67](https://github.com/caitlynmeeks/darkride-interface/issues/67).
+- **On see-through web pages in a world, soft shadows show as a pale glow.** On a Web entity with a transparent
+  background, a page's soft shadow (such as a CSS `box-shadow` in partly see-through black) or its faded, partly
+  see-through edges show as a pale glow around the panel instead of a darker shadow. Fully solid and fully clear parts
+  look right. Until it's fixed, use solid panels, or leave soft shadows and faded edges out of see-through Web
+  entities. Seen on a Mac; not checked on Windows yet
+  ([#82](https://github.com/caitlynmeeks/darkride-interface/issues/82)).
 
 ## Chat
 
