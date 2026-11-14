@@ -142,6 +142,19 @@ An address that names a file on your computer (such as `file:///Users/me/car.glb
 only while you test on your own computer or home network. In your world on Darkride's servers, the thing shows
 without it, for everyone, you too. Upload the file to My Files and use its link instead.
 
+### Find and move your files
+
+- **Search:** type in **Search My Files** at the top right. It searches all your folders as you type and says which
+  folder each match is in. Click a match to open its folder with the file highlighted. Press **Esc** to clear the
+  search. Pasting a file's link into the search box finds that file too.
+- **Folders:** the folder tree on the left works like Finder. Click a folder's name to open it, or click its arrow to
+  show or hide the folders inside it.
+- **Move:** drag a file or folder onto another folder: in the tree, on the right, or in the path at the top. Drop
+  it on **My Files** to move it to the top. Its stable link keeps working. If that folder already has something with
+  the same name, nothing is replaced: rename one of them first.
+
+<img src="./images/files-search.png" width="700" alt="My Files: searching for tree lists 11 matches from several folders, each with the folder it's in">
+
 ## 5. Bring in a world from High Fidelity
 
 If you built a world in High Fidelity (or another app built on it), you can bring its entities in.
