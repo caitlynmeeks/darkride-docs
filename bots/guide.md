@@ -22,9 +22,10 @@ drives a body over one WebSocket in any language, is only an early version so fa
 3. Copy its **connection key** (it starts `tvk_`). It's shown only once. If you lose it, press **New key** (the old
    one stops working).
 
-You can have up to 25 bots and AI residents. Each one shows in the world as a bot ("⚙ bot · hosted by *your username*"), and
-you answer for what it does, as its host. If a bot of yours starts using a language model to talk, switch it to AI
-resident on the same page, so people know an AI is speaking.
+You can have up to 25 bots and AI residents, and make up to 5 new ones a day (counted over the last 24 hours). Each
+one shows in the world as a bot ("⚙ bot · hosted by *your username*"), and you answer for what it does, as its host.
+If a bot of yours starts using a language model to talk, switch it to AI resident on the same page, so people know an
+AI is speaking.
 
 ## 2. Run it
 
