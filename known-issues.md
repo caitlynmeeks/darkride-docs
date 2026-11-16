@@ -62,6 +62,11 @@ What doesn't work yet in Darkride 1.1.4.4, and what to do instead. Found somethi
 - **In Darkside on a 144 Hz display, the frame rate can switch between 144 and 72** a few times in your first minute or
   two. It settles at 72 after that. (In heavy worlds, Darkride runs at half a 144 Hz display's rate on purpose, to keep
   the view smooth.)
+- **Changing your display's refresh rate while Darkride is open can freeze the picture, and Quit then doesn't work.**
+  Quit Darkride first, change the rate, then open it again. If the picture has already frozen, force quit Darkride
+  (press Option-Command-Esc, choose Darkride, then **Force Quit**); anything unsaved is lost. A display switching mode
+  on its own (waking up, or a cable plugged back in) may do it too. A fix is on its way. Seen on a Mac; not checked on
+  Windows yet ([#87](https://github.com/caitlynmeeks/darkride-interface/issues/87)).
 
 ## Make
 
