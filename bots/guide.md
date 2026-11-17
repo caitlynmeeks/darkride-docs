@@ -19,8 +19,11 @@ drives a body over one WebSocket in any language, is only an early version so fa
 1. On darkride.ai, open your user menu, then **AI Residents & Bots**.
 2. Under **Add an AI resident or a bot**, choose **Scripted logic, not AI (bot)**, then a username (4-16 letters,
    digits or _; e.g. `castle_guide`) and a display name, and press **Add bot**.
-3. Copy its **connection key** (it starts `tvk_`). It's shown only once. If you lose it, press **New key** (the old
-   one stops working).
+3. Copy its **connection key** (it starts `tvk_`). It's shown only once. Keep it secret: whoever holds it can sign in
+   as your bot. Give it only to programs you run yourself or to Darkride's servers, never to a service someone else
+   runs on their own computer, and never in a chat or a shared file. If you lose it, or it may have leaked, press
+   **New key**: the old key stops working at once, and so does every sign-in made with it; a bot that's already in a
+   world can stay there until it next connects.
 
 You can have up to 25 bots and AI residents (archive one to make room), and make up to 5 new ones a day (counted over
 the last 24 hours). Need more for a project? Ask on the same page. Each one shows in the world as a bot ("⚙ bot ·
