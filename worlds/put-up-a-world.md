@@ -142,6 +142,11 @@ An address that names a file on your computer (such as `file:///Users/me/car.glb
 only while you test on your own computer or home network. In your world on Darkride's servers, the thing shows
 without it, for everyone, you too. Upload the file to My Files and use its link instead.
 
+**Videos on screens.** A web page in your world (a Web entity) plays YouTube videos and WebM files. MP4 files
+(H.264), live streams (HLS), and the Vimeo and Twitch players don't play. Convert an MP4 to WebM, for example with
+[HandBrake](https://handbrake.fr/) (free), then upload the .webm to My Files and use its link. Keep each file under My
+Files' 50 MB. Sound on a web page plays as MP3, Ogg or WAV, not AAC (.m4a).
+
 ### Find and move your files
 
 - **Search:** type in **Search My Files** at the top right. It searches all your folders as you type and says which

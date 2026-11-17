@@ -95,6 +95,10 @@ What doesn't work yet in Darkride 1.1.4.4, and what to do instead. Found somethi
 
 ## Web pages in worlds
 
+- **MP4 videos (H.264), live streams (HLS), and Vimeo and Twitch videos don't play on web pages in a world.** Use
+  YouTube, or convert the video to WebM and upload it to My Files, as
+  [Put up a world](/worlds/put-up-a-world#_4-add-your-own-models-images-and-sounds) shows
+  ([#35](https://github.com/caitlynmeeks/darkride-interface/issues/35)).
 - **Fixed on the desktop in 1.1.4.2: clicks on web pages in a world land where you point again.** In VR the same fix
   applies, but a web page standing in a world hasn't been checked with a controller yet. If one doesn't respond in VR,
   tell us in [#67](https://github.com/caitlynmeeks/darkride-interface/issues/67).
