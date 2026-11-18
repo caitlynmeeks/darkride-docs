@@ -106,6 +106,10 @@ Come back, change things and save as often as you like.
 
   <img src="./images/world-editors-picker.png" width="600" alt="A world's Editors: one editor added, and the Add a friend list open with three friends">
 
+- **Give open edges a floor or walls.** Vehicles and loose objects then stay where people can reach them.
+- **Keep a spare of anything you'd hate to rebuild.** Select it in Build mode and choose **Build** > **Export
+  Selected Entities…**; **Build** > **Import Entities…** brings it back, in any world you can build in.
+
 - **What runs on Darkride's servers:**
   - Scripts that run in each visitor's app work as usual. A world's scripts load only from web addresses (http or
     https), the world's own files (`atp:`) or Darkride's file hosting (`tea:`), or are written into the object itself.
