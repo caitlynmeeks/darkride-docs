@@ -139,6 +139,10 @@ What doesn't work yet in Darkride 1.1.4.4, and what to do instead. Found somethi
   - On your own world server: in its settings page, under **Vehicle physics**, turn off **Run vehicle physics on the
     server** (saving restarts the world server). Each car is then moved by one visitor's Darkride and collides with
     models again, though it looks a little less steady to everyone else.
+- **A vehicle's extra parts can stay behind when it moves.** Only its body and wheels go: the Go-kart from the
+  **Create** menu leaves its seat back, steering wheel and bumper where it started, and parts you add to a vehicle
+  do the same. For a vehicle of your own, build those parts into the body's model, so there's nothing to leave
+  behind. We're fixing it.
 - **In VR, your view can slide while you ride.** On the monorail or another vehicle, the view can slide around in
   small circles while the car is stopped, or drift off the car while it moves. If it does, teleport out, or step off
   at a stop. Riding on the desktop isn't affected. We're fixing it.
