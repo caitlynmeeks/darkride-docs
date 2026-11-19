@@ -22,8 +22,8 @@ export default defineConfig({
   themeConfig: {
     // a full address, so the docs' /docs/ base isn't put in front of it
     logo: { src: 'https://darkride.ai/assets/darkride-logo-wide.png', alt: 'Darkride' },
-    siteTitle: 'docs',
-    nav: [{ text: 'darkride.ai', link: 'https://darkride.ai' }],
+    siteTitle: 'Docs',
+    // no nav links: the app grid (theme/AppGrid.vue, the nine dots) takes the place of the "darkride.ai" link
     // the order of the guides, in one place: a new page gets a line here. The API reference has its own sidebar.
     sidebar: {
       '/scripting/api/': apiSidebar,

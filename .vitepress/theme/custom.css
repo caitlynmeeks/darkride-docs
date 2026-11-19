@@ -62,7 +62,36 @@
   --vp-button-brand-active-text: #091023;
 }
 
-/* the wide logo carries the name; "docs" sits beside it in the header */
+/* the app grid's colours and timing: mary's Night tokens (team/mary/brand/ui-language/tokens/tokens.css), as
+   darkride.ai has them */
+:root {
+  --dr-card: #242a44;
+  --dr-hover: #2b3250;
+  --dr-fill: #2e3554;
+  --dr-text: #f4f6f8;
+  --dr-tint: #00afff;
+  --dr-fade-quick: 150ms;
+}
+
+/* the app grid's dots sit 16 px from the window's right edge at every width, as on darkride.ai and Chat */
+.VPNav .VPNavBar .wrapper {
+  padding-right: 16px;
+}
+@media (min-width: 960px) {
+  :root .VPNav .VPNavBar.has-sidebar .wrapper {
+    padding-right: 0;
+  }
+  :root .VPNav .VPNavBar.has-sidebar .content {
+    padding-right: 16px;
+  }
+}
+
+/* on phones the top bar's menu held only the "darkride.ai" link, now in the app grid, so it goes */
+.VPNav .VPNavBar .hamburger {
+  display: none;
+}
+
+/* the wide logo carries the name; "Docs" sits beside it in the header */
 .VPNavBarTitle .logo {
   height: 30px;
 }
@@ -70,6 +99,15 @@
   gap: 10px;
   font-weight: 500;
   color: var(--vp-c-text-2);
+}
+/* on the narrowest phones (320 px) a smaller logo and gap keep the bar inside the window, the app grid's dots included */
+@media (max-width: 359px) {
+  .VPNavBarTitle .logo {
+    height: 24px;
+  }
+  .VPNavBarTitle .title {
+    gap: 6px;
+  }
 }
 
 /* the API reference (scripting/api, written by tools/api-reference): the browser lays out only the entries near the

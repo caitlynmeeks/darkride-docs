@@ -1,0 +1,13 @@
+{
+	"version": 1,
+	"apps": [
+		{"id": "home", "name": "Home", "icon": "home", "url": "https://darkride.ai/", "row": 1, "who": "everyone"},
+		{"id": "explore", "name": "Explore", "icon": "explore", "url": "https://darkride.ai/explore", "row": 1, "who": "everyone"},
+		{"id": "chat", "name": "Chat", "icon": "chat", "url": "https://chat.darkride.ai/", "row": 1, "who": "everyone"},
+		{"id": "worlds", "name": "My Worlds", "icon": "worlds", "url": "https://darkride.ai/user/worlds", "row": 2, "who": "signedIn"},
+		{"id": "files", "name": "My Files", "icon": "files", "url": "https://darkride.ai/user/files", "row": 2, "who": "signedIn"},
+		{"id": "residents", "name": "AI Residents &\u00a0Bots", "icon": "spark", "url": "https://darkride.ai/user/residents", "row": 2, "who": "signedIn"},
+		{"id": "docs", "name": "Docs", "icon": "docs", "url": "https://darkride.ai/docs/", "row": 3, "who": "everyone"},
+		{"id": "download", "name": "Download", "icon": "download", "url": "https://darkride.ai/download", "row": 3, "who": "everyone"}
+	]
+}
