@@ -56,6 +56,11 @@ What doesn't work yet in Darkride 1.1.4.4, and what to do instead. Found somethi
 - **A script that moves your avatar by setting `MyAvatar.position` can be undone by the next physics step**, leaving
   the avatar where it was. Check the position a frame later and set it again. The built-in teleports (`/tp`, Hop,
   bookmarks) aren't affected.
+- **Setting all of an avatar's worn items in one call wears nothing.** `MyAvatar.setAvatarEntityData(…)` in an app
+  script, or `Avatar.setAvatarEntityData(…)` in a bot (agent) script, leaves the avatar wearing nothing, with no error.
+  Add the items one at a time instead: in an app script, `Entities.addEntity(properties, "avatar")` for each one. In
+  a bot script, add the items one at a time too; write to [support@darkride.ai](mailto:support@darkride.ai) and we'll
+  send you the call. Reading them with `getAvatarEntityData` works. We're fixing it.
 
 ## Frame rate
 
