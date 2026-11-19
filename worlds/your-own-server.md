@@ -245,5 +245,5 @@ Inside it:
   assignment clients' Command Prompt window).
 - **Your world is missing from Explore.** Explore lists it only when your server lets in anyone or anyone signed in
   (step 4), and only for apps on the same version as your server. Check who can come in, and update the server.
-- **Something else?** Ask on our Discord, or open an issue at
+- **Something else?** Ask on [Darkride's Discord](https://darkride.ai/discord), email [support@darkride.ai](mailto:support@darkride.ai), or open an issue at
   [github.com/caitlynmeeks/darkride-interface](https://github.com/caitlynmeeks/darkride-interface/issues).

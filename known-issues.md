@@ -6,7 +6,7 @@ description: What doesn't work yet in Darkride 1.1.4.4, and what to do instead.
 # Known issues
 
 What doesn't work yet in Darkride 1.1.4.4, and what to do instead. Found something that isn't here? Tell us on
-[Darkride's Discord](https://darkride.ai/discord).
+[Darkride's Discord](https://darkride.ai/discord), or email [support@darkride.ai](mailto:support@darkride.ai).
 
 ## Installing and opening
 

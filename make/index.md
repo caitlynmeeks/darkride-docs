@@ -236,6 +236,6 @@ Nothing runs, and nothing is charged, while you aren't using Make.
   - Windows: type `%APPDATA%` in File Explorer's address bar, then open **Tivoli Cloud VR** > **Interface**.
 
   Then start Darkride again and click **Connect**. Make makes a fresh folder for you alone, and the renamed one keeps
-  anything you saved there. If it happens again, tell us on
-  [Darkride's Discord](https://darkride.ai/discord), with the reason Make shows.
-- Anything else: see [Known issues](/known-issues), or tell us on [Darkride's Discord](https://darkride.ai/discord).
+  anything you saved there. If it happens again, tell us the
+  reason Make shows, on [Darkride's Discord](https://darkride.ai/discord) or by email at [support@darkride.ai](mailto:support@darkride.ai).
+- Anything else: see [Known issues](/known-issues), tell us on [Darkride's Discord](https://darkride.ai/discord), or email [support@darkride.ai](mailto:support@darkride.ai).

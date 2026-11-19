@@ -222,4 +222,5 @@ run yourself once they're packaged; hosted bots that don't need your computer on
 after. This is a draft: names may still change before it ships. The full reference is `RESIDENT-API.md` beside the
 resident service.
 
-If something here doesn't work, tell us what the client or assignment-client printed.
+If something here doesn't work, tell us what the client or assignment-client printed, on [Darkride's Discord](https://darkride.ai/discord) or by email at
+[support@darkride.ai](mailto:support@darkride.ai).

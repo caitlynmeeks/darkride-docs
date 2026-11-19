@@ -275,4 +275,4 @@ These are today's settings and may change.
 | "You're banned from this world" | The world's owner has banned you. |
 | "Storage is full" (My Files) | Delete files you don't need. |
 
-Stuck? Ask on [Darkride's Discord](https://darkride.ai/discord).
+Stuck? Ask on [Darkride's Discord](https://darkride.ai/discord), or email [support@darkride.ai](mailto:support@darkride.ai).
