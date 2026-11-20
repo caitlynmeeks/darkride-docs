@@ -160,9 +160,14 @@ wherever it's opened: in a Web entity or in a web browser. It shows and its scri
   (`<script type="module">`) or web fonts from it;
 - show `alert`, `confirm` or `prompt` dialogs, start a download, or lock the pointer.
 
-Plain `<script src>`, images, stylesheets, video and sound load as usual, and a page in a Web entity and its entity
-script send each other messages (`EventBridge`) as usual. If your page needs any of the above (saved settings or high
-scores, say), put it on your own website and use that address in your Web entity.
+Players and widgets embedded from other sites (a YouTube video, a map, a chat or comment box) run in the same sandbox,
+so one that needs its own cookies may not work: a YouTube video embedded in your page may not play. To show a YouTube
+video, put the video's YouTube page address (the one in your browser's address bar) in your Web entity instead; it
+shows YouTube's whole page, not just the video.
+
+Plain `<script src>`, images, stylesheets, video and sound files load as usual, and a page in a Web entity and its
+entity script send each other messages (`EventBridge`) as usual. If your page needs any of the above (saved settings or
+high scores, say), put it on your own website and use that address in your Web entity.
 
 ### Find and move your files
 

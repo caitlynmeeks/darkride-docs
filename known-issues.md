@@ -106,8 +106,10 @@ What doesn't work yet in Darkride 1.1.4.4, and what to do instead. Found somethi
   ([#35](https://github.com/caitlynmeeks/darkride-interface/issues/35)).
 - **A web page in your My Files can't keep anything in the browser or load files from its own folder.** Pages and SVG
   pictures in My Files run in a sandbox, for safety: no cookies or `localStorage`, no `fetch` of files beside them,
-  no module scripts or web fonts from their folder, and no `alert` dialogs. If your page needs these, host it on
-  your own website, as [Put up a world](/worlds/put-up-a-world#_4-add-your-own-models-images-and-sounds) shows.
+  no module scripts or web fonts from their folder, and no `alert` dialogs. Players and widgets embedded from other
+  sites, such as a YouTube video, may not work inside such a page: put the video's YouTube page address in your Web
+  entity instead. If your page needs these, host it on your own website, as
+  [Put up a world](/worlds/put-up-a-world#_4-add-your-own-models-images-and-sounds) shows.
 - **Fixed on the desktop in 1.1.4.2: clicks on web pages in a world land where you point again.** In VR the same fix
   applies, but a web page standing in a world hasn't been checked with a controller yet. If one doesn't respond in VR,
   tell us in [#67](https://github.com/caitlynmeeks/darkride-interface/issues/67).
