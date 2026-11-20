@@ -151,6 +151,19 @@ without it, for everyone, you too. Upload the file to My Files and use its link 
 [HandBrake](https://handbrake.fr/) (free), then upload the .webm to My Files and use its link. Keep each file under My
 Files' 50 MB. Sound on a web page plays as MP3, Ogg or WAV, not AAC (.m4a).
 
+**Web pages in My Files.** A web page (HTML) or SVG picture you upload to My Files runs in a sandbox, for safety,
+wherever it's opened: in a Web entity or in a web browser. It shows and its scripts run, but it can't:
+
+- keep anything in the browser: cookies, `localStorage`, `sessionStorage` or IndexedDB (touching `localStorage`
+  throws an error, so a script that doesn't catch it stops there);
+- load files from its own folder with `fetch` or `XMLHttpRequest`, or load module scripts
+  (`<script type="module">`) or web fonts from it;
+- show `alert`, `confirm` or `prompt` dialogs, start a download, or lock the pointer.
+
+Plain `<script src>`, images, stylesheets, video and sound load as usual, and a page in a Web entity and its entity
+script send each other messages (`EventBridge`) as usual. If your page needs any of the above (saved settings or high
+scores, say), put it on your own website and use that address in your Web entity.
+
 ### Find and move your files
 
 - **Search:** type in **Search My Files** at the top right. It searches all your folders as you type and says which
